@@ -109,9 +109,42 @@ def evaluate_tracks(annotation, tracks, origin=(0,0)):
             "local_candidate_crossing_count":crossings,
             "distance_as_fraction_of_candidate_pitch":normalized,
             "possible_gap_phase": bool(normalized is not None and .30<=normalized<=.70),
+            "spatial_misalignment_review": bool(normalized is not None and normalized >= .25),
             "limitation":"Candidate-track distance to operator-marked segment. Does NOT prove physical yarn center; excludes photometric yarn/gap evidence.",
         }
     return out
+
+
+
+def render_position_overlay(image, tracks, annotation, origin, output_path):
+    """Visual evidence only: red candidate A, yellow input yarn, cyan DIFFERENT check yarn."""
+    import cv2
+    long_side = max(image.shape[:2])
+    factor = min(1.0, 1300.0/long_side)
+    preview = cv2.resize(image, (round(image.shape[1]*factor), round(image.shape[0]*factor)),
+                         interpolation=cv2.INTER_AREA) if factor < 1 else image.copy()
+    def projection(points):
+        a = np.asarray(points, dtype=float)
+        a[:,0] = (a[:,0] - origin[0])*factor
+        a[:,1] = (a[:,1] - origin[1])*factor
+        return np.rint(a).astype(np.int32)
+    for track in tracks:
+        if len(track) >= 2:
+            pts = np.rint(np.asarray(track,float)*factor).astype(np.int32)
+            cv2.polylines(preview, [pts], False, (40,60,235), 1, cv2.LINE_AA)
+    for role, color in (("reference",(0,220,255)),("check_same",(255,255,0))):
+        segment = annotation["segments"].get(role)
+        if segment:
+            pts = projection(segment)
+            cv2.line(preview, tuple(pts[0]),tuple(pts[1]),color,3,cv2.LINE_AA)
+            for xy in pts:
+                cv2.circle(preview,tuple(xy),4,color,-1,cv2.LINE_AA)
+    header = np.zeros((35,preview.shape[1],3),dtype=np.uint8)
+    cv2.putText(header,"RED: V4 A candidate / YELLOW: input real yarn / CYAN: separate check",
+                (8,24),cv2.FONT_HERSHEY_SIMPLEX,.45,(255,255,255),1,cv2.LINE_AA)
+    image_out = np.vstack([header,preview])
+    if not cv2.imwrite(str(output_path),image_out):
+        raise RuntimeError("failed to save position evidence JPEG")
 
 
 def main(argv=None):
@@ -172,6 +205,7 @@ def main(argv=None):
     output=output if output.is_absolute() else root/output
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    render_position_overlay(image, v4["first"], annotation, offset, output.parent/"position_overlay.jpg")
     print(json.dumps(report,ensure_ascii=False,indent=2))
     return 0
 
