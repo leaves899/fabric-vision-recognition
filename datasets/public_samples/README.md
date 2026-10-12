@@ -1,13 +1,13 @@
 # 公开织物实物图像样本集
 
-**55 张开放许可织物实物图像已进入样本清单**，GitHub Actions 将真实源图下载到 `images/`；以 [sync_status.json](sync_status.json) 中 `available` 与 `complete` 为准确认已落库数量。样本包括普通相机、手机拍照、高分辨率扫描和馆藏织物记录。
+**60 张开放许可织物实物图像已进入样本清单**，GitHub Actions 将真实源图下载到 `images/`；以 [sync_status.json](sync_status.json) 中 `available` 与 `complete` 为准确认已落库数量。样本包括普通相机、手机拍照、高分辨率扫描和馆藏织物记录。
 
 - [图片目录](images/) · [来源与版权](sources.json) · [SHA-256 校验](checksums.sha256)
 - [实时导入状态](sync_status.json)：`expected`、`available`、`pending_ids`
 - 下载脚本：`scripts/fetch_public_samples.py`，仅保留 Wikimedia Commons 原始文件，不进行生成式加工。
 - 本目录只适合算法**探索、候选标注和回归**，不是经纬密度的正式计量标定数据集。
 
-## 图片列表（55）
+## 图片列表（60）
 
 建议先使用 [牛仔专用清单](../denim_only/selection.json)：只包含已筛选的牛仔面料来源，不会混入其他纤维、复杂装饰或非牛仔图。
 
@@ -100,6 +100,21 @@
 | ID | 照片（GitHub） | 来源组织/材质候选 | 许可证 | 数据用途 |
 |---|---|---|---|---|
 | U001 | [Fabric close up.jpg](images/unknown/01_fabric_close_up.jpg) | 未知 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 布料近景；组织未确认，不能当作训练真值 |
+
+
+## 新增牛仔近景批次（D011–D015）
+
+这五张均已取得真实摄影原图或 Wikimedia 发布的分辨率缩小版（D011）。
+
+| ID | 文件 | 来源/许可 | 筛选结果 |
+|---|---|---|---|
+| D011 | [Denim - Macro (49851887841).jpg](images/denim/11_macro_denim_3840px.jpg) | Ajay Suresh · [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | 核心：无明显服装结构 |
+| D012 | [Blue Denim Fabric Texture Free Creative Commons (6816223272).jpg](images/denim/12_blue_denim_sherbet_texture.jpg) | D. Sharon Pruitt / Pink Sherbet Photography · [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | 核心：无明显服装结构 |
+| D013 | [Jeans (1).jpg](images/denim/13_blue_jeans_fabric_tscharntke.jpg) | Titus Tscharntke · [Public domain (author dedication)](https://commons.wikimedia.org/wiki/Public_domain) | 核心：无明显服装结构 |
+| D014 | [Jeans Texture.jpg](images/denim/14_black_jeans_texture.jpg) | Gaurav Dhwaj Khadka · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 辅助：偏暗或有布边折叠 |
+| D015 | [RawDenim-1 (40869295423).jpg](images/denim/15_rawdenim_macro_selvedge.jpg) | Ajay Suresh · [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | 辅助：偏暗或有布边折叠 |
+
+注意 D011 **不是91.86 MB原版**，而是官方发布的3840像素宽 JPEG 缩略版（约5.1 MB），其源图和版权归属仍在 `sources.json`；不能当作原尺寸文件。至此专用子集有 10 张核心、4 张待裁剪、4 张辅助和2张排除；尚无5cm同平面实体标定框，也没有经纬密度真值。
 
 ## 数据集标注与防误用
 
