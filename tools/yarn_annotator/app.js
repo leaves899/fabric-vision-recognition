@@ -1,0 +1,151 @@
+"use strict";
+const el=id=>document.getElementById(id);
+const PRIORITY=["T001","T004","T005","T007","T006","P001","T002","H001","S001","X002","U001"];
+const COLORS={reference:"#ff9a27",check_same:"#18d294",check_cross:"#72a9ff"};
+const LABELS={reference:"V5 输入参考线",check_same:"独立同向核查线",check_cross:"正交核查线"};
+let all=[], visible=[], current=null, selected="reference", data=null, drawn=[];
+function show(msg,good=true){el("message").textContent=msg;el("message").className=good?"good":"bad";}
+function blank(row){return {schema_version:"1.0",sample_id:row.sample_id,image_path:row.image_path,reference_confirmed:false,reference_family:"UNKNOWN",identity_confirmed:false,review_state:"DRAFT",eligibility:"UNREVIEWED",segments:{reference:null,check_same:null,check_cross:null},notes:""};}
+function axis(pts){if(!pts||pts.length!==2)return null;let a=pts[0],b=pts[1];return ((Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI)%180+180)%180;}
+function activeList(){
+  visible=el("subset").value==="focus"?all.filter(x=>PRIORITY.includes(x.sample_id)):all.slice();
+  visible.sort((a,b)=>{
+    let ia=PRIORITY.indexOf(a.sample_id),ib=PRIORITY.indexOf(b.sample_id);
+    return (ia<0?1000:ia)-(ib<0?1000:ib)||a.sample_id.localeCompare(b.sample_id);
+  });
+  el("sample").replaceChildren(...visible.map(x=>{
+    let option=document.createElement("option");
+    option.value=x.sample_id;
+    option.textContent=x.sample_id+(x.annotated?" ✓":"")+" | "+x.image_path.split("/").slice(-1)[0];
+    return option;
+  }));
+}
+function zoomImage(){
+  const img=el("fabricImg"),canvas=el("layer");
+  if(!img.naturalWidth)return;
+  let pct=+el("zoom").value, width=Math.max(200,Math.round(Math.min(img.naturalWidth,1000)*pct/100));
+  img.style.width=width+"px";
+  canvas.style.width=width+"px";
+  canvas.style.height="auto";
+  el("zoomText").textContent=pct+"%";
+}
+function redraw(){
+  const img=el("fabricImg"),canvas=el("layer"),ctx=canvas.getContext("2d");
+  if(!img.naturalWidth||!data)return;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  let width=Math.max(3,canvas.width/350);
+  Object.keys(LABELS).forEach(type=>{
+    const pts=data.segments[type];
+    if(!pts||!pts.length)return;
+    ctx.strokeStyle=COLORS[type];ctx.fillStyle=COLORS[type];ctx.lineWidth=width;
+    pts.forEach(p=>{ctx.beginPath();ctx.arc(p[0],p[1],width*1.9,0,2*Math.PI);ctx.fill();});
+    if(pts.length===2){ctx.beginPath();ctx.moveTo(...pts[0]);ctx.lineTo(...pts[1]);ctx.stroke();}
+  });
+  el("angles").textContent=Object.keys(LABELS).map(type=>{
+    let angle=axis(data.segments[type]);
+    return LABELS[type]+": "+(angle===null?"未完成":angle.toFixed(2)+"°");
+  }).join("\n");
+}
+function onPoint(ev){
+  if(!data)return;
+  let rect=el("layer").getBoundingClientRect(), img=el("fabricImg");
+  let x=(ev.clientX-rect.left)*img.naturalWidth/rect.width;
+  let y=(ev.clientY-rect.top)*img.naturalHeight/rect.height;
+  x=Math.min(img.naturalWidth-0.001,Math.max(0,x));
+  y=Math.min(img.naturalHeight-0.001,Math.max(0,y));
+  let arr=data.segments[selected]||[];
+  if(arr.length>=2)arr=[];
+  arr.push([Number(x.toFixed(3)),Number(y.toFixed(3))]);
+  data.segments[selected]=arr;
+  if(selected==="reference")el("confirmRef").checked=false;
+  el("reviewState").value="DRAFT";
+  redraw();
+}
+function copyToInputs(){
+  if(!data)return;
+  el("eligibility").value=data.eligibility||"UNREVIEWED";
+  el("confirmRef").checked=data.reference_confirmed===true;
+  el("family").value=data.reference_family||"UNKNOWN";
+  el("confirmIdentity").checked=data.identity_confirmed===true;
+  el("reviewState").value=data.review_state||"DRAFT";
+  el("notes").value=data.notes||"";
+}
+async function loadSample(sid){
+  let row=all.find(x=>x.sample_id===sid);
+  if(!row)return;
+  current=row;
+  el("sample").value=sid;
+  el("fabricImg").src="";
+  show("读取 "+sid+" 原始照片和标注...");
+  let response=await fetch("/api/annotation?id="+encodeURIComponent(sid),{cache:"no-store"});
+  if(!response.ok){show("读取标注失败；检查后台",false);return;}
+  let raw=await response.json();
+  data=Object.assign(blank(row),raw);
+  data.segments=Object.assign({reference:null,check_same:null,check_cross:null},data.segments||{});
+  copyToInputs();
+  let img=el("fabricImg");
+  img.onload=()=>{
+    let canvas=el("layer");
+    canvas.width=img.naturalWidth;canvas.height=img.naturalHeight;
+    zoomImage();
+    el("meta").textContent=sid+" · "+img.naturalWidth+"×"+img.naturalHeight+" (显示像素) · 原图坐标用于标注";
+    redraw();show("已加载；从放大照片中选真实可见纱段。");
+  };
+  img.onerror=()=>show("无法加载图片，请确认仓库根目录启动了本地服务",false);
+  img.src="/"+row.image_path.split("/").map(encodeURIComponent).join("/");
+}
+async function save(){
+  if(!data)return;
+  data.eligibility=el("eligibility").value;
+  data.reference_confirmed=el("confirmRef").checked;
+  data.reference_family=el("family").value;
+  data.identity_confirmed=el("confirmIdentity").checked;
+  data.review_state=el("reviewState").value;
+  data.notes=el("notes").value;
+  if(data.review_state==="OPERATOR_REVIEWED"&&(!data.reference_confirmed||!data.segments.reference||data.segments.reference.length!==2)){
+    return show("必须有一条真实纱线上的完整参考线，并主动勾选确认",false);
+  }
+  show("正在校验并保存...");
+  try{
+    let r=await fetch("/api/annotation",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
+    let out=await r.json();
+    if(!r.ok)throw Error(out.error||"保存失败");
+    current.annotated=true;
+    activeList();el("sample").value=current.sample_id;
+    show("保存成功 "+out.sample_id+" · "+out.status+" · 已保留原图 SHA-256");
+  }catch(err){show(String(err),false);}
+}
+function updateMode(mode){
+  selected=mode;
+  document.querySelectorAll("[data-mode]").forEach(b=>b.classList.toggle("active",b.dataset.mode===mode));
+}
+function move(delta){
+  let idx=visible.findIndex(x=>x.sample_id===current?.sample_id);
+  if(idx<0||!visible.length)return;
+  loadSample(visible[(idx+delta+visible.length)%visible.length].sample_id);
+}
+async function init(){
+  try{
+    let resp=await fetch("/api/items");
+    if(!resp.ok)throw Error("本地标注服务未启动");
+    all=(await resp.json()).items;
+    activeList();
+    if(!visible.length)throw Error("找不到对应照片");
+    await loadSample(visible[0].sample_id);
+  }catch(err){show("无法连接标注服务，请用 python -m benchmark.manual_annotation serve 启动。"+String(err),false);}
+}
+el("layer").addEventListener("pointerdown",onPoint);
+el("zoom").addEventListener("input",()=>{zoomImage();redraw();});
+el("sample").addEventListener("change",ev=>loadSample(ev.target.value));
+el("subset").addEventListener("change",()=>{activeList();if(visible.length)loadSample(visible[0].sample_id);});
+el("prev").addEventListener("click",()=>move(-1));
+el("next").addEventListener("click",()=>move(1));
+el("undo").addEventListener("click",()=>{
+  if(!data)return;
+  data.segments[selected]=null;
+  if(selected==="reference")el("confirmRef").checked=false;
+  el("reviewState").value="DRAFT";redraw();
+});
+document.querySelectorAll("[data-mode]").forEach(x=>x.addEventListener("click",()=>updateMode(x.dataset.mode)));
+el("save").addEventListener("click",save);
+init();
