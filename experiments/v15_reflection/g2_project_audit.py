@@ -18,7 +18,7 @@ from experiments.v15_reflection.orient_v2 import propose_axes, _canonical_delta
 
 
 def _angles(theta,human):
-    return round(_canonical_delta(theta,human),3) if theta is not None else None
+    return round(_canonical_delta(theta,human),3) if theta is not None and human is not None else None
 
 
 def evaluate(root:Path,rotations=(0,90,180,270),limit=None):
@@ -123,7 +123,7 @@ def main(argv=None):
                   "new_err":v["v2_operator_error_deg"],
                   "old_err":v["fft_operator_error_deg"],
                   "rotation_disagreement":sample["rotation_max_disagreement_deg"]}))
-    return 0 if len(r["results"])==len(r["results"]) and not any(
+    return 0 if r["audited"] == r["total_manifest_images"] and not any(
         x["status"] in ("MISSING_IMAGE","SHA_MISMATCH","ERROR") for x in r["results"]) else 2
 
 
