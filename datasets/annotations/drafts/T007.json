@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "T007",
+  "fabric_id": "PUBLIC-T007",
+  "image_path": "datasets/public_samples/images/twill/07_jeans_fabric.jpg",
+  "image_sha256": "bef0dfc4de463e77777d825a254ad92221ec6fae2712f7a9ae63b67d846bf71b",
+  "image_width": 2232,
+  "image_height": 3406,
+  "eligibility": "UNREVIEWED",
+  "review_state": "OPERATOR_REVIEWED",
+  "reference_confirmed": true,
+  "reference_family": "UNKNOWN",
+  "identity_confirmed": false,
+  "segments": {
+    "reference": [
+      [
+        639.256,
+        1077.693
+      ],
+      [
+        645.174,
+        805.456
+      ]
+    ],
+    "check_same": [
+      [
+        730.565,
+        1792.103
+      ],
+      [
+        736.483,
+        1531.703
+      ]
+    ],
+    "check_cross": null
+  },
+  "notes": "",
+  "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
+  "updated_at": "2026-10-12T10:17:40.047196+00:00"
+}

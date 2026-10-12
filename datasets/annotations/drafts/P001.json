@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "P001",
+  "fabric_id": "PUBLIC-P001",
+  "image_path": "datasets/public_samples/images/plain/01_simple_textile_magnified.jpg",
+  "image_sha256": "95547e7343c525e9270df7859aac66d6d4f630995eaa5ab7fccf9e60f1e1546a",
+  "image_width": 2000,
+  "image_height": 1333,
+  "eligibility": "UNREVIEWED",
+  "review_state": "OPERATOR_REVIEWED",
+  "reference_confirmed": true,
+  "reference_family": "UNKNOWN",
+  "identity_confirmed": false,
+  "segments": {
+    "reference": [
+      [
+        765.992,
+        861.891
+      ],
+      [
+        983.416,
+        735.375
+      ]
+    ],
+    "check_same": [
+      [
+        775.083,
+        789.921
+      ],
+      [
+        999.325,
+        668.708
+      ]
+    ],
+    "check_cross": null
+  },
+  "notes": "",
+  "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
+  "updated_at": "2026-10-12T10:18:05.272639+00:00"
+}

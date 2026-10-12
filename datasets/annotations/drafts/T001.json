@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "T001",
+  "fabric_id": "PUBLIC-T001",
+  "image_path": "datasets/public_samples/images/twill/01_denim_closeup.jpg",
+  "image_sha256": "eb9be38c3e4e7b93ff73df2824f6a327c3a9026a18ac30f17ce62d91aa9f4974",
+  "image_width": 1668,
+  "image_height": 1268,
+  "eligibility": "DENIM_CANDIDATE",
+  "review_state": "OPERATOR_REVIEWED",
+  "reference_confirmed": true,
+  "reference_family": "UNKNOWN",
+  "identity_confirmed": false,
+  "segments": {
+    "reference": [
+      [
+        416.444,
+        265.77
+      ],
+      [
+        828.996,
+        256.873
+      ]
+    ],
+    "check_same": [
+      [
+        834.556,
+        353.618
+      ],
+      [
+        1234.876,
+        342.498
+      ]
+    ],
+    "check_cross": null
+  },
+  "notes": "",
+  "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
+  "updated_at": "2026-10-12T10:15:28.224098+00:00"
+}

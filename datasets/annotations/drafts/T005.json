@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "T005",
+  "fabric_id": "PUBLIC-T005",
+  "image_path": "datasets/public_samples/images/twill/05_undyed_broken_twill_iphone.jpg",
+  "image_sha256": "055d3b6a1199e985ad63c7f09b2c352e64728dd379658b8f2a1f4c9e3cce73b8",
+  "image_width": 3024,
+  "image_height": 4032,
+  "eligibility": "UNREVIEWED",
+  "review_state": "DRAFT",
+  "reference_confirmed": false,
+  "reference_family": "UNKNOWN",
+  "identity_confirmed": false,
+  "segments": {
+    "reference": [
+      [
+        808.816,
+        2422.278
+      ],
+      [
+        811.107,
+        2174.86
+      ]
+    ],
+    "check_same": [
+      [
+        1068.834,
+        2542.551
+      ],
+      [
+        1080.289,
+        2239.006
+      ]
+    ],
+    "check_cross": null
+  },
+  "notes": "",
+  "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
+  "updated_at": "2026-10-12T10:17:11.876512+00:00"
+}

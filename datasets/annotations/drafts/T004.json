@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "T004",
+  "fabric_id": "PUBLIC-T004",
+  "image_path": "datasets/public_samples/images/twill/04_phone_denim_detail.jpg",
+  "image_sha256": "c4de49069b315e26f4732b31faa5332f279bebcbc3d13c0002e0dfa6a297c2a1",
+  "image_width": 3072,
+  "image_height": 4080,
+  "eligibility": "UNREVIEWED",
+  "review_state": "OPERATOR_REVIEWED",
+  "reference_confirmed": true,
+  "reference_family": "UNKNOWN",
+  "identity_confirmed": false,
+  "segments": {
+    "reference": [
+      [
+        1674.255,
+        1814.546
+      ],
+      [
+        1678.909,
+        1567.855
+      ]
+    ],
+    "check_same": [
+      [
+        2048.945,
+        1649.309
+      ],
+      [
+        2044.291,
+        1162.909
+      ]
+    ],
+    "check_cross": null
+  },
+  "notes": "",
+  "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
+  "updated_at": "2026-10-12T10:16:16.930294+00:00"
+}
