@@ -1,0 +1,1 @@
+"""Independent V1.5 reflectance-only research prototype. No V5 imports."""

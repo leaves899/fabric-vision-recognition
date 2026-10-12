@@ -1,0 +1,43 @@
+name: V15 independent reflectance experiment
+on:
+  push:
+    branches: ['experiment/v15-reflectance-engine']
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'experiments/v15_reflection/**'
+      - '.github/workflows/v15-reflection-experiment.yml'
+jobs:
+  experiment-unit-and-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install lightweight reflectance research dependencies
+        run: python -m pip install "numpy>=1.26,<3" "Pillow>=10,<13"
+      - name: Run independent V15 synthetic protocol and metrology tests
+        run: python -m unittest discover -s experiments/v15_reflection/tests -v
+      - name: Run unchanged benchmark framework regression
+        run: python -m unittest discover -s benchmark/tests -v
+      - name: Smoke test real uncalibrated photograph without invented GT
+        run: |
+          python -m experiments.v15_reflection.engine --image datasets/public_samples/images/twill/01_denim_closeup.jpg --out /tmp/v15-real-uncalibrated.json || test "$?" -eq 3
+          python - <<'PY'
+          import json
+          data=json.load(open('/tmp/v15-real-uncalibrated.json'))
+          assert data['candidate_only']
+          assert data['ten_parameters']['08']['value'] is None
+          assert data['ten_parameters']['09']['value'] is None
+          print('REAL_PHOTO_UNCALIBRATED_SAFETY_PASS:', data['status'])
+          PY
+      - name: Upload V15 smoke result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v15-reflectance-uncalibrated-smoke
+          path: /tmp/v15-real-uncalibrated.json
+          if-no-files-found: warn
+          retention-days: 30
