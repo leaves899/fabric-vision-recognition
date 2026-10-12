@@ -6,9 +6,9 @@
 
 `selection.json` 为机器可读的清单：
 
-- `CORE_CLEAN`：**10 张**目视无明显口袋、布边、缝线的牛仔面料近景（T001/T004/T005/T007/D001/D002/D008）。这是画面级筛选，不是经纬方向或纱线真值认证。
-- `CROP_REQUIRED`：**4 张**（D003/D004/D006/D007），原图出现侧边或横向缝线，清单只记录建议的去干扰裁剪范围，**未执行/校验精确 ROI 裁剪**。未裁剪前不得进入纯面料训练集。
-- `AUXILIARY`：**4 张**（T006、D009，以及本轮新增的偏暗 D014、含布边折叠 D015），不参与核心准确率统计。
+- `CORE_CLEAN`：**12 张**经实际缩略图检查的干净牛仔布照片候选；新纳入 D017（三星手机）和 D018（iPhone 12）。这是视觉筛选，不是逐根纱线已验证真值。
+- `CROP_REQUIRED`：**5 张**，新增 D016（边缘有相框）需要先裁剪并逐像素核验 ROI；未裁剪不得直接进入纯织物训练集。
+- `AUXILIARY` / `AUXILIARY_PROCESSED_TEXTURE`：**7 张**，其中 D019–D021 是 Poly Haven 对 3 个独立材质资产制作的 diffuse/albedo（漫反射色彩）贴图，不能与手机照片视为同一种数据分布。
 - `EXCLUDED_COMPLEX`：**2 张**（D005 口袋、D010 缝线占比高且分辨率低），按“不收太繁复照片”的标准剔除正式测试。
 - `THUMBNAIL_VISUAL_SCREENED`：已经基于缩略图进行缝线/口袋/织物主体预筛，**不代表物理纱线标注完成**。要形成经纬方向真值，需基于原图坐标选取同一根清晰真实纱线上相隔 ≥20 像素的两个点，人工确认经/纬身份后再生成 V5 所需 JSON。
 - `collection_group`：来源相同或可能属于相同面料摄影系列的图片按组处理；尤其 `NIJAKI-WORN-DENIM-SERIES` 需整体分配至同一 DEV/VALIDATION/TEST，避免泄露。
@@ -34,3 +34,20 @@
 ## 最新摄影样本
 
 D011–D015 均来自 Wikimedia Commons 上注明摄影者和再使用许可的照片。视觉缩略图检查后，D011/D012/D013 暂入 `CORE_CLEAN`，D014（过暗）、D015（布边折叠）归入 `AUXILIARY`。D011 是 Wikimedia 官方3840px衍生文件而非原始91MB巨幅影像。完整图片及原始URL以 [sources.json](../public_samples/sources.json) 为准，机器可读筛选名单为 [selection.json](selection.json)。
+
+## 独立来源优先批次 D016–D021（2026-10-12）
+
+| ID | 取景或处理来源 | 筛选等级 | 独立性证据 |
+|---|---|---|---|
+| D016 | Theerawat Sangprakarn；非手机织物摄影 | 待裁剪 | 独立摄影作者，但照片外圈有装框 |
+| D017 | Montoya2002；Samsung SM-N975F | 核心候选 | 独立摄影者、独立拍摄时间；具体物理布样身份无证据 |
+| D018 | Maurizio Baldi；iPhone 12 | 核心候选 | 独立摄影者、独立拍摄时间；织纹清晰、933×1096 |
+| D019 | Poly Haven fabric_03；colormass | 处理纹理辅助 | 与 fabric_04/05 是不同 **asset ID**，但同处理提供方 |
+| D020 | Poly Haven fabric_04；colormass | 处理纹理辅助 | **不同材质资产**，并非已验证不同织厂 |
+| D021 | Poly Haven fabric_05；colormass | 处理纹理辅助 | **不同材质资产**，而非第 5 张摄影原片 |
+
+**评估隔离要求**：基于 `collection_group` 分组并额外遵守 `source_domain_group=POLYHAVEN_COLORMASS_2025`；所有该处理来源的样本应归入同一 split，避免评估受同源摄影和标准化算法风格泄露。新来源并不能证明物理布料一定不同于已有样本，这一事实须在获得布料样本 ID 前保持未知。
+
+- 原图库与来源：[sources.json](../public_samples/sources.json)
+- 视觉筛选及机器消费：[selection.json](selection.json)
+- 全部缩略图：[review_previews](../public_samples/review_previews/)
