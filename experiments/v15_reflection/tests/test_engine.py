@@ -103,6 +103,17 @@ class MetrologyTest(unittest.TestCase):
         self.assertEqual(len(result["ten_parameters"]),10)
         self.assertTrue(all(v["status"]=="UNAVAILABLE" for v in result["ten_parameters"].values()))
 
+    def test_camera_capture_resolution_is_not_downsample_resolution(self):
+        # A 50mm frame spans >3333 original pixels; working ROI is capped.
+        photo=Image.new("RGB",(3600,3600),(120,120,120))
+        _,working_mm,_,info=prepare_roi(
+            photo,corners(3600),True,None)
+        self.assertEqual(info["roi_side_px"],1792)
+        self.assertTrue(info["downsampled_working_roi"])
+        self.assertTrue(info["meets_v15_0_015_mm_per_px"])
+        self.assertLess(info["capture_mm_per_px_estimate"],.015)
+        self.assertGreater(working_mm,.015)
+
     def test_invalid_geometry_rejected(self):
         with self.assertRaises(ValueError):
             measure(weave(),[[90,200],[450,200]],True,[[0,0]]*4,True,"A")

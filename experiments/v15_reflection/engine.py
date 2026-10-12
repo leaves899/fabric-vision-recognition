@@ -83,7 +83,9 @@ def prepare_roi(image, corners=None, frame_confirmed=False, reference=None):
         return roi, FRAME_MM/side, ref, {"confirmed": True,
                     "frame_mm": FRAME_MM, "roi_side_px": side,
                     "mm_per_px": FRAME_MM/side,
-                    "meets_v15_0_015_mm_per_px": FRAME_MM/side <= 0.015}
+                    "capture_mm_per_px_estimate": FRAME_MM/float(np.min(edges)),
+                    "downsampled_working_roi": side < int(np.min(edges)),
+                    "meets_v15_0_015_mm_per_px": FRAME_MM/float(np.min(edges)) <= 0.015}
     # Never reuse unconfirmed, merely supplied corners as a scale.
     ratio = min(1.0, MAX_SIDE / max(w,h))
     roi = image.convert("RGB")

@@ -16,7 +16,7 @@ V5 relies on two operator-selected points to orient frozen V4 candidate lines. V
 
 ## Current state
 
-G0 implemented by branching. G1 pending CI until verified. G2 / G3 **BLOCKED**, because existing public photos lack confirmed inner-square physical frame and real per-axis independent count GT; this cannot be fixed by synthetic annotation or by running a model repeatedly.
+G0 implemented by branching. G1 software CI PASS (GitHub Actions #38240635121; synthetic tests + unchanged benchmark regression + real uncalibrated smoke). G2 automatic orientation baseline FAILED on real operator-reviewed images (3/5 large angular errors), and G2 physical density / G3 **BLOCKED**, because existing public photos lack confirmed inner-square physical frame and real per-axis independent count GT; this cannot be fixed by synthetic annotation or by running a model repeatedly.
 
 ## Rules for iteration
 
