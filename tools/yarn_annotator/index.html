@@ -41,7 +41,7 @@ select{width:100%}
 </head>
 <body>
 <header>
-  <h1>纱线方向人工标注 · V5 Baseline</h1>
+  <h1>纱线参考方向与位置校正 · V6 试验</h1>
   <small style="color:#e0eaf4">仅访问本机原图 · 绝不自动猜测真实纱线或经纬身份</small>
 </header>
 <main>
@@ -64,13 +64,15 @@ select{width:100%}
 </div>
 <aside class="card">
 <h2>操作顺序</h2>
-<small>① 在同一根真实可见纱线上点两点作为 V5 输入。② 在不同位置标另一根同方向的核查线，必要时再标正交方向。③ 人工确认后保存。候选纱线并非真值。</small>
+<small>① 第一根真实纱线校准方向及位置；② 另一根同向纱线校准位置与候选间距；③ 第三根同向纱线单独验收（不参与校准）。如需校正正交组，需再标两根真实正交纱线。</small>
 <section class="field">
   <strong>当前点击类型</strong>
   <div class="radio-list">
     <button class="active" data-mode="reference">① 输入参考线</button>
-    <button data-mode="check_same">② 独立同向线</button>
-    <button data-mode="check_cross">③ 正交核查线</button>
+    <button data-mode="check_same">② 第二根校准线</button>
+    <button data-mode="holdout_same">③ 第三根验收线</button>
+    <button data-mode="check_cross">④ 正交组第一根</button>
+    <button data-mode="check_cross_second">⑤ 正交组第二根</button>
   </div>
   <button id="undo">清除当前类别两点</button>
   <div id="angles" class="code">尚未标注</div>
@@ -109,7 +111,7 @@ select{width:100%}
 </section>
 <section class="field">
   <strong>本轮范围</strong>
-  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。核查线用于后续独立比较；不能直接把 V5 输入线当作预测准确率证据。</small>
+  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。第二根线用于校准，不是独立测试真值；第三根线才是不参与校准的验收参照。每根候选线仍需人工验证实际纱线位置。</small>
 </section>
 </aside>
 </main>
