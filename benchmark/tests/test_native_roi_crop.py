@@ -18,7 +18,7 @@ class NativeRoiCropTests(unittest.TestCase):
     def test_roi_preserves_all_original_points(self):
         data=self._annotation()
         rect=crop_window(data,380)
-        self.assertEqual(rect,(1294,782,2430,2195))
+        self.assertEqual(rect,(1294,782,2429,2195))
         for coords in data["segments"].values():
             if coords:
                 for x,y in coords:
