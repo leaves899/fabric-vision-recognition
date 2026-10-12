@@ -99,6 +99,14 @@ def evaluate(root:Path,rotations=(0,90,180,270),limit=None):
             "operator_reviewed_proposals":len(accepted_with_review),
             "operator_reviewed_angular_errors_deg":[
                 r["orientation"][0]["v2_operator_error_deg"] for r in accepted_with_review],
+            "rotation_total_reviewed_fabrics":len(annotated),
+            "rotation_all_four_proposed":sum(
+                len(r.get("orientation",[]))==4
+                and all(o["v2"]["status"]=="PROPOSED_NOT_VALIDATED"
+                        for o in r["orientation"]) for r in annotated),
+            "rotation_at_least_two_proposed":sum(
+                sum(o["v2"]["status"]=="PROPOSED_NOT_VALIDATED"
+                    for o in r.get("orientation",[]))>=2 for r in annotated),
             "rotation_max_error_deg":max((r["rotation_max_disagreement_deg"]
                     for r in annotated if r.get("rotation_max_disagreement_deg") is not None),default=None),
             "results":results}
