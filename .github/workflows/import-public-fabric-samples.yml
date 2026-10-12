@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add datasets/public_samples/images datasets/public_samples/checksums.sha256
+          git add datasets/public_samples/images datasets/public_samples/checksums.sha256 datasets/public_samples/sync_status.json
           if ! git diff --cached --quiet; then
             git commit -m "data: sync licensed textile photographs [skip ci]"
             # Other research PRs may merge while pictures are downloading.
