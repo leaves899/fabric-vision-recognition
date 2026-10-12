@@ -251,18 +251,54 @@ def main(argv=None):
     corrected_a=dual_corrected if ready_a else v4["first"]
     ready_b=report.get("v6_family_b")=="TWO_CROSS_ANCHOR_CANDIDATE"
     corrected_b=candidate_b if ready_b else v4["second"]
+    # V6.1: two physical endpoints without the NUMBER of real yarn
+    # intervals can turn a single coarse yarn into two candidate tracks.
+    # Only confirmed physical interval counts may activate de-duplication.
+    verified_alias_a=False
+    verified_alias_b=False
+    from benchmark.yarn_duplicate_guard import suppress_double_tracks
+    if second_anchor:
+        holdout=annotation["segments"].get("holdout_same")
+        holdout_roi=(np.asarray(holdout,float)-np.asarray(offset,float)).tolist() if holdout else None
+        guarded,guard_info=suppress_double_tracks(
+            v4["first"],first_anchor,second_anchor,
+            physical_intervals=annotation.get("same_family_intervals"),
+            confirmed=annotation.get("same_family_intervals_confirmed") is True,
+            holdout=holdout_roi)
+        report["v61_family_a_duplicate_guard"]=guard_info
+        verified_alias_a=guard_info["status"]=="DOUBLE_CANDIDATES_SUPPRESSED_UNVERIFIED_FIELD"
+        if verified_alias_a:
+            corrected_a=guarded
+            ready_a=True
+            render_position_overlay(image,corrected_a,annotation,offset,
+                output.parent/"v61_duplicate_suppressed_candidate.jpg")
+    else:
+        report["v61_family_a_duplicate_guard"]={"status":"ABSTAINED","reason":"SECOND_REAL_YARN_ANCHOR_MISSING"}
+    if ready_b and annotation.get("cross_family_intervals_confirmed") is True:
+        cross=(np.asarray(annotation["segments"]["check_cross"],float)-np.asarray(offset,float)).tolist()
+        cross2=(np.asarray(annotation["segments"]["check_cross_second"],float)-np.asarray(offset,float)).tolist()
+        guarded_b,report_b=suppress_double_tracks(v4["second"],cross,cross2,
+            physical_intervals=annotation.get("cross_family_intervals"),confirmed=True)
+        report["v61_family_b_duplicate_guard"]=report_b
+        verified_alias_b=report_b["status"]=="DOUBLE_CANDIDATES_SUPPRESSED_UNVERIFIED_FIELD"
+        if verified_alias_b:
+            corrected_b=guarded_b
+
     payload={
         "schema_version":"v6-anchor-candidate-0.1",
-        "status":"POSITION_CALIBRATED_CANDIDATES" if ready_a else "UNAVAILABLE",
+        "status":"PHYSICAL_INTERVALS_VERIFIED_ALIAS_REDUCED_CANDIDATES" if verified_alias_a else "POSITION_ONLY_DUPLICATE_RISK_UNVERIFIED",
         "input_image_sha256":annotation["image_sha256"],
         "frozen_v4_sha256":FROZEN_SHA,
         "calibrated_native_roi_offset_px":list(offset),
-        "family_A":{"status":"TWO_YARN_INPUT_CALIBRATED" if ready_a else "UNVERIFIED_OR_ABSTAINED",
+        "family_A":{"status":"VERIFIED_INTERVAL_ALIAS_REDUCED" if verified_alias_a else "POSITION_ALIGNED_COUNT_UNVERIFIED",
                     "tracks_px":corrected_a,
                     "physical_yarn_identity":"UNKNOWN_UNLESS_MANUALLY_ASSIGNED"},
-        "family_B":{"status":"TWO_YARN_INPUT_CALIBRATED" if ready_b else "UNVERIFIED_UNCHANGED_V4",
+        "family_B":{"status":"VERIFIED_INTERVAL_ALIAS_REDUCED" if verified_alias_b else "UNVERIFIED_COUNT",
                     "tracks_px":corrected_b,
                     "physical_yarn_identity":"UNKNOWN_UNLESS_MANUALLY_ASSIGNED"},
+        "candidate_alias_guard_verified_A":verified_alias_a,
+        "candidate_alias_guard_verified_B":verified_alias_b,
+        "physical_yarn_count_usable":False,
         "independent_holdout_status":report.get("v6_dual_physical_yarn_calibration",{}).get("independent_holdout_test","NOT_EVALUATED"),
         "safety_note":"Candidate grid only. Do not publish yarn counts, density or per-yarn accuracy without independent evidence.",
     }

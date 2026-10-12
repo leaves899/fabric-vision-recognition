@@ -112,6 +112,31 @@ class AnnotationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"check_cross_second"):
             validate_annotation(self.root,self.annotation)
 
+    def test_physical_yarn_interval_requires_explicit_manual_count(self):
+        self.annotation["same_family_intervals"]=4
+        self.annotation["same_family_intervals_confirmed"]=True
+        record=validate_annotation(self.root,self.annotation)
+        self.assertEqual(record["same_family_intervals"],4)
+        self.assertTrue(record["same_family_intervals_confirmed"])
+
+    def test_cannot_claim_spacing_without_confirmation(self):
+        self.annotation["same_family_intervals"]=4
+        with self.assertRaisesRegex(ValueError,"confirmation"):
+            validate_annotation(self.root,self.annotation)
+
+    def test_manual_interval_count_rejects_zero_and_boolean(self):
+        self.annotation["same_family_intervals_confirmed"]=True
+        for bad in [0, True, 201, -1, 1.5]:
+            with self.subTest(bad=bad):
+                self.annotation["same_family_intervals"]=bad
+                with self.assertRaises(ValueError):
+                    validate_annotation(self.root,self.annotation)
+
+    def test_unconfirmed_legacy_file_stays_compatible(self):
+        record=validate_annotation(self.root,self.annotation)
+        self.assertIsNone(record["same_family_intervals"])
+        self.assertFalse(record["same_family_intervals_confirmed"])
+
     def test_no_reviewed_label_returns_not_evaluated(self):
         with tempfile.TemporaryDirectory() as td:
             summary = run(self.root, Path(td), ["T001"], 1)

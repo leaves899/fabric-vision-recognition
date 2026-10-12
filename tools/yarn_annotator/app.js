@@ -5,7 +5,7 @@ const COLORS={reference:"#ff9a27",check_same:"#18d294",holdout_same:"#fff068",ch
 const LABELS={reference:"A第一根校准纱线",check_same:"A第二根校准纱线",holdout_same:"A第三根独立验收纱线",check_cross:"B第一根校准纱线",check_cross_second:"B第二根校准纱线"};
 let all=[], visible=[], current=null, selected="reference", data=null, drawn=[];
 function show(msg,good=true){el("message").textContent=msg;el("message").className=good?"good":"bad";}
-function blank(row){return {schema_version:"1.0",sample_id:row.sample_id,image_path:row.image_path,reference_confirmed:false,reference_family:"UNKNOWN",identity_confirmed:false,review_state:"DRAFT",eligibility:"UNREVIEWED",segments:{reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},notes:""};}
+function blank(row){return {schema_version:"1.0",sample_id:row.sample_id,image_path:row.image_path,reference_confirmed:false,reference_family:"UNKNOWN",identity_confirmed:false,review_state:"DRAFT",eligibility:"UNREVIEWED",same_family_intervals:null,same_family_intervals_confirmed:false,cross_family_intervals:null,cross_family_intervals_confirmed:false,segments:{reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},notes:""};}
 function axis(pts){if(!pts||pts.length!==2)return null;let a=pts[0],b=pts[1];return ((Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI)%180+180)%180;}
 function activeList(){
   visible=el("subset").value==="focus"?all.filter(x=>PRIORITY.includes(x.sample_id)):all.slice();
@@ -69,6 +69,10 @@ function copyToInputs(){
   el("confirmIdentity").checked=data.identity_confirmed===true;
   el("reviewState").value=data.review_state||"DRAFT";
   el("notes").value=data.notes||"";
+  el("aIntervals").value=data.same_family_intervals??"";
+  el("aIntervalsConfirmed").checked=data.same_family_intervals_confirmed===true;
+  el("bIntervals").value=data.cross_family_intervals??"";
+  el("bIntervalsConfirmed").checked=data.cross_family_intervals_confirmed===true;
 }
 async function loadSample(sid){
   let row=all.find(x=>x.sample_id===sid);
@@ -102,6 +106,23 @@ async function save(){
   data.identity_confirmed=el("confirmIdentity").checked;
   data.review_state=el("reviewState").value;
   data.notes=el("notes").value;
+  const countValue=id=>{
+    const raw=el(id).value.trim();
+    return raw===""?null:Number(raw);
+  };
+  data.same_family_intervals=countValue("aIntervals");
+  data.same_family_intervals_confirmed=el("aIntervalsConfirmed").checked;
+  data.cross_family_intervals=countValue("bIntervals");
+  data.cross_family_intervals_confirmed=el("bIntervalsConfirmed").checked;
+  for(const [numberField,checkField] of [
+    ["same_family_intervals","same_family_intervals_confirmed"],
+    ["cross_family_intervals","cross_family_intervals_confirmed"]]){
+    const n=data[numberField];
+    if(n!==null && (!Number.isInteger(n)||n<1||n>200||!data[checkField]))
+      return show("必须填写1～200之间的真实纱距整数并勾选人工逐根确认，或清空该项",false);
+    if(n===null&&data[checkField])
+      return show("勾选确认前必须先填写完整真实纱距数",false);
+  }
   if(data.review_state==="OPERATOR_REVIEWED"&&(!data.reference_confirmed||!data.segments.reference||data.segments.reference.length!==2)){
     return show("必须有一条真实纱线上的完整参考线，并主动勾选确认",false);
   }
