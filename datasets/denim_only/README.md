@@ -6,9 +6,9 @@
 
 `selection.json` 为机器可读的清单：
 
-- `CORE_CLEAN`：**7 张**目视无明显口袋、布边、缝线的牛仔面料近景（T001/T004/T005/T007/D001/D002/D008）。这是画面级筛选，不是经纬方向或纱线真值认证。
+- `CORE_CLEAN`：**10 张**目视无明显口袋、布边、缝线的牛仔面料近景（T001/T004/T005/T007/D001/D002/D008）。这是画面级筛选，不是经纬方向或纱线真值认证。
 - `CROP_REQUIRED`：**4 张**（D003/D004/D006/D007），原图出现侧边或横向缝线，清单只记录建议的去干扰裁剪范围，**未执行/校验精确 ROI 裁剪**。未裁剪前不得进入纯面料训练集。
-- `AUXILIARY`：**2 张**（T006 单图正反面对照、D009 显微镜照片），不参与核心准确率统计。
+- `AUXILIARY`：**4 张**（T006、D009，以及本轮新增的偏暗 D014、含布边折叠 D015），不参与核心准确率统计。
 - `EXCLUDED_COMPLEX`：**2 张**（D005 口袋、D010 缝线占比高且分辨率低），按“不收太繁复照片”的标准剔除正式测试。
 - `THUMBNAIL_VISUAL_SCREENED`：已经基于缩略图进行缝线/口袋/织物主体预筛，**不代表物理纱线标注完成**。要形成经纬方向真值，需基于原图坐标选取同一根清晰真实纱线上相隔 ≥20 像素的两个点，人工确认经/纬身份后再生成 V5 所需 JSON。
 - `collection_group`：来源相同或可能属于相同面料摄影系列的图片按组处理；尤其 `NIJAKI-WORN-DENIM-SERIES` 需整体分配至同一 DEV/VALIDATION/TEST，避免泄露。
@@ -30,3 +30,7 @@
 5. 仅当实物 5 cm 标定框与布同平面、人工测得真实经纬密后，才对 8、9 项进行计量评估。
 
 源图、许可及作者保留在 [sources.json](../public_samples/sources.json)，同仓库原始图由 [同步状态](../public_samples/sync_status.json) 判断是否下载完成。
+
+## 最新摄影样本
+
+D011–D015 均来自 Wikimedia Commons 上注明摄影者和再使用许可的照片。视觉缩略图检查后，D011/D012/D013 暂入 `CORE_CLEAN`，D014（过暗）、D015（布边折叠）归入 `AUXILIARY`。D011 是 Wikimedia 官方3840px衍生文件而非原始91MB巨幅影像。完整图片及原始URL以 [sources.json](../public_samples/sources.json) 为准，机器可读筛选名单为 [selection.json](selection.json)。
