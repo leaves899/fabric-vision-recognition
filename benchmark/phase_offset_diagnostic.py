@@ -267,6 +267,10 @@ def main(argv=None):
         "safety_note":"Candidate grid only. Do not publish yarn counts, density or per-yarn accuracy without independent evidence.",
     }
     (output.parent/"v6_candidate_tracks.json").write_text(json.dumps(payload,ensure_ascii=False)+"\n",encoding="utf-8")
+    if ready_a:
+        from benchmark.yarn_v6_visuals import save_compare
+        save_compare(image,v4["first"],v4["second"],corrected_a,corrected_b,
+                     annotation,offset,output.parent,b_calibrated=ready_b)
     output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))
     return 0
