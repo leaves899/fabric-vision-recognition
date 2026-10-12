@@ -41,12 +41,14 @@ class PhaseDiagnosticTests(unittest.TestCase):
         self.assertAlmostEqual(result["reference"]["distance_as_fraction_of_candidate_pitch"],.5)
         self.assertTrue(result["reference"]["possible_gap_phase"])
         self.assertTrue(result["check_same"]["possible_gap_phase"])
+        self.assertTrue(result["reference"]["spatial_misalignment_review"])
 
     def test_correct_center_is_not_flagged(self):
         result=evaluate_tracks(self.on_yarn,self.center_tracks)
         self.assertLess(result["reference"]["median_min_distance_px"],.01)
         self.assertFalse(result["reference"]["possible_gap_phase"])
         self.assertFalse(result["check_same"]["possible_gap_phase"])
+        self.assertFalse(result["reference"]["spatial_misalignment_review"])
 
     def test_independent_check_absence_explicit(self):
         obj={"segments":{"reference":[[20,20],[190,20]],"check_same":None}}
