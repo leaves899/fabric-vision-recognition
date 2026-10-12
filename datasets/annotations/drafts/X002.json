@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "X002",
+  "fabric_id": "PUBLIC-X002",
+  "image_path": "datasets/public_samples/images/complex/02_five_wale_corduroy_macro.jpg",
+  "image_sha256": "007a02b231175643ec80f24cee827e6a17142acd9a514ded374bef548cf9199e",
+  "image_width": 3872,
+  "image_height": 2592,
+  "eligibility": "NEGATIVE_NON_DENIM",
+  "review_state": "DRAFT",
+  "reference_confirmed": false,
+  "reference_family": "UNKNOWN",
+  "identity_confirmed": false,
+  "segments": {
+    "reference": null,
+    "check_same": null,
+    "check_cross": null
+  },
+  "notes": "",
+  "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
+  "updated_at": "2026-10-12T10:42:50.920514+00:00"
+}

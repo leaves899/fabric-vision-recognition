@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "U001",
+  "fabric_id": "PUBLIC-U001",
+  "image_path": "datasets/public_samples/images/unknown/01_fabric_close_up.jpg",
+  "image_sha256": "921b6378e6bdd1183b3894a44f5616a606877156a7b53c21b6bdf9128070a2ce",
+  "image_width": 3000,
+  "image_height": 4000,
+  "eligibility": "UNREVIEWED",
+  "review_state": "OPERATOR_REVIEWED",
+  "reference_confirmed": true,
+  "reference_family": "UNKNOWN",
+  "identity_confirmed": false,
+  "segments": {
+    "reference": [
+      [
+        1669.83,
+        1090.341
+      ],
+      [
+        1317.102,
+        415.796
+      ]
+    ],
+    "check_same": [
+      [
+        1875.284,
+        1046.705
+      ],
+      [
+        1497.102,
+        368.523
+      ]
+    ],
+    "check_cross": null
+  },
+  "notes": "",
+  "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
+  "updated_at": "2026-10-12T10:42:41.349622+00:00"
+}
