@@ -10,7 +10,7 @@ from pathlib import Path
 from PIL import Image, ImageOps, ImageDraw
 
 BASE = Path(__file__).resolve().parents[1] / "datasets" / "public_samples"
-TARGETS = ["T001", "T004", "T005", "T006", "T007"] + [f"D{i:03d}" for i in range(1, 11)]
+TARGETS = ["T001", "T004", "T005", "T006", "T007"] + [f"D{i:03d}" for i in range(1, 16)]
 OUT = BASE / "review_previews"
 OUT.mkdir(parents=True, exist_ok=True)
 items = json.loads((BASE / "sources.json").read_text(encoding="utf-8"))["items"]
