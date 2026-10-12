@@ -1,6 +1,6 @@
 # 公开织物近景样本集
 
-**27 张真实摄影照片，原始 JPG 已入库**。用于十项织物识别功能的开发调试、算法回归和跨材质泛化评估；图片不等于带经纬身份和组织真值的标准数据集。
+**27 张真实摄影照片，保留来源原始图像文件**。用于十项织物识别功能的开发调试、算法回归和跨材质泛化评估；图片不等于带经纬身份和组织真值的标准数据集。
 
 - 图片路径：`images/`
 - 原始文件及署名/许可：[sources.json](./sources.json)
@@ -94,10 +94,10 @@
 ```bash
 python -m pip install Pillow
 python scripts/fetch_public_samples.py
-sha256sum -c datasets/public_samples/checksums.sha256
+cd datasets/public_samples && sha256sum -c checksums.sha256
 ```
 
-最后一条校验命令应在 `datasets/public_samples/` 目录内运行，或切换过去再运行。
+其中少数手机 JPG 采用 MPO（多图像 JPEG 兼容容器）编码，校验脚本接受 JPEG/MPO 并保持原始字节；可按需另生成 JPEG 兼容衍生版，不能将其宣称为未改动原图。
 
 ## 版权要求
 
