@@ -49,8 +49,8 @@ class MetrologyTest(unittest.TestCase):
         self.assertEqual(result["geometry"]["frame_mm"],50)
         self.assertEqual(result["ten_parameters"]["01"]["status"],"CANDIDATE")
         self.assertEqual(result["ten_parameters"]["08"]["status"],"CANDIDATE",str(result["axes"]["A"]))
-        self.assertAlmostEqual(result["ten_parameters"]["08"]["value"],200/16,delta=1.2)
-        self.assertAlmostEqual(result["ten_parameters"]["09"]["value"],200/24,delta=1.2)
+        self.assertAlmostEqual(result["ten_parameters"]["08"]["value"],128/16,delta=.6)
+        self.assertAlmostEqual(result["ten_parameters"]["09"]["value"],128/24,delta=.6)
         self.assertEqual(result["ten_parameters"]["05"]["status"],"UNAVAILABLE")
         self.assertEqual(result["ten_parameters"]["07"]["status"],"UNAVAILABLE")
         self.assertTrue(result["candidate_only"])
@@ -70,6 +70,24 @@ class MetrologyTest(unittest.TestCase):
         self.assertEqual(result["ten_parameters"]["08"]["status"],"UNAVAILABLE")
         self.assertIn("AUTO_DIRECTION_NOT_VALIDATED",result["failure_reasons"])
 
+    def test_rotations_0_90_180_270(self):
+        original=weave()
+        for deg,points,expected in [
+            (0,[[90,200],[450,200]],0),
+            (90,[[200,90],[200,450]],90),
+            (180,[[90,200],[450,200]],0),
+            (270,[[200,90],[200,450]],90)]:
+            rotated=original.rotate(deg,expand=False)
+            result=measure(rotated,points,True,corners(640),True,"A")
+            self.assertAlmostEqual(result["ten_parameters"]["01"]["value"],expected,delta=.1)
+            self.assertAlmostEqual(result["axes"]["A"]["pitch_px"],16,delta=2)
+
+    def test_determinism(self):
+        im=weave()
+        a=measure(im,[[90,200],[450,200]],True,corners(640),True,"A")
+        b=measure(im,[[90,200],[450,200]],True,corners(640),True,"A")
+        self.assertEqual(a,b)
+
     def test_rotated_90(self):
         img=weave().rotate(90,expand=False)
         result=measure(img,[[200,90],[200,450]],True,corners(640),True,"A")
@@ -82,6 +100,8 @@ class MetrologyTest(unittest.TestCase):
         result=measure(img)
         self.assertEqual(result["status"],"REJECTED")
         self.assertIn("LOW_CONTRAST",result["failure_reasons"])
+        self.assertEqual(len(result["ten_parameters"]),10)
+        self.assertTrue(all(v["status"]=="UNAVAILABLE" for v in result["ten_parameters"].values()))
 
     def test_invalid_geometry_rejected(self):
         with self.assertRaises(ValueError):

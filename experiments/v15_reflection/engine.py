@@ -268,7 +268,12 @@ def measure(image, reference_points=None, confirm_reference=False,
         raise ValueError("warp_family must be A, B or absent")
     quality=gate2(image)
     output={"schema_version":"1.0","algorithm":VERSION, "source":"INDEPENDENT_V15_REFLECTION",
-            "candidate_only":True,"gate2":quality,"ten_parameters":{},
+            "candidate_only":True,"gate2":quality,"ten_parameters": {str(i).zfill(2): {"name": name,
+                "status": "UNAVAILABLE", "value": None}
+                for i, name in enumerate((
+                    "warp_angle","weft_angle","warp_arrangement","weft_arrangement",
+                    "warp_width","weft_width","weave","warp_density","weft_density",
+                    "surface_texture_color"),1)},
             "limitations":["reflectance only","no physical yarn instance validation",
                            "perpendicular B is a geometric candidate"]}
     if quality["status"]=="FAIL":
