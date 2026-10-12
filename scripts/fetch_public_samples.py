@@ -3,7 +3,7 @@
 
 Source: datasets/public_samples/sources.json
 Destination: datasets/public_samples/images/
-Only original JPEG bytes from Wikimedia Commons are used.
+Only original JPEG/MPO (multi-picture JPEG) bytes from Wikimedia Commons are used.\nAn MPO is a JPEG-compatible container: its first picture is a JPEG image.
 """
 from __future__ import annotations
 
@@ -49,7 +49,7 @@ def fetch_one(name: str, out: Path) -> None:
                             raise ValueError("image larger than 26 MiB")
                         file.write(chunk)
             with Image.open(tmp) as image:
-                if image.format != "JPEG":
+                # An MPO has a valid JPEG first image plus MPF metadata.\n                # Keeping the original bytes preserves provenance.\n                if image.format not in {"JPEG", "MPO"}:
                     raise ValueError(f"unexpected format: {image.format}")
                 if min(image.size) < 400:
                     raise ValueError(f"image too small for testing: {image.size}")
@@ -78,7 +78,7 @@ def main() -> None:
         if not dest.is_file():
             fetch_one(entry["commons_file"], dest)
         with Image.open(dest) as image:
-            if image.format != "JPEG":
+            if image.format not in {"JPEG", "MPO"}:
                 raise ValueError(f"invalid image file: {dest}")
             width, height = image.size
             image.verify()
