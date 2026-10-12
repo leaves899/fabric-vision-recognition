@@ -213,6 +213,13 @@ def main(argv=None):
     second_anchor=(np.asarray(annotation["segments"]["check_same"],float)-np.asarray(offset,float)).tolist() if annotation["segments"]["check_same"] else None
     candidate_a, anchor_report=adjust_first_family(v4["first"],first_anchor,second_anchor)
     report["v6_candidate_a_anchor"]=anchor_report
+    if second_anchor:
+        from benchmark.yarn_pitch_calibration import two_anchor_correct
+        dual_corrected, dual_report = two_anchor_correct(v4["first"],first_anchor,second_anchor)
+        report["v6_dual_physical_yarn_calibration"]=dual_report
+        if dual_report["status"]=="TWO_ANCHOR_CANDIDATE_GRID":
+            render_position_overlay(image,dual_corrected,annotation,offset,
+                                    output.parent/"phase_and_pitch_anchored_candidate.jpg")
     report["v6_family_b"]="NOT_CORRECTED_NO_CONFIRMED_CROSS_ANCHOR"
     if anchor_report["status"] in ("ANCHORED_CANDIDATE_A","ALREADY_ALIGNED_A"):
         render_position_overlay(image,candidate_a,annotation,offset,output.parent/"phase_anchored_candidate.jpg")
