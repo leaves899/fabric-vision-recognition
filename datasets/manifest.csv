@@ -16,13 +16,31 @@ PUBLIC-T005,T005,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill
 PUBLIC-T006,T006,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/06_wranger_broken_twill_inside_outside.jpg,,NONE,NO,source_id=T006; weak_weave=broken_twill; NOT_GROUND_TRUTH
 PUBLIC-T007,T007,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/07_jeans_fabric.jpg,,NONE,NO,source_id=T007; weak_weave=twill; NOT_GROUND_TRUTH
 PUBLIC-T008,T008,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/08_chino_pants_closeup.jpg,,NONE,NO,source_id=T008; weak_weave=unknown; NOT_GROUND_TRUTH
-PUBLIC-GOLD-TWILL,T009,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/09_gold_twill_front.jpg,,NONE,NO,source_id=T009; weak_weave=twill; NOT_GROUND_TRUTH; source_pairs_unregistered_same_position
-PUBLIC-GOLD-TWILL,T010,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/10_gold_twill_back.jpg,,NONE,NO,source_id=T010; weak_weave=twill; NOT_GROUND_TRUTH; source_pairs_unregistered_same_position
+PUBLIC-GOLD-TWILL,T009,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/09_gold_twill_front.jpg,,NONE,NO,source_id=T009; weak_weave=twill; NOT_GROUND_TRUTH; potential_face_pair_no_registration
+PUBLIC-GOLD-TWILL,T010,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/10_gold_twill_back.jpg,,NONE,NO,source_id=T010; weak_weave=twill; NOT_GROUND_TRUTH; potential_face_pair_no_registration
 PUBLIC-H001,H001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/herringbone/01_harris_12x12_herringbone.jpg,,NONE,NO,source_id=H001; weak_weave=herringbone; NOT_GROUND_TRUTH
 PUBLIC-H002,H002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/herringbone/02_herringbone_pattern_cloth.jpg,,NONE,NO,source_id=H002; weak_weave=herringbone; NOT_GROUND_TRUTH
-PUBLIC-GOLD-SATIN,S001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/satin/01_gold_satin_front.jpg,,NONE,NO,source_id=S001; weak_weave=satin; NOT_GROUND_TRUTH; source_pairs_unregistered_same_position
-PUBLIC-GOLD-SATIN,S002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/satin/02_gold_satin_back.jpg,,NONE,NO,source_id=S002; weak_weave=satin; NOT_GROUND_TRUTH; source_pairs_unregistered_same_position
+PUBLIC-GOLD-SATIN,S001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/satin/01_gold_satin_front.jpg,,NONE,NO,source_id=S001; weak_weave=satin; NOT_GROUND_TRUTH; potential_face_pair_no_registration
+PUBLIC-GOLD-SATIN,S002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/satin/02_gold_satin_back.jpg,,NONE,NO,source_id=S002; weak_weave=satin; NOT_GROUND_TRUTH; potential_face_pair_no_registration
 PUBLIC-X001,X001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/01_corduroy_shirt.jpg,,NONE,NO,source_id=X001; weak_weave=corduroy; NOT_GROUND_TRUTH
 PUBLIC-X002,X002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/02_five_wale_corduroy_macro.jpg,,NONE,NO,source_id=X002; weak_weave=corduroy; NOT_GROUND_TRUTH
 PUBLIC-X003,X003,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/03_prince_of_wales_plaid.jpg,,NONE,NO,source_id=X003; weak_weave=patterned_woven; NOT_GROUND_TRUTH
 PUBLIC-X004,X004,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/04_woven_coverlet.jpg,,NONE,NO,source_id=X004; weak_weave=complex_woven; NOT_GROUND_TRUTH
+PUBLIC-P009,P009,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/09_blue_cordura_closeup.jpg,,NONE,NO,source_id=P009; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P010,P010,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/10_linen_canvas_reverse.jpg,,NONE,NO,source_id=P010; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P011,P011,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/11_loose_plain_weave.jpg,,NONE,NO,source_id=P011; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P012,P012,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/12_plain_weave_dyed_yarns.jpg,,NONE,NO,source_id=P012; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P013,P013,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/13_plain_weave_pink.jpg,,NONE,NO,source_id=P013; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P014,P014,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/14_selvage_edge.jpg,,NONE,NO,source_id=P014; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P015,P015,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/15_glass_fabric_with_ruler.jpg,,NONE,NO,source_id=P015; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P016,P016,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/16_fiberglass_high_density_scan.jpg,,NONE,NO,source_id=P016; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P017,P017,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/17_habutae_silk.jpg,,NONE,NO,source_id=P017; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P018,P018,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/18_iphone_cotton_duck_with_logo.jpg,,NONE,NO,source_id=P018; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P019,P019,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/19_cotton_painter_canvas.jpg,,NONE,NO,source_id=P019; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-T011,T011,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/11_irish_tweed_phone_2.jpg,,NONE,NO,source_id=T011; weak_weave=twill_candidate; NOT_GROUND_TRUTH
+PUBLIC-T012,T012,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/12_irish_tweed_phone_3.jpg,,NONE,NO,source_id=T012; weak_weave=twill_candidate; NOT_GROUND_TRUTH
+PUBLIC-H003,H003,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/herringbone/03_herringbone_twill_jacket.jpg,,NONE,NO,source_id=H003; weak_weave=herringbone; NOT_GROUND_TRUTH
+PUBLIC-S003,S003,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/satin/03_fancy_satin_lyons_historic.jpg,,NONE,NO,source_id=S003; weak_weave=satin; NOT_GROUND_TRUTH
+PUBLIC-S004,S004,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/satin/04_warp_faced_satin_historic.jpg,,NONE,NO,source_id=S004; weak_weave=satin; NOT_GROUND_TRUTH
+PUBLIC-X005,X005,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/05_metal_thread_brocade_met.jpg,,NONE,NO,source_id=X005; weak_weave=brocade; NOT_GROUND_TRUTH
+PUBLIC-X006,X006,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/06_brocade_met_2823.jpg,,NONE,NO,source_id=X006; weak_weave=brocade; NOT_GROUND_TRUTH
