@@ -1,28 +1,46 @@
 fabric_id,position_id,face,review_status,gt_source,warp_axis_deg,weft_axis_deg,warp_density_per_cm,weft_density_per_cm,weave_type,notes
-PUBLIC-P001,P001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-P002,P002,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-P003,P003,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-T001,T001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-T002,T002,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-T003,T003,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-T004,T004,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-U001,U001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-P004,P004,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-P005,P005,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-P006,P006,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-P007,P007,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-P008,P008,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-T005,T005,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-T006,T006,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-T007,T007,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-T008,T008,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-GOLD-TWILL,T009,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-GOLD-TWILL,T010,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-H001,H001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-H002,H002,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-GOLD-SATIN,S001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-GOLD-SATIN,S002,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-X001,X001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-X002,X002,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-X003,X003,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
-PUBLIC-X004,X004,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave label is weak; manual physical GT absent
+PUBLIC-P001,P001,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P002,P002,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P003,P003,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T001,T001,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T002,T002,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T003,T003,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T004,T004,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-U001,U001,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P004,P004,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P005,P005,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P006,P006,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P007,P007,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P008,P008,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T005,T005,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T006,T006,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T007,T007,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T008,T008,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-GOLD-TWILL,T009,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-GOLD-TWILL,T010,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-H001,H001,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-H002,H002,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-GOLD-SATIN,S001,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-GOLD-SATIN,S002,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-X001,X001,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-X002,X002,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-X003,X003,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-X004,X004,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P009,P009,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P010,P010,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P011,P011,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P012,P012,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P013,P013,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P014,P014,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P015,P015,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P016,P016,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P017,P017,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P018,P018,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-P019,P019,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T011,T011,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-T012,T012,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-H003,H003,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-S003,S003,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-S004,S004,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-X005,X005,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
+PUBLIC-X006,X006,UNKNOWN,NOT_EVALUATED,,,,,,,No independent physically verified ground truth
