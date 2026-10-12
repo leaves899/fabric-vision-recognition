@@ -1,0 +1,43 @@
+# Step 0 — 数据集与人工真值（普通手机照片兼容模式）
+
+本目录当前只有**空模板**，没有杜撰样布、人工密度、组织或经纬方向真值；不要将已有 V4/V5 候选轨迹当人工真值。
+
+## 1. 采集与标注口径
+
+- 每张普通手机照片独立记录 `fabric_id + position_id + face`。正反面允许不配准，也不要求透射图。
+- `face` 为 `FRONT`/`BACK`；`capture_mode` 为 `PHONE_REFLECTION` 或 `PHONE_UNKNOWN_LIGHTING`；`calibration_type` 可为 `NONE` 或 `FRAME_5CM`。
+- 有实体框时，只有核验**与布料同平面、内侧 5 cm × 5 cm** 的四角后，才能把 `frame_confirmed` 设为 `YES`。本表中的标记不能代替 V5 输出 JSON 的实际标定证据。
+- 每个 `fabric_id` 必须全部放在同一个 `split`（`DEV` / `VALIDATION` / `TEST`），包括不同部位、正反面和旋转图；禁止泄露。
+- 方向角 `warp_axis_deg` 和 `weft_axis_deg` 为各自拍摄照片中的无向图像轴角，范围 `[0,180)`，原点左上、x 向右、y 向下。**反面照片旋转后不能直接沿用正面角度。**
+- 纱线身份必须人工确认；密度单位为**根/cm**。人工计数时记录截线长度和方法于 `notes`，并使用独立来源审查。组织/纱宽可先留空。
+- `review_status` 为 `NOT_EVALUATED` / `DRAFT` / `CONFIRMED`。只有 `CONFIRMED` 且写明 `gt_source` 的真值参与指标评估，未确认项仍留空。
+
+## 2. CSV 字段
+
+`manifest.csv`：
+
+| 字段 | 含义 |
+|---|---|
+| fabric_id / position_id / face | 唯一图片位置与拍摄面标识 |
+| split | 按布料划分开发/验证/测试集 |
+| capture_mode | 普通手机照片拍摄模式 |
+| image_path | 仓库根目录相对路径，原始照片 |
+| result_json_path | 可空；保存的 V5 `/api/analyze` 响应 `result` 或裸 JSON，**不自动构造参考点** |
+| calibration_type / frame_confirmed | 有无已确认 5 cm 实体内框 |
+| notes | 人工备注 |
+
+`ground_truth.csv`：同一个三字段键、审核状态、来源、两方向角、两项实际经纬密度、组织和备注。可先填写图像目录与标签状态，后补确认真值。
+
+## 3. 执行命令（仓库根目录）
+
+```bash
+python -m benchmark.dataset --check-images
+python -m unittest discover -s benchmark/tests -v
+python -m benchmark.runner --out experiments/step0-baseline
+```
+
+前两条检测数据完整性和单元测试；最后一条将 V5 JSON 候选对齐到人工真值，并生成 `benchmark.csv`、`benchmark_summary.json` 与 `benchmark_summary.md`。没有确认的人工真值时返回 `NOT_EVALUATED` 并用退出码 `3` 表示**尚未形成可评估结果**，这不是算法失败也不能声称已通过验收。
+
+`runner` 不调用 V4，不会自动生成“同一根纱上的人工两点”，也不会把纹理方向转换为经纬真实方向。方向缺少人工经纬身份则拒评；密度还要求 V5 结果真实确认的标定框。输出为**候选误差**，并不意味着逐根纱线已证实。
+
+建议逐步采集 30–50 块开发样布、另留约 20 块独立验证样布（V1.5 研发建议），不必等齐才搭框架。真实样布及客户图片未经许可不要上传到公开仓库。
