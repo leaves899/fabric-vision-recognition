@@ -5,16 +5,26 @@ on:
   pull_request:
 
 jobs:
-  step0-unit:
+  step0-unit-and-public-photo-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate registered image files and GT contract
+      - name: Install Pillow for photo audit
+        run: python -m pip install Pillow
+      - name: Validate registered image files and ground-truth contract
         run: python -m benchmark.dataset --check-images
-      - name: Preview incremental public sample intake (read-only)
+      - name: Preview incremental intake without writing existing manual records
         run: python -m benchmark.public_intake
-      - name: Run stdlib benchmark tests (synthetic fixtures only)
+      - name: Run synthetic unit tests
         run: python -m unittest discover -s benchmark/tests -v
+      - name: Audit native images and generate human annotation queue
+        run: python -m benchmark.photo_audit --out experiments/public-photo-audit
+      - name: Upload image audit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-photo-audit
+          path: experiments/public-photo-audit/
+          retention-days: 30
