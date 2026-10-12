@@ -20,9 +20,9 @@ GROUND_TRUTH_FIELDS = (
     "warp_axis_deg", "weft_axis_deg", "warp_density_per_cm", "weft_density_per_cm",
     "weave_type", "notes",
 )
-FACES = {"FRONT", "BACK"}
+FACES = {"FRONT", "BACK", "UNKNOWN"}
 SPLITS = {"DEV", "VALIDATION", "TEST"}
-CAPTURE_MODES = {"PHONE_REFLECTION", "PHONE_UNKNOWN_LIGHTING"}
+CAPTURE_MODES = {"PHONE_REFLECTION", "PHONE_UNKNOWN_LIGHTING", "PUBLIC_UNKNOWN"}
 CALIBRATION_TYPES = {"NONE", "FRAME_5CM"}
 REVIEW_STATUSES = {"NOT_EVALUATED", "DRAFT", "CONFIRMED"}
 KEY = ("fabric_id", "position_id", "face")
@@ -69,6 +69,8 @@ def validate(manifest: list[dict[str, str]], ground_truth: list[dict[str, str]],
         if row["face"] not in FACES: errors.append(f"manifest:{i}: invalid face")
         if row["split"] not in SPLITS: errors.append(f"manifest:{i}: invalid split")
         if row["capture_mode"] not in CAPTURE_MODES: errors.append(f"manifest:{i}: invalid capture mode")
+        if row["capture_mode"] == "PUBLIC_UNKNOWN" and row["face"] != "UNKNOWN":
+            warnings.append(f"manifest:{i}: public photo face metadata requires explicit confirmation")
         if row["calibration_type"] not in CALIBRATION_TYPES: errors.append(f"manifest:{i}: invalid calibration type")
         if row["frame_confirmed"] not in {"YES", "NO"}: errors.append(f"manifest:{i}: frame_confirmed must be YES/NO")
         if row["frame_confirmed"] == "YES" and row["calibration_type"] != "FRAME_5CM":

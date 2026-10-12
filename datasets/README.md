@@ -41,3 +41,22 @@ python -m benchmark.runner --out experiments/step0-baseline
 `runner` 不调用 V4，不会自动生成“同一根纱上的人工两点”，也不会把纹理方向转换为经纬真实方向。方向缺少人工经纬身份则拒评；密度还要求 V5 结果真实确认的标定框。输出为**候选误差**，并不意味着逐根纱线已证实。
 
 建议逐步采集 30–50 块开发样布、另留约 20 块独立验证样布（V1.5 研发建议），不必等齐才搭框架。真实样布及客户图片未经许可不要上传到公开仓库。
+
+## 4. 公开照片的增量入库（研发弱标签，不是人工 Ground Truth）
+
+本项目中的 Wikimedia 来源照片与真实手机正反面照片应区别管理。公开图片不保证拍摄面、真实经纬身份、同一块布料配对、5 cm 实体框和物理长度。不要因为来源标题写着“平纹/斜纹”，就填写 `ground_truth.csv` 的 `weave_type`，更不能据此生成经纬密度。
+
+当前数据契约增加了：`face=UNKNOWN`、`capture_mode=PUBLIC_UNKNOWN`。来源页面的候选组织只写在 `manifest.csv.notes` 中，用于**分组分析及主动挑选失败样本**，不作为 GT。
+
+在仓库根目录运行：
+
+```bash
+python -m benchmark.public_intake              # 预览，默认不改文件
+python -m benchmark.public_intake --write      # 仅登记磁盘上已下载的照片，保留已有人工作业
+python -m benchmark.dataset --check-images    # 逐路径验证文件存在、表头与划分
+python -m benchmark.runner --out experiments/public-dev
+```
+
+未下载的来源记录会出现在 `pending_image_download`；它们**不**进入 `manifest.csv`。重复执行 `--write` 应当幂等，不覆盖已有人工标注或样本划分。新增照片应先核验图片来源、许可和实物真实性，再执行导入与提交。不可将公开来源的弱标签当作分类准确率真值；若没有人工参考 P1/P2 与 V5 结果 JSON，则 Benchmark 只能正确地报告 `NOT_EVALUATED`。
+
+详见 `docs/benchmarks/PUBLIC_PHOTO_INTAKE.md`。

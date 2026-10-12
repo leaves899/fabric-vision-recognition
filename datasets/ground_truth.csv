@@ -1,1 +1,9 @@
 fabric_id,position_id,face,review_status,gt_source,warp_axis_deg,weft_axis_deg,warp_density_per_cm,weft_density_per_cm,weave_type,notes
+PUBLIC-P001,P001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave metadata is weak label only; human physical GT absent
+PUBLIC-P002,P002,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave metadata is weak label only; human physical GT absent
+PUBLIC-P003,P003,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave metadata is weak label only; human physical GT absent
+PUBLIC-T001,T001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave metadata is weak label only; human physical GT absent
+PUBLIC-T002,T002,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave metadata is weak label only; human physical GT absent
+PUBLIC-T003,T003,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave metadata is weak label only; human physical GT absent
+PUBLIC-T004,T004,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave metadata is weak label only; human physical GT absent
+PUBLIC-U001,U001,UNKNOWN,NOT_EVALUATED,,,,,,,Source weave metadata is weak label only; human physical GT absent

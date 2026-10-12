@@ -1,1 +1,9 @@
 fabric_id,position_id,face,split,capture_mode,image_path,result_json_path,calibration_type,frame_confirmed,notes
+PUBLIC-P001,P001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/01_simple_textile_magnified.jpg,,NONE,NO,source_id=P001; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P002,P002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/02_plain_weaving_detail.jpg,,NONE,NO,source_id=P002; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P003,P003,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/03_closeup_plain_weave.jpg,,NONE,NO,source_id=P003; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-T001,T001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/01_denim_closeup.jpg,,NONE,NO,source_id=T001; weak_weave=twill; NOT_GROUND_TRUTH
+PUBLIC-T002,T002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/02_tartan_2x2_closeup.jpg,,NONE,NO,source_id=T002; weak_weave=twill_2_2; NOT_GROUND_TRUTH
+PUBLIC-T003,T003,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/03_twill_blanket.jpg,,NONE,NO,source_id=T003; weak_weave=twill; NOT_GROUND_TRUTH
+PUBLIC-T004,T004,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/04_phone_denim_detail.jpg,,NONE,NO,source_id=T004; weak_weave=twill; NOT_GROUND_TRUTH
+PUBLIC-U001,U001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/unknown/01_fabric_close_up.jpg,,NONE,NO,source_id=U001; weak_weave=unknown; NOT_GROUND_TRUTH
