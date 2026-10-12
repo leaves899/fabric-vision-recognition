@@ -206,6 +206,24 @@ def main(argv=None):
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     render_position_overlay(image, v4["first"], annotation, offset, output.parent/"position_overlay.jpg")
+    # V6 experiment: derive phase only from the INPUT real-yarn reference.
+    # The distinct second segment is held out and reported, never used to fit.
+    from benchmark.yarn_phase_anchor import adjust_first_family
+    first_anchor=(np.asarray(annotation["segments"]["reference"],float)-np.asarray(offset,float)).tolist()
+    second_anchor=(np.asarray(annotation["segments"]["check_same"],float)-np.asarray(offset,float)).tolist() if annotation["segments"]["check_same"] else None
+    candidate_a, anchor_report=adjust_first_family(v4["first"],first_anchor,second_anchor)
+    report["v6_candidate_a_anchor"]=anchor_report
+    report["v6_family_b"]="NOT_CORRECTED_NO_CONFIRMED_CROSS_ANCHOR"
+    if anchor_report["status"] in ("ANCHORED_CANDIDATE_A","ALREADY_ALIGNED_A"):
+        render_position_overlay(image,candidate_a,annotation,offset,output.parent/"phase_anchored_candidate.jpg")
+    # Optional B-family physical reference is a SEPARATE operator input;
+    # it cannot be invented from visual twill periodicity.
+    if annotation["segments"]["check_cross"]:
+        cross=(np.asarray(annotation["segments"]["check_cross"],float)-np.asarray(offset,float)).tolist()
+        candidate_b,b_report=adjust_first_family(v4["second"],cross)
+        report["v6_candidate_b_anchor"]=b_report
+        report["v6_family_b"]="ANCHORED_FROM_OPERATOR_CROSS_REFERENCE" if b_report["status"].startswith(("ANCHORED","ALREADY")) else "ABSTAINED"
+    output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))
     return 0
 
