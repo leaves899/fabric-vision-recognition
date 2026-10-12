@@ -29,15 +29,18 @@ USER_AGENT = (
 )
 
 
-def fetch_one(name: str, out: Path) -> None:
-    url = "https://commons.wikimedia.org/wiki/Special:FilePath/" + quote(name, safe="")
+def fetch_one(name: str, out: Path, *, image_url: str | None = None) -> None:
+    url = image_url or ("https://commons.wikimedia.org/wiki/Special:FilePath/" + quote(name, safe=""))
+    parsed = urlparse(url)
+    if parsed.scheme != "https" or parsed.hostname not in {"commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org"}:
+        raise ValueError("unapproved Wikimedia image source URL")
     last_error = None
     for attempt in range(3):
         try:
             req = Request(url, headers={"User-Agent": USER_AGENT})
             with urlopen(req, timeout=90) as response:
                 host = urlparse(response.geturl()).hostname or ""
-                if host not in {"commons.wikimedia.org", "upload.wikimedia.org"}:
+                if host not in {"commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org"}:
                     raise ValueError(f"unexpected image host: {host}")
                 if "image" not in response.headers.get("Content-Type", "").lower():
                     raise ValueError(f"not an image: {response.headers.get('Content-Type')}")
@@ -84,7 +87,7 @@ def main() -> None:
             if blocked:
                 continue
             try:
-                fetch_one(entry["commons_file"], dest)
+                fetch_one(entry["commons_file"], dest, image_url=entry.get("download_url"))
             except RuntimeError as exc:
                 if isinstance(exc.__cause__, HTTPError) and exc.__cause__.code == 429:
                     blocked = True
