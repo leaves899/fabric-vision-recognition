@@ -75,6 +75,16 @@ select{width:100%}
     <button data-mode="check_cross_second">⑤ 正交组第二根</button>
   </div>
   <button id="undo">清除当前类别两点</button>
+  <div style="padding:8px;background:#fff2de;border:1px solid #f2c886;border-radius:6px">
+  <strong>V6.1 防止两条线压在同一根纱线上</strong>
+  <small style="display:block;margin:5px 0">请数清两根同向校准纱线之间有几个完整的纱距。相邻两根填 1，中间隔一根填 2。数不清就留空，程序不进行去重，也不输出可靠计数。</small>
+  <label class="full">两条 A 校准纱线间的真实纱距个数
+    <input id="aIntervals" type="number" min="1" max="200" step="1" placeholder="未确认时留空"></label>
+  <label><input id="aIntervalsConfirmed" type="checkbox">我已逐根核对 A 组真实纱距个数</label>
+  <label class="full">两条 B 正交组校准纱线间的真实纱距个数（可选）
+    <input id="bIntervals" type="number" min="1" max="200" step="1" placeholder="未确认时留空"></label>
+  <label><input id="bIntervalsConfirmed" type="checkbox">我已逐根核对 B 组真实纱距个数</label>
+  </div>
   <div id="angles" class="code">尚未标注</div>
 </section>
 <section class="field">
@@ -111,7 +121,7 @@ select{width:100%}
 </section>
 <section class="field">
   <strong>本轮范围</strong>
-  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。第二根线用于校准，不是独立测试真值；第三根线才是不参与校准的验收参照。每根候选线仍需人工验证实际纱线位置。</small>
+  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。第二根线用于校准，不是独立测试真值；第三根线才是不参与校准的验收参照。未填写并确认真实纱距时，V6.1 不会按候选网格线数推断真实纱线根数。每根候选线仍需人工验证实际纱线位置。</small>
 </section>
 </aside>
 </main>
