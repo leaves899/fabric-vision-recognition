@@ -289,21 +289,25 @@ def measure(image, reference_points=None, confirm_reference=False,
         orientation_source="USER_CONFIRMED_REAL_YARN_REFERENCE"
         jitter=None
     else:
-        direction,jitter=_fft_orientation(roi)
-        orientation_source="AUTO_FFT_UNVERIFIED"
-    if direction is None:
-        output.update(status="REJECTED",failure_reasons=["ORIENTATION_NOT_FOUND"])
-        return output
-    if jitter is not None and jitter>8:
-        output.update(status="REJECTED",failure_reasons=["AUTO_ORIENTATION_UNSTABLE"],
-                      orientation={"source":orientation_source,"candidate_deg":round(direction,3),
-                                   "patch_dispersion_deg":round(jitter,3)})
-        return output
+        # Unlike the old single FFT peak, require two-family orthogonal spectral
+        # and autocorrelation evidence; otherwise do not emit an angle.
+        from experiments.v15_reflection.orient_v2 import propose_axes
+        auto=propose_axes(roi)
+        if auto["status"]!="PROPOSED_NOT_VALIDATED":
+            output.update(status="REJECTED",
+                failure_reasons=["AUTO_DIRECTION_NOT_VALIDATED",
+                                 auto.get("reason") or "AUTO_ORIENTATION_ABSTAINED"],
+                orientation={"source":"AUTO_ORTHOGONAL_FFT_ACF_UNVERIFIED","proposal":auto})
+            return output
+        direction=auto["unlabelled_axes_deg"][0]
+        jitter=None
+        orientation_source="AUTO_ORTHOGONAL_FFT_ACF_UNVERIFIED"
     aa=analyze_axis(roi,direction,scale)
     bb=analyze_axis(roi,(direction+90)%180,scale)
     output["orientation"]={"source":orientation_source,"reference_axis_deg":round(direction,4),
                            "orthogonal_hypothesis_deg":round((direction+90)%180,4),
-                           "patch_dispersion_deg":jitter}
+                           "patch_dispersion_deg":jitter,
+                           "proposal":auto if orientation_source=="AUTO_ORTHOGONAL_FFT_ACF_UNVERIFIED" else None}
     output["axes"]={"A":aa,"B":bb}
     output["surface"]=_color(roi)
     confirmed_reference=orientation_source=="USER_CONFIRMED_REAL_YARN_REFERENCE"
