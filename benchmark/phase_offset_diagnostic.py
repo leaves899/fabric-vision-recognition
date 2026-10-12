@@ -132,7 +132,7 @@ def render_position_overlay(image, tracks, annotation, origin, output_path):
         if len(track) >= 2:
             pts = np.rint(np.asarray(track,float)*factor).astype(np.int32)
             cv2.polylines(preview, [pts], False, (40,60,235), 1, cv2.LINE_AA)
-    for role, color in (("reference",(0,220,255)),("check_same",(255,255,0))):
+    for role, color in (("reference",(0,220,255)),("check_same",(255,255,0)),("holdout_same",(255,0,255))):
         segment = annotation["segments"].get(role)
         if segment:
             pts = projection(segment)
@@ -140,7 +140,7 @@ def render_position_overlay(image, tracks, annotation, origin, output_path):
             for xy in pts:
                 cv2.circle(preview,tuple(xy),4,color,-1,cv2.LINE_AA)
     header = np.zeros((35,preview.shape[1],3),dtype=np.uint8)
-    cv2.putText(header,"RED: V4 A candidate / YELLOW: input real yarn / CYAN: separate check",
+    cv2.putText(header,"RED: V4 A / YELLOW: A1 / CYAN: A2 / MAGENTA: A3 HOLDOUT",
                 (8,24),cv2.FONT_HERSHEY_SIMPLEX,.45,(255,255,255),1,cv2.LINE_AA)
     image_out = np.vstack([header,preview])
     if not cv2.imwrite(str(output_path),image_out):
