@@ -217,6 +217,16 @@ def main(argv=None):
         from benchmark.yarn_pitch_calibration import two_anchor_correct
         dual_corrected, dual_report = two_anchor_correct(v4["first"],first_anchor,second_anchor)
         report["v6_dual_physical_yarn_calibration"]=dual_report
+        # The third marked A-yarn is NEVER used to estimate phase or pitch.
+        holdout=annotation["segments"].get("holdout_same")
+        if holdout:
+            holdout_roi=(np.asarray(holdout,float)-np.asarray(offset,float)).tolist()
+            from benchmark.yarn_phase_anchor import median_distance
+            dual_report["independent_holdout_before_px"]=median_distance(holdout_roi,v4["first"])
+            dual_report["independent_holdout_after_px"]=median_distance(holdout_roi,dual_corrected) if dual_report["status"]=="TWO_ANCHOR_CANDIDATE_GRID" else None
+            dual_report["independent_holdout_test"]="MEASURED_NOT_USED_TO_CALIBRATE"
+        else:
+            dual_report["independent_holdout_test"]="NOT_EVALUATED_NO_THIRD_YARN"
         if dual_report["status"]=="TWO_ANCHOR_CANDIDATE_GRID":
             render_position_overlay(image,dual_corrected,annotation,offset,
                                     output.parent/"phase_and_pitch_anchored_candidate.jpg")
@@ -225,11 +235,16 @@ def main(argv=None):
         render_position_overlay(image,candidate_a,annotation,offset,output.parent/"phase_anchored_candidate.jpg")
     # Optional B-family physical reference is a SEPARATE operator input;
     # it cannot be invented from visual twill periodicity.
-    if annotation["segments"]["check_cross"]:
+    if annotation["segments"].get("check_cross") and annotation["segments"].get("check_cross_second"):
         cross=(np.asarray(annotation["segments"]["check_cross"],float)-np.asarray(offset,float)).tolist()
-        candidate_b,b_report=adjust_first_family(v4["second"],cross)
-        report["v6_candidate_b_anchor"]=b_report
-        report["v6_family_b"]="ANCHORED_FROM_OPERATOR_CROSS_REFERENCE" if b_report["status"].startswith(("ANCHORED","ALREADY")) else "ABSTAINED"
+        cross_second=(np.asarray(annotation["segments"]["check_cross_second"],float)-np.asarray(offset,float)).tolist()
+        from benchmark.yarn_pitch_calibration import two_anchor_correct
+        candidate_b,b_report=two_anchor_correct(v4["second"],cross,cross_second)
+        report["v6_candidate_b_dual_calibration"]=b_report
+        report["v6_family_b"]="TWO_CROSS_ANCHOR_CANDIDATE" if b_report["status"]=="TWO_ANCHOR_CANDIDATE_GRID" else "ABSTAINED"
+    elif annotation["segments"].get("check_cross"):
+        report["v6_family_b"]="NOT_CALIBRATED_ONLY_ONE_CROSS_YARN"
+
     output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))
     return 0
