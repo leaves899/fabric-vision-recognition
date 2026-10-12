@@ -35,6 +35,8 @@ jobs:
         run: python -m unittest discover -s benchmark/tests -v
       - name: Evaluate V5 on native-pixel cropped region around human labels (not full frame)
         run: python -m benchmark.run_annotated_v5_roi --id "${{ matrix.sample }}" --margin-px 380 --max-pixels 3000000 --out "experiments/v5-highres-roi/${{ matrix.sample }}"
+      - name: Measure local pixel offset from manual reference yarn
+        run: python -m benchmark.phase_offset_diagnostic --id "${{ matrix.sample }}" --result-dir "experiments/v5-highres-roi/${{ matrix.sample }}"
       - name: Upload explicit-ROI evidence and JSON
         if: always()
         uses: actions/upload-artifact@v4
