@@ -110,6 +110,25 @@ def validate_annotation(root: Path, data: dict) -> dict:
         raise ValueError("warp/weft physical identity requires an explicit confirmation")
     if eligibility == "NEGATIVE_NON_DENIM" and review_state == "OPERATOR_REVIEWED":
         raise ValueError("non-denim negatives must remain outside the primary denim benchmark")
+    # Exact physical yarn-to-yarn interval counts are optional, but must be
+    # explicitly human-verified before candidate lines may be deduplicated.
+    counts={}
+    for key, required in (("same_family",("reference","check_same")),
+                          ("cross_family",("check_cross","check_cross_second"))):
+        value=data.get(key+"_intervals")
+        consent=data.get(key+"_intervals_confirmed",False)
+        if value in ("",None):
+            value=None
+        if value is not None and (isinstance(value,bool) or not isinstance(value,int) or not 1<=value<=200):
+            raise ValueError(key+" yarn intervals must be integer 1..200")
+        if consent is not True and value is not None:
+            raise ValueError(key+" yarn intervals require operator confirmation")
+        if consent is True and value is None:
+            raise ValueError(key+" confirmed intervals must have a count")
+        if value is not None and any(normalized[x] is None for x in required):
+            raise ValueError(key+" confirmed intervals require both real yarn segments")
+        counts[key+"_intervals"]=value
+        counts[key+"_intervals_confirmed"]=(consent is True)
     notes = data.get("notes", "")
     if not isinstance(notes, str) or len(notes) > 4000:
         raise ValueError("notes must be text of at most 4000 characters")
@@ -120,7 +139,7 @@ def validate_annotation(root: Path, data: dict) -> dict:
         "eligibility": eligibility, "review_state": review_state,
         "reference_confirmed": confirmed, "reference_family": family,
         "identity_confirmed": family != "UNKNOWN",
-        "segments": normalized, "notes": notes.strip(),
+        "segments": normalized, **counts, "notes": notes.strip(),
         "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
         "updated_at": datetime.now(timezone.utc).isoformat(),
     }
