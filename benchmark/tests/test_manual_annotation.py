@@ -97,6 +97,21 @@ class AnnotationTests(unittest.TestCase):
         self.assertGreater(errors["independent_same_error_deg"], 0)
         self.assertAlmostEqual(errors["independent_cross_error_deg"], 0)
 
+    def test_legacy_saved_annotation_receives_optional_holdout_fields(self):
+        result=validate_annotation(self.root,self.annotation)
+        self.assertIsNone(result["segments"]["holdout_same"])
+        self.assertIsNone(result["segments"]["check_cross_second"])
+
+    def test_independent_holdout_cannot_duplicate_training_anchor(self):
+        self.annotation["segments"]["holdout_same"]=self.annotation["segments"]["check_same"][:]
+        with self.assertRaisesRegex(ValueError,"holdout_same"):
+            validate_annotation(self.root,self.annotation)
+
+    def test_second_cross_anchor_cannot_duplicate_first(self):
+        self.annotation["segments"]["check_cross_second"]=self.annotation["segments"]["check_cross"][:]
+        with self.assertRaisesRegex(ValueError,"check_cross_second"):
+            validate_annotation(self.root,self.annotation)
+
     def test_no_reviewed_label_returns_not_evaluated(self):
         with tempfile.TemporaryDirectory() as td:
             summary = run(self.root, Path(td), ["T001"], 1)

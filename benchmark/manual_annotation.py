@@ -22,7 +22,7 @@ DEFAULT_FOLDER = Path("datasets/annotations/drafts")
 MODES = {"DRAFT", "OPERATOR_REVIEWED"}
 ELIGIBILITY = {"UNREVIEWED", "DENIM_CANDIDATE", "NEGATIVE_NON_DENIM", "UNCERTAIN"}
 FAMILIES = {"UNKNOWN", "WARP", "WEFT"}
-SEGMENTS = ("reference", "check_same", "check_cross")
+SEGMENTS = ("reference", "check_same", "holdout_same", "check_cross", "check_cross_second")
 
 
 def samples(root: Path) -> dict[str, dict]:
@@ -99,6 +99,13 @@ def validate_annotation(root: Path, data: dict) -> dict:
         raise ValueError("check_same must be a DIFFERENT segment, not the V5 input reference")
     if normalized["check_cross"] == normalized["reference"] and normalized["reference"] is not None:
         raise ValueError("check_cross must be a DIFFERENT segment")
+    # Holdout yarn MUST NOT duplicate either input/calibration segment.
+    if normalized["holdout_same"] is not None:
+        for used in ("reference", "check_same"):
+            if normalized["holdout_same"] == normalized[used]:
+                raise ValueError("holdout_same must differ from all calibration segments")
+    if normalized["check_cross_second"] is not None and normalized["check_cross_second"] == normalized["check_cross"]:
+        raise ValueError("check_cross_second must differ from check_cross")
     if family != "UNKNOWN" and not data.get("identity_confirmed") is True:
         raise ValueError("warp/weft physical identity requires an explicit confirmation")
     if eligibility == "NEGATIVE_NON_DENIM" and review_state == "OPERATOR_REVIEWED":

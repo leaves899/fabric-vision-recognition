@@ -5,6 +5,8 @@ on:
       - '.github/workflows/v5-reviewed-hires-native-roi.yml'
       - 'benchmark/run_annotated_v5_roi.py'
       - 'benchmark/tests/test_native_roi_crop.py'
+      - 'benchmark/phase_offset_diagnostic.py'
+      - 'benchmark/yarn_phase_anchor.py'
   workflow_dispatch:
 
 permissions:

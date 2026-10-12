@@ -1,11 +1,11 @@
 "use strict";
 const el=id=>document.getElementById(id);
 const PRIORITY=["T001","T004","T005","T007","T006","P001","T002","H001","S001","X002","U001"];
-const COLORS={reference:"#ff9a27",check_same:"#18d294",check_cross:"#72a9ff"};
-const LABELS={reference:"V5 输入参考线",check_same:"独立同向核查线",check_cross:"正交核查线"};
+const COLORS={reference:"#ff9a27",check_same:"#18d294",holdout_same:"#fff068",check_cross:"#72a9ff",check_cross_second:"#cf8cff"};
+const LABELS={reference:"A第一根校准纱线",check_same:"A第二根校准纱线",holdout_same:"A第三根独立验收纱线",check_cross:"B第一根校准纱线",check_cross_second:"B第二根校准纱线"};
 let all=[], visible=[], current=null, selected="reference", data=null, drawn=[];
 function show(msg,good=true){el("message").textContent=msg;el("message").className=good?"good":"bad";}
-function blank(row){return {schema_version:"1.0",sample_id:row.sample_id,image_path:row.image_path,reference_confirmed:false,reference_family:"UNKNOWN",identity_confirmed:false,review_state:"DRAFT",eligibility:"UNREVIEWED",segments:{reference:null,check_same:null,check_cross:null},notes:""};}
+function blank(row){return {schema_version:"1.0",sample_id:row.sample_id,image_path:row.image_path,reference_confirmed:false,reference_family:"UNKNOWN",identity_confirmed:false,review_state:"DRAFT",eligibility:"UNREVIEWED",segments:{reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},notes:""};}
 function axis(pts){if(!pts||pts.length!==2)return null;let a=pts[0],b=pts[1];return ((Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI)%180+180)%180;}
 function activeList(){
   visible=el("subset").value==="focus"?all.filter(x=>PRIORITY.includes(x.sample_id)):all.slice();
@@ -81,7 +81,7 @@ async function loadSample(sid){
   if(!response.ok){show("读取标注失败；检查后台",false);return;}
   let raw=await response.json();
   data=Object.assign(blank(row),raw);
-  data.segments=Object.assign({reference:null,check_same:null,check_cross:null},data.segments||{});
+  data.segments=Object.assign({reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},data.segments||{});
   copyToInputs();
   let img=el("fabricImg");
   img.onload=()=>{
