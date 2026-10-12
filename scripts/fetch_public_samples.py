@@ -49,7 +49,9 @@ def fetch_one(name: str, out: Path) -> None:
                             raise ValueError("image larger than 26 MiB")
                         file.write(chunk)
             with Image.open(tmp) as image:
-                # An MPO has a valid JPEG first image plus MPF metadata.\n                # Keeping the original bytes preserves provenance.\n                if image.format not in {"JPEG", "MPO"}:
+                # An MPO has a valid JPEG first image plus MPF metadata.
+                # Keeping the original bytes preserves provenance.
+                if image.format not in {"JPEG", "MPO"}:
                     raise ValueError(f"unexpected format: {image.format}")
                 if min(image.size) < 400:
                     raise ValueError(f"image too small for testing: {image.size}")
