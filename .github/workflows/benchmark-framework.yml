@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install Pillow for photo audit
-        run: python -m pip install Pillow
+        run: python -m pip install Pillow numpy
       - name: Validate registered image files and ground-truth contract
         run: python -m benchmark.dataset --check-images
       - name: Preview incremental intake without writing existing manual records
