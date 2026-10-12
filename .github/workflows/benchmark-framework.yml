@@ -12,7 +12,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check Step0 templates and data contract
-        run: python -m benchmark.dataset
+      - name: Validate registered image files and GT contract
+        run: python -m benchmark.dataset --check-images
+      - name: Preview incremental public sample intake (read-only)
+        run: python -m benchmark.public_intake
       - name: Run stdlib benchmark tests (synthetic fixtures only)
         run: python -m unittest discover -s benchmark/tests -v
