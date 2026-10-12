@@ -70,9 +70,9 @@ docs/versions/            版本基线与发布约定
 
 V4/V5 输出的红/绿候选线是候选轨迹，**不等于已确认的真实物理纱线**。未确认的中心线数量不能作为正式经密/纬密。传统 FFT、Gabor、结构张量等方向检测可能被斜纹带误导。V5 的人工真实纱线两点参考不得被未经验证的自动取向替代。
 
-## 公开织物照片测试集（55 张）
+## 公开织物照片测试集（60 张）
 
-已新增 [datasets/public_samples/](datasets/public_samples/) 公开织物实物样本，其中新增牛仔布专项近景（10），平纹及其他纤维（19）、旧斜纹及花呢（12）、人字纹（3）、缎纹（4）、复杂纹理（6）、待确认（1）。包括手机近景、普通摄影、真实织物扫描及少量馆藏照片；馆藏照片不可当作纱线逐根计数基准。
+已新增 [datasets/public_samples/](datasets/public_samples/) 公开织物实物样本，其中牛仔布专项近景（15），平纹及其他纤维（19）、旧斜纹及花呢（12）、人字纹（3）、缎纹（4）、复杂纹理（6）、待确认（1）。包括手机近景、普通摄影、真实织物扫描及少量馆藏照片；馆藏照片不可当作纱线逐根计数基准。
 
 - [浏览全部原始照片](datasets/public_samples/images/) · [逐张来源与许可](datasets/public_samples/sources.json) · [牛仔专用子集](datasets/denim_only/README.md) · [测试范围与真值边界](datasets/public_samples/README.md) · [同步状态](datasets/public_samples/sync_status.json)
 - 新增的部分照片含毫米/厘米参考刻度；但**没有任何一张具备项目标准的 5×5 cm 同平面实体标定框**，不能据此宣称经纬密度验收完成。
