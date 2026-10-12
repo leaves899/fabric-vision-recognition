@@ -33,7 +33,7 @@ jobs:
         run: python -m benchmark.run_annotated_v5_roi --id U001 --margin-px 380 --max-pixels 3000000 --out experiments/v5-round2/U001
       - name: Analyze candidate positions relative to independent manual yarn line
         run: python -m benchmark.phase_offset_diagnostic --id U001 --result-dir experiments/v5-round2/U001
-      - name: Upload full evidence: V5 JSON, three-panel, spatial position, overlays
+      - name: Upload V5 JSON and three-panel plus position evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
