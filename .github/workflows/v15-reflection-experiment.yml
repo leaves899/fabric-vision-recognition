@@ -37,6 +37,15 @@ jobs:
         run: python -m experiments.v15_reflection.audit_reviewed --out experiments/v15_reflection/output/reviewed_audit.json
       - name: Run G2 all registered project images (including reviewed 90/180/270 rotations)
         run: python -m experiments.v15_reflection.g2_project_audit --out experiments/v15_reflection/output/g2_project_images.json
+      - name: Generate visual direction candidate overlays for all 66 photos
+        run: python -m experiments.v15_reflection.evidence --result experiments/v15_reflection/output/g2_project_images.json
+      - name: Upload all-photo visual overlays
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v15-g2-visual-overlays
+          path: experiments/v15_reflection/output/overlays/
+          retention-days: 30
       - name: Save complete G2 candidate vs baseline evidence
         if: always()
         uses: actions/upload-artifact@v4
