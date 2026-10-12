@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>织物真实纱线人工标注 · V5</title>
+<style>
+:root{font-family:system-ui,"Microsoft YaHei",sans-serif;color:#222;background:#f5f7fa}
+*{box-sizing:border-box}
+body{margin:0}
+header{background:#173350;color:white;padding:13px 23px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+header h1{font-size:19px;margin:0}
+main{padding:14px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:12px}
+.card{background:#fff;border:1px solid #d7dee8;border-radius:8px;padding:12px}
+h2{font-size:15px;margin:2px 0 10px}
+small{color:#6a7484}
+select,button,input,textarea{font:inherit;padding:7px;border:1px solid #abb7c7;border-radius:5px}
+button{cursor:pointer;background:#f4f7fb}
+button:hover{background:#e9f0fc}
+button.primary{background:#245c9c;color:#fff;border-color:#245c9c}
+button:disabled{opacity:.5;cursor:default}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.toolbar select{max-width:min(50vw,450px)}
+.viewport{height:70vh;overflow:auto;background:#303843;border-radius:7px;position:relative;border:1px solid #333}
+.scene{position:relative;margin:auto;width:max-content;line-height:0}
+#fabricImg{display:block;max-width:none;user-select:none}
+#layer{position:absolute;top:0;left:0;cursor:crosshair;touch-action:none}
+section.field{border-top:1px solid #e6eaf0;padding:10px 0;display:grid;gap:6px}
+label{display:flex;gap:7px;align-items:center}
+label.full{display:grid;gap:3px}
+label input[type=checkbox]{width:16px;height:16px}
+.radio-list{display:flex;flex-wrap:wrap;gap:6px}
+.radio-list button.active{background:#173350;color:white}
+textarea{width:100%;min-height:78px;resize:vertical}
+select{width:100%}
+#message{margin-top:9px;font-weight:600;white-space:pre-wrap}
+.good{color:#16733f}.bad{color:#ae2222}
+.code{font-family:monospace;word-break:break-all}
+@media(max-width:900px){main{display:block}.card{margin-bottom:12px}.viewport{height:52vh}}
+</style>
+</head>
+<body>
+<header>
+  <h1>纱线方向人工标注 · V5 Baseline</h1>
+  <small style="color:#e0eaf4">仅访问本机原图 · 绝不自动猜测真实纱线或经纬身份</small>
+</header>
+<main>
+<div class="card">
+  <div class="toolbar">
+    <label>筛选 <select id="subset" style="width:auto">
+      <option value="focus">优先验证：牛仔、平纹及干扰样本</option>
+      <option value="all">全部已注册照片</option>
+    </select></label>
+    <select id="sample" aria-label="选择照片"></select>
+    <button id="prev">上一张</button><button id="next">下一张</button>
+  </div>
+  <div class="toolbar">
+    <label>缩放 <input id="zoom" type="range" min="50" max="350" value="100" step="10"></label>
+    <output id="zoomText">100%</output>
+    <small>请放大验证：真正纱段 ≠ 斜纹带/明暗纹理</small>
+  </div>
+  <div class="viewport"><div class="scene" id="scene"><img id="fabricImg" alt="织物原始照片"><canvas id="layer"></canvas></div></div>
+  <small id="meta">图片尚未载入</small>
+</div>
+<aside class="card">
+<h2>操作顺序</h2>
+<small>① 在同一根真实可见纱线上点两点作为 V5 输入。② 在不同位置标另一根同方向的核查线，必要时再标正交方向。③ 人工确认后保存。候选纱线并非真值。</small>
+<section class="field">
+  <strong>当前点击类型</strong>
+  <div class="radio-list">
+    <button class="active" data-mode="reference">① 输入参考线</button>
+    <button data-mode="check_same">② 独立同向线</button>
+    <button data-mode="check_cross">③ 正交核查线</button>
+  </div>
+  <button id="undo">清除当前类别两点</button>
+  <div id="angles" class="code">尚未标注</div>
+</section>
+<section class="field">
+  <label class="full">面料可用性
+    <select id="eligibility">
+      <option value="UNREVIEWED">未审核</option>
+      <option value="DENIM_CANDIDATE">牛仔布候选（人工判断）</option>
+      <option value="NEGATIVE_NON_DENIM">非牛仔/复杂负例</option>
+      <option value="UNCERTAIN">待确认</option>
+    </select>
+  </label>
+  <label><input id="confirmRef" type="checkbox">我确认输入两点取自同一根真实可见纱线</label>
+</section>
+<section class="field">
+  <label class="full">输入参考线的物理身份（不确定就保持未知）
+    <select id="family">
+      <option value="UNKNOWN">UNKNOWN · 无法确认经纬</option>
+      <option value="WARP">WARP · 人工确认经向</option>
+      <option value="WEFT">WEFT · 人工确认纬向</option>
+    </select>
+  </label>
+  <label><input id="confirmIdentity" type="checkbox">我有独立证据确认这一组经/纬身份</label>
+  <label class="full">标注状态
+    <select id="reviewState">
+      <option value="DRAFT">DRAFT · 未确认</option>
+      <option value="OPERATOR_REVIEWED">OPERATOR_REVIEWED · 已确认输入参考线</option>
+    </select>
+  </label>
+  <label class="full">核查备注（无法分辨时记录原因）
+    <textarea id="notes" placeholder="例如：参考点沿实际纱段，而非 3/1 斜纹条带"></textarea>
+  </label>
+  <button id="save" class="primary">保存本张标注到本地 datasets/annotations</button>
+  <div id="message" role="status"></div>
+</section>
+<section class="field">
+  <strong>本轮范围</strong>
+  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。核查线用于后续独立比较；不能直接把 V5 输入线当作预测准确率证据。</small>
+</section>
+</aside>
+</main>
+<script defer src="./app.js"></script>
+</body>
+</html>
