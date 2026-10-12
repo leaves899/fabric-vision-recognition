@@ -1,1 +1,71 @@
-# fabric-vision-recognition
+# 织物图像识别 / Fabric Vision Recognition
+
+> **项目状态：V5 Web Demo 基线已导入；Fabric Measurement Engine V1.5 仍为待验证技术方案。**
+>
+> 建议仓库属性：**Private**。项目包含真实算法源码、样图、训练掩膜与项目特性资料，请勿未经许可公开。
+
+## 项目目标
+
+围绕普通手机织物照片与后续标准化采集，完成既定**十项识别/辅助确认参数**：
+
+1. 经向方向与角度
+2. 纬向方向与角度
+3. 经纱排列状态
+4. 纬纱排列状态
+5. 经纱粗细候选等级
+6. 纬纱粗细候选等级
+7. 组织结构候选（平纹、2/1 与 3/1 左右斜、破斜纹、缎纹、变化组织及待确认）
+8. 经密（根/cm）
+9. 纬密（根/cm）
+10. 表面纹理与色系
+
+**独立系统配套字段**：经纬密度比＝经密÷纬密。花度是人工录入项；Ne/tex 可以作为未来参考建议，但不替代十项参数。
+
+## 当前版本
+
+- **V4 冻结算法**：`demo/v5/v4_frozen/frozen/reoptimize_v4_quadgrid.py`，不在一般功能 PR 中修改。
+- **V5 可运行 Demo**：`demo/v5/`，人工在同一根真实纱线上点击两点取向，必要时确认同平面的 **5×5 cm 实体框**四角；V4 产生双族候选线。方向角、经纬身份、物理计数必须按各自来源管理。
+- **V1.5 建议方案**：`docs/references/Fabric_Measurement_Engine_建设落地建议_V1.5.md`。标准反射/透射双图、Camera Profile、FFT/投影与计量门禁目前**不是已验证上线能力**。
+
+### 启动 V5
+
+```bash
+cd demo/v5
+python -m venv .venv
+# 激活虚拟环境后
+python -m pip install -r requirements.txt
+python -m uvicorn server:app --host 127.0.0.1 --port 8008
+```
+
+浏览器打开 `http://127.0.0.1:8008`。Windows 可在 `demo/v5/` 内双击 `启动Demo.bat`。项目开发推荐 Python 3.12，具体以实际机器测试为准。
+
+```bash
+cd demo/v5
+python -m pytest -q tests
+```
+
+该命令仅验证已有测试覆盖的功能；**自动测试通过不等于独立面料上的真实经纬识别准确率已通过验收。**
+
+## 目录
+
+```text
+demo/v5/                  已有 V5 Demo，包含冻结 V4、样图与测试
+docs/requirements/        十项业务目标及状态语义
+docs/architecture/        V4/V5 与 V1.5 技术衔接设计
+docs/references/          原始技术/特性文档，仅供追溯
+docs/versions/            版本基线与发布约定
+.github/workflows/         自动化测试
+```
+
+## 版本控制
+
+- `main`：经验证可回溯的集成基线；重大修改先开分支与 Pull Request。
+- `feature/*`：新功能；`experiment/*`：计量候选与对比试验；`fix/*`：缺陷修复。
+- 保留冻结 V4 源码 SHA-256：`dde5d84193a3f3d02bb55ad72a8c2b9f2a640034563ed936736ad46808b8dad1`。
+- 初始 Git 标签建议为 `demo-v5.0.0-baseline`；**标签仅表示源码基线，不代表十项准确率已验收**。
+
+详见 `docs/versions/VERSIONING.md` 和 `docs/architecture/INTEGRATION_ROADMAP.md`。
+
+## 重要限制
+
+V4/V5 输出的红/绿候选线是候选轨迹，**不等于已确认的真实物理纱线**。未确认的中心线数量不能作为正式经密/纬密。传统 FFT、Gabor、结构张量等方向检测可能被斜纹带误导。V5 的人工真实纱线两点参考不得被未经验证的自动取向替代。

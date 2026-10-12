@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+# Local runtime artefacts
+v4_cache/
+*.tmp
+*.log
+# Editor and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Build results
+build/
+dist/
+*.egg-info/
+# Reproducible baseline assets inside demo/v5/ are intentionally tracked.

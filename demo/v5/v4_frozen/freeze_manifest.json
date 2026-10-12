@@ -1,0 +1,23 @@
+{
+  "name": "textile-v4-frozen",
+  "date": "2026-10-12",
+  "frozen_source_sha256": "dde5d84193a3f3d02bb55ad72a8c2b9f2a640034563ed936736ad46808b8dad1",
+  "files_sha256": {
+    "frozen/reoptimize_v4_quadgrid.py": "dde5d84193a3f3d02bb55ad72a8c2b9f2a640034563ed936736ad46808b8dad1",
+    "data/train/training.jpg": "db5736288a748dfe47de013a53836ff98cef254e6d1cca77158e3b0e333796ad",
+    "data/train/manual_masks.npz": "8561fa3e8c7251d175ac91129f52a13de662296041f383efeed938b78c4b8dbb",
+    "data/regression/img1.jpg": "db5736288a748dfe47de013a53836ff98cef254e6d1cca77158e3b0e333796ad",
+    "data/regression/img2.jpg": "8dd89a54dac30455804a1ec2b118248f77ea3f3a8012112f7d9d53183948852f",
+    "data/regression/img3.jpg": "729de39185bffe50f435ddb72b2ad3e99521b4a66c3a1aa7c821b4470632c828",
+    "baseline/summary.json": "1b14e237c12dc6aa85b5606cb1d40cc0c4248aa8906b607a47d72c4e6f0231e5"
+  },
+  "python_snapshot": "3.13.5",
+  "library_snapshot": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "lightgbm": "4.6.0",
+    "opencv-python-headless": "4.13.0.92"
+  },
+  "freeze_policy": "No edits to frozen/ or data/regression/ or data/train/. Tests use disposable copies with I/O path substitutions and read-only vector export."
+}

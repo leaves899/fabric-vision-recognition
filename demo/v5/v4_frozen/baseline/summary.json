@@ -1,0 +1,38 @@
+[
+  {
+    "name": "img1",
+    "angle": -13,
+    "first_family_count": 73,
+    "second_family_count": 53,
+    "row_grid_step": 14.0,
+    "col_grid_step": 21.0,
+    "row_anchor": 159.0,
+    "col_anchor": 269.0,
+    "first_threshold": 0.5021816492080688,
+    "second_threshold": 0.8684231638908386
+  },
+  {
+    "name": "img2",
+    "angle": -18,
+    "first_family_count": 80,
+    "second_family_count": 61,
+    "row_grid_step": 15.0,
+    "col_grid_step": 22.0,
+    "row_anchor": 138.0,
+    "col_anchor": 63.0,
+    "first_threshold": 0.5238392353057861,
+    "second_threshold": 0.8086041212081909
+  },
+  {
+    "name": "img3",
+    "angle": -16,
+    "first_family_count": 80,
+    "second_family_count": 75,
+    "row_grid_step": 14.0,
+    "col_grid_step": 19.0,
+    "row_anchor": 31.0,
+    "col_anchor": 2.0,
+    "first_threshold": 0.4,
+    "second_threshold": 0.7290653586387634
+  }
+]

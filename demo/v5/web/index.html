@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>织物智能识别 · 十项参数演示台</title>
+<link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+<header class="topbar"><div class="brand"><div class="brandmark">织<span>∴</span></div><div><b>织物智能识别</b><small>TEXTILE ANALYSIS WORKBENCH</small></div></div><div class="topright"><span class="mode-pill"><i></i> LOCAL DEMO · V5</span><span class="top-divider"></span><a href="#protocol">识别规则</a></div></header>
+<div class="shell">
+  <section class="hero">
+    <div class="eyebrow"><span class="eyeline"></span> COMPUTER VISION / TEXTILE ANALYTICS</div>
+    <h1>从一张照片，理解织物的<span>十项特征</span></h1>
+    <p>候选轨迹来自冻结 V4；必须人工在真实纱线上取两点作为参考方向，不再默认 -13°。结果仍需人工核验。</p>
+    <div class="herochips"><span><b>01</b> 经纬方向与排列</span><span><b>02</b> 纱线粗细与密度</span><span><b>03</b> 组织结构</span><span><b>04</b> 纹理与色系</span></div>
+  </section>
+  <main class="two-col">
+    <section class="panel input-panel">
+      <div class="section-head"><div><span class="step">STEP 01</span><h2>输入与标定</h2><p>先确认图像与实际尺寸，再进入分析</p></div><div class="circle-number">01</div></div>
+      <div id="dropZone" class="dropzone" tabindex="0"><div class="dropicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 15v4h16v-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><strong>点击上传或拖入布料照片</strong><span>JPG / PNG / WEBP · 不超过 16 MB</span><input id="fileInput" type="file" accept="image/*" hidden /></div>
+      <div class="sample-row"><span>快速试用</span><button id="framedSample" class="link-button">有标定框样本 <span>↗</span></button><button id="plainSample" class="link-button">无标定框样本 <span>↗</span></button></div>
+      <div class="canvas-header"><div><b>原始照片 · 点击取点</b><span id="imageMeta">尚未选择照片</span></div><button id="resetCorners" class="tiny-btn">清除四角</button></div>
+      <div class="clickmode" role="group" aria-label="照片取点模式">
+        <button type="button" id="modeReference" class="active" aria-pressed="true">① 纱线参考方向 · 取 2 点</button>
+        <button type="button" id="modeCorners" aria-pressed="false">② 实体框标定 · 取 4 角</button>
+      </div>
+      <div class="canvas-stage"><div class="canvas-instruction" id="canvasHint">先选模式①，在同一根清晰可见的真实纱线上点击起点、终点</div><canvas id="sourceCanvas" aria-label="照片、真实纱线参考方向及四角标定画布"></canvas></div>
+      <div class="reference-status" id="referenceStatus">请在同一根真实纱线上选取两点（不是斜纹图案）。</div>
+      <div class="tool-actions"><button type="button" class="tiny-btn" id="resetReference">清除方向参考点</button></div>
+      <label class="checkline reference-confirm"><input type="checkbox" id="confirmReference"/><span>我已检查：两点位于<strong>同一根真实纱线的同一段可见纱段</strong>上，未沿斜纹图案取点；确认后用于 V4 方向对齐</span></label>
+      <div class="corner-status" id="cornerStatus"><span class="dot muted"></span>未设置四角 — 可进行无物理标定分析</div>
+      <label class="checkline"><input type="checkbox" id="confirmCorners"/><span>我已核对 4 个点均位于 <strong>5 cm × 5 cm 实体方框内边缘</strong>，且同布料位于同一平面</span></label>
+      <div class="settings-block"><div class="settings-title">可选人工辅助 <span>不会修改冻结 V4</span></div><div class="fieldgrid">
+        <div class="field readout-field"><span>人工确认的纱线参考方向角</span><small>原图角度由两点计算；有标定时 V4 使用校正 ROI 角度</small><output id="referenceAngle">尚未取点</output></div>
+        <label class="field">哪一组是经向？<select id="warpFamily"><option value="">未确认（A / B 候选）</option><option value="A">候选组 A 为经向</option><option value="B">候选组 B 为经向</option></select></label>
+        <label class="field">人工选择组织结构 <small>可不选</small><select id="weave"><option value="">由证据决定 / 待确认</option><option>平纹</option><option>2/1右斜纹</option><option>2/1左斜纹</option><option>3/1右斜纹</option><option>3/1左斜纹</option><option>破斜纹</option><option>缎纹</option><option>变化组织</option><option>其他/待确认</option></select></label>
+        <label class="checkcompact"><input type="checkbox" id="confirmWeave"/>此组织类型已人工确认</label>
+      </div></div>
+      <button class="primary-btn" id="analyzeButton" disabled><span id="buttonText">开始十项参数分析</span><span class="arrow">→</span></button><p id="message" class="message">请选择或上传照片后开始。</p>
+    </section>
+    <section class="panel summary-panel" id="previewPanel">
+      <div class="section-head"><div><span class="step">STEP 02</span><h2>识别与证据预览</h2><p>红绿线来自冻结 V4 候选轨迹，未经逐根验收</p></div><div class="circle-number">02</div></div>
+      <div class="preview-empty" id="previewEmpty"><div class="preview-art"><svg viewBox="0 0 240 170"><defs><pattern id="warp" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)"><path d="M0 0L0 20M10 0L10 20" stroke="#b9cdc7" stroke-width="5"/><path d="M0 3L20 3M0 13L20 13" stroke="#cbd8d4" stroke-width="4"/></pattern></defs><rect x="24" y="16" width="192" height="136" rx="8" fill="url(#warp)" stroke="#9db6ad"/><path d="M33 44h174M33 80h174M33 116h174" stroke="#3d7c75" stroke-dasharray="6 6" opacity=".72"/><path d="M62 25v118M120 25v118M178 25v118" stroke="#c17f50" stroke-dasharray="6 6" opacity=".75"/></svg></div><b>等待分析数据</b><span>完成图像输入后将在此展示<br/>ROI · 经/纬候选 · 多截线计数</span></div>
+      <div id="previewResults" hidden>
+        <div class="summary-strip"><div><span>可用参数</span><strong id="availableCount">—</strong><small>包含待确认候选</small></div><div><span>已校准物理尺寸</span><strong id="calibrationStatus">—</strong><small>5 × 5 cm 内框</small></div><div><span>异常警告</span><strong id="warningCount">—</strong><small>需要核实的条件</small></div></div>
+        <div id="directionInfo" class="direction-info"></div>
+        <div class="image-tabs"><button class="active" data-img="roi">校正 ROI</button><button data-img="direction">V4 纱线候选</button><button data-img="transects">V4 截线计数</button></div>
+        <div class="result-image"><img id="resultImage" alt="识别证据可视化"/></div>
+        <p class="image-note" id="imageNote">可视化为候选证据，请勿直接作为真实纱线中心线。</p>
+        <div class="quality-row" id="qualityRow"></div>
+        <div class="preview-downloads"><button id="downloadJson" class="outline-btn">↓ 导出完整 JSON</button><button id="download3" class="outline-btn">↓ 下载三联图</button></div>
+      </div>
+    </section>
+  </main>
+  <section id="resultSection" class="result-section" hidden>
+    <div class="results-heading"><div><span class="step">STEP 03</span><h2>十项识别结果</h2><p>算法候选、人工确认、缺失数据分别标记。物理密度需已确认标定及纱线计数核验。</p></div><div class="result-count" id="resultCount">10 <span>PARAMETERS</span></div></div>
+    <div class="modules"><div class="module-heading"><span class="module-tag">MODULE A</span><div><h3>经纬方向与排列</h3><p>方向是局部物理纱段的候选，不等于组织纹理方向</p></div></div><div class="parameter-grid" id="moduleA"></div></div>
+    <div class="modules"><div class="module-heading"><span class="module-tag">MODULE B</span><div><h3>纱线粗细与密度</h3><p>V4 不提供纱线边界宽度；截线基于 V4 候选轨迹，标定后仅为候选密度</p></div></div><div class="parameter-grid" id="moduleB"></div></div>
+    <div class="modules"><div class="module-heading"><span class="module-tag">MODULE C</span><div><h3>组织结构识别</h3><p>保留候选分类及人工确认，不在无交织真值时猜测</p></div></div><div class="parameter-grid" id="moduleC"></div></div>
+    <div class="modules"><div class="module-heading"><span class="module-tag">MODULE D</span><div><h3>表面纹理与色系</h3><p>独立的颜色聚类与视觉纹理测量</p></div></div><div class="parameter-grid" id="moduleD"></div></div>
+  </section>
+  <section class="protocol panel" id="protocol"><div><span class="step">METHODOLOGY</span><h2>认识结果的边界</h2><p>本 Demo 以真实执行的图像分析支撑 10 项业务参数。即便能够画出两组线，也不自动证明这些线对应独立真实纱线。</p></div><div class="protocol-list"><div><b>01</b><span>方向不直接使用斜纹纹理峰值作为经纬真值</span></div><div><b>02</b><span>没有内侧四角确认，不输出根/cm</span></div><div><b>03</b><span>V4 仅输出候选轨迹，缺少纱线宽度边界，不推断 tex/支数</span></div><div><b>04</b><span>组织结构无可信证据时保留待确认，不输出伪分类</span></div></div></section>
+  <footer><span>TEXTILE VISION LAB · LOCAL RESEARCH DEMO</span><span>Demo v5 · 人工两点定向 + 冻结 V4 · 不使用默认角度</span></footer>
+</div>
+<script src="/assets/app.js"></script>
+</body></html>
