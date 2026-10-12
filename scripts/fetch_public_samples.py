@@ -13,6 +13,7 @@ import time
 from pathlib import Path
 from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 
 from PIL import Image
 
@@ -57,18 +58,20 @@ def fetch_one(name: str, out: Path) -> None:
                     raise ValueError(f"image too small for testing: {image.size}")
                 image.verify()
             tmp.replace(out)
+            time.sleep(2)  # Polite pacing for Wikimedia Commons.
             return
         except Exception as exc:
             last_error = exc
             out.with_name(out.name + ".partial").unlink(missing_ok=True)
             if attempt < 2:
-                time.sleep(3 * (attempt + 1))
+                time.sleep(15 * (attempt + 1) if isinstance(exc, HTTPError) and exc.code == 429 else 3 * (attempt + 1))
     raise RuntimeError(f"cannot download {name}: {last_error}") from last_error
 
 
 def main() -> None:
     entries = json.loads(MANIFEST.read_text(encoding="utf-8"))["items"]
     rows = []
+    blocked = False
     for entry in entries:
         if entry["has_5cm_calibration_frame"] or entry["density_ground_truth"]:
             raise ValueError("public samples must not be mislabeled as calibrated")
@@ -78,7 +81,16 @@ def main() -> None:
         dest = IMAGES / relative
         dest.parent.mkdir(parents=True, exist_ok=True)
         if not dest.is_file():
-            fetch_one(entry["commons_file"], dest)
+            if blocked:
+                continue
+            try:
+                fetch_one(entry["commons_file"], dest)
+            except RuntimeError as exc:
+                if isinstance(exc.__cause__, HTTPError) and exc.__cause__.code == 429:
+                    blocked = True
+                    print(f"::warning::Wikimedia Commons rate-limited downloads; remaining samples deferred: {entry['id']}")
+                    continue
+                raise
         with Image.open(dest) as image:
             if image.format not in {"JPEG", "MPO"}:
                 raise ValueError(f"invalid image file: {dest}")
@@ -88,7 +100,20 @@ def main() -> None:
         rows.append(f"{checksum}  images/{relative.as_posix()}\n")
         print(f"{entry['id']} {width}x{height} {dest.stat().st_size} bytes {dest}")
     (DATASET / "checksums.sha256").write_text("".join(rows), encoding="utf-8")
-    print(f"Downloaded/verified {len(rows)} real photographs.")
+    missing = [entry["id"] for entry in entries if not (IMAGES / entry["path"]).is_file()]
+    report = {
+        "expected": len(entries),
+        "available": len(rows),
+        "complete": not missing,
+        "pending_ids": missing,
+        "note": "Rate-limited sources are deferred rather than bypassing server limits.",
+    }
+    (DATASET / "sync_status.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    print(f"Verified {len(rows)}/{len(entries)} real photographs.")
+    if missing:
+        print(f"::warning::Import incomplete: {len(missing)} samples pending: {', '.join(missing)}")
 
 
 if __name__ == "__main__":
