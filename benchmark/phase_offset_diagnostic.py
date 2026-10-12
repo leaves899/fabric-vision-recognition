@@ -245,6 +245,28 @@ def main(argv=None):
     elif annotation["segments"].get("check_cross"):
         report["v6_family_b"]="NOT_CALIBRATED_ONLY_ONE_CROSS_YARN"
 
+    # V6 usable output is a separately versioned candidate-track JSON, not a
+    # silent replacement of frozen V5 results. Family B keeps its own status.
+    ready_a=report.get("v6_dual_physical_yarn_calibration",{}).get("status")=="TWO_ANCHOR_CANDIDATE_GRID"
+    corrected_a=dual_corrected if ready_a else v4["first"]
+    ready_b=report.get("v6_family_b")=="TWO_CROSS_ANCHOR_CANDIDATE"
+    corrected_b=candidate_b if ready_b else v4["second"]
+    payload={
+        "schema_version":"v6-anchor-candidate-0.1",
+        "status":"POSITION_CALIBRATED_CANDIDATES" if ready_a else "UNAVAILABLE",
+        "input_image_sha256":annotation["image_sha256"],
+        "frozen_v4_sha256":FROZEN_SHA,
+        "calibrated_native_roi_offset_px":list(offset),
+        "family_A":{"status":"TWO_YARN_INPUT_CALIBRATED" if ready_a else "UNVERIFIED_OR_ABSTAINED",
+                    "tracks_px":corrected_a,
+                    "physical_yarn_identity":"UNKNOWN_UNLESS_MANUALLY_ASSIGNED"},
+        "family_B":{"status":"TWO_YARN_INPUT_CALIBRATED" if ready_b else "UNVERIFIED_UNCHANGED_V4",
+                    "tracks_px":corrected_b,
+                    "physical_yarn_identity":"UNKNOWN_UNLESS_MANUALLY_ASSIGNED"},
+        "independent_holdout_status":report.get("v6_dual_physical_yarn_calibration",{}).get("independent_holdout_test","NOT_EVALUATED"),
+        "safety_note":"Candidate grid only. Do not publish yarn counts, density or per-yarn accuracy without independent evidence.",
+    }
+    (output.parent/"v6_candidate_tracks.json").write_text(json.dumps(payload,ensure_ascii=False)+"\n",encoding="utf-8")
     output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))
     return 0
