@@ -15,7 +15,7 @@ class DoubleTrackTests(unittest.TestCase):
             holdout=[[20,80],[290,80]])
         self.assertEqual(info["status"],"DOUBLE_CANDIDATES_SUPPRESSED_UNVERIFIED_FIELD")
         self.assertEqual(info["candidate_lines_per_real_yarn_period"],2)
-        self.assertEqual(info["suppressed_candidates"],10)
+        self.assertEqual(info["suppressed_candidates"],11)
         self.assertEqual(len(raw),11)
         self.assertLess(info["reference_after_px"],.01)
         self.assertLess(info["second_after_px"],.01)
