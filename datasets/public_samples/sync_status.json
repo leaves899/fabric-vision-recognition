@@ -1,6 +1,6 @@
 {
-  "expected": 60,
-  "available": 60,
+  "expected": 66,
+  "available": 66,
   "complete": true,
   "pending_ids": [],
   "note": "Rate-limited sources are deferred rather than bypassing server limits."
