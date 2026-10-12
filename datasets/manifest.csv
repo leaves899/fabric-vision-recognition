@@ -7,3 +7,22 @@ PUBLIC-T002,T002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill
 PUBLIC-T003,T003,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/03_twill_blanket.jpg,,NONE,NO,source_id=T003; weak_weave=twill; NOT_GROUND_TRUTH
 PUBLIC-T004,T004,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/04_phone_denim_detail.jpg,,NONE,NO,source_id=T004; weak_weave=twill; NOT_GROUND_TRUTH
 PUBLIC-U001,U001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/unknown/01_fabric_close_up.jpg,,NONE,NO,source_id=U001; weak_weave=unknown; NOT_GROUND_TRUTH
+PUBLIC-P004,P004,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/04_blue_chambray_with_mm_scale.jpg,,NONE,NO,source_id=P004; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P005,P005,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/05_striped_end_on_end_with_mm_scale.jpg,,NONE,NO,source_id=P005; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P006,P006,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/06_calico_with_cm_scale.jpg,,NONE,NO,source_id=P006; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P007,P007,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/07_linen_weave.jpg,,NONE,NO,source_id=P007; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-P008,P008,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/plain/08_green_gingham.jpg,,NONE,NO,source_id=P008; weak_weave=plain; NOT_GROUND_TRUTH
+PUBLIC-T005,T005,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/05_undyed_broken_twill_iphone.jpg,,NONE,NO,source_id=T005; weak_weave=broken_twill; NOT_GROUND_TRUTH
+PUBLIC-T006,T006,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/06_wranger_broken_twill_inside_outside.jpg,,NONE,NO,source_id=T006; weak_weave=broken_twill; NOT_GROUND_TRUTH
+PUBLIC-T007,T007,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/07_jeans_fabric.jpg,,NONE,NO,source_id=T007; weak_weave=twill; NOT_GROUND_TRUTH
+PUBLIC-T008,T008,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/08_chino_pants_closeup.jpg,,NONE,NO,source_id=T008; weak_weave=unknown; NOT_GROUND_TRUTH
+PUBLIC-GOLD-TWILL,T009,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/09_gold_twill_front.jpg,,NONE,NO,source_id=T009; weak_weave=twill; NOT_GROUND_TRUTH; source_pairs_unregistered_same_position
+PUBLIC-GOLD-TWILL,T010,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/twill/10_gold_twill_back.jpg,,NONE,NO,source_id=T010; weak_weave=twill; NOT_GROUND_TRUTH; source_pairs_unregistered_same_position
+PUBLIC-H001,H001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/herringbone/01_harris_12x12_herringbone.jpg,,NONE,NO,source_id=H001; weak_weave=herringbone; NOT_GROUND_TRUTH
+PUBLIC-H002,H002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/herringbone/02_herringbone_pattern_cloth.jpg,,NONE,NO,source_id=H002; weak_weave=herringbone; NOT_GROUND_TRUTH
+PUBLIC-GOLD-SATIN,S001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/satin/01_gold_satin_front.jpg,,NONE,NO,source_id=S001; weak_weave=satin; NOT_GROUND_TRUTH; source_pairs_unregistered_same_position
+PUBLIC-GOLD-SATIN,S002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/satin/02_gold_satin_back.jpg,,NONE,NO,source_id=S002; weak_weave=satin; NOT_GROUND_TRUTH; source_pairs_unregistered_same_position
+PUBLIC-X001,X001,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/01_corduroy_shirt.jpg,,NONE,NO,source_id=X001; weak_weave=corduroy; NOT_GROUND_TRUTH
+PUBLIC-X002,X002,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/02_five_wale_corduroy_macro.jpg,,NONE,NO,source_id=X002; weak_weave=corduroy; NOT_GROUND_TRUTH
+PUBLIC-X003,X003,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/03_prince_of_wales_plaid.jpg,,NONE,NO,source_id=X003; weak_weave=patterned_woven; NOT_GROUND_TRUTH
+PUBLIC-X004,X004,UNKNOWN,DEV,PUBLIC_UNKNOWN,datasets/public_samples/images/complex/04_woven_coverlet.jpg,,NONE,NO,source_id=X004; weak_weave=complex_woven; NOT_GROUND_TRUTH
