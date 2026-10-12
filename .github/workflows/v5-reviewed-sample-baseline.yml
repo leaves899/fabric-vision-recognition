@@ -1,0 +1,47 @@
+name: Frozen V5 reviewed-photo baseline
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/v5-reviewed-sample-baseline.yml'
+      - 'benchmark/**'
+      - 'datasets/annotations/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  v5-reviewed-photo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        sample: [T001, P001]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: demo/v5/requirements.txt
+      - name: Install unchanged V5 requirements
+        run: python -m pip install -r demo/v5/requirements.txt Pillow
+      - name: Review original operator-supplied references
+        run: python -m benchmark.manual_annotation audit
+      - name: Run V5 for one reviewed fabric image
+        run: python -m benchmark.run_annotated_v5 --ids "${{ matrix.sample }}" --max-images 1 --out "experiments/v5-reviewed/${{ matrix.sample }}"
+      - name: Measure where V4 candidate A falls relative to clicked physical yarn
+        run: python -m benchmark.phase_offset_diagnostic --id "${{ matrix.sample }}" --result-dir "experiments/v5-reviewed/${{ matrix.sample }}/${{ matrix.sample }}"
+      - name: Publish V5 evidence (even if failed)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v5-${{ matrix.sample }}-evidence
+          path: experiments/v5-reviewed/${{ matrix.sample }}/
+          if-no-files-found: warn
+          retention-days: 30

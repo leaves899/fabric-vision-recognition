@@ -1,0 +1,47 @@
+name: Frozen V5 high-resolution native ROI pilot
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/v5-reviewed-hires-native-roi.yml'
+      - 'benchmark/run_annotated_v5_roi.py'
+      - 'benchmark/tests/test_native_roi_crop.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hi-res-local-native-pixel-roi:
+    timeout-minutes: 12
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sample: [T004, T007]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: demo/v5/requirements.txt
+      - name: Install unchanged V5 dependencies
+        run: python -m pip install -r demo/v5/requirements.txt Pillow
+      - name: Validate source geometry and annotation contracts
+        run: python -m unittest discover -s benchmark/tests -v
+      - name: Evaluate V5 on native-pixel cropped region around human labels (not full frame)
+        run: python -m benchmark.run_annotated_v5_roi --id "${{ matrix.sample }}" --margin-px 380 --max-pixels 3000000 --out "experiments/v5-highres-roi/${{ matrix.sample }}"
+      - name: Measure local pixel offset from manual reference yarn
+        run: python -m benchmark.phase_offset_diagnostic --id "${{ matrix.sample }}" --result-dir "experiments/v5-highres-roi/${{ matrix.sample }}"
+      - name: Upload explicit-ROI evidence and JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v5-${{ matrix.sample }}-native-roi
+          path: experiments/v5-highres-roi/${{ matrix.sample }}/
+          if-no-files-found: warn
+          retention-days: 30
