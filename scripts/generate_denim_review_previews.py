@@ -21,13 +21,13 @@ for sample_id in TARGETS:
     source = BASE / "images" / sample["path"]
     with Image.open(source) as original:
         image = ImageOps.exif_transpose(original).convert("RGB")
-        image.thumbnail((780, 640))
-        sheet = Image.new("RGB", (800, 680), "#ffffff")
-        sheet.paste(image, ((800-image.width)//2, (640-image.height)//2))
+        image.thumbnail((590, 460))
+        sheet = Image.new("RGB", (610, 500), "#ffffff")
+        sheet.paste(image, ((610-image.width)//2, (460-image.height)//2))
         draw = ImageDraw.Draw(sheet)
-        draw.text((14, 648), f"{sample_id} - {sample['commons_file'][:65]}", fill="black")
+        draw.text((14, 472), f"{sample_id} - {sample['commons_file'][:65]}", fill="black")
         target = OUT / (sample_id + ".jpg")
-        for quality in (60, 48, 37, 28):
+        for quality in (55, 43, 33, 23, 14):
             sheet.save(target, "JPEG", quality=quality, optimize=True)
             if target.stat().st_size < 69000:
                 break
