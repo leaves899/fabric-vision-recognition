@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 
 def draw_ab(image, family_a, family_b, annotation, origin_xy=(0,0),
-            *, b_calibrated=False, max_side=1200):
+            *, a_calibrated=False, b_calibrated=False, max_side=1200):
     h,w=image.shape[:2]
     k=min(1.0,max_side/max(w,h))
     preview=cv2.resize(image,(round(w*k),round(h*k)),interpolation=cv2.INTER_AREA) if k<1 else image.copy()
@@ -30,7 +30,7 @@ def draw_ab(image, family_a, family_b, annotation, origin_xy=(0,0),
         pts=np.rint(pts*k).astype(np.int32)
         cv2.line(preview,tuple(pts[0]),tuple(pts[1]),color,3,cv2.LINE_AA)
     header=np.zeros((38,preview.shape[1],3),dtype=np.uint8)
-    msg="A RED=CALIBRATED / B GREEN=CALIBRATED" if b_calibrated else "A RED=CALIBRATED / B GRAY=NOT VERIFIED"
+    msg=("A RED=CALIBRATED" if a_calibrated else "A RED=V4 RAW") + (" / B GREEN=CALIBRATED" if b_calibrated else " / B GRAY=UNVERIFIED")
     cv2.putText(header,msg,(7,25),cv2.FONT_HERSHEY_SIMPLEX,.48,(255,255,255),1,cv2.LINE_AA)
     return np.vstack([header,preview])
 
@@ -38,7 +38,7 @@ def save_compare(image, original_a, original_b, revised_a, revised_b, annotation
                  out_dir: Path, *, b_calibrated=False):
     out_dir=Path(out_dir)
     raw=draw_ab(image,original_a,original_b,annotation,origin,b_calibrated=False)
-    repaired=draw_ab(image,revised_a,revised_b,annotation,origin,b_calibrated=b_calibrated)
+    repaired=draw_ab(image,revised_a,revised_b,annotation,origin,a_calibrated=True,b_calibrated=b_calibrated)
     # Clearly mark the raw side independently of the patched candidate side.
     cv2.putText(raw,"FROZEN V5 ORIGINAL",(8,raw.shape[0]-10),cv2.FONT_HERSHEY_SIMPLEX,.6,(255,255,255),2,cv2.LINE_AA)
     cv2.putText(repaired,"V6 HUMAN TWO-ANCHOR CANDIDATE",(8,repaired.shape[0]-10),cv2.FONT_HERSHEY_SIMPLEX,.6,(255,255,255),2,cv2.LINE_AA)
