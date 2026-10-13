@@ -382,9 +382,10 @@ def main(argv=None):
     root = Path(__file__).resolve().parents[1]
     if args.command == "audit":
         from benchmark.local_image_review import audit_local_reviews
-        print(json.dumps({"physical_yarn_references": audit(root),
-                          "phone_image_local_reviews": audit_local_reviews(root)},
-                         ensure_ascii=False, indent=2))
+        report = audit(root)
+        # Keep legacy top-level audit keys for existing callers.
+        report["phone_image_local_reviews"] = audit_local_reviews(root)
+        print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0
     server = ThreadingHTTPServer(("127.0.0.1", args.port), lambda *a, **kw:
                                  AnnotationHandler(*a, directory=str(root), **kw))
