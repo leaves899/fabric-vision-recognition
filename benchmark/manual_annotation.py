@@ -1,6 +1,6 @@
 """Local-only operator annotation service.
 
-U20261013 annotation lines denote inferred trajectories of REAL PHYSICAL YARNS,
+U20261013 PHYSICAL_YARN_REFERENCE labels denote REAL PHYSICAL YARNS,
 possibly across occlusion: they are NOT necessarily visible yarn segments and
 are NOT verified per-pixel centerline ground truth. Two clicked points provide
 a direction and an approximate inferred path. User-reviewed yarn identity
@@ -29,20 +29,23 @@ FAMILIES = {"UNKNOWN", "WARP", "WEFT"}
 SEGMENTS = ("reference", "check_same", "holdout_same", "check_cross", "check_cross_second")
 # A physical-yarn trajectory is a connected strand inferred through possible
 # occlusions; the full two-point line need not correspond to visible pixels.
-ANNOTATION_TARGETS = {"PHYSICAL_YARN_TRAJECTORY", "VISIBLE_YARN_SEGMENT",
+ANNOTATION_TARGETS = {"PHYSICAL_YARN_REFERENCE", "VISIBLE_YARN_SEGMENT",
                       "DIRECTION_ONLY", "UNSPECIFIED"}
 SIX_FABRIC_PREFIX = "U20261013_"
 
 
 def annotation_target_for(sid: str, requested=None) -> str:
+    # Read old JSON labels without forcing the user to re-annotate.
+    if requested == "PHYSICAL_YARN_TRAJECTORY":
+        requested = "PHYSICAL_YARN_REFERENCE"
     if requested is None:
         # Retain compatibility with old annotation files, but make the
         # new interpretation explicit in validate_annotation() return values.
-        requested = ("PHYSICAL_YARN_TRAJECTORY"
+        requested = ("PHYSICAL_YARN_REFERENCE"
                      if str(sid).startswith(SIX_FABRIC_PREFIX) else "UNSPECIFIED")
     if requested not in ANNOTATION_TARGETS:
         raise ValueError("unsupported annotation_target")
-    if str(sid).startswith(SIX_FABRIC_PREFIX) and requested != "PHYSICAL_YARN_TRAJECTORY":
+    if str(sid).startswith(SIX_FABRIC_PREFIX) and requested != "PHYSICAL_YARN_REFERENCE":
         raise ValueError("six-fabric reviewed annotations mean PHYSICAL_YARN_TRAJECTORY")
     return requested
 
@@ -149,9 +152,14 @@ def validate_annotation(root: Path, data: dict) -> dict:
     review_state = data.get("review_state", "DRAFT")
     family = data.get("reference_family", "UNKNOWN")
     annotation_target = annotation_target_for(sid, data.get("annotation_target"))
+    supplied_semantics = data.get("annotation_semantics")
+    if supplied_semantics not in (None, "", annotation_target, "PHYSICAL_YARN_TRAJECTORY"):
+        raise ValueError("annotation_semantics conflicts with annotation_target")
+    if supplied_semantics == "PHYSICAL_YARN_TRAJECTORY" and annotation_target != "PHYSICAL_YARN_REFERENCE":
+        raise ValueError("invalid legacy physical yarn reference")
     if data.get("visible_pixel_gt_confirmed") is True and annotation_target != "VISIBLE_YARN_SEGMENT":
         raise ValueError("inferred physical yarn trajectory is not visible pixel ground truth")
-    if data.get("centerline_pixel_gt_confirmed") is True and annotation_target == "PHYSICAL_YARN_TRAJECTORY":
+    if data.get("centerline_pixel_gt_confirmed") is True and annotation_target == "PHYSICAL_YARN_REFERENCE":
         raise ValueError("inferred physical yarn path is not precise pixel centerline ground truth")
 
     if eligibility not in ELIGIBILITY or review_state not in MODES or family not in FAMILIES:
@@ -165,6 +173,16 @@ def validate_annotation(root: Path, data: dict) -> dict:
                        required=(name == "reference" and (confirmed or review_state == "OPERATOR_REVIEWED")))
         for name in SEGMENTS
     }
+    # Distinct roles are distinct REAL physical yarns, not portions of one yarn.
+    # Reject both identical and reverse-endpoint duplicate clicks.
+    roles = (("reference","check_same","holdout_same"),
+             ("check_cross","check_cross_second"))
+    for family_roles in roles:
+        for i, first in enumerate(family_roles):
+            for second in family_roles[i+1:]:
+                x, y = normalized[first], normalized[second]
+                if x is not None and y is not None and (x == y or x == y[::-1]):
+                    raise ValueError(f"{second} must denote a DIFFERENT physical yarn than {first}")
     if review_state == "OPERATOR_REVIEWED" and not confirmed:
         raise ValueError("reviewed reference needs explicit operator confirmation")
     if normalized["check_same"] == normalized["reference"] and normalized["reference"] is not None:
@@ -213,10 +231,14 @@ def validate_annotation(root: Path, data: dict) -> dict:
         "identity_confirmed": family != "UNKNOWN",
         "segments": normalized, **counts, "notes": notes.strip(),
         "annotation_target": annotation_target,
-        "path_may_cross_occlusion": annotation_target == "PHYSICAL_YARN_TRAJECTORY",
+        "annotation_semantics": annotation_target,
+        "physical_yarn_role_groups": {"A":["reference","check_same","holdout_same"],
+                                      "B":["check_cross","check_cross_second"]}
+            if annotation_target == "PHYSICAL_YARN_REFERENCE" else {},
+        "path_may_cross_occlusion": annotation_target == "PHYSICAL_YARN_REFERENCE",
         "visible_pixel_gt_confirmed": False if annotation_target != "VISIBLE_YARN_SEGMENT"
             else data.get("visible_pixel_gt_confirmed") is True,
-        "centerline_pixel_gt_confirmed": False if annotation_target == "PHYSICAL_YARN_TRAJECTORY"
+        "centerline_pixel_gt_confirmed": False if annotation_target == "PHYSICAL_YARN_REFERENCE"
             else data.get("centerline_pixel_gt_confirmed") is True,
         **review_provenance,
         "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
@@ -264,7 +286,7 @@ def audit(root: Path) -> dict:
         "registered_public": len(images), "ready_for_v5": ready,
         "draft": draft, "negative_non_denim": non_denim,
         "stale_or_invalid": stale, "not_started": len(unknown),
-        "warning": "U20261013 lines represent inferred actual physical-yarn trajectories, not fully visible segments or certified pixel centers. Independent visible-yarn evidence is required for localization accuracy.",
+        "warning": "PHYSICAL_YARN_REFERENCE denotes a distinct real yarn per path through possible occlusions; NOT a visible pixel mask. A1/A2 calibrate, A3 is held out; warp/weft identity and cm density unconfirmed.",
     }
 
 

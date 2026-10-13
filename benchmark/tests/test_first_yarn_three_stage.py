@@ -19,23 +19,25 @@ ROOT=Path(__file__).resolve().parents[2]
 
 class PhysicalYarnTrajectoryTests(unittest.TestCase):
     def test_batch_target_is_true_physical_yarn_not_visible_segment(self):
-        self.assertEqual(annotation_target_for("U20261013_01"),"PHYSICAL_YARN_TRAJECTORY")
+        self.assertEqual(annotation_target_for("U20261013_01"),"PHYSICAL_YARN_REFERENCE")
         self.assertEqual(annotation_target_for("T004"),"UNSPECIFIED")
-        with self.assertRaisesRegex(ValueError,"PHYSICAL_YARN_TRAJECTORY"):
+        self.assertEqual(annotation_target_for("U20261013_01","PHYSICAL_YARN_TRAJECTORY"),"PHYSICAL_YARN_REFERENCE")
+        with self.assertRaisesRegex(ValueError,"PHYSICAL_YARN_REFERENCE"):
             annotation_target_for("U20261013_02","VISIBLE_YARN_SEGMENT")
 
     def test_five_operator_files_and_native_coordinates_preserved(self):
         for n in ("01","02","03","05","06"):
             path=ROOT/"datasets/annotations/drafts"/f"U20261013_{n}.json"
             raw=json.loads(path.read_text(encoding="utf-8"))
-            self.assertEqual(raw["annotation_target"],"PHYSICAL_YARN_TRAJECTORY")
+            self.assertEqual(raw["annotation_target"],"PHYSICAL_YARN_REFERENCE")
             self.assertTrue(raw["path_may_cross_occlusion"])
             self.assertFalse(raw["visible_pixel_gt_confirmed"])
             self.assertFalse(raw["centerline_pixel_gt_confirmed"])
             result=validate_annotation(ROOT,raw)
             self.assertEqual(result["segments"],raw["segments"])
             self.assertEqual(result["coordinate_space"],"ZOOM_2X_NATIVE_PIXELS")
-            self.assertEqual(result["annotation_target"],"PHYSICAL_YARN_TRAJECTORY")
+            self.assertEqual(result["annotation_target"],"PHYSICAL_YARN_REFERENCE")
+            self.assertEqual(result["annotation_semantics"],"PHYSICAL_YARN_REFERENCE")
             self.assertEqual(result["image_sha256"],raw["image_sha256"])
 
     def test_cannot_invent_visible_pixel_gt_for_occluded_trajectory(self):
@@ -107,7 +109,7 @@ class PhysicalYarnTrajectoryTests(unittest.TestCase):
 
     def test_blank_image_never_outputs_physical_count(self):
         img=np.full((600,600,3),128,np.uint8)
-        ann={"sample_id":"SYNTH","annotation_target":"PHYSICAL_YARN_TRAJECTORY",
+        ann={"sample_id":"SYNTH","annotation_target":"PHYSICAL_YARN_REFERENCE",
              "image_sha256":"synthetic","segments":{
                 "reference":[[50,120],[500,120]],
                 "check_same":[[50,216],[500,216]],

@@ -70,13 +70,14 @@ def validate_local(*, require_images: bool) -> int:
     if meta.is_file():
         details = json.loads(meta.read_text(encoding="utf-8"))
         valid_status = {"UNANNOTATED",
-                        "FIVE_OPERATOR_REVIEWED_PHYSICAL_YARN_TRAJECTORIES_ONE_NOT_ANNOTATED"}
+                        "FIVE_OPERATOR_REVIEWED_PHYSICAL_YARN_TRAJECTORIES_ONE_NOT_ANNOTATED",
+                        "FIVE_OPERATOR_REVIEWED_PHYSICAL_YARN_REFERENCES_ONE_NOT_ANNOTATED"}
         if details.get("annotation_status") not in valid_status:
             raise ValueError("unknown local human annotation status in image provenance")
         # The original/zoom JPG files must still be unmarked; the status says
         # whether SEPARATE human JSON trajectories have been reviewed.
         if details.get("annotation_status") != "UNANNOTATED":
-            if details.get("annotation_target") != "PHYSICAL_YARN_TRAJECTORY":
+            if details.get("annotation_target") not in ("PHYSICAL_YARN_TRAJECTORY","PHYSICAL_YARN_REFERENCE"):
                 raise ValueError("reviewed paths must be real physical-yarn trajectories")
         for item in details["images"]:
             sid = item["sample_id"]

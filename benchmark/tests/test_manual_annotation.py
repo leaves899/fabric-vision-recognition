@@ -42,6 +42,16 @@ class AnnotationTests(unittest.TestCase):
             }, "notes":"synthetic only"
         }
 
+    def test_reverse_endpoints_are_not_another_distinct_yarn(self):
+        self.annotation["segments"]["holdout_same"]=[[180,100],[20,100]]
+        with self.assertRaisesRegex(ValueError,"DIFFERENT physical yarn"):
+            validate_annotation(self.root,self.annotation)
+
+    def test_old_target_is_accepted_and_normalized(self):
+        self.annotation["annotation_target"]="PHYSICAL_YARN_TRAJECTORY"
+        self.assertEqual(validate_annotation(self.root,self.annotation)["annotation_target"],
+                         "PHYSICAL_YARN_REFERENCE")
+
     def test_valid_annotation_has_original_hash_and_axis(self):
         data = validate_annotation(self.root, self.annotation)
         self.assertEqual(data["image_width"], 500)

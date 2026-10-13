@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "provenance": "USER_UPLOAD",
-  "annotation_status": "FIVE_OPERATOR_REVIEWED_PHYSICAL_YARN_TRAJECTORIES_ONE_NOT_ANNOTATED",
+  "annotation_status": "FIVE_OPERATOR_REVIEWED_PHYSICAL_YARN_REFERENCES_ONE_NOT_ANNOTATED",
   "coordinate_policy": "MANUAL ANNOTATION IS ON ZOOM PHOTO: operator clicks on the UNMARKED 2x cropped photo in zoom_unmarked/, and saved segments use its native pixel coordinates (not archived original JPG coordinates). Mapping zoom -> original: x_original = crop_x0 + x_zoom/enlargement_scale; y_original = crop_y0 + y_zoom/enlargement_scale. Resampling creates no new physical detail; do not interpret pattern bands as individual yarns. Operator marks inferred true physical yarn trajectories through possibly occluded regions, NOT continuously visible strand pixels or precise pixel centerline GT.",
   "images": [
     {
@@ -25,7 +25,7 @@
       "original_bytes_unchanged": true,
       "annotation_image": "zoom_unmarked/U20261013_01_center_2x.jpg",
       "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
-      "annotation_target": "PHYSICAL_YARN_TRAJECTORY"
+      "annotation_target": "PHYSICAL_YARN_REFERENCE"
     },
     {
       "sample_id": "U20261013_02",
@@ -48,7 +48,7 @@
       "original_bytes_unchanged": true,
       "annotation_image": "zoom_unmarked/U20261013_02_center_2x.jpg",
       "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
-      "annotation_target": "PHYSICAL_YARN_TRAJECTORY"
+      "annotation_target": "PHYSICAL_YARN_REFERENCE"
     },
     {
       "sample_id": "U20261013_03",
@@ -71,7 +71,7 @@
       "original_bytes_unchanged": true,
       "annotation_image": "zoom_unmarked/U20261013_03_center_2x.jpg",
       "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
-      "annotation_target": "PHYSICAL_YARN_TRAJECTORY"
+      "annotation_target": "PHYSICAL_YARN_REFERENCE"
     },
     {
       "sample_id": "U20261013_04",
@@ -117,7 +117,7 @@
       "original_bytes_unchanged": true,
       "annotation_image": "zoom_unmarked/U20261013_05_center_2x.jpg",
       "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
-      "annotation_target": "PHYSICAL_YARN_TRAJECTORY"
+      "annotation_target": "PHYSICAL_YARN_REFERENCE"
     },
     {
       "sample_id": "U20261013_06",
@@ -140,12 +140,24 @@
       "original_bytes_unchanged": true,
       "annotation_image": "zoom_unmarked/U20261013_06_center_2x.jpg",
       "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
-      "annotation_target": "PHYSICAL_YARN_TRAJECTORY"
+      "annotation_target": "PHYSICAL_YARN_REFERENCE"
     }
   ],
   "annotation_image_kind": "UNMARKED_2X_CENTER_CROP",
-  "annotation_target": "PHYSICAL_YARN_TRAJECTORY",
+  "annotation_target": "PHYSICAL_YARN_REFERENCE",
   "path_may_cross_occlusion": true,
   "visible_segment_pixel_gt_confirmed": false,
-  "centerline_pixel_gt_confirmed": false
+  "centerline_pixel_gt_confirmed": false,
+  "annotation_semantics": "PHYSICAL_YARN_REFERENCE",
+  "yarn_role_groups": {
+    "A": [
+      "reference",
+      "check_same",
+      "holdout_same"
+    ],
+    "B": [
+      "check_cross",
+      "check_cross_second"
+    ]
+  }
 }

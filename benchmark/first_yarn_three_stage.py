@@ -229,7 +229,7 @@ def two_physical_yarn_anchor_hypothesis(ann,visual):
 
 
 def analyze_sample(ann,img):
-    assert ann["annotation_target"]=="PHYSICAL_YARN_TRAJECTORY"
+    assert ann["annotation_target"]=="PHYSICAL_YARN_REFERENCE"
     ref=ann["segments"]["reference"]
     a=segment_axis_deg(ref)
     center=np.asarray(ref,float).mean(axis=0).tolist()
@@ -301,7 +301,7 @@ def run(root:Path,out:Path):
               f'operator_pitch={e.get("approximate_operator_pitch_px_NOT_PIXEL_GT")}',flush=True)
     summary={
         "baseline_main":"e1b219384224e1d77c79aa108bef3fb51a39ea56",
-        "annotation_target":"INFERRED_REAL_PHYSICAL_YARN_TRAJECTORY_NOT_VISIBLE_SEGMENT",
+        "annotation_target":"PHYSICAL_YARN_REFERENCE",
         "steps":["A: human physical-yarn orientation","B: independent photo ridges",
                  "C: approximate yarn-path geometric agreement and alias risk"],
         "number_reviewed":len(rows),

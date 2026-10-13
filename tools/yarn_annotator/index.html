@@ -64,8 +64,8 @@ select{width:100%}
   <div><a id="originalPhotoLink" target="_blank" rel="noopener" hidden>查看归档原始照片（仅对照；本页在 2× 放大图上点击和保存）</a></div>
 </div>
 <aside class="card">
-<h2>操作顺序</h2>
-<small>① 同一根真实物理纱线两点标出连接路径，可跨越交织遮挡；② 换另一根同向真实纱线；③ 第三根用于独立检查。虚线表示人工推断的物理连接，不代表整段像素都能直接看见纱线。两点路径只代表近似位置，不是精确像素中心线真值。</small>
+<h2>操作顺序 · PHYSICAL_YARN_REFERENCE</h2>
+<small>① reference：第一根真实物理纱线；② check_same：不同的第二根真实纱线，用于校准；③ holdout_same：不同的第三根真实纱线，仅供独立测试。B组两条标记各代表另一根真实纱线。任意两根不必相邻，纱距使用人工确认的间隔数。允许遮挡，虚线不是全段可见纱段或像素分割标签。</small>
 <section class="field">
   <strong>当前点击类型</strong>
   <div class="radio-list">
