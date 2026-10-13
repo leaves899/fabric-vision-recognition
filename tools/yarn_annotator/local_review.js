@@ -125,7 +125,7 @@
     for(const row of api.data?.regions||[]){
       const d=document.createElement("div");
       d.textContent=row.id+" · "+(labels[row.kind]||row.kind)+
-        " · "+(row.geometry.type==="RECT"?"框选区域":(row.kind==="TWILL_PATTERN"?"斜纹假线":"可见短线"))+
+        " · "+(row.geometry.type==="RECT"?"框选区域":(row.kind==="APPARENT_VISIBLE_YARN"?"可见短线":"图像线状候选"))+
         (row.note?" · "+row.note:"");
       container.appendChild(d);
     }
@@ -157,6 +157,8 @@
       message="单击左侧照片里已经画出的短线或框，就能删除该标注。";
     }else if(tool==="line" && kind==="TWILL_PATTERN"){
       message="② 在左侧照片上：沿着疑似斜纹视觉带，先点击短段起点，再点击终点。画的是容易误认为同一根纱线的视觉假线，不是这块区域里没有纱线；无法确认则选择③。";
+    }else if(tool==="line" && ["GAP","COLOR_STRIPE","SHADOW"].includes(kind)){
+      message="高级短线对照：沿你能辨认的纱缝/颜色条纹/阴影假线，依次点击起点、终点。尽量选与纱线方向相近的短段；不能确认就选③无法判断，不可把所有暗线当纱缝。";
     }else if(tool==="line"){
       message="① 在左侧照片上：先点真正可见的纱线短段起点，再点终点。只画局部，不跨遮挡。";
     }else if(kind==="UNCERTAIN"){
@@ -208,8 +210,8 @@
       markDirty();updateList();redraw();return;
     }
     if(api.tool==="line"){
-      if(!["APPARENT_VISIBLE_YARN","TWILL_PATTERN","UNCERTAIN"].includes(byId("localKind").value)){
-        notify("短线仅用于可见纱线、斜纹假线或无法判断；其他类别请框选。",false);return;
+      if(!["APPARENT_VISIBLE_YARN","TWILL_PATTERN","GAP","COLOR_STRIPE","SHADOW","UNCERTAIN"].includes(byId("localKind").value)){
+        notify("该类别不支持短线，请框选局部区域。",false);return;
       }
       if(api.partialLine){
         const a=api.partialLine;
@@ -334,7 +336,7 @@
   });
   byId("localKind").addEventListener("change",()=>{
     const kind=byId("localKind").value;
-    selectTool(["APPARENT_VISIBLE_YARN","TWILL_PATTERN"].includes(kind)?"line":"rect");
+    selectTool(["APPARENT_VISIBLE_YARN","TWILL_PATTERN","GAP","COLOR_STRIPE","SHADOW"].includes(kind)?"line":"rect");
   });
   byId("switchRefs").addEventListener("click",()=>selectPanel(false));
   byId("switchLocal").addEventListener("click",()=>selectPanel(true));
