@@ -186,6 +186,23 @@ def evaluate(root=ROOT, output=None, overlays=None):
         "rotation_180_max_modulo90_error_deg":
             max(x["rotation_equivariance"]["axis_180_error_deg"] for x in rows),
         "per_fabric": rows,
+        "acceptance_gates": {
+          "ten_parameters_pass": False,
+          "independent_holdout_available": False,
+          "sample_count_meets_six_annotated": len(tested) == 6,
+          "development_reference_axis_median_under_3deg":
+             bool(angle_errors and np.median(angle_errors) < 3),
+          "development_reference_axis_all_under_5deg":
+             bool(angle_errors and len(angle_errors) == len(tested) and max(angle_errors) < 5),
+          "development_physical_pitch_median_under_10pct":
+             bool(pitch_errors and np.median(pitch_errors) < 10),
+          "development_physical_pitch_all_under_20pct":
+             bool(pitch_errors and len(pitch_errors) == len(tested) and max(pitch_errors) < 20),
+          "weave_over_under_physical_ground_truth_available": False,
+          "five_cm_physical_scale_available": False,
+          "per_yarn_width_reference_available": False,
+          "comment":"Unit tests and CI may pass while acceptance necessarily FAILS; never confuse these.",
+        },
     }
     if output:
         output = Path(output)
