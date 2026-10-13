@@ -1,9 +1,10 @@
-"""Experimental first-physical-yarn image evidence and localization audit.
+"""Legacy visible-yarn-anchor experiment (INVALIDATED for U20261013 labels).
 
-Only reference segment is used to select an oriented ridge filter and a candidate
-phase. Distinct check_same and holdout_same yarns are NEVER passed to the filter
-or line finder. This module is not full yarn identification, does not produce
-root/cm or independent warp/weft identity, and does not alter frozen V4/V5.
+On 2026-10-13 the operator clarified that all first batch clicked lines
+are INFERRED YARN CONNECTION DIRECTIONS, not visible physical yarn segments.
+Never use their pixel positions to fit a ridge or to validate centerlines.
+For current samples diagnostic_one ABSTAINS. New direction-only candidate
+engine: benchmark.direction_only_first_yarn.
 """
 from __future__ import annotations
 
@@ -160,6 +161,21 @@ def profile_peaks(score, anchor, scale):
 
 
 def diagnostic_one(ann, img):
+    # 2026-10-13 user correction: these clicked lines are inferred yarn
+    # CONNECTION DIRECTIONS, NOT directly visible fiber pixels/centers.
+    # Do not fit brightness or grid phase to their arbitrary positions;
+    # historical localization metrics are INVALIDATED for these samples.
+    if str(ann.get("sample_id","")).startswith("U20261013_"):
+        return {
+            "sample_id":ann["sample_id"],
+            "status":"INVALIDATED_DIRECTION_ONLY_ANNOTATION",
+            "manual_reference_axis_deg":round(axis_deg(ann["segments"]["reference"]),3),
+            "annotation_semantics":"INFERRED_YARN_CONNECTION_DIRECTION_NOT_VISIBLE_YARN_SEGMENT",
+            "physical_yarn_center_gt_available":False,
+            "invalidated_metrics":["reference ridge response","photo center offset",
+                                  "holdout center distance","interval count errors"],
+            "next_step":"Use direction_only_first_yarn for image-only proposals; obtain separate physical visible-yarn pixel validation."
+        },None
     ref=ann["segments"]["reference"]
     crop,offset=crop_from_reference(img,ref)
     ref_local=(np.asarray(ref,float)-offset).tolist()
