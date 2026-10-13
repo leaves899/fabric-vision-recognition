@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "provenance": "USER_UPLOAD",
+  "annotation_status": "UNANNOTATED",
+  "coordinate_policy": "Manual annotations must be made on original JPG; zooms are for visual inspection only. No yarn lines, masks, weave labels, density or auto-inferred directions.",
+  "images": [
+    {
+      "sample_id": "U20261013_01",
+      "original": "images/U20261013_01.jpg",
+      "original_sha256": "e273162299531d0eea5ff5d79b7c5937ba09d67b1101d8e54db3a313d28d0c91",
+      "original_size_px": [
+        1536,
+        2048
+      ],
+      "zoom": "zoom_unmarked/U20261013_01_center_2x.jpg",
+      "zoom_sha256": "c22cf160cac3967bf3b402dcfb34315c4c78644e113cfe1116b3ab241083b223",
+      "crop_original_xyxy": [
+        353,
+        471,
+        1183,
+        1577
+      ],
+      "enlargement_scale": 2,
+      "has_any_annotation": false,
+      "original_bytes_unchanged": true
+    },
+    {
+      "sample_id": "U20261013_02",
+      "original": "images/U20261013_02.jpg",
+      "original_sha256": "630cd4ea2245d7420307fae7704e34fb608a4c1f61379564321f03912a5312ca",
+      "original_size_px": [
+        1536,
+        2048
+      ],
+      "zoom": "zoom_unmarked/U20261013_02_center_2x.jpg",
+      "zoom_sha256": "96917ee2ac04d62740fbd37736b9c73bfacda017008b588ea34b185cd1492509",
+      "crop_original_xyxy": [
+        353,
+        471,
+        1183,
+        1577
+      ],
+      "enlargement_scale": 2,
+      "has_any_annotation": false,
+      "original_bytes_unchanged": true
+    },
+    {
+      "sample_id": "U20261013_03",
+      "original": "images/U20261013_03.jpg",
+      "original_sha256": "cc6d2c9507d086a6658f8939576bab84550e8cf532c6f8dc238542ae3e6a488f",
+      "original_size_px": [
+        1536,
+        2048
+      ],
+      "zoom": "zoom_unmarked/U20261013_03_center_2x.jpg",
+      "zoom_sha256": "666b261630fbb5e8c4ec73901bdecfd661c3b10f3d96aceec3d530606e2763ce",
+      "crop_original_xyxy": [
+        353,
+        471,
+        1183,
+        1577
+      ],
+      "enlargement_scale": 2,
+      "has_any_annotation": false,
+      "original_bytes_unchanged": true
+    },
+    {
+      "sample_id": "U20261013_04",
+      "original": "images/U20261013_04.jpg",
+      "original_sha256": "ce81fda0384c64381049869759fae7f3b51181c3914412640a3b8d4aa8d24a69",
+      "original_size_px": [
+        1279,
+        1706
+      ],
+      "zoom": "zoom_unmarked/U20261013_04_center_2x.jpg",
+      "zoom_sha256": "f9729aed607d717f4627e9b4a8b98173fe4ed56cfc3175bf91860c4e18936fd4",
+      "crop_original_xyxy": [
+        269,
+        307,
+        998,
+        1331
+      ],
+      "enlargement_scale": 2,
+      "has_any_annotation": false,
+      "original_bytes_unchanged": true
+    },
+    {
+      "sample_id": "U20261013_05",
+      "original": "images/U20261013_05.jpg",
+      "original_sha256": "4530b46cb4fa4236e4f15dcb0a62d97e41c3b34b3a4af6b3ffeeb3d1aa321250",
+      "original_size_px": [
+        1279,
+        1706
+      ],
+      "zoom": "zoom_unmarked/U20261013_05_center_2x.jpg",
+      "zoom_sha256": "e10c472c4ce09de26e40189cc10452c9b83618bc5962befef321043dcfee3085",
+      "crop_original_xyxy": [
+        269,
+        307,
+        998,
+        1331
+      ],
+      "enlargement_scale": 2,
+      "has_any_annotation": false,
+      "original_bytes_unchanged": true
+    },
+    {
+      "sample_id": "U20261013_06",
+      "original": "images/U20261013_06.jpg",
+      "original_sha256": "544b0e252daa44e4c1e01ac3d4680a870eb0fd01ae9549d3b9f4fe690ed56488",
+      "original_size_px": [
+        1279,
+        1706
+      ],
+      "zoom": "zoom_unmarked/U20261013_06_center_2x.jpg",
+      "zoom_sha256": "24fb34873c3eb42faaac5d35125f8234bb6798e6ab7b0be00e0597c314b2c1ac",
+      "crop_original_xyxy": [
+        294,
+        341,
+        959,
+        1194
+      ],
+      "enlargement_scale": 2,
+      "has_any_annotation": false,
+      "original_bytes_unchanged": true
+    }
+  ]
+}
