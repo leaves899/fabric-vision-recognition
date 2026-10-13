@@ -78,21 +78,23 @@ async function loadSample(sid){
   let row=all.find(x=>x.sample_id===sid);
   if(!row)return;
   current=row;
-  const cleanZoom=el("cleanZoomLink");
-  if(/^U20261013_0[1-6]$/.test(sid)) {
-    cleanZoom.href="/datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked/"+sid+"_center_2x.jpg";
-    cleanZoom.hidden=false;
+  const originalLink=el("originalPhotoLink");
+  const zoomNative=/^U20261013_0[1-6]$/.test(sid);
+  if(zoomNative) {
+    originalLink.href="/datasets/user_contributed/2026-10-13-six-fabric-images/images/"+sid+".jpg";
+    originalLink.hidden=false;
   } else {
-    cleanZoom.removeAttribute("href");
-    cleanZoom.hidden=true;
+    originalLink.removeAttribute("href");
+    originalLink.hidden=true;
   }
   el("sample").value=sid;
   el("fabricImg").src="";
-  show("读取 "+sid+" 原始照片和标注...");
+  show("读取 "+sid+" 当前标注照片和标注...");
   let response=await fetch("/api/annotation?id="+encodeURIComponent(sid),{cache:"no-store"});
   if(!response.ok){show("读取标注失败；检查后台",false);return;}
   let raw=await response.json();
-  data=Object.assign(blank(row),raw);
+  const staleSavedImage=!!(raw.image_path && raw.image_path!==row.image_path);
+  data=Object.assign(blank(row),staleSavedImage?{}:raw);
   data.segments=Object.assign({reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},data.segments||{});
   copyToInputs();
   let img=el("fabricImg");
@@ -100,8 +102,10 @@ async function loadSample(sid){
     let canvas=el("layer");
     canvas.width=img.naturalWidth;canvas.height=img.naturalHeight;
     zoomImage();
-    el("meta").textContent=sid+" · "+img.naturalWidth+"×"+img.naturalHeight+" (显示像素) · 原图坐标用于标注";
-    redraw();show("已加载；从放大照片中选真实可见纱段。");
+    el("meta").textContent=sid+" · "+img.naturalWidth+"×"+img.naturalHeight+
+      (zoomNative?" · 2× 中心放大图原生像素坐标（不是原图坐标）":" · 当前图像原生像素坐标");
+    redraw();
+    show(staleSavedImage?"旧标注绑定的是另一张图，已清空当前画面草稿；请重新人工选点，避免坐标误用。":"已加载；请只在可确认的真实可见纱段上人工选点。",!staleSavedImage);
   };
   img.onerror=()=>show("无法加载图片，请确认仓库根目录启动了本地服务",false);
   img.src="/"+row.image_path.split("/").map(encodeURIComponent).join("/");
@@ -141,7 +145,7 @@ async function save(){
     if(!r.ok)throw Error(out.error||"保存失败");
     current.annotated=true;
     activeList();el("sample").value=current.sample_id;
-    show("保存成功 "+out.sample_id+" · "+out.status+" · 已保留原图 SHA-256");
+    show("保存成功 "+out.sample_id+" · "+out.status+" · 已校验标注图像 SHA-256");
   }catch(err){show(String(err),false);}
 }
 function updateMode(mode){
