@@ -21,7 +21,7 @@ def cal(pitch=12.,bpitch=20.):
 def stripes():
     """Synthetic-only crossed-color bands; *not* actual yarn occlusion GT."""
     im=np.full((280,280,3),78,np.uint8)
-    cv2.rectangle(im,(0,125),(279,135),(155,155,155),-1)
+    cv2.rectangle(im,(0,128),(279,132),(155,155,155),-1)
     for x in range(40,221,20):
         cv2.rectangle(im,(x-2,0),(x+2,279),(220,220,220),-1)
     return im
