@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "provenance": "USER_UPLOAD",
   "annotation_status": "UNANNOTATED",
-  "coordinate_policy": "Manual annotations must be made on original JPG; zooms are for visual inspection only. No yarn lines, masks, weave labels, density or auto-inferred directions.",
+  "coordinate_policy": "MANUAL ANNOTATION IS ON ZOOM PHOTO: operator clicks on the UNMARKED 2x cropped photo in zoom_unmarked/, and saved segments use its native pixel coordinates (not archived original JPG coordinates). Mapping zoom -> original: x_original = crop_x0 + x_zoom/enlargement_scale; y_original = crop_y0 + y_zoom/enlargement_scale. Resampling creates no new physical detail; do not interpret pattern bands as individual yarns.",
   "images": [
     {
       "sample_id": "U20261013_01",
@@ -22,7 +22,9 @@
       ],
       "enlargement_scale": 2,
       "has_any_annotation": false,
-      "original_bytes_unchanged": true
+      "original_bytes_unchanged": true,
+      "annotation_image": "zoom_unmarked/U20261013_01_center_2x.jpg",
+      "coordinate_space": "ZOOM_2X_NATIVE_PIXELS"
     },
     {
       "sample_id": "U20261013_02",
@@ -42,7 +44,9 @@
       ],
       "enlargement_scale": 2,
       "has_any_annotation": false,
-      "original_bytes_unchanged": true
+      "original_bytes_unchanged": true,
+      "annotation_image": "zoom_unmarked/U20261013_02_center_2x.jpg",
+      "coordinate_space": "ZOOM_2X_NATIVE_PIXELS"
     },
     {
       "sample_id": "U20261013_03",
@@ -62,7 +66,9 @@
       ],
       "enlargement_scale": 2,
       "has_any_annotation": false,
-      "original_bytes_unchanged": true
+      "original_bytes_unchanged": true,
+      "annotation_image": "zoom_unmarked/U20261013_03_center_2x.jpg",
+      "coordinate_space": "ZOOM_2X_NATIVE_PIXELS"
     },
     {
       "sample_id": "U20261013_04",
@@ -82,7 +88,9 @@
       ],
       "enlargement_scale": 2,
       "has_any_annotation": false,
-      "original_bytes_unchanged": true
+      "original_bytes_unchanged": true,
+      "annotation_image": "zoom_unmarked/U20261013_04_center_2x.jpg",
+      "coordinate_space": "ZOOM_2X_NATIVE_PIXELS"
     },
     {
       "sample_id": "U20261013_05",
@@ -102,7 +110,9 @@
       ],
       "enlargement_scale": 2,
       "has_any_annotation": false,
-      "original_bytes_unchanged": true
+      "original_bytes_unchanged": true,
+      "annotation_image": "zoom_unmarked/U20261013_05_center_2x.jpg",
+      "coordinate_space": "ZOOM_2X_NATIVE_PIXELS"
     },
     {
       "sample_id": "U20261013_06",
@@ -122,7 +132,10 @@
       ],
       "enlargement_scale": 2,
       "has_any_annotation": false,
-      "original_bytes_unchanged": true
+      "original_bytes_unchanged": true,
+      "annotation_image": "zoom_unmarked/U20261013_06_center_2x.jpg",
+      "coordinate_space": "ZOOM_2X_NATIVE_PIXELS"
     }
-  ]
+  ],
+  "annotation_image_kind": "UNMARKED_2X_CENTER_CROP"
 }
