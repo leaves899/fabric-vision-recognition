@@ -1,0 +1,42 @@
+name: First physical yarn localization audit
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/first-yarn-evidence.yml'
+      - 'benchmark/first_yarn_evidence.py'
+      - 'benchmark/tests/test_first_yarn_evidence.py'
+      - 'datasets/annotations/drafts/U20261013_*.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reference-only-fiber-localization:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: demo/v5/requirements.txt
+      - name: Dependencies (including actual annotation Pillow requirement)
+        run: python -m pip install -r demo/v5/requirements.txt Pillow
+      - name: Source photo hash, native zoom coordinate and operator audit
+        run: python -m benchmark.manual_annotation audit
+      - name: Synthetic physical stripe, flat negative and geometry tests
+        run: python -m unittest benchmark.tests.test_first_yarn_evidence -v
+      - name: Real-photo five-fabric first-yarn evidence and holdout audit
+        run: python -m benchmark.first_yarn_evidence --out experiments/first-yarn-evidence
+      - name: Preserve all five actual overlays and numeric evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: first-yarn-reference-only-evidence
+          path: experiments/first-yarn-evidence/
+          if-no-files-found: warn
+          retention-days: 30
