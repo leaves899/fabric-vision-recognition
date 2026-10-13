@@ -1,6 +1,6 @@
 "use strict";
 const el=id=>document.getElementById(id);
-const PRIORITY=["T001","T004","T005","T007","T006","P001","T002","H001","S001","X002","U001"];
+const PRIORITY=["U20261013_01","U20261013_02","U20261013_03","U20261013_04","U20261013_05","U20261013_06","T001","T004","T005","T007","T006","P001","T002","H001","S001","X002","U001"];
 const COLORS={reference:"#ff9a27",check_same:"#18d294",holdout_same:"#fff068",check_cross:"#72a9ff",check_cross_second:"#cf8cff"};
 const LABELS={reference:"A第一根校准纱线",check_same:"A第二根校准纱线",holdout_same:"A第三根独立验收纱线",check_cross:"B第一根校准纱线",check_cross_second:"B第二根校准纱线"};
 let all=[], visible=[], current=null, selected="reference", data=null, drawn=[];
