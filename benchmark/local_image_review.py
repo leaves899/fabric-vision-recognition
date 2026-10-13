@@ -22,9 +22,10 @@ from benchmark.manual_annotation import image_stats, samples, _zoom_review_prove
 FOLDER = Path("datasets/physical_evidence_labels/manual_image_reviews")
 SCHEMA = "1.0"
 SOURCE = "PHONE_IMAGE_OPERATOR_REVIEW"
-# Browser/localhost save compatibility contract. v2 accepts TWILL_PATTERN LINE.
+# Browser/localhost save compatibility contract. v2 accepts evidence LINE paths.
 LOCAL_REVIEW_PROTOCOL_VERSION = 2
-SUPPORTED_LINE_KINDS = ("APPARENT_VISIBLE_YARN", "TWILL_PATTERN", "UNCERTAIN")
+SUPPORTED_LINE_KINDS = ("APPARENT_VISIBLE_YARN", "TWILL_PATTERN", "GAP",
+                        "COLOR_STRIPE", "SHADOW", "UNCERTAIN")
 KINDS = {
     "APPARENT_VISIBLE_YARN", "GAP", "TWILL_PATTERN",
     "COLOR_STRIPE", "SHADOW", "OCCLUSION", "UNCERTAIN",
@@ -114,12 +115,12 @@ def validate_local_review(root: Path, payload: dict) -> dict:
         if kind not in KINDS:
             raise ValueError("unknown local evidence category")
         geom = _geometry(item.get("geometry"), width, height)
-        # Local negative candidates should have the SAME line geometry as
-        # apparent true-yarn strokes, enabling direct track-vs-track comparison.
-        # Legacy TWILL_PATTERN rectangular regions remain valid and unchanged.
+        # Optical negative-candidate lines (gaps/dye/shadow/twill) must support
+        # the same LINE geometry as apparent yarns to avoid direction-only
+        # learning shortcuts. Legacy RECT regions remain valid and unchanged.
         # Neither type is independent physical ground truth.
         if geom["type"] == "LINE" and kind not in SUPPORTED_LINE_KINDS:
-            raise ValueError("short line allowed only for apparent yarn, twill visual track or unknown")
+            raise ValueError("short line is limited to photo-only visible yarn, twill, gap, color, shadow or unknown")
         remark = item.get("note", "")
         if not isinstance(remark, str) or len(remark) > 500:
             raise ValueError("invalid region note")
