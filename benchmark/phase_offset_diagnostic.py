@@ -1,8 +1,8 @@
-"""Geometric localization audit: distance from annotated *visible yarn* to V4 A tracks.
+"""Geometric diagnostics for manually inferred yarn paths and V4 candidates.
 
-The input direction is supplied by a person. This tool deliberately does NOT
-count small angular error as localization success or create an auto-correction.
-These are proximal-point diagnostics, not a true pixelwise yarn mask IoU.
+For U20261013 the clicked lines are trajectories of true physical yarns through
+possible occlusion, NOT continuously visible strand pixels nor precise physical
+centerline pixel ground truth. Distances are approximate geometry only.
 """
 from __future__ import annotations
 
@@ -192,13 +192,19 @@ def main(argv=None):
     from v4_adapter import run_v4
     v4=run_v4(image,float(result["direction_evidence"]["v4_adapter_rotation_deg"]))
     analysis=evaluate_tracks(annotation,v4["first"],offset)
+    inferred_physical_path = annotation.get("annotation_target")=="PHYSICAL_YARN_TRAJECTORY"
     report={
-        "sample_id":args.id,"status":"POSITION_DIAGNOSTIC_ONLY",
+        "sample_id":args.id,"status":(
+            "INFERRED_REAL_YARN_PATH_GEOMETRY_ONLY" if inferred_physical_path
+            else "POSITION_DIAGNOSTIC_ONLY"),
         "input_type":"ROI" if provenance else "FULL_IMAGE",
         "origin_xy_px":offset, "candidate_A_lines":len(v4["first"]),
         "reference":analysis["reference"],
         "independent_check_same":analysis["check_same"],
-        "report_caution":"Low angular error cannot validate correct yarn centers. Do not auto-correct grid phase from these metrics alone.",
+        "annotation_target":annotation.get("annotation_target","UNSPECIFIED"),
+        "trajectory_can_cross_occlusion":inferred_physical_path,
+        "reported_distance_is_pixelwise_visible_yarn_accuracy":False,
+        "report_caution":"U20261013 marked paths are inferred physical-yarn trajectories, not visible pixel GT. Agreement only supports approximate geometry. Do not certify yarn centers or adjust grid phase uncritically.",
         "user_report":"T001/T004/T005 tracks reported as lying in inter-yarn gaps",
     }
     output=args.out if args.out is not None else result_dir/"phase_diagnostic.json"
