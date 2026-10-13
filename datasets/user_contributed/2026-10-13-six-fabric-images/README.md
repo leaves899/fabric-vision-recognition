@@ -11,11 +11,13 @@
 ### Windows PowerShell（仓库根目录）
 
 ```powershell
+git fetch origin
+git switch data/20261013-six-fabric-visual-drafts
 Expand-Archive -LiteralPath "six_fabric_visual_annotation_bundle.zip" -DestinationPath "datasets/user_contributed/" -Force
 python scripts/verify_six_fabric_samples.py --require-images
 git add datasets/user_contributed/2026-10-13-six-fabric-images/
 git commit -m "data: add six user-provided fabric originals and visual review"
-git push
+git push origin data/20261013-six-fabric-visual-drafts
 ```
 
 不要把图片无授权地同步到公共仓库。本仓库当前为私有仓库，但将来如修改可见性，必须单独确认图片授权。
