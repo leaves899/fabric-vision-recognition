@@ -1,0 +1,53 @@
+name: V5.1 G1 image-only local refinement research
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/v51-g1-local-refinement.yml'
+      - 'demo/v5/v51_refinement.py'
+      - 'benchmark/v51_g1_evaluate.py'
+      - 'benchmark/tests/test_v51_g1.py'
+      - 'benchmark/v5_pr16_local_evidence_audit.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-v5-vs-g1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        sample: [U20261013_01, U20261013_02, U20261013_03, U20261013_05, U20261013_06]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: demo/v5/requirements.txt
+      - name: Install unchanged original V5 dependencies
+        run: python -m pip install -r demo/v5/requirements.txt Pillow
+      - name: Test G1 geometry, no-image abstention, candidate IDs and 90 degree rotation
+        run: python -m unittest discover -s benchmark/tests -p test_v51_g1.py -v
+      - name: Verify operator images and annotation provenance
+        run: python -m benchmark.manual_annotation audit
+      - name: Re-run original frozen V5 on PR16 human-direction-only crop
+        run: python -m benchmark.run_annotated_v5_roi --id "${{ matrix.sample }}" --margin-px 380 --max-pixels 3000000 --out "experiments/v51-g1/${{ matrix.sample }}/baseline"
+      - name: Score baseline V5 on held-out PR16 draft short strokes
+        run: python -m benchmark.v5_pr16_local_evidence_audit --id "${{ matrix.sample }}" --result-dir "experiments/v51-g1/${{ matrix.sample }}/baseline"
+      - name: Refine same candidates with image-only G1 and score without labels leakage
+        run: python -m benchmark.v51_g1_evaluate --id "${{ matrix.sample }}" --baseline-dir "experiments/v51-g1/${{ matrix.sample }}/baseline" --out "experiments/v51-g1/${{ matrix.sample }}/refined"
+      - name: Upload baseline, G1, per-stroke metrics, and before-after overlays
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v51-g1-${{ matrix.sample }}
+          path: experiments/v51-g1/${{ matrix.sample }}/
+          if-no-files-found: warn
+          retention-days: 30
