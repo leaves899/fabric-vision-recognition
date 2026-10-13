@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'benchmark/first_yarn_three_stage.py'
+      - 'benchmark/first_yarn_lattice_evidence.py'
+      - 'benchmark/tests/test_first_yarn_lattice_evidence.py'
       - 'benchmark/direction_only_first_yarn.py'
       - 'benchmark/manual_annotation.py'
       - 'benchmark/tests/test_first_yarn_three_stage.py'
@@ -31,14 +33,18 @@ jobs:
       - name: Validate input JPG hashes and real physical-yarn trajectory annotations
         run: python -m benchmark.manual_annotation audit
       - name: Check label semantics, image-only detector, alias/holdout and negative tests
-        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage -v
+        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence -v
       - name: Three-stage real-image experiment on five reviewed samples
         run: python -m benchmark.first_yarn_three_stage --out experiments/first-yarn-3stage
+      - name: Four-stage first-family 5-photo physical lattice evidence and A3 holdout
+        run: python -m benchmark.first_yarn_lattice_evidence --out experiments/first-yarn-lattice
       - name: Upload actual JPEG overlays and complete sample reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: real-yarn-trajectory-3stage-5-photos
-          path: experiments/first-yarn-3stage/
+          path: |
+            experiments/first-yarn-3stage/
+            experiments/first-yarn-lattice/
           if-no-files-found: warn
           retention-days: 30
