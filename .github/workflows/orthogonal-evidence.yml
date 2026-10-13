@@ -25,7 +25,7 @@ jobs:
           cache: pip
           cache-dependency-path: demo/v5/requirements.txt
       - name: Install existing image-processing dependencies
-        run: python -m pip install -r demo/v5/requirements.txt
+        run: python -m pip install -r demo/v5/requirements.txt Pillow
       - name: Validate image and annotation provenance
         run: python -m benchmark.manual_annotation audit
       - name: Run direction, geometry and negative-control tests
