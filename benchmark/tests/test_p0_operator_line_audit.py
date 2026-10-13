@@ -9,7 +9,7 @@ from benchmark.p0_operator_line_audit import (
     windows_for_stroke, local_optical_features,
     connected_positive_groups, summarize_sample,
     camera_pitch_from_operator_A1_A2, unlabelled_half_pitch_controls,
-    half_pitch_probe, POS, NEG,
+    half_pitch_probe, nearest_length_matched_twill_pairs, POS, NEG,
 )
 
 
@@ -112,6 +112,58 @@ class OperatorLineAuditTests(unittest.TestCase):
         self.assertFalse(sample["unlabelled_direction_length_matched_control_stats"]
                          ["paired_side_contrast_z"]["valid_true_false_yarn_comparison"])
         self.assertEqual(len(record["UNLABELLED_direction_matched_half_pitch_controls"]),2)
+
+    def test_spatial_direction_length_matching_and_operator_same_strand_guard(self):
+        photo=self.synthetic()
+        # Fake and operator yarn both horizontal; two separate operator
+        # strokes are linked as one inferred physical yarn identity group.
+        sample={"records":[
+            {"id":"r1","kind":POS,"geometry_type":"LINE",
+             "camera_original_xy":[[50,90],[95,90]],
+             "optical_features":{k:0.8 for k in (
+                "center_vs_flanks_abs_z","paired_side_contrast_z",
+                "paired_contrast_support_fraction","transverse_vs_axial_gradient",
+                "center_flank_sign_stability","local_luma_std","local_chroma_std")}},
+            {"id":"r2","kind":POS,"geometry_type":"LINE",
+             "camera_original_xy":[[105,90],[150,90]],
+             "optical_features":{k:0.8 for k in (
+                "center_vs_flanks_abs_z","paired_side_contrast_z",
+                "paired_contrast_support_fraction","transverse_vs_axial_gradient",
+                "center_flank_sign_stability","local_luma_std","local_chroma_std")}},
+            {"id":"t1","kind":NEG,"geometry_type":"LINE",
+             "camera_original_xy":[[20,110],[230,110]],
+             "optical_features":None},
+        ],"positive_relation_groups_NOT_DISTINCT_YARN_COUNT":[["r1","r2"]]}
+        result=nearest_length_matched_twill_pairs(photo,sample)
+        self.assertEqual(result["matched_operator_strokes_NOT_independent"],2)
+        self.assertEqual(result["unique_operator_yarn_same_strand_groups_NOT_VERIFIED_COUNT"],1)
+        self.assertEqual(result["unique_operator_false_track_ids_NOT_independent_GT"],1)
+        self.assertEqual(result["pairs"][0]["positive_window_length_camera_px"],
+                         result["pairs"][0]["negative_window_length_camera_px"])
+        self.assertAlmostEqual(result["pairs"][0]["center_separation_camera_px"],20)
+        self.assertIsNone(result["real_physical_identity_accuracy"])
+        self.assertTrue(result["unverified_phone_image_labels_only"])
+
+    def test_long_distant_and_cross_direction_false_lines_not_matches(self):
+        photo=self.synthetic()
+        features={k:0.5 for k in ("center_vs_flanks_abs_z",
+                "paired_side_contrast_z","paired_contrast_support_fraction",
+                "transverse_vs_axial_gradient","center_flank_sign_stability",
+                "local_luma_std","local_chroma_std")}
+        sample={"records":[
+            {"id":"p","kind":POS,"geometry_type":"LINE",
+             "camera_original_xy":[[50,90],[95,90]],
+             "optical_features":features},
+            {"id":"far","kind":NEG,"geometry_type":"LINE",
+             "camera_original_xy":[[20,175],[230,175]],"optical_features":None},
+            {"id":"cross","kind":NEG,"geometry_type":"LINE",
+             "camera_original_xy":[[75,20],[75,230]],"optical_features":None}],
+            "positive_relation_groups_NOT_DISTINCT_YARN_COUNT":[["p"]]}
+        value=nearest_length_matched_twill_pairs(photo,sample)
+        self.assertEqual(value["matched_operator_strokes_NOT_independent"],0)
+        self.assertEqual(value["unique_operator_false_track_ids_NOT_independent_GT"],0)
+        self.assertIsNone(value["per_feature"]["paired_side_contrast_z"]
+                          ["matched_stroke_median_difference"])
 
     def test_cross_axis_twill_only_does_not_test_non_direction_discrimination(self):
         im=self.synthetic()
