@@ -163,6 +163,9 @@ def infer_lattice(image, ann, *, prepared=None):
         for x,profile in zip(cx,profiles):
             ix=int(round(x))
             if not mask[int(np.clip(round(target),0,h-1)),ix]:
+                measurements.append({"x":round(float(x),1),"y":None,
+                                     "ridge_score":None,"paired_flank_score":None,
+                                     "supported":False,"is_actual_camera_pixel":False})
                 continue
             low=max(2,round(target)-radius);high=min(h-3,round(target)+radius)
             if high<low:continue
