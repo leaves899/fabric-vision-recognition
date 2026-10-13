@@ -35,7 +35,7 @@ def unit(x):
     return v / m
 
 
-def calibration_fields(annotation):
+def calibration_fields(annotation, original_camera_crop_origin=(0, 0)):
     """Whitelist A1, A2, B1, B2; intentionally NEVER read A3."""
     seg = annotation["segments"]
     A1, A2, B1, B2 = (np.asarray(seg[name], float) for name in
@@ -56,7 +56,9 @@ def calibration_fields(annotation):
         raise ValueError("unresolved physical-pitch calibration")
     return {"tangent": tangent, "normal": normal, "pitch": pitch,
             "B_tangent": b_tangent, "B_normal": b_normal,
-            "B_origin": B1.mean(axis=0) / 2, "B_pitch_signed": b_pitch,
+            "B_origin": B1.mean(axis=0) / 2 +
+                np.asarray(original_camera_crop_origin, dtype=float),
+            "B_pitch_signed": b_pitch,
             "uses_A3_holdout": False}
 
 
@@ -294,8 +296,8 @@ def run(root:Path,out:Path,sample_ids=("U20261013_01","U20261013_03")):
             raise ValueError("Missing human visible fragment labels: "+sid)
         # Select fields without reading A3 into the evidence pipeline.
         reference=json.loads((root/"datasets/annotations/drafts"/(sid+".json")).read_text(encoding="utf-8"))
-        calib=calibration_fields(reference)
         photo,provenance=_camera_image(root,review)
+        calib=calibration_fields(reference,provenance["crop_original_xyxy"][:2])
         fragments=create_fragments(photo,review,provenance,calib)
         edges=rank_evidence(propose_candidates(fragments,calib))
         # Critically: operator relationships enter ONLY after the complete
