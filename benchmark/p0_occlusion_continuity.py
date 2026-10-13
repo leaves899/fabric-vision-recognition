@@ -246,7 +246,34 @@ def audit_operator_connections(candidates, relations, fragments):
     groups = connected_positive_groups(
         [{"id":f["id"],"kind":POS} for f in fragments], relations)
     complete = [x for x in inspected if x["candidate_generated_without_relation"]]
+    members_by_id={rid:f"operator_component_{i+1:02d}" for i,g in enumerate(groups)
+                   for rid in g}
+    for item in inspected:
+        item["human_same_component_group_NOT_PHYSICAL_IDENTITY_GT"] = (
+            members_by_id.get(item["operator_source"]))
+    diagnostic={}
+    for metric in METRICS:
+        available=[r for r in complete
+                   if r["rank_per_untuned_evidence"][metric] is not None]
+        per_group={}
+        for row in available:
+            n=row["alternative_continuations"]
+            rank=row["rank_per_untuned_evidence"][metric]
+            # rank 1 is the most preferred; 1.0 normalized preference is best.
+            preference=1.0 - (rank-1)/max(n-1,1)
+            per_group.setdefault(row["human_same_component_group_NOT_PHYSICAL_IDENTITY_GT"],[]).append(preference)
+        group_medians=[float(np.median(values)) for values in per_group.values()]
+        diagnostic[metric]={
+            "operator_links_scored_NOT_independent_GT":len(available),
+            "operator_links_at_rank_one_NOT_accuracy":sum(
+                r["rank_per_untuned_evidence"][metric]==1 for r in available),
+            "distinct_operator_same_groups_scored":len(per_group),
+            "median_group_preference_0_worst_1_best_DESCRIPTIVE_ONLY":
+                round(float(np.median(group_medians)),4) if group_medians else None,
+            "not_a_true_false_classification_metric":True,
+        }
     return {
+        "per_cue_operator_relation_competition_DIAGNOSTIC_ONLY":diagnostic,
         "same_operator_strokes_audited":len(inspected),
         "operator_same_links_found_in_all_forward_candidates":len(complete),
         "operator_same_links_not_generated":len(inspected)-len(complete),
@@ -347,6 +374,12 @@ def run(root:Path,out:Path,sample_ids=("U20261013_01","U20261013_03")):
               f'present={audited["operator_same_links_found_in_all_forward_candidates"]} '
               f'candidate_coverage_NOT_accuracy '
               f'(UNKNOWN_PHYSICAL_IDENTITY)',flush=True)
+        for metric,stats in audited["per_cue_operator_relation_competition_DIAGNOSTIC_ONLY"].items():
+            print(f'{sid} E4_CUE {metric}: linked_groups={stats["distinct_operator_same_groups_scored"]} '
+                  f'group_median_preference={stats["median_group_preference_0_worst_1_best_DESCRIPTIVE_ONLY"]} '
+                  f'top1_operator_links={stats["operator_links_at_rank_one_NOT_accuracy"]}/'
+                  f'{stats["operator_links_scored_NOT_independent_GT"]} '
+                  f'(SAME_IS_WEAK_OPERATOR_IMAGE_LABEL_NOT_PHYSICAL_GT)',flush=True)
     (out/"summary.json").write_text(
         json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     return summary
