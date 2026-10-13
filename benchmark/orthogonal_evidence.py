@@ -156,6 +156,53 @@ def pitch_from_manual(a,b,angle,intervals):
     return round(distance/int(intervals),3)
 
 
+def cross_pitch_candidates(bgr, first_axis, *, max_lag=112):
+    """Independent multi-transect 1-D color/brightness ACF.
+
+    Sampling runs PARALLEL to known family A and therefore intersects family B.
+    These are texture-period hypotheses (p, 2p alias possible), NOT proven yarn
+    counts. No held-out cross annotation is read in this function.
+    """
+    from scipy.ndimage import gaussian_filter1d
+    from scipy.signal import find_peaks
+    lab=cv2.cvtColor(bgr,cv2.COLOR_BGR2LAB).astype(np.float32)
+    theta=np.radians(first_axis)
+    u=np.asarray([np.cos(theta),np.sin(theta)])
+    n=np.asarray([-np.sin(theta),np.cos(theta)])
+    cx=(bgr.shape[1]-1)*.5;cy=(bgr.shape[0]-1)*.5
+    t=np.arange(-175,176,dtype=np.float32)
+    offsets=np.linspace(-135,135,13)
+    profiles=[]
+    for offset in offsets:
+        xy=np.asarray([cx,cy])+t[:,None]*u+offset*n
+        xs=xy[:,0].astype(np.float32).reshape(-1,1)
+        ys=xy[:,1].astype(np.float32).reshape(-1,1)
+        for ch in (0,2):  # image luminance and blue/yellow chromatic contrast
+            values=cv2.remap(lab[:,:,ch],xs,ys,cv2.INTER_LINEAR,
+                             borderMode=cv2.BORDER_REFLECT_101)[:,0].astype(float)
+            band=gaussian_filter1d(values,1.2)-gaussian_filter1d(values,23.)
+            sigma=np.std(band)
+            if sigma>1.5:profiles.append(band/sigma)
+    if len(profiles)<8:
+        return {"status":"ABSTAIN_WEAK_IMAGE_SIGNAL","pitch_candidates_px":[]}
+    all_lags=np.arange(max_lag+1)
+    corrs=[]
+    for p in profiles:
+        corr=np.correlate(p,p,mode="full")[len(p)-1:]
+        corrs.append(corr[:max_lag+1]/(len(p)-all_lags+1e-6))
+    avg=np.mean(corrs,axis=0)
+    peaks,props=find_peaks(avg[14:],distance=6,prominence=.035)
+    peaks=peaks+14
+    ranked=sorted((int(k) for k in peaks),key=lambda k:avg[k],reverse=True)
+    hypotheses=[{"period_px":i,"normalized_correlation":round(float(avg[i]),4)}
+                for i in ranked[:4] if avg[i]>.07]
+    return {"status":"TEXTURE_PERIOD_CANDIDATES_NOT_YARN_PITCH" if hypotheses
+                else "ABSTAIN_NO_STABLE_PERIOD",
+            "pitch_candidates_px":hypotheses,
+            "num_transect_channel_profiles":len(profiles),
+            "main_peak_is_physical_single_yarn_unproven":True}
+
+
 def segment_image_evidence(img, segment, angle, pixel_offset, pitch):
     """Independent diagnostic: compare marked-fiber directional energy to half-pitch shifts.
 
@@ -237,6 +284,15 @@ def run_sample(root, ann_file, out):
                   axis_deg(reference),ann.get("same_family_intervals"))
     manual_pitch_b=(pitch_from_manual(cross[0],cross[1],manual_axes[0],
                     ann.get("cross_family_intervals")) if all(cross) else None)
+    photo_periods=cross_pitch_candidates(roi,axis_deg(reference))
+    # After image-only estimation, compare the ranked periodicity hypotheses
+    # to the operator B pitch strictly as evaluation (no algorithm tuning).
+    photo_periods["independent_human_b_pitch_px"]=manual_pitch_b
+    photo_periods["candidate_abs_relative_errors"]=[
+        round(abs(k["period_px"]/manual_pitch_b-1),4)
+        for k in photo_periods["pitch_candidates_px"]
+    ] if manual_pitch_b else []
+    photo_periods["harmonic_warning"]="A texture period can be p/2, p or 2p; no physical single-yarn period certified."
     prior_errors=[round(diff180((axis_deg(reference)+90)%180,v),3)
                   if v is not None else None for v in manual_axes]
     cross_image_support=[
@@ -265,6 +321,7 @@ def run_sample(root, ann_file, out):
             "candidate_vs_cross_heldout_error_deg":errors,
             "heldout_cross_image_support":cross_image_support,
             "heldout_same_image_support":same_image_support,
+            "image_only_second_group_period_hypotheses":photo_periods,
             "rotation_90_reprojected_drift_deg":round(angular_drift,3) if angular_drift is not None else None,
             "photo_physical_scale_available":False,
             "physical_yarn_identity_verified":False,
@@ -291,6 +348,8 @@ def main(argv=None):
             print(f'{row["sample_id"]}: {d["status"]} candidate={d["candidate_cross_deg"]} '
                   f'geometric_prior_error={row["orthogonal_prior_vs_cross_heldout_error_deg"]} '
                   f'cross_pixel_support={[(v or {}).get("marked_minus_control_mean") for v in row["heldout_cross_image_support"]]} '
+                  f'photo_pitch_hypotheses={[x["period_px"] for x in row["image_only_second_group_period_hypotheses"]["pitch_candidates_px"]]} '
+                  f'manual_b_pitch={row["manual_b_pitch_px_per_interval"]} '
                   f'candidate_error={row["candidate_vs_cross_heldout_error_deg"]} '
                   f'rotation_drift={row["rotation_90_reprojected_drift_deg"]}',flush=True)
     # Negative control: textured dots without yarns must never be physical success.
