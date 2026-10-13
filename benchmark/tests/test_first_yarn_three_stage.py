@@ -100,7 +100,17 @@ class PhysicalYarnTrajectoryTests(unittest.TestCase):
         self.assertFalse(report["third_real_yarn_heldout"]["was_used_to_calibrate"])
         self.assertEqual(report["third_real_yarn_heldout"]["residual_as_fraction_of_nominal_pitch"],0)
         self.assertFalse(report["automatic_real_yarn_count_certified"])
+        self.assertEqual(report["third_real_yarn_heldout"]["evaluation_role"],
+                         "A3_INDEPENDENT_APPROXIMATE_PHYSICAL_YARN_REFERENCE")
+        snapshot=report["approximate_candidate_targets"]
+        ann["segments"]["holdout_same"]=[[30,357],[300,357]]
+        moved=two_physical_yarn_anchor_hypothesis(ann,visual)
+        self.assertEqual(moved["approximate_candidate_targets"],snapshot)
+        self.assertEqual(moved["inferred_nominal_physical_pitch_px"],40)
+        self.assertNotEqual(moved["third_real_yarn_heldout"]["approximate_geometry_residual_px"],
+                            report["third_real_yarn_heldout"]["approximate_geometry_residual_px"])
         self.assertEqual(report["grid_site_count"],len(report["approximate_candidate_targets"]))
+        self.assertFalse(report["third_real_yarn_heldout"]["pixel_centerline_ground_truth"])
         # Both physical fiber anchors constrain the lattice but no photo peak
         # can ever be claimed to be certified as the real yarn.
         self.assertTrue(all(not t["actual_visible_yarn_confirmed"] for t in report["approximate_candidate_targets"]))

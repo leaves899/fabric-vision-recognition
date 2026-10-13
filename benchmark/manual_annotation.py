@@ -46,7 +46,7 @@ def annotation_target_for(sid: str, requested=None) -> str:
     if requested not in ANNOTATION_TARGETS:
         raise ValueError("unsupported annotation_target")
     if str(sid).startswith(SIX_FABRIC_PREFIX) and requested != "PHYSICAL_YARN_REFERENCE":
-        raise ValueError("six-fabric reviewed annotations mean PHYSICAL_YARN_TRAJECTORY")
+        raise ValueError("six-fabric reviewed annotations mean PHYSICAL_YARN_REFERENCE")
     return requested
 
 

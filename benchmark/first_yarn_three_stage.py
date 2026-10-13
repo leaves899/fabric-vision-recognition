@@ -3,8 +3,8 @@
 A: operator identifies TRUE physical yarn connection direction (possibly occluded).
 B: independently detect image ridges at multiple longitudinal windows; do not
    train photometric templates or pixel phase on the operator's drawn path.
-C: check candidate geometry against other inferred real-yarn trajectories,
-   count aliasing and rot90 consistency. NO true fiber center/pixel GT exists.
+C: estimate pitch/phase from A1+A2 and verified gap count; A3 is strict
+   holdout for approximate true-yarn geometry, NEVER calibration. NO true fiber center/pixel GT exists.
 The output is never automatically certified as a single real fiber.
 """
 from __future__ import annotations
@@ -44,7 +44,6 @@ def evaluate_centers(ann,visual,proposal):
         return dict(status="ABSTAIN_TOO_FEW_CANDIDATES",
                     true_yarn_pixel_accuracy_evaluable=False)
     ref=ann["segments"]["reference"]
-    reference_y=centerline_coordinate(ref,m,offset)
     entries={}
     for role in ("reference","check_same","holdout_same"):
         path=ann["segments"].get(role)
@@ -74,7 +73,8 @@ def evaluate_centers(ann,visual,proposal):
     for row in entries.values():
         row["distance_in_image_period_units"]=round(
             row["geometric_offset_to_approximate_path_px"]/spacing,3)
-    if "reference" in entries and "check_same" in entries and human_intervals:
+    if ("reference" in entries and "check_same" in entries and human_intervals
+            and ann.get("same_family_intervals_confirmed") is True):
         r=entries["reference"]["nearest_image_ridge_index"]
         c=entries["check_same"]["nearest_image_ridge_index"]
         detected_intervals=abs(c-r)
@@ -84,6 +84,8 @@ def evaluate_centers(ann,visual,proposal):
         result["manual_physical_interval_count_EVALUATION_ONLY"]=human_intervals
         result["image_candidate_peak_intervals_between_inferred_tracks"]=detected_intervals
         result["candidate_interval_count_error"]=abs(detected_intervals-human_intervals)
+        result["candidate_interval_count_error_role"]="CALIBRATION_A1_A2_DIAGNOSTIC_NOT_INDEPENDENT_TEST"
+        result["counts_are_independently_tested"]=False
         result["approximate_operator_pitch_px_NOT_PIXEL_GT"]=round(approx_pitch,3)
         result["candidate_pitch_relative_disagreement"]=round(
             abs(image_pitch/approx_pitch-1),3) if approx_pitch>0 else None
@@ -216,15 +218,30 @@ def two_physical_yarn_anchor_hypothesis(ann,visual):
         y=centerline_coordinate(holdout,m,offset)
         index=int(round((y-a)/signed_pitch))
         expected=a+index*signed_pitch
+        photo_y=float(peaks[int(np.argmin(np.abs(peaks-y)))])
+        photo_residual=abs(photo_y-y)
+        geometric_fraction=abs(y-expected)/pitch
         result["third_real_yarn_heldout"]={
+            "evaluation_role":"A3_INDEPENDENT_APPROXIMATE_PHYSICAL_YARN_REFERENCE",
+            "status":"GEOMETRY_CONSISTENT_NOT_IDENTITY_GT" if geometric_fraction<=.25
+                     else "GEOMETRY_DISAGREEMENT_REVIEW",
+            "fixed_geometry_tolerance_fraction":.25,
+            "nearest_photo_candidate_y_px":round(photo_y,3),
+            "photo_candidate_offset_px":round(photo_residual,3),
+            "photo_candidate_offset_fraction_of_pitch":round(photo_residual/pitch,3),
             "operator_inferred_path_y_px":round(y,3),
             "nearest_nominal_grid_index":index,
             "nearest_nominal_grid_y_px":round(expected,3),
             "approximate_geometry_residual_px":round(abs(y-expected),3),
             "residual_as_fraction_of_nominal_pitch":round(abs(y-expected)/pitch,3),
             "was_used_to_calibrate":False,
+            "pixel_centerline_ground_truth":False,
+            "real_physical_yarn_identity_by_image_certified":False,
             "warning":"Good holdout geometry does not prove photo pixels of each grid site are a visible yarn."
         }
+    else:
+        result["third_real_yarn_heldout"]={"status":"NO_INDEPENDENT_A3_MARK",
+                                           "was_used_to_calibrate":False}
     return result
 
 
@@ -263,6 +280,14 @@ def analyze_sample(ann,img):
         },
         "step_C":evaluate_centers(ann,visual,detector),
         "step_C2_physical_yarn_anchor_calibration":two_physical_yarn_anchor_hypothesis(ann,visual),
+        "evaluation_split":{
+            "image_features":["image","A1 direction and approximate ROI"],
+            "calibration":["reference","check_same","same_family_intervals"],
+            "independent_holdout":["holdout_same"],
+            "excluded_other_family":["check_cross","check_cross_second","cross_family_intervals"],
+            "pixel_segmentation_loss_used":False,
+            "same_anchor_test_leakage_prohibited":True
+        },
         "validated_physical_yarn_center_count":None,
         "physical_yarn_recognition_accuracy":None,
         "density_per_cm":None,
@@ -295,9 +320,10 @@ def run(root:Path,out:Path):
         e=report["step_C"]
         print(f'{ann["sample_id"]} status={report["decision"]} '
               f'candidate_ridges={report["step_B"]["image_only_ridge_candidates"]} '
-              f'geometry_interval_error={e.get("candidate_interval_count_error")} '
+              f'calibration_interval_diagnostic_error={e.get("candidate_interval_count_error")} '
               f'paired_flank_candidates={report["step_B"]["boundary_evidence"].get("candidate_lines_with_repeatable_paired_flanks")} '
               f'calibrated_photo_sites={report["step_C2_physical_yarn_anchor_calibration"].get("grid_sites_near_an_image_ridge")} '
+              f'A3_holdout_fraction={report["step_C2_physical_yarn_anchor_calibration"].get("third_real_yarn_heldout",{}).get("residual_as_fraction_of_nominal_pitch")} '
               f'operator_pitch={e.get("approximate_operator_pitch_px_NOT_PIXEL_GT")}',flush=True)
     summary={
         "baseline_main":"e1b219384224e1d77c79aa108bef3fb51a39ea56",
@@ -307,6 +333,9 @@ def run(root:Path,out:Path):
         "number_reviewed":len(rows),
         "physical_yarn_per_pixel_accuracy_evaluable":False,
         "real_yarn_count_evaluable":False,
+        "A1_A2_interval_error_is_independent_accuracy":False,
+        "evaluation_priority":"A3_ONLY_HOLDOUT_GEOMETRY_NOT_PIXEL_GT",
+        "historical_physical_yarn_accuracy_status":"NEEDS_REEVALUATION",
         "results":rows,
         "qualification":"Human path is inferred across occlusion. This evaluation cannot certify every candidate stripe as a physical yarn."
     }
