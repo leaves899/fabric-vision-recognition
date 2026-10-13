@@ -12,7 +12,8 @@ from benchmark.p0_global_yarn_uniqueness import (
 
 def frag(id,u0,u1,v):
     return {"id":id,"u_start":u0,"u_end":u1,
-            "v_start":v,"v_end":v,"start":[u0,v],"end":[u1,v]}
+            "v_start":v,"v_end":v,"start":[u0,v],"end":[u1,v],
+            "direction":[1.,0.],"camera_length":u1-u0}
 
 
 def candidate(src,tgt,lateral,gap,turn=0.,appearance=0.):
