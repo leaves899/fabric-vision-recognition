@@ -22,11 +22,13 @@ SCALES=(3,5,8,12,17)
 MIN_WINDOWS=3
 
 
-def central_native_crop(img, side=750):
+def central_native_crop(img, side=1100, center_xy=None):
     h,w=img.shape[:2]
     n=min(h,w,side)
-    x=(w-n)//2
-    y=(h-n)//2
+    if center_xy is None:
+        center_xy=(w/2,h/2)
+    x=int(np.clip(round(center_xy[0]-n/2),0,w-n))
+    y=int(np.clip(round(center_xy[1]-n/2),0,h-n))
     return img[y:y+n,x:x+n].copy(),(x,y)
 
 
@@ -40,8 +42,10 @@ def synthetic_direction_line(shape, direction_deg):
     return np.asarray([center-step*u,center+step*u],dtype=float)
 
 
-def score_profile(img, orientation_deg):
-    crop,xy0=central_native_crop(img)
+def score_profile(img, orientation_deg, *, approximate_roi_center=None):
+    # Approximate user path may select the FIELD OF VIEW; it does not set
+    # appearance, line center, peak phase, or image texture scale.
+    crop,xy0=central_native_crop(img,center_xy=approximate_roi_center)
     virtual=synthetic_direction_line(crop.shape,orientation_deg)
     rotated,m,_=rectify_axis(crop,virtual.tolist())
     lab=cv2.cvtColor(rotated,cv2.COLOR_BGR2LAB).astype(np.float32)
@@ -98,14 +102,14 @@ def score_profile(img, orientation_deg):
                   image_only_candidate_ridge_count=len(ycoords),
                   repeated_window_support_count=[p[1] for p in peaks],
                   warning="These candidates may be twill texture or gaps; NOT verified physical yarns.")
-    return result,(rotated,ycoords)
+    return result,(rotated,ycoords,m,np.asarray(xy0,float))
 
 
 def render(img,original_reference,proposal,visual,out):
     original=cv2.resize(img,(600,600),interpolation=cv2.INTER_AREA)
     candidate=np.zeros_like(original)
     if visual is not None:
-        rotated,ys=visual
+        rotated,ys,_,_=visual
         overlay=rotated.copy()
         for y in ys:
             cv2.line(overlay,(0,int(y)),(overlay.shape[1]-1,int(y)),(0,215,65),2,cv2.LINE_AA)
