@@ -118,6 +118,7 @@
     }
     ctx.restore();
   }
+  api.render=repaint;
   function updateList(){
     const container=byId("localList");
     container.replaceChildren();
