@@ -142,6 +142,92 @@ def bilateral_boundary_evidence(visual,detector):
     }
 
 
+def two_physical_yarn_anchor_hypothesis(ann,visual):
+    """Optional A1+A2 physical-yarn geometry calibration, A3 strict holdout.
+
+    Two operator-marked true-yarn trajectories and their operator-verified number
+    of intervals may constrain an approximate physical pitch/phase. This is NOT
+    independent recognition: all grid sites are unverified until image evidence
+    finds true visible fibers; uncertain sites remain UNKNOWN.
+    """
+    status={"status":"ABSTAIN_NO_OPERATOR_PHYSICAL_ANCHOR_PAIR",
+            "calibration_roles":["reference","check_same","same_family_intervals"],
+            "holdout_role":"holdout_same",
+            "physical_yarn_grid_is_not_pixel_gt":True,
+            "automatic_real_yarn_count_certified":False}
+    if visual is None or ann.get("same_family_intervals_confirmed") is not True:
+        return status
+    segments=ann["segments"]
+    if not (segments.get("reference") and segments.get("check_same")
+            and ann.get("same_family_intervals")):
+        return status
+    _,image_peaks,m,offset=visual
+    a=centerline_coordinate(segments["reference"],m,offset)
+    b=centerline_coordinate(segments["check_same"],m,offset)
+    n=int(ann["same_family_intervals"])
+    signed_pitch=(b-a)/n
+    pitch=abs(signed_pitch)
+    if not 6<=pitch<=130:
+        status["status"]="ABSTAIN_IMPLAUSIBLE_APPROXIMATE_PHYSICAL_PITCH"
+        return status
+    if len(image_peaks)<4:
+        status["status"]="ABSTAIN_TOO_FEW_PHOTO_CANDIDATES"
+        return status
+    h=visual[0].shape[0]
+    kmin=int(np.ceil((3-a)/signed_pitch)) if signed_pitch>0 else int(np.ceil((h-3-a)/signed_pitch))
+    kmax=int(np.floor((h-3-a)/signed_pitch)) if signed_pitch>0 else int(np.floor((3-a)/signed_pitch))
+    if kmax<kmin:
+        status["status"]="ABSTAIN_EMPTY_CANDIDATE_GRID"
+        return status
+    k=np.arange(kmin,kmax+1,dtype=int)
+    targets=a+k*signed_pitch
+    peaks=np.asarray(image_peaks,float)
+    # Nearest ridge may be missing because the physical yarn is occluded.
+    # A single ridge cannot be counted twice for neighboring target sites.
+    support_tolerance=min(7.,.24*pitch)
+    assignments=[]
+    used=set()
+    for num,target in zip(k,targets):
+        nearest=int(np.argmin(abs(peaks-target)))
+        err=abs(float(peaks[nearest]-target))
+        supported=err<=support_tolerance and nearest not in used
+        if supported:used.add(nearest)
+        assignments.append({
+            "physical_grid_step_index":int(num),
+            "approximate_predicted_y_px":round(float(target),3),
+            "closest_image_ridge_y_px":int(peaks[nearest]),
+            "image_geometric_support":bool(supported),
+            "ridge_alignment_residual_px":round(err,3),
+            "actual_visible_yarn_confirmed":False,
+        })
+    result=dict(status="TWO_TRUE_YARN_ANCHOR_GRID_HYPOTHESES_NOT_VERIFIED",
+                calibration_roles=["reference","check_same","same_family_intervals"],
+                physical_yarn_interval_count_manual=n,
+                inferred_nominal_physical_pitch_px=round(pitch,3),
+                photo_candidate_pitch_not_used_for_calibration=True,
+                photo_candidate_count=len(peaks),
+                grid_site_count=len(assignments),
+                grid_sites_near_an_image_ridge=sum(x["image_geometric_support"] for x in assignments),
+                approximate_candidate_targets=assignments,
+                calibration_uses_operator_inferred_trajectories_not_visible_pixel_gt=True,
+                automatic_real_yarn_count_certified=False)
+    holdout=segments.get("holdout_same")
+    if holdout:
+        y=centerline_coordinate(holdout,m,offset)
+        index=int(round((y-a)/signed_pitch))
+        expected=a+index*signed_pitch
+        result["third_real_yarn_heldout"]={
+            "operator_inferred_path_y_px":round(y,3),
+            "nearest_nominal_grid_index":index,
+            "nearest_nominal_grid_y_px":round(expected,3),
+            "approximate_geometry_residual_px":round(abs(y-expected),3),
+            "residual_as_fraction_of_nominal_pitch":round(abs(y-expected)/pitch,3),
+            "was_used_to_calibrate":False,
+            "warning":"Good holdout geometry does not prove photo pixels of each grid site are a visible yarn."
+        }
+    return result
+
+
 def analyze_sample(ann,img):
     assert ann["annotation_target"]=="PHYSICAL_YARN_TRAJECTORY"
     ref=ann["segments"]["reference"]
@@ -176,6 +262,7 @@ def analyze_sample(ann,img):
             "boundary_evidence":boundaries,
         },
         "step_C":evaluate_centers(ann,visual,detector),
+        "step_C2_physical_yarn_anchor_calibration":two_physical_yarn_anchor_hypothesis(ann,visual),
         "validated_physical_yarn_center_count":None,
         "physical_yarn_recognition_accuracy":None,
         "density_per_cm":None,
@@ -210,6 +297,7 @@ def run(root:Path,out:Path):
               f'candidate_ridges={report["step_B"]["image_only_ridge_candidates"]} '
               f'geometry_interval_error={e.get("candidate_interval_count_error")} '
               f'paired_flank_candidates={report["step_B"]["boundary_evidence"].get("candidate_lines_with_repeatable_paired_flanks")} '
+              f'calibrated_photo_sites={report["step_C2_physical_yarn_anchor_calibration"].get("grid_sites_near_an_image_ridge")} '
               f'operator_pitch={e.get("approximate_operator_pitch_px_NOT_PIXEL_GT")}',flush=True)
     summary={
         "baseline_main":"e1b219384224e1d77c79aa108bef3fb51a39ea56",
