@@ -291,7 +291,9 @@ def experiment(root,out):
         print(f'{ann["sample_id"]} lattice={inferred["status"]} '
               f'supported={inferred.get("longitudinal_image_supported_site_count_NOT_actual_yarn_count")}/'
               f'{inferred.get("nominal_lattice_site_count_NOT_actual_yarn_count")} '
-              f'A3={a3.get("holdout_residual_fraction_pitch")}',flush=True)
+              f'A3={a3.get("holdout_residual_fraction_pitch")} '
+              f'photo_phase_shift={inferred.get("photo_only_phase_refinement_applied_2x_px")} '
+              f'image_angle={inferred.get("image_assisted_axis_candidate_deg_UNVERIFIED")}',flush=True)
     meta={"annotation_semantics":"PHYSICAL_YARN_REFERENCE","samples_evaluated":len(results),
           "image_evidence_is_not_yarn_identity_proof":True,
           "physical_yarn_count_accuracy_evaluable":False,"results":results}
