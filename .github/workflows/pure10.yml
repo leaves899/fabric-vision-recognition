@@ -1,0 +1,29 @@
+name: Pure10 independent fabric evidence
+on:
+  push:
+    branches:
+      - experiment/first-principles-ten-parameters-20261013
+  workflow_dispatch:
+
+jobs:
+  latest-six-fabrics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install deterministic OpenCV numerical stack
+        run: python -m pip install -r pure10/requirements.txt
+      - name: Unit test physical-yarn interval semantics and safe abstention
+        run: python -m unittest discover -s pure10 -p 'test_*.py' -v
+      - name: Read each latest GitHub six-fabric photo, then independently score marks
+        run: python -m pure10.evaluate_six --output pure10-out/report.json --overlays pure10-out/overlays
+      - name: Publish explicit failure gates and honest report (no fake accuracy)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pure10-six-photos-diagnostics
+          path: pure10-out/
+          if-no-files-found: warn
