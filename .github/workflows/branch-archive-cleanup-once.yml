@@ -17,7 +17,10 @@ jobs:
   archive-old-heads:
     # Push-run executes only for the explicitly named one-time launch commit.
     # workflow_dispatch can be used for manual retry of a failed/partial run.
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'chore: launch safe branch archiving')
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+      github.event.head_commit.message == 'chore: launch safe branch archiving')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
