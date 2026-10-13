@@ -140,6 +140,14 @@ def refine_family(image,tracks,*,pitch=None,config=None):
             output.append(track);reports.append(info);continue
         if len(displacement)>=7:
             displacement=cv2.GaussianBlur(displacement.astype(np.float32)[None,:],(0,0),1.).ravel()
+        # G1 repairs LOCAL curvature, not global lattice phase. Raw bright/dark
+        # extrema cannot decide whether V4 is aligned to a real yarn or a gap.
+        # Remove the full-track median shift (phase) and bound only deviations.
+        # A separate P2 competition will evaluate phase without leaking labels.
+        global_phase_shift=float(np.median(displacement))
+        displacement=np.clip(displacement-global_phase_shift,-.17*pitch,.17*pitch)
+        info['suppressed_global_phase_shift_px']=round(global_phase_shift,3)
+        info['applied_median_abs_shift_px']=round(float(np.median(abs(displacement))),3)
         original_dedup,s=_arclength(original)
         d=np.interp(s,t,displacement)
         n=np.column_stack([np.interp(s,t,normal[:,c]) for c in range(2)])
