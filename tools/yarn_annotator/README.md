@@ -10,19 +10,13 @@
 cd E:\Internship_2026\fabric-vision-recognition
 git status --short
 git fetch origin
-git switch --track origin/research/physical-yarn-trajectory-3stage-20261013
-git pull --ff-only
+git switch main
+git pull --ff-only origin main
+git switch -c annotation/manual-evidence-20261013
 py -3 -m pip install Pillow
 ```
 
-如果 `git switch --track` 提示本地分支已存在，改用：
-
-```powershell
-git switch research/physical-yarn-trajectory-3stage-20261013
-git pull --ff-only
-```
-
-**重要：** 当前新标注工具位于上面的研究分支/PR #16，暂未合并 `main`；如果仍停留在旧 `main`，直接 `git pull origin main` 不会得到新页面。切换分支前先 `git status`，若已有未提交的人工标注，请先提交或暂存，避免丢失。
+**重要：** 新标注工具已随 PR #16 合并到 `main`。上面的 `annotation/manual-evidence-20261013` 是新标注提交分支；如已存在，使用 `git switch annotation/manual-evidence-20261013`。下一轮可换一个不重复的 `annotation/*` 分支名。切换分支前先 `git status`，若已有未提交的人工标注，请先提交或暂存，避免丢失。
 
 ## 打开页面
 
@@ -78,19 +72,19 @@ git add -- datasets/physical_evidence_labels/manual_image_reviews/
 # git add -- datasets/annotations/drafts/
 git diff --cached --stat
 git commit -m "data: annotate local physical yarn evidence"
-git push origin research/physical-yarn-trajectory-3stage-20261013
+git push -u origin annotation/manual-evidence-20261013
 ```
 
 如果 `git commit` 提示 `nothing to commit`，检查是否点击了**保存局部证据 JSON**按钮、是否处于正确目录。**不建议 `git add -A`**，避免上传无关临时文件或未审核样图。
 
-其他模型/协作者更新本分支后，下一次标注前可以先执行：
+推送后在 GitHub 为 `annotation/manual-evidence-20261013` → `main` 新建 PR，由审核者合并。多人更新此标注分支后，下次继续同一批次标注可执行：
 
 ```powershell
 git status --short
-git pull --ff-only origin research/physical-yarn-trajectory-3stage-20261013
+git pull --ff-only origin annotation/manual-evidence-20261013
 ```
 
-若本地仍有未提交修改，先提交自己的 JSON；如遇 `push rejected (fetch first)`，先尝试 `git pull --rebase origin research/physical-yarn-trajectory-3stage-20261013`，若发生同一 JSON 冲突不要 `git push --force`，应逐项合并人工标注后再推送。
+若本地仍有未提交修改，先提交自己的 JSON；如遇 `push rejected (fetch first)`，先尝试 `git pull --rebase origin annotation/manual-evidence-20261013`，若发生同一 JSON 冲突不要 `git push --force`，应逐项合并人工标注后再推送。
 
 ## 本地校验
 
@@ -101,4 +95,4 @@ node --check tools/yarn_annotator/app.js
 node --check tools/yarn_annotator/local_review.js
 ```
 
-**注意**：标注状态 `OPERATOR_REVIEWED` 仅表示你审核过自己的手机图像标注，不表示有独立显微/实物验证真值。新建局部标注 JSON 被 Git 正常跟踪后，GitHub PR #16 会随你的 push 自动更新。
+**注意**：标注状态 `OPERATOR_REVIEWED` 仅表示你审核过自己的手机图像标注，不表示有独立显微/实物验证真值。新建局部标注 JSON 推送到新 `annotation/*` 分支后，需要创建并合并新的 PR；此前 PR #16 已完成合并，不再接收新标注。
