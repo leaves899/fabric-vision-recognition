@@ -111,8 +111,13 @@ def validate_local_review(root: Path, payload: dict) -> dict:
         if kind not in KINDS:
             raise ValueError("unknown local evidence category")
         geom = _geometry(item.get("geometry"), width, height)
-        if geom["type"] == "LINE" and kind not in ("APPARENT_VISIBLE_YARN", "UNCERTAIN"):
-            raise ValueError("short line is only for apparent yarn or unknown")
+        # Local negative candidates should have the SAME line geometry as
+        # apparent true-yarn strokes, enabling direct track-vs-track comparison.
+        # Legacy TWILL_PATTERN rectangular regions remain valid and unchanged.
+        # Neither type is independent physical ground truth.
+        if geom["type"] == "LINE" and kind not in (
+                "APPARENT_VISIBLE_YARN", "TWILL_PATTERN", "UNCERTAIN"):
+            raise ValueError("short line allowed only for apparent yarn, twill visual track or unknown")
         remark = item.get("note", "")
         if not isinstance(remark, str) or len(remark) > 500:
             raise ValueError("invalid region note")
