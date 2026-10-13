@@ -11,6 +11,8 @@ on:
       - 'benchmark/tests/test_p0_operator_line_audit.py'
       - 'benchmark/p0_occlusion_continuity.py'
       - 'benchmark/tests/test_p0_occlusion_continuity.py'
+      - 'benchmark/p0_cross_fabric_phase.py'
+      - 'benchmark/tests/test_p0_cross_fabric_phase.py'
       - 'datasets/physical_evidence_labels/**'
       - 'benchmark/direction_only_first_yarn.py'
       - 'benchmark/manual_annotation.py'
@@ -40,7 +42,7 @@ jobs:
       - name: Validate input JPG hashes and real physical-yarn trajectory annotations
         run: python -m benchmark.manual_annotation audit
       - name: Check label semantics, image-only detector, alias/holdout and negative tests
-        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence benchmark.tests.test_p0_yarn_evidence benchmark.tests.test_p0_operator_line_audit benchmark.tests.test_p0_occlusion_continuity -v
+        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence benchmark.tests.test_p0_yarn_evidence benchmark.tests.test_p0_operator_line_audit benchmark.tests.test_p0_occlusion_continuity benchmark.tests.test_p0_cross_fabric_phase -v
       - name: Three-stage real-image experiment on five reviewed samples
         run: python -m benchmark.first_yarn_three_stage --out experiments/first-yarn-3stage
       - name: Four-stage first-family 5-photo physical lattice evidence and A3 holdout
@@ -51,6 +53,8 @@ jobs:
         run: python -m benchmark.p0_operator_line_audit --out experiments/p0-e2-operator-line-audit
       - name: P0 E4 image-only competing occlusion continuations (held-out relations)
         run: python -m benchmark.p0_occlusion_continuity --out experiments/p0-e4-occlusion-continuity
+      - name: E5 zero-tune cross-fabric optical B-phase stress test 01 03 06
+        run: python -m benchmark.p0_cross_fabric_phase --out experiments/p0-e5-cross-fabric-phase
       - name: Upload actual JPEG overlays and complete sample reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -62,5 +66,6 @@ jobs:
             experiments/p0-yarn-evidence/
             experiments/p0-e2-operator-line-audit/
             experiments/p0-e4-occlusion-continuity/
+            experiments/p0-e5-cross-fabric-phase/
           if-no-files-found: warn
           retention-days: 30
