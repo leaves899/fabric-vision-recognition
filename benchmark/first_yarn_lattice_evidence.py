@@ -166,6 +166,24 @@ def infer_lattice(image, ann, *, prepared=None):
                                  "paired_flank_score":round(flank,3),
                                  "supported":bool(val>.3 and flank>.16)})
         observed=[m for m in measurements if m["supported"]]
+        # Keep only contiguous, observed image-evidence fragments. Never draw
+        # an observed continuous fiber across a missing/occluded window.
+        inverse=cv2.invertAffineTransform(affine)
+        runs=[]
+        current=[]
+        for m in measurements:
+            if m["supported"]:
+                current.append([m["x"],m["y"]])
+            elif len(current)>=2:
+                runs.append(current)
+                current=[]
+            else:
+                current=[]
+        if len(current)>=2:runs.append(current)
+        source_runs=[]
+        for run in runs:
+            local=cv2.transform(np.asarray(run,float).reshape(1,-1,2),inverse)[0]
+            source_runs.append((local+np.asarray(origin,float)).round(2).tolist())
         # Local yarn tracks may lean a few degrees after reference rotation:
         # distinguish smooth linear drift from discontinuous texture jumping.
         slope_deg=None
@@ -190,6 +208,8 @@ def infer_lattice(image, ann, *, prepared=None):
             "local_image_track_tilt_deg":round(slope_deg,3) if slope_deg is not None else None,
             "image_evidence_supported":supported,
             "confirmed_actual_physical_yarn":False,
+            "candidate_supported_short_runs_zoom_native_xy":source_runs,
+            "gaps_are_unobserved_not_stitched":True,
             "local_observations":measurements})
     supported=sum(r["image_evidence_supported"] for r in records)
     # The image may refine the A1 angle ONLY when many independent strips agree.
@@ -283,8 +303,23 @@ def experiment(root,out):
             image=visual[0].copy()
             for r in inferred.get("sites",[]):
                 y=round(r["nominal_y_2x_px"])
-                color=(0,210,35) if r["image_evidence_supported"] else (0,95,245)
-                cv2.line(image,(0,y),(image.shape[1]-1,y),color,1,cv2.LINE_AA)
+                # Nominal geometric lines are dotted ORANGE: hypotheses only.
+                for x in range(0,image.shape[1],25):
+                    cv2.line(image,(x,y),(min(x+8,image.shape[1]-1),y),
+                             (0,90,235),1,cv2.LINE_AA)
+                # Local evidence fragments GREEN; not confirmed yarn identities.
+                contiguous=[]
+                for point in r["local_observations"]:
+                    if point["supported"]:
+                        contiguous.append([round(point["x"]),point["y"]])
+                    else:
+                        if len(contiguous)>=2:
+                            cv2.polylines(image,[np.asarray(contiguous,np.int32)],False,
+                                          (0,220,40),2,cv2.LINE_AA)
+                        contiguous=[]
+                if len(contiguous)>=2:
+                    cv2.polylines(image,[np.asarray(contiguous,np.int32)],False,
+                                  (0,220,40),2,cv2.LINE_AA)
             factor=min(1.0,1150/image.shape[1])
             if factor<1:image=cv2.resize(image,None,fx=factor,fy=factor,interpolation=cv2.INTER_AREA)
             cv2.imwrite(str(out/(ann["sample_id"]+"_nominal_yarn_lattice.jpg")),image)
