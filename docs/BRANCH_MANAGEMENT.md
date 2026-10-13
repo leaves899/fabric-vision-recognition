@@ -1,4 +1,4 @@
-# GitHub branch cleanup — 2026-10-13
+# GitHub branch cleanup — 2026-10-13 (COMPLETED)
 
 Repository: `leaves899/fabric-vision-recognition`. This is **branch-reference housekeeping only**: it must not merge experimental V1.5 code into `main`, change `demo/v5`, or force-push.
 
@@ -37,6 +37,17 @@ The one-shot cleanup runner:
 2. Creates and verifies **all ten archive tags before deleting any branch**. Any tag/verification failure aborts all deletions. No existing tag is overwritten.
 3. Re-checks each branch SHA and archive tag, then deletes only the explicitly inventoried retired branch refs. A raced/changed branch will be preserved rather than force-deleted.
 4. Records a machine-readable Actions artifact of tags, deletions and skips.
+
+## Verified outcome (2026-10-13)
+
+**SUCCESS** — GitHub Actions [run #38329289516](https://github.com/leaves899/fabric-vision-recognition/actions/runs/38329289516).
+
+- Created and verified **10/10** archive tags against the recorded original commit SHAs.
+- Deleted **10/10** inventoried retired branch refs only after all tags were verified.
+- GitHub branch listing re-queried after cleanup: **exactly 2** refs remain (`main`, `experiment/v15-fft-acf-v4`).
+- Both preserved refs were checked: V1.5 V4 at `6a6b3499946bdddbc4bc0ce8441e1d4df2af78d7`; `main` remained available (its SHA advances only via documentation/maintenance commits).
+- No application algorithm was merged or changed; no tag was force-updated. No old commit became unreachable because every old branch head is anchored by a tag.
+- The one-time destructive workflow is intentionally removed after this result is recorded; the archival script and audit documentation remain for transparency.
 
 ## Recovery
 
