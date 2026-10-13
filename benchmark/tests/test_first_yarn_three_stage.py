@@ -12,7 +12,7 @@ import numpy as np
 
 from benchmark.manual_annotation import annotation_target_for,validate_annotation
 from benchmark.direction_only_first_yarn import score_profile, axis_deg
-from benchmark.first_yarn_three_stage import evaluate_centers, analyze_sample
+from benchmark.first_yarn_three_stage import evaluate_centers, analyze_sample, bilateral_boundary_evidence
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -69,6 +69,21 @@ class PhysicalYarnTrajectoryTests(unittest.TestCase):
             check=evaluate_centers(ann,visual,result)
             self.assertFalse(check["physical_center_pixel_gt"])
             self.assertTrue(check["counts_are_hypotheses_not_real_yarn_count"])
+
+    def test_paired_flanks_are_optical_evidence_not_real_yarn_certificate(self):
+        xx=np.arange(500)[None,:]
+        yy=np.arange(500)[:,None]
+        ridges=np.exp(-(((yy-14+18)%36)-18)**2/(2*5.**2))
+        z=np.uint8(np.clip(65+150*ridges*(.8+.2*np.sin(xx/23)**2),0,255))
+        img=cv2.merge([z,z,z])
+        guess,visual=score_profile(img,0,approximate_roi_center=[250,250])
+        rows=bilateral_boundary_evidence(visual,guess)
+        self.assertFalse(rows.get("physical_yarn_identity_certified",False))
+        if visual is not None:
+            self.assertGreater(len(rows["candidate_bilateral_support"]),0)
+            for rec in rows["candidate_bilateral_support"]:
+                self.assertGreaterEqual(rec["two_sided_boundary_support_ratio"],0)
+                self.assertLessEqual(rec["two_sided_boundary_support_ratio"],1)
 
     def test_blank_image_never_outputs_physical_count(self):
         img=np.full((600,600,3),128,np.uint8)
