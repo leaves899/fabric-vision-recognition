@@ -69,8 +69,16 @@ def validate_local(*, require_images: bool) -> int:
     meta = DATA / "image_provenance.json"
     if meta.is_file():
         details = json.loads(meta.read_text(encoding="utf-8"))
+        valid_status = {"UNANNOTATED",
+                        "FIVE_OPERATOR_REVIEWED_PHYSICAL_YARN_TRAJECTORIES_ONE_NOT_ANNOTATED",
+                        "FIVE_OPERATOR_REVIEWED_PHYSICAL_YARN_REFERENCES_ONE_NOT_ANNOTATED"}
+        if details.get("annotation_status") not in valid_status:
+            raise ValueError("unknown local human annotation status in image provenance")
+        # The original/zoom JPG files must still be unmarked; the status says
+        # whether SEPARATE human JSON trajectories have been reviewed.
         if details.get("annotation_status") != "UNANNOTATED":
-            raise ValueError("expected clean package without algorithm annotations")
+            if details.get("annotation_target") not in ("PHYSICAL_YARN_TRAJECTORY","PHYSICAL_YARN_REFERENCE"):
+                raise ValueError("reviewed paths must be real physical-yarn trajectories")
         for item in details["images"]:
             sid = item["sample_id"]
             if sid not in EXPECTED_SHA:
@@ -119,7 +127,7 @@ def register() -> None:
         original = f"datasets/user_contributed/2026-10-13-six-fabric-images/images/{sid}.jpg"
         note = ("user phone photo; label 2x unmarked center crop pixel coordinates; "
                 "original archived in images; crop map in image_provenance.json; "
-                "not an independent image sample; no physical yarn GT")
+                "not an independent image sample; no pixelwise visible-yarn GT")
         if sid not in by_id:
             current.append({
                 "fabric_id": "USER-" + sid, "position_id": sid,

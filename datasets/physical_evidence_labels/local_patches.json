@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "purpose": "INDEPENDENT_PHYSICAL_VISIBLE_YARN_VS_NONYARN_EVIDENCE_ONLY",
+  "annotation_relationship": "These labels are separate from PHYSICAL_YARN_REFERENCE long trajectories and must not overwrite existing manual marks.",
+  "labels": []
+}

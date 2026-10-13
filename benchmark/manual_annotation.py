@@ -1,7 +1,11 @@
-"""Local-only, operator-driven yarn-direction annotation service.
+"""Local-only operator annotation service.
 
-Human reference points are V5 *inputs*, not independent algorithm ground truth.
-The service never guesses points, warp/weft identity, weave class or density.
+U20261013 PHYSICAL_YARN_REFERENCE labels denote REAL PHYSICAL YARNS,
+possibly across occlusion: they are NOT necessarily visible yarn segments and
+are NOT verified per-pixel centerline ground truth. Two clicked points provide
+a direction and an approximate inferred path. User-reviewed yarn identity
+within a family must not be conflated with WARP/WEFT identification.
+The service never invents yarn lines, class identity, weave or density.
 """
 from __future__ import annotations
 
@@ -11,6 +15,9 @@ import hashlib
 import json
 import math
 import os
+import threading
+import time
+import webbrowser
 from datetime import datetime, timezone
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -23,6 +30,28 @@ MODES = {"DRAFT", "OPERATOR_REVIEWED"}
 ELIGIBILITY = {"UNREVIEWED", "DENIM_CANDIDATE", "NEGATIVE_NON_DENIM", "UNCERTAIN"}
 FAMILIES = {"UNKNOWN", "WARP", "WEFT"}
 SEGMENTS = ("reference", "check_same", "holdout_same", "check_cross", "check_cross_second")
+# A physical-yarn trajectory is a connected strand inferred through possible
+# occlusions; the full two-point line need not correspond to visible pixels.
+ANNOTATION_TARGETS = {"PHYSICAL_YARN_REFERENCE", "VISIBLE_YARN_SEGMENT",
+                      "DIRECTION_ONLY", "UNSPECIFIED"}
+SIX_FABRIC_PREFIX = "U20261013_"
+
+
+def annotation_target_for(sid: str, requested=None) -> str:
+    # Read old JSON labels without forcing the user to re-annotate.
+    if requested == "PHYSICAL_YARN_TRAJECTORY":
+        requested = "PHYSICAL_YARN_REFERENCE"
+    if requested is None:
+        # Retain compatibility with old annotation files, but make the
+        # new interpretation explicit in validate_annotation() return values.
+        requested = ("PHYSICAL_YARN_REFERENCE"
+                     if str(sid).startswith(SIX_FABRIC_PREFIX) else "UNSPECIFIED")
+    if requested not in ANNOTATION_TARGETS:
+        raise ValueError("unsupported annotation_target")
+    if str(sid).startswith(SIX_FABRIC_PREFIX) and requested != "PHYSICAL_YARN_REFERENCE":
+        raise ValueError("six-fabric reviewed annotations mean PHYSICAL_YARN_REFERENCE")
+    return requested
+
 
 
 def samples(root: Path) -> dict[str, dict]:
@@ -125,6 +154,17 @@ def validate_annotation(root: Path, data: dict) -> dict:
     eligibility = data.get("eligibility", "UNREVIEWED")
     review_state = data.get("review_state", "DRAFT")
     family = data.get("reference_family", "UNKNOWN")
+    annotation_target = annotation_target_for(sid, data.get("annotation_target"))
+    supplied_semantics = data.get("annotation_semantics")
+    if supplied_semantics not in (None, "", annotation_target, "PHYSICAL_YARN_TRAJECTORY"):
+        raise ValueError("annotation_semantics conflicts with annotation_target")
+    if supplied_semantics == "PHYSICAL_YARN_TRAJECTORY" and annotation_target != "PHYSICAL_YARN_REFERENCE":
+        raise ValueError("invalid legacy physical yarn reference")
+    if data.get("visible_pixel_gt_confirmed") is True and annotation_target != "VISIBLE_YARN_SEGMENT":
+        raise ValueError("inferred physical yarn trajectory is not visible pixel ground truth")
+    if data.get("centerline_pixel_gt_confirmed") is True and annotation_target == "PHYSICAL_YARN_REFERENCE":
+        raise ValueError("inferred physical yarn path is not precise pixel centerline ground truth")
+
     if eligibility not in ELIGIBILITY or review_state not in MODES or family not in FAMILIES:
         raise ValueError("invalid review state, eligibility, or reference identity")
     confirmed = data.get("reference_confirmed") is True
@@ -136,6 +176,16 @@ def validate_annotation(root: Path, data: dict) -> dict:
                        required=(name == "reference" and (confirmed or review_state == "OPERATOR_REVIEWED")))
         for name in SEGMENTS
     }
+    # Distinct roles are distinct REAL physical yarns, not portions of one yarn.
+    # Reject both identical and reverse-endpoint duplicate clicks.
+    roles = (("reference","check_same","holdout_same"),
+             ("check_cross","check_cross_second"))
+    for family_roles in roles:
+        for i, first in enumerate(family_roles):
+            for second in family_roles[i+1:]:
+                x, y = normalized[first], normalized[second]
+                if x is not None and y is not None and (x == y or x == y[::-1]):
+                    raise ValueError(f"{second} must denote a DIFFERENT physical yarn than {first}")
     if review_state == "OPERATOR_REVIEWED" and not confirmed:
         raise ValueError("reviewed reference needs explicit operator confirmation")
     if normalized["check_same"] == normalized["reference"] and normalized["reference"] is not None:
@@ -183,6 +233,16 @@ def validate_annotation(root: Path, data: dict) -> dict:
         "reference_confirmed": confirmed, "reference_family": family,
         "identity_confirmed": family != "UNKNOWN",
         "segments": normalized, **counts, "notes": notes.strip(),
+        "annotation_target": annotation_target,
+        "annotation_semantics": annotation_target,
+        "physical_yarn_role_groups": {"A":["reference","check_same","holdout_same"],
+                                      "B":["check_cross","check_cross_second"]}
+            if annotation_target == "PHYSICAL_YARN_REFERENCE" else {},
+        "path_may_cross_occlusion": annotation_target == "PHYSICAL_YARN_REFERENCE",
+        "visible_pixel_gt_confirmed": False if annotation_target != "VISIBLE_YARN_SEGMENT"
+            else data.get("visible_pixel_gt_confirmed") is True,
+        "centerline_pixel_gt_confirmed": False if annotation_target == "PHYSICAL_YARN_REFERENCE"
+            else data.get("centerline_pixel_gt_confirmed") is True,
         **review_provenance,
         "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
         "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -229,7 +289,7 @@ def audit(root: Path) -> dict:
         "registered_public": len(images), "ready_for_v5": ready,
         "draft": draft, "negative_non_denim": non_denim,
         "stale_or_invalid": stale, "not_started": len(unknown),
-        "warning": "Operator input is not independent GT. V5 candidates must be compared to different physically verified segments.",
+        "warning": "PHYSICAL_YARN_REFERENCE denotes a distinct real yarn per path through possible occlusions; NOT a visible pixel mask. A1/A2 calibrate, A3 is held out; warp/weft identity and cm density unconfirmed.",
     }
 
 
@@ -259,6 +319,26 @@ class AnnotationHandler(SimpleHTTPRequestHandler):
                 for x in samples(root).values()
             ]
             return self._json({"items": items})
+        if path.path == "/api/local-review-capabilities":
+            from benchmark.local_image_review import (
+                LOCAL_REVIEW_PROTOCOL_VERSION, SUPPORTED_LINE_KINDS, SOURCE)
+            return self._json({
+                "protocol_version": LOCAL_REVIEW_PROTOCOL_VERSION,
+                "supported_line_kinds": list(SUPPORTED_LINE_KINDS),
+                "annotation_source": SOURCE,
+                "save_endpoint": "/api/local-review",
+                "restart_required_after_python_update": True,
+            })
+        if path.path == "/api/local-review":
+            from benchmark.local_image_review import load_local_review
+            sid = parse_qs(path.query).get("id", [""])[0]
+            try:
+                return self._json(load_local_review(root, sid))
+            except (ValueError, OSError, KeyError, json.JSONDecodeError) as exc:
+                return self._json({"error": str(exc)}, 404)
+        if path.path == "/api/local-review-audit":
+            from benchmark.local_image_review import audit_local_reviews
+            return self._json(audit_local_reviews(root))
         if path.path == "/api/annotation":
             sid = parse_qs(path.query).get("id", [""])[0]
             try:
@@ -272,7 +352,8 @@ class AnnotationHandler(SimpleHTTPRequestHandler):
         return super().do_GET()
 
     def do_POST(self):
-        if urlsplit(self.path).path != "/api/annotation":
+        endpoint = urlsplit(self.path).path
+        if endpoint not in ("/api/annotation", "/api/local-review"):
             return self._json({"error": "unsupported endpoint"}, 404)
         origin = self.headers.get("Origin")
         host = self.headers.get("Host", "")
@@ -280,9 +361,19 @@ class AnnotationHandler(SimpleHTTPRequestHandler):
             return self._json({"error": "local same-origin requests only"}, 403)
         try:
             n = int(self.headers.get("Content-Length", "0"))
-            if n <= 0 or n > 80_000:
+            limit = 1_000_000 if endpoint == "/api/local-review" else 80_000
+            if n <= 0 or n > limit:
                 raise ValueError("invalid annotation payload size")
             data = json.loads(self.rfile.read(n).decode("utf-8"))
+            if endpoint == "/api/local-review":
+                from benchmark.local_image_review import store_local_review, FOLDER
+                result = store_local_review(self.server.repo_root, data)
+                return self._json({
+                    "saved": True, "sample_id": result["sample_id"],
+                    "status": result["review_state"], "image_sha256": result["image_sha256"],
+                    "path": str(FOLDER / (result["sample_id"] + ".json")).replace("\\", "/"),
+                    "regions": len(result["regions"]), "relations": len(result["relations"]),
+                    "independent_physical_gt": False})
             result = store_annotation(self.server.repo_root, data)
             return self._json({"saved": True, "sample_id": result["sample_id"],
                                "status": result["review_state"], "image_sha256": result["image_sha256"]})
@@ -295,16 +386,28 @@ def main(argv=None):
     sub = p.add_subparsers(dest="command", required=True)
     serve = sub.add_parser("serve", help="serve local review interface")
     serve.add_argument("--port", type=int, default=8765)
+    serve.add_argument("--open", action="store_true", help="open the local browser after server starts")
     sub.add_parser("audit", help="list verified, draft, missing or stale references")
     args = p.parse_args(argv)
     root = Path(__file__).resolve().parents[1]
     if args.command == "audit":
-        print(json.dumps(audit(root), ensure_ascii=False, indent=2))
+        from benchmark.local_image_review import audit_local_reviews
+        report = audit(root)
+        # Keep legacy top-level audit keys for existing callers.
+        report["phone_image_local_reviews"] = audit_local_reviews(root)
+        print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0
     server = ThreadingHTTPServer(("127.0.0.1", args.port), lambda *a, **kw:
                                  AnnotationHandler(*a, directory=str(root), **kw))
     server.repo_root = root
-    print(f"Open http://127.0.0.1:{args.port}/tools/yarn_annotator/ (local only)")
+    url = f"http://127.0.0.1:{server.server_address[1]}/tools/yarn_annotator/"
+    print(f"Open {url} (local only)")
+    if args.open:
+        # Start serving before asking the default browser to load the UI.
+        def _open_local_browser():
+            time.sleep(0.6)
+            webbrowser.open(url)
+        threading.Thread(target=_open_local_browser, daemon=True).start()
     try:
         server.serve_forever()
     except KeyboardInterrupt:

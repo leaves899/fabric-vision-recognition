@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "source": "USER_DIRECT_CONFIRMATION_IN_CHAT_2026-10-13",
+  "sample_id": "U20261013_03",
+  "annotation_coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
+  "audit_only_NOT_inference_input": true,
+  "physical_independent_ground_truth": false,
+  "operator_confirms_image_inferred_same_yarn": [
+    {"source":"r0004","target":"r0005","relation":"SAME_PHYSICAL_YARN","provenance":"USER_CONFIRMED_IN_CHAT"}
+  ],
+  "operator_rejects_same_yarn": [
+    {"source":"r0004","target":"r0011","relation":"NOT_SAME_PHYSICAL_YARN","provenance":"USER_CONFIRMED_IN_CHAT"}
+  ],
+  "use_for_algorithm_fitting_or_thresholds": false,
+  "must_never_be_read_by_forward_hypothesis_proposer": true,
+  "note": "Operator reports a locally definite physical-yarn continuation and a visibly wrong alternative. It is an expert annotation on RGB phone imagery, not independently established microscope/physical ground truth."
+}

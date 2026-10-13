@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>织物真实纱线人工标注 · V5</title>
+<title>织物真实纱线与局部证据 · 本地 Git 标注</title>
 <style>
 :root{font-family:system-ui,"Microsoft YaHei",sans-serif;color:#222;background:#f5f7fa}
 *{box-sizing:border-box}
@@ -33,7 +33,21 @@ label input[type=checkbox]{width:16px;height:16px}
 .radio-list button.active{background:#173350;color:white}
 textarea{width:100%;min-height:78px;resize:vertical}
 select{width:100%}
-#message{margin-top:9px;font-weight:600;white-space:pre-wrap}
+[hidden]{display:none!important}
+#message,#localMessage{margin-top:9px;font-weight:600;white-space:pre-wrap}
+.local-list{max-height:160px;overflow:auto;background:#f7f9fc;border:1px solid #dde4ee;padding:5px;border-radius:6px}
+.local-list div{padding:4px 2px;border-bottom:1px solid #e9eef5;font-size:12px}
+.tips{background:#f0f7ff;border:1px solid #b6d2f5;border-radius:6px;padding:9px;font-size:13px;line-height:1.5}
+.quick-task{display:block;width:100%;text-align:left;white-space:normal;line-height:1.45;font-size:13px;padding:11px 10px;border:1px solid #c4cfdb;background:#fff;margin:6px 0}
+.quick-task strong{display:block;font-size:14px;margin-bottom:2px}
+.quick-task.active{border:2px solid #245c9c;background:#edf5ff;padding:10px 9px}
+#localGuide{display:block;background:#f0f7ff;border:1px solid #afcdf0;padding:10px;border-radius:6px;font-size:13px;line-height:1.6;white-space:pre-wrap}
+#localPanel details{border:1px solid #d7dee8;border-radius:7px;padding:9px;margin-top:9px}
+#localPanel details summary{font-weight:600;cursor:pointer;font-size:13px}
+#localPanel details section{padding:8px 0}
+#localPanel select{width:100%;max-width:100%;min-width:0;font-size:13px}
+#localPanel .quick-tasks{display:grid;gap:4px}
+#localPanel .hint{font-size:12px;color:#556477;line-height:1.55}
 .good{color:#16733f}.bad{color:#ae2222}
 .code{font-family:monospace;word-break:break-all}
 @media(max-width:900px){main{display:block}.card{margin-bottom:12px}.viewport{height:52vh}}
@@ -41,11 +55,12 @@ select{width:100%}
 </head>
 <body>
 <header>
-  <h1>纱线参考方向与位置校正 · V6 试验</h1>
+  <h1>织物标注工具 · 真实纱线参考 + 局部图像证据</h1>
   <small style="color:#e0eaf4">本机标注 · 六张 U20261013 样本直接标注无标记 2× 放大图 · 不自动猜测纱线</small>
 </header>
 <main>
 <div class="card">
+  <div class="toolbar"><button id="switchRefs" class="primary" type="button">① 已有纱线参考线</button><button id="switchLocal" type="button">② 新增局部证据标注</button><small id="localStatus">局部证据：未读取</small></div>
   <div class="toolbar">
     <label>筛选 <select id="subset" style="width:auto">
       <option value="focus">优先验证：牛仔、平纹及干扰样本</option>
@@ -57,15 +72,16 @@ select{width:100%}
   <div class="toolbar">
     <label>缩放 <input id="zoom" type="range" min="50" max="350" value="100" step="10"></label>
     <output id="zoomText">100%</output>
-    <small>请放大验证：真正纱段 ≠ 斜纹带/明暗纹理</small>
+    <small>当前六张 U 样本：标的是同一根真实纱线的连接轨迹，不要求全程可见</small>
   </div>
   <div class="viewport"><div class="scene" id="scene"><img id="fabricImg" alt="当前人工标注照片"><canvas id="layer"></canvas></div></div>
   <small id="meta">图片尚未载入</small>
   <div><a id="originalPhotoLink" target="_blank" rel="noopener" hidden>查看归档原始照片（仅对照；本页在 2× 放大图上点击和保存）</a></div>
 </div>
 <aside class="card">
-<h2>操作顺序</h2>
-<small>① 第一根真实纱线校准方向及位置；② 另一根同向纱线校准位置与候选间距；③ 第三根同向纱线单独验收（不参与校准）。如需校正正交组，需再标两根真实正交纱线。</small>
+<div id="referencePanel">
+<h2>操作顺序 · PHYSICAL_YARN_REFERENCE</h2>
+<small>① reference：第一根真实物理纱线；② check_same：不同的第二根真实纱线，用于校准；③ holdout_same：不同的第三根真实纱线，仅供独立测试。B组两条标记各代表另一根真实纱线。任意两根不必相邻，纱距使用人工确认的间隔数。允许遮挡，虚线不是全段可见纱段或像素分割标签。</small>
 <section class="field">
   <strong>当前点击类型</strong>
   <div class="radio-list">
@@ -97,7 +113,7 @@ select{width:100%}
       <option value="UNCERTAIN">待确认</option>
     </select>
   </label>
-  <label><input id="confirmRef" type="checkbox">我确认输入两点取自同一根真实可见纱线</label>
+  <label><input id="confirmRef" type="checkbox">我确认两点属于同一根真实物理纱线的推断连接轨迹（中间允许遮挡）</label>
 </section>
 <section class="field">
   <label class="full">输入参考线的物理身份（不确定就保持未知）
@@ -115,17 +131,110 @@ select{width:100%}
     </select>
   </label>
   <label class="full">核查备注（无法分辨时记录原因）
-    <textarea id="notes" placeholder="例如：参考点沿实际纱段，而非 3/1 斜纹条带"></textarea>
+    <textarea id="notes" placeholder="例如：中间有遮挡；根据局部纱线形态判断两点连接属于同一根物理纱线"></textarea>
   </label>
   <button id="save" class="primary">保存本张标注到本地 datasets/annotations</button>
   <div id="message" role="status"></div>
 </section>
 <section class="field">
   <strong>本轮范围</strong>
-  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。第二根线用于校准，不是独立测试真值；第三根线才是不参与校准的验收参照。未填写并确认真实纱距时，V6.1 不会按候选网格线数推断真实纱线根数。每根候选线仍需人工验证实际纱线位置。</small>
+  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。第二根线用于校准，不是独立测试真值；第三根线才是不参与校准的验收参照。未填写并确认真实纱距时，V6.1 不会按候选网格线数推断真实纱线根数。每根候选线仍需单独验证属于真实纱线；人工推断的完整轨迹不能充当逐像素可见纱线标签。</small>
 </section>
+</div>
+<div id="localPanel" hidden>
+<h2>现在只需要标这三种情况</h2>
+<div class="tips">不用重新画原来的 A1/A2/A3 长线。<strong>只标你能从照片看到的小范围</strong>；看不清就选「无法判断」，不要猜测。</div>
+<div class="quick-tasks" role="group" aria-label="三种常用局部标注任务">
+  <button id="quickYarn" type="button" class="quick-task active" data-quick-kind="APPARENT_VISIBLE_YARN" data-quick-tool="line">
+    <strong>① 我能辨认一小段纱线</strong>
+    沿着这段可见纱线，依次点起点、终点。<b>只画短段，不跨遮挡</b>。
+  </button>
+  <button id="quickTexture" type="button" class="quick-task" data-quick-kind="TWILL_PATTERN" data-quick-tool="line">
+    <strong>② 沿着疑似斜纹假线画一段</strong>
+    沿着容易被算法误当成一根纱线的斜纹视觉带，依次点击起点、终点。不是框一大片。
+  </button>
+  <button id="quickUnknown" type="button" class="quick-task" data-quick-kind="UNCERTAIN" data-quick-tool="rect">
+    <strong>③ 看不清到底是不是纱线</strong>
+    鼠标按住拖动框选，明确告诉算法此处不能判断。
+  </button>
+</div>
+<section class="field">
+  <strong>下一步：在左侧照片怎么操作？</strong>
+  <div id="localGuide" role="status" aria-live="polite">① 在左侧找一小段能直接看清的纱线；先单击起点，再单击终点。两点之间必须实际可见。</div>
+  <small class="hint">①和②都用两点画短线，以便直接对照真实纱线候选与斜纹假线；③仍用矩形。②标的是视觉斜带，不代表带内没有真实纤维。不确定时选③。</small>
+  <button id="localUndo" type="button">撤销最近一个标注</button>
+  <button id="localClearPending" type="button">取消当前未完成的两个点或关系</button>
+</section>
+<details id="localAdvanced">
+  <summary>更多类别：同方向纱缝/色带假线、删除、同根关系（可先不使用）</summary>
+  <section class="field">
+    <label class="full">更细的标注类别
+      <select id="localKind">
+        <option value="APPARENT_VISIBLE_YARN">可见纱线短段（待验证）</option>
+        <option value="TWILL_PATTERN">疑似斜纹假线 / 纹理视觉带</option>
+        <option value="GAP">可辨认的纱线间隙（可画同向假线）</option>
+        <option value="COLOR_STRIPE">颜色条带（可画同向假线）</option>
+        <option value="SHADOW">阴影或反光</option>
+        <option value="OCCLUSION">交织遮挡位置</option>
+        <option value="UNCERTAIN">看不清 / 无法判断</option>
+      </select>
+    </label>
+    <strong>绘制与编辑工具</strong>
+    <div class="radio-list">
+      <button id="toolRect" data-local-tool="rect" type="button">框选区域：按住拖动</button>
+      <button id="toolLine" data-local-tool="line" type="button" class="active">线状证据：依次点击两点</button>
+      <button id="toolRelation" data-local-tool="relation" type="button">同根/不同根：依次点两区域</button>
+      <button id="toolDelete" data-local-tool="delete" type="button">删除区域：单击</button>
+    </div>
+    <label class="full">两个局部区域是否属于同一根纱线（可选）
+      <select id="localRelation">
+        <option value="UNKNOWN">不确定是不是同一根</option>
+        <option value="SAME_PHYSICAL_YARN">两处是同一根（人工推断）</option>
+        <option value="DIFFERENT_PHYSICAL_YARN">两处是不同根</option>
+      </select>
+    </label>
+    <small id="relationPending">还未选区域关系</small>
+    <label class="full">备注（下一个标注使用）
+      <textarea id="localRegionNote" placeholder="例如：斜纹浮长连接但不是同一根纱线"></textarea>
+    </label>
+    <small class="hint">若要检验真假纱线而不是仅靠角度区分，请选和A1方向接近的纱缝或颜色条带，沿其画短线；只有确认确实是非纱线图像结构才标记。原来的矩形框选仍支持。全部仅为手机照片人工判读，不是独立物理真值。</small>
+  </section>
+</details>
+<section class="field">
+  <strong>已经标了哪些？</strong>
+  <div id="localList" class="local-list">尚未加载</div>
+  <details><summary>查看或删除同根关系（高级）</summary>
+    <div id="localRelationList" class="local-list">尚无区域关系</div>
+  </details>
+  <details><summary>备注与审核状态（可选）</summary>
+    <label class="full">总体备注
+      <textarea id="localNotes" placeholder="可留空；例如哪些地方容易混淆"></textarea>
+    </label>
+    <label class="full">审核状态
+      <select id="localReviewState">
+        <option value="DRAFT">暂存草稿</option>
+        <option value="OPERATOR_REVIEWED">本张照片已人工看过（非物理真值）</option>
+      </select>
+    </label>
+  </details>
+  <button id="saveLocal" class="primary" type="button">保存本张局部标注</button>
+  <div id="localMessage" role="status"></div>
+  <small class="hint">标注保存为仓库内 JSON，下次打开还在；上传 GitHub 需要 git add、git commit、git push。</small>
+</section>
+<section class="field">
+  <div class="tips">
+  <strong>保存之后还需要 Git 提交和推送</strong>
+  <div>JSON 会写入 <code>datasets/physical_evidence_labels/manual_image_reviews/</code>。网页只负责本地保存，不会直接推送 GitHub。</div>
+  <div>在仓库根目录 PowerShell 执行：</div>
+  <code>git add -- datasets/physical_evidence_labels/manual_image_reviews/</code>
+  <div><code>git commit -m "data: add local yarn evidence reviews"</code></div>
+  <div><code>git push</code></div>
+  </div>
+</section>
+</div>
 </aside>
 </main>
 <script defer src="./app.js"></script>
+<script defer src="./local_review.js"></script>
 </body>
 </html>

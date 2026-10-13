@@ -46,6 +46,14 @@ python -m pytest -q tests
 
 该命令仅验证已有测试覆盖的功能；**自动测试通过不等于独立面料上的真实经纬识别准确率已通过验收。**
 
+## 本地 Git 纱线标注（研究分支新增）
+
+[本地标注工具使用说明](tools/yarn_annotator/README.md) · Windows 仓库根目录双击 `启动本地标注.bat`，打开 `http://127.0.0.1:8765/tools/yarn_annotator/`。
+
+页面现在包含两种**彼此隔离**的人工标注：既有 `PHYSICAL_YARN_REFERENCE`（同一根真实纱线的推断延伸轨迹），以及新加的局部图像证据框选、短线、同根/不同根关系。局部判读会在本地写入 `datasets/physical_evidence_labels/manual_image_reviews/<sample_id>.json`，可用 `git add / commit / push` 上传，不会覆盖旧 A1/A2/A3。后者不是独立物理实物真值。
+
+**目前此工具更新仅位于 `research/physical-yarn-trajectory-3stage-20261013` 分支（PR #16），尚未合并 main。** 请先切换到该分支再 `git pull`；详见工具 README 中的 PowerShell 完整命令。
+
 ## 目录
 
 ```text

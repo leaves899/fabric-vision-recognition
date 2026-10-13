@@ -1,3 +1,4 @@
+# NOTE (2026-10-13): U20261013 marked lines are PHYSICAL_YARN_REFERENCE of distinct REAL yarns through possible occlusion; geometric residuals are NOT visible-segment pixel GT. A1/A2 calibration must not be called independent accuracy; A3 holdout only. No cm density from 2x zoom.
 """Two confirmed, distinct real-yarn segments constrain candidate A phase AND pitch.
 
 Both operator segments are calibration inputs, not independent accuracy GT.

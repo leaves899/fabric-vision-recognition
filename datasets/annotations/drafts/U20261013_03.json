@@ -80,5 +80,11 @@
   ],
   "enlargement_scale": 2,
   "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
-  "updated_at": "2026-10-13T02:07:39.072892+00:00"
+  "updated_at": "2026-10-13T02:07:39.072892+00:00",
+  "annotation_target": "PHYSICAL_YARN_REFERENCE",
+  "path_may_cross_occlusion": true,
+  "visible_pixel_gt_confirmed": false,
+  "centerline_pixel_gt_confirmed": false,
+  "annotation_semantics": "PHYSICAL_YARN_REFERENCE",
+  "annotation_semantics_note": "Each two-point reference is one REAL physical yarn, may traverse occlusion; different parallel references denote different physical yarns; not visible pixel segment GT."
 }
