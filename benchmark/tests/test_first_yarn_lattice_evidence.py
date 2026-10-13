@@ -44,6 +44,11 @@ class FirstYarnLatticeEvidenceTests(unittest.TestCase):
         image=stripes()
         lattice,visual=infer_lattice(image,annotation(),prepared=prepared(image))
         self.assertEqual(lattice["nominal_physical_pitch_2x_px"],32)
+        self.assertTrue(lattice["photo_phase_crosswindow_agreement"])
+        self.assertFalse(lattice["manual_A3_used_for_phase_search"])
+        self.assertTrue(lattice["rotated_reflected_border_excluded"])
+        self.assertEqual(lattice["real_yarn_count_between_A1_A2_FROM_HUMAN_INTERVALS_ONLY"],6)
+        self.assertTrue(lattice["manual_span_count_is_not_automated_full_roi_yarn_count"])
         self.assertGreaterEqual(lattice["longitudinal_image_supported_site_count_NOT_actual_yarn_count"],8)
         self.assertEqual(lattice["status"],
                          "IMAGE_SUPPORTED_PHYSICAL_LATTICE_HYPOTHESIS_NOT_IDENTIFIED_YARNS")
