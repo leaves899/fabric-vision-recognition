@@ -5,7 +5,7 @@ const COLORS={reference:"#ff9a27",check_same:"#18d294",holdout_same:"#fff068",ch
 const LABELS={reference:"A第一根校准纱线",check_same:"A第二根校准纱线",holdout_same:"A第三根独立验收纱线",check_cross:"B第一根校准纱线",check_cross_second:"B第二根校准纱线"};
 let all=[], visible=[], current=null, selected="reference", data=null, drawn=[];
 function show(msg,good=true){el("message").textContent=msg;el("message").className=good?"good":"bad";}
-function blank(row){return {schema_version:"1.0",sample_id:row.sample_id,image_path:row.image_path,reference_confirmed:false,reference_family:"UNKNOWN",identity_confirmed:false,review_state:"DRAFT",eligibility:"UNREVIEWED",same_family_intervals:null,same_family_intervals_confirmed:false,cross_family_intervals:null,cross_family_intervals_confirmed:false,segments:{reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},notes:""};}
+function blank(row){return {schema_version:"1.0",sample_id:row.sample_id,image_path:row.image_path,annotation_target:/^U20261013_0[1-6]$/.test(row.sample_id)?"PHYSICAL_YARN_TRAJECTORY":"UNSPECIFIED",path_may_cross_occlusion:/^U20261013_0[1-6]$/.test(row.sample_id),visible_pixel_gt_confirmed:false,centerline_pixel_gt_confirmed:false,reference_confirmed:false,reference_family:"UNKNOWN",identity_confirmed:false,review_state:"DRAFT",eligibility:"UNREVIEWED",same_family_intervals:null,same_family_intervals_confirmed:false,cross_family_intervals:null,cross_family_intervals_confirmed:false,segments:{reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},notes:""};}
 function axis(pts){if(!pts||pts.length!==2)return null;let a=pts[0],b=pts[1];return ((Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI)%180+180)%180;}
 function activeList(){
   visible=el("subset").value==="focus"?all.filter(x=>PRIORITY.includes(x.sample_id)):all.slice();
@@ -42,7 +42,7 @@ function redraw(){
     if(!pts||!pts.length)return;
     ctx.strokeStyle=COLORS[type];ctx.fillStyle=COLORS[type];ctx.lineWidth=width;
     pts.forEach(p=>{ctx.beginPath();ctx.arc(p[0],p[1],width*1.9,0,2*Math.PI);ctx.fill();});
-    if(pts.length===2){ctx.beginPath();ctx.moveTo(...pts[0]);ctx.lineTo(...pts[1]);ctx.stroke();}
+    if(pts.length===2){ctx.save();if(data.annotation_target==="PHYSICAL_YARN_TRAJECTORY")ctx.setLineDash([10,8]);ctx.beginPath();ctx.moveTo(...pts[0]);ctx.lineTo(...pts[1]);ctx.stroke();ctx.restore();}
   });
   el("angles").textContent=Object.keys(LABELS).map(type=>{
     let angle=axis(data.segments[type]);
@@ -99,6 +99,7 @@ async function loadSample(sid){
   const staleSavedImage=!!(raw.image_path && raw.image_path!==row.image_path);
   data=Object.assign(blank(row),staleSavedImage?{}:raw);
   data.segments=Object.assign({reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},data.segments||{});
+  if(zoomNative){data.annotation_target="PHYSICAL_YARN_TRAJECTORY";data.path_may_cross_occlusion=true;data.visible_pixel_gt_confirmed=false;data.centerline_pixel_gt_confirmed=false;}
   copyToInputs();
   let img=el("fabricImg");
   img.onload=()=>{
@@ -108,7 +109,7 @@ async function loadSample(sid){
     el("meta").textContent=sid+" · "+img.naturalWidth+"×"+img.naturalHeight+
       (zoomNative?" · 2× 中心放大图原生像素坐标（不是原图坐标）":" · 当前图像原生像素坐标");
     redraw();
-    show(staleSavedImage?"旧标注绑定的是另一张图，已清空当前画面草稿；请重新人工选点，避免坐标误用。":"已加载；请只在可确认的真实可见纱段上人工选点。",!staleSavedImage);
+    show(staleSavedImage?"旧标注绑定的是另一张图，已清空当前画面草稿；请重新人工选点，避免坐标误用。":(zoomNative?"已加载：本组两点表示同一根真实物理纱线的推断连接轨迹，可以跨越遮挡区；虚线不是逐像素可见纱段。":"已加载：请按该样本标注说明人工确认。"),!staleSavedImage);
   };
   img.onerror=()=>show("无法加载图片，请确认仓库根目录启动了本地服务",false);
   img.src="/"+row.image_path.split("/").map(encodeURIComponent).join("/");
@@ -116,6 +117,10 @@ async function loadSample(sid){
 async function save(){
   if(!data)return;
   data.eligibility=el("eligibility").value;
+  if(/^U20261013_0[1-6]$/.test(current.sample_id)){
+    data.annotation_target="PHYSICAL_YARN_TRAJECTORY";data.path_may_cross_occlusion=true;
+    data.visible_pixel_gt_confirmed=false;data.centerline_pixel_gt_confirmed=false;
+  }
   data.reference_confirmed=el("confirmRef").checked;
   data.reference_family=el("family").value;
   data.identity_confirmed=el("confirmIdentity").checked;
@@ -139,7 +144,7 @@ async function save(){
       return show("勾选确认前必须先填写完整真实纱距数",false);
   }
   if(data.review_state==="OPERATOR_REVIEWED"&&(!data.reference_confirmed||!data.segments.reference||data.segments.reference.length!==2)){
-    return show("必须有一条真实纱线上的完整参考线，并主动勾选确认",false);
+    return show("必须确认两点表示同一根真实物理纱线的连接轨迹（允许遮挡）",false);
   }
   show("正在校验并保存...");
   try{
