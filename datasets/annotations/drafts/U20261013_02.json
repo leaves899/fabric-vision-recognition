@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "U20261013_02",
+  "fabric_id": "USER-U20261013_02",
+  "image_path": "datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked/U20261013_02_center_2x.jpg",
+  "image_sha256": "96917ee2ac04d62740fbd37736b9c73bfacda017008b588ea34b185cd1492509",
+  "image_width": 1660,
+  "image_height": 2212,
+  "eligibility": "DENIM_CANDIDATE",
+  "review_state": "OPERATOR_REVIEWED",
+  "reference_confirmed": true,
+  "reference_family": "UNKNOWN",
+  "identity_confirmed": false,
+  "segments": {
+    "reference": [
+      [
+        499.66,
+        463.697
+      ],
+      [
+        1213.46,
+        243.468
+      ]
+    ],
+    "check_same": [
+      [
+        507.407,
+        646.298
+      ],
+      [
+        1231.167,
+        413.896
+      ]
+    ],
+    "holdout_same": [
+      [
+        592.62,
+        760.285
+      ],
+      [
+        1352.9,
+        502.43
+      ]
+    ],
+    "check_cross": [
+      [
+        692.22,
+        297.695
+      ],
+      [
+        871.5,
+        813.406
+      ]
+    ],
+    "check_cross_second": [
+      [
+        891.42,
+        267.815
+      ],
+      [
+        1051.887,
+        760.285
+      ]
+    ]
+  },
+  "same_family_intervals": 6,
+  "same_family_intervals_confirmed": true,
+  "cross_family_intervals": 3,
+  "cross_family_intervals_confirmed": true,
+  "notes": "",
+  "annotation_image_kind": "UNMARKED_2X_CENTER_CROP",
+  "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
+  "original_image_path": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_02.jpg",
+  "original_image_sha256": "630cd4ea2245d7420307fae7704e34fb608a4c1f61379564321f03912a5312ca",
+  "crop_original_xyxy": [
+    353,
+    471,
+    1183,
+    1577
+  ],
+  "enlargement_scale": 2,
+  "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
+  "updated_at": "2026-10-13T02:06:36.079889+00:00"
+}
