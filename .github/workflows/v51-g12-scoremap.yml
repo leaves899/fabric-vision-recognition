@@ -36,16 +36,16 @@ jobs:
       - name: Validate human physical-reference provenance
         run: python -m benchmark.manual_annotation audit
       - name: Re-run unchanged frozen V5
-        run: python -m benchmark.run_annotated_v5_roi --id "\${{ matrix.sample }}" --margin-px 380 --max-pixels 3000000 --out "experiments/v51-g12/\${{ matrix.sample }}/baseline"
+        run: python -m benchmark.run_annotated_v5_roi --id "${{ matrix.sample }}" --margin-px 380 --max-pixels 3000000 --out "experiments/v51-g12/${{ matrix.sample }}/baseline"
       - name: Baseline local-label evaluation
-        run: python -m benchmark.v5_pr16_local_evidence_audit --id "\${{ matrix.sample }}" --result-dir "experiments/v51-g12/\${{ matrix.sample }}/baseline"
+        run: python -m benchmark.v5_pr16_local_evidence_audit --id "${{ matrix.sample }}" --result-dir "experiments/v51-g12/${{ matrix.sample }}/baseline"
       - name: Capture frozen V4 scores read-only and compare G1.2 without operator-label inference
-        run: python -m benchmark.v51_g12_evaluate --id "\${{ matrix.sample }}" --baseline-dir "experiments/v51-g12/\${{ matrix.sample }}/baseline" --out "experiments/v51-g12/\${{ matrix.sample }}/g12"
+        run: python -m benchmark.v51_g12_evaluate --id "${{ matrix.sample }}" --baseline-dir "experiments/v51-g12/${{ matrix.sample }}/baseline" --out "experiments/v51-g12/${{ matrix.sample }}/g12"
       - name: Upload evidence, candidate JSON and before-after overlays
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v51-g12-\${{ matrix.sample }}
-          path: experiments/v51-g12/\${{ matrix.sample }}/
+          name: v51-g12-${{ matrix.sample }}
+          path: experiments/v51-g12/${{ matrix.sample }}/
           if-no-files-found: warn
           retention-days: 30
