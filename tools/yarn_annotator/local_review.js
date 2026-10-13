@@ -88,7 +88,7 @@
     ctx.save();
     for(const region of api.data.regions){
       const color=colors[region.kind]||"#fff";
-      drawStroke(ctx,region.geometry,color,width);
+      drawStroke(ctx,region.geometry,color,width,region.kind==="TWILL_PATTERN"&&region.geometry.type==="LINE");
       const p=center(region.geometry);
       ctx.font=Math.max(12,width*5)+"px sans-serif";
       ctx.fillStyle="#080e18";
@@ -125,7 +125,7 @@
     for(const row of api.data?.regions||[]){
       const d=document.createElement("div");
       d.textContent=row.id+" · "+(labels[row.kind]||row.kind)+
-        " · "+(row.geometry.type==="RECT"?"区域":"可见短线")+
+        " · "+(row.geometry.type==="RECT"?"框选区域":(row.kind==="TWILL_PATTERN"?"斜纹假线":"可见短线"))+
         (row.note?" · "+row.note:"");
       container.appendChild(d);
     }
@@ -155,12 +155,14 @@
       message="先点击第一块已经标过的区域，再点击另一块，最后选择同根/不同根/未知。这个步骤可不做。";
     }else if(tool==="delete"){
       message="单击左侧照片里已经画出的短线或框，就能删除该标注。";
+    }else if(tool==="line" && kind==="TWILL_PATTERN"){
+      message="② 在左侧照片上：沿着疑似斜纹视觉带，先点击短段起点，再点击终点。画的是容易误认为同一根纱线的视觉假线，不是这块区域里没有纱线；无法确认则选择③。";
     }else if(tool==="line"){
-      message="在左侧照片上：先点能直接看见的纱线短段起点，再点终点。中间必须是可见实体，不跨遮挡。点完可继续画下一段。";
+      message="① 在左侧照片上：先点真正可见的纱线短段起点，再点终点。只画局部，不跨遮挡。";
     }else if(kind==="UNCERTAIN"){
       message="在左侧照片上：鼠标按住拖动，框住看不清是不是纱线的区域。不要猜测；框完可以继续标其他位置。";
     }else if(kind==="TWILL_PATTERN"){
-      message="在左侧照片上：鼠标按住拖动，框住你能看出是斜纹图案、而不是同一根实体连续轨迹的视觉带。如果没有把握，请用③无法判断。";
+      message="高级框选模式：框出斜纹视觉带周围的纹理区域。若要和真实纱线一一对比，请用②沿斜纹画短线。";
     }else{
       message="在左侧照片上：按住鼠标拖动，框住当前类别的局部范围。看不清时可切换③无法判断。";
     }
@@ -206,8 +208,8 @@
       markDirty();updateList();redraw();return;
     }
     if(api.tool==="line"){
-      if(!["APPARENT_VISIBLE_YARN","UNCERTAIN"].includes(byId("localKind").value)){
-        notify("可见短线仅支持「可见纱线候选」或「无法判断」，其他类别使用框选。",false);return;
+      if(!["APPARENT_VISIBLE_YARN","TWILL_PATTERN","UNCERTAIN"].includes(byId("localKind").value)){
+        notify("短线仅用于可见纱线、斜纹假线或无法判断；其他类别请框选。",false);return;
       }
       if(api.partialLine){
         const a=api.partialLine;
@@ -283,7 +285,7 @@
       b.classList.toggle("active",b.dataset.localTool===name));
     updateGuide();
     notify(name==="rect"?"按住鼠标拖动，框住局部区域。":
-      name==="line"?"沿实际可见的局部短段依次点击起点、终点。":
+      name==="line"?(byId("localKind").value==="TWILL_PATTERN"?"沿疑似斜纹假线依次点起点、终点。":"沿实际可见的纱线短段依次点起点、终点。"):
       name==="relation"?"依次点两个已有区域；不确定就选 UNKNOWN。":"单击已标区域删除。");
   }
   function selectPanel(local){
@@ -303,7 +305,7 @@
   });
   byId("localKind").addEventListener("change",()=>{
     const kind=byId("localKind").value;
-    selectTool(kind==="APPARENT_VISIBLE_YARN"?"line":"rect");
+    selectTool(["APPARENT_VISIBLE_YARN","TWILL_PATTERN"].includes(kind)?"line":"rect");
   });
   byId("switchRefs").addEventListener("click",()=>selectPanel(false));
   byId("switchLocal").addEventListener("click",()=>selectPanel(true));
