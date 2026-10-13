@@ -28,6 +28,7 @@ jobs:
         run: |
           node --check tools/yarn_annotator/app.js
           node --check tools/yarn_annotator/local_review.js
+          node tools/yarn_annotator/test_guided_ui.cjs
       - name: Test synthetic annotation contracts
         run: python -m unittest discover -s benchmark/tests -v
       - name: Check local phone-only evidence reviews and localhost save/API contracts
