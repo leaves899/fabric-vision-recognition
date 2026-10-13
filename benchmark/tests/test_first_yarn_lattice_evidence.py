@@ -50,6 +50,17 @@ class FirstYarnLatticeEvidenceTests(unittest.TestCase):
         self.assertIsNone(lattice["verified_real_yarn_count"])
         self.assertIsNone(lattice["density_per_cm"])
         self.assertTrue(all(s["confirmed_actual_physical_yarn"] is False for s in lattice["sites"]))
+        self.assertTrue(any(s["candidate_supported_short_runs_zoom_native_xy"]
+                            for s in lattice["sites"]))
+        for site in lattice["sites"]:
+            self.assertTrue(site["gaps_are_unobserved_not_stitched"])
+            for run in site["candidate_supported_short_runs_zoom_native_xy"]:
+                self.assertGreaterEqual(len(run),2)
+                for x,y in run:
+                    self.assertGreaterEqual(x,0)
+                    self.assertGreaterEqual(y,0)
+                    self.assertLess(x,560)
+                    self.assertLess(y,560)
         held=check_a3_holdout(annotation(),lattice,visual)
         self.assertEqual(held["status"],"APPROXIMATE_GEOMETRY_MATCH")
         self.assertFalse(held["used_for_calibration"])
