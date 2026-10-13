@@ -78,8 +78,9 @@ def _native_tile_proposals(image):
     if side<300 or min(w,h)<side*1.7:
         return []
     span_x,span_y=w-side,h-side
-    positions=[(int(span_x*.20),int(span_y*.20)),
-               (int(span_x*.80),int(span_y*.80))]
+    # Symmetric 2x2 patches preserve the same physical quadrants under 90 degrees.
+    positions=[(int(span_x*fx),int(span_y*fy))
+               for fx,fy in ((.20,.20),(.80,.20),(.20,.80),(.80,.80))]
     answers=[]
     for x,y in positions:
         candidate=_propose_v3(image.crop((x,y,x+side,y+side)))
@@ -105,15 +106,16 @@ def propose_axes(image):
     elif theta is None and local["native_hessian_strong"]:
         tiles=_native_tile_proposals(image)
         out["native_patch_proposals"]=tiles
-        if len(tiles)==2 and all(t["angle_deg"] is not None for t in tiles):
-            a,b=[t["angle_deg"] for t in tiles]
-            if (axis_distance(a,b)<=5 and
-                axis_distance(a,local_theta)<=9 and
-                axis_distance(b,local_theta)<=9):
-                angle=_mean_axes([a,b,local_theta],[1,1,.7])
+        supported=[t["angle_deg"] for t in tiles if t["angle_deg"] is not None]
+        if len(tiles)==4 and len(supported)>=3:
+            consensus=_mean_axes(supported)
+            if (all(axis_distance(t,consensus)<=5 for t in supported)
+                and axis_distance(consensus,local_theta)<=9):
+                angle=_mean_axes(supported+[local_theta],
+                                 weights=[1]*len(supported)+[.7])
                 out.update(status="PROPOSED_NOT_VALIDATED",reason=None,
                            unlabelled_axes_deg=[round(angle,3),round(angle+90,3)],
-                           promotion_reason="TWO_NATIVE_PATCHES_AND_HESSIAN_AGREE",
+                           promotion_reason="THREE_OF_FOUR_NATIVE_PATCHES_AND_HESSIAN_AGREE",
                            requires_manual_confirmation=False)
     # Never rescue an abstention from Hessian edges alone; edges can be twill.
     return out
