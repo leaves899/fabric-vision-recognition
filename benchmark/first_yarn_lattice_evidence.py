@@ -77,6 +77,16 @@ def infer_lattice(image, ann, *, prepared=None):
                 "pitch_2x_px":round(pitch,3),"pitch_original_px":round(pitch/2,3)},visual
     response,scale=image_band(rotated,detector)
     h,w=response.shape
+    # The legacy rectifier fills rotated corners by reflected pixels. Those
+    # replicas are NOT actual field of view: forbid counting them as evidence.
+    side_len=min(1100,image.shape[0],image.shape[1])
+    ox,oy=np.rint(np.asarray(origin,float)).astype(int)
+    original_roi=image[oy:oy+side_len,ox:ox+side_len]
+    if original_roi.shape[:2]!=(side_len,side_len):
+        raise ValueError("native source crop and affine provenance mismatch")
+    mask=cv2.warpAffine(np.ones(original_roi.shape[:2],np.uint8),affine,(w,h),
+                        flags=cv2.INTER_NEAREST,borderMode=cv2.BORDER_CONSTANT,
+                        borderValue=0).astype(bool)
     sites=[]
     for k in range(-200,201):
         y=y1+k*signed
@@ -86,6 +96,11 @@ def infer_lattice(image, ann, *, prepared=None):
         return {**base,"status":"ABSTAIN_INVALID_LATTICE_EXTENT"},visual
     # Nine independent longitudinal windows; fixed settings across all fabrics.
     cx=np.linspace(.25*w,.75*w,9)
+    xidx=np.rint(cx).astype(int)
+    sites=[(k,y) for k,y in sites if
+           sum(bool(mask[int(round(y)),x]) for x in xidx)>=6]
+    if len(sites)<4:
+        return {**base,"status":"ABSTAIN_INSUFFICIENT_UNREFLECTED_PHOTO_COVERAGE"},visual
     half=max(8,int(.03*w))
     profiles=[]
     for x in cx:
@@ -137,6 +152,9 @@ def infer_lattice(image, ann, *, prepared=None):
     for k,target in sites:
         measurements=[]
         for x,profile in zip(cx,profiles):
+            ix=int(round(x))
+            if not mask[int(np.clip(round(target),0,h-1)),ix]:
+                continue
             low=max(2,round(target)-radius);high=min(h-3,round(target)+radius)
             if high<low:continue
             ii=np.arange(low,high+1)
@@ -205,6 +223,7 @@ def infer_lattice(image, ann, *, prepared=None):
             "photo_phase_runner_up_score":round(competing,5),
             "photo_phase_candidates_tested":len(shifts),
             "manual_A3_used_for_phase_search":False,
+            "rotated_reflected_border_excluded":True,
             "calibration_y1_y2_2x_px":[round(y1,3),round(y2,3)],
             "confirmed_A1_A2_intervals_used_for_calibration":intervals,
             "nominal_lattice_site_count_NOT_actual_yarn_count":len(records),
