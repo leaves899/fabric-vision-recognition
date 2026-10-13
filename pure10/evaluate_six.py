@@ -70,9 +70,13 @@ def _compare(out, ann, dims):
                if all(fb) else None)
     obs = out["axis_families"]
     permutations = (("a", "b"), ("b","a"))
-    error, chosen = min(((_axis_error(obs[x]["angle_image_deg"],angle_a)+
-        (_axis_error(obs[y]["angle_image_deg"],angle_b) if angle_b is not None else 0), (x,y))
-        for x,y in permutations)
+    assignments = []
+    for candidate_a, candidate_b in permutations:
+        error_a = _axis_error(obs[candidate_a]["angle_image_deg"], angle_a)
+        error_b = (_axis_error(obs[candidate_b]["angle_image_deg"], angle_b)
+                   if angle_b is not None else 0.)
+        assignments.append((error_a + error_b, (candidate_a, candidate_b)))
+    error, chosen = min(assignments, key=lambda item: item[0])
     x, y = chosen
     # Algorithm's period measured on downsampled input, annotations on native
     # zoom pixels. Do not accidentally treat 2x enlargement as new resolution.
@@ -88,8 +92,7 @@ def _compare(out, ann, dims):
         if ann.get("same_family_intervals_confirmed") else None
     gt_b = _spacing(fb[0],fb[1],ann.get("cross_family_intervals")) \
         if all(fb) and ann.get("cross_family_intervals_confirmed") else None
-    gt_holdout = _spacing(fa[0],fa[2],
-                          None) if len(fa) > 2 and fa[2] else None
+    has_holdout = bool(len(fa) > 2 and fa[2])
     return {
         "score_state":"EVALUATED",
         "annotation_interpretation":"each line = distinct full physical yarn",
@@ -111,7 +114,7 @@ def _compare(out, ann, dims):
         "true_cross_yarn_pitch_native_px":round(gt_b,3) if gt_b is not None else None,
         "pred_cross_yarn_pitch_native_px":round(pred(y),3) if pred(y) else None,
         "cross_yarn_pitch_relative_error_pct":discrepancy(pred(y),gt_b),
-        "holdout_distinct_yarn_not_interpolated":bool(gt_holdout is not None),
+        "holdout_distinct_yarn_not_interpolated":has_holdout,
         "period_has_physical_single_yarn_proof":False,
         "source_operator_reviewed":bool(ann.get("reference_confirmed")),
     }
