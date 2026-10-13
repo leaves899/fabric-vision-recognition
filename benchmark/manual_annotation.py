@@ -15,6 +15,9 @@ import hashlib
 import json
 import math
 import os
+import threading
+import time
+import webbrowser
 from datetime import datetime, timezone
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -373,6 +376,7 @@ def main(argv=None):
     sub = p.add_subparsers(dest="command", required=True)
     serve = sub.add_parser("serve", help="serve local review interface")
     serve.add_argument("--port", type=int, default=8765)
+    serve.add_argument("--open", action="store_true", help="open the local browser after server starts")
     sub.add_parser("audit", help="list verified, draft, missing or stale references")
     args = p.parse_args(argv)
     root = Path(__file__).resolve().parents[1]
@@ -385,7 +389,14 @@ def main(argv=None):
     server = ThreadingHTTPServer(("127.0.0.1", args.port), lambda *a, **kw:
                                  AnnotationHandler(*a, directory=str(root), **kw))
     server.repo_root = root
-    print(f"Open http://127.0.0.1:{args.port}/tools/yarn_annotator/ (local only)")
+    url = f"http://127.0.0.1:{server.server_address[1]}/tools/yarn_annotator/"
+    print(f"Open {url} (local only)")
+    if args.open:
+        # Start serving before asking the default browser to load the UI.
+        def _open_local_browser():
+            time.sleep(0.6)
+            webbrowser.open(url)
+        threading.Thread(target=_open_local_browser, daemon=True).start()
     try:
         server.serve_forever()
     except KeyboardInterrupt:
