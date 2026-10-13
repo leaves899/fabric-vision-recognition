@@ -38,6 +38,12 @@ class CrossFabricPhaseTests(unittest.TestCase):
     def test_phase_sampler_positive_on_synthetic_crossed_bands_only(self):
         r=sample_crossing_phase(stripes(),[[10,130],[250,130]],cal())
         self.assertGreater(r["summary_A1_operator_reference"]["available_sites"],5)
+        # A purely printed/intersecting brightness pattern can exhibit the
+        # very same positive "crossing phase" signature without ANY physical
+        # weave or occluded yarn. This is a causal counterexample to a
+        # photo-only phase cue being a certificate of physical yarn identity.
+        self.assertGreater(
+            r["summary_A1_operator_reference"]["median_B_dominance_phase_difference"],0)
         self.assertFalse(r["crossing_over_under_verified"])
         self.assertFalse(r["actual_physical_same_yarn_verified"])
         self.assertTrue(all(not s["B_lattice_site_is_verified_occlusion"] for s in r["sites"]))
