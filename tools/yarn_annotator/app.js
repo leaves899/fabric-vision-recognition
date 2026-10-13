@@ -3,7 +3,7 @@ const el=id=>document.getElementById(id);
 const PRIORITY=["U20261013_01","U20261013_02","U20261013_03","U20261013_04","U20261013_05","U20261013_06","T001","T004","T005","T007","T006","P001","T002","H001","S001","X002","U001"];
 const COLORS={reference:"#ff9a27",check_same:"#18d294",holdout_same:"#fff068",check_cross:"#72a9ff",check_cross_second:"#cf8cff"};
 const LABELS={reference:"A第一根校准纱线",check_same:"A第二根校准纱线",holdout_same:"A第三根独立验收纱线",check_cross:"B第一根校准纱线",check_cross_second:"B第二根校准纱线"};
-let all=[], visible=[], current=null, selected="reference", data=null, drawn=[];
+let all=[], visible=[], current=null, selected="reference", data=null, drawn=[], anchorDirty=false;
 function show(msg,good=true){el("message").textContent=msg;el("message").className=good?"good":"bad";}
 function blank(row){return {schema_version:"1.0",sample_id:row.sample_id,image_path:row.image_path,annotation_target:/^U20261013_0[1-6]$/.test(row.sample_id)?"PHYSICAL_YARN_REFERENCE":"UNSPECIFIED",path_may_cross_occlusion:/^U20261013_0[1-6]$/.test(row.sample_id),visible_pixel_gt_confirmed:false,centerline_pixel_gt_confirmed:false,reference_confirmed:false,reference_family:"UNKNOWN",identity_confirmed:false,review_state:"DRAFT",eligibility:"UNREVIEWED",same_family_intervals:null,same_family_intervals_confirmed:false,cross_family_intervals:null,cross_family_intervals_confirmed:false,segments:{reference:null,check_same:null,holdout_same:null,check_cross:null,check_cross_second:null},notes:""};}
 function axis(pts){if(!pts||pts.length!==2)return null;let a=pts[0],b=pts[1];return ((Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI)%180+180)%180;}
@@ -36,6 +36,7 @@ function redraw(){
   const img=el("fabricImg"),canvas=el("layer"),ctx=canvas.getContext("2d");
   if(!img.naturalWidth||!data)return;
   ctx.clearRect(0,0,canvas.width,canvas.height);
+  if(window.localEvidence?.active){window.localEvidence.render(ctx);return;}
   let width=Math.max(3,canvas.width/350);
   Object.keys(LABELS).forEach(type=>{
     const pts=data.segments[type];
@@ -50,6 +51,7 @@ function redraw(){
   }).join("\n");
 }
 function onPoint(ev){
+  if(window.localEvidence?.active)return window.localEvidence.pointerDown(ev);
   if(!data)return;
   let rect=el("layer").getBoundingClientRect(), img=el("fabricImg");
   let x=(ev.clientX-rect.left)*img.naturalWidth/rect.width;
@@ -60,6 +62,7 @@ function onPoint(ev){
   if(arr.length>=2)arr=[];
   arr.push([Number(x.toFixed(3)),Number(y.toFixed(3))]);
   data.segments[selected]=arr;
+  anchorDirty=true;
   if(selected==="reference")el("confirmRef").checked=false;
   el("reviewState").value="DRAFT";
   redraw();
@@ -78,6 +81,13 @@ function copyToInputs(){
   el("bIntervalsConfirmed").checked=data.cross_family_intervals_confirmed===true;
 }
 async function loadSample(sid){
+  if(current?.sample_id && current.sample_id!==sid &&
+     (anchorDirty||window.localEvidence?.dirty)){
+    if(!window.confirm("本张有未保存的标注，切换照片将丢失这些修改。确定切换吗？")){
+      el("sample").value=current.sample_id;
+      return;
+    }
+  }
   let row=all.find(x=>x.sample_id===sid);
   if(!row)return;
   current=row;
@@ -102,6 +112,14 @@ async function loadSample(sid){
   if(data.annotation_target==="PHYSICAL_YARN_TRAJECTORY")data.annotation_target="PHYSICAL_YARN_REFERENCE";
   if(zoomNative){data.annotation_target="PHYSICAL_YARN_REFERENCE";data.annotation_semantics="PHYSICAL_YARN_REFERENCE";data.path_may_cross_occlusion=true;data.visible_pixel_gt_confirmed=false;data.centerline_pixel_gt_confirmed=false;}
   copyToInputs();
+  anchorDirty=false;
+  if(window.localEvidence){
+    try{await window.localEvidence.load(sid);}
+    catch(err){
+      el("localMessage").textContent="局部证据加载失败："+String(err);
+      el("localMessage").className="bad";
+    }
+  }
   let img=el("fabricImg");
   img.onload=()=>{
     let canvas=el("layer");
@@ -153,6 +171,7 @@ async function save(){
     let out=await r.json();
     if(!r.ok)throw Error(out.error||"保存失败");
     current.annotated=true;
+    anchorDirty=false;
     activeList();el("sample").value=current.sample_id;
     show("保存成功 "+out.sample_id+" · "+out.status+" · 已校验标注图像 SHA-256");
   }catch(err){show(String(err),false);}
@@ -185,9 +204,14 @@ el("next").addEventListener("click",()=>move(1));
 el("undo").addEventListener("click",()=>{
   if(!data)return;
   data.segments[selected]=null;
+  anchorDirty=true;
   if(selected==="reference")el("confirmRef").checked=false;
   el("reviewState").value="DRAFT";redraw();
 });
 document.querySelectorAll("[data-mode]").forEach(x=>x.addEventListener("click",()=>updateMode(x.dataset.mode)));
 el("save").addEventListener("click",save);
+document.querySelectorAll("#referencePanel input, #referencePanel textarea, #referencePanel select").forEach(input=>{
+  input.addEventListener("input",()=>{anchorDirty=true;});
+  input.addEventListener("change",()=>{anchorDirty=true;});
+});
 init();
