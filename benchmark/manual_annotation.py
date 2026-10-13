@@ -316,6 +316,16 @@ class AnnotationHandler(SimpleHTTPRequestHandler):
                 for x in samples(root).values()
             ]
             return self._json({"items": items})
+        if path.path == "/api/local-review":
+            from benchmark.local_image_review import load_local_review
+            sid = parse_qs(path.query).get("id", [""])[0]
+            try:
+                return self._json(load_local_review(root, sid))
+            except (ValueError, OSError, KeyError, json.JSONDecodeError) as exc:
+                return self._json({"error": str(exc)}, 404)
+        if path.path == "/api/local-review-audit":
+            from benchmark.local_image_review import audit_local_reviews
+            return self._json(audit_local_reviews(root))
         if path.path == "/api/annotation":
             sid = parse_qs(path.query).get("id", [""])[0]
             try:
@@ -329,7 +339,8 @@ class AnnotationHandler(SimpleHTTPRequestHandler):
         return super().do_GET()
 
     def do_POST(self):
-        if urlsplit(self.path).path != "/api/annotation":
+        endpoint = urlsplit(self.path).path
+        if endpoint not in ("/api/annotation", "/api/local-review"):
             return self._json({"error": "unsupported endpoint"}, 404)
         origin = self.headers.get("Origin")
         host = self.headers.get("Host", "")
@@ -337,9 +348,19 @@ class AnnotationHandler(SimpleHTTPRequestHandler):
             return self._json({"error": "local same-origin requests only"}, 403)
         try:
             n = int(self.headers.get("Content-Length", "0"))
-            if n <= 0 or n > 80_000:
+            limit = 1_000_000 if endpoint == "/api/local-review" else 80_000
+            if n <= 0 or n > limit:
                 raise ValueError("invalid annotation payload size")
             data = json.loads(self.rfile.read(n).decode("utf-8"))
+            if endpoint == "/api/local-review":
+                from benchmark.local_image_review import store_local_review, FOLDER
+                result = store_local_review(self.server.repo_root, data)
+                return self._json({
+                    "saved": True, "sample_id": result["sample_id"],
+                    "status": result["review_state"], "image_sha256": result["image_sha256"],
+                    "path": str(FOLDER / (result["sample_id"] + ".json")).replace("\\", "/"),
+                    "regions": len(result["regions"]), "relations": len(result["relations"]),
+                    "independent_physical_gt": False})
             result = store_annotation(self.server.repo_root, data)
             return self._json({"saved": True, "sample_id": result["sample_id"],
                                "status": result["review_state"], "image_sha256": result["image_sha256"]})
@@ -356,7 +377,10 @@ def main(argv=None):
     args = p.parse_args(argv)
     root = Path(__file__).resolve().parents[1]
     if args.command == "audit":
-        print(json.dumps(audit(root), ensure_ascii=False, indent=2))
+        from benchmark.local_image_review import audit_local_reviews
+        print(json.dumps({"physical_yarn_references": audit(root),
+                          "phone_image_local_reviews": audit_local_reviews(root)},
+                         ensure_ascii=False, indent=2))
         return 0
     server = ThreadingHTTPServer(("127.0.0.1", args.port), lambda *a, **kw:
                                  AnnotationHandler(*a, directory=str(root), **kw))
