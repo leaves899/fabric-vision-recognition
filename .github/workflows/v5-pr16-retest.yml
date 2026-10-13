@@ -1,0 +1,69 @@
+name: Retest frozen V5 against PR16 latest labels
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/v5-pr16-retest.yml'
+      - 'benchmark/v5_pr16_local_evidence_audit.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-v5-pr16-native-roi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        sample: [U20261013_01, U20261013_02, U20261013_03, U20261013_05, U20261013_06]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: demo/v5/requirements.txt
+      - name: Install unchanged V5 requirements
+        run: python -m pip install -r demo/v5/requirements.txt Pillow
+      - name: Validate PR16 physical-reference and image-review annotation contracts
+        run: |
+          python -m benchmark.manual_annotation audit
+          python -m unittest benchmark.tests.test_local_image_review -v
+      - name: Run unchanged V5 with PR16 physical-yarn references
+        run: python -m benchmark.run_annotated_v5_roi --id "${{ matrix.sample }}" --margin-px 380 --max-pixels 3000000 --out "experiments/v5-pr16-retest/${{ matrix.sample }}"
+      - name: Check physical-reference geometry without calling it pixel-center GT
+        run: python -m benchmark.phase_offset_diagnostic --id "${{ matrix.sample }}" --result-dir "experiments/v5-pr16-retest/${{ matrix.sample }}"
+      - name: Evaluate PR16 new draft apparent-yarn and twill local strokes
+        run: python -m benchmark.v5_pr16_local_evidence_audit --id "${{ matrix.sample }}" --result-dir "experiments/v5-pr16-retest/${{ matrix.sample }}"
+      - name: Show position/angle diagnostic
+        if: always()
+        env:
+          SID: ${{ matrix.sample }}
+        run: |
+          python - <<'PY'
+          import os,json
+          from pathlib import Path
+          p=Path("experiments/v5-pr16-retest")/os.environ["SID"]
+          out={"sample":os.environ["SID"]}
+          for key in ("summary","phase_diagnostic","pr16_local_evidence_v5_audit"):
+              f=p/(key+".json")
+              if f.is_file():
+                  v=json.loads(f.read_text(encoding="utf-8"))
+                  if key=="pr16_local_evidence_v5_audit":v.pop("all_local_stroke_evidence",None)
+                  out[key]=v
+              else:out[key]="NOT_GENERATED"
+          print("V5_PR16_RETEST_SUMMARY_JSON="+json.dumps(out,ensure_ascii=False,sort_keys=True),flush=True)
+          PY
+      - name: Store before/after overlays and detailed audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v5-pr16-retest-${{ matrix.sample }}
+          path: experiments/v5-pr16-retest/${{ matrix.sample }}/
+          if-no-files-found: warn
+          retention-days: 30
