@@ -1,9 +1,11 @@
-name: First physical yarn localization audit
+name: First yarn direction-only reinterpretation and candidate audit
 on:
   pull_request:
     paths:
       - '.github/workflows/first-yarn-evidence.yml'
       - 'benchmark/first_yarn_evidence.py'
+      - 'benchmark/direction_only_first_yarn.py'
+      - 'benchmark/tests/test_direction_only_first_yarn.py'
       - 'benchmark/tests/test_first_yarn_evidence.py'
       - 'datasets/annotations/drafts/U20261013_*.json'
   workflow_dispatch:
@@ -28,15 +30,19 @@ jobs:
         run: python -m pip install -r demo/v5/requirements.txt Pillow
       - name: Source photo hash, native zoom coordinate and operator audit
         run: python -m benchmark.manual_annotation audit
-      - name: Synthetic physical stripe, flat negative and geometry tests
-        run: python -m unittest benchmark.tests.test_first_yarn_evidence -v
-      - name: Real-photo five-fabric first-yarn evidence and holdout audit
-        run: python -m benchmark.first_yarn_evidence --out experiments/first-yarn-evidence
-      - name: Preserve all five actual overlays and numeric evidence
+      - name: Synthetic and semantics guards (no physical GT from direction guides)
+        run: python -m unittest benchmark.tests.test_first_yarn_evidence benchmark.tests.test_direction_only_first_yarn -v
+      - name: Invalidate historical pixel-localization scores for direction-only annotations
+        run: python -m benchmark.first_yarn_evidence --out experiments/first-yarn-invalidated
+      - name: Generate image-only first-family candidate previews from inferred axis
+        run: python -m benchmark.direction_only_first_yarn --out experiments/first-yarn-direction-only
+      - name: Preserve honest reports and five exploratory previews
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: first-yarn-reference-only-evidence
-          path: experiments/first-yarn-evidence/
+          name: first-yarn-direction-only-candidates
+          path: |
+            experiments/first-yarn-invalidated/
+            experiments/first-yarn-direction-only/
           if-no-files-found: warn
           retention-days: 30
