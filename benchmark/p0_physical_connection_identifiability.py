@@ -26,6 +26,7 @@ from benchmark.local_image_review import load_local_review
 from benchmark.p0_operator_line_audit import _camera_image
 from benchmark.p0_occlusion_continuity import calibration_fields, create_fragments, propose_candidates
 from benchmark.p0_global_yarn_uniqueness import compare_structures
+from benchmark.p0_native_occlusion_audit import audit_alternatives
 
 ROOT=Path(__file__).resolve().parents[1]
 CONTEXT_ID="U20261013_03"
@@ -259,6 +260,13 @@ def run(root:Path,out:Path,ids=("U20261013_01","U20261013_03","U20261013_06")):
         sources={a for a,b in consensus}
         audit_links=sorted({(e["source"],e["target"]) for e in edges if e["source"] in sources})
         cert=exact_structural_identifiability(frags,edges,audit_links)
+        optical=audit_alternatives(photo,frags,audit_links,cal["pitch"])
+        (out/(sid+"_native_gap_observations_UNKNOWN.json")).write_text(
+            json.dumps({"sample_id":sid,
+                        "original_camera_image_only":True,
+                        "operator_relations_excluded":True,
+                        "optical_observations":optical},
+                       ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
         necessary={tuple(x) for x in cert["edges_necessary_in_all_max_cardinality_matchings_NOT_REAL_GT"]}
         consensus_necessary=sorted(necessary & set(consensus))
         # Then and ONLY THEN load the new USER-confirmed positive/negative case.
@@ -280,6 +288,8 @@ def run(root:Path,out:Path,ids=("U20261013_01","U20261013_03","U20261013_06")):
             "E62_consensus_graph_necessary_edge_ids_NOT_real_yarns":[list(x) for x in consensus_necessary],
             "user_operator_counterexample_posthoc":posthoc,
             "physical_yarn_identity_accuracy":None,
+            "native_optical_gap_links_audited_NOT_verified":len(optical["links"]),
+            "native_optical_certified_connections":0,
         }
         with (out/(sid+"_counterfactual_identifiability.json")).open("w",encoding="utf-8") as f:
             json.dump({"summary":record,"graph_certificate":cert},
