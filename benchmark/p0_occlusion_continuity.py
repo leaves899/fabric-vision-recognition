@@ -306,7 +306,7 @@ def render_audit(photo, frags, audit, output):
     cv2.imwrite(str(output),canvas)
 
 
-def run(root:Path,out:Path,sample_ids=("U20261013_01","U20261013_03")):
+def run(root:Path,out:Path,sample_ids=("U20261013_01","U20261013_03","U20261013_06")):
     out.mkdir(parents=True,exist_ok=True)
     summary={
         "experiment":"P0_E4_CROSS_OCCLUSION_CONTINUITY_COMPETING_CONNECTIONS",
@@ -317,6 +317,7 @@ def run(root:Path,out:Path,sample_ids=("U20261013_01","U20261013_03")):
         "scalar_weighted_identity_score_fitted":False,
         "A3_holdout_read":False,
         "cannot_certify_weave_or_real_yarn_count":True,
+        "U20261013_06_new_label_evidence_is_OUT_OF_DOMAIN_NOT_INDEPENDENT_PHYSICAL_GT":True,
         "samples":[],
     }
     for sid in sample_ids:
