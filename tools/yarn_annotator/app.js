@@ -78,6 +78,14 @@ async function loadSample(sid){
   let row=all.find(x=>x.sample_id===sid);
   if(!row)return;
   current=row;
+  const cleanZoom=el("cleanZoomLink");
+  if(/^U20261013_0[1-6]$/.test(sid)) {
+    cleanZoom.href="/datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked/"+sid+"_center_2x.jpg";
+    cleanZoom.hidden=false;
+  } else {
+    cleanZoom.removeAttribute("href");
+    cleanZoom.hidden=true;
+  }
   el("sample").value=sid;
   el("fabricImg").src="";
   show("读取 "+sid+" 原始照片和标注...");
