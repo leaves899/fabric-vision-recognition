@@ -17,7 +17,9 @@ import cv2
 import numpy as np
 
 from benchmark.local_image_review import load_local_review
-from benchmark.p0_operator_line_audit import _camera_image, convert_zoom_to_camera
+from benchmark.p0_operator_line_audit import (
+    _camera_image, convert_zoom_to_camera, connected_positive_groups,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 POS = "APPARENT_VISIBLE_YARN"
