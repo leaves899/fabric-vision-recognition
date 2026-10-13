@@ -1,9 +1,10 @@
-"""Direction-guided, IMAGE-ONLY first-family yarn location HYPOTHESES.
+"""Direction-guided IMAGE-ONLY first-family candidate ridge proposals.
 
-A user annotation is an INFERRED CONNECTION DIRECTION, not visible strand pixels.
-Consequently its coordinate POSITION MUST NOT be used to pick a ridge appearance,
-grid phase, centerline, or spacing. The angle alone constrains orientation.
-All output center lines are UNVERIFIED CANDIDATES; no pixel-level GT exists yet.
+User marks infer real PHYSICAL YARN TRAJECTORIES through possible occlusion,
+not literal continuously visible yarn segments or pixel-precise centerline GT.
+We may use the marked position to select a field of view, but ridge brightness,
+scale, candidate center, and grid phase must arise independently from pixels.
+All lines remain candidates until physical-strand evidence confirms identity.
 """
 from __future__ import annotations
 
@@ -15,7 +16,37 @@ import cv2
 import numpy as np
 from scipy.signal import find_peaks
 
-from benchmark.first_yarn_evidence import axis_deg, rectify_axis, oriented_ridge
+
+def axis_deg(segment):
+    a,b=np.asarray(segment,np.float64)
+    vec=b-a
+    if np.linalg.norm(vec)<20:
+        raise ValueError("a real physical-yarn trajectory needs two distinct points")
+    return float(np.degrees(np.arctan2(vec[1],vec[0]))%180)
+
+
+def rectify_axis(img, reference):
+    angle=axis_deg(reference)
+    h,w=img.shape[:2]
+    center=np.array([w/2,h/2],float)
+    matrix=cv2.getRotationMatrix2D(tuple(center),angle,1.0)
+    cc,ss=abs(matrix[0,0]),abs(matrix[0,1])
+    dst_w=int(np.ceil(w*cc+h*ss))+2
+    dst_h=int(np.ceil(h*cc+w*ss))+2
+    matrix[0,2]+=dst_w/2-center[0]
+    matrix[1,2]+=dst_h/2-center[1]
+    rotated=cv2.warpAffine(img,matrix,(dst_w,dst_h),flags=cv2.INTER_LINEAR,
+                          borderMode=cv2.BORDER_REFLECT_101)
+    points=cv2.transform(np.asarray(reference,float).reshape(1,2,2),matrix)[0]
+    return rotated,matrix,points
+
+
+def oriented_ridge(channel,scale):
+    parallel=max(11.,scale*2.5)
+    small=cv2.GaussianBlur(channel,(0,0),sigmaX=parallel,sigmaY=max(1.,scale*.38))
+    large=cv2.GaussianBlur(channel,(0,0),sigmaX=parallel,sigmaY=max(3.,scale*1.9))
+    return (small-large).astype(np.float32)
+
 
 ROOT=Path(__file__).resolve().parents[1]
 SCALES=(3,5,8,12,17)
@@ -137,7 +168,7 @@ def run(root,out):
         angle=axis_deg(ann["segments"]["reference"])
         proposal,visual=score_profile(img,angle)
         proposal.update(sample_id=ann["sample_id"],
-                        annotation_semantics="INFERRED_YARN_CONNECTION_DIRECTION_ONLY",
+                        annotation_semantics="INFERRED_TRUE_PHYSICAL_YARN_TRAJECTORY_WITH_POSSIBLE_OCCLUSION",
                         annotation_coordinates_used_to_fit_center=False,
                         input_fields=["image","reference orientation angle"],
                         no_independent_physical_center_gt=True)
@@ -147,10 +178,10 @@ def run(root,out):
         print(f'{ann["sample_id"]} {proposal["status"]} '
               f'ridges={proposal.get("image_only_candidate_ridge_count",0)}',flush=True)
     (out/"summary.json").write_text(json.dumps({"source_main_sha":"e1b219384224e1d77c79aa108bef3fb51a39ea56",
-        "dataset_semantics":"OPERATOR_DRAWN_DIRECTION_GUIDES_NOT_VISIBLE_YARN_SEGMENTS",
+        "dataset_semantics":"INFERRED_TRUE_PHYSICAL_YARN_TRAJECTORIES_NOT_CONTINUOUS_VISIBLE_SEGMENTS",
         "reviewed":len(data),"results":data,
         "accuracy_evaluable":False,"physical_yarn_count_evaluable":False,
-        "caution":"Do not score photo candidate center accuracy against direction guides."},
+        "caution":"Operator-marked true-yarn paths are approximate geometric tracks through occlusions, not pixelwise centerline ground truth."},
         ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     if len(data)<5:raise SystemExit("Insufficient reviewed samples")
     return 0
