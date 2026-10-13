@@ -319,6 +319,16 @@ class AnnotationHandler(SimpleHTTPRequestHandler):
                 for x in samples(root).values()
             ]
             return self._json({"items": items})
+        if path.path == "/api/local-review-capabilities":
+            from benchmark.local_image_review import (
+                LOCAL_REVIEW_PROTOCOL_VERSION, SUPPORTED_LINE_KINDS, SOURCE)
+            return self._json({
+                "protocol_version": LOCAL_REVIEW_PROTOCOL_VERSION,
+                "supported_line_kinds": list(SUPPORTED_LINE_KINDS),
+                "annotation_source": SOURCE,
+                "save_endpoint": "/api/local-review",
+                "restart_required_after_python_update": True,
+            })
         if path.path == "/api/local-review":
             from benchmark.local_image_review import load_local_review
             sid = parse_qs(path.query).get("id", [""])[0]
