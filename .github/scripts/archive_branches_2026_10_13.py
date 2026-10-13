@@ -49,15 +49,24 @@ def call(method: str, path: str, data=None, missing_ok=False):
                  "User-Agent": "fabric-vision-safe-branch-archive",
                  "Content-Type": "application/json"},
     )
-    try:
-        with urllib.request.urlopen(req, timeout=25) as res:
-            raw = res.read()
-            return json.loads(raw) if raw else None
-    except urllib.error.HTTPError as exc:
-        if missing_ok and exc.code == 404:
-            return None
-        details = exc.read().decode("utf-8", errors="replace")[:350]
-        raise RuntimeError(f"{method} {path}: HTTP {exc.code}: {details}") from None
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req, timeout=25) as res:
+                raw = res.read()
+                return json.loads(raw) if raw else None
+        except urllib.error.HTTPError as exc:
+            if missing_ok and exc.code == 404:
+                return None
+            if exc.code in (429, 500, 502, 503, 504) and attempt < 4:
+                time.sleep(min(0.8 * 2**attempt, 5.0))
+                continue
+            details = exc.read().decode("utf-8", errors="replace")[:350]
+            raise RuntimeError(f"{method} {path}: HTTP {exc.code}: {details}") from None
+        except (urllib.error.URLError, ConnectionError, TimeoutError, OSError) as exc:
+            if attempt < 4:
+                time.sleep(min(0.8 * 2**attempt, 5.0))
+                continue
+            raise RuntimeError(f"{method} {path}: transient connection failure: {exc}") from None
 
 
 def ref_uri(kind: str, name: str) -> str:
@@ -136,8 +145,13 @@ def main():
         for name, sha in RETIRE.items():
             tag_name = ARCHIVE_PREFIX + "/" + name
             if get_ref("tags", tag_name) is None:
-                call("POST", "/git/refs",
-                     {"ref":"refs/tags/" + tag_name, "sha":sha})
+                try:
+                    call("POST", "/git/refs",
+                         {"ref":"refs/tags/" + tag_name, "sha":sha})
+                except RuntimeError:
+                    # POST may have succeeded immediately before a broken reply.
+                    if ref_sha(get_ref("tags", tag_name)) != sha:
+                        raise
             if ref_sha(get_ref("tags", tag_name)) != sha:
                 raise RuntimeError("Archive tag verification failure: " + tag_name)
             report["archived"].append({"branch":name,"tag":tag_name,"sha":sha})
@@ -157,7 +171,11 @@ def main():
                 call("DELETE", full_refs_uri("heads", name))
                 report["deleted"].append(name)
             except RuntimeError as exc:
-                report["skipped"].append({"branch":name,"reason":str(exc)[:250]})
+                # A disconnected DELETE reply may still mean deletion succeeded.
+                if get_ref("heads", name) is None:
+                    report["deleted"].append(name)
+                else:
+                    report["skipped"].append({"branch":name,"reason":str(exc)[:250]})
         report["status"] = "COMPLETE_WITH_SKIPS" if report["skipped"] else "COMPLETE"
         for name in KEEP:
             if get_ref("heads", name) is None:
