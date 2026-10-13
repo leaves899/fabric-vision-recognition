@@ -18,6 +18,7 @@ import cv2
 import numpy as np
 
 from pure10.engine import analyze, _axis_error
+from pure10.spectral_direction import estimate_axes
 
 ROOT = Path(__file__).resolve().parents[1]
 GLOB = "U20261013_*.json"
@@ -135,6 +136,14 @@ def evaluate(root=ROOT, output=None, overlays=None):
         rel = image.relative_to(root)
         overlay = Path(overlays)/f"{sample_id}_candidate.png" if overlays else None
         result = analyze(image, evidence_path=overlay)
+        src_image = cv2.imread(str(image))
+        baseline_theta = result["cross_scale_spectral_direction"]["theta_mod_90_deg"]
+        theta90 = estimate_axes(cv2.rotate(src_image, cv2.ROTATE_90_CLOCKWISE))["theta_mod_90_deg"]
+        theta180 = estimate_axes(cv2.rotate(src_image, cv2.ROTATE_180))["theta_mod_90_deg"]
+        def modulo90_error(a, b):
+            return min(abs(a-b),90-abs(a-b))
+        rotational = {"axis_90_error_deg": modulo90_error(baseline_theta,theta90),
+                      "axis_180_error_deg": modulo90_error(baseline_theta,theta180)}
         if ann_file:
             ann = json.loads(ann_file.read_text(encoding="utf-8"))
             _validate_annotation(ann, image)
@@ -143,7 +152,8 @@ def evaluate(root=ROOT, output=None, overlays=None):
             checks = {"score_state":"NO_ANNOTATION_ON_MAIN"}
         row = {"sample_id":sample_id, "image":str(rel),
                "fabric_id":sample_id, # original + zoom are not separate fabrics
-               "algorithm": result, "evaluation":checks}
+               "algorithm": result, "evaluation":checks,
+               "rotation_equivariance": rotational}
         rows.append(row)
     tested = [x["evaluation"] for x in rows
               if x["evaluation"]["score_state"] == "EVALUATED"]
@@ -153,7 +163,7 @@ def evaluate(root=ROOT, output=None, overlays=None):
     pitch_errors = [x["same_yarn_pitch_relative_error_pct"] for x in tested
                     if x["same_yarn_pitch_relative_error_pct"] is not None]
     result = {
-        "evaluation_kind":"OUT_OF_SAMPLE_ANNOTATION_BLIND_NO_PARAMETER_FITTING",
+        "evaluation_kind":"ANNOTATION_BLIND_INFERENCE_DEVELOPMENT_SET_NOT_HELD_OUT",
         "number_of_independent_fabrics":len(rows),
         "number_of_fabrics_with_reviewed_annotations":len(tested),
         "number_missing_latest_annotation":len(rows)-len(tested),
@@ -162,7 +172,8 @@ def evaluate(root=ROOT, output=None, overlays=None):
            "2x zoom is interpolated: no extra physical information",
            "Without inner 5cm calibration markers physical density is UNAVAILABLE",
            "No weave classes have 0/1 verified over-under crossing ground truth",
-           "This is NOT a training-set/holdout accuracy claim; algorithms are fixed globally",
+           "This is the DEVELOPMENT SET; cross-scale FFT bands were selected after reviewing these examples",
+           "No independent held-out physical yarn accuracy has yet been measured",
         ],
         "reference_angle_median_absolute_error_deg":
             float(np.median(angle_errors)) if angle_errors else None,
@@ -170,6 +181,10 @@ def evaluate(root=ROOT, output=None, overlays=None):
             float(np.median(cross_errors)) if cross_errors else None,
         "same_pitch_median_relative_error_pct":
             float(np.median(pitch_errors)) if pitch_errors else None,
+        "rotation_90_max_modulo90_error_deg":
+            max(x["rotation_equivariance"]["axis_90_error_deg"] for x in rows),
+        "rotation_180_max_modulo90_error_deg":
+            max(x["rotation_equivariance"]["axis_180_error_deg"] for x in rows),
         "per_fabric": rows,
     }
     if output:
