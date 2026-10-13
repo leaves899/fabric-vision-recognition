@@ -16,7 +16,9 @@ import numpy as np
 from scipy.ndimage import gaussian_filter1d
 from scipy.signal import find_peaks, peak_widths
 
-VERSION = "pure10-fp-v0.1.0"
+from pure10.spectral_direction import estimate_axes
+
+VERSION = "pure10-fp-v0.2.0"
 STATUSES = ("CANDIDATE", "CONFIRMED", "UNAVAILABLE", "NOT_EVALUATED")
 PARAMETERS = (
     "warp_direction_angle", "weft_direction_angle",
@@ -332,7 +334,14 @@ def analyze(image_path, *, warp_family=None, corners=None, evidence_path=None):
     detail, colored, scale = _preprocess(physical_roi)
     if min(detail.shape) < 120:
         raise ValueError("Image is too small for repeatability analysis")
-    (joint, theta, a, b), margin = _search_orientation(detail)
+    spectral = estimate_axes(physical_roi)
+    theta = spectral["theta_mod_90_deg"]
+    joint = spectral["joint_score"]
+    margin = spectral["ambiguity_margin"]
+    # Image-frequency evidence and spatial counting MUST be gated separately:
+    # a good physical-yarn direction does not prove every periodic peak is a yarn.
+    direction_supported = (joint >= .10 and
+        min(spectral["family_a_energy"], spectral["family_b_energy"]) >= .03)
     evidence = _rotate(colored, theta)
     measurement = _rotate(detail, theta)
     side = int(min(measurement.shape[:2]) * .69)
@@ -349,9 +358,11 @@ def analyze(image_path, *, warp_family=None, corners=None, evidence_path=None):
     good_b = b["score"] >= .14 and b["support"] >= .12 and col["coverage"] >= .45
     axes = {
        "a": {"angle_image_deg": float(theta % 180), "period_px": a["period"],
-             "periodicity": a, "line_evidence": row, "supported": bool(good_a)},
+             "periodicity": a, "line_evidence": row, "supported": bool(direction_supported),
+             "period_supported": bool(good_a)},
        "b": {"angle_image_deg": float((theta+90)%180), "period_px": b["period"],
-             "periodicity": b, "line_evidence": col, "supported": bool(good_b)}
+             "periodicity": b, "line_evidence": col, "supported": bool(direction_supported),
+             "period_supported": bool(good_b)}
     }
     if px_per_cm is not None:
         # Homography is to 1000px / 5cm; analysis resize may reduce it.
@@ -372,8 +383,8 @@ def analyze(image_path, *, warp_family=None, corners=None, evidence_path=None):
         fields[f"{role}_direction_angle"] = (
             entry("CANDIDATE", round(axes[family]["angle_image_deg"], 3),
                 "Geometric orientation hypothesis, not an operator-confirmed axis",
-                {"periodicity": signal}) if supported
-            else entry(reason="Orthogonal periodic response failed the evidence gate"))
+                {"spectral_evidence": spectral, "periodicity": signal}) if direction_supported
+            else entry(reason="Cross-scale orthogonal direction evidence failed the gate"))
         fields[f"{role}_arrangement"] = _arrangement(lines, signal["period"], supported)
         fields[f"{role}_apparent_width_grade"] = _width_grade(
             lines, signal["period"], supported)
@@ -406,6 +417,7 @@ def analyze(image_path, *, warp_family=None, corners=None, evidence_path=None):
             "joint_candidate_score": round(float(joint), 5),
             "orientation_ambiguity_margin": round(float(margin), 5),
             "axis_families": axes,
+            "cross_scale_spectral_direction": spectral,
             "parameters": fields}
 
 
