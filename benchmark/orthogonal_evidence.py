@@ -293,10 +293,6 @@ def main(argv=None):
                   f'cross_pixel_support={[(v or {}).get("marked_minus_control_mean") for v in row["heldout_cross_image_support"]]} '
                   f'candidate_error={row["candidate_vs_cross_heldout_error_deg"]} '
                   f'rotation_drift={row["rotation_90_reprojected_drift_deg"]}',flush=True)
-            continue
-            print(f'{row["sample_id"]}: {d["status"]} candidate={d["candidate_cross_deg"]} '
-                  f'heldout_error={row["candidate_vs_cross_heldout_error_deg"]} '
-                  f'rotation_drift={row["rotation_90_reprojected_drift_deg"]}',flush=True)
     # Negative control: textured dots without yarns must never be physical success.
     rng=np.random.default_rng(20261013)
     dots=np.full((500,500,3),95,dtype=np.uint8)
