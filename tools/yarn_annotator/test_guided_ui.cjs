@@ -43,7 +43,7 @@ get("localRelation").value="UNKNOWN";
 get("localReviewState").value="DRAFT";
 const kinds=[
  ["quickYarn","APPARENT_VISIBLE_YARN","line"],
- ["quickTexture","TWILL_PATTERN","rect"],
+ ["quickTexture","TWILL_PATTERN","line"],
  ["quickUnknown","UNCERTAIN","rect"]
 ];
 for(const [id,kind,tool] of kinds){
@@ -92,14 +92,22 @@ assert.equal(app.data.regions[0].physical_identity_confirmed,undefined);
 
 get("quickTexture").click();
 assert.equal(get("localKind").value,"TWILL_PATTERN");
-assert.equal(app.tool,"rect");
-assert.match(get("localGuide").textContent,/拖动/);
+assert.equal(app.tool,"line");
+assert.match(get("localGuide").textContent,/起点.*终点/);
 app.pointerDown(point(20,35));
-app.pointerMove(point(48,60));
-app.pointerUp(point(48,60));
+assert.equal(app.data.regions.length,1);
+app.pointerDown(point(48,60));
 assert.equal(app.data.regions.length,2);
 assert.equal(app.data.regions[1].kind,"TWILL_PATTERN");
-assert.equal(app.data.regions[1].geometry.type,"RECT");
+assert.equal(app.data.regions[1].geometry.type,"LINE");
+// Advanced rectangle remains available for contextual TWILL_PATTERN regions.
+get("toolRect").click();
+app.pointerDown(point(50,70));
+app.pointerMove(point(68,83));
+app.pointerUp(point(68,83));
+assert.equal(app.data.regions.length,3);
+assert.equal(app.data.regions[2].kind,"TWILL_PATTERN");
+assert.equal(app.data.regions[2].geometry.type,"RECT");
 
 get("quickUnknown").click();
 assert.equal(app.tool,"rect");
@@ -107,7 +115,7 @@ assert.match(get("localGuide").textContent,/看不清/);
 app.pointerDown(point(51,52));
 app.pointerMove(point(75,72));
 app.pointerUp(point(75,72));
-assert.equal(app.data.regions[2].kind,"UNCERTAIN");
+assert.equal(app.data.regions[3].kind,"UNCERTAIN");
 
 // Advanced category picker remains operable without needing three-task buttons.
 get("localKind").value="GAP";
@@ -119,5 +127,5 @@ assert.equal(app.active,false);
 get("switchLocal").click();
 assert.equal(app.active,true);
 assert.ok(redrawCalls>0);
-assert.equal(app.data.regions.length,3);
-console.log("PASS guided UI: short-line, drag rectangle, uncertain, advanced category and mode switching");
+assert.equal(app.data.regions.length,4);
+console.log("PASS guided UI: true-yarn line, twill-false line, legacy twill region, uncertain region and mode switching");
