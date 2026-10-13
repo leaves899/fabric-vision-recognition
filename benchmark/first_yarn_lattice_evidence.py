@@ -114,13 +114,14 @@ def infer_lattice(image, ann, *, prepared=None):
     # Objective is unsupervised PHOTO contrast, never the withheld A3 position.
     # A twill pattern could also maximize this; ambiguity must be explicit.
     shifts=np.linspace(-.20*pitch,.20*pitch,11)
-    def photo_phase_objective(shift):
+    def photo_phase_objective(shift, subset=None):
         values=[]
+        used_profiles=profiles if subset is None else profiles[subset]
         for _,base_y in sites:
             center=int(round(base_y+shift))
             if center-side-2<0 or center+side+2>=h:
                 continue
-            for prof in profiles:
+            for prof in used_profiles:
                 yc=int(np.clip(center,2,h-3))
                 loc=prof[yc-2:yc+3]
                 if not len(loc):
@@ -133,6 +134,13 @@ def infer_lattice(image, ann, *, prepared=None):
                               min(1.,max(0.,paired-.16)))
         return float(np.mean(values)) if values else 0.
     phase_scores=[photo_phase_objective(float(shift)) for shift in shifts]
+    # Two disjoint spatial window sets must prefer the SAME phase. This is
+    # unsupervised cross-validation on IMAGE pixels, not A3 ground truth.
+    odd=[photo_phase_objective(float(shift),slice(0,None,2)) for shift in shifts]
+    even=[photo_phase_objective(float(shift),slice(1,None,2)) for shift in shifts]
+    odd_delta=float(shifts[int(np.argmax(odd))])
+    even_delta=float(shifts[int(np.argmax(even))])
+    photo_phase_crosswindow_agreement=abs(odd_delta-even_delta)<=.08*pitch
     winner=int(np.argmax(phase_scores))
     best_delta=float(shifts[winner])
     best_quality=phase_scores[winner]
@@ -141,7 +149,8 @@ def infer_lattice(image, ann, *, prepared=None):
                  if abs(shifts[i]-best_delta)>=.12*pitch]
     competing=max(competitors) if competitors else 0.
     distinguishable=(best_quality>0.015 and
-                     best_quality-competing>=max(.005,best_quality*.09))
+                     best_quality-competing>=max(.005,best_quality*.09)
+                     and photo_phase_crosswindow_agreement)
     gain=best_quality-baseline_quality
     applied_shift=(best_delta if distinguishable and gain>=.007
                    and abs(best_delta)<=.2*pitch else 0.)
@@ -242,6 +251,9 @@ def infer_lattice(image, ann, *, prepared=None):
             "photo_phase_baseline_support_score":round(baseline_quality,5),
             "photo_phase_runner_up_score":round(competing,5),
             "photo_phase_candidates_tested":len(shifts),
+            "photo_phase_odd_window_best_shift_2x_px":round(odd_delta,3),
+            "photo_phase_even_window_best_shift_2x_px":round(even_delta,3),
+            "photo_phase_crosswindow_agreement":bool(photo_phase_crosswindow_agreement),
             "manual_A3_used_for_phase_search":False,
             "rotated_reflected_border_excluded":True,
             "calibration_y1_y2_2x_px":[round(y1,3),round(y2,3)],
