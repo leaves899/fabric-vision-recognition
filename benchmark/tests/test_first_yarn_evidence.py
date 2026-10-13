@@ -41,7 +41,6 @@ class FirstYarnEvidenceTests(unittest.TestCase):
         # vary yarn response along length to include approximate occlusions
         modulation=(.68+.32*np.sin(xx/35.)**2)
         image=np.clip(65+130*body*modulation,0,255).astype(np.uint8)
-        image=np.repeat(image,w,axis=1)
         bgr=cv2.merge([image,image,image])
         ann={"sample_id":"SYNTHETIC",
              "image_sha256":"synthetic","annotation_origin":"SYNTHETIC",
