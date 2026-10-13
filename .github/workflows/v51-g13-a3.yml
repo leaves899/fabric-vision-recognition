@@ -1,0 +1,50 @@
+name: V5 G1.3 A1 A2 physical-lattice assisted A3 holdout
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/v51-g13-a3.yml'
+      - 'benchmark/v51_g13_assisted_lattice.py'
+      - 'benchmark/v51_g13_evaluate.py'
+      - 'benchmark/tests/test_v51_g13.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independently-heldout-A3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        sample: [U20261013_01, U20261013_02, U20261013_03, U20261013_05, U20261013_06]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: demo/v5/requirements.txt
+      - name: Install frozen V5 requirements
+        run: python -m pip install -r demo/v5/requirements.txt Pillow
+      - name: Check independent holdout and interval contracts
+        run: python -m unittest discover -s benchmark/tests -p 'test_v51_g13.py' -v
+      - name: Validate PR16 operator annotations
+        run: python -m benchmark.manual_annotation audit
+      - name: Run unchanged V5 from A1 direction on native-pixel ROI
+        run: python -m benchmark.run_annotated_v5_roi --id "${{ matrix.sample }}" --margin-px 380 --max-pixels 3000000 --out "experiments/v51-g13/${{ matrix.sample }}/baseline"
+      - name: Baseline photo-only annotation audit
+        run: python -m benchmark.v5_pr16_local_evidence_audit --id "${{ matrix.sample }}" --result-dir "experiments/v51-g13/${{ matrix.sample }}/baseline"
+      - name: Optional A1 A2 geometry and independent A3 holdout
+        run: python -m benchmark.v51_g13_evaluate --id "${{ matrix.sample }}" --baseline-dir "experiments/v51-g13/${{ matrix.sample }}/baseline" --out "experiments/v51-g13/${{ matrix.sample }}/assisted"
+      - name: Store evidence without declaring physical yarn accuracy
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v51-g13-${{ matrix.sample }}
+          path: experiments/v51-g13/${{ matrix.sample }}/
+          if-no-files-found: warn
+          retention-days: 30
