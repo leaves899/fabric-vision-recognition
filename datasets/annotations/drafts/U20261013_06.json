@@ -80,5 +80,9 @@
   ],
   "enlargement_scale": 2,
   "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
-  "updated_at": "2026-10-13T02:11:12.838993+00:00"
+  "updated_at": "2026-10-13T02:11:12.838993+00:00",
+  "annotation_target": "PHYSICAL_YARN_TRAJECTORY",
+  "path_may_cross_occlusion": true,
+  "visible_pixel_gt_confirmed": false,
+  "centerline_pixel_gt_confirmed": false
 }
