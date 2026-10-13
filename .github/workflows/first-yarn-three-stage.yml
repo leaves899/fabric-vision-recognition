@@ -5,6 +5,9 @@ on:
       - 'benchmark/first_yarn_three_stage.py'
       - 'benchmark/first_yarn_lattice_evidence.py'
       - 'benchmark/tests/test_first_yarn_lattice_evidence.py'
+      - 'benchmark/p0_yarn_evidence.py'
+      - 'benchmark/tests/test_p0_yarn_evidence.py'
+      - 'datasets/physical_evidence_labels/**'
       - 'benchmark/direction_only_first_yarn.py'
       - 'benchmark/manual_annotation.py'
       - 'benchmark/tests/test_first_yarn_three_stage.py'
@@ -33,11 +36,13 @@ jobs:
       - name: Validate input JPG hashes and real physical-yarn trajectory annotations
         run: python -m benchmark.manual_annotation audit
       - name: Check label semantics, image-only detector, alias/holdout and negative tests
-        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence -v
+        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence benchmark.tests.test_p0_yarn_evidence -v
       - name: Three-stage real-image experiment on five reviewed samples
         run: python -m benchmark.first_yarn_three_stage --out experiments/first-yarn-3stage
       - name: Four-stage first-family 5-photo physical lattice evidence and A3 holdout
         run: python -m benchmark.first_yarn_lattice_evidence --out experiments/first-yarn-lattice
+      - name: P0-1 real-photo candidate evidence gallery and unknown-identity audit
+        run: python -m benchmark.p0_yarn_evidence --out experiments/p0-yarn-evidence
       - name: Upload actual JPEG overlays and complete sample reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -46,5 +51,6 @@ jobs:
           path: |
             experiments/first-yarn-3stage/
             experiments/first-yarn-lattice/
+            experiments/p0-yarn-evidence/
           if-no-files-found: warn
           retention-days: 30
