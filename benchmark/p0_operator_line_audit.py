@@ -165,6 +165,74 @@ def connected_positive_groups(regions,relations):
     return [sorted(members) for members in groups.values()]
 
 
+def camera_pitch_from_operator_A1_A2(reference, normalizer=2):
+    """A1/A2 plus *human verified* N: geometric pitch, NOT an image label.
+
+    This function never sees or uses A3 holdout. Units returned are original
+    camera pixels; using the 2x zoom for photometry would be invalid.
+    """
+    a,b,n=reference
+    if not a or not b or type(n) is not int or n<1 or normalizer!=2:
+        return None
+    angle=math.radians(axis_deg(a))
+    normal=np.array([-math.sin(angle),math.cos(angle)])
+    delta=np.asarray(b,dtype=float).mean(axis=0)-np.asarray(a,dtype=float).mean(axis=0)
+    return float(abs(np.dot(delta,normal))/(n*normalizer))
+
+
+def unlabelled_half_pitch_controls(photo,record,pitch):
+    """Controls match each operator stroke's direction & length exactly.
+
+    They may land on another physical yarn, gap, twill, or shadow.
+    Their physical labels are ALWAYS UNKNOWN; do not count them as negatives.
+    """
+    if pitch is None or pitch<2.0 or record.get("camera_original_xy") is None:
+        return None
+    geom=np.asarray(record["camera_original_xy"],float)
+    direction=geom[1]-geom[0]
+    direction/=max(1e-8,np.linalg.norm(direction))
+    normal=np.array([-direction[1],direction[0]])
+    result=[]
+    for shift in (-.5*pitch,.5*pitch):
+        points=geom+shift*normal
+        windows=windows_for_stroke(photo,points.tolist())
+        feat={key:round(float(np.median([w[key] for w in windows])),4)
+              for key in FEATURE_NAMES} if windows else None
+        result.append({
+            "camera_original_xy":np.around(points,3).tolist(),
+            "offset_camera_pixels":round(float(shift),3),
+            "known_physical_class":None,
+            "operator_labelled_negative":False,
+            "optical_features":feat,
+            "correlated_optical_windows":len(windows),
+        })
+    return result
+
+
+def half_pitch_probe(sample,photo,pitch):
+    positives=[r for r in sample["records"]
+               if r["kind"]==POS and r["geometry_type"]=="LINE"]
+    probe=[]
+    for rec in positives:
+        sides=unlabelled_half_pitch_controls(photo,rec,pitch)
+        rec["UNLABELLED_direction_matched_half_pitch_controls"]=sides
+        if sides and rec["optical_features"] and all(x["optical_features"] for x in sides):
+            for key in ("paired_side_contrast_z","center_vs_flanks_abs_z"):
+                probe.append((key,rec["optical_features"][key],
+                              max(side["optical_features"][key] for side in sides)))
+    stats={}
+    for key in ("paired_side_contrast_z","center_vs_flanks_abs_z"):
+        selected=[(pos,control) for k,pos,control in probe if k==key]
+        stats[key]={
+            "candidate_operator_strokes_compared":len(selected),
+            "fraction_candidate_optical_score_exceeds_both_unlabelled_sides":
+                round(sum(a>b for a,b in selected)/len(selected),4) if selected else None,
+            "valid_true_false_yarn_comparison":False,
+        }
+    sample["A1_A2_verified_nominal_pitch_camera_original_px"]=round(pitch,3) if pitch is not None else None
+    sample["unlabelled_direction_length_matched_control_stats"]=stats
+
+
 def summarize_sample(photo,review,provenance,reference_axis):
     records=[]
     for reg in review["regions"]:
@@ -287,8 +355,14 @@ def run(root:Path,out:Path):
         A1=references.get("segments",{}).get("reference")
         if not A1:raise RuntimeError("missing A1")
         ref_angle=segment_axis_deg(A1)
+        A2=references.get("segments",{}).get("check_same")
+        intervals=references.get("same_family_intervals")
+        if references.get("same_family_intervals_confirmed") is not True:
+            raise ValueError("do not use unconfirmed A1/A2 yarn intervals")
+        pitch=camera_pitch_from_operator_A1_A2((A1,A2,intervals))
         photo,provenance=_camera_image(root,annotation)
         result=summarize_sample(photo,annotation,provenance,ref_angle)
+        half_pitch_probe(result,photo,pitch)
         visual_gallery(photo,result,out,provenance)
         samples_output.append(result)
         print(f'{sid} apparent_strokes={result["human_apparent_yarn_short_strokes"]} '
@@ -302,6 +376,12 @@ def run(root:Path,out:Path):
             print(f'{sid} optical {key} apparent={items["positive_operator_segments_median"]} '
                   f'twill={items["twill_operator_tracks_median"]} '
                   f'(DESCRIPTIVE_ONLY_NOT_YARN_PROOF)',flush=True)
+        check=result["unlabelled_direction_length_matched_control_stats"]["paired_side_contrast_z"]
+        print(f'{sid} PHOTO_ONLY matched_half_pitch paired_contrast '
+              f'operator_strokes_compared={check["candidate_operator_strokes_compared"]} '
+              f'center_greater_both_unlabelled_sides_fraction='
+              f'{check["fraction_candidate_optical_score_exceeds_both_unlabelled_sides"]} '
+              f'(UNLABELLED_NO_NEGATIVE_GROUND_TRUTH)',flush=True)
     observed_negative_fabrics=sum(bool(s["human_twill_visual_tracks"]) for s in samples_output)
     comparable_fabrics=sum(bool(s["orientation_matched_twill_negative_tracks_15deg"]) for s in samples_output)
     summary={
@@ -320,6 +400,7 @@ def run(root:Path,out:Path):
         "long_negative_line_is_one_track_NOT_N_independent_negative_samples":True,
         "A3_held_out_from_analysis":True,
         "A1_is_direction_baseline_NOT_autonomous_direction_GT":True,
+        "direction_length_matched_half_pitch_controls_are_UNLABELLED":True,
         "requires_to_test_non_direction_texture_discrimination":
             "Add short TWILL_PATTERN visual false tracks approximately parallel to real yarn A1 on a different fabric, if recognizable. Otherwise mark UNCERTAIN; do not invent negatives.",
         "samples":samples_output,
