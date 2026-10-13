@@ -291,7 +291,7 @@ def measure(image, reference_points=None, confirm_reference=False,
     else:
         # Unlike the old single FFT peak, require two-family orthogonal spectral
         # and autocorrelation evidence; otherwise do not emit an angle.
-        from experiments.v15_reflection.orient_v3 import propose_axes
+        from experiments.v15_reflection.orient_v4 import propose_axes
         auto=propose_axes(roi)
         if auto["status"]!="PROPOSED_NOT_VALIDATED":
             output.update(status="REJECTED",
