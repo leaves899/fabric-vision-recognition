@@ -1711,10 +1711,555 @@
       "note": "",
       "physical_identity_confirmed": false,
       "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0086",
+      "kind": "TWILL_PATTERN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            401.333,
+            346.0
+          ],
+          [
+            1167.333,
+            80.0
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0087",
+      "kind": "TWILL_PATTERN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            428.667,
+            303.333
+          ],
+          [
+            1183.333,
+            39.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
     }
   ],
-  "relations": [],
+  "relations": [
+    {
+      "a": "r0035",
+      "b": "r0030",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0030",
+      "b": "r0031",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0031",
+      "b": "r0032",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0032",
+      "b": "r0033",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0033",
+      "b": "r0034",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0036",
+      "b": "r0001",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0001",
+      "b": "r0002",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0002",
+      "b": "r0003",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0003",
+      "b": "r0004",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0004",
+      "b": "r0005",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0005",
+      "b": "r0006",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0037",
+      "b": "r0007",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0007",
+      "b": "r0008",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0008",
+      "b": "r0009",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0009",
+      "b": "r0010",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0010",
+      "b": "r0011",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0011",
+      "b": "r0020",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0040",
+      "b": "r0038",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0038",
+      "b": "r0012",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0012",
+      "b": "r0013",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0013",
+      "b": "r0014",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0014",
+      "b": "r0015",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0015",
+      "b": "r0019",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0019",
+      "b": "r0021",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0039",
+      "b": "r0028",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0028",
+      "b": "r0027",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0027",
+      "b": "r0016",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0016",
+      "b": "r0017",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0017",
+      "b": "r0018",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0018",
+      "b": "r0022",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0041",
+      "b": "r0029",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0029",
+      "b": "r0026",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0026",
+      "b": "r0025",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0025",
+      "b": "r0024",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0024",
+      "b": "r0023",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0023",
+      "b": "r0048",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0042",
+      "b": "r0043",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0043",
+      "b": "r0044",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0044",
+      "b": "r0045",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0045",
+      "b": "r0046",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0046",
+      "b": "r0047",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0047",
+      "b": "r0049",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0050",
+      "b": "r0051",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0051",
+      "b": "r0052",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0052",
+      "b": "r0053",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0053",
+      "b": "r0054",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0054",
+      "b": "r0055",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0055",
+      "b": "r0056",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0057",
+      "b": "r0058",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0058",
+      "b": "r0059",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0059",
+      "b": "r0060",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0060",
+      "b": "r0061",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0061",
+      "b": "r0062",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0062",
+      "b": "r0063",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0064",
+      "b": "r0065",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0065",
+      "b": "r0066",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0066",
+      "b": "r0067",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0067",
+      "b": "r0068",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0068",
+      "b": "r0069",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0069",
+      "b": "r0070",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0071",
+      "b": "r0072",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0072",
+      "b": "r0073",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0073",
+      "b": "r0074",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0074",
+      "b": "r0075",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0075",
+      "b": "r0076",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0076",
+      "b": "r0077",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0078",
+      "b": "r0079",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0079",
+      "b": "r0080",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0080",
+      "b": "r0081",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0081",
+      "b": "r0082",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0082",
+      "b": "r0083",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0083",
+      "b": "r0084",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    }
+  ],
   "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
   "physical_yarn_reference_unchanged": true,
-  "updated_at": "2026-10-13T06:22:44.595892+00:00"
+  "updated_at": "2026-10-13T07:09:30.764481+00:00"
 }
