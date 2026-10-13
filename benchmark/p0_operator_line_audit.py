@@ -341,6 +341,47 @@ def visual_gallery(photo,sample,out,provenance):
         cv2.imwrite(str(out/(sample["sample_id"]+"_local_camera_cards_DISPLAY_3x.jpg")),np.vstack(rows))
 
 
+def direction_matched_unlabelled_gallery(photo,sample,out,max_tracks=12):
+    """3-column photo-only view: half-pitch left | human | half-pitch right.
+
+    Side positions are NOT trusted negatives. Same crop size, direction,
+    native camera sampling, and DISPLAY-only enlargement across all columns.
+    """
+    h,w=photo.shape[:2]
+    positives=[r for r in sample["records"]
+               if r["kind"]==POS and r.get("UNLABELLED_direction_matched_half_pitch_controls")]
+    output=[]
+    for track in positives[:max_tracks]:
+        sides=track["UNLABELLED_direction_matched_half_pitch_controls"]
+        items=[sides[0]["camera_original_xy"],track["camera_original_xy"],
+               sides[1]["camera_original_xy"]]
+        cells=[]
+        for j,coords in enumerate(items):
+            center=np.asarray(coords,float).mean(axis=0)
+            cx,cy=np.rint(center).astype(int)
+            x0,y0=cx-34,cy-34
+            tile=np.zeros((68,68,3),np.uint8)
+            xa,ya=max(0,x0),max(0,y0)
+            xb,yb=min(w,x0+68),min(h,y0+68)
+            if xa<xb and ya<yb:
+                tile[ya-y0:yb-y0,xa-x0:xb-x0]=photo[ya:yb,xa:xb]
+            # All three cells are enlarged for DISPLAY only; camera original
+            # pixel evidence is never computed on these crops.
+            tile=cv2.resize(tile,(204,204),interpolation=cv2.INTER_NEAREST)
+            line=(np.asarray(coords,float)-[x0,y0])*3
+            p,q=np.rint(line).astype(int)
+            cv2.line(tile,tuple(p),tuple(q),
+                     (10,225,50) if j==1 else (0,190,255),2,cv2.LINE_AA)
+            head=["LEFT UNKNOWN","OPERATOR YARN CAND.","RIGHT UNKNOWN"][j]
+            cv2.putText(tile,head,(3,14),cv2.FONT_HERSHEY_SIMPLEX,
+                        .39,(255,255,255),1,cv2.LINE_AA)
+            cells.append(tile)
+        output.append(np.hstack(cells))
+    if output:
+        cv2.imwrite(str(out/(sample["sample_id"]+"_orientation_matched_UNLABELLED_comparisons.jpg")),
+                    np.vstack(output))
+
+
 def run(root:Path,out:Path):
     out.mkdir(parents=True,exist_ok=True)
     samples_output=[]
@@ -364,6 +405,7 @@ def run(root:Path,out:Path):
         result=summarize_sample(photo,annotation,provenance,ref_angle)
         half_pitch_probe(result,photo,pitch)
         visual_gallery(photo,result,out,provenance)
+        direction_matched_unlabelled_gallery(photo,result,out)
         samples_output.append(result)
         print(f'{sid} apparent_strokes={result["human_apparent_yarn_short_strokes"]} '
               f'twill_tracks={result["human_twill_visual_tracks"]} '
