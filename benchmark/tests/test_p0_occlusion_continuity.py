@@ -102,6 +102,11 @@ class OcclusionContinuityTests(unittest.TestCase):
         audit1=audit_operator_connections(edges,review["relations"],a)
         audit2=audit_operator_connections(edges,changed["relations"],a)
         self.assertNotEqual(audit1["operator_links"],audit2["operator_links"])
+        self.assertEqual(audit1["operator_linked_component_count_NOT_PHYSICAL_YARN_COUNT"],2)
+        geom=audit1["per_cue_operator_relation_competition_DIAGNOSTIC_ONLY"]["gap_over_pitch"]
+        self.assertEqual(geom["operator_links_scored_NOT_independent_GT"],1)
+        self.assertTrue(geom["not_a_true_false_classification_metric"])
+        self.assertEqual(geom["distinct_operator_same_groups_scored"],1)
         self.assertTrue(all(e["inference_identity_status"]=="UNKNOWN" for e in edges))
 
     def test_unlinked_competitor_not_fake_negative(self):
