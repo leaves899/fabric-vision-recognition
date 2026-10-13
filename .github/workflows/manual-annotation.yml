@@ -25,8 +25,12 @@ jobs:
             echo "Clean images pending user-local Git upload (no false positives)."
           fi
       - name: Check annotation browser syntax
-        run: node --check tools/yarn_annotator/app.js
+        run: |
+          node --check tools/yarn_annotator/app.js
+          node --check tools/yarn_annotator/local_review.js
       - name: Test synthetic annotation contracts
         run: python -m unittest discover -s benchmark/tests -v
+      - name: Check local phone-only evidence reviews and localhost save/API contracts
+        run: python -m unittest benchmark.tests.test_local_image_review -v
       - name: Audit saved annotation state (empty is allowed)
         run: python -m benchmark.manual_annotation audit
