@@ -1,0 +1,445 @@
+{
+  "schema_version": "0.2",
+  "collected_date": "2026-10-13",
+  "source": "USER_SUBMITTED_FABRIC_PHOTOS",
+  "image_binary_status": "PENDING_EXTERNAL_UPLOAD_OF_USER_IMAGES",
+  "count": 6,
+  "review_policy": "Never interpret diagonal twill color bands as individual physical yarns. A visible float fragment cannot be connected through occlusion without separate evidence.",
+  "samples": [
+    {
+      "sample_id": "U20261013_01",
+      "source_name": "8eb43f2a32a3777377a47cdfc10ab0a5.jpg",
+      "expected_original_path": "images/U20261013_01.jpg",
+      "original_binary_in_github": false,
+      "original_sha256": "e273162299531d0eea5ff5d79b7c5937ba09d67b1101d8e54db3a313d28d0c91",
+      "resolution_px": [
+        1536,
+        2048
+      ],
+      "raw_coordinate_convention": "top_left_x_right_y_down",
+      "tentative_group": "LIGHT_SIDE_A_UNVERIFIED",
+      "physical_fabric_identity": "UNKNOWN",
+      "actual_front_back_pair": "UNKNOWN",
+      "roi_xyxy": [
+        353,
+        471,
+        1183,
+        1577
+      ],
+      "roi_status": "DRAFT_ONLY",
+      "visible_local_float_candidates": [
+        {
+          "id": "U20261013_01_F01",
+          "bbox_xyxy": [
+            679,
+            928,
+            702,
+            944
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_01_F02",
+          "bbox_xyxy": [
+            733,
+            966,
+            755,
+            983
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_01_F03",
+          "bbox_xyxy": [
+            780,
+            1009,
+            801,
+            1025
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_01_F04",
+          "bbox_xyxy": [
+            696,
+            1077,
+            716,
+            1093
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_01_F05",
+          "bbox_xyxy": [
+            822,
+            1099,
+            846,
+            1115
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        }
+      ],
+      "negative_pattern": {
+        "kind": "DARK_GAP_PATTERN_NOT_YARN",
+        "bbox_xyxy": [
+          353,
+          471,
+          1183,
+          1577
+        ]
+      },
+      "weave_candidate": "INTERLACED_LIGHT_FLOATS",
+      "notes_zh": "浅色面，局部白色纤维浮长短段可见，暗孔洞的周期排列不是实体纱线。",
+      "reference_two_points_confirmed": false,
+      "confirmed_yarn_axis_deg": null,
+      "warp_weft_identity": null,
+      "warp_density_per_cm": null,
+      "weft_density_per_cm": null,
+      "organization_ground_truth": null,
+      "has_real_5cm_square": false,
+      "status": "VISUAL_REVIEW_ONLY_NOT_GROUND_TRUTH"
+    },
+    {
+      "sample_id": "U20261013_02",
+      "source_name": "4c4d58c2ce5d94c3478c258c8893a8e0.jpg",
+      "expected_original_path": "images/U20261013_02.jpg",
+      "original_binary_in_github": false,
+      "original_sha256": "630cd4ea2245d7420307fae7704e34fb608a4c1f61379564321f03912a5312ca",
+      "resolution_px": [
+        1536,
+        2048
+      ],
+      "raw_coordinate_convention": "top_left_x_right_y_down",
+      "tentative_group": "LIGHT_SIDE_A_UNVERIFIED",
+      "physical_fabric_identity": "UNKNOWN",
+      "actual_front_back_pair": "UNKNOWN",
+      "roi_xyxy": [
+        353,
+        471,
+        1183,
+        1577
+      ],
+      "roi_status": "DRAFT_ONLY",
+      "visible_local_float_candidates": [
+        {
+          "id": "U20261013_02_F01",
+          "bbox_xyxy": [
+            720,
+            949,
+            745,
+            966
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_02_F02",
+          "bbox_xyxy": [
+            794,
+            959,
+            815,
+            978
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_02_F03",
+          "bbox_xyxy": [
+            760,
+            1022,
+            783,
+            1040
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_02_F04",
+          "bbox_xyxy": [
+            675,
+            1064,
+            697,
+            1081
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_02_F05",
+          "bbox_xyxy": [
+            835,
+            1105,
+            858,
+            1122
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        }
+      ],
+      "negative_pattern": {
+        "kind": "DARK_GAP_PATTERN_NOT_YARN",
+        "bbox_xyxy": [
+          353,
+          471,
+          1183,
+          1577
+        ]
+      },
+      "weave_candidate": "INTERLACED_LIGHT_FLOATS",
+      "notes_zh": "浅色面，多处白色短段可辨；不能跨黑色空隙按斜向花纹把它们连接成单根纱线。",
+      "reference_two_points_confirmed": false,
+      "confirmed_yarn_axis_deg": null,
+      "warp_weft_identity": null,
+      "warp_density_per_cm": null,
+      "weft_density_per_cm": null,
+      "organization_ground_truth": null,
+      "has_real_5cm_square": false,
+      "status": "VISUAL_REVIEW_ONLY_NOT_GROUND_TRUTH"
+    },
+    {
+      "sample_id": "U20261013_03",
+      "source_name": "04decb8550aac6b30de63c4efb7df089.jpg",
+      "expected_original_path": "images/U20261013_03.jpg",
+      "original_binary_in_github": false,
+      "original_sha256": "cc6d2c9507d086a6658f8939576bab84550e8cf532c6f8dc238542ae3e6a488f",
+      "resolution_px": [
+        1536,
+        2048
+      ],
+      "raw_coordinate_convention": "top_left_x_right_y_down",
+      "tentative_group": "LIGHT_SIDE_A_UNVERIFIED",
+      "physical_fabric_identity": "UNKNOWN",
+      "actual_front_back_pair": "UNKNOWN",
+      "roi_xyxy": [
+        353,
+        471,
+        1183,
+        1577
+      ],
+      "roi_status": "DRAFT_ONLY",
+      "visible_local_float_candidates": [
+        {
+          "id": "U20261013_03_F01",
+          "bbox_xyxy": [
+            727,
+            926,
+            753,
+            944
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_03_F02",
+          "bbox_xyxy": [
+            806,
+            954,
+            829,
+            971
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_03_F03",
+          "bbox_xyxy": [
+            683,
+            1003,
+            707,
+            1020
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_03_F04",
+          "bbox_xyxy": [
+            765,
+            1055,
+            788,
+            1072
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        },
+        {
+          "id": "U20261013_03_F05",
+          "bbox_xyxy": [
+            703,
+            1096,
+            727,
+            1115
+          ],
+          "kind": "LOCAL_LIGHT_YARN_FLOAT_CANDIDATE",
+          "status": "VISUAL_DRAFT_NOT_PHYSICAL_GT",
+          "physical_yarn_id": null
+        }
+      ],
+      "negative_pattern": {
+        "kind": "DARK_GAP_PATTERN_NOT_YARN",
+        "bbox_xyxy": [
+          353,
+          471,
+          1183,
+          1577
+        ]
+      },
+      "weave_candidate": "INTERLACED_LIGHT_FLOATS",
+      "notes_zh": "浅色面，局部浅色纱线短段候选清晰，组织连续关系未确认。",
+      "reference_two_points_confirmed": false,
+      "confirmed_yarn_axis_deg": null,
+      "warp_weft_identity": null,
+      "warp_density_per_cm": null,
+      "weft_density_per_cm": null,
+      "organization_ground_truth": null,
+      "has_real_5cm_square": false,
+      "status": "VISUAL_REVIEW_ONLY_NOT_GROUND_TRUTH"
+    },
+    {
+      "sample_id": "U20261013_04",
+      "source_name": "9e1447e66f6ac4285ea4fa0b7c8b7865.jpg",
+      "expected_original_path": "images/U20261013_04.jpg",
+      "original_binary_in_github": false,
+      "original_sha256": "ce81fda0384c64381049869759fae7f3b51181c3914412640a3b8d4aa8d24a69",
+      "resolution_px": [
+        1279,
+        1706
+      ],
+      "raw_coordinate_convention": "top_left_x_right_y_down",
+      "tentative_group": "BLUE_SIDE_B_UNVERIFIED",
+      "physical_fabric_identity": "UNKNOWN",
+      "actual_front_back_pair": "UNKNOWN",
+      "roi_xyxy": [
+        269,
+        307,
+        998,
+        1331
+      ],
+      "roi_status": "DRAFT_ONLY",
+      "visible_local_float_candidates": [],
+      "negative_pattern": {
+        "kind": "DIAGONAL_TWILL_PATTERN_NOT_SINGLE_YARN",
+        "bbox_xyxy": [
+          269,
+          307,
+          998,
+          1331
+        ]
+      },
+      "weave_candidate": "TWILL_LIKE_SURFACE_PATTERN",
+      "notes_zh": "蓝色面，明显斜向明暗纹理为斜纹组织图案，禁止将整条斜纹带当单纱。",
+      "reference_two_points_confirmed": false,
+      "confirmed_yarn_axis_deg": null,
+      "warp_weft_identity": null,
+      "warp_density_per_cm": null,
+      "weft_density_per_cm": null,
+      "organization_ground_truth": null,
+      "has_real_5cm_square": false,
+      "status": "VISUAL_REVIEW_ONLY_NOT_GROUND_TRUTH"
+    },
+    {
+      "sample_id": "U20261013_05",
+      "source_name": "868101153341feb0469bce81532c0a45.jpg",
+      "expected_original_path": "images/U20261013_05.jpg",
+      "original_binary_in_github": false,
+      "original_sha256": "4530b46cb4fa4236e4f15dcb0a62d97e41c3b34b3a4af6b3ffeeb3d1aa321250",
+      "resolution_px": [
+        1279,
+        1706
+      ],
+      "raw_coordinate_convention": "top_left_x_right_y_down",
+      "tentative_group": "BLUE_SIDE_B_UNVERIFIED",
+      "physical_fabric_identity": "UNKNOWN",
+      "actual_front_back_pair": "UNKNOWN",
+      "roi_xyxy": [
+        269,
+        307,
+        998,
+        1331
+      ],
+      "roi_status": "DRAFT_ONLY",
+      "visible_local_float_candidates": [],
+      "negative_pattern": {
+        "kind": "DIAGONAL_TWILL_PATTERN_NOT_SINGLE_YARN",
+        "bbox_xyxy": [
+          269,
+          307,
+          998,
+          1331
+        ]
+      },
+      "weave_candidate": "TWILL_LIKE_SURFACE_PATTERN",
+      "notes_zh": "蓝色面，斜纹干扰强；仅凭明暗峰值不得推断真实纱向或纱线数。",
+      "reference_two_points_confirmed": false,
+      "confirmed_yarn_axis_deg": null,
+      "warp_weft_identity": null,
+      "warp_density_per_cm": null,
+      "weft_density_per_cm": null,
+      "organization_ground_truth": null,
+      "has_real_5cm_square": false,
+      "status": "VISUAL_REVIEW_ONLY_NOT_GROUND_TRUTH"
+    },
+    {
+      "sample_id": "U20261013_06",
+      "source_name": "83fa5fed18f5a24ee2168414904093e0.jpg",
+      "expected_original_path": "images/U20261013_06.jpg",
+      "original_binary_in_github": false,
+      "original_sha256": "544b0e252daa44e4c1e01ac3d4680a870eb0fd01ae9549d3b9f4fe690ed56488",
+      "resolution_px": [
+        1279,
+        1706
+      ],
+      "raw_coordinate_convention": "top_left_x_right_y_down",
+      "tentative_group": "BLUE_SIDE_B_UNVERIFIED",
+      "physical_fabric_identity": "UNKNOWN",
+      "actual_front_back_pair": "UNKNOWN",
+      "roi_xyxy": [
+        294,
+        341,
+        959,
+        1194
+      ],
+      "roi_status": "DRAFT_ONLY",
+      "visible_local_float_candidates": [],
+      "negative_pattern": {
+        "kind": "DIAGONAL_TWILL_PATTERN_NOT_SINGLE_YARN",
+        "bbox_xyxy": [
+          294,
+          341,
+          959,
+          1194
+        ]
+      },
+      "weave_candidate": "TWILL_LIKE_SURFACE_PATTERN",
+      "notes_zh": "蓝灰面，斜纹带明显，右下边缘有干扰；需避开边缘并人工两点确认。",
+      "reference_two_points_confirmed": false,
+      "confirmed_yarn_axis_deg": null,
+      "warp_weft_identity": null,
+      "warp_density_per_cm": null,
+      "weft_density_per_cm": null,
+      "organization_ground_truth": null,
+      "has_real_5cm_square": false,
+      "status": "VISUAL_REVIEW_ONLY_NOT_GROUND_TRUTH"
+    }
+  ]
+}
