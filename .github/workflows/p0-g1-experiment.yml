@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - experiment/g1-physical-morphology-topology-20261013
+  pull_request:
+    branches:
+      - research/physical-yarn-trajectory-3stage-20261013
   workflow_dispatch:
 
 jobs:
