@@ -27,7 +27,7 @@ SEGMENTS = ("reference", "check_same", "holdout_same", "check_cross", "check_cro
 
 def samples(root: Path) -> dict[str, dict]:
     items = load_csv(root / "datasets/manifest.csv", MANIFEST_FIELDS)
-    return {item["position_id"]: item for item in items if item["capture_mode"] == "PUBLIC_UNKNOWN"}
+    return {item["position_id"]: item for item in items if item["capture_mode"] in {"PUBLIC_UNKNOWN", "PHONE_UNKNOWN_LIGHTING"}}
 
 
 def image_stats(root: Path, row: dict) -> tuple[str, tuple[int, int]]:

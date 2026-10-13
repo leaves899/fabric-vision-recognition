@@ -1,0 +1,7 @@
+# Old AI-generated visual draft artifacts are deliberately excluded.
+# Keep local if useful for archival comparison; do not commit.
+annotations/
+review/
+visual_drafts.json
+manifest.csv
+README.txt
