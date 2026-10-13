@@ -52,7 +52,7 @@ python -m pytest -q tests
 
 页面现在包含两种**彼此隔离**的人工标注：既有 `PHYSICAL_YARN_REFERENCE`（同一根真实纱线的推断延伸轨迹），以及新加的局部图像证据框选、短线、同根/不同根关系。局部判读会在本地写入 `datasets/physical_evidence_labels/manual_image_reviews/<sample_id>.json`，可用 `git add / commit / push` 上传，不会覆盖旧 A1/A2/A3。后者不是独立物理实物真值。
 
-**目前此工具更新仅位于 `research/physical-yarn-trajectory-3stage-20261013` 分支（PR #16），尚未合并 main。** 请先切换到该分支再 `git pull`；详见工具 README 中的 PowerShell 完整命令。
+**标注工具及审计代码已随 PR #16 合入 `main`。** 在本地执行 `git switch main` 和 `git pull --ff-only origin main` 获取新版工具；新增人工标注建议使用独立 `annotation/*` 分支提交 PR，避免覆盖其他会话的修改。
 
 ## 目录
 
