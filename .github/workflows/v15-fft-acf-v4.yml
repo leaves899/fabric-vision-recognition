@@ -1,0 +1,39 @@
+name: V15 FFT-ACF V4 isolated research
+on:
+  push:
+    branches: ['experiment/v15-fft-acf-v4']
+  workflow_dispatch:
+jobs:
+  v4-synthetic-and-project-dev:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install lightweight image stack
+        run: python -m pip install "numpy>=1.26,<3" "Pillow>=10,<13"
+      - name: Run V15 V2/V3/V4 synthetic regression tests
+        run: python -m unittest discover -s experiments/v15_reflection/tests -v
+      - name: Audit all 66 real DEV images plus reviewed photo rotations
+        run: python -m experiments.v15_reflection.audit_v4 --out experiments/v15_reflection/output/v4_dev_audit.json
+      - name: Check no invented physical GT/density claims
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('experiments/v15_reflection/output/v4_dev_audit.json'))
+          assert r['images']==66 and r['readable']==66, r
+          assert r['frame_confirmed']==0 and r['test_images']==0, r
+          assert r['mean_density_mape'] is None and r['g2']=='NOT_EVALUATED'
+          assert set(r['comparisons'])=={'v3','v4'}, r['comparisons']
+          print('V4_DEV_AUDIT_SAFETY_PASS')
+          PY
+      - name: Upload full DEV audit, including all abstentions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v15-v4-all-66-dev-audit
+          path: experiments/v15_reflection/output/v4_dev_audit.json
+          if-no-files-found: warn
+          retention-days: 30
