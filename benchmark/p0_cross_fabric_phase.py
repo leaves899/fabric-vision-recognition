@@ -1,4 +1,4 @@
-"""P0-E5: pre-registered CROSS-FABRIC optical crossing phase diagnostic.
+"""P0-E5: zero-tune exploratory CROSS-FABRIC optical crossing phase diagnostic.
 
 A physical yarn crossing cannot be proven from RGB alone. We test whether B
 orientation energy is systematically different at predicted A/B intersections
@@ -7,6 +7,8 @@ are image-registered human geometry; A3 is excluded. No operator local labels
 enter the feature calculation. All shifted controls have UNKNOWN physical class.
 
 No training or cutoffs; no retuning using U06 (additional fabric/photo).
+E5 was designed *after* the U06 labels became available, so U06 is NOT a
+preregistered blind test or independent holdout.
 Native original camera pixels only; zoom image is coordinate provenance.
 """
 from __future__ import annotations
@@ -108,7 +110,7 @@ def local_dominance(Ea, Eb, center, tangent, camera_A_pitch, period_on_A):
 
 
 def sample_crossing_phase(photo, A1_camera, calib):
-    """Frozen rule and aperture for 01/03/06, no thresholds fitted to U06."""
+    """Shared rule/aperture for 01/03/06, no thresholds fitted to U06."""
     A1=np.asarray(A1_camera,float)
     ta=unit(A1[1]-A1[0])
     Ea,Eb=oriented_energy_maps(photo,ta,calib["B_tangent"])
@@ -172,7 +174,8 @@ def run(root, out, ids=("U20261013_01","U20261013_03","U20261013_06")):
     out.mkdir(parents=True,exist_ok=True)
     report={
         "experiment":"P0_E5_CROSS_FABRIC_B_PHASE_OPTICAL_STRESS",
-        "probe_rule_frozen_pre_U06_labelling":True,
+        "E5_procedure_designed_after_U06_labels_visible_NOT_A_BLIND_HOLDOUT":True,
+        "U06_labels_not_used_for_parameter_optimization":True,
         "training_or_parameter_fitting":False,
         "optical_indicator_cannot_certify_physical_occlusion":True,
         "physical_yarn_identity_accuracy":None,
