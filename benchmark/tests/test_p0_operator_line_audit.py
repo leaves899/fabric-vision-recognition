@@ -7,7 +7,9 @@ import numpy as np
 from benchmark.p0_operator_line_audit import (
     acute_axis_delta, convert_zoom_to_camera, _clip_array,
     windows_for_stroke, local_optical_features,
-    connected_positive_groups, summarize_sample, POS, NEG,
+    connected_positive_groups, summarize_sample,
+    camera_pitch_from_operator_A1_A2, unlabelled_half_pitch_controls,
+    half_pitch_probe, POS, NEG,
 )
 
 
@@ -88,6 +90,28 @@ class OperatorLineAuditTests(unittest.TestCase):
         self.assertLessEqual(s["records"][1]["optical_windows_count_NOT_independent_training_samples"],7)
         self.assertIsNone(s["real_physical_yarn_identity_accuracy"] if "real_physical_yarn_identity_accuracy" in s else s["physical_yarn_identity_accuracy"])
         self.assertIsNone(s["physical_yarn_count_accuracy"])
+
+    def test_a1_a2_pitch_and_matched_photo_controls_remain_unlabelled(self):
+        ref=[[20,60],[220,60]]
+        check=[[20,100],[220,100]]
+        pitch=camera_pitch_from_operator_A1_A2((ref,check,4))
+        self.assertAlmostEqual(pitch,5.)
+        im=self.synthetic()
+        record={"id":"r1","kind":POS,"geometry_type":"LINE",
+                "camera_original_xy":[[30,90],[210,90]],
+                "optical_features":{"paired_side_contrast_z":.75,
+                                    "center_vs_flanks_abs_z":1.25}}
+        controls=unlabelled_half_pitch_controls(im,record,pitch)
+        self.assertEqual(len(controls),2)
+        self.assertTrue(all(x["operator_labelled_negative"] is False for x in controls))
+        self.assertTrue(all(x["known_physical_class"] is None for x in controls))
+        self.assertAlmostEqual(controls[0]["camera_original_xy"][0][1],87.5,places=2)
+        self.assertAlmostEqual(controls[1]["camera_original_xy"][0][1],92.5,places=2)
+        sample={"records":[record]}
+        half_pitch_probe(sample,im,pitch)
+        self.assertFalse(sample["unlabelled_direction_length_matched_control_stats"]
+                         ["paired_side_contrast_z"]["valid_true_false_yarn_comparison"])
+        self.assertEqual(len(record["UNLABELLED_direction_matched_half_pitch_controls"]),2)
 
     def test_cross_axis_twill_only_does_not_test_non_direction_discrimination(self):
         im=self.synthetic()
