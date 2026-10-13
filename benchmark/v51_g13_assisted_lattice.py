@@ -18,7 +18,7 @@ def candidate_gap_count(tracks,first,second):
     mid=[]
     for track in tracks:
         a=np.asarray(track,float)
-        if a.ndim==2 and a.shape[1]==2 and len(a)>2 and np.isfinite(a).all():
+        if a.ndim==2 and a.shape[1]==2 and len(a)>=2 and np.isfinite(a).all():
             mid.append(float(np.median(a@n)))
     if len(mid)<4:return None
     mid.sort()
