@@ -17,6 +17,7 @@ Potential ordering crossings result in ABSTAIN, never fabricated "bad" labels.
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import json
 import math
@@ -295,6 +296,44 @@ def posthoc_audit(comp,review,fragments):
     }
 
 
+def shuffled_start_signatures_controls(fragments,calib):
+    """Geometry-preserving PHOTO-SIGNATURE shuffle as a negative control.
+
+    Seven predeclared normalized shifts, not chosen from the current labels or
+    results. Preserve u/v geometry, orientation, A/B pitch and EACH source's
+    end signature. Move only target-side start photo signatures cyclically.
+    This destroys a portion of cross-gap appearance correspondence but does
+    not create valid physical negative yarn GT.
+    """
+    n=len(fragments)
+    if n<2:
+        return []
+    offsets=sorted({x%n for x in (
+        1, max(1,n//8),max(1,n//4),max(1,n//3),
+        max(1,n//2),max(1,(2*n)//3),max(1,(3*n)//4)
+    ) if x%n!=0})
+    ordered=sorted(fragments,key=lambda x:x["id"])
+    control=[]
+    for offset in offsets:
+        switched=copy.deepcopy(ordered)
+        for index,item in enumerate(switched):
+            item["start_signature"]=copy.deepcopy(
+                ordered[(index+offset)%n].get("start_signature"))
+        # No human SAME relations or changed photo geometry in this call.
+        edges=propose_candidates(switched,calib)
+        comp=compare_structures(switched,edges)
+        control.append({
+            "circular_signature_shift_in_operator_stroke_order":offset,
+            "photo_signature_control_NOT_REAL_NEGATIVE_GROUND_TRUTH":True,
+            "operator_relations_used":False,
+            "geometry_forced_matching_links":comp["geometry_links"],
+            "appearance_forced_matching_links":comp["appearance_links"],
+            "structural_consensus_edges":comp["structure_only_consensus_UNKNOWN_PHYSICAL_IDENTITY"],
+            "structural_consensus_count":comp["agreed_links_after_crossing_ABSTENTION"],
+        })
+    return control
+
+
 def paint(photo,fragments,comp,out):
     img=photo.copy()
     byid={x["id"]:x for x in fragments}
@@ -339,7 +378,20 @@ def run(root:Path,out:Path,ids=("U20261013_01","U20261013_03","U20261013_06")):
         edges=propose_candidates(fragments,calib)
         # The entire inference graph/solution is frozen before reading labels.
         comp=compare_structures(fragments,edges)
+        # Counterfactual permutations are fixed independently of weak operator
+        # labels; no parameter selection or image-specific threshold.
+        null_controls=shuffled_start_signatures_controls(fragments,calib)
         audited=posthoc_audit(comp,review,fragments)
+        for ctrl in null_controls:
+            ctrl["WEAK_operator_direct_SAME_overlap_POSTHOC_NOT_accuracy"]=(
+                posthoc_audit({
+                    "geometry_links":ctrl["geometry_forced_matching_links"],
+                    "appearance_links":ctrl["appearance_forced_matching_links"],
+                    "structure_only_consensus_UNKNOWN_PHYSICAL_IDENTITY":
+                        ctrl["structural_consensus_edges"],
+                },review,fragments)["operator_link_directly_in_topology_consensus"])
+        # A low or high null overlap is NOT formal statistical evidence of
+        # real physical yarn identity with only weak same-photo labels.
         overlay=out/(sid+"_global_consensus_UNKNOWN.jpg")
         paint(photo,fragments,comp,overlay)
         with (out/(sid+"_global_hypotheses.json")).open("w",encoding="utf-8") as f:
@@ -347,6 +399,7 @@ def run(root:Path,out:Path,ids=("U20261013_01","U20261013_03","U20261013_06")):
                 "pitch_source":"A1_A2_OPERATOR_CONFIRMED_PHYSICAL_INTERVALS",
                 "all_forwards_before_association":len(edges),
                 "structural_competition":comp,"posthoc_operator_audit":audited,
+                "geometry_held_constant_shuffled_photo_signatures_CONTROLS":null_controls,
                 "physical_certification":None},f,ensure_ascii=False,indent=2)
         record={
             "sample_id":sid,"camera_original_image_verified":True,
@@ -362,6 +415,12 @@ def run(root:Path,out:Path,ids=("U20261013_01","U20261013_03","U20261013_06")):
             "consensus_with_crossing_abstained":comp["agreed_links_after_crossing_ABSTENTION"],
             "operator_links_directly_in_structural_consensus_NOT_RECALL":
                 audited["operator_link_directly_in_topology_consensus"],
+            "signature_shuffle_controls_count":len(null_controls),
+            "signature_shuffle_control_direct_operator_overlaps_NOT_ACCURACY":[
+                x["WEAK_operator_direct_SAME_overlap_POSTHOC_NOT_accuracy"]
+                for x in null_controls],
+            "signature_shuffle_control_consensus_size":[
+                x["structural_consensus_count"] for x in null_controls],
             "consensus_links_within_annotated_operator_same_groups":
                 audited["consensus_links_within_a_known_operator_same_component"],
             "consensus_links_across_UNLINKED_groups_not_false_GTs":
@@ -384,6 +443,8 @@ def run(root:Path,out:Path,ids=("U20261013_01","U20261013_03","U20261013_06")):
               f'operator_SAME_chord_crossings={record["operator_same_link_chord_crossing_pairs_DIAGNOSTIC"]} '
               f'consensus_within_annotated_groups={record["consensus_links_within_annotated_operator_same_groups"]} '
               f'consensus_across_UNLINKED_groups={record["consensus_links_across_UNLINKED_groups_not_false_GTs"]} '
+              f'photo_signature_shuffle_WEAK_direct_overlaps='
+              f'{record["signature_shuffle_control_direct_operator_overlaps_NOT_ACCURACY"]} '
               f'operator_posthoc_DIRECT_overlap='
               f'{record["operator_links_directly_in_structural_consensus_NOT_RECALL"]}/'
               f'{record["operator_reviewed_same_links_POSTHOC"]} '
