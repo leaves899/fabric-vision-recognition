@@ -264,7 +264,23 @@ def posthoc_audit(comp,review,fragments):
         [{"id":x["id"],"kind":"APPARENT_VISIBLE_YARN"} for x in fragments],
         review["relations"])
     groups_map={rid:i for i,group in enumerate(groups) for rid in group}
+    operator_crossings=crossing_conflicts(operator,fragments)
+    operator_sources=defaultdict(int)
+    operator_targets=defaultdict(int)
+    for source,target in operator:
+        operator_sources[source]+=1
+        operator_targets[target]+=1
+    grouped_within={(a,b) for a,b in cset if a in groups_map and b in groups_map
+                    and groups_map[a]==groups_map[b]}
+    # Between different annotated components is NOT physical negative truth:
+    # these human groups may be incomplete or represent unknown connections.
+    group_unlinked=cset-grouped_within
     return {
+        "operator_same_link_projected_chord_crossing_pairs_DIAGNOSTIC":len(operator_crossings),
+        "operator_same_link_source_degree_excess":sum(max(0,v-1) for v in operator_sources.values()),
+        "operator_same_link_target_degree_excess":sum(max(0,v-1) for v in operator_targets.values()),
+        "consensus_links_within_a_known_operator_same_component":len(grouped_within),
+        "consensus_links_between_UNLINKED_operator_groups_NOT_NEGATIVE_GT":len(group_unlinked),
         "operator_same_links_WEAK_PHONE_IMAGE_LABELS":len(operator),
         "operator_connected_groups_NOT_TRUE_YARN_COUNT":len(groups),
         "operator_link_directly_in_forced_geometry":sum(x in gset for x in operator),
@@ -346,6 +362,12 @@ def run(root:Path,out:Path,ids=("U20261013_01","U20261013_03","U20261013_06")):
             "consensus_with_crossing_abstained":comp["agreed_links_after_crossing_ABSTENTION"],
             "operator_links_directly_in_structural_consensus_NOT_RECALL":
                 audited["operator_link_directly_in_topology_consensus"],
+            "consensus_links_within_annotated_operator_same_groups":
+                audited["consensus_links_within_a_known_operator_same_component"],
+            "consensus_links_across_UNLINKED_groups_not_false_GTs":
+                audited["consensus_links_between_UNLINKED_operator_groups_NOT_NEGATIVE_GT"],
+            "operator_same_link_chord_crossing_pairs_DIAGNOSTIC":
+                audited["operator_same_link_projected_chord_crossing_pairs_DIAGNOSTIC"],
             "physical_yarn_count":None,
             "physical_yarn_identity_accuracy":None,
             "artifact_overlay":overlay.name,
@@ -357,6 +379,11 @@ def run(root:Path,out:Path,ids=("U20261013_01","U20261013_03","U20261013_06")):
               f'forced_appearance={record["appearance_forced_max_matching"]} '
               f'agreement={record["two_priority_agreed_hypotheses"]} '
               f'crossing_veto_consensus={record["consensus_with_crossing_abstained"]} '
+              f'forced_G_crossings={comp["geometry_gap_chord_crossing_pairs"]} '
+              f'forced_P_crossings={comp["appearance_gap_chord_crossing_pairs"]} '
+              f'operator_SAME_chord_crossings={record["operator_same_link_chord_crossing_pairs_DIAGNOSTIC"]} '
+              f'consensus_within_annotated_groups={record["consensus_links_within_annotated_operator_same_groups"]} '
+              f'consensus_across_UNLINKED_groups={record["consensus_links_across_UNLINKED_groups_not_false_GTs"]} '
               f'operator_posthoc_DIRECT_overlap='
               f'{record["operator_links_directly_in_structural_consensus_NOT_RECALL"]}/'
               f'{record["operator_reviewed_same_links_POSTHOC"]} '
