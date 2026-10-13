@@ -9,7 +9,7 @@ V3 relied on an entire photograph reduced to <=512 px, with radial-whitened 2D F
 V4 retains V3 as the global proposal engine and adds:
 1. 640 px *native-resolution* center tile, Gaussian smoothing at 0.8/1.5/2.5 px and principal Hessian curvature rather than raw gradient orientations, whose mixtures create diagonal ghost axes.
 2. Only when two scales show reliable orthogonal directional evidence (pair-strength >=1.28 and dispersion <=8deg), reject global proposals separated >12deg from the native curvature lattice.
-3. For V3 abstentions, run the same FFT/ACF proposal on two spatially separated *native* 512px tiles (not upsampled); promote to **still unvalidated** candidate only if both proposed axes agree to <=5deg and both lie within 9deg of the strong native Hessian direction.
+3. For V3 abstentions, run the same FFT/ACF proposal on a rotationally symmetric 2x2 set of four *native* 512px tiles (not upsampled); promote to **still unvalidated** candidate only if at least three tiles support a common axis (within 5deg), and that axis lies within 9deg of the strong native Hessian direction.
 4. Preserve explicit rejection and optional human two-point fallback; never claim identified physical yarns, verified warp/weft identity, or density GT.
 
 All thresholds are provisional DEV research settings, not calibrated confidence scores or certified release requirements.
@@ -33,8 +33,8 @@ The V4-rejected previously incorrect candidate was U001 (V3 error 6.606deg); V4 
 
 12 rectified photographs, **no independent true physical axis or density GT**:
 - V3 proposed 3/12.
-- V4 proposed 2/12, rejecting the 3 previously accepted 37-41deg macroscale hypotheses after a native Hessian conflict, and recovering two distinct proposals on images 4(2) and 5(2), about 58.5deg and 56.0deg respectively. Those recovered values are NOT verified correct.
-- Local desktop mean wall-clock: V3 68.8ms/image; V4 202.7ms/image. No RK3576 benchmark.
+- V4 proposed 2/12, rejecting the 3 previously accepted 37-41deg macroscale hypotheses after a native Hessian conflict, and recovering two distinct proposals on images 4(2) and 5(2), about 58.6deg and 56.4deg respectively. On 12 local images rotated 0/90/180/270, status is invariant 12/12; the two accepted candidates keep identical modulo-90 axes. This rotation stability is not physical correctness. Those recovered values are NOT verified correct.
+- Local desktop mean wall-clock: V3 73.3ms/image; V4 268.4ms/image (one-off local desktop timings, not RK3576). No RK3576 benchmark.
 
 ## Acceptance decision
 
