@@ -133,6 +133,11 @@ class LocalEvidenceReviewTests(unittest.TestCase):
         t.start()
         self.addCleanup(lambda:(server.shutdown(),server.server_close(),t.join(timeout=3)))
         url=f"http://127.0.0.1:{server.server_address[1]}"
+        with urllib.request.urlopen(url+"/api/local-review-capabilities") as response:
+            info=json.load(response)
+        self.assertEqual(info["protocol_version"],2)
+        self.assertEqual(info["annotation_source"],SOURCE)
+        self.assertIn("TWILL_PATTERN",info["supported_line_kinds"])
         with urllib.request.urlopen(url+"/api/local-review?id=T001") as response:
             self.assertEqual(json.load(response)["regions"],[])
         data=json.dumps(self.a).encode("utf-8")
@@ -144,6 +149,17 @@ class LocalEvidenceReviewTests(unittest.TestCase):
         self.assertEqual(result["regions"],3)
         self.assertEqual(result["relations"],2)
         self.assertTrue(review_path(self.root,"T001").exists())
+        # End-to-end regression: the error in the user's screenshot was
+        # the old localhost validator rejecting TWILL_PATTERN as LINE.
+        self.a["regions"][1]["geometry"]={
+            "type":"LINE","points":[[30,60],[150,110]]}
+        line_req=urllib.request.Request(url+"/api/local-review",
+             data=json.dumps(self.a).encode("utf-8"),
+             headers={"Content-Type":"application/json","Origin":url},method="POST")
+        with urllib.request.urlopen(line_req) as response:
+            line_result=json.load(response)
+        self.assertTrue(line_result["saved"])
+        self.assertEqual(load_local_review(self.root,"T001")["regions"][1]["geometry"]["type"],"LINE")
         foreign=urllib.request.Request(url+"/api/local-review",data=data,
              headers={"Origin":"https://example.org","Content-Type":"application/json"},method="POST")
         with self.assertRaises(urllib.error.HTTPError) as cm:
