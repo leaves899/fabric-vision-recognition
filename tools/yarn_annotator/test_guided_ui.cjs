@@ -120,6 +120,12 @@ assert.equal(app.data.regions[3].kind,"UNCERTAIN");
 // Advanced category picker remains operable without needing three-task buttons.
 get("localKind").value="GAP";
 get("localKind").listeners.change();
+assert.equal(app.tool,"line");
+app.pointerDown(point(24,78));
+app.pointerDown(point(65,78));
+assert.equal(app.data.regions[4].kind,"GAP");
+assert.equal(app.data.regions[4].geometry.type,"LINE");
+get("toolRect").click();
 assert.equal(app.tool,"rect");
 
 get("switchRefs").click();
@@ -127,5 +133,5 @@ assert.equal(app.active,false);
 get("switchLocal").click();
 assert.equal(app.active,true);
 assert.ok(redrawCalls>0);
-assert.equal(app.data.regions.length,4);
-console.log("PASS guided UI: true-yarn line, twill-false line, legacy twill region, uncertain region and mode switching");
+assert.equal(app.data.regions.length,5);
+console.log("PASS guided UI: visible yarn, twill, same-direction gap lines, legacy rectangles, unknowns and mode switching");
