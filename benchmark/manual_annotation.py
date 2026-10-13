@@ -40,6 +40,48 @@ def image_stats(root: Path, row: dict) -> tuple[str, tuple[int, int]]:
     return checksum, size
 
 
+def _zoom_review_provenance(root: Path, row: dict, image_sha256: str,
+                            image_size: tuple[int, int]) -> dict:
+    """Bind six zoom-native manual annotations to the immutable source crop.
+
+    Legacy/public photos continue to use their registered image directly.
+    """
+    sid = row["position_id"]
+    if not sid.startswith("U20261013_"):
+        return {}
+    if sid not in {f"U20261013_{index:02d}" for index in range(1, 7)}:
+        return {}
+    prefix = Path("datasets/user_contributed/2026-10-13-six-fabric-images")
+    provenance_file = root / prefix / "image_provenance.json"
+    provenance = json.loads(provenance_file.read_text(encoding="utf-8"))
+    image = next((item for item in provenance["images"]
+                  if item["sample_id"] == sid), None)
+    if image is None:
+        raise ValueError("missing zoom photo provenance")
+    expected = (prefix / image["zoom"]).as_posix()
+    if row["image_path"] != expected:
+        raise ValueError("manual reference must be on registered unmarked 2x zoom photo")
+    if image_sha256 != image["zoom_sha256"]:
+        raise ValueError("zoom photo hash changed; manual annotations would be stale")
+    original_path = prefix / image["original"]
+    if hashlib.sha256((root / original_path).read_bytes()).hexdigest() != image["original_sha256"]:
+        raise ValueError("original photo hash changed")
+    x0, y0, x1, y1 = image["crop_original_xyxy"]
+    scale = image["enlargement_scale"]
+    if not isinstance(scale, int) or scale != 2:
+        raise ValueError("unsupported enlargement scale")
+    if image_size != ((x1 - x0) * scale, (y1 - y0) * scale):
+        raise ValueError("zoom dimensions inconsistent with original crop")
+    return {
+        "annotation_image_kind": "UNMARKED_2X_CENTER_CROP",
+        "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
+        "original_image_path": original_path.as_posix(),
+        "original_image_sha256": image["original_sha256"],
+        "crop_original_xyxy": [x0, y0, x1, y1],
+        "enlargement_scale": scale,
+    }
+
+
 def _segment(points, width: int, height: int, name: str, *, required: bool):
     if points is None or points == []:
         if required:
@@ -76,6 +118,7 @@ def validate_annotation(root: Path, data: dict) -> dict:
     if data.get("image_path") != row["image_path"]:
         raise ValueError("image path does not match the registered manifest")
     checksum, (width, height) = image_stats(root, row)
+    review_provenance = _zoom_review_provenance(root, row, checksum, (width, height))
     supplied = data.get("image_sha256")
     if supplied not in (None, "", checksum):
         raise ValueError("image hash changed since annotation; review coordinates")
@@ -140,6 +183,7 @@ def validate_annotation(root: Path, data: dict) -> dict:
         "reference_confirmed": confirmed, "reference_family": family,
         "identity_confirmed": family != "UNKNOWN",
         "segments": normalized, **counts, "notes": notes.strip(),
+        **review_provenance,
         "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
         "updated_at": datetime.now(timezone.utc).isoformat(),
     }
