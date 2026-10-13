@@ -1,0 +1,40 @@
+name: P0 G1 morphology and topology experiment
+on:
+  push:
+    branches:
+      - experiment/g1-physical-morphology-topology-20261013
+  workflow_dispatch:
+
+jobs:
+  run-g1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install 'numpy<3' opencv-python-headless pytest
+      - name: Test inference contracts
+        run: python -m pytest -q benchmark/tests/test_p0_g1_probe.py
+      - name: Run five real operator annotated photos
+        run: python -m benchmark.p0_g1_probe --out experiments/p0-g1
+      - name: Assert no fabricated physical ground truth
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          x=json.loads(Path('experiments/p0-g1/summary.json').read_text())
+          assert x['g1_status']=='G1_NOT_EVALUATED'
+          assert x['sample_count']==5
+          assert all(z['decision'].startswith(('G1_NOT_EVALUATED','ABSTAIN')) for z in x['samples'])
+          print('G1_NOT_EVALUATED: true visible-yarn positive/negative patches are still missing')
+          PY
+      - name: Publish diagnostics for independent human review
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g1-morphology-topology-evidence-unreviewed
+          path: experiments/p0-g1/
+          retention-days: 14
