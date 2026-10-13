@@ -109,26 +109,54 @@ def infer_lattice(image, ann, *, prepared=None):
                                  "paired_flank_score":round(flank,3),
                                  "supported":bool(val>.3 and flank>.16)})
         observed=[m for m in measurements if m["supported"]]
-        spread=float(np.std([m["y"]-target for m in observed])) if len(observed)>1 else None
+        # Local yarn tracks may lean a few degrees after reference rotation:
+        # distinguish smooth linear drift from discontinuous texture jumping.
+        slope_deg=None
+        spread=None
+        if len(observed)>=4:
+            xs=np.asarray([m["x"] for m in observed],float)
+            ys=np.asarray([m["y"] for m in observed],float)
+            gradient,intercept=np.polyfit(xs,ys,1)
+            slope_deg=float(np.degrees(np.arctan(gradient)))
+            spread=float(np.std(ys-(gradient*xs+intercept)))
         quartiles=len({min(3,int(i*4/max(1,len(measurements))))
                        for i,m in enumerate(measurements) if m["supported"]})
         supported=bool(len(observed)>=6 and quartiles>=3 and
-                       spread is not None and spread<=max(2.5,pitch*.12))
+                       spread is not None and spread<=max(2.5,pitch*.12)
+                       and slope_deg is not None and abs(slope_deg)<=8)
         records.append({
             "nominal_physical_yarn_index":int(k),
             "nominal_y_2x_px":round(target,3),
             "longitudinal_windows_supported":len(observed),
             "independent_image_quarters_supported":quartiles,
-            "centerline_jitter_2x_px":round(spread,3) if spread is not None else None,
+            "linear_drift_corrected_center_jitter_2x_px":round(spread,3) if spread is not None else None,
+            "local_image_track_tilt_deg":round(slope_deg,3) if slope_deg is not None else None,
             "image_evidence_supported":supported,
             "confirmed_actual_physical_yarn":False,
             "local_observations":measurements})
     supported=sum(r["image_evidence_supported"] for r in records)
+    # The image may refine the A1 angle ONLY when many independent strips agree.
+    # This candidate is not an autonomous yarn-angle ground truth.
+    angles=[r["local_image_track_tilt_deg"] for r in records
+            if r["image_evidence_supported"] and r["local_image_track_tilt_deg"] is not None]
+    if len(angles)>=8:
+        angle_delta=float(np.median(angles))
+        angle_mad=float(np.median(np.abs(np.asarray(angles)-angle_delta)))
+        angle_candidate=(round((axis+angle_delta)%180,3)
+                         if angle_mad<=1.25 and abs(angle_delta)<=6 else None)
+    else:
+        angle_delta=None
+        angle_mad=None
+        angle_candidate=None
     coverage=supported/len(records)
     status=("IMAGE_SUPPORTED_PHYSICAL_LATTICE_HYPOTHESIS_NOT_IDENTIFIED_YARNS"
             if coverage>=.6 and supported>=8
             else "ABSTAIN_UNSTABLE_IMAGE_SUPPORT")
     result={**base,"status":status,"operator_direction_axis_deg":round(float(axis),3),
+            "image_assisted_axis_candidate_deg_UNVERIFIED":angle_candidate,
+            "image_track_tilt_consensus_deg":round(angle_delta,3) if angle_delta is not None else None,
+            "image_track_tilt_mad_deg":round(angle_mad,3) if angle_mad is not None else None,
+            "image_assisted_angle_is_confirmed_real_yarn":False,
             "nominal_physical_pitch_2x_px":round(pitch,3),
             "nominal_physical_pitch_camera_original_px":round(pitch/2,3),
             "calibration_y1_y2_2x_px":[round(y1,3),round(y2,3)],
