@@ -46,6 +46,17 @@ class V4Tests(unittest.TestCase):
         for r in outcomes:
             self.assertLessEqual(axis_distance(r["unlabelled_axes_deg"][0],21),4)
 
+    def test_native_four_tile_recovery_rotation(self):
+        # Dense native yarns are aliased in a whole-frame 512px thumbnail,
+        # but four true-resolution patches must agree after quarter turns.
+        image=woven(size=1200,angle=21)
+        results=[propose_axes(image.rotate(k)) for k in (0,90,180,270)]
+        for r in results:
+            self.assertEqual(r["status"],"PROPOSED_NOT_VALIDATED",str(r))
+            self.assertEqual(r.get("promotion_reason"),
+                             "THREE_OF_FOUR_NATIVE_PATCHES_AND_HESSIAN_AGREE")
+            self.assertLessEqual(axis_distance(r["unlabelled_axes_deg"][0],21),3)
+
     def test_small_image_never_upsampled(self):
         self.assertEqual(_native_tile_proposals(Image.new("RGB",(512,512),128)),[])
         self.assertEqual(native_evidence(Image.new("RGB",(250,250),128))["native_patch_side_px"],250)
