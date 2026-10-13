@@ -22,6 +22,9 @@ from benchmark.manual_annotation import image_stats, samples, _zoom_review_prove
 FOLDER = Path("datasets/physical_evidence_labels/manual_image_reviews")
 SCHEMA = "1.0"
 SOURCE = "PHONE_IMAGE_OPERATOR_REVIEW"
+# Browser/localhost save compatibility contract. v2 accepts TWILL_PATTERN LINE.
+LOCAL_REVIEW_PROTOCOL_VERSION = 2
+SUPPORTED_LINE_KINDS = ("APPARENT_VISIBLE_YARN", "TWILL_PATTERN", "UNCERTAIN")
 KINDS = {
     "APPARENT_VISIBLE_YARN", "GAP", "TWILL_PATTERN",
     "COLOR_STRIPE", "SHADOW", "OCCLUSION", "UNCERTAIN",
@@ -115,8 +118,7 @@ def validate_local_review(root: Path, payload: dict) -> dict:
         # apparent true-yarn strokes, enabling direct track-vs-track comparison.
         # Legacy TWILL_PATTERN rectangular regions remain valid and unchanged.
         # Neither type is independent physical ground truth.
-        if geom["type"] == "LINE" and kind not in (
-                "APPARENT_VISIBLE_YARN", "TWILL_PATTERN", "UNCERTAIN"):
+        if geom["type"] == "LINE" and kind not in SUPPORTED_LINE_KINDS:
             raise ValueError("short line allowed only for apparent yarn, twill visual track or unknown")
         remark = item.get("note", "")
         if not isinstance(remark, str) or len(remark) > 500:
