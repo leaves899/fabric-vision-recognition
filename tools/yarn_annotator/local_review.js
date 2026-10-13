@@ -260,6 +260,30 @@
     savedState();updateList();redraw();updateGuide();
     notify("已读取 "+sid+" 的局部标注。先在左侧照片画一小段真正可见的纱线；如果看不清，点③。");
   };
+  // An updated browser page can stay open while an old Python process keeps
+  // serving the old validator. Refuse to POST unless the server advertises
+  // support for every class of LINE currently in this unsaved draft.
+  async function assertServerCompatible(){
+    const fix="本地 Python 标注服务版本过旧。请保持当前网页打开（不要刷新或关闭，以免丢失未保存标注），在运行服务的 PowerShell 按 Ctrl+C 停止旧服务，git pull 更新后重新执行 .\\启动本地标注.bat。然后回到本页直接点击「保存本张局部标注」。";
+    let response;
+    try{
+      response=await fetch("/api/local-review-capabilities",{cache:"no-store"});
+      if(!response.ok)throw Error("missing capability endpoint");
+      const info=await response.json();
+      if(info.protocol_version!==2 || !Array.isArray(info.supported_line_kinds)){
+        throw Error("old protocol");
+      }
+      const lineKinds=new Set((api.data?.regions||[])
+        .filter(item=>item.geometry?.type==="LINE")
+        .map(item=>item.kind));
+      for(const kind of lineKinds){
+        if(!info.supported_line_kinds.includes(kind))
+          throw Error("unsupported local line kind: "+kind);
+      }
+    }catch(err){
+      throw Error(fix);
+    }
+  }
   api.save=async ()=>{
     if(!api.data)return notify("尚未加载局部标注。",false);
     api.data.notes=byId("localNotes").value;
@@ -268,11 +292,16 @@
     api.data.annotation_source="PHONE_IMAGE_OPERATOR_REVIEW";
     notify("正在保存局部 JSON...");
     try{
+      await assertServerCompatible();
       const response=await fetch("/api/local-review",{
         method:"POST",headers:{"Content-Type":"application/json"},
         body:JSON.stringify(api.data)});
       const result=await response.json();
-      if(!response.ok)throw Error(result.error||"保存失败");
+      if(!response.ok){
+        if(/short line is only for apparent yarn or unknown/i.test(result.error||""))
+          throw Error("旧版 Python 进程拒绝斜纹短线。请不要刷新或关闭当前网页；按 Ctrl+C 停掉旧标注服务、重新运行启动本地标注.bat，再点击保存。");
+        throw Error(result.error||"保存失败");
+      }
       savedState();
       notify("已写入 "+result.path+"（"+result.regions+"个区域、"+
              result.relations+"对关系）。请在 PowerShell 执行 git add / commit / push。");
