@@ -110,6 +110,10 @@ class GlobalYarnUniquenessTests(unittest.TestCase):
         self.assertEqual(before,after)
         self.assertNotEqual(audit1["operator_link_directly_in_forced_geometry"],
                             audit2["operator_link_directly_in_forced_geometry"])
+        self.assertEqual(audit1["operator_same_link_source_degree_excess"],0)
+        self.assertEqual(audit1["operator_same_link_target_degree_excess"],0)
+        self.assertEqual(audit1["consensus_links_within_a_known_operator_same_component"],1)
+        self.assertEqual(audit2["consensus_links_between_UNLINKED_operator_groups_NOT_NEGATIVE_GT"],1)
         self.assertIsNone(audit1["independent_physical_yarn_identity_accuracy"])
         self.assertTrue(audit2["operator_absent_links_are_not_independent_NEGATIVE_truth"])
 
