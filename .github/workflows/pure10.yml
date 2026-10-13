@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - experiment/first-principles-ten-parameters-20261013
+  pull_request:
+    paths:
+      - 'pure10/**'
+      - '.github/workflows/pure10.yml'
   workflow_dispatch:
 
 jobs:
