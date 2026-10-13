@@ -94,12 +94,61 @@ def evaluate_centers(ann,visual,proposal):
     return result
 
 
+def bilateral_boundary_evidence(visual,detector):
+    """Verify candidate image lines have two contrasting flanks along the axis.
+
+    This is an optical consistency diagnostic. Two-sided contrast is shared by
+    some twill bands, so NO result can certify an individual physical yarn.
+    """
+    if visual is None or "selected_channel" not in detector:
+        return {"status":"NOT_EVALUATED_NO_RIDGES","candidate_bilateral_support":[]}
+    rotated,peaks,_,_=visual
+    lab=cv2.cvtColor(rotated,cv2.COLOR_BGR2LAB).astype(np.float32)
+    channel=lab[:,:,0] if detector["selected_channel"]=="L" else lab[:,:,2]
+    layer=cv2.GaussianBlur(channel,(0,0),sigmaX=2.5,sigmaY=1.0)
+    h,w=layer.shape
+    xs=np.linspace(.14*w,.86*w,120,dtype=np.int32)
+    side=int(max(2,min(18,round(detector["selected_cross_scale_px"]*1.0))))
+    sign=1 if detector["selected_polarity"]=="light" else -1
+    noise=float(np.percentile(np.abs(layer-np.median(layer)),60))
+    threshold=max(.65,.10*noise)
+    records=[]
+    for y in peaks:
+        if y-side<1 or y+side>=h-1:
+            continue
+        center=layer[y,xs]
+        flank_a=layer[y-side,xs]
+        flank_b=layer[y+side,xs]
+        both=sign*(center-flank_a)
+        other=sign*(center-flank_b)
+        support=np.minimum(both,other)>threshold
+        quarters=[float(np.mean(block)) for block in np.array_split(support,4)]
+        records.append({
+            "y_px":int(y),
+            "two_sided_boundary_support_ratio":round(float(np.mean(support)),3),
+            "supported_longitudinal_quarters":int(sum(q>.30 for q in quarters)),
+            "median_two_sided_contrast":round(float(np.median(np.minimum(both,other))),3),
+        })
+    stable=sum(row["supported_longitudinal_quarters"]>=3
+               and row["two_sided_boundary_support_ratio"]>=.36
+               for row in records)
+    return {
+        "status":"IMAGE_BILATERAL_BOUNDARY_DIAGNOSTIC_ONLY",
+        "candidate_bilateral_support":records,
+        "candidate_lines_with_repeatable_paired_flanks":stable,
+        "analyzed_candidate_lines":len(records),
+        "physical_yarn_identity_certified":False,
+        "warning":"Twill texture bands can have two-sided edges too; requires independently localized visible strand evidence.",
+    }
+
+
 def analyze_sample(ann,img):
     assert ann["annotation_target"]=="PHYSICAL_YARN_TRAJECTORY"
     ref=ann["segments"]["reference"]
     a=segment_axis_deg(ref)
     center=np.asarray(ref,float).mean(axis=0).tolist()
     detector,visual=score_profile(img,a,approximate_roi_center=center)
+    boundaries=bilateral_boundary_evidence(visual,detector)
     report={
         "sample_id":ann["sample_id"],
         "annotation_target":ann["annotation_target"],
@@ -124,6 +173,7 @@ def analyze_sample(ann,img):
             "photo_ridge_filter_scale_px":detector.get("selected_cross_scale_px"),
             "image_support_score":detector.get("image_support_score"),
             "hypothesis_not_yarn_identity":True,
+            "boundary_evidence":boundaries,
         },
         "step_C":evaluate_centers(ann,visual,detector),
         "validated_physical_yarn_center_count":None,
