@@ -12,7 +12,7 @@ import numpy as np
 
 from benchmark.manual_annotation import annotation_target_for,validate_annotation
 from benchmark.direction_only_first_yarn import score_profile, axis_deg
-from benchmark.first_yarn_three_stage import evaluate_centers, analyze_sample, bilateral_boundary_evidence
+from benchmark.first_yarn_three_stage import (evaluate_centers,analyze_sample,bilateral_boundary_evidence,two_physical_yarn_anchor_hypothesis)
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -84,6 +84,26 @@ class PhysicalYarnTrajectoryTests(unittest.TestCase):
             for rec in rows["candidate_bilateral_support"]:
                 self.assertGreaterEqual(rec["two_sided_boundary_support_ratio"],0)
                 self.assertLessEqual(rec["two_sided_boundary_support_ratio"],1)
+
+    def test_two_actual_yarn_anchors_calibrate_candidate_pitch_third_is_holdout(self):
+        ann={"segments":{"reference":[[30,100],[300,100]],
+                         "check_same":[[30,220],[300,220]],
+                         "holdout_same":[[30,340],[300,340]]},
+             "same_family_intervals":3,"same_family_intervals_confirmed":True}
+        matrix=np.array([[1.,0,0],[0,1.,0]],float)
+        visual=(np.zeros((480,480,3),np.uint8),
+                list(range(20,460,40)),matrix,np.array([0,0],float))
+        report=two_physical_yarn_anchor_hypothesis(ann,visual)
+        self.assertEqual(report["inferred_nominal_physical_pitch_px"],40)
+        self.assertFalse(report["third_real_yarn_heldout"]["was_used_to_calibrate"])
+        self.assertEqual(report["third_real_yarn_heldout"]["residual_as_fraction_of_nominal_pitch"],0)
+        self.assertFalse(report["automatic_real_yarn_count_certified"])
+        self.assertEqual(report["grid_site_count"],len(report["approximate_candidate_targets"]))
+        # Both physical fiber anchors constrain the lattice but no photo peak
+        # can ever be claimed to be certified as the real yarn.
+        self.assertTrue(all(not t["actual_visible_yarn_confirmed"] for t in report["approximate_candidate_targets"]))
+        ann["same_family_intervals_confirmed"]=False
+        self.assertTrue(two_physical_yarn_anchor_hypothesis(ann,visual)["status"].startswith("ABSTAIN"))
 
     def test_blank_image_never_outputs_physical_count(self):
         img=np.full((600,600,3),128,np.uint8)
