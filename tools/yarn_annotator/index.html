@@ -41,7 +41,7 @@ select{width:100%}
 </head>
 <body>
 <header>
-  <h1>纱线参考方向与位置校正 · V6 试验</h1>
+  <h1>真实物理纱线连接轨迹标注 · 方向与位置研究</h1>
   <small style="color:#e0eaf4">本机标注 · 六张 U20261013 样本直接标注无标记 2× 放大图 · 不自动猜测纱线</small>
 </header>
 <main>
@@ -57,7 +57,7 @@ select{width:100%}
   <div class="toolbar">
     <label>缩放 <input id="zoom" type="range" min="50" max="350" value="100" step="10"></label>
     <output id="zoomText">100%</output>
-    <small>请放大验证：真正纱段 ≠ 斜纹带/明暗纹理</small>
+    <small>当前六张 U 样本：标的是同一根真实纱线的连接轨迹，不要求全程可见</small>
   </div>
   <div class="viewport"><div class="scene" id="scene"><img id="fabricImg" alt="当前人工标注照片"><canvas id="layer"></canvas></div></div>
   <small id="meta">图片尚未载入</small>
@@ -65,7 +65,7 @@ select{width:100%}
 </div>
 <aside class="card">
 <h2>操作顺序</h2>
-<small>① 第一根真实纱线校准方向及位置；② 另一根同向纱线校准位置与候选间距；③ 第三根同向纱线单独验收（不参与校准）。如需校正正交组，需再标两根真实正交纱线。</small>
+<small>① 同一根真实物理纱线两点标出连接路径，可跨越交织遮挡；② 换另一根同向真实纱线；③ 第三根用于独立检查。虚线表示人工推断的物理连接，不代表整段像素都能直接看见纱线。两点路径只代表近似位置，不是精确像素中心线真值。</small>
 <section class="field">
   <strong>当前点击类型</strong>
   <div class="radio-list">
@@ -97,7 +97,7 @@ select{width:100%}
       <option value="UNCERTAIN">待确认</option>
     </select>
   </label>
-  <label><input id="confirmRef" type="checkbox">我确认输入两点取自同一根真实可见纱线</label>
+  <label><input id="confirmRef" type="checkbox">我确认两点属于同一根真实物理纱线的推断连接轨迹（中间允许遮挡）</label>
 </section>
 <section class="field">
   <label class="full">输入参考线的物理身份（不确定就保持未知）
@@ -115,14 +115,14 @@ select{width:100%}
     </select>
   </label>
   <label class="full">核查备注（无法分辨时记录原因）
-    <textarea id="notes" placeholder="例如：参考点沿实际纱段，而非 3/1 斜纹条带"></textarea>
+    <textarea id="notes" placeholder="例如：中间有遮挡；根据局部纱线形态判断两点连接属于同一根物理纱线"></textarea>
   </label>
   <button id="save" class="primary">保存本张标注到本地 datasets/annotations</button>
   <div id="message" role="status"></div>
 </section>
 <section class="field">
   <strong>本轮范围</strong>
-  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。第二根线用于校准，不是独立测试真值；第三根线才是不参与校准的验收参照。未填写并确认真实纱距时，V6.1 不会按候选网格线数推断真实纱线根数。每根候选线仍需人工验证实际纱线位置。</small>
+  <small>不新增假设根数，不计算根/cm，不覆盖 V4/V5。第二根线用于校准，不是独立测试真值；第三根线才是不参与校准的验收参照。未填写并确认真实纱距时，V6.1 不会按候选网格线数推断真实纱线根数。每根候选线仍需单独验证属于真实纱线；人工推断的完整轨迹不能充当逐像素可见纱线标签。</small>
 </section>
 </aside>
 </main>
