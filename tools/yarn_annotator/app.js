@@ -23,7 +23,10 @@ function activeList(){
 function zoomImage(){
   const img=el("fabricImg"),canvas=el("layer");
   if(!img.naturalWidth)return;
-  let pct=+el("zoom").value, width=Math.max(200,Math.round(Math.min(img.naturalWidth,1000)*pct/100));
+  let pct=+el("zoom").value;
+  const isNativeZoom=/^U20261013_0[1-6]$/.test(current?.sample_id||"");
+  const baseWidth=isNativeZoom?img.naturalWidth:Math.min(img.naturalWidth,1000);
+  let width=Math.max(200,Math.round(baseWidth*pct/100));
   img.style.width=width+"px";
   canvas.style.width=width+"px";
   canvas.style.height="auto";
