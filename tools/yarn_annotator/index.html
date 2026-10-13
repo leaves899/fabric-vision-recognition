@@ -38,6 +38,16 @@ select{width:100%}
 .local-list{max-height:160px;overflow:auto;background:#f7f9fc;border:1px solid #dde4ee;padding:5px;border-radius:6px}
 .local-list div{padding:4px 2px;border-bottom:1px solid #e9eef5;font-size:12px}
 .tips{background:#f0f7ff;border:1px solid #b6d2f5;border-radius:6px;padding:9px;font-size:13px;line-height:1.5}
+.quick-task{display:block;width:100%;text-align:left;white-space:normal;line-height:1.45;font-size:13px;padding:11px 10px;border:1px solid #c4cfdb;background:#fff;margin:6px 0}
+.quick-task strong{display:block;font-size:14px;margin-bottom:2px}
+.quick-task.active{border:2px solid #245c9c;background:#edf5ff;padding:10px 9px}
+#localGuide{display:block;background:#f0f7ff;border:1px solid #afcdf0;padding:10px;border-radius:6px;font-size:13px;line-height:1.6;white-space:pre-wrap}
+#localPanel details{border:1px solid #d7dee8;border-radius:7px;padding:9px;margin-top:9px}
+#localPanel details summary{font-weight:600;cursor:pointer;font-size:13px}
+#localPanel details section{padding:8px 0}
+#localPanel select{width:100%;max-width:100%;min-width:0;font-size:13px}
+#localPanel .quick-tasks{display:grid;gap:4px}
+#localPanel .hint{font-size:12px;color:#556477;line-height:1.55}
 .good{color:#16733f}.bad{color:#ae2222}
 .code{font-family:monospace;word-break:break-all}
 @media(max-width:900px){main{display:block}.card{margin-bottom:12px}.viewport{height:52vh}}
@@ -132,59 +142,84 @@ select{width:100%}
 </section>
 </div>
 <div id="localPanel" hidden>
-<h2>局部证据标注 · 手机照片人工判读</h2>
-<div class="tips">
-这次只标能从现有照片观察到的局部现象，不重标 A1/A2/A3。<strong>它不是独立显微物理真值</strong>：不能判断时请选择「无法判断」。局部短线不等于跨遮挡的完整纱线。
+<h2>现在只需要标这三种情况</h2>
+<div class="tips">不用重新画原来的 A1/A2/A3 长线。<strong>只标你能从照片看到的小范围</strong>；看不清就选「无法判断」，不要猜测。</div>
+<div class="quick-tasks" role="group" aria-label="三种常用局部标注任务">
+  <button id="quickYarn" type="button" class="quick-task active" data-quick-kind="APPARENT_VISIBLE_YARN" data-quick-tool="line">
+    <strong>① 我能辨认一小段纱线</strong>
+    沿着这段可见纱线，依次点起点、终点。<b>只画短段，不跨遮挡</b>。
+  </button>
+  <button id="quickTexture" type="button" class="quick-task" data-quick-kind="TWILL_PATTERN" data-quick-tool="rect">
+    <strong>② 像一条纱线，其实是斜纹视觉带</strong>
+    鼠标按住拖动，框住容易被算法误认作单根纱线的纹理。
+  </button>
+  <button id="quickUnknown" type="button" class="quick-task" data-quick-kind="UNCERTAIN" data-quick-tool="rect">
+    <strong>③ 看不清到底是不是纱线</strong>
+    鼠标按住拖动框选，明确告诉算法此处不能判断。
+  </button>
 </div>
 <section class="field">
-  <strong>选择需要标记的内容</strong>
-  <select id="localKind">
-    <option value="APPARENT_VISIBLE_YARN">看起来可见的真实纱线局部（待验证）</option>
-    <option value="TWILL_PATTERN">斜纹视觉带（可能跨多根纱线）</option>
-    <option value="GAP">确认可辨认的纱线间隙</option>
-    <option value="COLOR_STRIPE">染色或颜色条带</option>
-    <option value="SHADOW">阴影或反光造成的视觉结构</option>
-    <option value="OCCLUSION">交织遮挡位置</option>
-    <option value="UNCERTAIN">无法判断 / 图像证据不足</option>
-  </select>
-  <div class="radio-list">
-    <button id="toolRect" data-local-tool="rect" type="button" class="active">框选局部区域（按下拖动）</button>
-    <button id="toolLine" data-local-tool="line" type="button">可见短线（依次两点）</button>
-    <button id="toolRelation" data-local-tool="relation" type="button">两区域关系（依次点击）</button>
-    <button id="toolDelete" data-local-tool="delete" type="button">删除区域（单击）</button>
-  </div>
-  <small>拖拽框选时使用原生放大图坐标，不会因浏览器缩放改变；短线仅用于「局部可见纱线 / 无法判断」。</small>
+  <strong>下一步：在左侧照片怎么操作？</strong>
+  <div id="localGuide" role="status" aria-live="polite">① 在左侧找一小段能直接看清的纱线；先单击起点，再单击终点。两点之间必须实际可见。</div>
+  <small class="hint">先试做一张照片中的几处区域，点「保存」就可以。②只标有把握的斜纹视觉带；无法排除是纱线时，用③。</small>
+  <button id="localUndo" type="button">撤销最近一个标注</button>
+  <button id="localClearPending" type="button">取消当前未完成的两个点或关系</button>
 </section>
+<details id="localAdvanced">
+  <summary>更多类别 / 删除区域 / 同根关系（可先不使用）</summary>
+  <section class="field">
+    <label class="full">更细的标注类别
+      <select id="localKind">
+        <option value="APPARENT_VISIBLE_YARN">可见纱线短段（待验证）</option>
+        <option value="TWILL_PATTERN">疑似斜纹视觉带</option>
+        <option value="GAP">相邻纱线之间的间隙</option>
+        <option value="COLOR_STRIPE">颜色条带</option>
+        <option value="SHADOW">阴影或反光</option>
+        <option value="OCCLUSION">交织遮挡位置</option>
+        <option value="UNCERTAIN">看不清 / 无法判断</option>
+      </select>
+    </label>
+    <strong>绘制与编辑工具</strong>
+    <div class="radio-list">
+      <button id="toolRect" data-local-tool="rect" type="button">框选区域：按住拖动</button>
+      <button id="toolLine" data-local-tool="line" type="button" class="active">可见短线：依次两点</button>
+      <button id="toolRelation" data-local-tool="relation" type="button">同根/不同根：依次点两区域</button>
+      <button id="toolDelete" data-local-tool="delete" type="button">删除区域：单击</button>
+    </div>
+    <label class="full">两个局部区域是否属于同一根纱线（可选）
+      <select id="localRelation">
+        <option value="UNKNOWN">不确定是不是同一根</option>
+        <option value="SAME_PHYSICAL_YARN">两处是同一根（人工推断）</option>
+        <option value="DIFFERENT_PHYSICAL_YARN">两处是不同根</option>
+      </select>
+    </label>
+    <small id="relationPending">还未选区域关系</small>
+    <label class="full">备注（下一个标注使用）
+      <textarea id="localRegionNote" placeholder="例如：斜纹浮长连接但不是同一根纱线"></textarea>
+    </label>
+    <small class="hint">同根/不同根只代表你从当前手机图像作出的判断，不能作为独立的物理实验真值。</small>
+  </section>
+</details>
 <section class="field">
-  <label class="full">两区域的人工关系
-    <select id="localRelation">
-      <option value="SAME_PHYSICAL_YARN">两处属于同一根真实纱线（人工推断）</option>
-      <option value="DIFFERENT_PHYSICAL_YARN">两处属于不同真实纱线</option>
-      <option value="UNKNOWN">无法判断两处是否同根</option>
-    </select>
-  </label>
-  <small id="relationPending">尚未选择区域关系的起点</small>
-  <label class="full">区域备注（下一次框选/画线时应用）
-    <textarea id="localRegionNote" placeholder="例如：斜纹浮长拼成的视觉带；区域内不能确认中心"></textarea>
-  </label>
-  <button id="localUndo" type="button">撤销最近一个区域</button>
-  <button id="localClearPending" type="button">取消未完成操作</button>
-</section>
-<section class="field">
-  <strong>本张照片的局部标注</strong>
+  <strong>已经标了哪些？</strong>
   <div id="localList" class="local-list">尚未加载</div>
-  <div id="localRelationList" class="local-list">尚无区域关系</div>
-  <label class="full">总体备注
-    <textarea id="localNotes" placeholder="是否有看不清的纱线，是否存在多次遮挡、斜纹混淆等"></textarea>
-  </label>
-  <label class="full">标注状态
-    <select id="localReviewState">
-      <option value="DRAFT">DRAFT · 尚未审阅</option>
-      <option value="OPERATOR_REVIEWED">OPERATOR_REVIEWED · 我已人工检查（非物理真值）</option>
-    </select>
-  </label>
-  <button id="saveLocal" class="primary" type="button">保存局部证据 JSON 到本地 Git 仓库</button>
+  <details><summary>查看或删除同根关系（高级）</summary>
+    <div id="localRelationList" class="local-list">尚无区域关系</div>
+  </details>
+  <details><summary>备注与审核状态（可选）</summary>
+    <label class="full">总体备注
+      <textarea id="localNotes" placeholder="可留空；例如哪些地方容易混淆"></textarea>
+    </label>
+    <label class="full">审核状态
+      <select id="localReviewState">
+        <option value="DRAFT">暂存草稿</option>
+        <option value="OPERATOR_REVIEWED">本张照片已人工看过（非物理真值）</option>
+      </select>
+    </label>
+  </details>
+  <button id="saveLocal" class="primary" type="button">保存本张局部标注</button>
   <div id="localMessage" role="status"></div>
+  <small class="hint">标注保存为仓库内 JSON，下次打开还在；上传 GitHub 需要 git add、git commit、git push。</small>
 </section>
 <section class="field">
   <div class="tips">
