@@ -156,6 +156,36 @@ def pitch_from_manual(a,b,angle,intervals):
     return round(distance/int(intervals),3)
 
 
+def segment_image_evidence(img, segment, angle, pixel_offset, pitch):
+    """Independent diagnostic: compare marked-fiber directional energy to half-pitch shifts.
+
+    Heldout segment is ONLY accessed after detection. The shifted locations are
+    counterfactual controls, not verified empty inter-yarn gaps.
+    """
+    if segment is None or pitch is None or not 6 <= pitch <= 120:
+        return None
+    a,b,c,baseline=tensor(img)
+    points=np.asarray(segment,dtype=float)-np.asarray(pixel_offset,dtype=float)
+    coords=np.linspace(points[0],points[1],71)
+    theta=np.radians(angle)
+    normal=np.asarray([-np.sin(theta),np.cos(theta)],dtype=float)
+    def support(delta):
+        xy=np.rint(coords+normal*delta).astype(int)
+        mask=(xy[:,0]>=4)&(xy[:,0]<img.shape[1]-4)&(xy[:,1]>=4)&(xy[:,1]<img.shape[0]-4)
+        if np.count_nonzero(mask)<30:return None
+        xy=xy[mask]
+        return round(float(np.mean(aligned_at(a,b,c,baseline,xy[:,0],xy[:,1],angle))),4)
+    marked=support(0)
+    plus=support(pitch/2)
+    minus=support(-pitch/2)
+    controls=[v for v in (plus,minus) if v is not None]
+    return {"marked_support":marked,
+            "half_pitch_shifted_control_support":[minus,plus],
+            "marked_minus_control_mean":round(marked-float(np.mean(controls)),4)
+               if marked is not None and controls else None,
+            "warning":"Image-structure diagnostic, neither positive physical-yarn accuracy nor verified gap truth."}
+
+
 def draw_panel(img, pts, edges, annotation, offset, out):
     left=img.copy()
     for i,j in edges:
@@ -207,6 +237,13 @@ def run_sample(root, ann_file, out):
                   axis_deg(reference),ann.get("same_family_intervals"))
     manual_pitch_b=(pitch_from_manual(cross[0],cross[1],manual_axes[0],
                     ann.get("cross_family_intervals")) if all(cross) else None)
+    prior_errors=[round(diff180((axis_deg(reference)+90)%180,v),3)
+                  if v is not None else None for v in manual_axes]
+    cross_image_support=[
+        segment_image_evidence(roi,seg,axis_deg(seg),origin,manual_pitch_b)
+        for seg in cross]
+    same_image_support=segment_image_evidence(
+        roi,ann["segments"]["check_same"],axis_deg(reference),origin,manual_pitch_a)
     errors=[round(diff180(pred["candidate_cross_deg"],v),3)
             if pred["candidate_cross_deg"] is not None and v is not None else None
             for v in manual_axes]
@@ -224,7 +261,10 @@ def run_sample(root, ann_file, out):
                 if all(v is not None for v in manual_axes) else None,
             "manual_a_pitch_px_per_interval":manual_pitch_a,
             "manual_b_pitch_px_per_interval":manual_pitch_b,
+            "orthogonal_prior_vs_cross_heldout_error_deg":prior_errors,
             "candidate_vs_cross_heldout_error_deg":errors,
+            "heldout_cross_image_support":cross_image_support,
+            "heldout_same_image_support":same_image_support,
             "rotation_90_reprojected_drift_deg":round(angular_drift,3) if angular_drift is not None else None,
             "photo_physical_scale_available":False,
             "physical_yarn_identity_verified":False,
@@ -248,6 +288,12 @@ def main(argv=None):
         if row:
             results.append(row)
             d=row["detector"]
+            print(f'{row["sample_id"]}: {d["status"]} candidate={d["candidate_cross_deg"]} '
+                  f'geometric_prior_error={row["orthogonal_prior_vs_cross_heldout_error_deg"]} '
+                  f'cross_pixel_support={[(v or {}).get("marked_minus_control_mean") for v in row["heldout_cross_image_support"]]} '
+                  f'candidate_error={row["candidate_vs_cross_heldout_error_deg"]} '
+                  f'rotation_drift={row["rotation_90_reprojected_drift_deg"]}',flush=True)
+            continue
             print(f'{row["sample_id"]}: {d["status"]} candidate={d["candidate_cross_deg"]} '
                   f'heldout_error={row["candidate_vs_cross_heldout_error_deg"]} '
                   f'rotation_drift={row["rotation_90_reprojected_drift_deg"]}',flush=True)
