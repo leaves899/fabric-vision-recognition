@@ -6,7 +6,7 @@ from benchmark.p0_global_yarn_uniqueness import (
     APPEARANCE_METRICS, GEOMETRY_METRICS,
     ordered_preferences, naive_source_best, global_assignment,
     crossing_conflicts, compare_structures, validate_unique,
-    posthoc_audit, path_components,
+    posthoc_audit, path_components, shuffled_start_signatures_controls,
 )
 
 
@@ -116,6 +116,25 @@ class GlobalYarnUniquenessTests(unittest.TestCase):
         self.assertEqual(audit2["consensus_links_between_UNLINKED_operator_groups_NOT_NEGATIVE_GT"],1)
         self.assertIsNone(audit1["independent_physical_yarn_identity_accuracy"])
         self.assertTrue(audit2["operator_absent_links_are_not_independent_NEGATIVE_truth"])
+
+    def test_shuffled_photo_control_keeps_geometry_and_never_reads_human_labels(self):
+        fs=[frag("a",0,10,0),frag("b",20,30,0),frag("c",40,50,0)]
+        for i,x in enumerate(fs):
+            sig={"lab":[20+i*30,125,130],"luma_profile":[1.,float(i+1),4.]}
+            x["start_signature"]=copy.deepcopy(sig)
+            x["end_signature"]=copy.deepcopy(sig)
+        cal={"pitch":10.,"B_normal":[-1,0],"B_origin":[0,0],
+             "B_pitch_signed":-25.}
+        before=copy.deepcopy(fs)
+        controls=shuffled_start_signatures_controls(fs,cal)
+        self.assertEqual(fs,before)
+        self.assertGreater(len(controls),0)
+        self.assertTrue(all(x["operator_relations_used"] is False for x in controls))
+        self.assertTrue(all(x["photo_signature_control_NOT_REAL_NEGATIVE_GROUND_TRUTH"]
+                            for x in controls))
+        self.assertTrue(all(x["structural_consensus_count"]>=0 for x in controls))
+        self.assertTrue(all(x["geometry_forced_matching_links"]==controls[0]["geometry_forced_matching_links"]
+                            for x in controls))
 
     def test_empty_candidates_abstain_all_structural_hypotheses(self):
         fs=[frag("a",0,10,0),frag("b",20,30,0)]
