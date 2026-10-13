@@ -1,0 +1,304 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "U20261013_01",
+  "fabric_id": "USER-U20261013_01",
+  "image_path": "datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked/U20261013_01_center_2x.jpg",
+  "image_sha256": "c22cf160cac3967bf3b402dcfb34315c4c78644e113cfe1116b3ab241083b223",
+  "image_width": 1660,
+  "image_height": 2212,
+  "annotation_target": "LOCAL_IMAGE_EVIDENCE_REVIEW",
+  "annotation_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+  "independent_physical_gt": false,
+  "review_state": "DRAFT",
+  "notes": "",
+  "regions": [
+    {
+      "id": "r0001",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            662.667,
+            209.333
+          ],
+          [
+            722.667,
+            184.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0002",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            756.0,
+            175.333
+          ],
+          [
+            825.333,
+            155.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0003",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            850.667,
+            144.667
+          ],
+          [
+            912.667,
+            122.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0004",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            952.667,
+            113.333
+          ],
+          [
+            1014.667,
+            94.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0005",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            565.333,
+            236.667
+          ],
+          [
+            628.667,
+            225.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0006",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            476.667,
+            276.0
+          ],
+          [
+            525.333,
+            258.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0007",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            382.667,
+            301.333
+          ],
+          [
+            441.333,
+            288.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0008",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            288.667,
+            335.333
+          ],
+          [
+            349.333,
+            317.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0009",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            180.0,
+            377.333
+          ],
+          [
+            240.667,
+            349.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0010",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            86.667,
+            408.0
+          ],
+          [
+            146.667,
+            387.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0011",
+      "kind": "TWILL_PATTERN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            130.0,
+            8.667
+          ],
+          [
+            865.333,
+            583.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    }
+  ],
+  "relations": [
+    {
+      "a": "r0010",
+      "b": "r0009",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0009",
+      "b": "r0008",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0008",
+      "b": "r0007",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0007",
+      "b": "r0006",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0006",
+      "b": "r0005",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0005",
+      "b": "r0001",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0001",
+      "b": "r0002",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0002",
+      "b": "r0003",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    },
+    {
+      "a": "r0003",
+      "b": "r0004",
+      "relation": "SAME_PHYSICAL_YARN",
+      "evidence_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+      "independent_physical_gt": false
+    }
+  ],
+  "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
+  "physical_yarn_reference_unchanged": true,
+  "updated_at": "2026-10-13T06:33:28.745837+00:00"
+}
