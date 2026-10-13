@@ -94,6 +94,45 @@ def infer_lattice(image, ann, *, prepared=None):
     profiles=np.asarray(profiles)
     radius=int(np.clip(round(pitch*.23),2,11))
     side=int(np.clip(round(scale),2,max(3,pitch*.35)))
+
+    # Search a SMALL global offset for approximate A1/A2 hand-drawn paths.
+    # Objective is unsupervised PHOTO contrast, never the withheld A3 position.
+    # A twill pattern could also maximize this; ambiguity must be explicit.
+    shifts=np.linspace(-.20*pitch,.20*pitch,11)
+    def photo_phase_objective(shift):
+        values=[]
+        for _,base_y in sites:
+            center=int(round(base_y+shift))
+            if center-side-2<0 or center+side+2>=h:
+                continue
+            for prof in profiles:
+                yc=int(np.clip(center,2,h-3))
+                loc=prof[yc-2:yc+3]
+                if not len(loc):
+                    continue
+                peak_y=yc-2+int(np.argmax(loc))
+                peak_val=float(prof[peak_y])
+                paired=min(peak_val-float(prof[peak_y-side]),
+                           peak_val-float(prof[peak_y+side]))
+                values.append(min(1.,max(0.,peak_val-.30)) *
+                              min(1.,max(0.,paired-.16)))
+        return float(np.mean(values)) if values else 0.
+    phase_scores=[photo_phase_objective(float(shift)) for shift in shifts]
+    winner=int(np.argmax(phase_scores))
+    best_delta=float(shifts[winner])
+    best_quality=phase_scores[winner]
+    baseline_quality=phase_scores[len(shifts)//2]
+    competitors=[score for i,score in enumerate(phase_scores)
+                 if abs(shifts[i]-best_delta)>=.12*pitch]
+    competing=max(competitors) if competitors else 0.
+    distinguishable=(best_quality>0.015 and
+                     best_quality-competing>=max(.005,best_quality*.09))
+    gain=best_quality-baseline_quality
+    applied_shift=(best_delta if distinguishable and gain>=.007
+                   and abs(best_delta)<=.2*pitch else 0.)
+    # All grid indices remain anchored to A1/A2, with a bounded image-only
+    # phase correction. Neither A3 nor B labels enter this selection.
+    sites=[(k,y+applied_shift) for k,y in sites]
     records=[]
     for k,target in sites:
         measurements=[]
@@ -159,6 +198,13 @@ def infer_lattice(image, ann, *, prepared=None):
             "image_assisted_angle_is_confirmed_real_yarn":False,
             "nominal_physical_pitch_2x_px":round(pitch,3),
             "nominal_physical_pitch_camera_original_px":round(pitch/2,3),
+            "photo_only_phase_refinement_applied_2x_px":round(applied_shift,3),
+            "photo_only_phase_refinement_disambiguated":bool(distinguishable),
+            "photo_phase_best_support_score":round(best_quality,5),
+            "photo_phase_baseline_support_score":round(baseline_quality,5),
+            "photo_phase_runner_up_score":round(competing,5),
+            "photo_phase_candidates_tested":len(shifts),
+            "manual_A3_used_for_phase_search":False,
             "calibration_y1_y2_2x_px":[round(y1,3),round(y2,3)],
             "confirmed_A1_A2_intervals_used_for_calibration":intervals,
             "nominal_lattice_site_count_NOT_actual_yarn_count":len(records),
