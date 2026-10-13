@@ -16,7 +16,7 @@
     COLOR_STRIPE:"染色条带",SHADOW:"阴影/反光",
     OCCLUSION:"交织遮挡",UNCERTAIN:"无法判断"
   };
-  const api={active:false,dirty:false,data:null,tool:"rect",
+  const api={active:false,dirty:false,data:null,tool:"line",
              dragStart:null,preview:null,partialLine:null,relationFirst:null};
   const notify=(msg,good=true)=>{
     byId("localMessage").textContent=msg;
@@ -147,12 +147,35 @@
     byId("relationPending").textContent=api.relationFirst?
       "已选 "+api.relationFirst+"，请点第二个区域（不能同一个）":"尚未选择两区域关系的第一处";
   }
+  function updateGuide(){
+    const kind=byId("localKind").value;
+    const tool=api.tool;
+    let message;
+    if(tool==="relation"){
+      message="先点击第一块已经标过的区域，再点击另一块，最后选择同根/不同根/未知。这个步骤可不做。";
+    }else if(tool==="delete"){
+      message="单击左侧照片里已经画出的短线或框，就能删除该标注。";
+    }else if(tool==="line"){
+      message="在左侧照片上：先点能直接看见的纱线短段起点，再点终点。中间必须是可见实体，不跨遮挡。点完可继续画下一段。";
+    }else if(kind==="UNCERTAIN"){
+      message="在左侧照片上：鼠标按住拖动，框住看不清是不是纱线的区域。不要猜测；框完可以继续标其他位置。";
+    }else if(kind==="TWILL_PATTERN"){
+      message="在左侧照片上：鼠标按住拖动，框住你能看出是斜纹图案、而不是同一根实体连续轨迹的视觉带。如果没有把握，请用③无法判断。";
+    }else{
+      message="在左侧照片上：按住鼠标拖动，框住当前类别的局部范围。看不清时可切换③无法判断。";
+    }
+    byId("localGuide").textContent=message;
+    document.querySelectorAll("[data-quick-kind]").forEach(b=>{
+      b.classList.toggle("active",b.dataset.quickKind===kind&&b.dataset.quickTool===tool);
+    });
+  }
   function addRegion(geometry){
     const item={id:nextId(),kind:byId("localKind").value,geometry,
       note:byId("localRegionNote").value.trim()};
     api.data.regions.push(item);
     byId("localRegionNote").value="";
     markDirty();updateList();redraw();
+    notify("已记录 "+item.id+"（"+labels[item.kind]+"），继续标其它局部；完成后点击「保存本张局部标注」。");
   }
   function handleRelation(p){
     const found=nearestRegion(p);
@@ -232,8 +255,8 @@
     api.data=payload;
     byId("localNotes").value=payload.notes||"";
     byId("localReviewState").value=payload.review_state||"DRAFT";
-    savedState();updateList();redraw();
-    notify("读取 "+sid+" 的局部证据成功。照片人工判读不是独立物理真值。");
+    savedState();updateList();redraw();updateGuide();
+    notify("已读取 "+sid+" 的局部标注。先在左侧照片画一小段真正可见的纱线；如果看不清，点③。");
   };
   api.save=async ()=>{
     if(!api.data)return notify("尚未加载局部标注。",false);
@@ -258,9 +281,10 @@
     api.tool=name;
     document.querySelectorAll("[data-local-tool]").forEach(b=>
       b.classList.toggle("active",b.dataset.localTool===name));
-    notify(name==="rect"?"按住鼠标框选局部区域。":
-      name==="line"?"按顺序单击短线的两个端点。":
-      name==="relation"?"先选第一个已标区域，再选第二个。":"单击已标区域将其删除。");
+    updateGuide();
+    notify(name==="rect"?"按住鼠标拖动，框住局部区域。":
+      name==="line"?"沿实际可见的局部短段依次点击起点、终点。":
+      name==="relation"?"依次点两个已有区域；不确定就选 UNKNOWN。":"单击已标区域删除。");
   }
   function selectPanel(local){
     if(local===api.active)return;
@@ -271,6 +295,16 @@
     byId("switchLocal").classList.toggle("primary",local);
     redraw();
   }
+  document.querySelectorAll("[data-quick-kind]").forEach(button=>{
+    button.addEventListener("click",()=>{
+      byId("localKind").value=button.dataset.quickKind;
+      selectTool(button.dataset.quickTool);
+    });
+  });
+  byId("localKind").addEventListener("change",()=>{
+    const kind=byId("localKind").value;
+    selectTool(kind==="APPARENT_VISIBLE_YARN"?"line":"rect");
+  });
   byId("switchRefs").addEventListener("click",()=>selectPanel(false));
   byId("switchLocal").addEventListener("click",()=>selectPanel(true));
   document.querySelectorAll("[data-local-tool]").forEach(b=>b.addEventListener("click",()=>selectTool(b.dataset.localTool)));
@@ -287,5 +321,6 @@
   byId("localReviewState").addEventListener("change",()=>{api.dirty=true;});
   byId("localNotes").addEventListener("input",()=>{api.dirty=true;byId("localStatus").textContent="局部证据：有未保存修改";});
   byId("saveLocal").addEventListener("click",()=>api.save());
+  updateGuide();
   window.localEvidence=api;
 })();
