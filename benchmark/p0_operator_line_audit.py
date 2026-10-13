@@ -494,6 +494,45 @@ def direction_matched_unlabelled_gallery(photo,sample,out,max_tracks=12):
                     np.vstack(output))
 
 
+def matched_operator_pair_gallery(photo,sample,out,max_pairs=16):
+    """Comparison of human image-hypothesis lines, not physically proven GT.
+
+    Use original camera crop bytes; 3x enlargement is display-only.
+    One paired card per nearby matched short segment, grouped in the report.
+    """
+    pairs=sample["length_direction_spatial_matched_false_track_comparison"]["pairs"][:max_pairs]
+    records={r["id"]:r for r in sample["records"]}
+    h,w=photo.shape[:2]
+    cards=[]
+    for pair in pairs:
+        positive=records[pair["operator_yarn_region_id"]]
+        negative=pair["false_local_camera_xy"]
+        panels=[]
+        for j,coords in enumerate((positive["camera_original_xy"],negative)):
+            array=np.asarray(coords,float)
+            center=np.mean(array,axis=0)
+            cx,cy=np.rint(center).astype(int)
+            x0,y0=cx-45,cy-45
+            patch=np.zeros((90,90,3),np.uint8)
+            xa,ya=max(0,x0),max(0,y0)
+            xb,yb=min(w,x0+90),min(h,y0+90)
+            if xa<xb and ya<yb:
+                patch[ya-y0:yb-y0,xa-x0:xb-x0]=photo[ya:yb,xa:xb]
+            patch=cv2.resize(patch,(270,270),interpolation=cv2.INTER_NEAREST)
+            start,end=np.rint((array-[x0,y0])*3).astype(int)
+            cv2.line(patch,tuple(start),tuple(end),
+                     (10,220,40) if j==0 else (10,195,245),2,cv2.LINE_AA)
+            title=(positive["id"]+" HUMAN YARN CAND."
+                   if j==0 else pair["operator_false_track_id"]+" HUMAN FALSE CAND.")
+            cv2.putText(patch,title,(5,18),cv2.FONT_HERSHEY_SIMPLEX,
+                        .43,(255,255,255),1,cv2.LINE_AA)
+            panels.append(patch)
+        cards.append(np.hstack(panels))
+    if cards:
+        cv2.imwrite(str(out/(sample["sample_id"]+"_E3_same_length_nearby_pairs_DISPLAY_ONLY.jpg")),
+                    np.vstack(cards))
+
+
 def run(root:Path,out:Path):
     out.mkdir(parents=True,exist_ok=True)
     samples_output=[]
@@ -519,6 +558,7 @@ def run(root:Path,out:Path):
         nearest_length_matched_twill_pairs(photo,result)
         visual_gallery(photo,result,out,provenance)
         direction_matched_unlabelled_gallery(photo,result,out)
+        matched_operator_pair_gallery(photo,result,out)
         samples_output.append(result)
         print(f'{sid} apparent_strokes={result["human_apparent_yarn_short_strokes"]} '
               f'twill_tracks={result["human_twill_visual_tracks"]} '
