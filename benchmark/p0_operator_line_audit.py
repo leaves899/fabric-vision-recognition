@@ -233,6 +233,118 @@ def half_pitch_probe(sample,photo,pitch):
     sample["unlabelled_direction_length_matched_control_stats"]=stats
 
 
+def nearest_length_matched_twill_pairs(photo, sample, *, max_distance_camera_px=40.0,
+                                     max_angle_diff_deg=10.0):
+    """Descriptive, same-orientation, same-length, nearby user LINE contrast.
+
+    The two long twill strokes may share the same origin and can overlap;
+    always match at most one false track per positive stroke and report
+    actual group/negative-track counts. Never split a long line into
+    independent GT. Reject distant matches and off-segment projections.
+    """
+    records=sample["records"]
+    true=[r for r in records
+          if r["kind"]==POS and r["geometry_type"]=="LINE"]
+    false=[r for r in records
+           if r["kind"] in ("TWILL_PATTERN","GAP","COLOR_STRIPE","SHADOW")
+           and r["geometry_type"]=="LINE"]
+    members=sample["positive_relation_groups_NOT_DISTINCT_YARN_COUNT"]
+    group_of={rid:f"operator_group_{i+1:02d}" for i,g in enumerate(members)
+              for rid in g}
+    pairs=[]
+    for pos in true:
+        if not pos.get("optical_features"):continue
+        points=np.asarray(pos["camera_original_xy"],float)
+        pmid=np.mean(points,axis=0)
+        pos_len=float(np.linalg.norm(points[1]-points[0]))
+        pa=axis_deg(points)
+        options=[]
+        for neg in false:
+            baseline=np.asarray(neg["camera_original_xy"],float)
+            na=axis_deg(baseline)
+            da=acute_axis_delta(pa,na)
+            if da>max_angle_diff_deg:continue
+            diff=baseline[1]-baseline[0]
+            length=float(np.linalg.norm(diff))
+            if length<=pos_len+1.e-6:continue
+            unit=diff/length
+            progress=float(np.dot(pmid-baseline[0],unit))
+            # The negative crop must remain entirely on the actual user path;
+            # extrapolating a candidate beyond their manually marked limits
+            # would manufacture fake-line pixels not supplied by the operator.
+            if not (pos_len/2<=progress<=length-pos_len/2):continue
+            projection=baseline[0]+progress*unit
+            distance=float(np.linalg.norm(pmid-projection))
+            if distance>max_distance_camera_px:continue
+            control=np.asarray([projection-.5*pos_len*unit,
+                                projection+.5*pos_len*unit],float)
+            observations=windows_for_stroke(photo,control.tolist())
+            if not observations:continue
+            c_features={key:round(float(np.median([x[key] for x in observations])),4)
+                        for key in FEATURE_NAMES}
+            options.append((distance,neg["id"],{
+                "operator_yarn_region_id":pos["id"],
+                "operator_yarn_group_id":group_of.get(pos["id"]),
+                "operator_false_track_id":neg["id"],
+                "operator_false_track_kind":neg["kind"],
+                "positive_window_length_camera_px":round(pos_len,3),
+                "negative_window_length_camera_px":round(pos_len,3),
+                "angle_difference_deg":round(da,3),
+                "center_separation_camera_px":round(distance,3),
+                "false_local_camera_xy":np.round(control,3).tolist(),
+                "positive_features":pos["optical_features"],
+                "nearby_false_local_features":c_features,
+                "score_differences_DESCRIPTIVE_ONLY":{
+                    key:round(pos["optical_features"][key]-c_features[key],4)
+                    for key in FEATURE_NAMES},
+                "operator_photo_class_is_not_independent_physical_GT":True,
+                "same_line_length_and_direction_does_not_prove_entity_identity":True,
+            }))
+        if options:
+            pairs.append(min(options,key=lambda q:(q[0],q[1]))[2])
+    # Do not score many linked short segments as independent yarns. A1/A2
+    # anchors cannot promote these groupings to independent GT either.
+    keys=("center_vs_flanks_abs_z","paired_side_contrast_z",
+          "paired_contrast_support_fraction","transverse_vs_axial_gradient")
+    summaries={}
+    for key in keys:
+        eligible=[p for p in pairs if p["operator_yarn_group_id"] is not None]
+        grouped={}
+        for p in eligible:
+            grouped.setdefault(p["operator_yarn_group_id"],[]).append(
+                p["score_differences_DESCRIPTIVE_ONLY"][key])
+        medians=[float(np.median(x)) for x in grouped.values()]
+        summaries[key]={
+            "matched_stroke_median_difference":round(float(np.median([
+                p["score_differences_DESCRIPTIVE_ONLY"][key] for p in pairs
+            ])),4) if pairs else None,
+            "linked_operator_yarn_groups_median_difference":round(float(np.median(medians)),4)
+                if medians else None,
+            "linked_operator_yarn_groups_positive_difference":sum(x>0 for x in medians),
+            "linked_operator_yarn_groups_compared":len(medians),
+            "probability_of_real_yarn_identity":None,
+        }
+    result={
+        "comparison":"NEARBY_DIRECTION_AND_LENGTH_MATCHED_OPERATOR_IMAGE_ONLY",
+        "max_center_separation_camera_px":max_distance_camera_px,
+        "max_angle_difference_deg":max_angle_diff_deg,
+        "matched_operator_strokes_NOT_independent":len(pairs),
+        "unique_operator_yarn_same_strand_groups_NOT_VERIFIED_COUNT":
+            len(set(p["operator_yarn_group_id"] for p in pairs)),
+        "unique_operator_false_track_ids_NOT_independent_GT":
+            len(set(p["operator_false_track_id"] for p in pairs)),
+        "matched_operator_false_track_ids":
+            sorted(set(p["operator_false_track_id"] for p in pairs)),
+        "per_feature":summaries,
+        "pairs":pairs,
+        "real_physical_identity_accuracy":None,
+        "unverified_phone_image_labels_only":True,
+        "holdout_A3_used":False,
+    }
+    sample["length_direction_spatial_matched_false_track_comparison"]=result
+    return result
+
+
 def summarize_sample(photo,review,provenance,reference_axis):
     records=[]
     for reg in review["regions"]:
@@ -404,6 +516,7 @@ def run(root:Path,out:Path):
         photo,provenance=_camera_image(root,annotation)
         result=summarize_sample(photo,annotation,provenance,ref_angle)
         half_pitch_probe(result,photo,pitch)
+        nearest_length_matched_twill_pairs(photo,result)
         visual_gallery(photo,result,out,provenance)
         direction_matched_unlabelled_gallery(photo,result,out)
         samples_output.append(result)
@@ -418,6 +531,13 @@ def run(root:Path,out:Path):
             print(f'{sid} optical {key} apparent={items["positive_operator_segments_median"]} '
                   f'twill={items["twill_operator_tracks_median"]} '
                   f'(DESCRIPTIVE_ONLY_NOT_YARN_PROOF)',flush=True)
+        paired=result["length_direction_spatial_matched_false_track_comparison"]
+        print(f'{sid} PAIR_MATCH image_only: strokes={paired["matched_operator_strokes_NOT_independent"]} '
+              f'linked_positive_groups={paired["unique_operator_yarn_same_strand_groups_NOT_VERIFIED_COUNT"]} '
+              f'false_tracks={paired["unique_operator_false_track_ids_NOT_independent_GT"]} '
+              f'median_center_minus_false_dual_edge_fraction='
+              f'{paired["per_feature"]["paired_contrast_support_fraction"]["linked_operator_yarn_groups_median_difference"]}'
+              f' (NO_VERIFIED_PHYSICAL_ACCURACY)',flush=True)
         check=result["unlabelled_direction_length_matched_control_stats"]["paired_side_contrast_z"]
         print(f'{sid} PHOTO_ONLY matched_half_pitch paired_contrast '
               f'operator_strokes_compared={check["candidate_operator_strokes_compared"]} '
