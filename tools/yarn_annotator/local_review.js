@@ -323,4 +323,6 @@
   byId("saveLocal").addEventListener("click",()=>api.save());
   updateGuide();
   window.localEvidence=api;
+  // New evidence-review workflow is the default; legacy A1/A2/A3 is one click away.
+  selectPanel(true);
 })();
