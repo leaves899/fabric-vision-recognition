@@ -17,6 +17,9 @@ on:
       - 'benchmark/tests/test_p0_v5_multitransect_audit.py'
       - 'benchmark/p0_global_yarn_uniqueness.py'
       - 'benchmark/tests/test_p0_global_yarn_uniqueness.py'
+      - 'benchmark/p0_physical_connection_identifiability.py'
+      - 'benchmark/tests/test_p0_physical_connection_identifiability.py'
+      - 'datasets/physical_evidence_labels/operator_confirmations/**'
       - 'datasets/physical_evidence_labels/**'
       - 'benchmark/direction_only_first_yarn.py'
       - 'benchmark/manual_annotation.py'
@@ -46,7 +49,7 @@ jobs:
       - name: Validate input JPG hashes and real physical-yarn trajectory annotations
         run: python -m benchmark.manual_annotation audit
       - name: Check label semantics, image-only detector, alias/holdout and negative tests
-        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence benchmark.tests.test_p0_yarn_evidence benchmark.tests.test_p0_operator_line_audit benchmark.tests.test_p0_occlusion_continuity benchmark.tests.test_p0_cross_fabric_phase benchmark.tests.test_p0_v5_multitransect_audit benchmark.tests.test_p0_global_yarn_uniqueness -v
+        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence benchmark.tests.test_p0_yarn_evidence benchmark.tests.test_p0_operator_line_audit benchmark.tests.test_p0_occlusion_continuity benchmark.tests.test_p0_cross_fabric_phase benchmark.tests.test_p0_v5_multitransect_audit benchmark.tests.test_p0_global_yarn_uniqueness benchmark.tests.test_p0_physical_connection_identifiability -v
       - name: Three-stage real-image experiment on five reviewed samples
         run: python -m benchmark.first_yarn_three_stage --out experiments/first-yarn-3stage
       - name: Four-stage first-family 5-photo physical lattice evidence and A3 holdout
@@ -63,6 +66,8 @@ jobs:
         run: python -m benchmark.p0_v5_multitransect_audit --out experiments/p0-e6-v5-inspired-multitransects
       - name: E6.2 globally unique competing trajectory hypotheses and posthoc weak operator audit
         run: python -m benchmark.p0_global_yarn_uniqueness --out experiments/p0-e62-global-uniqueness
+      - name: E6.3 exact graph connection replaceability and operator-confirmed counterexample (posthoc only)
+        run: python -m benchmark.p0_physical_connection_identifiability --out experiments/p0-e63-physical-identifiability
       - name: Upload actual JPEG overlays and complete sample reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -77,5 +82,6 @@ jobs:
             experiments/p0-e5-cross-fabric-phase/
             experiments/p0-e6-v5-inspired-multitransects/
             experiments/p0-e62-global-uniqueness/
+            experiments/p0-e63-physical-identifiability/
           if-no-files-found: warn
           retention-days: 30
