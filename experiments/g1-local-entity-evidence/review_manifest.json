@@ -1,0 +1,111 @@
+{
+  "review_state": "PENDING",
+  "machine_roles_hidden": true,
+  "entries": [
+    {
+      "blind_patch_id": "2711336D06",
+      "sample_id": "U20261013_01",
+      "review_sheet": "U20261013_01/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 1,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "11C4D3BDED",
+      "sample_id": "U20261013_01",
+      "review_sheet": "U20261013_01/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 0,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "AA1CB87226",
+      "sample_id": "U20261013_01",
+      "review_sheet": "U20261013_01/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 2,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "2A5D70F5E3",
+      "sample_id": "U20261013_02",
+      "review_sheet": "U20261013_02/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 0,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "42E532FA61",
+      "sample_id": "U20261013_02",
+      "review_sheet": "U20261013_02/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 1,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "E322F2174C",
+      "sample_id": "U20261013_02",
+      "review_sheet": "U20261013_02/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 2,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "83ED1BCCDA",
+      "sample_id": "U20261013_03",
+      "review_sheet": "U20261013_03/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 0,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "A65112F447",
+      "sample_id": "U20261013_03",
+      "review_sheet": "U20261013_03/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 2,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "9F4C62091A",
+      "sample_id": "U20261013_03",
+      "review_sheet": "U20261013_03/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 1,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "AA3AD53D54",
+      "sample_id": "U20261013_05",
+      "review_sheet": "U20261013_05/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 0,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "C7E9E24E49",
+      "sample_id": "U20261013_05",
+      "review_sheet": "U20261013_05/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 1,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "DC7975080A",
+      "sample_id": "U20261013_05",
+      "review_sheet": "U20261013_05/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 2,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "4D0F868DE6",
+      "sample_id": "U20261013_06",
+      "review_sheet": "U20261013_06/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 1,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "9F130DEE0A",
+      "sample_id": "U20261013_06",
+      "review_sheet": "U20261013_06/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 2,
+      "review_state": "PENDING"
+    },
+    {
+      "blind_patch_id": "44A92CBC90",
+      "sample_id": "U20261013_06",
+      "review_sheet": "U20261013_06/blind_review_sheet.jpg",
+      "panel_index_left_to_right": 0,
+      "review_state": "PENDING"
+    }
+  ]
+}

@@ -1,0 +1,4095 @@
+{
+  "inference_without_A3": {
+    "sample_id": "U20261013_01",
+    "status": "CANDIDATE_EVIDENCE_REQUIRES_INDEPENDENT_HUMAN_REVIEW",
+    "measurement_source": "ARCHIVED_ORIGINAL_PHONE_PHOTO_PIXELS",
+    "original_image_path": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_01.jpg",
+    "annotation_2x_used_only_for_coordinate_mapping": true,
+    "inference_roles": [
+      "reference",
+      "check_same",
+      "same_family_intervals",
+      "check_cross",
+      "check_cross_second",
+      "cross_family_intervals"
+    ],
+    "excluded_until_evaluation": "holdout_same",
+    "a3_read_during_inference": false,
+    "feature_split": "DEVELOPMENT_FEATURE_SELECTION",
+    "operator_A_axis_deg": 161.246,
+    "physical_pitch_original_px_from_A1_A2": 16.5501,
+    "anchor_polarity_calibration": {
+      "source_roles": [
+        "reference",
+        "check_same"
+      ],
+      "signed_contrasts": [
+        1.5647,
+        0.6795
+      ],
+      "selected_sign": 1,
+      "ambiguous": false
+    },
+    "twill_surface_competitor_axis_rectified_deg": 19.5,
+    "twill_axis_histogram_relative_strength": 1.0,
+    "fixed_feature_weights": {
+      "paired_boundary": 0.18,
+      "width_consistency": 0.12,
+      "visible_continuity": 0.14,
+      "axis_coherence": 0.12,
+      "anchor_polarity": 0.08,
+      "anchor_morphology": 0.26,
+      "occlusion_resumption": 0.1
+    },
+    "fixed_decision_thresholds": {
+      "minimum_entity_score": 0.48,
+      "minimum_competition_margin": 0.1,
+      "minimum_lattice_vs_half_phase_median_margin": 0.2
+    },
+    "period_counterexample_status": "ABSTAIN_WRONG_PERIOD_OR_PHASE_COMPETITION",
+    "lattice_vs_half_phase_median_margin": -0.0104,
+    "hypothesis_distributions": {
+      "PHYSICAL_A_LATTICE_HYPOTHESES": {
+        "scored_count_NOT_physical_yarn_count": 55,
+        "median": 0.3334,
+        "q75": 0.3669,
+        "maximum": 0.4443
+      },
+      "HALF_PHASE_GAP_HYPOTHESES": {
+        "scored_count_NOT_physical_yarn_count": 56,
+        "median": 0.3438,
+        "q75": 0.3836,
+        "maximum": 0.469
+      },
+      "DIAGONAL_TWILL_SURFACE_HYPOTHESES": {
+        "scored_count_NOT_physical_yarn_count": 3,
+        "median": 0.4035,
+        "q75": 0.4252,
+        "maximum": 0.4469
+      }
+    },
+    "physical_yarn_hypotheses_NOT_truth": [
+      {
+        "path_y": 25.826,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 1,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 42.376,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 1,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 58.926,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 2,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 75.476,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 2,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 92.026,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 3,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 108.576,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 3,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 125.126,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 4,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 141.676,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 4,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 158.227,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 5,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 174.777,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 5,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 191.327,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 6,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 207.877,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4443,
+        "components": {
+          "paired_boundary": 0.1583,
+          "width_consistency": 1.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3998,
+          "anchor_polarity": 0.1761,
+          "anchor_morphology": 0.8327,
+          "occlusion_resumption": 0.1729
+        },
+        "median_apparent_width_original_px": 3.972,
+        "apparent_width_mad_fraction": 0.0,
+        "median_signed_center_contrast": 0.0409,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 7,
+        "calibrated_crossing_count": 19
+      },
+      {
+        "path_y": 224.427,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.218,
+        "components": {
+          "paired_boundary": 0.1507,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.4302,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.4632,
+          "occlusion_resumption": 0.188
+        },
+        "median_apparent_width_original_px": 7.589,
+        "apparent_width_mad_fraction": 0.3926,
+        "median_signed_center_contrast": -0.7268,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4,
+        "longitudinal_window_count": 8,
+        "calibrated_crossing_count": 21
+      },
+      {
+        "path_y": 240.977,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3994,
+        "components": {
+          "paired_boundary": 0.3203,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3433,
+          "anchor_polarity": 0.9978,
+          "anchor_morphology": 0.7759,
+          "occlusion_resumption": 0.1899
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.4975,
+        "median_signed_center_contrast": 0.6982,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4545,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 23
+      },
+      {
+        "path_y": 257.527,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3038,
+        "components": {
+          "paired_boundary": 0.2459,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2811,
+          "anchor_polarity": 0.1343,
+          "anchor_morphology": 0.7187,
+          "occlusion_resumption": 0.2823
+        },
+        "median_apparent_width_original_px": 10.403,
+        "apparent_width_mad_fraction": 0.5728,
+        "median_signed_center_contrast": 0.0074,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.6087,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 24
+      },
+      {
+        "path_y": 274.077,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3554,
+        "components": {
+          "paired_boundary": 0.1981,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3082,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7023,
+          "occlusion_resumption": 0.202
+        },
+        "median_apparent_width_original_px": 7.589,
+        "apparent_width_mad_fraction": 0.3926,
+        "median_signed_center_contrast": 0.7763,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.48,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 290.627,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4163,
+        "components": {
+          "paired_boundary": 0.247,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.2,
+          "axis_coherence": 0.3503,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7737,
+          "occlusion_resumption": 0.2063
+        },
+        "median_apparent_width_original_px": 6.786,
+        "apparent_width_mad_fraction": 0.4391,
+        "median_signed_center_contrast": 0.8019,
+        "visible_window_fraction": 0.2,
+        "longest_visible_run_fraction": 0.2,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4583,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 307.178,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3375,
+        "components": {
+          "paired_boundary": 0.233,
+          "width_consistency": 0.3433,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.2994,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7078,
+          "occlusion_resumption": 0.1888
+        },
+        "median_apparent_width_original_px": 4.776,
+        "apparent_width_mad_fraction": 0.2495,
+        "median_signed_center_contrast": -0.2719,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.125,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 323.728,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3522,
+        "components": {
+          "paired_boundary": 0.2104,
+          "width_consistency": 0.0955,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3902,
+          "anchor_polarity": 0.993,
+          "anchor_morphology": 0.6049,
+          "occlusion_resumption": 0.1928
+        },
+        "median_apparent_width_original_px": 10.403,
+        "apparent_width_mad_fraction": 0.3437,
+        "median_signed_center_contrast": 0.6944,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 340.278,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3629,
+        "components": {
+          "paired_boundary": 0.1782,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2948,
+          "anchor_polarity": 0.8699,
+          "anchor_morphology": 0.7504,
+          "occlusion_resumption": 0.3078
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.5317,
+        "median_signed_center_contrast": 0.596,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 356.828,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2827,
+        "components": {
+          "paired_boundary": 0.1597,
+          "width_consistency": 0.0174,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2719,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7611,
+          "occlusion_resumption": 0.2129
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.3734,
+        "median_signed_center_contrast": -0.2165,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.24,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 373.378,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2901,
+        "components": {
+          "paired_boundary": 0.2396,
+          "width_consistency": 0.0174,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.345,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7032,
+          "occlusion_resumption": 0.2066
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.3734,
+        "median_signed_center_contrast": -0.8988,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.48,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 389.928,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3172,
+        "components": {
+          "paired_boundary": 0.2921,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2964,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7885,
+          "occlusion_resumption": 0.2406
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.813,
+        "median_signed_center_contrast": -1.2858,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 406.478,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3272,
+        "components": {
+          "paired_boundary": 0.2024,
+          "width_consistency": 0.3433,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3175,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6917,
+          "occlusion_resumption": 0.1607
+        },
+        "median_apparent_width_original_px": 4.776,
+        "apparent_width_mad_fraction": 0.2495,
+        "median_signed_center_contrast": -0.3623,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 423.028,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2329,
+        "components": {
+          "paired_boundary": 0.1545,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3616,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.5486,
+          "occlusion_resumption": 0.1905
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": -0.2417,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 439.578,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2787,
+        "components": {
+          "paired_boundary": 0.1514,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3559,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6531,
+          "occlusion_resumption": 0.2338
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": -0.308,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.375,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 456.128,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3159,
+        "components": {
+          "paired_boundary": 0.2369,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.4478,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7703,
+          "occlusion_resumption": 0.1926
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": -0.2102,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.52,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 472.679,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2754,
+        "components": {
+          "paired_boundary": 0.2214,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.4101,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6361,
+          "occlusion_resumption": 0.2096
+        },
+        "median_apparent_width_original_px": 12.011,
+        "apparent_width_mad_fraction": 0.3969,
+        "median_signed_center_contrast": -0.146,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.48,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 489.229,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3709,
+        "components": {
+          "paired_boundary": 0.2296,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.155,
+          "axis_coherence": 0.3485,
+          "anchor_polarity": 0.7471,
+          "anchor_morphology": 0.7397,
+          "occlusion_resumption": 0.1395
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.4474,
+        "median_signed_center_contrast": 0.4977,
+        "visible_window_fraction": 0.2,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.24,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 505.779,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3218,
+        "components": {
+          "paired_boundary": 0.2117,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3224,
+          "anchor_polarity": 0.0672,
+          "anchor_morphology": 0.8024,
+          "occlusion_resumption": 0.3099
+        },
+        "median_apparent_width_original_px": 9.599,
+        "apparent_width_mad_fraction": 0.745,
+        "median_signed_center_contrast": -0.0462,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 522.329,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2986,
+        "components": {
+          "paired_boundary": 0.165,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2997,
+          "anchor_polarity": 0.4047,
+          "anchor_morphology": 0.6868,
+          "occlusion_resumption": 0.2197
+        },
+        "median_apparent_width_original_px": 10.001,
+        "apparent_width_mad_fraction": 0.4767,
+        "median_signed_center_contrast": 0.2237,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5833,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 538.879,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.389,
+        "components": {
+          "paired_boundary": 0.2243,
+          "width_consistency": 0.2868,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2899,
+          "anchor_polarity": 0.8065,
+          "anchor_morphology": 0.7156,
+          "occlusion_resumption": 0.2883
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.271,
+        "median_signed_center_contrast": 0.5452,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4167,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 555.429,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2935,
+        "components": {
+          "paired_boundary": 0.1744,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2908,
+          "anchor_polarity": 0.2268,
+          "anchor_morphology": 0.7014,
+          "occlusion_resumption": 0.2667
+        },
+        "median_apparent_width_original_px": 7.589,
+        "apparent_width_mad_fraction": 0.5496,
+        "median_signed_center_contrast": 0.0815,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.48,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 571.979,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.286,
+        "components": {
+          "paired_boundary": 0.217,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2606,
+          "anchor_polarity": 0.024,
+          "anchor_morphology": 0.7242,
+          "occlusion_resumption": 0.2549
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.522,
+        "median_signed_center_contrast": -0.0808,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.44,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 588.529,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3334,
+        "components": {
+          "paired_boundary": 0.085,
+          "width_consistency": 0.0174,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3796,
+          "anchor_polarity": 0.7254,
+          "anchor_morphology": 0.6612,
+          "occlusion_resumption": 0.2495
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.3734,
+        "median_signed_center_contrast": 0.4803,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 605.079,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3141,
+        "components": {
+          "paired_boundary": 0.2307,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.3669,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7246,
+          "occlusion_resumption": 0.1606
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": -0.5443,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 621.63,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3527,
+        "components": {
+          "paired_boundary": 0.1608,
+          "width_consistency": 0.0174,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3689,
+          "anchor_polarity": 0.8759,
+          "anchor_morphology": 0.6427,
+          "occlusion_resumption": 0.2474
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.3734,
+        "median_signed_center_contrast": 0.6007,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4583,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 638.18,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3184,
+        "components": {
+          "paired_boundary": 0.168,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3894,
+          "anchor_polarity": 0.267,
+          "anchor_morphology": 0.7021,
+          "occlusion_resumption": 0.2197
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.4975,
+        "median_signed_center_contrast": 0.1136,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4167,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 654.73,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3312,
+        "components": {
+          "paired_boundary": 0.2252,
+          "width_consistency": 0.3433,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3232,
+          "anchor_polarity": 0.1134,
+          "anchor_morphology": 0.6966,
+          "occlusion_resumption": 0.2044
+        },
+        "median_apparent_width_original_px": 4.776,
+        "apparent_width_mad_fraction": 0.2495,
+        "median_signed_center_contrast": -0.0093,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 671.28,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4053,
+        "components": {
+          "paired_boundary": 0.2402,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.3444,
+          "axis_coherence": 0.2835,
+          "anchor_polarity": 0.7637,
+          "anchor_morphology": 0.7659,
+          "occlusion_resumption": 0.1959
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": 0.511,
+        "visible_window_fraction": 0.4444,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.32,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 687.83,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3209,
+        "components": {
+          "paired_boundary": 0.1137,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.3653,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.8238,
+          "occlusion_resumption": 0.1832
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.6633,
+        "median_signed_center_contrast": -0.7838,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 704.38,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.295,
+        "components": {
+          "paired_boundary": 0.264,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.2222,
+          "axis_coherence": 0.2496,
+          "anchor_polarity": 0.0053,
+          "anchor_morphology": 0.6744,
+          "occlusion_resumption": 0.1064
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.5317,
+        "median_signed_center_contrast": -0.0957,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.2,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 720.93,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3411,
+        "components": {
+          "paired_boundary": 0.2739,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3411,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.8088,
+          "occlusion_resumption": 0.2506
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": -0.2261,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.32,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 737.48,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2762,
+        "components": {
+          "paired_boundary": 0.1947,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3737,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6676,
+          "occlusion_resumption": 0.2277
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.813,
+        "median_signed_center_contrast": -0.2689,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4583,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 754.03,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3131,
+        "components": {
+          "paired_boundary": 0.1685,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.4161,
+          "anchor_polarity": 0.4476,
+          "anchor_morphology": 0.6856,
+          "occlusion_resumption": 0.1878
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.813,
+        "median_signed_center_contrast": 0.258,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 770.581,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3374,
+        "components": {
+          "paired_boundary": 0.1939,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3337,
+          "anchor_polarity": 0.816,
+          "anchor_morphology": 0.7017,
+          "occlusion_resumption": 0.1474
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": 0.5528,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.24,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 787.131,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3477,
+        "components": {
+          "paired_boundary": 0.157,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3787,
+          "anchor_polarity": 0.4525,
+          "anchor_morphology": 0.8264,
+          "occlusion_resumption": 0.2297
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.6711,
+        "median_signed_center_contrast": 0.262,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.44,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 803.681,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3939,
+        "components": {
+          "paired_boundary": 0.179,
+          "width_consistency": 1.0,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.378,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6099,
+          "occlusion_resumption": 0.2378
+        },
+        "median_apparent_width_original_px": 3.972,
+        "apparent_width_mad_fraction": 0.0,
+        "median_signed_center_contrast": -0.1132,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.56,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 820.231,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3747,
+        "components": {
+          "paired_boundary": 0.2179,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.255,
+          "axis_coherence": 0.313,
+          "anchor_polarity": 0.6259,
+          "anchor_morphology": 0.7377,
+          "occlusion_resumption": 0.2029
+        },
+        "median_apparent_width_original_px": 8.393,
+        "apparent_width_mad_fraction": 0.71,
+        "median_signed_center_contrast": 0.4007,
+        "visible_window_fraction": 0.3,
+        "longest_visible_run_fraction": 0.2,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.48,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 836.781,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3598,
+        "components": {
+          "paired_boundary": 0.2047,
+          "width_consistency": 0.6415,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.3257,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6371,
+          "occlusion_resumption": 0.2728
+        },
+        "median_apparent_width_original_px": 4.374,
+        "apparent_width_mad_fraction": 0.1362,
+        "median_signed_center_contrast": -0.3918,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4167,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 853.331,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4204,
+        "components": {
+          "paired_boundary": 0.3382,
+          "width_consistency": 0.2868,
+          "visible_continuity": 0.2222,
+          "axis_coherence": 0.3078,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.6256,
+          "occlusion_resumption": 0.1445
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.271,
+        "median_signed_center_contrast": 1.1124,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 869.881,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4256,
+        "components": {
+          "paired_boundary": 0.2527,
+          "width_consistency": 1.0,
+          "visible_continuity": 0.2222,
+          "axis_coherence": 0.327,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6514,
+          "occlusion_resumption": 0.2044
+        },
+        "median_apparent_width_original_px": 3.972,
+        "apparent_width_mad_fraction": 0.0,
+        "median_signed_center_contrast": -0.3955,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4583,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 886.431,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3114,
+        "components": {
+          "paired_boundary": 0.1216,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2993,
+          "anchor_polarity": 0.4311,
+          "anchor_morphology": 0.7603,
+          "occlusion_resumption": 0.214
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.813,
+        "median_signed_center_contrast": 0.2449,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.48,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 902.981,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3614,
+        "components": {
+          "paired_boundary": 0.1831,
+          "width_consistency": 0.7825,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3139,
+          "anchor_polarity": 0.1397,
+          "anchor_morphology": 0.6375,
+          "occlusion_resumption": 0.1997
+        },
+        "median_apparent_width_original_px": 14.422,
+        "apparent_width_mad_fraction": 0.0826,
+        "median_signed_center_contrast": 0.0118,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 919.532,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3722,
+        "components": {
+          "paired_boundary": 0.1634,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2966,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7669,
+          "occlusion_resumption": 0.2781
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.4065,
+        "median_signed_center_contrast": 0.9182,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.48,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 936.082,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2681,
+        "components": {
+          "paired_boundary": 0.2561,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3215,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.5514,
+          "occlusion_resumption": 0.245
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.5965,
+        "median_signed_center_contrast": -0.3074,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.52,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 952.632,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3615,
+        "components": {
+          "paired_boundary": 0.1675,
+          "width_consistency": 0.5636,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2465,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.8126,
+          "occlusion_resumption": 0.2287
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.1658,
+        "median_signed_center_contrast": -0.1463,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.375,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 969.182,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4248,
+        "components": {
+          "paired_boundary": 0.262,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.2833,
+          "axis_coherence": 0.3038,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7523,
+          "occlusion_resumption": 0.2591
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.5317,
+        "median_signed_center_contrast": 1.0715,
+        "visible_window_fraction": 0.3333,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.6667,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 985.732,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.331,
+        "components": {
+          "paired_boundary": 0.1642,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2884,
+          "anchor_polarity": 0.7101,
+          "anchor_morphology": 0.7256,
+          "occlusion_resumption": 0.2138
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": 0.4681,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 1002.282,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2588,
+        "components": {
+          "paired_boundary": 0.1287,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.187,
+          "anchor_polarity": 0.3213,
+          "anchor_morphology": 0.5902,
+          "occlusion_resumption": 0.1847
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.4065,
+        "median_signed_center_contrast": 0.1571,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 1018.832,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4082,
+        "components": {
+          "paired_boundary": 0.23,
+          "width_consistency": 0.3433,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.2122,
+          "anchor_polarity": 0.9009,
+          "anchor_morphology": 0.7485,
+          "occlusion_resumption": 0.1949
+        },
+        "median_apparent_width_original_px": 4.776,
+        "apparent_width_mad_fraction": 0.2495,
+        "median_signed_center_contrast": 0.6207,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 1035.382,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3196,
+        "components": {
+          "paired_boundary": 0.1862,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2985,
+          "anchor_polarity": 0.7942,
+          "anchor_morphology": 0.6517,
+          "occlusion_resumption": 0.1735
+        },
+        "median_apparent_width_original_px": 10.001,
+        "apparent_width_mad_fraction": 0.5958,
+        "median_signed_center_contrast": 0.5353,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 1051.932,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3729,
+        "components": {
+          "paired_boundary": 0.1203,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.2336,
+          "anchor_polarity": 0.7315,
+          "anchor_morphology": 0.8469,
+          "occlusion_resumption": 0.2895
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.4975,
+        "median_signed_center_contrast": 0.4852,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5217,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 24
+      },
+      {
+        "path_y": 1068.482,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3365,
+        "components": {
+          "paired_boundary": 0.1207,
+          "width_consistency": 0.5394,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2831,
+          "anchor_polarity": 0.2443,
+          "anchor_morphology": 0.6754,
+          "occlusion_resumption": 0.2093
+        },
+        "median_apparent_width_original_px": 13.618,
+        "apparent_width_mad_fraction": 0.175,
+        "median_signed_center_contrast": 0.0954,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5238,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 22
+      },
+      {
+        "path_y": 1085.033,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2412,
+        "components": {
+          "paired_boundary": 0.1873,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2329,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6145,
+          "occlusion_resumption": 0.1978
+        },
+        "median_apparent_width_original_px": 6.786,
+        "apparent_width_mad_fraction": 0.5269,
+        "median_signed_center_contrast": -0.1962,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.45,
+        "longitudinal_window_count": 8,
+        "calibrated_crossing_count": 21
+      },
+      {
+        "path_y": 1101.583,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3599,
+        "components": {
+          "paired_boundary": 0.2013,
+          "width_consistency": 1.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.1797,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6376,
+          "occlusion_resumption": 0.163
+        },
+        "median_apparent_width_original_px": 3.972,
+        "apparent_width_mad_fraction": 0.0,
+        "median_signed_center_contrast": -0.9415,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 8,
+        "calibrated_crossing_count": 19
+      },
+      {
+        "path_y": 1118.133,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 6,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1134.683,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 6,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1151.233,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 5,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1167.783,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 4,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1184.333,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 4,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1200.883,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 3,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1217.433,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 3,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1233.984,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 2,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1250.534,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 2,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1267.084,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 1,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1283.634,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 1,
+        "calibrated_crossing_count": 0
+      }
+    ],
+    "gap_hypotheses_NOT_truth": [
+      {
+        "path_y": 34.101,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 1,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 50.651,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 1,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 67.201,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 2,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 83.751,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 2,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 100.301,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 3,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 116.851,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 4,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 133.401,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 4,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 149.951,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 5,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 166.502,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 5,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 183.052,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 6,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 199.602,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2561,
+        "components": {
+          "paired_boundary": 0.187,
+          "width_consistency": 0.0174,
+          "visible_continuity": 0.1429,
+          "axis_coherence": 0.3476,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.5167,
+          "occlusion_resumption": 0.2431
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.3734,
+        "median_signed_center_contrast": -0.8057,
+        "visible_window_fraction": 0.1429,
+        "longest_visible_run_fraction": 0.1429,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4706,
+        "longitudinal_window_count": 7,
+        "calibrated_crossing_count": 18
+      },
+      {
+        "path_y": 216.152,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4225,
+        "components": {
+          "paired_boundary": 0.307,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.2625,
+          "axis_coherence": 0.3335,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7484,
+          "occlusion_resumption": 0.1589
+        },
+        "median_apparent_width_original_px": 6.786,
+        "apparent_width_mad_fraction": 0.6147,
+        "median_signed_center_contrast": 1.0754,
+        "visible_window_fraction": 0.375,
+        "longest_visible_run_fraction": 0.125,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.2778,
+        "longitudinal_window_count": 8,
+        "calibrated_crossing_count": 19
+      },
+      {
+        "path_y": 232.702,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3659,
+        "components": {
+          "paired_boundary": 0.212,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.4396,
+          "anchor_polarity": 0.8887,
+          "anchor_morphology": 0.6994,
+          "occlusion_resumption": 0.2207
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.5317,
+        "median_signed_center_contrast": 0.611,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4762,
+        "longitudinal_window_count": 8,
+        "calibrated_crossing_count": 22
+      },
+      {
+        "path_y": 249.252,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3665,
+        "components": {
+          "paired_boundary": 0.1176,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.4093,
+          "anchor_polarity": 0.907,
+          "anchor_morphology": 0.7731,
+          "occlusion_resumption": 0.2263
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.5317,
+        "median_signed_center_contrast": 0.6256,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4545,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 23
+      },
+      {
+        "path_y": 265.802,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3414,
+        "components": {
+          "paired_boundary": 0.1488,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3569,
+          "anchor_polarity": 0.503,
+          "anchor_morphology": 0.7507,
+          "occlusion_resumption": 0.2076
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": 0.3024,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.375,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 282.352,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2734,
+        "components": {
+          "paired_boundary": 0.219,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3597,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.626,
+          "occlusion_resumption": 0.2801
+        },
+        "median_apparent_width_original_px": 5.58,
+        "apparent_width_mad_fraction": 0.4272,
+        "median_signed_center_contrast": -1.0835,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.56,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 298.902,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3325,
+        "components": {
+          "paired_boundary": 0.2109,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.155,
+          "axis_coherence": 0.2789,
+          "anchor_polarity": 0.5028,
+          "anchor_morphology": 0.6763,
+          "occlusion_resumption": 0.2333
+        },
+        "median_apparent_width_original_px": 7.589,
+        "apparent_width_mad_fraction": 0.6281,
+        "median_signed_center_contrast": 0.3023,
+        "visible_window_fraction": 0.2,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 315.453,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3828,
+        "components": {
+          "paired_boundary": 0.1991,
+          "width_consistency": 0.0174,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3314,
+          "anchor_polarity": 0.6774,
+          "anchor_morphology": 0.8279,
+          "occlusion_resumption": 0.2009
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.3734,
+        "median_signed_center_contrast": 0.4419,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 332.003,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2799,
+        "components": {
+          "paired_boundary": 0.2099,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.4329,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6403,
+          "occlusion_resumption": 0.2372
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.5317,
+        "median_signed_center_contrast": -0.194,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.52,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 348.553,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4254,
+        "components": {
+          "paired_boundary": 0.1923,
+          "width_consistency": 0.6075,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2177,
+          "anchor_polarity": 0.9168,
+          "anchor_morphology": 0.7845,
+          "occlusion_resumption": 0.1446
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.1491,
+        "median_signed_center_contrast": 0.6334,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.32,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 365.103,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3514,
+        "components": {
+          "paired_boundary": 0.2127,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.2625,
+          "anchor_polarity": 0.4367,
+          "anchor_morphology": 0.7735,
+          "occlusion_resumption": 0.3
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.6633,
+        "median_signed_center_contrast": 0.2494,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.6,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 381.653,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3318,
+        "components": {
+          "paired_boundary": 0.2254,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.313,
+          "anchor_polarity": 0.2206,
+          "anchor_morphology": 0.7528,
+          "occlusion_resumption": 0.2474
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": 0.0765,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.64,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 398.203,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.343,
+        "components": {
+          "paired_boundary": 0.1364,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3912,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.6599,
+          "occlusion_resumption": 0.1992
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.813,
+        "median_signed_center_contrast": 0.9661,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4583,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 414.753,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.357,
+        "components": {
+          "paired_boundary": 0.2611,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3774,
+          "anchor_polarity": 0.5471,
+          "anchor_morphology": 0.6854,
+          "occlusion_resumption": 0.2721
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.542,
+        "median_signed_center_contrast": 0.3377,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5833,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 431.303,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3794,
+        "components": {
+          "paired_boundary": 0.217,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3646,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7536,
+          "occlusion_resumption": 0.2063
+        },
+        "median_apparent_width_original_px": 10.403,
+        "apparent_width_mad_fraction": 0.5728,
+        "median_signed_center_contrast": 0.8619,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4167,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 447.853,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3014,
+        "components": {
+          "paired_boundary": 0.1631,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.444,
+          "anchor_polarity": 0.1308,
+          "anchor_morphology": 0.6951,
+          "occlusion_resumption": 0.2755
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.4065,
+        "median_signed_center_contrast": 0.0047,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.52,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 464.404,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4202,
+        "components": {
+          "paired_boundary": 0.1413,
+          "width_consistency": 0.2868,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.4106,
+          "anchor_polarity": 0.8838,
+          "anchor_morphology": 0.8107,
+          "occlusion_resumption": 0.1404
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.271,
+        "median_signed_center_contrast": 0.607,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.24,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 480.954,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3451,
+        "components": {
+          "paired_boundary": 0.1894,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.3912,
+          "anchor_polarity": 0.317,
+          "anchor_morphology": 0.7674,
+          "occlusion_resumption": 0.2513
+        },
+        "median_apparent_width_original_px": 9.599,
+        "apparent_width_mad_fraction": 0.8691,
+        "median_signed_center_contrast": 0.1536,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.44,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 497.504,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3444,
+        "components": {
+          "paired_boundary": 0.1619,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.4176,
+          "anchor_polarity": 0.65,
+          "anchor_morphology": 0.6685,
+          "occlusion_resumption": 0.2533
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.6633,
+        "median_signed_center_contrast": 0.42,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.44,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 514.054,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3948,
+        "components": {
+          "paired_boundary": 0.3644,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.255,
+          "axis_coherence": 0.3774,
+          "anchor_polarity": 0.5126,
+          "anchor_morphology": 0.7044,
+          "occlusion_resumption": 0.2407
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.4743,
+        "median_signed_center_contrast": 0.3101,
+        "visible_window_fraction": 0.3,
+        "longest_visible_run_fraction": 0.2,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.375,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 530.604,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3468,
+        "components": {
+          "paired_boundary": 0.2798,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.155,
+          "axis_coherence": 0.3292,
+          "anchor_polarity": 0.1028,
+          "anchor_morphology": 0.7999,
+          "occlusion_resumption": 0.1898
+        },
+        "median_apparent_width_original_px": 7.589,
+        "apparent_width_mad_fraction": 0.7067,
+        "median_signed_center_contrast": -0.0178,
+        "visible_window_fraction": 0.2,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.375,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 547.154,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3125,
+        "components": {
+          "paired_boundary": 0.1871,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3699,
+          "anchor_polarity": 0.3077,
+          "anchor_morphology": 0.7194,
+          "occlusion_resumption": 0.2279
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.6633,
+        "median_signed_center_contrast": 0.1462,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 563.704,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4037,
+        "components": {
+          "paired_boundary": 0.2095,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.155,
+          "axis_coherence": 0.2976,
+          "anchor_polarity": 0.8925,
+          "anchor_morphology": 0.8316,
+          "occlusion_resumption": 0.2098
+        },
+        "median_apparent_width_original_px": 5.58,
+        "apparent_width_mad_fraction": 0.4272,
+        "median_signed_center_contrast": 0.614,
+        "visible_window_fraction": 0.2,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 580.254,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3247,
+        "components": {
+          "paired_boundary": 0.2174,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.2831,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.8367,
+          "occlusion_resumption": 0.1853
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": -0.1227,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.24,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 596.804,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3022,
+        "components": {
+          "paired_boundary": 0.1919,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3493,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.778,
+          "occlusion_resumption": 0.2348
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.4474,
+        "median_signed_center_contrast": -0.2936,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.48,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 613.355,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3122,
+        "components": {
+          "paired_boundary": 0.091,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.3271,
+          "anchor_polarity": 0.5007,
+          "anchor_morphology": 0.6866,
+          "occlusion_resumption": 0.1388
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": 0.3006,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.3333,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 629.905,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4102,
+        "components": {
+          "paired_boundary": 0.2737,
+          "width_consistency": 0.1273,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.3572,
+          "anchor_polarity": 0.7051,
+          "anchor_morphology": 0.7495,
+          "occlusion_resumption": 0.274
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.3316,
+        "median_signed_center_contrast": 0.4641,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 646.455,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2728,
+        "components": {
+          "paired_boundary": 0.1898,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.3035,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.567,
+          "occlusion_resumption": 0.3071
+        },
+        "median_apparent_width_original_px": 10.403,
+        "apparent_width_mad_fraction": 0.6874,
+        "median_signed_center_contrast": -0.2171,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5417,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 663.005,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3517,
+        "components": {
+          "paired_boundary": 0.1777,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2898,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7103,
+          "occlusion_resumption": 0.2029
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": 0.8815,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.32,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 679.555,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3366,
+        "components": {
+          "paired_boundary": 0.1561,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3463,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.6534,
+          "occlusion_resumption": 0.171
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.5965,
+        "median_signed_center_contrast": 0.7364,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 696.105,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4147,
+        "components": {
+          "paired_boundary": 0.2765,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.3078,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7863,
+          "occlusion_resumption": 0.1941
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.6633,
+        "median_signed_center_contrast": 1.318,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 712.655,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2941,
+        "components": {
+          "paired_boundary": 0.1404,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3082,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7213,
+          "occlusion_resumption": 0.2879
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": -0.2339,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.64,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 729.205,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3958,
+        "components": {
+          "paired_boundary": 0.1789,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3366,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.8007,
+          "occlusion_resumption": 0.1948
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.4254,
+        "median_signed_center_contrast": 1.4128,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4167,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 745.755,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3163,
+        "components": {
+          "paired_boundary": 0.2891,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.155,
+          "axis_coherence": 0.3849,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.6399,
+          "occlusion_resumption": 0.3004
+        },
+        "median_apparent_width_original_px": 5.982,
+        "apparent_width_mad_fraction": 0.4981,
+        "median_signed_center_contrast": -0.1674,
+        "visible_window_fraction": 0.2,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5417,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 762.305,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.469,
+        "components": {
+          "paired_boundary": 0.266,
+          "width_consistency": 0.3801,
+          "visible_continuity": 0.2,
+          "axis_coherence": 0.3957,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7724,
+          "occlusion_resumption": 0.1917
+        },
+        "median_apparent_width_original_px": 7.589,
+        "apparent_width_mad_fraction": 0.2356,
+        "median_signed_center_contrast": 1.2191,
+        "visible_window_fraction": 0.2,
+        "longest_visible_run_fraction": 0.2,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4167,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 778.856,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3169,
+        "components": {
+          "paired_boundary": 0.2311,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.3961,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7422,
+          "occlusion_resumption": 0.208
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": -0.1981,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.44,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 795.406,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3745,
+        "components": {
+          "paired_boundary": 0.1377,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.3449,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7541,
+          "occlusion_resumption": 0.183
+        },
+        "median_apparent_width_original_px": 6.786,
+        "apparent_width_mad_fraction": 0.4391,
+        "median_signed_center_contrast": 0.8574,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.32,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 811.956,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2972,
+        "components": {
+          "paired_boundary": 0.186,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.3721,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7004,
+          "occlusion_resumption": 0.2297
+        },
+        "median_apparent_width_original_px": 6.786,
+        "apparent_width_mad_fraction": 0.4391,
+        "median_signed_center_contrast": -0.7151,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 828.506,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3378,
+        "components": {
+          "paired_boundary": 0.1579,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3066,
+          "anchor_polarity": 0.7908,
+          "anchor_morphology": 0.6969,
+          "occlusion_resumption": 0.2812
+        },
+        "median_apparent_width_original_px": 10.805,
+        "apparent_width_mad_fraction": 0.4964,
+        "median_signed_center_contrast": 0.5326,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.8,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 845.056,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2821,
+        "components": {
+          "paired_boundary": 0.185,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.2819,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7155,
+          "occlusion_resumption": 0.1336
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": -0.3901,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.25,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 861.606,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3037,
+        "components": {
+          "paired_boundary": 0.1554,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3159,
+          "anchor_polarity": 0.7665,
+          "anchor_morphology": 0.5972,
+          "occlusion_resumption": 0.2118
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.4065,
+        "median_signed_center_contrast": 0.5132,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 878.156,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3877,
+        "components": {
+          "paired_boundary": 0.2107,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.3373,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.8187,
+          "occlusion_resumption": 0.1647
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.813,
+        "median_signed_center_contrast": 0.7591,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.24,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 894.706,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3474,
+        "components": {
+          "paired_boundary": 0.1852,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3799,
+          "anchor_polarity": 0.5908,
+          "anchor_morphology": 0.7017,
+          "occlusion_resumption": 0.2325
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.5317,
+        "median_signed_center_contrast": 0.3727,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.44,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 911.256,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3964,
+        "components": {
+          "paired_boundary": 0.301,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.3118,
+          "anchor_polarity": 0.774,
+          "anchor_morphology": 0.7684,
+          "occlusion_resumption": 0.1906
+        },
+        "median_apparent_width_original_px": 10.403,
+        "apparent_width_mad_fraction": 0.4583,
+        "median_signed_center_contrast": 0.5192,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.44,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 927.807,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4681,
+        "components": {
+          "paired_boundary": 0.1948,
+          "width_consistency": 0.7825,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3471,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.7266,
+          "occlusion_resumption": 0.1302
+        },
+        "median_apparent_width_original_px": 14.422,
+        "apparent_width_mad_fraction": 0.0826,
+        "median_signed_center_contrast": 0.766,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.32,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 944.357,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3426,
+        "components": {
+          "paired_boundary": 0.1651,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.2222,
+          "axis_coherence": 0.2926,
+          "anchor_polarity": 0.3638,
+          "anchor_morphology": 0.7574,
+          "occlusion_resumption": 0.2065
+        },
+        "median_apparent_width_original_px": 11.207,
+        "apparent_width_mad_fraction": 0.4254,
+        "median_signed_center_contrast": 0.1911,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4167,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 960.907,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3341,
+        "components": {
+          "paired_boundary": 0.1917,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3679,
+          "anchor_polarity": 0.2301,
+          "anchor_morphology": 0.7513,
+          "occlusion_resumption": 0.2609
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.7457,
+        "median_signed_center_contrast": 0.0841,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4583,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 977.457,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.255,
+        "components": {
+          "paired_boundary": 0.1327,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.2222,
+          "axis_coherence": 0.3345,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.57,
+          "occlusion_resumption": 0.1163
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.4975,
+        "median_signed_center_contrast": -0.4453,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.1667,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 25
+      },
+      {
+        "path_y": 994.007,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3859,
+        "components": {
+          "paired_boundary": 0.253,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.3171,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.6813,
+          "occlusion_resumption": 0.296
+        },
+        "median_apparent_width_original_px": 10.403,
+        "apparent_width_mad_fraction": 0.6874,
+        "median_signed_center_contrast": 0.715,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.68,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 1010.557,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2849,
+        "components": {
+          "paired_boundary": 0.1641,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.2673,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.662,
+          "occlusion_resumption": 0.2708
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.6633,
+        "median_signed_center_contrast": -0.1903,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.52,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 1027.107,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3696,
+        "components": {
+          "paired_boundary": 0.1432,
+          "width_consistency": 0.3433,
+          "visible_continuity": 0.1,
+          "axis_coherence": 0.3091,
+          "anchor_polarity": 0.5042,
+          "anchor_morphology": 0.7377,
+          "occlusion_resumption": 0.1938
+        },
+        "median_apparent_width_original_px": 4.776,
+        "apparent_width_mad_fraction": 0.2495,
+        "median_signed_center_contrast": 0.3033,
+        "visible_window_fraction": 0.1,
+        "longest_visible_run_fraction": 0.1,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.44,
+        "longitudinal_window_count": 10,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 1043.657,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.2499,
+        "components": {
+          "paired_boundary": 0.1515,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.2545,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.5665,
+          "occlusion_resumption": 0.2924
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.5965,
+        "median_signed_center_contrast": -0.9962,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.56,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26
+      },
+      {
+        "path_y": 1060.207,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3432,
+        "components": {
+          "paired_boundary": 0.1761,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2002,
+          "anchor_polarity": 0.9137,
+          "anchor_morphology": 0.7419,
+          "occlusion_resumption": 0.2152
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.6633,
+        "median_signed_center_contrast": 0.631,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.2273,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 23
+      },
+      {
+        "path_y": 1076.758,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4308,
+        "components": {
+          "paired_boundary": 0.2981,
+          "width_consistency": 0.7543,
+          "visible_continuity": 0.25,
+          "axis_coherence": 0.3076,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7458,
+          "occlusion_resumption": 0.2077
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.0933,
+        "median_signed_center_contrast": -0.1194,
+        "visible_window_fraction": 0.25,
+        "longest_visible_run_fraction": 0.25,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.381,
+        "longitudinal_window_count": 8,
+        "calibrated_crossing_count": 22
+      },
+      {
+        "path_y": 1093.308,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.352,
+        "components": {
+          "paired_boundary": 0.1688,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.125,
+          "axis_coherence": 0.2301,
+          "anchor_polarity": 1.0,
+          "anchor_morphology": 0.6705,
+          "occlusion_resumption": 0.2222
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.4667,
+        "median_signed_center_contrast": 0.9402,
+        "visible_window_fraction": 0.125,
+        "longest_visible_run_fraction": 0.125,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.5789,
+        "longitudinal_window_count": 8,
+        "calibrated_crossing_count": 20
+      },
+      {
+        "path_y": 1109.858,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.271,
+        "components": {
+          "paired_boundary": 0.1723,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.1166,
+          "anchor_polarity": 0.1538,
+          "anchor_morphology": 0.7343,
+          "occlusion_resumption": 0.2279
+        },
+        "median_apparent_width_original_px": 7.187,
+        "apparent_width_mad_fraction": 0.6633,
+        "median_signed_center_contrast": 0.0231,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.4444,
+        "longitudinal_window_count": 7,
+        "calibrated_crossing_count": 19
+      },
+      {
+        "path_y": 1126.408,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 6,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1142.958,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 5,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1159.508,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 5,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1176.058,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 4,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1192.608,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 4,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1209.158,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 3,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1225.709,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 3,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1242.259,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 2,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1258.809,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 2,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1275.359,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 1,
+        "calibrated_crossing_count": 0
+      },
+      {
+        "path_y": 1291.909,
+        "status": "INSUFFICIENT_VALID_PIXELS",
+        "score": 0.0,
+        "longitudinal_window_count": 1,
+        "calibrated_crossing_count": 0
+      }
+    ],
+    "twill_texture_hypotheses_NOT_truth": [
+      {
+        "point_xy": [
+          576.525,
+          641.899
+        ],
+        "axis_deg_in_A_rectified_image": 19.5,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3993,
+        "components": {
+          "paired_boundary": 0.2263,
+          "width_consistency": 0.2151,
+          "visible_continuity": 0.2222,
+          "axis_coherence": 0.4588,
+          "anchor_polarity": 0.9969,
+          "anchor_morphology": 0.5844,
+          "occlusion_resumption": 0.1488
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.2983,
+        "median_signed_center_contrast": 0.6975,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.0909,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 23
+      },
+      {
+        "point_xy": [
+          571.0,
+          657.5
+        ],
+        "axis_deg_in_A_rectified_image": 19.5,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4035,
+        "components": {
+          "paired_boundary": 0.2183,
+          "width_consistency": 0.7825,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.4688,
+          "anchor_polarity": 0.3005,
+          "anchor_morphology": 0.6904,
+          "occlusion_resumption": 0.1046
+        },
+        "median_apparent_width_original_px": 14.422,
+        "apparent_width_mad_fraction": 0.0826,
+        "median_signed_center_contrast": 0.1404,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.1818,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 23
+      },
+      {
+        "point_xy": [
+          565.475,
+          673.101
+        ],
+        "axis_deg_in_A_rectified_image": 19.5,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.4469,
+        "components": {
+          "paired_boundary": 0.264,
+          "width_consistency": 0.7825,
+          "visible_continuity": 0.1722,
+          "axis_coherence": 0.4116,
+          "anchor_polarity": 0.43,
+          "anchor_morphology": 0.7059,
+          "occlusion_resumption": 0.14
+        },
+        "median_apparent_width_original_px": 14.422,
+        "apparent_width_mad_fraction": 0.0826,
+        "median_signed_center_contrast": 0.244,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.0909,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 23
+      }
+    ],
+    "verified_physical_yarn_count": null,
+    "limitations": [
+      "A1/A2 paths are approximate physical-yarn references, not visible centerline masks.",
+      "Generated gap/twill competitors are hypotheses until independently human reviewed.",
+      "A local double boundary alone can also be produced by a dark gap or printed stripe.",
+      "No roots/cm or whole-image actual-yarn count is produced."
+    ]
+  },
+  "independent_A3_evaluation": {
+    "status": "ABSTAIN_COMPETING_HYPOTHESES_NOT_SEPARATED",
+    "evaluation_role": "A3_HOLDOUT_APPROXIMATE_PHYSICAL_YARN_REFERENCE",
+    "used_for_inference": false,
+    "used_for_feature_selection_or_threshold_tuning": false,
+    "fabric_split": "DEVELOPMENT_FEATURE_SELECTION",
+    "a3_is_visible_pixel_ground_truth": false,
+    "a3_rectified_mean_y": 387.244,
+    "nearest_physical_lattice_hypothesis_y": 389.928,
+    "nearest_half_phase_gap_hypothesis_y": 381.653,
+    "physical_reference_hypothesis_score": 0.3172,
+    "gap_competitor_score": 0.3318,
+    "twill_competitor_score": 0.3993,
+    "competition_margin": -0.0821,
+    "period_counterexample_status": "ABSTAIN_WRONG_PERIOD_OR_PHASE_COMPETITION",
+    "automated_reference_support": false,
+    "independent_human_patch_review": "PENDING",
+    "physical_identity_verified": false,
+    "selected_records": {
+      "physical": {
+        "path_y": 389.928,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3172,
+        "components": {
+          "paired_boundary": 0.2921,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.0,
+          "axis_coherence": 0.2964,
+          "anchor_polarity": 0.0,
+          "anchor_morphology": 0.7885,
+          "occlusion_resumption": 0.2406
+        },
+        "median_apparent_width_original_px": 8.795,
+        "apparent_width_mad_fraction": 0.813,
+        "median_signed_center_contrast": -1.2858,
+        "visible_window_fraction": 0.0,
+        "longest_visible_run_fraction": 0.0,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.36,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26,
+        "crossings": [
+          {
+            "xy": [
+              252.7,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.212,
+              0.292,
+              0.023
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.024
+          },
+          {
+            "xy": [
+              286.07,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.153,
+              0.049,
+              0.268
+            ],
+            "symmetric_resumption": 0.104,
+            "orientation_dominance_A_minus_B": 0.118
+          },
+          {
+            "xy": [
+              319.43,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.301,
+              0.025,
+              0.186
+            ],
+            "symmetric_resumption": 0.162,
+            "orientation_dominance_A_minus_B": -0.028
+          },
+          {
+            "xy": [
+              352.8,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.068,
+              0.153,
+              0.31
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.06
+          },
+          {
+            "xy": [
+              386.17,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.174,
+              0.205,
+              0.164
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.005
+          },
+          {
+            "xy": [
+              419.53,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.202,
+              0.065,
+              0.308
+            ],
+            "symmetric_resumption": 0.137,
+            "orientation_dominance_A_minus_B": -0.097
+          },
+          {
+            "xy": [
+              452.9,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.38,
+              0.158,
+              0.129
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.012
+          },
+          {
+            "xy": [
+              486.26,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.29,
+              0.421,
+              0.207
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.144
+          },
+          {
+            "xy": [
+              519.63,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.134,
+              0.092,
+              0.047
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.025
+          },
+          {
+            "xy": [
+              552.99,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.093,
+              0.138,
+              0.198
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.076
+          },
+          {
+            "xy": [
+              586.36,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.004,
+              0.089,
+              0.0
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.114
+          },
+          {
+            "xy": [
+              619.72,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.325,
+              0.596,
+              0.301
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.088
+          },
+          {
+            "xy": [
+              653.09,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.243,
+              0.259,
+              0.054
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.045
+          },
+          {
+            "xy": [
+              686.46,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.193,
+              0.495,
+              0.039
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.127
+          },
+          {
+            "xy": [
+              719.82,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.301,
+              0.316,
+              0.276
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.007
+          },
+          {
+            "xy": [
+              753.19,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.168,
+              0.338,
+              0.37
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.041
+          },
+          {
+            "xy": [
+              786.55,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.316,
+              0.149,
+              0.3
+            ],
+            "symmetric_resumption": 0.151,
+            "orientation_dominance_A_minus_B": 0.096
+          },
+          {
+            "xy": [
+              819.92,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.259,
+              0.822,
+              0.24
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.027
+          },
+          {
+            "xy": [
+              853.28,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.237,
+              0.374,
+              0.38
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.125
+          },
+          {
+            "xy": [
+              886.65,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.304,
+              0.257,
+              0.412
+            ],
+            "symmetric_resumption": 0.047,
+            "orientation_dominance_A_minus_B": 0.084
+          },
+          {
+            "xy": [
+              920.01,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.298,
+              0.229,
+              0.531
+            ],
+            "symmetric_resumption": 0.069,
+            "orientation_dominance_A_minus_B": 0.091
+          },
+          {
+            "xy": [
+              953.38,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.26,
+              0.152,
+              0.273
+            ],
+            "symmetric_resumption": 0.108,
+            "orientation_dominance_A_minus_B": 0.111
+          },
+          {
+            "xy": [
+              986.75,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.11,
+              0.028,
+              0.092
+            ],
+            "symmetric_resumption": 0.064,
+            "orientation_dominance_A_minus_B": 0.074
+          },
+          {
+            "xy": [
+              1020.11,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.296,
+              0.033,
+              0.29
+            ],
+            "symmetric_resumption": 0.257,
+            "orientation_dominance_A_minus_B": 0.039
+          },
+          {
+            "xy": [
+              1053.48,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.206,
+              0.234,
+              0.307
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.14
+          },
+          {
+            "xy": [
+              1086.84,
+              389.93
+            ],
+            "left_center_right_boundary": [
+              0.112,
+              0.062,
+              0.233
+            ],
+            "symmetric_resumption": 0.05,
+            "orientation_dominance_A_minus_B": 0.063
+          }
+        ]
+      },
+      "gap": {
+        "path_y": 381.653,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3318,
+        "components": {
+          "paired_boundary": 0.2254,
+          "width_consistency": 0.0,
+          "visible_continuity": 0.1111,
+          "axis_coherence": 0.313,
+          "anchor_polarity": 0.2206,
+          "anchor_morphology": 0.7528,
+          "occlusion_resumption": 0.2474
+        },
+        "median_apparent_width_original_px": 6.384,
+        "apparent_width_mad_fraction": 0.5601,
+        "median_signed_center_contrast": 0.0765,
+        "visible_window_fraction": 0.1111,
+        "longest_visible_run_fraction": 0.1111,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.64,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 26,
+        "crossings": [
+          {
+            "xy": [
+              252.99,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.146,
+              0.242,
+              0.263
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.042
+          },
+          {
+            "xy": [
+              286.35,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.307,
+              0.329,
+              0.352
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.118
+          },
+          {
+            "xy": [
+              319.72,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.178,
+              0.491,
+              0.19
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.009
+          },
+          {
+            "xy": [
+              353.08,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.37,
+              0.25,
+              0.116
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.129
+          },
+          {
+            "xy": [
+              386.45,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.149,
+              0.147,
+              0.408
+            ],
+            "symmetric_resumption": 0.002,
+            "orientation_dominance_A_minus_B": 0.023
+          },
+          {
+            "xy": [
+              419.82,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.0,
+              0.39,
+              0.117
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.011
+          },
+          {
+            "xy": [
+              453.18,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.139,
+              0.114,
+              0.171
+            ],
+            "symmetric_resumption": 0.024,
+            "orientation_dominance_A_minus_B": 0.074
+          },
+          {
+            "xy": [
+              486.55,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.417,
+              0.393,
+              0.191
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.037
+          },
+          {
+            "xy": [
+              519.91,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.01,
+              0.118,
+              0.199
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.072
+          },
+          {
+            "xy": [
+              553.28,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.115,
+              0.0,
+              0.201
+            ],
+            "symmetric_resumption": 0.115,
+            "orientation_dominance_A_minus_B": -0.011
+          },
+          {
+            "xy": [
+              586.64,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.185,
+              0.119,
+              0.343
+            ],
+            "symmetric_resumption": 0.065,
+            "orientation_dominance_A_minus_B": -0.131
+          },
+          {
+            "xy": [
+              620.01,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.307,
+              0.0,
+              0.221
+            ],
+            "symmetric_resumption": 0.221,
+            "orientation_dominance_A_minus_B": -0.004
+          },
+          {
+            "xy": [
+              653.37,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.367,
+              0.25,
+              0.458
+            ],
+            "symmetric_resumption": 0.117,
+            "orientation_dominance_A_minus_B": 0.093
+          },
+          {
+            "xy": [
+              686.74,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.059,
+              0.058,
+              0.23
+            ],
+            "symmetric_resumption": 0.002,
+            "orientation_dominance_A_minus_B": -0.003
+          },
+          {
+            "xy": [
+              720.11,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.354,
+              0.152,
+              0.07
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.069
+          },
+          {
+            "xy": [
+              753.47,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.179,
+              0.102,
+              0.012
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.078
+          },
+          {
+            "xy": [
+              786.84,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.181,
+              0.189,
+              0.725
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.03
+          },
+          {
+            "xy": [
+              820.2,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.827,
+              0.187,
+              0.215
+            ],
+            "symmetric_resumption": 0.028,
+            "orientation_dominance_A_minus_B": -0.062
+          },
+          {
+            "xy": [
+              853.57,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.131,
+              0.11,
+              0.144
+            ],
+            "symmetric_resumption": 0.021,
+            "orientation_dominance_A_minus_B": 0.192
+          },
+          {
+            "xy": [
+              886.93,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.199,
+              0.138,
+              0.114
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.132
+          },
+          {
+            "xy": [
+              920.3,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.127,
+              0.091,
+              0.191
+            ],
+            "symmetric_resumption": 0.036,
+            "orientation_dominance_A_minus_B": 0.042
+          },
+          {
+            "xy": [
+              953.66,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.353,
+              0.004,
+              0.0
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.004
+          },
+          {
+            "xy": [
+              987.03,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.029,
+              0.077,
+              0.548
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.079
+          },
+          {
+            "xy": [
+              1020.4,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.135,
+              0.278,
+              0.106
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.091
+          },
+          {
+            "xy": [
+              1053.76,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.275,
+              0.064,
+              0.03
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": -0.026
+          },
+          {
+            "xy": [
+              1087.13,
+              381.65
+            ],
+            "left_center_right_boundary": [
+              0.084,
+              0.108,
+              0.146
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.125
+          }
+        ]
+      },
+      "twill": {
+        "point_xy": [
+          576.525,
+          641.899
+        ],
+        "axis_deg_in_A_rectified_image": 19.5,
+        "status": "SCORED_LOCAL_ENTITY_HYPOTHESIS",
+        "score": 0.3993,
+        "components": {
+          "paired_boundary": 0.2263,
+          "width_consistency": 0.2151,
+          "visible_continuity": 0.2222,
+          "axis_coherence": 0.4588,
+          "anchor_polarity": 0.9969,
+          "anchor_morphology": 0.5844,
+          "occlusion_resumption": 0.1488
+        },
+        "median_apparent_width_original_px": 7.991,
+        "apparent_width_mad_fraction": 0.2983,
+        "median_signed_center_contrast": 0.6975,
+        "visible_window_fraction": 0.2222,
+        "longest_visible_run_fraction": 0.2222,
+        "topology_status": "OBSERVED_COMPETING_ORIENTATION_SEQUENCE",
+        "orientation_dominance_transition_fraction": 0.0909,
+        "longitudinal_window_count": 9,
+        "calibrated_crossing_count": 23,
+        "crossings": [
+          {
+            "xy": [
+              215.07,
+              513.9
+            ],
+            "left_center_right_boundary": [
+              0.076,
+              0.363,
+              0.017
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.01
+          },
+          {
+            "xy": [
+              248.03,
+              525.57
+            ],
+            "left_center_right_boundary": [
+              0.112,
+              0.281,
+              0.02
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.028
+          },
+          {
+            "xy": [
+              281.0,
+              537.25
+            ],
+            "left_center_right_boundary": [
+              0.36,
+              0.054,
+              0.058
+            ],
+            "symmetric_resumption": 0.004,
+            "orientation_dominance_A_minus_B": 0.139
+          },
+          {
+            "xy": [
+              313.96,
+              548.92
+            ],
+            "left_center_right_boundary": [
+              0.423,
+              0.127,
+              0.014
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.118
+          },
+          {
+            "xy": [
+              346.93,
+              560.59
+            ],
+            "left_center_right_boundary": [
+              0.248,
+              0.33,
+              0.012
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.215
+          },
+          {
+            "xy": [
+              379.89,
+              572.27
+            ],
+            "left_center_right_boundary": [
+              0.138,
+              0.522,
+              0.291
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.144
+          },
+          {
+            "xy": [
+              412.85,
+              583.94
+            ],
+            "left_center_right_boundary": [
+              0.263,
+              0.487,
+              0.168
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.109
+          },
+          {
+            "xy": [
+              445.82,
+              595.61
+            ],
+            "left_center_right_boundary": [
+              0.332,
+              0.2,
+              0.389
+            ],
+            "symmetric_resumption": 0.133,
+            "orientation_dominance_A_minus_B": -0.018
+          },
+          {
+            "xy": [
+              478.78,
+              607.29
+            ],
+            "left_center_right_boundary": [
+              0.178,
+              0.094,
+              0.205
+            ],
+            "symmetric_resumption": 0.085,
+            "orientation_dominance_A_minus_B": 0.051
+          },
+          {
+            "xy": [
+              511.75,
+              618.96
+            ],
+            "left_center_right_boundary": [
+              0.322,
+              0.188,
+              0.461
+            ],
+            "symmetric_resumption": 0.135,
+            "orientation_dominance_A_minus_B": 0.175
+          },
+          {
+            "xy": [
+              544.71,
+              630.63
+            ],
+            "left_center_right_boundary": [
+              0.332,
+              0.387,
+              0.297
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.089
+          },
+          {
+            "xy": [
+              577.67,
+              642.31
+            ],
+            "left_center_right_boundary": [
+              0.124,
+              0.101,
+              0.174
+            ],
+            "symmetric_resumption": 0.023,
+            "orientation_dominance_A_minus_B": 0.024
+          },
+          {
+            "xy": [
+              610.64,
+              653.98
+            ],
+            "left_center_right_boundary": [
+              0.207,
+              0.092,
+              0.12
+            ],
+            "symmetric_resumption": 0.028,
+            "orientation_dominance_A_minus_B": 0.088
+          },
+          {
+            "xy": [
+              643.6,
+              665.65
+            ],
+            "left_center_right_boundary": [
+              0.013,
+              0.077,
+              0.0
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.148
+          },
+          {
+            "xy": [
+              676.56,
+              677.33
+            ],
+            "left_center_right_boundary": [
+              0.0,
+              0.01,
+              0.146
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.106
+          },
+          {
+            "xy": [
+              709.53,
+              689.0
+            ],
+            "left_center_right_boundary": [
+              0.003,
+              0.145,
+              0.137
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.141
+          },
+          {
+            "xy": [
+              742.49,
+              700.67
+            ],
+            "left_center_right_boundary": [
+              0.131,
+              0.177,
+              0.023
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.105
+          },
+          {
+            "xy": [
+              775.46,
+              712.34
+            ],
+            "left_center_right_boundary": [
+              0.093,
+              0.05,
+              0.0
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.15
+          },
+          {
+            "xy": [
+              808.42,
+              724.02
+            ],
+            "left_center_right_boundary": [
+              0.261,
+              0.039,
+              0.193
+            ],
+            "symmetric_resumption": 0.153,
+            "orientation_dominance_A_minus_B": 0.013
+          },
+          {
+            "xy": [
+              841.38,
+              735.69
+            ],
+            "left_center_right_boundary": [
+              0.055,
+              0.234,
+              0.073
+            ],
+            "symmetric_resumption": 0.0,
+            "orientation_dominance_A_minus_B": 0.112
+          },
+          {
+            "xy": [
+              874.35,
+              747.36
+            ],
+            "left_center_right_boundary": [
+              0.147,
+              0.011,
+              0.062
+            ],
+            "symmetric_resumption": 0.051,
+            "orientation_dominance_A_minus_B": 0.17
+          },
+          {
+            "xy": [
+              907.31,
+              759.04
+            ],
+            "left_center_right_boundary": [
+              0.157,
+              0.153,
+              0.225
+            ],
+            "symmetric_resumption": 0.004,
+            "orientation_dominance_A_minus_B": 0.247
+          },
+          {
+            "xy": [
+              940.27,
+              770.71
+            ],
+            "left_center_right_boundary": [
+              0.169,
+              0.091,
+              0.272
+            ],
+            "symmetric_resumption": 0.078,
+            "orientation_dominance_A_minus_B": 0.102
+          }
+        ]
+      }
+    }
+  }
+}

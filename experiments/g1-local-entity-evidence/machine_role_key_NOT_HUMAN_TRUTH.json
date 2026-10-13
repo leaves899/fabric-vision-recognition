@@ -1,0 +1,125 @@
+{
+  "warning": "Machine candidate roles are not human ground truth; keep this key sealed during review.",
+  "entries": [
+    {
+      "blind_patch_id": "2711336D06",
+      "sample_id": "U20261013_01",
+      "display_panel": "physical",
+      "candidate_role_for_machine_audit_NOT_truth": "physical",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 1
+    },
+    {
+      "blind_patch_id": "11C4D3BDED",
+      "sample_id": "U20261013_01",
+      "display_panel": "gap",
+      "candidate_role_for_machine_audit_NOT_truth": "gap",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 0
+    },
+    {
+      "blind_patch_id": "AA1CB87226",
+      "sample_id": "U20261013_01",
+      "display_panel": "twill",
+      "candidate_role_for_machine_audit_NOT_truth": "twill",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 2
+    },
+    {
+      "blind_patch_id": "2A5D70F5E3",
+      "sample_id": "U20261013_02",
+      "display_panel": "physical",
+      "candidate_role_for_machine_audit_NOT_truth": "physical",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 0
+    },
+    {
+      "blind_patch_id": "42E532FA61",
+      "sample_id": "U20261013_02",
+      "display_panel": "gap",
+      "candidate_role_for_machine_audit_NOT_truth": "gap",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 1
+    },
+    {
+      "blind_patch_id": "E322F2174C",
+      "sample_id": "U20261013_02",
+      "display_panel": "twill",
+      "candidate_role_for_machine_audit_NOT_truth": "twill",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 2
+    },
+    {
+      "blind_patch_id": "83ED1BCCDA",
+      "sample_id": "U20261013_03",
+      "display_panel": "physical",
+      "candidate_role_for_machine_audit_NOT_truth": "physical",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 0
+    },
+    {
+      "blind_patch_id": "A65112F447",
+      "sample_id": "U20261013_03",
+      "display_panel": "gap",
+      "candidate_role_for_machine_audit_NOT_truth": "gap",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 2
+    },
+    {
+      "blind_patch_id": "9F4C62091A",
+      "sample_id": "U20261013_03",
+      "display_panel": "twill",
+      "candidate_role_for_machine_audit_NOT_truth": "twill",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 1
+    },
+    {
+      "blind_patch_id": "AA3AD53D54",
+      "sample_id": "U20261013_05",
+      "display_panel": "physical",
+      "candidate_role_for_machine_audit_NOT_truth": "physical",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 0
+    },
+    {
+      "blind_patch_id": "C7E9E24E49",
+      "sample_id": "U20261013_05",
+      "display_panel": "gap",
+      "candidate_role_for_machine_audit_NOT_truth": "gap",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 1
+    },
+    {
+      "blind_patch_id": "DC7975080A",
+      "sample_id": "U20261013_05",
+      "display_panel": "twill",
+      "candidate_role_for_machine_audit_NOT_truth": "twill",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 2
+    },
+    {
+      "blind_patch_id": "4D0F868DE6",
+      "sample_id": "U20261013_06",
+      "display_panel": "physical",
+      "candidate_role_for_machine_audit_NOT_truth": "physical",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 1
+    },
+    {
+      "blind_patch_id": "9F130DEE0A",
+      "sample_id": "U20261013_06",
+      "display_panel": "gap",
+      "candidate_role_for_machine_audit_NOT_truth": "gap",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 2
+    },
+    {
+      "blind_patch_id": "44A92CBC90",
+      "sample_id": "U20261013_06",
+      "display_panel": "twill",
+      "candidate_role_for_machine_audit_NOT_truth": "twill",
+      "review_state": "PENDING",
+      "blind_review_panel_index_left_to_right": 0
+    }
+  ]
+}

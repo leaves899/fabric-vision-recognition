@@ -1,0 +1,81 @@
+{
+  "goal": "G1_LOCAL_ENTITY_OCCLUSION_COMPETING_HYPOTHESES",
+  "g1_verdict": "G1_NOT_EVALUATED",
+  "verdict_reason": "Independent fabric A3 references are approximate physical trajectories, not visible-pixel positive masks, and generated gap/twill negatives have not received blind human review.",
+  "development_fabrics": [
+    "U20261013_01",
+    "U20261013_03"
+  ],
+  "independent_validation_fabrics": [
+    "U20261013_02",
+    "U20261013_05",
+    "U20261013_06"
+  ],
+  "independent_fabrics_with_automated_reference_preference_NOT_accuracy": 0,
+  "independent_fabric_count": 3,
+  "independent_human_review_complete": false,
+  "accuracy_or_error_rate_evaluable": false,
+  "candidate_counts_are_not_actual_yarn_counts": true,
+  "results": [
+    {
+      "sample_id": "U20261013_01",
+      "split": "DEVELOPMENT_FEATURE_SELECTION",
+      "a3_status": "ABSTAIN_COMPETING_HYPOTHESES_NOT_SEPARATED",
+      "physical_reference_hypothesis_score": 0.3172,
+      "gap_competitor_score": 0.3318,
+      "twill_competitor_score": 0.3993,
+      "competition_margin": -0.0821,
+      "automated_reference_support": false,
+      "independent_human_patch_review": "PENDING",
+      "physical_identity_verified": false
+    },
+    {
+      "sample_id": "U20261013_02",
+      "split": "INDEPENDENT_FABRIC_VALIDATION",
+      "a3_status": "ABSTAIN_COMPETING_HYPOTHESES_NOT_SEPARATED",
+      "physical_reference_hypothesis_score": 0.335,
+      "gap_competitor_score": 0.312,
+      "twill_competitor_score": 0.3144,
+      "competition_margin": 0.0206,
+      "automated_reference_support": false,
+      "independent_human_patch_review": "PENDING",
+      "physical_identity_verified": false
+    },
+    {
+      "sample_id": "U20261013_03",
+      "split": "DEVELOPMENT_FEATURE_SELECTION",
+      "a3_status": "ABSTAIN_COMPETING_HYPOTHESES_NOT_SEPARATED",
+      "physical_reference_hypothesis_score": 0.3907,
+      "gap_competitor_score": 0.3518,
+      "twill_competitor_score": 0.4224,
+      "competition_margin": -0.0317,
+      "automated_reference_support": false,
+      "independent_human_patch_review": "PENDING",
+      "physical_identity_verified": false
+    },
+    {
+      "sample_id": "U20261013_05",
+      "split": "INDEPENDENT_FABRIC_VALIDATION",
+      "a3_status": "ABSTAIN_COMPETING_HYPOTHESES_NOT_SEPARATED",
+      "physical_reference_hypothesis_score": 0.3958,
+      "gap_competitor_score": 0.3069,
+      "twill_competitor_score": 0.4125,
+      "competition_margin": -0.0167,
+      "automated_reference_support": false,
+      "independent_human_patch_review": "PENDING",
+      "physical_identity_verified": false
+    },
+    {
+      "sample_id": "U20261013_06",
+      "split": "INDEPENDENT_FABRIC_VALIDATION",
+      "a3_status": "ABSTAIN_COMPETING_HYPOTHESES_NOT_SEPARATED",
+      "physical_reference_hypothesis_score": 0.3799,
+      "gap_competitor_score": 0.2884,
+      "twill_competitor_score": 0.3706,
+      "competition_margin": 0.0093,
+      "automated_reference_support": false,
+      "independent_human_patch_review": "PENDING",
+      "physical_identity_verified": false
+    }
+  ]
+}

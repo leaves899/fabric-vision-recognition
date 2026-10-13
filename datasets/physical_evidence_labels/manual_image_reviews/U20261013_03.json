@@ -1,0 +1,1720 @@
+{
+  "schema_version": "1.0",
+  "sample_id": "U20261013_03",
+  "fabric_id": "USER-U20261013_03",
+  "image_path": "datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked/U20261013_03_center_2x.jpg",
+  "image_sha256": "666b261630fbb5e8c4ec73901bdecfd661c3b10f3d96aceec3d530606e2763ce",
+  "image_width": 1660,
+  "image_height": 2212,
+  "annotation_target": "LOCAL_IMAGE_EVIDENCE_REVIEW",
+  "annotation_source": "PHONE_IMAGE_OPERATOR_REVIEW",
+  "independent_physical_gt": false,
+  "review_state": "DRAFT",
+  "notes": "",
+  "regions": [
+    {
+      "id": "r0001",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            506.667,
+            386.0
+          ],
+          [
+            585.333,
+            357.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0002",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            631.333,
+            341.333
+          ],
+          [
+            692.667,
+            309.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0003",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            740.667,
+            298.667
+          ],
+          [
+            811.333,
+            272.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0004",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            858.667,
+            256.667
+          ],
+          [
+            921.333,
+            229.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0005",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            974.667,
+            216.0
+          ],
+          [
+            1045.333,
+            192.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0006",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1093.333,
+            184.667
+          ],
+          [
+            1154.0,
+            160.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0007",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            482.667,
+            427.333
+          ],
+          [
+            554.0,
+            396.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0008",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            601.333,
+            384.0
+          ],
+          [
+            662.0,
+            359.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0009",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            714.667,
+            334.0
+          ],
+          [
+            778.0,
+            309.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0010",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            823.333,
+            300.0
+          ],
+          [
+            893.333,
+            271.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0011",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            941.333,
+            259.333
+          ],
+          [
+            1014.0,
+            231.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0012",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            565.333,
+            427.333
+          ],
+          [
+            638.0,
+            398.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0013",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            692.667,
+            382.0
+          ],
+          [
+            754.0,
+            356.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0014",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            793.333,
+            345.333
+          ],
+          [
+            869.333,
+            314.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0015",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            916.0,
+            297.333
+          ],
+          [
+            979.333,
+            272.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0016",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            762.667,
+            384.0
+          ],
+          [
+            834.0,
+            355.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0017",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            879.333,
+            336.667
+          ],
+          [
+            955.333,
+            307.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0018",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1003.333,
+            293.333
+          ],
+          [
+            1058.0,
+            265.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0019",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1022.667,
+            259.333
+          ],
+          [
+            1095.333,
+            238.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0020",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1058.667,
+            222.667
+          ],
+          [
+            1132.0,
+            197.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0021",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1154.667,
+            220.0
+          ],
+          [
+            1213.333,
+            201.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0022",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1125.333,
+            253.333
+          ],
+          [
+            1183.333,
+            232.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0023",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            984.0,
+            330.667
+          ],
+          [
+            1030.0,
+            308.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0024",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            858.667,
+            377.333
+          ],
+          [
+            927.333,
+            353.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0025",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            738.667,
+            420.0
+          ],
+          [
+            817.333,
+            396.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0026",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            637.333,
+            458.0
+          ],
+          [
+            683.333,
+            442.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0027",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            663.333,
+            423.333
+          ],
+          [
+            728.0,
+            393.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0028",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            543.333,
+            456.0
+          ],
+          [
+            608.0,
+            442.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0029",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            514.667,
+            495.333
+          ],
+          [
+            581.333,
+            471.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0030",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            536.0,
+            351.333
+          ],
+          [
+            607.333,
+            323.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0031",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            651.333,
+            297.333
+          ],
+          [
+            729.333,
+            272.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0032",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            763.333,
+            258.0
+          ],
+          [
+            832.0,
+            230.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0033",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            877.333,
+            219.333
+          ],
+          [
+            949.333,
+            196.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0034",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1001.333,
+            186.0
+          ],
+          [
+            1076.0,
+            160.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0035",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            422.0,
+            383.333
+          ],
+          [
+            497.333,
+            360.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0036",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            394.667,
+            421.333
+          ],
+          [
+            465.333,
+            396.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0037",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            362.667,
+            462.0
+          ],
+          [
+            440.0,
+            436.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0038",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            446.0,
+            461.333
+          ],
+          [
+            521.333,
+            436.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0039",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            416.667,
+            501.333
+          ],
+          [
+            490.0,
+            476.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0040",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            326.667,
+            499.333
+          ],
+          [
+            412.0,
+            466.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0041",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            390.667,
+            546.0
+          ],
+          [
+            468.0,
+            514.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0042",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            481.333,
+            530.0
+          ],
+          [
+            548.0,
+            513.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0043",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            593.333,
+            498.667
+          ],
+          [
+            655.333,
+            478.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0044",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            711.333,
+            459.333
+          ],
+          [
+            780.0,
+            426.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0045",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            827.333,
+            420.0
+          ],
+          [
+            900.0,
+            391.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0046",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            931.333,
+            377.333
+          ],
+          [
+            1012.0,
+            346.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0047",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1057.333,
+            331.333
+          ],
+          [
+            1121.333,
+            301.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0048",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1083.333,
+            291.333
+          ],
+          [
+            1160.0,
+            267.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0049",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1179.333,
+            295.333
+          ],
+          [
+            1254.0,
+            267.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0050",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            447.333,
+            574.667
+          ],
+          [
+            526.667,
+            545.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0051",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            565.333,
+            535.333
+          ],
+          [
+            645.333,
+            508.0
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0052",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            677.333,
+            500.667
+          ],
+          [
+            759.333,
+            467.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0053",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            795.333,
+            459.333
+          ],
+          [
+            876.0,
+            431.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0054",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            908.0,
+            419.333
+          ],
+          [
+            987.333,
+            388.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0055",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1022.667,
+            378.0
+          ],
+          [
+            1098.0,
+            351.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0056",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1148.0,
+            330.0
+          ],
+          [
+            1223.333,
+            305.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0057",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            408.667,
+            618.0
+          ],
+          [
+            501.333,
+            585.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0058",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            539.333,
+            574.667
+          ],
+          [
+            618.667,
+            547.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0059",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            652.667,
+            538.667
+          ],
+          [
+            730.0,
+            504.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0060",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            771.333,
+            496.667
+          ],
+          [
+            845.333,
+            470.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0061",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            882.667,
+            459.333
+          ],
+          [
+            956.0,
+            433.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0062",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            995.333,
+            416.0
+          ],
+          [
+            1077.333,
+            388.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0063",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1120.0,
+            377.333
+          ],
+          [
+            1198.0,
+            344.0
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0064",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            502.0,
+            621.333
+          ],
+          [
+            592.0,
+            583.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0065",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            622.0,
+            581.333
+          ],
+          [
+            698.0,
+            543.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0066",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            735.333,
+            537.333
+          ],
+          [
+            815.333,
+            508.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0067",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            842.667,
+            496.0
+          ],
+          [
+            933.333,
+            467.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0068",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            964.0,
+            456.667
+          ],
+          [
+            1047.333,
+            429.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0069",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1087.333,
+            418.667
+          ],
+          [
+            1166.0,
+            384.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0070",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1199.333,
+            376.667
+          ],
+          [
+            1270.0,
+            346.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0071",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            472.667,
+            651.333
+          ],
+          [
+            554.667,
+            626.0
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0072",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            590.0,
+            617.333
+          ],
+          [
+            667.333,
+            585.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0073",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            704.0,
+            576.667
+          ],
+          [
+            782.0,
+            551.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0074",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            826.0,
+            536.667
+          ],
+          [
+            905.333,
+            506.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0075",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            952.0,
+            494.667
+          ],
+          [
+            1015.333,
+            463.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0076",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1055.333,
+            457.333
+          ],
+          [
+            1137.333,
+            428.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0077",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1172.0,
+            415.333
+          ],
+          [
+            1252.0,
+            385.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0078",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            435.333,
+            691.333
+          ],
+          [
+            522.0,
+            665.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0079",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            562.0,
+            655.333
+          ],
+          [
+            648.0,
+            625.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0080",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            690.0,
+            611.333
+          ],
+          [
+            763.333,
+            584.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0081",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            799.333,
+            573.333
+          ],
+          [
+            868.0,
+            546.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0082",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            915.333,
+            527.333
+          ],
+          [
+            982.0,
+            507.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0083",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1021.333,
+            491.333
+          ],
+          [
+            1110.0,
+            466.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0084",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            1139.333,
+            458.667
+          ],
+          [
+            1216.0,
+            430.667
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    },
+    {
+      "id": "r0085",
+      "kind": "APPARENT_VISIBLE_YARN",
+      "geometry": {
+        "type": "LINE",
+        "points": [
+          [
+            418.0,
+            734.0
+          ],
+          [
+            494.667,
+            705.333
+          ]
+        ]
+      },
+      "note": "",
+      "physical_identity_confirmed": false,
+      "pixelwise_yarn_mask_gt": false
+    }
+  ],
+  "relations": [],
+  "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
+  "physical_yarn_reference_unchanged": true,
+  "updated_at": "2026-10-13T06:22:44.595892+00:00"
+}
