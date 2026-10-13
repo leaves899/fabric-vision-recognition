@@ -1,6 +1,6 @@
 """Direction-guided IMAGE-ONLY first-family candidate ridge proposals.
 
-User marks infer real PHYSICAL YARN TRAJECTORIES through possible occlusion,
+User marks are PHYSICAL_YARN_REFERENCE labels, each a DISTINCT real physical yarn through occlusion,
 not literal continuously visible yarn segments or pixel-precise centerline GT.
 We may use the marked position to select a field of view, but ridge brightness,
 scale, candidate center, and grid phase must arise independently from pixels.
@@ -168,7 +168,7 @@ def run(root,out):
         angle=axis_deg(ann["segments"]["reference"])
         proposal,visual=score_profile(img,angle)
         proposal.update(sample_id=ann["sample_id"],
-                        annotation_semantics="INFERRED_TRUE_PHYSICAL_YARN_TRAJECTORY_WITH_POSSIBLE_OCCLUSION",
+                        annotation_semantics="INFERRED_TRUE_PHYSICAL_YARN_REFERENCE_WITH_POSSIBLE_OCCLUSION",
                         annotation_coordinates_used_to_fit_center=False,
                         input_fields=["image","reference orientation angle"],
                         no_independent_physical_center_gt=True)
@@ -178,7 +178,7 @@ def run(root,out):
         print(f'{ann["sample_id"]} {proposal["status"]} '
               f'ridges={proposal.get("image_only_candidate_ridge_count",0)}',flush=True)
     (out/"summary.json").write_text(json.dumps({"source_main_sha":"e1b219384224e1d77c79aa108bef3fb51a39ea56",
-        "dataset_semantics":"INFERRED_TRUE_PHYSICAL_YARN_TRAJECTORIES_NOT_CONTINUOUS_VISIBLE_SEGMENTS",
+        "dataset_semantics":"PHYSICAL_YARN_REFERENCE",
         "reviewed":len(data),"results":data,
         "accuracy_evaluable":False,"physical_yarn_count_evaluable":False,
         "caution":"Operator-marked true-yarn paths are approximate geometric tracks through occlusions, not pixelwise centerline ground truth."},

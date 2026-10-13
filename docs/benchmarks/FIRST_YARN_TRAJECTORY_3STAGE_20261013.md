@@ -6,8 +6,8 @@
 
 **已审核的 U20261013_01、02、03、05、06 的人工线表示同一根真实物理纱线的连接/延伸轨迹**，不局限于相机能够直接看见的短纱段：真实纱线在交织处可能被遮挡，操作者据周围结构推断其连续走向。
 
-- `annotation_target = PHYSICAL_YARN_TRAJECTORY`，`path_may_cross_occlusion = true`。
-- 每条轨迹由操作者点击两点，用作真实纱线的**方向先验、近似物理位置及相邻不同真实纱线的间隔关系**。
+- `annotation_target = PHYSICAL_YARN_REFERENCE`，`path_may_cross_occlusion = true`。
+- 每条轨迹由操作者点击两点，用作真实纱线的**方向先验、近似物理位置及不同真实纱线之间经人工数明的间隔关系（不默认相邻）**。
 - **不保证**这两点之间的每个像素都属于直接可见纱线；`visible_pixel_gt_confirmed=false` 且 `centerline_pixel_gt_confirmed=false`。这不是 `VISIBLE_YARN_SEGMENT` 正样本，也不是逐像素中心线标注。
 - 同组不同的 `reference`、`check_same`、`holdout_same` 代表操作者认定的**不同根真实纱线**；B组为 `check_cross`、`check_cross_second`。仍然不能自动判定经/纬物理身份，保留 `UNKNOWN`。
 - `same_family_intervals` / `cross_family_intervals` 是操作者确认的两根不同真实纱线之间间距格数，可以用于粗略物理间距几何校核，但不是算法的自动根数；画线位置为估算，不可充当单纱像素级真值。
@@ -29,9 +29,9 @@
 
 ### 步骤 C：真实纱线几何核验（并非像素准确率）
 
-`benchmark.first_yarn_three_stage` 独立得出候选后，再对照未参与拟合的 `check_same` 与 `holdout_same` 人工**真实物理纱线连接轨迹**的方向、粗略位置以及人工确认的间隔数：
+`benchmark.first_yarn_three_stage` 独立得出候选后，用 `check_same` 和 `same_family_intervals` 完成节距/相位校准，再使用唯一未参与校准的 `holdout_same` 人工**真实物理纱线连接轨迹**的方向、粗略位置以及人工确认的间隔数：
 
-- 检查候选峰是否接近这几条**推断轨迹**，距离标准按候选间距归一化。
+- 把 A1+A2 间隔误差仅记作校准诊断，第三根 A3 保持独立，检查候选峰是否接近这条**留出真实纱线参考**，距离标准按候选间距归一化。
 - 检查参考与第二根标注之间自动候选间隔数和人工纱距格数是否吻合，诊断 `p/2`、`2p` 等混叠。
 - 同时保留选择通道、滤波尺度、候选个数及完整检测叠加图。
 - 这里的对照只是“与操作者推断物理路径的**几何一致性**”，**不是**可见纱段像素 IoU，也不是逐根识别正确率。实验会始终输出 `ABSTAIN_NOT_ENOUGH_VISIBLE_YARN_PIXEL_GT`，直到有独立确认的局部直接可见纱线和非纱线负例。
@@ -56,3 +56,7 @@ python -m benchmark.first_yarn_three_stage --out experiments/first-yarn-3stage
 结果：`experiments/first-yarn-3stage/summary.json`、每张对应 `U20261013_XX.jpg` 双联可视化。实验没有修改冻结V4/V5，不覆盖main，不填造根/cm。
 
 首次运行与后续回放的数字以 GitHub Actions Artifact 为准。
+
+## 2026-10-13 正式评价拆分
+
+A1=`reference` 是图像方向/ROI输入，A2=`check_same` 和 `same_family_intervals` 仅用于校准。**A1+A2的峰计数误差不能再称为独立测试准确率**。A3=`holdout_same` 在校准完成后独立提供轨迹相位残差与邻近图像峰证据，不参与任何阈值、周期、相位或像素外观模板选择。B组两条各是不同真实纱线，排除在当前第一组拟合之外。所有图像峰仍然是表面结构候选，尚无像素级可见纱线真值和真实根数准确率。详情：`PHYSICAL_YARN_REFERENCE_SEMANTICS_AUDIT_20261013.md`。

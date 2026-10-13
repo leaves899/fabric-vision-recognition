@@ -1,3 +1,4 @@
+# NOTE (2026-10-13): U20261013 marked lines are PHYSICAL_YARN_REFERENCE of distinct REAL yarns through possible occlusion; geometric residuals are NOT visible-segment pixel GT. A1/A2 calibration must not be called independent accuracy; A3 holdout only. No cm density from 2x zoom.
 """Geometric diagnostics for manually inferred yarn paths and V4 candidates.
 
 For U20261013 the clicked lines are trajectories of true physical yarns through
@@ -192,7 +193,7 @@ def main(argv=None):
     from v4_adapter import run_v4
     v4=run_v4(image,float(result["direction_evidence"]["v4_adapter_rotation_deg"]))
     analysis=evaluate_tracks(annotation,v4["first"],offset)
-    inferred_physical_path = annotation.get("annotation_target")=="PHYSICAL_YARN_TRAJECTORY"
+    inferred_physical_path = annotation.get("annotation_target")=="PHYSICAL_YARN_REFERENCE"
     report={
         "sample_id":args.id,"status":(
             "INFERRED_REAL_YARN_PATH_GEOMETRY_ONLY" if inferred_physical_path

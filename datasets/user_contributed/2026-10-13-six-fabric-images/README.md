@@ -4,11 +4,13 @@
 
 ## 人工标注语义（2026-10-13 经用户纠正）
 
-**本批次 U20261013_01—06 的标注对象是“真实物理纱线的推断连接轨迹”（`PHYSICAL_YARN_TRAJECTORY`），并不是“照片中直接可见的一小段纱段”（`VISIBLE_YARN_SEGMENT`），也不是任意的斜纹纹理方向。**
+**本批次 U20261013_01—06 的标注对象是“真实物理纱线的推断连接轨迹”（`PHYSICAL_YARN_REFERENCE`），并不是“照片中直接可见的一小段纱段”（`VISIBLE_YARN_SEGMENT`），也不是任意的斜纹纹理方向。**
+
+A 组三条标记各代表不同的真实物理纱线；B组两条代表另一方向的两根不同真实物理纱线。不同标记未必相邻，请用已确认的 `same_family_intervals` / `cross_family_intervals` 表达两条参考间的真实纱距数量。A1+A2用于校准，第三根 `holdout_same` 只用于独立检验。
 
 每组两点表达：操作员判断这两点沿着**同一根真实纱线的物理连续走向**，其中可能有交织遮挡。直线是人工几何近似，不承诺线段上每个像素都属于该纱线，也不是精确中心线的像素级 Ground Truth。两点同时提供方向先验及粗略轨迹位置，但其位置不可直接用于学习像素亮暗模板或定义“可见纱线正样本”；需要另行取得无遮挡可见纱段的小区域正例和纹理/缝隙负例。
 
-本分支为已有的五份人工标注新增 `annotation_target=PHYSICAL_YARN_TRAJECTORY`、`path_may_cross_occlusion=true`、`visible_pixel_gt_confirmed=false` 和 `centerline_pixel_gt_confirmed=false`；不改变原两点、根数间隔、坐标或图像哈希。尚未确认的 U20261013_04 不伪造标注。
+本分支为已有的五份人工标注新增 `annotation_target=PHYSICAL_YARN_REFERENCE`、`path_may_cross_occlusion=true`、`visible_pixel_gt_confirmed=false` 和 `centerline_pixel_gt_confirmed=false`；不改变原两点、根数间隔、坐标或图像哈希。尚未确认的 U20261013_04 不伪造标注。
 
 `reference_confirmed=true` 的含义是操作员确认**真实物理纱线连接关系**，而不是这条连接线上的每一个像素都直接可见。经纬身份仍可能为 `UNKNOWN`。人工纱距间隔可以用于研究校准，不能单独证明算法已识别出所有真实纱线。
 
