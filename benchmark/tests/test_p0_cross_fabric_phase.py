@@ -6,7 +6,7 @@ import numpy as np
 
 from benchmark.p0_cross_fabric_phase import (
     predicted_crossing_centers, oriented_energy_maps,
-    local_dominance, sample_crossing_phase,
+    local_dominance, sample_crossing_phase, fixed_phase_sensitivity_audit,
 )
 
 
@@ -74,6 +74,15 @@ class CrossFabricPhaseTests(unittest.TestCase):
         self.assertIsNotNone(va)
         self.assertIsNotNone(vb)
         self.assertLess(abs(va-vb),.075)
+
+    def test_phase_sweep_is_symmetric_and_cannot_choose_winning_offset(self):
+        result=fixed_phase_sensitivity_audit(stripes(),[[10,130],[250,130]],cal())
+        self.assertEqual(result["preselected_symmetric_fractions"],[-.5,-.25,0.,.25,.5])
+        self.assertEqual(len(result["curve"]),5)
+        self.assertTrue(result["no_parameter_optimization_or_phase_selection"])
+        self.assertFalse(result["actual_physical_crossing_certified"])
+        self.assertTrue(all("best_offset" not in p for p in result["curve"]))
+        self.assertTrue(all(p["proves_B_over_A"] is False for p in result["curve"]))
 
     def test_flat_image_returns_unknown_no_fabricated_phase(self):
         img=np.full((280,280,3),128,np.uint8)
