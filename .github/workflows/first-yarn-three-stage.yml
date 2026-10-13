@@ -17,6 +17,8 @@ on:
       - 'benchmark/tests/test_p0_v5_multitransect_audit.py'
       - 'benchmark/p0_global_yarn_uniqueness.py'
       - 'benchmark/tests/test_p0_global_yarn_uniqueness.py'
+      - 'benchmark/p0_native_occlusion_audit.py'
+      - 'benchmark/tests/test_p0_native_occlusion_audit.py'
       - 'benchmark/p0_physical_connection_identifiability.py'
       - 'benchmark/tests/test_p0_physical_connection_identifiability.py'
       - 'datasets/physical_evidence_labels/operator_confirmations/**'
@@ -49,7 +51,7 @@ jobs:
       - name: Validate input JPG hashes and real physical-yarn trajectory annotations
         run: python -m benchmark.manual_annotation audit
       - name: Check label semantics, image-only detector, alias/holdout and negative tests
-        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence benchmark.tests.test_p0_yarn_evidence benchmark.tests.test_p0_operator_line_audit benchmark.tests.test_p0_occlusion_continuity benchmark.tests.test_p0_cross_fabric_phase benchmark.tests.test_p0_v5_multitransect_audit benchmark.tests.test_p0_global_yarn_uniqueness benchmark.tests.test_p0_physical_connection_identifiability -v
+        run: python -m unittest benchmark.tests.test_manual_annotation benchmark.tests.test_user_zoom_annotation benchmark.tests.test_first_yarn_three_stage benchmark.tests.test_first_yarn_lattice_evidence benchmark.tests.test_p0_yarn_evidence benchmark.tests.test_p0_operator_line_audit benchmark.tests.test_p0_occlusion_continuity benchmark.tests.test_p0_cross_fabric_phase benchmark.tests.test_p0_v5_multitransect_audit benchmark.tests.test_p0_global_yarn_uniqueness benchmark.tests.test_p0_physical_connection_identifiability benchmark.tests.test_p0_native_occlusion_audit -v
       - name: Three-stage real-image experiment on five reviewed samples
         run: python -m benchmark.first_yarn_three_stage --out experiments/first-yarn-3stage
       - name: Four-stage first-family 5-photo physical lattice evidence and A3 holdout
