@@ -26,6 +26,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      # Retry is safe: previously written archive tags are SHA-checked.
       - name: Compile maintenance script (fail before any mutation)
         run: python -m py_compile .github/scripts/archive_branches_2026_10_13.py
       - name: Archive verified SHAs before deleting retired branch refs
