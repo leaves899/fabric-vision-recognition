@@ -33,6 +33,8 @@ class TestV51G1(unittest.TestCase):
             old=np.mean(abs(60+j*pitch-truth))
             err=np.mean(abs(arr[:,1]-truth))
             self.assertLess(err,min(1.5,old*.55))
+            # G1 must not silently replace the lattice's *global* phase.
+            self.assertLess(abs(np.median(arr[:,1]-(60+j*pitch))),1.2)
         self.assertTrue(all(np.mean(np.asarray(new[i+1])[:,1])>np.mean(np.asarray(new[i])[:,1])
                             for i in range(6)))
 
