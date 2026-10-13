@@ -109,6 +109,20 @@ class LocalEvidenceReviewTests(unittest.TestCase):
         self.assertEqual(saved["regions"][1]["geometry"]["type"],"RECT")
         self.assertEqual(load_local_review(self.root,"T001")["regions"][1]["geometry"]["type"],"RECT")
 
+    def test_direction_matched_gap_and_color_short_lines_can_be_saved(self):
+        for kind in ("GAP","COLOR_STRIPE","SHADOW"):
+            self.a["regions"][1]["kind"]=kind
+            self.a["regions"][1]["geometry"]={
+                "type":"LINE","points":[[30,60],[150,110]]}
+            saved=store_local_review(self.root,self.a)
+            self.assertEqual(saved["regions"][1]["geometry"]["type"],"LINE")
+            self.assertEqual(saved["regions"][1]["kind"],kind)
+            self.assertFalse(saved["regions"][1]["physical_identity_confirmed"])
+            self.assertFalse(saved["independent_physical_gt"])
+        self.a["regions"][1]["kind"]="OCCLUSION"
+        with self.assertRaisesRegex(ValueError,"short line"):
+            validate_local_review(self.root,self.a)
+
     def test_only_approved_local_image_categories_can_have_short_line(self):
         self.a["regions"][0]["kind"]="SHADOW"
         with self.assertRaisesRegex(ValueError,"short line"):
