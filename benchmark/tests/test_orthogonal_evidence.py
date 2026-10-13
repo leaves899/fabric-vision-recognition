@@ -1,7 +1,7 @@
 """Small contract tests for research candidate detector; no accuracy GT invented."""
 import unittest
 import numpy as np
-from benchmark.orthogonal_evidence import axis_deg, diff180, get_roi, pitch_from_manual, detect
+from benchmark.orthogonal_evidence import axis_deg, diff180, get_roi, pitch_from_manual, detect, cross_pitch_candidates
 
 
 class OrthogonalEvidenceTests(unittest.TestCase):
@@ -22,6 +22,21 @@ class OrthogonalEvidenceTests(unittest.TestCase):
         roi,orig=get_roi(img,[[650,700],[650,950]],side=500)
         self.assertEqual(roi.shape,(500,500,3))
         self.assertEqual(orig,(400,575))
+
+    def test_one_dimensional_period_hypotheses_on_synthetic_stripes(self):
+        import cv2
+        yy=np.arange(480,dtype=np.float32)[:,None]
+        phase=(2*np.pi/32)*yy
+        shade=(120+46*np.sin(phase)).astype(np.uint8)
+        img=np.repeat(shade,480,axis=1)
+        bgr=cv2.merge([img,img,img])
+        found=cross_pitch_candidates(bgr,90)
+        candidates=[r["period_px"] for r in found["pitch_candidates_px"]]
+        self.assertTrue(any(abs(v-32)<=2 for v in candidates),found)
+        rotated=cv2.rotate(bgr,cv2.ROTATE_90_CLOCKWISE)
+        rotated_found=cross_pitch_candidates(rotated,0)
+        self.assertTrue(any(abs(r["period_px"]-32)<=2
+                            for r in rotated_found["pitch_candidates_px"]),rotated_found)
 
     def test_blank_and_periodic_dots_cannot_count_as_yarn(self):
         plain=np.full((400,400,3),128,dtype=np.uint8)
