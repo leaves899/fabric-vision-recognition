@@ -149,9 +149,9 @@ select{width:100%}
     <strong>① 我能辨认一小段纱线</strong>
     沿着这段可见纱线，依次点起点、终点。<b>只画短段，不跨遮挡</b>。
   </button>
-  <button id="quickTexture" type="button" class="quick-task" data-quick-kind="TWILL_PATTERN" data-quick-tool="rect">
-    <strong>② 像一条纱线，其实是斜纹视觉带</strong>
-    鼠标按住拖动，框住容易被算法误认作单根纱线的纹理。
+  <button id="quickTexture" type="button" class="quick-task" data-quick-kind="TWILL_PATTERN" data-quick-tool="line">
+    <strong>② 沿着疑似斜纹假线画一段</strong>
+    沿着容易被算法误当成一根纱线的斜纹视觉带，依次点击起点、终点。不是框一大片。
   </button>
   <button id="quickUnknown" type="button" class="quick-task" data-quick-kind="UNCERTAIN" data-quick-tool="rect">
     <strong>③ 看不清到底是不是纱线</strong>
@@ -161,7 +161,7 @@ select{width:100%}
 <section class="field">
   <strong>下一步：在左侧照片怎么操作？</strong>
   <div id="localGuide" role="status" aria-live="polite">① 在左侧找一小段能直接看清的纱线；先单击起点，再单击终点。两点之间必须实际可见。</div>
-  <small class="hint">先试做一张照片中的几处区域，点「保存」就可以。②只标有把握的斜纹视觉带；无法排除是纱线时，用③。</small>
+  <small class="hint">①和②都用两点画短线，以便直接对照真实纱线候选与斜纹假线；③仍用矩形。②标的是视觉斜带，不代表带内没有真实纤维。不确定时选③。</small>
   <button id="localUndo" type="button">撤销最近一个标注</button>
   <button id="localClearPending" type="button">取消当前未完成的两个点或关系</button>
 </section>
@@ -171,7 +171,7 @@ select{width:100%}
     <label class="full">更细的标注类别
       <select id="localKind">
         <option value="APPARENT_VISIBLE_YARN">可见纱线短段（待验证）</option>
-        <option value="TWILL_PATTERN">疑似斜纹视觉带</option>
+        <option value="TWILL_PATTERN">疑似斜纹假线 / 纹理视觉带</option>
         <option value="GAP">相邻纱线之间的间隙</option>
         <option value="COLOR_STRIPE">颜色条带</option>
         <option value="SHADOW">阴影或反光</option>
@@ -182,7 +182,7 @@ select{width:100%}
     <strong>绘制与编辑工具</strong>
     <div class="radio-list">
       <button id="toolRect" data-local-tool="rect" type="button">框选区域：按住拖动</button>
-      <button id="toolLine" data-local-tool="line" type="button" class="active">可见短线：依次两点</button>
+      <button id="toolLine" data-local-tool="line" type="button" class="active">纱线/斜纹短线：依次两点</button>
       <button id="toolRelation" data-local-tool="relation" type="button">同根/不同根：依次点两区域</button>
       <button id="toolDelete" data-local-tool="delete" type="button">删除区域：单击</button>
     </div>
