@@ -237,14 +237,76 @@ def _hsv_color(bgr):
 
 
 def _weave(rotated_gray, row, col, good_a, good_b):
-    # Explicitly resist inventing a 0/1 over-under matrix from mere crossings.
-    # Standard smartphone reflected light cannot guarantee which system passes
-    # over the other; no such evidence => leave structure UNAVAILABLE.
-    n = len(row["centers"]) * len(col["centers"])
-    return entry(reason=("Over/under at crossings is not yet physically verified; "
-        "a twill diagonal is not sufficient for 2/1 or 3/1 classification"),
-        evidence={"candidate_crossings": n, "over_under_verified_cells": 0,
-                  "organization_matrix": None})
+    """Conservative photometric surface-dominance hypotheses at intersections.
+
+    1 means horizontal-family dominance, 0 vertical-family dominance, -1 unknown.
+    This is NOT a proof of physical yarn-over-yarn position.
+    """
+    rows, cols = row["centers"], col["centers"]
+    n = len(rows)*len(cols)
+    ev = {"candidate_crossings": n, "over_under_verified_cells": 0,
+          "photometric_dominance_matrix": None,
+          "organization_matrix_physical_truth": None}
+    if not (good_a and good_b and len(rows) >= 7 and len(cols) >= 7):
+        return entry(reason="Two physically distinct periodic families not supported",
+                     evidence=ev)
+    step_y = float(np.median(np.diff(rows)))
+    step_x = float(np.median(np.diff(cols)))
+    rad = max(2, int(.32 * min(step_x, step_y)))
+    src = rotated_gray.astype(np.float32)
+    dx = np.abs(cv2.Sobel(src, cv2.CV_32F, 1, 0, ksize=3))
+    dy = np.abs(cv2.Sobel(src, cv2.CV_32F, 0, 1, ksize=3))
+    matrix = np.full((len(rows), len(cols)), -1, np.int8)
+    contrasts = []
+    for i, y in enumerate(rows):
+        for j, x in enumerate(cols):
+            yy, xx = round(y), round(x)
+            if min(xx, yy) < rad or yy+rad >= len(src) or xx+rad >= len(src[0]):
+                continue
+            energy_x = float(np.median(dx[yy-rad:yy+rad+1, xx-rad:xx+rad+1]))
+            energy_y = float(np.median(dy[yy-rad:yy+rad+1, xx-rad:xx+rad+1]))
+            ratio = (energy_y + 1e-3)/(energy_x + 1e-3)
+            contrasts.append(float(abs(np.log(ratio))))
+            if ratio > 1.7:
+                matrix[i,j] = 1
+            elif ratio < 1/1.7:
+                matrix[i,j] = 0
+    known = matrix >= 0
+    count = int(known.sum())
+    ev["photometric_dominance_matrix"] = matrix.tolist()
+    ev["known_photometric_cells"] = count
+    ev["photometric_coverage"] = round(count/matrix.size,4)
+    ev["meaning"] = "1 horizontal dominant, 0 vertical dominant, -1 uncertain; NOT verified physical over-under"
+    if count < 32 or count/matrix.size < .55:
+        return entry(reason="Crossing photometric anisotropy is inconclusive",
+                     evidence=ev)
+    indices = np.indices(matrix.shape)
+    ii,jj=indices[0],indices[1]
+    templates = []
+    for period, label, steps in ((2,"平纹",[1]),(3,"2/1斜纹",[1,-1]),
+                                 (4,"3/1斜纹",[1,-1]),
+                                 (5,"缎纹候选",[2,-2])):
+        for sign in (1,-1):
+            for shift in steps:
+                for phase in range(period):
+                    patt = (((ii+shift*jj+phase)%period)<(1 if sign==1 else period-1)).astype(np.int8)
+                    accuracy = float((patt[known]==matrix[known]).mean())
+                    templates.append((accuracy,label,period,shift,phase,sign))
+    ranked=sorted(templates,reverse=True)
+    best=ranked[0]
+    competitors=[v for v in ranked[1:] if v[1]!=best[1]]
+    separation=best[0]-(competitors[0][0] if competitors else .5)
+    ev["best_template"]={"type":best[1], "photometric_match_fraction":round(best[0],4),
+       "margin_to_other_weaves":round(separation,4), "period":best[2],
+       "shift":best[3], "phase":best[4]}
+    if best[0]<.89 or separation<.10:
+        return entry(reason="Cannot distinguish physical weave from surface twill/color pattern",
+                     evidence=ev)
+    return entry("CANDIDATE", {"candidate_weave": best[1],
+       "supporting_photometric_cells":count,
+       "photometric_template_match":round(best[0],4)},
+       "Unverified photometric template ONLY; not physical over-under proof",
+       ev)
 
 
 def _square_frame(image, corners):
