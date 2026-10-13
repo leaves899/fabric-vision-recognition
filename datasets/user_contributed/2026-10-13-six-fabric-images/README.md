@@ -1,72 +1,61 @@
-# 六张手机织物照片：原图 + 无标记 2× 放大图
+# 六张手机织物照片：在无标记 2× 放大图上人工标注
 
-这组照片 **只接受仓库原有的人工作业工具** `tools/yarn_annotator/` 产生的标注。之前由助手生成的 15 个候选纱段框、组织猜测和斜纹标记 **已撤回，不作为标签或 Ground Truth**。
+本目录已进入 `main`：6 张原始 JPG、6 张中心裁剪后放大 2 倍的无标记 JPG 和哈希/裁剪来源记录。**现在直接在放大后的 JPG 上用现有 GitHub 仓库人工标注器点击并保存**，不是在原图上作点位，不使用助手原先的猜测或标记。
 
-## 交付与现状
+## 哪张图片用于什么
 
-- `images/U20261013_01.jpg` 至 `_06.jpg`：原始相机照片，字节不改。
-- `zoom_unmarked/U20261013_01_center_2x.jpg` 至 `_06_center_2x.jpg`：只取原图中心区域做 2 倍像素放大，无线条、文字、点位、掩膜或推断。
-- `image_provenance.json`：图片原始 SHA-256、放大图 SHA-256、中心裁剪区域及倍率，不是人工纱线标注。
-- **目前 GitHub 草稿 PR #12 仅包含导入脚本和本说明，尚未上传这 12 张 JPG 二进制文件**。必须运行本地导入+git push 才能让 GitHub 存在照片。
+- `zoom_unmarked/U20261013_01_center_2x.jpg` 到 `_06_center_2x.jpg`：**人工选点、标注 JSON、后续 V5 回归测试的实际输入图**，其像素坐标就是标注坐标。
+- `images/U20261013_01.jpg` 到 `_06.jpg`：保留用户上传的完整原始照片，永不覆盖；作为来源证据，**不再在原始照片上点击**。
+- `image_provenance.json`：记录逐图的原图 SHA-256、无标记放大图 SHA-256、`crop_original_xyxy` 和 `enlargement_scale=2`，用于测试复核与坐标换算。
+- `datasets/manifest.csv` 每张布仍只有 **一个** `U20261013_XX` 样本，`image_path` 指向其放大图。原图/放大图不是两块独立面料，不得拆开计入验证样本数量。
+- 放大只是裁剪后的图像插值，**没有产生新的物理纱线细节，也不增加真实密度测量能力**。
 
-## 第 1 阶段：上传未经标记的原图与放大图
+坐标换算用于未来跨原图对照：
 
-1. 从 ChatGPT 下载 **six_fabric_originals_and_unmarked_zoom.zip**，默认放在 Windows Downloads。
-2. 在本地 Git 仓库根目录，切到 `data/20261013-six-fabric-visual-drafts` 分支（有未提交工作时不要自动清理）。
-3. 运行：
+```text
+原图 x = crop_original_xyxy[0] + 放大图 x / 2
+原图 y = crop_original_xyxy[1] + 放大图 y / 2
+```
+
+保存的 `datasets/annotations/drafts/U20261013_XX.json` 内有 `image_path`（放大图）、`image_sha256`（放大图哈希）、`coordinate_space=ZOOM_2X_NATIVE_PIXELS` 和原图/裁剪来源信息。请勿将放大图点位直接送给原图算法；`benchmark.run_annotated_v5` 会加载清单登记的 **放大图** 及其原生点位进行测试。
+
+## 人工标注（本地 Windows PowerShell）
+
+确认本地 `main` 已同步（无需重新解压/上传照片）：
 
 ```powershell
-$zip = Get-ChildItem "$HOME\Downloads" -Filter "six_fabric_originals_and_unmarked_zoom*.zip" -File |
-    Sort-Object LastWriteTime -Descending | Select-Object -First 1
-if (-not $zip) { throw "请先下载新版无标记 ZIP" }
-python scripts/import_six_fabric_for_manual_annotation.py --zip "$($zip.FullName)"
+git switch main
+git pull --ff-only origin main
 python scripts/verify_six_fabric_samples.py
 python -m benchmark.dataset --check-images
 ```
 
-导入器只解包白名单文件，严格核对 6 张原始 SHA-256 和 6 张放大图 SHA-256，增量登记 `datasets/manifest.csv`、`datasets/ground_truth.csv` 的空白记录；重复运行不覆盖已有人工标注。对原图进行人工标注，不直接在放大副本上点击以免混淆坐标。
-
-通过后提交（不要误加本地已有的 `T001.json` 或 `experiments/`）：
+为避免人工标注和程序改动直接污染 main，创建一次专用分支（后续继续使用即可）：
 
 ```powershell
-git add -- datasets/user_contributed/2026-10-13-six-fabric-images/images/
-git add -- datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked/
-git add -- datasets/user_contributed/2026-10-13-six-fabric-images/image_provenance.json
-git add -- datasets/manifest.csv datasets/ground_truth.csv
-git diff --cached --stat
-git commit -m "data: add six original photos and clean 2x zooms"
-git push origin data/20261013-six-fabric-visual-drafts
-```
-
-## 第 2 阶段：使用 GitHub 仓库已有的人工标注工具
-
-在仓库根目录运行：
-
-```powershell
+git switch -c annotation/six-fabric-20261013
 python -m pip install Pillow numpy
 python -m benchmark.manual_annotation serve
 ```
 
-浏览器打开 **http://127.0.0.1:8765/tools/yarn_annotator/**，选择 `U20261013_01` 至 `_06`。如果参考点没有证据证明位于**同一根真实纱线**，就保持 `DRAFT`，不要勾选 `OPERATOR_REVIEWED`。斜向织纹、颜色线段和周期暗点不得自动转化为物理纱线编号。
+浏览器访问：**http://127.0.0.1:8765/tools/yarn_annotator/**
 
-- 放大图只作旁边的视觉核对，真正的点击坐标须落在 **原始 JPG** 上。
-- `reference_family` 默认 `UNKNOWN`，经纬身份无外部证据不得擅自填写。
-- 没有同平面 5cm×5cm 实体框，`ground_truth.csv` 内的密度与计量真值都必须留空。
-- 原始图正反面是否成对未核实，不在采集元数据中擅自配对。
-- 只有操作者确认并点击保存，才会产生 `datasets/annotations/drafts/U20261013_XX.json`。
+优先列表中选 `U20261013_01` 至 `U20261013_06`，确认大图展示的是文件名包含 `_center_2x.jpg` 的图。照片下方应出现“2× 中心放大图原生像素坐标”。可以打开“查看归档原始照片”仅用于对照。
 
-## 第 3 阶段：人工标注完成后再上传 JSON
+人工规则：只有两点确实位于同一根真实可见纱线时，才确认 `reference`；绝不能把 3/1 斜纹的明暗斜条带等价于真实单根纱线。第二根用于间距校准，第三根独立验收，无法识别就保存 `DRAFT`，不猜测。经纬身份没物理依据时保留 `UNKNOWN`；这组照片没有同平面 5cm 标尺，不能填写根/cm 真值。
+
+标注结束后按 Ctrl+C 停止本地服务，执行：
 
 ```powershell
 python -m benchmark.manual_annotation audit
 git add -- "datasets/annotations/drafts/U20261013_*.json"
-git diff --cached --stat
-git commit -m "data: add operator-confirmed six fabric annotations"
-git push origin data/20261013-six-fabric-visual-drafts
+git diff --cached --name-only
+git commit -m "data: operator labels on six unmarked 2x fabric crops"
+git push -u origin annotation/six-fabric-20261013
 ```
 
-PR #12 保持草稿，直到源图已上传且标注确由人工完成。**不应把开发者、助手或程序的草稿点位伪装成人工确认真值。**
+随后把分支或提交 SHA 发给我，我再对这组**真正人工确认的放大图点位**运行 V5 回归与基于独立纱段的检验；不提前生成任何 AI 标注。
 
-## 数据隔离
+## 留意旧数据
 
-真实布料同一性、经纬物理身份、组织规格、经/纬密度等未确认。`PHONE_UNKNOWN_LIGHTING` 记录表示用户上传的手机照片，不等同 Wikimedia 公开照片。图片版权归原提供者；若仓库未来公开，请先确认可共享授权。
+之前旧版原图标注格式的 `U20261013_XX.json` 若留在本机，不可直接复用坐标；应先单独备份后重标放大图。服务端会校验新登记图像路径、哈希、大小并拒绝旧坐标。你本机之前保存的 `T001.json`、`D002.json`、`experiments/` 与本批次无关，**不要删除或顺带提交**。

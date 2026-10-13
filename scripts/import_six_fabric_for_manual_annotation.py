@@ -3,8 +3,9 @@
 
 Run on the *local* repository after downloading the clean ZIP.
 No algorithm-generated yarn annotations are imported or produced.
-Register only the original photos in datasets/manifest.csv; enlarged copies
-remain visual aids and are never independent samples or physical-yarn GT.
+Register only the 2x UNMARKED CROPS as annotation images in datasets/manifest.csv.
+The original photo stays in images/ for provenance. The crop is not a
+second independent physical fabric, nor a source of physical-yarn GT.
 """
 from __future__ import annotations
 
@@ -111,19 +112,34 @@ def register() -> None:
         raise ValueError("originals or unmarked zooms absent; register aborted")
     current = _read_csv(MANIFEST, MANIFEST_FIELDS)
     truth = _read_csv(GT, GT_FIELDS)
-    known = {x["position_id"] for x in current}
+    by_id = {x["position_id"]: x for x in current}
     existing_gt = {x["position_id"] for x in truth}
     for sid in EXPECTED_SHA:
-        if sid not in known:
+        target = f"datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked/{sid}_center_2x.jpg"
+        original = f"datasets/user_contributed/2026-10-13-six-fabric-images/images/{sid}.jpg"
+        note = ("user phone photo; label 2x unmarked center crop pixel coordinates; "
+                "original archived in images; crop map in image_provenance.json; "
+                "not an independent image sample; no physical yarn GT")
+        if sid not in by_id:
             current.append({
                 "fabric_id": "USER-" + sid, "position_id": sid,
                 "face": "UNKNOWN", "split": "DEV",
                 "capture_mode": "PHONE_UNKNOWN_LIGHTING",
-                "image_path": f"datasets/user_contributed/2026-10-13-six-fabric-images/images/{sid}.jpg",
+                "image_path": target,
                 "result_json_path": "", "calibration_type": "NONE",
-                "frame_confirmed": "NO",
-                "notes": "user phone photo; same-fabric and face unverified; original only; human annotation pending",
+                "frame_confirmed": "NO", "notes": note,
             })
+        else:
+            row = by_id[sid]
+            if row["image_path"] not in (target, original):
+                raise ValueError(f"{sid}: unexpected registered photo path; refusing overwrite")
+            if row["image_path"] != target:
+                annotation = ROOT / "datasets/annotations/drafts" / (sid + ".json")
+                if annotation.is_file():
+                    raise ValueError(f"{sid}: existing human annotation bound to ORIGINAL; "
+                                     "reconcile before switching to zoom coordinates")
+                row["image_path"] = target
+            row["notes"] = note
         if sid not in existing_gt:
             truth.append({
                 "fabric_id": "USER-" + sid, "position_id": sid,
@@ -134,8 +150,8 @@ def register() -> None:
             })
     _write_csv(MANIFEST, MANIFEST_FIELDS, current)
     _write_csv(GT, GT_FIELDS, truth)
-    print("Six ORIGINAL JPGs registered in datasets/manifest.csv (idempotent).")
-    print("Zoom images are review aids only, never duplicate samples.")
+    print("Six 2x UNMARKED cropped JPGs registered as annotation inputs (idempotent).")
+    print("Archival originals remain unchanged; no duplicate physical samples.")
 
 
 def import_zip(zip_path: Path) -> None:
@@ -149,7 +165,11 @@ def import_zip(zip_path: Path) -> None:
         if {x["sample_id"] for x in details["images"]} != set(EXPECTED_SHA):
             raise ValueError("ZIP does not contain exactly six expected samples")
         # Validate the ENTIRE bundle before writing any file.
-        planned = [(provenance_path, DATA / "image_provenance.json")]
+        # The repository's provenance policy now binds human points to the 2x crop.
+        # Do not replace the tracked, current policy with the older ZIP's policy.
+        if not (DATA / "image_provenance.json").is_file():
+            raise ValueError("image_provenance.json missing in checkout; please git pull main first")
+        planned = []
         for rec in details["images"]:
             sid = rec["sample_id"]
             src = PREFIX + f"images/{sid}.jpg"
