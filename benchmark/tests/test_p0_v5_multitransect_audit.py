@@ -33,6 +33,13 @@ class MultiTransectTests(unittest.TestCase):
         # classifier and must never upgrade image evidence to physical GT.
         self.assertIsNone(f["physical_yarn_identity_probability"])
 
+    def test_precomputed_luma_does_not_change_native_transect_measurements(self):
+        img=self.fake_line()
+        cached=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)[:,:,0].astype(np.float32)
+        direct=photo_transverse_cuts(img,[[35,88],[205,88]],19)
+        reused=photo_transverse_cuts(cached,[[35,88],[205,88]],19)
+        np.testing.assert_allclose(direct,reused,atol=1e-6)
+
     def test_flat_image_abstains_not_asserting_negative_yarn(self):
         img=np.full((200,250,3),99,np.uint8)
         f,_=analyze_track(img,[[35,88],[205,88]],19)
