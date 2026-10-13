@@ -24,6 +24,12 @@ jobs:
         run: python -m unittest discover -s pure10 -p 'test_*.py' -v
       - name: Read each latest GitHub six-fabric photo, then independently score marks
         run: python -m pure10.evaluate_six --output pure10-out/report.json --overlays pure10-out/overlays
+      - name: Preserve latest raw inputs and exact tested source for reproducible local investigation
+        if: always()
+        run: |
+          mkdir -p pure10-out/input-images pure10-out/source
+          cp datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked/U20261013_*.jpg pure10-out/input-images/
+          cp pure10/*.py pure10-out/source/
       - name: Publish explicit failure gates and honest report (no fake accuracy)
         if: always()
         uses: actions/upload-artifact@v4
