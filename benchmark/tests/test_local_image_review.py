@@ -91,8 +91,26 @@ class LocalEvidenceReviewTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"SHA-256"):
             validate_local_review(self.root,self.a)
 
-    def test_only_local_image_evidence_can_have_short_line(self):
-        self.a["regions"][0]["kind"]="TWILL_PATTERN"
+    def test_true_yarn_and_false_twill_tracks_have_same_line_geometry(self):
+        # New twill short-line supports comparable positive/negative candidates.
+        # It remains a PHONE_IMAGE_OPERATOR_REVIEW hypothesis, not physical GT.
+        self.a["regions"][1]["geometry"]={
+            "type":"LINE","points":[[30,60],[150,110]]}
+        saved=store_local_review(self.root,self.a)
+        self.assertEqual(saved["regions"][1]["kind"],"TWILL_PATTERN")
+        self.assertEqual(saved["regions"][1]["geometry"]["type"],"LINE")
+        self.assertFalse(saved["regions"][1]["physical_identity_confirmed"])
+        self.assertEqual(load_local_review(self.root,"T001")["regions"][1]["geometry"]["type"],"LINE")
+        self.assertFalse(saved["independent_physical_gt"])
+
+    def test_legacy_twill_rectangles_still_roundtrip(self):
+        saved=store_local_review(self.root,self.a)
+        self.assertEqual(saved["regions"][1]["kind"],"TWILL_PATTERN")
+        self.assertEqual(saved["regions"][1]["geometry"]["type"],"RECT")
+        self.assertEqual(load_local_review(self.root,"T001")["regions"][1]["geometry"]["type"],"RECT")
+
+    def test_only_approved_local_image_categories_can_have_short_line(self):
+        self.a["regions"][0]["kind"]="SHADOW"
         with self.assertRaisesRegex(ValueError,"short line"):
             validate_local_review(self.root,self.a)
         self.a["regions"][0]["kind"]="APPARENT_VISIBLE_YARN"
