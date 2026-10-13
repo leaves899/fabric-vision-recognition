@@ -28,7 +28,7 @@ def inside(points,origin,size):
     return bool(np.all(pts[:,0]>=0) and np.all(pts[:,0]<size[0])
                 and np.all(pts[:,1]>=0) and np.all(pts[:,1]<size[1]))
 
-def run(sid, resultdir):
+def run(sid, resultdir, *, track_override=None):
     raw=json.loads((resultdir/"v5_result.json").read_text(encoding="utf-8"))
     v5=raw["result"]
     meta=raw["original_image_provenance"]
@@ -50,7 +50,8 @@ def run(sid, resultdir):
     crop=image[y0:y1,x0:x1].copy()
     if [crop.shape[1],crop.shape[0]]!=meta["cropped_pixel_size_px"]:
         raise ValueError("image provenance crop does not match")
-    v4=run_v4(crop,float(v5["direction_evidence"]["v4_adapter_rotation_deg"]))
+    v4=(run_v4(crop,float(v5["direction_evidence"]["v4_adapter_rotation_deg"]))
+        if track_override is None else track_override)
     angleA=v5["direction_evidence"]["family_a_deg"]
     angleB=v5["direction_evidence"]["family_b_deg"]
     rel_ref=(np.asarray(ann["segments"]["reference"],float)-[x0,y0]).tolist()
