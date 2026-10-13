@@ -226,6 +226,8 @@ def infer_lattice(image, ann, *, prepared=None):
             "rotated_reflected_border_excluded":True,
             "calibration_y1_y2_2x_px":[round(y1,3),round(y2,3)],
             "confirmed_A1_A2_intervals_used_for_calibration":intervals,
+            "real_yarn_count_between_A1_A2_FROM_HUMAN_INTERVALS_ONLY":intervals+1,
+            "manual_span_count_is_not_automated_full_roi_yarn_count":True,
             "nominal_lattice_site_count_NOT_actual_yarn_count":len(records),
             "longitudinal_image_supported_site_count_NOT_actual_yarn_count":supported,
             "supported_site_fraction":round(coverage,4),
