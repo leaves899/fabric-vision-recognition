@@ -1,0 +1,42 @@
+name: Orthogonal links human holdout experiment
+on:
+  pull_request:
+    paths:
+      - 'benchmark/orthogonal_evidence.py'
+      - 'benchmark/tests/test_orthogonal_evidence.py'
+      - '.github/workflows/orthogonal-evidence.yml'
+      - 'datasets/annotations/drafts/U20261013_*.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evaluate-new-operator-labels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: demo/v5/requirements.txt
+      - name: Install existing image-processing dependencies
+        run: python -m pip install -r demo/v5/requirements.txt
+      - name: Validate image and annotation provenance
+        run: python -m benchmark.manual_annotation audit
+      - name: Run direction, geometry and negative-control tests
+        run: python -m unittest benchmark.tests.test_orthogonal_evidence -v
+      - name: Evaluate every reviewed U20261013 photo using only human reference as input
+        run: python -m benchmark.orthogonal_evidence --out experiments/orthogonal-new-reviewed
+      - name: Upload actual source-image overlays and machine-readable results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orthogonal-20261013-five-operator-holdouts
+          path: experiments/orthogonal-new-reviewed
+          if-no-files-found: warn
+          retention-days: 30
