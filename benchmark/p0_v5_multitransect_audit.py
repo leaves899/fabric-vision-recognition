@@ -52,7 +52,10 @@ def photo_transverse_cuts(image, endpoints, pitch, fractions=CUT_FRACTIONS):
     h,w=image.shape[:2]
     if np.min(xx)<1 or np.max(xx)>=w-2 or np.min(yy)<1 or np.max(yy)>=h-2:
         return None
-    L=cv2.cvtColor(image,cv2.COLOR_BGR2LAB)[:,:,0].astype(np.float32)
+    if image.ndim==2:
+        L=np.asarray(image,dtype=np.float32)
+    else:
+        L=cv2.cvtColor(image,cv2.COLOR_BGR2LAB)[:,:,0].astype(np.float32)
     profile=cv2.remap(L,xx,yy,cv2.INTER_LINEAR)
     return profile
 
@@ -136,6 +139,9 @@ def run(root,out,ids=("U20261013_01","U20261013_03","U20261013_06")):
         refs=json.loads((root/"datasets/annotations/drafts"/(sid+".json")).read_text(encoding="utf-8"))
         calibration=calibration_fields(refs,provenance["crop_original_xyxy"][:2])
         pitch=calibration["pitch"]
+        # One original-camera Lab conversion per photograph, rather than
+        # recomputing a multi-megapixel Lab map for each 5-cut yarn segment.
+        luma=cv2.cvtColor(photo,cv2.COLOR_BGR2LAB)[:,:,0].astype(np.float32)
         # Hand review relations remain post-hoc grouping only.
         A1=np.asarray(refs["segments"]["reference"],float)
         angle=(math.degrees(math.atan2(*(A1[1]-A1[0])[::-1]))%180)
@@ -146,7 +152,7 @@ def run(root,out,ids=("U20261013_01","U20261013_03","U20261013_06")):
             if item["geometry"]["type"]!="LINE":continue
             p=convert_zoom_to_camera(item["geometry"]["points"],
                     provenance["crop_original_xyxy"],provenance["enlargement_scale"])
-            measured,_=analyze_track(photo,p,pitch)
+            measured,_=analyze_track(luma,p,pitch)
             records[item["id"]]={
                 "id":item["id"],"operator_photo_label":item["kind"],
                 "original_camera_line_xy":p,
@@ -159,7 +165,7 @@ def run(root,out,ids=("U20261013_01","U20261013_03","U20261013_06")):
         paired=[]
         for match in matches:
             p=records[match["operator_yarn_region_id"]]
-            f,cuts=analyze_track(photo,match["false_local_camera_xy"],pitch)
+            f,cuts=analyze_track(luma,match["false_local_camera_xy"],pitch)
             key_metrics=("center_vs_flanks_abs_response_z",
                          "center_polarity_consistency_unverified",
                          "two_sided_center_peak_fraction",
@@ -233,6 +239,14 @@ def run(root,out,ids=("U20261013_01","U20261013_03","U20261013_06")):
                     "difference_two_sided_peak":m["two_sided_center_peak_fraction"],
                     "difference_cut_response_variability":m["local_cut_response_variation_z"],
                 })
+        for metric,body in comparisons.items():
+            matched=body["MATCHED_nearby_group_level_green_minus_fake"]
+            print(f'{sid} E6_FIVE_CUTS {metric}: '
+                  f'green_track_median={body["human_visible_fragments_median"]} '
+                  f'twill_track_median_UNMATCHED={body["human_twill_tracks_median_UNMATCHED_LENGTH"]} '
+                  f'matched_linked_groups={matched["linked_operator_yarn_groups_compared"]} '
+                  f'group_median_green_minus_matched_fake={matched["linked_group_median_green_minus_false"]}'
+                  f' (PHOTO_OPERATOR_ONLY_NOT_PHYSICAL_ACCURACY)',flush=True)
         print(f'{sid} E6 V5_TRANSECTS: {len(good)} operator_yarn_short_strokes; '
               f'{len(false)} fake_tracks; A_pitch_original_px={pitch:.3f}; '
               f'linked_groups_with_matches={info["E3_unique_true_operator_groups_in_pairs"]}; '
