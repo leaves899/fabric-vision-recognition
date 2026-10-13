@@ -1,7 +1,11 @@
-"""Local-only, operator-driven yarn-direction annotation service.
+"""Local-only operator annotation service.
 
-Human reference points are V5 *inputs*, not independent algorithm ground truth.
-The service never guesses points, warp/weft identity, weave class or density.
+U20261013 annotation lines denote inferred trajectories of REAL PHYSICAL YARNS,
+possibly across occlusion: they are NOT necessarily visible yarn segments and
+are NOT verified per-pixel centerline ground truth. Two clicked points provide
+a direction and an approximate inferred path. User-reviewed yarn identity
+within a family must not be conflated with WARP/WEFT identification.
+The service never invents yarn lines, class identity, weave or density.
 """
 from __future__ import annotations
 
@@ -23,6 +27,25 @@ MODES = {"DRAFT", "OPERATOR_REVIEWED"}
 ELIGIBILITY = {"UNREVIEWED", "DENIM_CANDIDATE", "NEGATIVE_NON_DENIM", "UNCERTAIN"}
 FAMILIES = {"UNKNOWN", "WARP", "WEFT"}
 SEGMENTS = ("reference", "check_same", "holdout_same", "check_cross", "check_cross_second")
+# A physical-yarn trajectory is a connected strand inferred through possible
+# occlusions; the full two-point line need not correspond to visible pixels.
+ANNOTATION_TARGETS = {"PHYSICAL_YARN_TRAJECTORY", "VISIBLE_YARN_SEGMENT",
+                      "DIRECTION_ONLY", "UNSPECIFIED"}
+SIX_FABRIC_PREFIX = "U20261013_"
+
+
+def annotation_target_for(sid: str, requested=None) -> str:
+    if requested is None:
+        # Retain compatibility with old annotation files, but make the
+        # new interpretation explicit in validate_annotation() return values.
+        requested = ("PHYSICAL_YARN_TRAJECTORY"
+                     if str(sid).startswith(SIX_FABRIC_PREFIX) else "UNSPECIFIED")
+    if requested not in ANNOTATION_TARGETS:
+        raise ValueError("unsupported annotation_target")
+    if str(sid).startswith(SIX_FABRIC_PREFIX) and requested != "PHYSICAL_YARN_TRAJECTORY":
+        raise ValueError("six-fabric reviewed annotations mean PHYSICAL_YARN_TRAJECTORY")
+    return requested
+
 
 
 def samples(root: Path) -> dict[str, dict]:
@@ -125,6 +148,12 @@ def validate_annotation(root: Path, data: dict) -> dict:
     eligibility = data.get("eligibility", "UNREVIEWED")
     review_state = data.get("review_state", "DRAFT")
     family = data.get("reference_family", "UNKNOWN")
+    annotation_target = annotation_target_for(sid, data.get("annotation_target"))
+    if data.get("visible_pixel_gt_confirmed") is True and annotation_target != "VISIBLE_YARN_SEGMENT":
+        raise ValueError("inferred physical yarn trajectory is not visible pixel ground truth")
+    if data.get("centerline_pixel_gt_confirmed") is True and annotation_target == "PHYSICAL_YARN_TRAJECTORY":
+        raise ValueError("inferred physical yarn path is not precise pixel centerline ground truth")
+
     if eligibility not in ELIGIBILITY or review_state not in MODES or family not in FAMILIES:
         raise ValueError("invalid review state, eligibility, or reference identity")
     confirmed = data.get("reference_confirmed") is True
@@ -183,6 +212,12 @@ def validate_annotation(root: Path, data: dict) -> dict:
         "reference_confirmed": confirmed, "reference_family": family,
         "identity_confirmed": family != "UNKNOWN",
         "segments": normalized, **counts, "notes": notes.strip(),
+        "annotation_target": annotation_target,
+        "path_may_cross_occlusion": annotation_target == "PHYSICAL_YARN_TRAJECTORY",
+        "visible_pixel_gt_confirmed": False if annotation_target != "VISIBLE_YARN_SEGMENT"
+            else data.get("visible_pixel_gt_confirmed") is True,
+        "centerline_pixel_gt_confirmed": False if annotation_target == "PHYSICAL_YARN_TRAJECTORY"
+            else data.get("centerline_pixel_gt_confirmed") is True,
         **review_provenance,
         "annotation_origin": "OPERATOR_CLICKED_NOT_ALGORITHM_GT",
         "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -229,7 +264,7 @@ def audit(root: Path) -> dict:
         "registered_public": len(images), "ready_for_v5": ready,
         "draft": draft, "negative_non_denim": non_denim,
         "stale_or_invalid": stale, "not_started": len(unknown),
-        "warning": "Operator input is not independent GT. V5 candidates must be compared to different physically verified segments.",
+        "warning": "U20261013 lines represent inferred actual physical-yarn trajectories, not fully visible segments or certified pixel centers. Independent visible-yarn evidence is required for localization accuracy.",
     }
 
 
