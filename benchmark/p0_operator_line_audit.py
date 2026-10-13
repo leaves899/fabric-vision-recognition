@@ -296,6 +296,12 @@ def run(root:Path,out:Path):
               f'positive_relation_groups={len(result["positive_relation_groups_NOT_DISTINCT_YARN_COUNT"])} '
               f'orientation_matched_neg={result["orientation_matched_twill_negative_tracks_15deg"]} '
               f'comparison={result["optical_comparison_status"]}',flush=True)
+        for key in ("center_vs_flanks_abs_z", "paired_side_contrast_z",
+                    "paired_contrast_support_fraction", "transverse_vs_axial_gradient"):
+            items=result["feature_medians_operator_labels"][key]
+            print(f'{sid} optical {key} apparent={items["positive_operator_segments_median"]} '
+                  f'twill={items["twill_operator_tracks_median"]} '
+                  f'(DESCRIPTIVE_ONLY_NOT_YARN_PROOF)',flush=True)
     observed_negative_fabrics=sum(bool(s["human_twill_visual_tracks"]) for s in samples_output)
     comparable_fabrics=sum(bool(s["orientation_matched_twill_negative_tracks_15deg"]) for s in samples_output)
     summary={
