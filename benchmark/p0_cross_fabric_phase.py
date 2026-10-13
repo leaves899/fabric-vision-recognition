@@ -145,12 +145,24 @@ def sample_crossing_phase(photo, A1_camera, calib):
         return {"available_sites":len(good),
                 "median_B_dominance_phase_difference":
                     round(float(np.median(good)),5) if good else None,
+                "median_absolute_phase_change_SIGN_INVARIANT":
+                    round(float(np.median(np.abs(good))),5) if good else None,
                 "fraction_positive_phase_difference_NOT_ACCURACY":
                     round(float(np.mean(np.array(good)>0)),4) if good else None}
+    a,b,c=agg(0),agg(1),agg(2)
+    if all(x["median_absolute_phase_change_SIGN_INVARIANT"] is not None
+           for x in (a,b,c)):
+        excess=round(a["median_absolute_phase_change_SIGN_INVARIANT"]-max(
+            b["median_absolute_phase_change_SIGN_INVARIANT"],
+            c["median_absolute_phase_change_SIGN_INVARIANT"]),5)
+    else:
+        excess=None
     return {"sites":output,
-            "summary_A1_operator_reference":agg(0),
-            "summary_unlabelled_half_A_pitch_minus":agg(1),
-            "summary_unlabelled_half_A_pitch_plus":agg(2),
+            "summary_A1_operator_reference":a,
+            "summary_unlabelled_half_A_pitch_minus":b,
+            "summary_unlabelled_half_A_pitch_plus":c,
+            "sign_invariant_phase_change_excess_over_both_UNLABELLED_offsets":excess,
+            "sign_invariant_excess_NOT_proof_of_physical_yarn":True,
             "crossing_over_under_verified":False,
             "actual_physical_same_yarn_verified":False}
 
@@ -241,6 +253,8 @@ def run(root, out, ids=("U20261013_01","U20261013_03","U20261013_06")):
             "manual_same_relations_NEVER_USED_IN_PROBE":len(review["relations"]),
             "predicted_B_sites_NOT_verified_crossing_count":len(phase["sites"]),
             "operator_A1_photo_phase":phase["summary_A1_operator_reference"],
+            "A1_sign_invariant_excess_over_unlabelled_half_pitch_controls":
+                phase["sign_invariant_phase_change_excess_over_both_UNLABELLED_offsets"],
             "fixed_phase_sensitivity_NO_TUNING":sensitivity,
             "unlabelled_control_minus_half_A_pitch":phase["summary_unlabelled_half_A_pitch_minus"],
             "unlabelled_control_plus_half_A_pitch":phase["summary_unlabelled_half_A_pitch_plus"],
@@ -283,7 +297,9 @@ def run(root, out, ids=("U20261013_01","U20261013_03","U20261013_06")):
               f'{phase["summary_unlabelled_half_A_pitch_minus"]["median_B_dominance_phase_difference"]}/'
               f'{phase["summary_unlabelled_half_A_pitch_plus"]["median_B_dominance_phase_difference"]}'
               f' phase_shift_stable={sensitivity["phase_sign_invariant_across_test_offsets"]} '
-              f'phase_shift_spread={sensitivity["spread_max_minus_min"]}'
+              f'phase_shift_spread={sensitivity["spread_max_minus_min"]} '
+              f'sign_invariant_specificity_excess='
+              f'{phase["sign_invariant_phase_change_excess_over_both_UNLABELLED_offsets"]}'
               f' (OPTICAL_ONLY_NO_PHYSICAL_OCCLUSION_GT)',flush=True)
     (out/"summary.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     return report
