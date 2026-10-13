@@ -209,6 +209,7 @@ def run(root:Path,out:Path):
         print(f'{ann["sample_id"]} status={report["decision"]} '
               f'candidate_ridges={report["step_B"]["image_only_ridge_candidates"]} '
               f'geometry_interval_error={e.get("candidate_interval_count_error")} '
+              f'paired_flank_candidates={report["step_B"]["boundary_evidence"].get("candidate_lines_with_repeatable_paired_flanks")} '
               f'operator_pitch={e.get("approximate_operator_pitch_px_NOT_PIXEL_GT")}',flush=True)
     summary={
         "baseline_main":"e1b219384224e1d77c79aa108bef3fb51a39ea56",
