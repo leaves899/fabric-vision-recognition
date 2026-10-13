@@ -124,7 +124,7 @@ class LocalEvidenceReviewTests(unittest.TestCase):
             validate_local_review(self.root,self.a)
 
     def test_only_approved_local_image_categories_can_have_short_line(self):
-        self.a["regions"][0]["kind"]="SHADOW"
+        self.a["regions"][0]["kind"]="OCCLUSION"
         with self.assertRaisesRegex(ValueError,"short line"):
             validate_local_review(self.root,self.a)
         self.a["regions"][0]["kind"]="APPARENT_VISIBLE_YARN"
