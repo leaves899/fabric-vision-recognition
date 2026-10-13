@@ -155,6 +155,43 @@ def sample_crossing_phase(photo, A1_camera, calib):
             "actual_physical_same_yarn_verified":False}
 
 
+def fixed_phase_sensitivity_audit(photo,A1_camera,calib):
+    """A pre-specified ±quarter/half B period *stress test*, not phase fitting.
+
+    This evaluates sensitivity to reference-line placement. NEVER return an
+    optimal offset or feed phase scan scores back into inference; a negative
+    result at zero can reflect a shifted manual phase rather than different
+    physics. Use identical fixed fractions across all fabrics.
+    """
+    fractions=(-.5,-.25,0.,.25,.5)
+    sweep=[]
+    for fraction in fractions:
+        moved={**calib,
+            "B_origin":np.asarray(calib["B_origin"],float)+
+                        float(fraction)*float(calib["B_pitch_signed"])*calib["B_normal"]}
+        r=sample_crossing_phase(photo,A1_camera,moved)
+        stat=r["summary_A1_operator_reference"]
+        sweep.append({
+            "phase_shift_in_B_periods":fraction,
+            "available_optical_windows":stat["available_sites"],
+            "median_B_dominance_phase_difference_NOT_GT":
+                stat["median_B_dominance_phase_difference"],
+            "proves_B_over_A":False,
+        })
+    valid=[x["median_B_dominance_phase_difference_NOT_GT"]
+           for x in sweep if x["median_B_dominance_phase_difference_NOT_GT"] is not None]
+    return {
+        "preselected_symmetric_fractions":list(fractions),
+        "no_parameter_optimization_or_phase_selection":True,
+        "curve":sweep,
+        "phase_sign_invariant_across_test_offsets":
+            (all(x>0 for x in valid) or all(x<0 for x in valid))
+             if len(valid)==len(fractions) else None,
+        "spread_max_minus_min":round(max(valid)-min(valid),5) if valid else None,
+        "actual_physical_crossing_certified":False,
+    }
+
+
 def render_phase_overlay(photo,A1_camera,phase,out):
     img=photo.copy()
     a,b=np.rint(np.asarray(A1_camera)).astype(int)
@@ -191,6 +228,7 @@ def run(root, out, ids=("U20261013_01","U20261013_03","U20261013_06")):
         A1_camera=convert_zoom_to_camera(ref["segments"]["reference"],
                    provenance["crop_original_xyxy"],provenance["enlargement_scale"])
         phase=sample_crossing_phase(photo,A1_camera,calib)
+        sensitivity=fixed_phase_sensitivity_audit(photo,A1_camera,calib)
         result={
             "sample_id":sid,"image_sha256":review["image_sha256"],
             "operator_review_state":review["review_state"],
@@ -203,6 +241,7 @@ def run(root, out, ids=("U20261013_01","U20261013_03","U20261013_06")):
             "manual_same_relations_NEVER_USED_IN_PROBE":len(review["relations"]),
             "predicted_B_sites_NOT_verified_crossing_count":len(phase["sites"]),
             "operator_A1_photo_phase":phase["summary_A1_operator_reference"],
+            "fixed_phase_sensitivity_NO_TUNING":sensitivity,
             "unlabelled_control_minus_half_A_pitch":phase["summary_unlabelled_half_A_pitch_minus"],
             "unlabelled_control_plus_half_A_pitch":phase["summary_unlabelled_half_A_pitch_plus"],
             "physical_crossing_verified":False,
@@ -226,6 +265,14 @@ def run(root, out, ids=("U20261013_01","U20261013_03","U20261013_06")):
                         "B_minus_A_at_midperiod":mid["B_minus_A_normalized"] if mid else "",
                         "phase_difference":control["difference_B_dominance_predicted_minus_mid"],
                         "physical_class":"UNKNOWN"})
+        with (out/(sid+"_phase_sensitivity.csv")).open("w",encoding="utf-8",newline="") as f:
+            writer=csv.DictWriter(f,fieldnames=[
+                "phase_shift_in_B_periods",
+                "available_optical_windows",
+                "median_B_dominance_phase_difference_NOT_GT",
+                "proves_B_over_A"])
+            writer.writeheader()
+            writer.writerows(sensitivity["curve"])
         render_phase_overlay(photo,A1_camera,phase,out/(sid+"_expected_B_phase_NOT_OCCLUSION_GT.jpg"))
         print(f'{sid} E5 A1_axis={result["camera_A_axis_angle_deg"]} A_pitch='
               f'{result["camera_A_pitch_px"]} B_pitch={result["camera_B_pitch_px"]} '
@@ -235,6 +282,8 @@ def run(root, out, ids=("U20261013_01","U20261013_03","U20261013_06")):
               f'half_shift_median='
               f'{phase["summary_unlabelled_half_A_pitch_minus"]["median_B_dominance_phase_difference"]}/'
               f'{phase["summary_unlabelled_half_A_pitch_plus"]["median_B_dominance_phase_difference"]}'
+              f' phase_shift_stable={sensitivity["phase_sign_invariant_across_test_offsets"]} '
+              f'phase_shift_spread={sensitivity["spread_max_minus_min"]}'
               f' (OPTICAL_ONLY_NO_PHYSICAL_OCCLUSION_GT)',flush=True)
     (out/"summary.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     return report
