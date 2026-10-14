@@ -1,4 +1,4 @@
-name: V15 symmetric valley V2 optical falsification
+name: V15 symmetric valley V2-V3 physical-reference audit
 on:
   push:
     branches: ['experiment/v15-symmetric-valley-v2-20261014']
@@ -20,3 +20,22 @@ jobs:
         run: python -m unittest experiments.v15_reflection.tests.test_symmetric_valley_v2 -v
       - name: Run original V1.5 FFT-ACF regression suite
         run: python -m unittest discover -s experiments/v15_reflection/tests -v
+      - name: Fetch current main physical-yarn annotations and unmarked native images
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: current_main_data
+          sparse-checkout: |
+            datasets/annotations/drafts
+            datasets/user_contributed/2026-10-13-six-fabric-images/zoom_unmarked
+          sparse-checkout-cone-mode: false
+      - name: SHA-verified operator physical-yarn direction audit, V2 vs V3
+        run: python -m experiments.v15_reflection.audit_symmetric_valley_v3 --dataset-root current_main_data --out reports/v15_symmetric_valley_v3_operator_audit.json
+      - name: Upload real annotated direction-error audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v15-v2-v3-five-operator-physical-direction-audit
+          path: reports/v15_symmetric_valley_v3_operator_audit.json
+          if-no-files-found: warn
+          retention-days: 45
