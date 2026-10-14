@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install minimal numeric image dependencies
-        run: python -m pip install "numpy>=1.26,<3" "opencv-python-headless>=4.8,<5"
+        run: python -m pip install "numpy>=1.26,<3" "opencv-python-headless>=4.8,<5" "Pillow>=10,<13"
       - name: Synthetic negative and positive controls
         run: python -m unittest experiments.v15_reflection.tests.test_dark_seam_study -v
       - name: Existing FFT ACF regressions
