@@ -1,0 +1,22 @@
+name: V15 symmetric valley V2 optical falsification
+on:
+  push:
+    branches: ['experiment/v15-symmetric-valley-v2-20261014']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  symmetric-valley-negative-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install small numeric CV dependencies
+        run: python -m pip install "numpy>=1.26,<3" "opencv-python-headless>=4.8,<5" "Pillow>=10,<13"
+      - name: Run symmetric-valley V2 positive/negative controls
+        run: python -m unittest experiments.v15_reflection.tests.test_symmetric_valley_v2 -v
+      - name: Run original V1.5 FFT-ACF regression suite
+        run: python -m unittest discover -s experiments/v15_reflection/tests -v
