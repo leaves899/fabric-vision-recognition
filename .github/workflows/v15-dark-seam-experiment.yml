@@ -1,0 +1,22 @@
+name: V15 dark seam falsification controls
+on:
+  push:
+    branches: ['experiment/v15-dark-seam-ablation-20261014']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-negative-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install minimal numeric image dependencies
+        run: python -m pip install "numpy>=1.26,<3" "opencv-python-headless>=4.8,<5"
+      - name: Synthetic negative and positive controls
+        run: python -m unittest experiments.v15_reflection.tests.test_dark_seam_study -v
+      - name: Existing FFT ACF regressions
+        run: python -m unittest discover -s experiments/v15_reflection/tests -v
