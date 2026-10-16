@@ -2,8 +2,12 @@
 import unittest
 import numpy as np
 from PIL import Image
-from color_plain import circular_phase, circular_gap, estimate_x_repeat
-from run_photo_weave_v5 import choose_rois, summarize
+try:
+    from .color_plain import circular_phase, circular_gap, estimate_x_repeat
+    from .run_photo_weave_v5 import choose_rois, summarize
+except ImportError:
+    from color_plain import circular_phase, circular_gap, estimate_x_repeat
+    from run_photo_weave_v5 import choose_rois, summarize
 
 class WeaveV5Smoke(unittest.TestCase):
     def test_40_pixel_period_recovered_from_signal(self):
