@@ -145,9 +145,37 @@ def observed_float_lengths(instance_img,rows,u):
         out.append((tag,length))
     return out
 
+def corrected_phase_advance(repeat_vector, row_advance_vector, float_orientation_rad):
+    """De-shear row-to-row float-center advance by observed float-axis tilt.
+
+    In (u, n) coordinates (u = float repeat vector, n = its left normal),
+    a sloped float axis moves dx/du = tan(theta - angle(u)) when shifting
+    between rows. Subtract that shape-induced drift before searching for
+    fractional repeat (1/n). This is geometric, not any class-specific rule.
+
+    Returns raw phase, corrected phase and removed image-space pixels.
+    The *observed* per-float principal axis is a proxy for the physical
+    yarn tangent, not proof of yarn identity; users can audit both phases.
+    """
+    u=np.asarray(repeat_vector,dtype=float)
+    v=np.asarray(row_advance_vector,dtype=float)
+    norm2=float(np.dot(u,u))
+    if norm2<=1e-8:raise ValueError('zero float-repeat vector')
+    raw=float(np.dot(v,u)/norm2)
+    delta=(float(float_orientation_rad)-math.atan2(float(u[1]),float(u[0]))+math.pi/2)%math.pi-math.pi/2
+    # Reject singular/implausibly steep directions, preserving raw
+    # measurements in ambiguous cases rather than forcing a result.
+    if abs(delta)>math.radians(60):
+        return raw,raw,0.0
+    normal_fraction=float(np.linalg.det(np.array([u,v]))/norm2)
+    removed=math.tan(delta)*normal_fraction
+    corrected=raw-removed
+    return raw,corrected,float(removed*np.linalg.norm(u))
+
 def score_models(model,lengths):
     u=model['repeat_vector'];v=model['advance_vector'];u_len=np.linalg.norm(u)
-    advance=float(np.dot(u,v)/np.dot(u,u))
+    axis=model.get('observed_float_orientation_rad', math.atan2(float(u[1]),float(u[0])))
+    raw_advance,advance,removed_px=corrected_phase_advance(u,v,axis)
     lengths_arr=np.array([l for _,l in lengths]); med=float(np.median(lengths_arr)) if len(lengths_arr) else 0
     # n=2..6 for broad unsupervised search; physical float length = on crossings
     # x pitch, with an edge concession of 0.2 pitches to account for fiber boundary.
@@ -166,7 +194,9 @@ def score_models(model,lengths):
             candidates.append(dict(name=f'{on}/{n-on}',period=n,over_count=on,
                 float_repeat_px=round(float(u_len),2),crossing_pitch_est_px=round(float(step),2),
                 measured_float_length_px=round(med,2),predicted_float_length_px=round(predicted,2),
-                phase_advance=round(advance,4),phase_residual=round(phase_error,4),
+                phase_advance=round(advance,4),phase_advance_raw=round(raw_advance,4),
+                float_axis_shear_removed_px=round(removed_px,3),
+                phase_residual=round(phase_error,4),
                 length_residual=round(float(med-predicted),2),score=round(cost,4),
                 # S/Z not reported without verified warp/weft identity and face orientation.
                 diagonal_image='\\' if advance>0 else '/'))
@@ -269,6 +299,7 @@ def run_one(image_path,source_path,outdir):
         res={'image':key,'status':'unresolved_no_lattice','fcn_float_count':len(floats)}
         (outdir/'report.json').write_text(json.dumps(res,indent=2),encoding='utf-8');return res
     lengths=observed_float_lengths(ids,floats,fit['repeat_vector'])
+    fit['observed_float_orientation_rad']=float(theta)
     ranks=score_models(fit,lengths)
     fit['observations']=coords
     best=ranks[0]; second=ranks[1]
@@ -298,6 +329,9 @@ def run_one(image_path,source_path,outdir):
         observed_major_axis_deg=round(float(np.degrees(theta)),2),
         float_repeat_vector_xy=np.round(fit['repeat_vector'],3).tolist(),
         row_advance_vector_xy=np.round(fit['advance_vector'],3).tolist(),
+        raw_phase_advance=best['phase_advance_raw'],
+        desheared_phase_advance=best['phase_advance'],
+        float_axis_shear_removed_px=best['float_axis_shear_removed_px'],
         measured_float_length_med_px=round(float(np.median([l for _,l in lengths])),2) if lengths else None,
         inferred_candidate=best,runner_up=second,margin_to_runner_up=round(float(gap),3),
         hypothetical_binary_weave_matrix=matrix,
