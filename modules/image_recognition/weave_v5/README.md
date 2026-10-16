@@ -68,3 +68,36 @@ python -m unittest modules.image_recognition.weave_v5.test_standalone_smoke -v
 ## 部署说明
 
 当前为研究版 Python/NumPy/OpenCV/SciPy/Pillow 实现，**未做 RK3576 设备/NPU 性能认证**。V4 在某些织物上的浮点晶格拟合耗时较长，不应在未实测前宣称满足设备实时需求。
+
+## 2026-10-16 V5.1 修复：3/1 被误识别为 2/1
+
+**问题**：旧 V4 几何评分直接使用浮点中心跨行平移 `v` 在周期向量 `u` 上的投影，把**真实组织相位**和**纱线自身倾斜造成的漂移**混在一起，导致带倾角的 3/1 样本误判为 2/1。
+
+**修复**：从已分割的浮点区域测得长轴角度 `theta`，按实测几何分别计算：
+
+```python
+raw = dot(u, v) / dot(u, u)
+perpendicular = det(u, v) / dot(u, u)
+desheared = raw - tan(theta - atan2(u_y, u_x)) * perpendicular
+```
+
+`score_models` 中的周期评分现在使用 `desheared`，浮点长度评分仍独立保留。旧 `raw` 和扣除的位移像素量同时写入报告以便审查。倾斜差异超过 60° 时跳过校正，以免数值发散。不加入特定照片或 3/1 的硬编码判断规则。
+
+**实际复测**（两张配准照片；已知真实组织 3/1 仅作为验收标签）：
+
+| 正面 ROI | 旧候选 | 新候选 | 原始相位 | 去倾斜相位 | 状态 |
+|---|---|---|---:|---:|---|
+| 左 | 2/1 | 3/1 | .2935 | .2426 | 通过候选门槛 |
+| 中 | 2/1 | 3/1 | .2966 | .2444 | 通过候选门槛 |
+| 右 | 2/1 | 3/1 | .3005 | .2380 | 通过候选门槛 |
+| 反面左/中/右 | 拒判 | 仍拒判 | - | - | 保留拒判 |
+
+旧 5 张照片回归：`photo_01/03/04/05` 仍通过 3/1 候选，`photo_02` 仍因晶格覆盖不足拒判。红灰已确认平纹样本仍识别为 `plain_1_1`。有合成 2/1、3/1、2/2 不同旋转与仿射偏移的独立测试。上述尚不是跨真实不同组织的盲测准确率，更不代表反面 0/1 物理浮沉已被自动恢复。
+
+运行回归单测：
+
+```powershell
+python -m unittest modules.image_recognition.weave_v5.test_phase_deshear -v
+```
+
+诊断报告新增三个字段：`raw_phase_advance`、`desheared_phase_advance`、`float_axis_shear_removed_px`。修复前后的分类差异来自从照片实例测量到的几何角度，**不依赖 `photo_05` 或配准照片的真实组织标签**。
