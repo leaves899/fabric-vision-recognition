@@ -14,9 +14,15 @@ from __future__ import annotations
 import argparse,json
 from pathlib import Path
 from PIL import Image
-from color_plain import analyze as detect_color_plain
-from float_segmentation_v3 import run_photo as segment
-from weave_topology_v4 import run_one as topology
+try:
+    from .color_plain import analyze as detect_color_plain
+    from .float_segmentation_v3 import run_photo as segment
+    from .weave_topology_v4 import run_one as topology
+except ImportError:
+    # Also support: python run_photo_weave_v5.py --image ... --out ...
+    from color_plain import analyze as detect_color_plain
+    from float_segmentation_v3 import run_photo as segment
+    from weave_topology_v4 import run_one as topology
 
 
 def choose_rois(img,n=3,tile=640):
