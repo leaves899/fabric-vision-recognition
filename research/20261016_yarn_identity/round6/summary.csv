@@ -1,0 +1,16 @@
+image,roi,angle_family_1,angle_family_2,num_segments_1,num_segments_2,candidate_tracks_1,candidate_tracks_2,local_links_1,local_links_2,occlusion_links_1,occlusion_links_2
+photo_01,center,17,93,201,161,13,22,5,9,9,14
+photo_01,upper_left,15,93,183,158,12,15,4,5,8,10
+photo_01,lower_right,14,86,202,124,11,13,3,0,13,14
+photo_02,center,1,111,146,158,8,16,2,3,6,13
+photo_02,upper_left,0,119,105,131,3,7,1,2,2,5
+photo_02,lower_right,4,103,133,169,11,13,1,4,12,11
+photo_03,center,20,102,189,131,8,19,2,2,6,20
+photo_03,upper_left,21,97,213,128,13,13,3,0,11,19
+photo_03,lower_right,20,100,197,131,18,16,6,1,14,24
+photo_04,center,15,93,197,144,16,14,7,2,9,12
+photo_04,upper_left,14,89,205,134,20,13,6,7,15,8
+photo_04,lower_right,18,88,172,136,4,16,2,3,2,17
+photo_05,center,9,92,198,152,15,26,7,3,8,29
+photo_05,upper_left,13,82,180,152,11,14,5,4,6,10
+photo_05,lower_right,13,87,175,153,9,25,1,2,8,26

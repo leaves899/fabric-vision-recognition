@@ -1,0 +1,907 @@
+{
+  "photo_01": {
+    "image_size": [
+      3060,
+      4080
+    ],
+    "fine_angle_candidates_deg": [
+      17,
+      93
+    ],
+    "coarse_main_texture_angle_deg": 55,
+    "candidate_peak_support": [
+      1.0,
+      0.8001
+    ],
+    "angular_separation_deg": 76.0,
+    "boundary_pair_segments": [
+      218,
+      180
+    ],
+    "bright_texture_landmarks": 97,
+    "tentative_links": [
+      6,
+      6
+    ],
+    "rotation_max_angle_disagreement_deg": {
+      "30": 3.0,
+      "45": 4.0,
+      "90": 0.0,
+      "180": 0.0
+    },
+    "gray_angles_deg": [
+      17,
+      93
+    ],
+    "gray_inversion_angles_deg": [
+      17,
+      93
+    ],
+    "spatial_median_deviation_deg": [
+      3.0,
+      3.0
+    ],
+    "tiles": [
+      {
+        "center": [
+          520,
+          693
+        ],
+        "directions": [
+          34,
+          91
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.8951
+        ]
+      },
+      {
+        "center": [
+          1530,
+          693
+        ],
+        "directions": [
+          14,
+          92
+        ],
+        "coarse": 57,
+        "relative_support": [
+          0.9232,
+          1.0
+        ]
+      },
+      {
+        "center": [
+          2539,
+          693
+        ],
+        "directions": [
+          6,
+          96
+        ],
+        "coarse": 58,
+        "relative_support": [
+          1.0,
+          0.868
+        ]
+      },
+      {
+        "center": [
+          520,
+          2040
+        ],
+        "directions": [
+          18,
+          97
+        ],
+        "coarse": 56,
+        "relative_support": [
+          1.0,
+          0.7776
+        ]
+      },
+      {
+        "center": [
+          1530,
+          2040
+        ],
+        "directions": [
+          17,
+          93
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.8001
+        ]
+      },
+      {
+        "center": [
+          2539,
+          2040
+        ],
+        "directions": [
+          11,
+          89
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.7197
+        ]
+      },
+      {
+        "center": [
+          520,
+          3386
+        ],
+        "directions": [
+          18,
+          90
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.6013
+        ]
+      },
+      {
+        "center": [
+          1530,
+          3386
+        ],
+        "directions": [
+          17,
+          90
+        ],
+        "coarse": 57,
+        "relative_support": [
+          1.0,
+          0.6187
+        ]
+      },
+      {
+        "center": [
+          2539,
+          3386
+        ],
+        "directions": [
+          13,
+          83
+        ],
+        "coarse": 57,
+        "relative_support": [
+          1.0,
+          0.6304
+        ]
+      }
+    ],
+    "validation_status": "UNVERIFIED: angle candidates/ribbon segments/links are not physical yarn truth"
+  },
+  "photo_02": {
+    "image_size": [
+      4080,
+      3060
+    ],
+    "fine_angle_candidates_deg": [
+      1,
+      111
+    ],
+    "coarse_main_texture_angle_deg": 152,
+    "candidate_peak_support": [
+      1.0,
+      0.5743
+    ],
+    "angular_separation_deg": 70.0,
+    "boundary_pair_segments": [
+      158,
+      183
+    ],
+    "bright_texture_landmarks": 81,
+    "tentative_links": [
+      4,
+      10
+    ],
+    "rotation_max_angle_disagreement_deg": {
+      "30": 1.0,
+      "45": 2.0,
+      "90": 0.0,
+      "180": 0.0
+    },
+    "gray_angles_deg": [
+      1,
+      111
+    ],
+    "gray_inversion_angles_deg": [
+      1,
+      111
+    ],
+    "spatial_median_deviation_deg": [
+      2.0,
+      1.0
+    ],
+    "tiles": [
+      {
+        "center": [
+          693,
+          520
+        ],
+        "directions": [
+          112,
+          179
+        ],
+        "coarse": 150,
+        "relative_support": [
+          0.7224,
+          1.0
+        ]
+      },
+      {
+        "center": [
+          2040,
+          520
+        ],
+        "directions": [
+          0,
+          111
+        ],
+        "coarse": 150,
+        "relative_support": [
+          1.0,
+          0.8448
+        ]
+      },
+      {
+        "center": [
+          3386,
+          520
+        ],
+        "directions": [
+          1,
+          105
+        ],
+        "coarse": 143,
+        "relative_support": [
+          0.5634,
+          1.0
+        ]
+      },
+      {
+        "center": [
+          693,
+          1530
+        ],
+        "directions": [
+          113,
+          171
+        ],
+        "coarse": 150,
+        "relative_support": [
+          0.7799,
+          1.0
+        ]
+      },
+      {
+        "center": [
+          2040,
+          1530
+        ],
+        "directions": [
+          1,
+          111
+        ],
+        "coarse": 152,
+        "relative_support": [
+          1.0,
+          0.5743
+        ]
+      },
+      {
+        "center": [
+          3386,
+          1530
+        ],
+        "directions": [
+          1,
+          109
+        ],
+        "coarse": 147,
+        "relative_support": [
+          1.0,
+          0.9098
+        ]
+      },
+      {
+        "center": [
+          693,
+          2539
+        ],
+        "directions": [
+          110,
+          174
+        ],
+        "coarse": 148,
+        "relative_support": [
+          1.0,
+          0.9606
+        ]
+      },
+      {
+        "center": [
+          2040,
+          2539
+        ],
+        "directions": [
+          112,
+          174
+        ],
+        "coarse": 149,
+        "relative_support": [
+          0.8955,
+          1.0
+        ]
+      },
+      {
+        "center": [
+          3386,
+          2539
+        ],
+        "directions": [
+          4,
+          101
+        ],
+        "coarse": 145,
+        "relative_support": [
+          0.5422,
+          1.0
+        ]
+      }
+    ],
+    "validation_status": "UNVERIFIED: angle candidates/ribbon segments/links are not physical yarn truth"
+  },
+  "photo_03": {
+    "image_size": [
+      3060,
+      4080
+    ],
+    "fine_angle_candidates_deg": [
+      20,
+      102
+    ],
+    "coarse_main_texture_angle_deg": 62,
+    "candidate_peak_support": [
+      1.0,
+      0.5107
+    ],
+    "angular_separation_deg": 82.0,
+    "boundary_pair_segments": [
+      213,
+      150
+    ],
+    "bright_texture_landmarks": 114,
+    "tentative_links": [
+      5,
+      1
+    ],
+    "rotation_max_angle_disagreement_deg": {
+      "30": 1.0,
+      "45": 1.0,
+      "90": 0.0,
+      "180": 0.0
+    },
+    "gray_angles_deg": [
+      20,
+      102
+    ],
+    "gray_inversion_angles_deg": [
+      20,
+      102
+    ],
+    "spatial_median_deviation_deg": [
+      2.0,
+      4.0
+    ],
+    "tiles": [
+      {
+        "center": [
+          520,
+          693
+        ],
+        "directions": [
+          18,
+          98
+        ],
+        "coarse": 62,
+        "relative_support": [
+          1.0,
+          0.5907
+        ]
+      },
+      {
+        "center": [
+          1530,
+          693
+        ],
+        "directions": [
+          17,
+          100
+        ],
+        "coarse": 62,
+        "relative_support": [
+          1.0,
+          0.5644
+        ]
+      },
+      {
+        "center": [
+          2539,
+          693
+        ],
+        "directions": [
+          13,
+          98
+        ],
+        "coarse": 64,
+        "relative_support": [
+          1.0,
+          0.6206
+        ]
+      },
+      {
+        "center": [
+          520,
+          2040
+        ],
+        "directions": [
+          18,
+          100
+        ],
+        "coarse": 62,
+        "relative_support": [
+          1.0,
+          0.534
+        ]
+      },
+      {
+        "center": [
+          1530,
+          2040
+        ],
+        "directions": [
+          20,
+          102
+        ],
+        "coarse": 62,
+        "relative_support": [
+          1.0,
+          0.5107
+        ]
+      },
+      {
+        "center": [
+          2539,
+          2040
+        ],
+        "directions": [
+          22,
+          98
+        ],
+        "coarse": 61,
+        "relative_support": [
+          1.0,
+          0.4813
+        ]
+      },
+      {
+        "center": [
+          520,
+          3386
+        ],
+        "directions": [
+          17,
+          106
+        ],
+        "coarse": 62,
+        "relative_support": [
+          1.0,
+          0.5723
+        ]
+      },
+      {
+        "center": [
+          1530,
+          3386
+        ],
+        "directions": [
+          18,
+          99
+        ],
+        "coarse": 64,
+        "relative_support": [
+          1.0,
+          0.6717
+        ]
+      },
+      {
+        "center": [
+          2539,
+          3386
+        ],
+        "directions": [
+          24,
+          96
+        ],
+        "coarse": 63,
+        "relative_support": [
+          1.0,
+          0.4549
+        ]
+      }
+    ],
+    "validation_status": "UNVERIFIED: angle candidates/ribbon segments/links are not physical yarn truth"
+  },
+  "photo_04": {
+    "image_size": [
+      3060,
+      4080
+    ],
+    "fine_angle_candidates_deg": [
+      15,
+      93
+    ],
+    "coarse_main_texture_angle_deg": 57,
+    "candidate_peak_support": [
+      1.0,
+      0.6617
+    ],
+    "angular_separation_deg": 78.0,
+    "boundary_pair_segments": [
+      223,
+      153
+    ],
+    "bright_texture_landmarks": 112,
+    "tentative_links": [
+      12,
+      1
+    ],
+    "rotation_max_angle_disagreement_deg": {
+      "30": 0.0,
+      "45": 1.0,
+      "90": 0.0,
+      "180": 0.0
+    },
+    "gray_angles_deg": [
+      15,
+      93
+    ],
+    "gray_inversion_angles_deg": [
+      15,
+      93
+    ],
+    "spatial_median_deviation_deg": [
+      1.0,
+      2.0
+    ],
+    "tiles": [
+      {
+        "center": [
+          520,
+          693
+        ],
+        "directions": [
+          13,
+          89
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.6272
+        ]
+      },
+      {
+        "center": [
+          1530,
+          693
+        ],
+        "directions": [
+          16,
+          93
+        ],
+        "coarse": 57,
+        "relative_support": [
+          1.0,
+          0.6514
+        ]
+      },
+      {
+        "center": [
+          2539,
+          693
+        ],
+        "directions": [
+          14,
+          94
+        ],
+        "coarse": 59,
+        "relative_support": [
+          1.0,
+          0.7284
+        ]
+      },
+      {
+        "center": [
+          520,
+          2040
+        ],
+        "directions": [
+          16,
+          97
+        ],
+        "coarse": 54,
+        "relative_support": [
+          1.0,
+          0.5759
+        ]
+      },
+      {
+        "center": [
+          1530,
+          2040
+        ],
+        "directions": [
+          15,
+          93
+        ],
+        "coarse": 57,
+        "relative_support": [
+          1.0,
+          0.6617
+        ]
+      },
+      {
+        "center": [
+          2539,
+          2040
+        ],
+        "directions": [
+          11,
+          89
+        ],
+        "coarse": 58,
+        "relative_support": [
+          1.0,
+          0.6672
+        ]
+      },
+      {
+        "center": [
+          520,
+          3386
+        ],
+        "directions": [
+          13,
+          99
+        ],
+        "coarse": 57,
+        "relative_support": [
+          1.0,
+          0.6431
+        ]
+      },
+      {
+        "center": [
+          1530,
+          3386
+        ],
+        "directions": [
+          16,
+          92
+        ],
+        "coarse": 58,
+        "relative_support": [
+          1.0,
+          0.8512
+        ]
+      },
+      {
+        "center": [
+          2539,
+          3386
+        ],
+        "directions": [
+          17,
+          91
+        ],
+        "coarse": 58,
+        "relative_support": [
+          1.0,
+          0.7166
+        ]
+      }
+    ],
+    "validation_status": "UNVERIFIED: angle candidates/ribbon segments/links are not physical yarn truth"
+  },
+  "photo_05": {
+    "image_size": [
+      3060,
+      4080
+    ],
+    "fine_angle_candidates_deg": [
+      9,
+      92
+    ],
+    "coarse_main_texture_angle_deg": 55,
+    "candidate_peak_support": [
+      1.0,
+      0.4672
+    ],
+    "angular_separation_deg": 83.0,
+    "boundary_pair_segments": [
+      218,
+      171
+    ],
+    "bright_texture_landmarks": 111,
+    "tentative_links": [
+      16,
+      7
+    ],
+    "rotation_max_angle_disagreement_deg": {
+      "30": 1.0,
+      "45": 1.0,
+      "90": 0.0,
+      "180": 0.0
+    },
+    "gray_angles_deg": [
+      9,
+      92
+    ],
+    "gray_inversion_angles_deg": [
+      9,
+      92
+    ],
+    "spatial_median_deviation_deg": [
+      3.0,
+      4.0
+    ],
+    "tiles": [
+      {
+        "center": [
+          520,
+          693
+        ],
+        "directions": [
+          12,
+          91
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.8003
+        ]
+      },
+      {
+        "center": [
+          1530,
+          693
+        ],
+        "directions": [
+          13,
+          85
+        ],
+        "coarse": 56,
+        "relative_support": [
+          1.0,
+          0.6758
+        ]
+      },
+      {
+        "center": [
+          2539,
+          693
+        ],
+        "directions": [
+          10,
+          92
+        ],
+        "coarse": 57,
+        "relative_support": [
+          1.0,
+          0.6607
+        ]
+      },
+      {
+        "center": [
+          520,
+          2040
+        ],
+        "directions": [
+          13,
+          96
+        ],
+        "coarse": 53,
+        "relative_support": [
+          1.0,
+          0.5116
+        ]
+      },
+      {
+        "center": [
+          1530,
+          2040
+        ],
+        "directions": [
+          9,
+          92
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.4672
+        ]
+      },
+      {
+        "center": [
+          2539,
+          2040
+        ],
+        "directions": [
+          12,
+          86
+        ],
+        "coarse": 56,
+        "relative_support": [
+          1.0,
+          0.5039
+        ]
+      },
+      {
+        "center": [
+          520,
+          3386
+        ],
+        "directions": [
+          10,
+          91
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.5781
+        ]
+      },
+      {
+        "center": [
+          1530,
+          3386
+        ],
+        "directions": [
+          12,
+          86
+        ],
+        "coarse": 56,
+        "relative_support": [
+          1.0,
+          0.6702
+        ]
+      },
+      {
+        "center": [
+          2539,
+          3386
+        ],
+        "directions": [
+          10,
+          87
+        ],
+        "coarse": 55,
+        "relative_support": [
+          1.0,
+          0.5262
+        ]
+      }
+    ],
+    "validation_status": "UNVERIFIED: angle candidates/ribbon segments/links are not physical yarn truth"
+  }
+}

@@ -1,0 +1,30 @@
+review_id,candidate_type,photo,family,A_x,A_y,B_x,B_y,verdict,note
+photo_01_L001,strict_stable,photo_01.jpg,1,1588.4,2145.9,1621.6,2150.8,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_01_L002,strict_stable,photo_01.jpg,2,1611.0,1816.7,1607.9,1858.8,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_01_L003,strict_stable,photo_01.jpg,2,1719.0,1907.3,1717.3,1988.6,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_02_L001,strict_stable,photo_02.jpg,1,2101.0,1455.9,2167.8,1457.2,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_02_L002,strict_stable,photo_02.jpg,2,2121.2,1443.0,2099.5,1505.7,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_02_L003,strict_stable,photo_02.jpg,2,1956.4,1484.1,1940.4,1535.3,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_02_L004,strict_stable,photo_02.jpg,2,2108.5,1560.5,2085.6,1615.5,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_03_L001,strict_stable,photo_03.jpg,2,1602.3,2155.2,1584.7,2230.1,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_04_L001,strict_stable,photo_04.jpg,1,1527.0,2060.0,1572.5,2072.8,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_04_L002,strict_stable,photo_04.jpg,2,1586.0,1933.4,1584.7,1994.9,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_04_L003,strict_stable,photo_04.jpg,2,1715.0,1979.4,1711.0,2033.4,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_04_L004,strict_stable,photo_04.jpg,2,1556.3,2047.4,1554.5,2116.4,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_04_L005,strict_stable,photo_04.jpg,2,1542.0,2166.6,1538.8,2202.6,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L001,strict_stable,photo_05.jpg,1,1319.4,2027.5,1385.5,2037.5,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L002,strict_stable,photo_05.jpg,1,1441.8,1911.9,1520.2,1924.6,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L003,strict_stable,photo_05.jpg,1,1672.0,2107.3,1737.9,2120.9,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L004,strict_stable,photo_05.jpg,2,1415.2,1808.4,1417.7,1870.7,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L005,strict_stable,photo_05.jpg,2,1591.1,1838.2,1590.2,1895.4,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L006,strict_stable,photo_05.jpg,2,1493.7,1835.2,1492.0,1914.8,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L007,strict_stable,photo_05.jpg,2,1317.8,1874.2,1314.7,1949.2,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L008,strict_stable,photo_05.jpg,2,1492.0,1914.8,1493.3,1987.7,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L009,strict_stable,photo_05.jpg,2,1571.2,1952.2,1571.6,2029.1,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L010,strict_stable,photo_05.jpg,2,1314.7,1949.2,1316.4,2024.3,different,User confirmed A and B belong to different physical yarns (2026-10-16).
+photo_05_L011,strict_stable,photo_05.jpg,2,1754.6,1989.4,1753.4,2065.5,different,User confirmed A and B belong to different physical yarns (2026-10-16)
+photo_05_L012,strict_stable,photo_05.jpg,2,1740.2,2007.0,1742.0,2048.6,,
+photo_05_L013,strict_stable,photo_05.jpg,2,1545.3,2002.5,1541.3,2064.4,,
+photo_05_L014,strict_stable,photo_05.jpg,2,1466.9,2072.1,1469.9,2097.9,,
+photo_05_L015,strict_stable,photo_05.jpg,2,1593.6,2078.4,1587.9,2128.2,,
+photo_05_L016,strict_stable,photo_05.jpg,2,1675.3,2108.3,1669.3,2188.8,,
