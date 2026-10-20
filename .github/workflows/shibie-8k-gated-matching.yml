@@ -1,0 +1,44 @@
+name: correct physical-yarn one-to-one F1 on frozen 8k predictions
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-gated-matching.yml
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  corrected-score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Physically gated matching tests and frozen V0.6.3 suite
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Read previously frozen native 8k predictions
+        run: gh run download 39437637934 --repo "$GITHUB_REPOSITORY" --dir /tmp/native8k-fixed
+      - name: Truth-after-inference corrected one-to-one physical matching
+        run: |
+          python -u shibie/replay_corrected_center_matching.py \
+            --artifacts /tmp/native8k-fixed \
+            --out experiments/shibie-8k-capture-multiwindow/corrected-matching
+          cat experiments/shibie-8k-capture-multiwindow/corrected-matching/REPORT.md
+      - name: Commit independently re-scored physical centre evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/corrected-matching
+          git commit -m "test(shibie): publish corrected maximum-cardinality yarn centre F1 [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
