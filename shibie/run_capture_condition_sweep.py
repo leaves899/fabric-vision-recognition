@@ -27,9 +27,29 @@ OUT = REPO / "experiments" / "shibie-capture-conditioned-20261020"
 # All variants are registered before looking at results. First is frozen default.
 VARIANTS = {
     "default_v063": {},
+    # Control: previous experiments showed no real centerline gain.
     "min_density_10": {"density_min_per_cm": 10.0},
-    "min_density_8": {"density_min_per_cm": 8.0},
-    "min_density_10_roi96": {"density_min_per_cm": 10.0, "roi_ratio": 0.96},
+    "acf_strict": {
+        "density_min_per_cm": 10.0,
+        "steerable_quality_close_margin": 0.22,
+        "steerable_periodicity_tiebreak_floor": 0.08,
+    },
+    "ridges_local": {
+        "density_min_per_cm": 10.0,
+        "ridge_global_smoothing_sigma": 1.1,
+        "ridge_strip_smoothing_sigma": 0.65,
+        "ridge_min_coverage": 0.20,
+        "ridge_peak_distance_ratio": 0.60,
+    },
+    "acf_plus_ridges": {
+        "density_min_per_cm": 10.0,
+        "steerable_quality_close_margin": 0.22,
+        "steerable_periodicity_tiebreak_floor": 0.08,
+        "ridge_global_smoothing_sigma": 1.1,
+        "ridge_strip_smoothing_sigma": 0.65,
+        "ridge_min_coverage": 0.20,
+        "ridge_peak_distance_ratio": 0.60,
+    },
 }
 
 
