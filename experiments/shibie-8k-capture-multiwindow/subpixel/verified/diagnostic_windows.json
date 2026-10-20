@@ -1,0 +1,111 @@
+{
+  "independent_15deg": {
+    "pose": 16,
+    "runtime_seconds": 2.55,
+    "peak_rss_mib": 542.1,
+    "metrics": {
+      "warp": {
+        "old_f1_proxy": 0.7509,
+        "new_f1_proxy": 0.762,
+        "old_pass_windows": 8,
+        "new_pass_windows": 9,
+        "new_period_mape": 0.0008,
+        "failure_reasons_new": []
+      },
+      "weft": {
+        "old_f1_proxy": 0.8319,
+        "new_f1_proxy": 0.7429,
+        "old_pass_windows": 9,
+        "new_pass_windows": 9,
+        "new_period_mape": 0.0099,
+        "failure_reasons_new": []
+      }
+    },
+    "declining_windows": [
+      {
+        "family": "weft",
+        "grid": [
+          0,
+          2
+        ],
+        "delta": -0.7662,
+        "old_f1": 0.8462,
+        "new_f1": 0.08,
+        "integer_pitch": 32,
+        "fractional_pitch": 32.3,
+        "old_phase": 23,
+        "new_phase": 20.8708,
+        "old_status": "PASS",
+        "new_status": "PASS",
+        "phase_margin": 0.1818,
+        "longitudinal_drift": 0.1
+      },
+      {
+        "family": "weft",
+        "grid": [
+          1,
+          0
+        ],
+        "delta": -0.0344,
+        "old_f1": 0.9677,
+        "new_f1": 0.9333,
+        "integer_pitch": 32,
+        "fractional_pitch": 32.3,
+        "old_phase": 24,
+        "new_phase": 21.1192,
+        "old_status": "PASS",
+        "new_status": "PASS",
+        "phase_margin": 0.1805,
+        "longitudinal_drift": 0.1
+      }
+    ]
+  },
+  "plain_25_25_inverted": {
+    "pose": 1,
+    "runtime_seconds": 2.73,
+    "peak_rss_mib": 584.3,
+    "metrics": {
+      "warp": {
+        "old_f1_proxy": 0.9476,
+        "new_f1_proxy": 0.9476,
+        "old_pass_windows": 9,
+        "new_pass_windows": 9,
+        "new_period_mape": 0.0062,
+        "failure_reasons_new": []
+      },
+      "weft": {
+        "old_f1_proxy": 0.9543,
+        "new_f1_proxy": 0.9543,
+        "old_pass_windows": 9,
+        "new_pass_windows": 9,
+        "new_period_mape": 0.0042,
+        "failure_reasons_new": []
+      }
+    },
+    "declining_windows": []
+  },
+  "same_fixture_0deg": {
+    "pose": 1,
+    "runtime_seconds": 2.76,
+    "peak_rss_mib": 584.5,
+    "metrics": {
+      "warp": {
+        "old_f1_proxy": 0.9588,
+        "new_f1_proxy": 0.9588,
+        "old_pass_windows": 9,
+        "new_pass_windows": 9,
+        "new_period_mape": 0.0017,
+        "failure_reasons_new": []
+      },
+      "weft": {
+        "old_f1_proxy": 0.9601,
+        "new_f1_proxy": 0.9639,
+        "old_pass_windows": 9,
+        "new_pass_windows": 9,
+        "new_period_mape": 0.0033,
+        "failure_reasons_new": []
+      }
+    },
+    "declining_windows": []
+  }
+}
