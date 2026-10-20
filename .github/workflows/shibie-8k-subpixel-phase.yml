@@ -1,0 +1,48 @@
+name: shibie 8k fractional-pitch phase A/B audit
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-subpixel-phase.yml
+      - shibie/engine/subpixel_physical_phase.py
+      - shibie/run_subpixel_phase_experiment.py
+      - shibie/tests/test_subpixel_phase.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  subpixel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {case: independent_15deg, rotation: 15, seed: 812613, warp: 30, weft: 25, optical: dark}
+          - {case: same_fixture_0deg, rotation: 0, seed: 812613, warp: 30, weft: 25, optical: dark}
+          - {case: plain_25_25_inverted, rotation: 0, seed: 802602, warp: 25, weft: 25, optical: bright}
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r shibie/requirements.txt
+      - name: New fractional-pitch and legacy regression unit tests
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Generate truly native 8000x6000 physical yarn R/T
+        run: |
+          python -c "import sys;from pathlib import Path;sys.path.insert(0,'shibie');from synthetic_capture_8k import CaptureScene,generate;generate(CaptureScene(name='${{ matrix.case }}',fabric_rotation_deg=${{ matrix.rotation }},seed=${{ matrix.seed }},warp_density_cm=${{ matrix.warp }},weft_density_cm=${{ matrix.weft }},contrast_polarity='${{ matrix.optical }}'),Path('experiments/shibie-8k-capture-multiwindow/stress/${{ matrix.case }}'))"
+      - name: Same pair and truth, original vs fractional phase
+        run: /usr/bin/time -v python -u shibie/run_subpixel_phase_experiment.py --case ${{ matrix.case }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: subpixel-ab-${{ matrix.case }}
+          path: experiments/shibie-8k-capture-multiwindow/subpixel/${{ matrix.case }}/
+          retention-days: 14
+          if-no-files-found: warn
