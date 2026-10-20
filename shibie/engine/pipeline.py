@@ -136,6 +136,41 @@ def _periodicity_agreement(run: dict) -> float:
     return floor + (1.0 - floor) * agree
 
 
+def _transmission_physical_center_evidence(image: np.ndarray, positions: np.ndarray, pitch: float) -> float:
+    """Score *measured* center locations against adjacent transverse gaps.
+
+    No centerlines are added, shifted, or invented. For a capture station where
+    yarns transmit less light than pores (calibrated DARK mode), candidate yarn
+    centers should be darker than the half-pitch offsets. Opposite for BRIGHT.
+    A configured mode is required; this is deliberately OFF for normal inference.
+    """
+    mode = DEFAULT_CONFIG.transmission_yarn_contrast_mode
+    if mode == "off" or float(DEFAULT_CONFIG.transmission_center_evidence_weight) <= 0:
+        return 0.0
+    if mode not in ("dark", "bright"):
+        raise ValueError("TRANSMISSION_YARN_CONTRAST_MODE_INVALID")
+    if len(positions) < 5 or pitch <= 4:
+        return 0.0
+    h, w = image.shape[:2]
+    profile = np.median(image[int(h*.20):int(h*.80)].astype(np.float32), axis=0)
+    profile = cv2.GaussianBlur(profile[None, :], (0, 0), sigmaX=1.1)[0]
+    contrast = max(float(np.percentile(profile, 90) - np.percentile(profile, 10)), 6.0)
+    deltas = []
+    for pos in positions:
+        center_x = int(round(float(pos)))
+        step = max(3, int(round(.48*pitch)))
+        if center_x-step-2 < 0 or center_x+step+2 >= w:
+            continue
+        center = float(np.mean(profile[center_x-1:center_x+2]))
+        flanks = .5*(
+            float(np.mean(profile[center_x-step-1:center_x-step+2])) +
+            float(np.mean(profile[center_x+step-1:center_x+step+2]))
+        )
+        value = (flanks-center)/contrast if mode == "dark" else (center-flanks)/contrast
+        deltas.append(value)
+    return float(np.clip(np.median(deltas), -1.0, 1.0)) if len(deltas)>=5 else 0.0
+
+
 def _run_direction(normalized: np.ndarray, direction_deg: float, mm_x_working: float, mm_y_working: float) -> dict:
     steer = steerable_filter_bank(normalized, direction_deg, DEFAULT_CONFIG)
     attempts = []
@@ -211,7 +246,18 @@ def _run_direction(normalized: np.ndarray, direction_deg: float, mm_x_working: f
             components = _direction_quality_components(run)
             run["quality_components"] = {k: round(float(v), 5) for k, v in components.items()}
             # 当质量接近时仅轻微偏向较大尺度，抑制毛羽/纤维级微纹理。
-            base_quality = _direction_quality(run) + min(sigma_used, 6.0) * 0.008
+            phase_support = _transmission_physical_center_evidence(
+                ridge["aligned_validation"], clean["center_positions_px"],
+                clean["median_center_spacing_px"],
+            )
+            run["physical_center_phase_support"] = round(phase_support, 5)
+            run["capture_phase_mode"] = DEFAULT_CONFIG.transmission_yarn_contrast_mode
+            # A modest *positive* tie-break from actual camera profiles; never
+            # alter positions or count just to match an expected periodicity.
+            base_quality = (
+                _direction_quality(run) + min(sigma_used, 6.0) * 0.008
+                + float(DEFAULT_CONFIG.transmission_center_evidence_weight) * phase_support
+            )
             agreement = _periodicity_agreement(run)
             run["periodicity_agreement"] = round(float(agreement), 5)
             run["candidate_quality_base"] = round(float(base_quality), 5)
@@ -258,6 +304,8 @@ def _run_direction(normalized: np.ndarray, direction_deg: float, mm_x_working: f
             "density_per_cm": round(float(item["density"]["density_per_cm"]), 4),
             "candidate_quality": item["candidate_quality"],
             "candidate_quality_base": item.get("candidate_quality_base"),
+            "physical_center_phase_support": item.get("physical_center_phase_support"),
+            "capture_phase_mode": item.get("capture_phase_mode"),
             "periodicity_agreement": item.get("periodicity_agreement"),
             "periodicity_spacing_px": (item.get("periodicity") or {}).get("spacing_px"),
             "base_status": item["_base_confidence_status"],
