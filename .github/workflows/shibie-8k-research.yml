@@ -33,6 +33,8 @@ jobs:
         run: /usr/bin/time -v python -u shibie/run_native8k_smoke.py
       - name: Multiwindow yarn pitch and local entity-phase validation
         run: /usr/bin/time -v python -u shibie/run_native8k_multiwindow.py
+      - name: Frozen same-input ACF and guarded-phase ablation
+        run: /usr/bin/time -v python -u shibie/run_8k_ablation.py
       - name: Check native dimensions
         if: always()
         run: |
@@ -56,6 +58,8 @@ jobs:
           find experiments/shibie-8k-capture-multiwindow/smoke -maxdepth 1 -type f -name '*overlay*.jpg' -print0 | xargs -0 -r git add -f
           find experiments/shibie-8k-capture-multiwindow/smoke -maxdepth 1 -type f -name '*crop*.jpg' -print0 | xargs -0 -r git add -f
           git add -f experiments/shibie-8k-capture-multiwindow/smoke/multiwindow_center_evidence.jpg || true
+          git add -f experiments/shibie-8k-capture-multiwindow/smoke/ablation_visual_compare.jpg || true
+          git add -f experiments/shibie-8k-capture-multiwindow/smoke/ablation_4way.json || true
           if ! git diff --cached --quiet; then
             git commit -m "test(shibie): publish verified 8k smoke measurements and crops [skip ci]"
             git fetch origin experiment/shibie-8k-capture-multiwindow
