@@ -120,10 +120,10 @@ def _render_strip(s, y0, y1, inverse, rng):
     bw=50./s.mm_per_px
     cx=s.width*.5;cy=s.height*.5
     x0,x1=cx-bw*.5,cx+bw*.5
-    y0,y1=cy-bw*.5,cy+bw*.5
+    fy0,fy1=cy-bw*.5,cy+bw*.5
     wall=17.0
-    outside_inner=(X<x0)|(X>x1)|(Y<y0)|(Y>y1)
-    inside_outer=(X>=x0-wall)&(X<=x1+wall)&(Y>=y0-wall)&(Y<=y1+wall)
+    outside_inner=(X<x0)|(X>x1)|(Y<fy0)|(Y>fy1)
+    inside_outer=(X>=x0-wall)&(X<=x1+wall)&(Y>=fy0-wall)&(Y<=fy1+wall)
     frame=outside_inner & inside_outer
     reflect=np.where(frame,220.,reflect)
     transmission=np.where(frame,28.,transmission)
