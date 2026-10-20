@@ -34,7 +34,7 @@ jobs:
       - name: Test current engine
         run: cd shibie && python -m unittest discover -s tests -q
       - name: Replay previous images with original parameters
-        run: python shibie/run_replay_validation.py --scope "${{ inputs.scope || 'smoke' }}"
+        run: python shibie/run_replay_validation.py --scope "${{ inputs.scope || 'full' }}"
       - name: Publish report in run summary
         if: always()
         shell: bash
@@ -46,7 +46,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: shibie-replay-${{ inputs.scope || 'smoke' }}
+          name: shibie-replay-${{ inputs.scope || 'full' }}
           path: experiments/shibie-review-20261020/
           if-no-files-found: warn
           retention-days: 30
