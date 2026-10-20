@@ -73,6 +73,10 @@ def count_accuracy(pred_lines, reference_curves, expected_deg, estimated_deg, pi
     dist=np.abs(np.asarray(pred_coords)[:,None]-np.asarray(ref_coords)[None,:])
     r,c=linear_sum_assignment(dist)
     matched=sum(float(dist[i,j])<=pitch*.32 for i,j in zip(r,c))
+    nearest=np.min(dist,axis=1)
+    nearest_fraction=float(np.median(nearest)/pitch)
+    closest=np.argmin(dist,axis=1)
+    signed_offsets=np.asarray(pred_coords)-np.asarray(ref_coords)[closest]
     precision=matched/max(len(pred_coords),1)
     recall=matched/max(len(ref_coords),1)
     f1=2*precision*recall/max(precision+recall,1e-9)
@@ -80,6 +84,9 @@ def count_accuracy(pred_lines, reference_curves, expected_deg, estimated_deg, pi
       "predicted":len(pred_coords),"truth":len(ref_coords),"matched":matched,
       "precision":round(precision,4),"recall":round(recall,4),"f1":round(f1,4),
       "direction_error_deg":round(theta_error,3),"match_tolerance_px":round(.32*pitch,3),
+      "median_nearest_gt_px":round(float(np.median(nearest)),3),
+      "median_offset_fraction_of_pitch":round(nearest_fraction,3),
+      "signed_phase_offset_px":round(float(np.median(signed_offsets)),3),
     }
 
 
@@ -136,12 +143,22 @@ def evaluate(scene,name,overrides,reflected,transmitted,gt):
         result[family+"_predicted"]=score["predicted"]
         result[family+"_truth"]=score["truth"]
         result[family+"_direction_error_deg"]=score["direction_error_deg"]
+        result[family+"_nearest_truth_offset_fraction"]=score.get("median_offset_fraction_of_pitch")
+        result[family+"_nearest_truth_offset_px"]=score.get("median_nearest_gt_px")
+        result[family+"_phase_signed_px"]=score.get("signed_phase_offset_px")
         observed=((m.get("density_debug") or {}).get(family) or {}).get("centerline") or {}
         result[family+"_pitch_measured_working_px"]=observed.get("median_center_spacing_px")
     result["mean_f1"]=round(float(np.mean([q["f1"] for q in allscores])),4)
     outdir=OUT/"visuals"
     outdir.mkdir(parents=True,exist_ok=True)
     cv2.imwrite(str(outdir/f"{scene.name}_{name}.jpg"),overlay,[cv2.IMWRITE_JPEG_QUALITY,93])
+    # Ground-truth physical centers in a separate layer (independent from output).
+    physical=transmitted.copy()
+    for family,color in (("warp",(255,50,210)),("weft",(65,255,65))):
+        for entity in gt["physical_yarn_centerlines"][family]:
+            coords=np.rint(np.asarray(entity["points"],np.float32)).astype(np.int32)
+            if len(coords)>1:cv2.polylines(physical,[coords],False,color,1,cv2.LINE_AA)
+    cv2.imwrite(str(outdir/f"{scene.name}_GT_physical_yarns.jpg"),physical,[cv2.IMWRITE_JPEG_QUALITY,95])
     return result
 
 
