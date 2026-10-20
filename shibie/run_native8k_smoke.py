@@ -66,7 +66,9 @@ def _overlay(path, detected, truth):
 
 def run(output:Path):
     gtfile=output/"truth.json"
-    if not gtfile.exists():generate(CaptureScene(),output)
+    if (not gtfile.exists() or not (output/"reflection_8000x6000.jpg").is_file()
+            or not (output/"transmission_8000x6000.jpg").is_file()):
+        generate(CaptureScene(),output)
     print("START_RAW_ORIGINAL_8K",flush=True)
     r=(output/"reflection_8000x6000.jpg").read_bytes()
     t=(output/"transmission_8000x6000.jpg").read_bytes()
