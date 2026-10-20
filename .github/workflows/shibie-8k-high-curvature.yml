@@ -1,0 +1,43 @@
+name: shibie 8k high curvature physical yarn identity holdout
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-high-curvature.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  high-curvature:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {case: holdout_twill21_wave028, weave: twill_2_1, rotation: -13, seed: 931129, warp: 30, weft: 25, optical: mixed}
+          - {case: holdout_twill31_wave028, weave: twill_3_1, rotation: 18, seed: 931130, warp: 30, weft: 25, optical: bright}
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Regression tests including prevention of false yarn-ID switches
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Synthesize direct native 8k high-curvature R/T yarns
+        run: |
+          python -c "import sys;from pathlib import Path;sys.path.insert(0,'shibie');from synthetic_capture_8k import CaptureScene,generate;generate(CaptureScene(name='${{ matrix.case }}',fabric_rotation_deg=${{ matrix.rotation }},seed=${{ matrix.seed }},weave='${{ matrix.weave }}',warp_density_cm=${{ matrix.warp }},weft_density_cm=${{ matrix.weft }},contrast_polarity='${{ matrix.optical }}',wave_fraction=.28,shift_reflection_x=1.8,noise_sigma=4.),Path('experiments/shibie-8k-capture-multiwindow/stress/${{ matrix.case }}'))"
+      - name: Run frozen local identity algorithm and physical truth audit
+        run: /usr/bin/time -v python -u shibie/run_8k_yarn_identity.py --case ${{ matrix.case }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: yarn-id-curvature-${{ matrix.case }}
+          path: experiments/shibie-8k-capture-multiwindow/identity-tracking/${{ matrix.case }}/
+          retention-days: 21
+          if-no-files-found: warn
