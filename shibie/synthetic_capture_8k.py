@@ -27,6 +27,7 @@ class CaptureScene:
     weft_density_cm: float = 25.0
     weave: str = "plain"
     rotation_deg: float = 7.0
+    fabric_rotation_deg: float = 0.0  # independent of fixture/camera rotation
     perspective: float = 0.002
     wave_fraction: float = 0.035
     contrast_polarity: str = "dark"
@@ -66,6 +67,12 @@ def _curve_shift(value,index,pitch,fraction,period):
     return fraction*pitch*(np.sin(2*np.pi*value/period+index*.61)+.25*np.sin(2*np.pi*value/(period*.57)+index*.37))
 
 def _stripe_features(xbase,ybase,s):
+    # Relative cloth/fiducial rotation; frame remains in camera canonical plane.
+    if s.fabric_rotation_deg:
+        alpha=np.deg2rad(s.fabric_rotation_deg)
+        xx=xbase-s.width*.5;yy=ybase-s.height*.5
+        xbase=s.width*.5+np.cos(alpha)*xx+np.sin(alpha)*yy
+        ybase=s.height*.5-np.sin(alpha)*xx+np.cos(alpha)*yy
     wp=10.0/(s.warp_density_cm*s.mm_per_px)
     fp=10.0/(s.weft_density_cm*s.mm_per_px)
     # Fixed-point iterations preserve persistent yarn ID despite sinusoidal curvature.
@@ -152,6 +159,11 @@ def _truth_lines(s,H):
                 ys=s.height*.5+idx*pitch+_curve_shift(xs,idx,pitch,s.wave_fraction,520.)
             if family=="warp" and (np.min(xs)>s.width+pitch or np.max(xs)<-pitch):continue
             if family=="weft" and (np.min(ys)>s.height+pitch or np.max(ys)<-pitch):continue
+            if s.fabric_rotation_deg:
+                angle=np.deg2rad(s.fabric_rotation_deg)
+                dx=xs-s.width*.5;dy=ys-s.height*.5
+                xs=s.width*.5+np.cos(angle)*dx-np.sin(angle)*dy
+                ys=s.height*.5+np.sin(angle)*dx+np.cos(angle)*dy
             pts=np.stack([xs,ys],axis=1).astype(np.float32)
             im=cv2.perspectiveTransform(pts[None],H)[0]
             result[family].append({"id":family[0]+str(idx),"points":np.round(im,2).tolist(),
