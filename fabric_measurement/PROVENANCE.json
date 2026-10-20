@@ -1,0 +1,14 @@
+{
+  "source_project": "../demo111/TextileDefectDetection_standalone_demo",
+  "purpose": "Reuse report-route-1.0 image primitives and report modules; modifications are in this repository only",
+  "source_sha256": {
+    "report_reproduction/config.py": "afe2d197e77fda7cd7ddf11ef1da9367b301fd49b96a5f2bad1b323db485315e",
+    "report_reproduction/geometry.py": "3f478c601d6278038e36ee68157a2f598ec9d222eaeb96aed3ef880abbc3f3f1",
+    "report_reproduction/centerlines.py": "41982f8a982927332861f5c488317bc03397065ed1990ca30dc4e302b7cf72da",
+    "report_reproduction/measurements.py": "e66bd8bfb4142e760fe4ba6638bf586a102716a38c20ce8e397fb961b1632ac7",
+    "report_reproduction/structure.py": "c2062c68594df3cda69671a10d9023eb418d4e2d29fbbc33794f17e0e50b1876",
+    "report_reproduction/pipeline.py": "1cab40886b53d3d9800dc86df223d7eab92527d41c841f40d50703e1b9a69695",
+    "standalone_centerline/density.py": "9529e6b98e49f834f329ba9acc2a250812e2ccf627bfa0a7bdadd63a3c1bac5e",
+    "report_reproduction/tests/test_route.py": "399536798367e600d6e942d9805121473d535e91a067df641bf6bec7ef976c59"
+  }
+}

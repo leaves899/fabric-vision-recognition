@@ -1,0 +1,111 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "training_loss": 0.9627092063426972,
+      "validation_pseudo_label_loss": 1.0927100777626038
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.9359655737876892,
+      "validation_pseudo_label_loss": 1.0713138058781624
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.9303926810622215,
+      "validation_pseudo_label_loss": 1.1173858344554901
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.9058305948972702,
+      "validation_pseudo_label_loss": 1.1106544062495232
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.9383021265268325,
+      "validation_pseudo_label_loss": 1.1335139498114586
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.9125717610120774,
+      "validation_pseudo_label_loss": 1.0235277116298676
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.9063659444451332,
+      "validation_pseudo_label_loss": 1.0609008893370628
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.9091908782720566,
+      "validation_pseudo_label_loss": 1.0804591551423073
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.8980207458138466,
+      "validation_pseudo_label_loss": 1.124557487666607
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.9254766941070557,
+      "validation_pseudo_label_loss": 1.0887197405099869
+    },
+    {
+      "epoch": 11,
+      "training_loss": 0.8973535746335983,
+      "validation_pseudo_label_loss": 1.090388223528862
+    },
+    {
+      "epoch": 12,
+      "training_loss": 0.8778140395879745,
+      "validation_pseudo_label_loss": 1.101955570280552
+    }
+  ],
+  "best_epoch": 6,
+  "train_ids": [
+    "OLP_02",
+    "OLP_03",
+    "OLP_04",
+    "OLP_07",
+    "OLP_08",
+    "OLP_09",
+    "OLP_12",
+    "OLP_13",
+    "OLP_14",
+    "OLP_17",
+    "OLP_18",
+    "OLP_19",
+    "OLP_22",
+    "OLP_23",
+    "OLP_24",
+    "OLP_27",
+    "OLP_28",
+    "OLP_29",
+    "OLP_32",
+    "OLP_33",
+    "OLP_34",
+    "OLP_37",
+    "OLP_38"
+  ],
+  "validation_ids": [
+    "OLP_01",
+    "OLP_06",
+    "OLP_11",
+    "OLP_16",
+    "OLP_21",
+    "OLP_26",
+    "OLP_31",
+    "OLP_36"
+  ],
+  "test_used_for_selection": false,
+  "rgb_channels": 3,
+  "targets": "PAIRED_MODEL_SOFT_PSEUDOLABELS_NOT_GT",
+  "parameter_count": 118947,
+  "seconds": 81.11364630000025,
+  "seed": 20261016,
+  "class_weights": [
+    0.9358948469161987,
+    0.7125224471092224,
+    1.351582646369934
+  ]
+}

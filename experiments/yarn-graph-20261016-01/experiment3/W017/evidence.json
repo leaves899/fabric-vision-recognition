@@ -1,0 +1,537 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.16447482638888888,
+    "class_fraction": [
+      0.0025651041666666665,
+      0.16190972222222222,
+      0.0,
+      0.8355251736111111
+    ],
+    "visible_region_candidates": 1,
+    "inferred_links": 0,
+    "provisional_groups": 1,
+    "rejected_regions": {
+      "nonelongated_region": 1
+    },
+    "directions": {
+      "A": {
+        "angle_image_y_down_deg": 141.55267675564394,
+        "concentration": 1.0,
+        "unit": [
+          0.7831801552816482,
+          -0.6217948571458384
+        ],
+        "physical_direction_verified": false
+      },
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 1,
+        "median_visible_mask_width_px": 12.401742118312319,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        1,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "OBSERVED_CANDIDATE_INTERVALS_INCOMPLETE_ROOT_SET",
+        "hits": [],
+        "intervals_px": [],
+        "mean_interval_px": null,
+        "interval_cv": null,
+        "verified_adjacent_yarn_pitch": null,
+        "physical_count": null
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "A0001",
+      "family": "A",
+      "points": [
+        [
+          54.0,
+          184.0
+        ],
+        [
+          55.0,
+          183.0
+        ],
+        [
+          57.0,
+          181.0
+        ],
+        [
+          58.0,
+          180.0
+        ],
+        [
+          60.0,
+          179.0
+        ],
+        [
+          61.0,
+          178.0
+        ],
+        [
+          63.0,
+          177.0
+        ],
+        [
+          65.0,
+          175.0
+        ],
+        [
+          66.0,
+          175.0
+        ],
+        [
+          68.0,
+          174.0
+        ],
+        [
+          70.0,
+          172.0
+        ],
+        [
+          71.0,
+          171.0
+        ],
+        [
+          73.0,
+          170.0
+        ],
+        [
+          74.0,
+          169.0
+        ],
+        [
+          76.0,
+          167.0
+        ],
+        [
+          77.0,
+          166.0
+        ],
+        [
+          79.0,
+          164.0
+        ],
+        [
+          80.0,
+          163.0
+        ],
+        [
+          82.0,
+          162.0
+        ],
+        [
+          83.0,
+          161.0
+        ],
+        [
+          85.0,
+          159.0
+        ],
+        [
+          86.0,
+          158.0
+        ],
+        [
+          87.0,
+          157.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            54.0,
+            184.0
+          ],
+          [
+            55.0,
+            183.0
+          ],
+          [
+            57.0,
+            181.0
+          ],
+          [
+            58.0,
+            180.0
+          ],
+          [
+            60.0,
+            179.0
+          ],
+          [
+            61.0,
+            178.0
+          ],
+          [
+            63.0,
+            177.0
+          ],
+          [
+            65.0,
+            175.0
+          ],
+          [
+            66.0,
+            175.0
+          ],
+          [
+            68.0,
+            174.0
+          ],
+          [
+            70.0,
+            172.0
+          ],
+          [
+            71.0,
+            171.0
+          ],
+          [
+            73.0,
+            170.0
+          ],
+          [
+            74.0,
+            169.0
+          ],
+          [
+            76.0,
+            167.0
+          ],
+          [
+            77.0,
+            166.0
+          ],
+          [
+            79.0,
+            164.0
+          ],
+          [
+            80.0,
+            163.0
+          ],
+          [
+            82.0,
+            162.0
+          ],
+          [
+            83.0,
+            161.0
+          ],
+          [
+            85.0,
+            159.0
+          ],
+          [
+            86.0,
+            158.0
+          ],
+          [
+            87.0,
+            157.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            85,
+            156
+          ],
+          [
+            84,
+            157
+          ],
+          [
+            82,
+            157
+          ],
+          [
+            81,
+            158
+          ],
+          [
+            80,
+            158
+          ],
+          [
+            79,
+            159
+          ],
+          [
+            78,
+            159
+          ],
+          [
+            77,
+            160
+          ],
+          [
+            76,
+            160
+          ],
+          [
+            75,
+            161
+          ],
+          [
+            74,
+            161
+          ],
+          [
+            73,
+            162
+          ],
+          [
+            72,
+            162
+          ],
+          [
+            67,
+            167
+          ],
+          [
+            66,
+            167
+          ],
+          [
+            64,
+            169
+          ],
+          [
+            63,
+            169
+          ],
+          [
+            62,
+            170
+          ],
+          [
+            61,
+            170
+          ],
+          [
+            56,
+            175
+          ],
+          [
+            55,
+            175
+          ],
+          [
+            55,
+            176
+          ],
+          [
+            53,
+            178
+          ],
+          [
+            53,
+            180
+          ],
+          [
+            52,
+            181
+          ],
+          [
+            52,
+            182
+          ],
+          [
+            53,
+            183
+          ],
+          [
+            53,
+            185
+          ],
+          [
+            54,
+            186
+          ],
+          [
+            59,
+            186
+          ],
+          [
+            61,
+            184
+          ],
+          [
+            62,
+            184
+          ],
+          [
+            63,
+            183
+          ],
+          [
+            64,
+            183
+          ],
+          [
+            65,
+            182
+          ],
+          [
+            67,
+            182
+          ],
+          [
+            69,
+            180
+          ],
+          [
+            70,
+            180
+          ],
+          [
+            71,
+            179
+          ],
+          [
+            72,
+            179
+          ],
+          [
+            77,
+            174
+          ],
+          [
+            78,
+            174
+          ],
+          [
+            79,
+            173
+          ],
+          [
+            79,
+            172
+          ],
+          [
+            81,
+            170
+          ],
+          [
+            81,
+            169
+          ],
+          [
+            82,
+            168
+          ],
+          [
+            82,
+            167
+          ],
+          [
+            87,
+            162
+          ],
+          [
+            87,
+            161
+          ],
+          [
+            88,
+            160
+          ],
+          [
+            88,
+            158
+          ],
+          [
+            87,
+            157
+          ],
+          [
+            86,
+            157
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        52,
+        156,
+        37,
+        31
+      ],
+      "area_px": 487,
+      "aspect_ratio": 3.3059015603915447,
+      "apparent_mask_width_px_median": 12.401742118312319,
+      "apparent_mask_width_px_p10": 7.525662976251045,
+      "angle_image_y_down_deg": 142.0414309950249,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    }
+  ],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [
+    []
+  ],
+  "row_groups": [
+    "G0001"
+  ],
+  "col_groups": [],
+  "provenance": {
+    "image": "E:\\Internship_2026\\FabricNET\\W017.jpg",
+    "sha256": "9e49d815765967a38325c2b633512da919ef76c851a950cea2de247356afce35",
+    "crop_original_xyxy": [
+      80,
+      0,
+      560,
+      480
+    ],
+    "domain": "FabricNET_microscope",
+    "source": "single_RGB_student"
+  }
+}

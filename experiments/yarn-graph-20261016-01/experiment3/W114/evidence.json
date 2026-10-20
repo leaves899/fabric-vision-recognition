@@ -1,0 +1,1052 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.0050390625,
+    "class_fraction": [
+      0.0050390625,
+      0.0,
+      0.0,
+      0.9949609375
+    ],
+    "visible_region_candidates": 5,
+    "inferred_links": 0,
+    "provisional_groups": 5,
+    "rejected_regions": {
+      "nonelongated_region": 5,
+      "small_region": 2,
+      "short_center_path": 1
+    },
+    "directions": {
+      "A": {
+        "angle_image_y_down_deg": 178.1150712425297,
+        "concentration": 0.9924495933896993,
+        "unit": [
+          0.9994589025960259,
+          -0.03289227905676044
+        ],
+        "physical_direction_verified": false
+      },
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 5,
+        "median_visible_mask_width_px": 7.011265439268728,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        5,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "OBSERVED_CANDIDATE_INTERVALS_INCOMPLETE_ROOT_SET",
+        "hits": [
+          {
+            "group": "G0005",
+            "xy": [
+              238.203058935673,
+              185.3984705321635
+            ],
+            "position_px": -54.631090208924846
+          }
+        ],
+        "intervals_px": [],
+        "mean_interval_px": null,
+        "interval_cv": null,
+        "verified_adjacent_yarn_pitch": null,
+        "physical_count": null
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "A0001",
+      "family": "A",
+      "points": [
+        [
+          413.0,
+          4.0
+        ],
+        [
+          415.0,
+          5.0
+        ],
+        [
+          417.0,
+          5.0
+        ],
+        [
+          419.0,
+          6.0
+        ],
+        [
+          421.0,
+          6.0
+        ],
+        [
+          423.0,
+          6.0
+        ],
+        [
+          425.0,
+          6.0
+        ],
+        [
+          426.0,
+          7.0
+        ],
+        [
+          428.0,
+          6.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            413.0,
+            4.0
+          ],
+          [
+            415.0,
+            5.0
+          ],
+          [
+            417.0,
+            5.0
+          ],
+          [
+            419.0,
+            6.0
+          ],
+          [
+            421.0,
+            6.0
+          ],
+          [
+            423.0,
+            6.0
+          ],
+          [
+            425.0,
+            6.0
+          ],
+          [
+            426.0,
+            7.0
+          ],
+          [
+            428.0,
+            6.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            416,
+            2
+          ],
+          [
+            415,
+            3
+          ],
+          [
+            413,
+            3
+          ],
+          [
+            412,
+            4
+          ],
+          [
+            412,
+            5
+          ],
+          [
+            415,
+            8
+          ],
+          [
+            417,
+            8
+          ],
+          [
+            418,
+            9
+          ],
+          [
+            420,
+            9
+          ],
+          [
+            421,
+            10
+          ],
+          [
+            423,
+            10
+          ],
+          [
+            424,
+            9
+          ],
+          [
+            426,
+            9
+          ],
+          [
+            428,
+            7
+          ],
+          [
+            428,
+            6
+          ],
+          [
+            426,
+            4
+          ],
+          [
+            425,
+            4
+          ],
+          [
+            424,
+            3
+          ],
+          [
+            420,
+            3
+          ],
+          [
+            419,
+            2
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        412,
+        2,
+        17,
+        9
+      ],
+      "area_px": 103,
+      "aspect_ratio": 2.1517068256741485,
+      "apparent_mask_width_px_median": 7.082084212519261,
+      "apparent_mask_width_px_p10": 3.7012439397318566,
+      "angle_image_y_down_deg": 10.317995221516068,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    },
+    {
+      "id": "A0002",
+      "family": "A",
+      "points": [
+        [
+          290.0,
+          48.0
+        ],
+        [
+          292.0,
+          48.0
+        ],
+        [
+          294.0,
+          48.0
+        ],
+        [
+          295.0,
+          48.0
+        ],
+        [
+          297.0,
+          48.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            290.0,
+            48.0
+          ],
+          [
+            292.0,
+            48.0
+          ],
+          [
+            294.0,
+            48.0
+          ],
+          [
+            295.0,
+            48.0
+          ],
+          [
+            297.0,
+            48.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            289,
+            46
+          ],
+          [
+            289,
+            49
+          ],
+          [
+            290,
+            50
+          ],
+          [
+            291,
+            50
+          ],
+          [
+            292,
+            51
+          ],
+          [
+            294,
+            51
+          ],
+          [
+            295,
+            50
+          ],
+          [
+            296,
+            50
+          ],
+          [
+            297,
+            49
+          ],
+          [
+            297,
+            48
+          ],
+          [
+            295,
+            46
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        289,
+        46,
+        9,
+        6
+      ],
+      "area_px": 43,
+      "aspect_ratio": 1.5583115257221534,
+      "apparent_mask_width_px_median": 5.106361400506079,
+      "apparent_mask_width_px_p10": 2.840152260242007,
+      "angle_image_y_down_deg": 8.870830939599507,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    },
+    {
+      "id": "A0003",
+      "family": "A",
+      "points": [
+        [
+          179.0,
+          93.0
+        ],
+        [
+          181.0,
+          92.0
+        ],
+        [
+          183.0,
+          92.0
+        ],
+        [
+          185.0,
+          92.0
+        ],
+        [
+          187.0,
+          92.0
+        ],
+        [
+          189.0,
+          92.0
+        ],
+        [
+          190.0,
+          91.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            179.0,
+            93.0
+          ],
+          [
+            181.0,
+            92.0
+          ],
+          [
+            183.0,
+            92.0
+          ],
+          [
+            185.0,
+            92.0
+          ],
+          [
+            187.0,
+            92.0
+          ],
+          [
+            189.0,
+            92.0
+          ],
+          [
+            190.0,
+            91.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            181,
+            89
+          ],
+          [
+            180,
+            90
+          ],
+          [
+            179,
+            90
+          ],
+          [
+            179,
+            91
+          ],
+          [
+            178,
+            92
+          ],
+          [
+            178,
+            93
+          ],
+          [
+            180,
+            95
+          ],
+          [
+            188,
+            95
+          ],
+          [
+            190,
+            93
+          ],
+          [
+            190,
+            91
+          ],
+          [
+            189,
+            90
+          ],
+          [
+            188,
+            90
+          ],
+          [
+            187,
+            89
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        178,
+        89,
+        13,
+        7
+      ],
+      "area_px": 76,
+      "aspect_ratio": 1.7861374754679342,
+      "apparent_mask_width_px_median": 7.011265439268728,
+      "apparent_mask_width_px_p10": 3.8068137813423775,
+      "angle_image_y_down_deg": 179.33109539004917,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    },
+    {
+      "id": "A0004",
+      "family": "A",
+      "points": [
+        [
+          66.0,
+          131.0
+        ],
+        [
+          68.0,
+          131.0
+        ],
+        [
+          70.0,
+          131.0
+        ],
+        [
+          72.0,
+          131.0
+        ],
+        [
+          74.0,
+          131.0
+        ],
+        [
+          76.0,
+          130.0
+        ],
+        [
+          78.0,
+          130.0
+        ],
+        [
+          80.0,
+          130.0
+        ],
+        [
+          82.0,
+          130.0
+        ],
+        [
+          84.0,
+          130.0
+        ],
+        [
+          85.0,
+          130.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            66.0,
+            131.0
+          ],
+          [
+            68.0,
+            131.0
+          ],
+          [
+            70.0,
+            131.0
+          ],
+          [
+            72.0,
+            131.0
+          ],
+          [
+            74.0,
+            131.0
+          ],
+          [
+            76.0,
+            130.0
+          ],
+          [
+            78.0,
+            130.0
+          ],
+          [
+            80.0,
+            130.0
+          ],
+          [
+            82.0,
+            130.0
+          ],
+          [
+            84.0,
+            130.0
+          ],
+          [
+            85.0,
+            130.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            82,
+            126
+          ],
+          [
+            81,
+            127
+          ],
+          [
+            80,
+            127
+          ],
+          [
+            78,
+            129
+          ],
+          [
+            77,
+            129
+          ],
+          [
+            76,
+            130
+          ],
+          [
+            73,
+            130
+          ],
+          [
+            72,
+            129
+          ],
+          [
+            67,
+            129
+          ],
+          [
+            66,
+            130
+          ],
+          [
+            65,
+            130
+          ],
+          [
+            65,
+            131
+          ],
+          [
+            66,
+            132
+          ],
+          [
+            67,
+            132
+          ],
+          [
+            68,
+            133
+          ],
+          [
+            74,
+            133
+          ],
+          [
+            77,
+            130
+          ],
+          [
+            78,
+            131
+          ],
+          [
+            79,
+            131
+          ],
+          [
+            82,
+            134
+          ],
+          [
+            84,
+            134
+          ],
+          [
+            86,
+            132
+          ],
+          [
+            86,
+            130
+          ],
+          [
+            85,
+            129
+          ],
+          [
+            85,
+            128
+          ],
+          [
+            84,
+            127
+          ],
+          [
+            83,
+            127
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        65,
+        126,
+        22,
+        9
+      ],
+      "area_px": 103,
+      "aspect_ratio": 3.6582526858931366,
+      "apparent_mask_width_px_median": 5.091431531612576,
+      "apparent_mask_width_px_p10": 3.0937391038298907,
+      "angle_image_y_down_deg": 177.24740669702732,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    },
+    {
+      "id": "A0005",
+      "family": "A",
+      "points": [
+        [
+          225.0,
+          187.0
+        ],
+        [
+          227.0,
+          186.0
+        ],
+        [
+          229.0,
+          187.0
+        ],
+        [
+          231.0,
+          187.0
+        ],
+        [
+          233.0,
+          187.0
+        ],
+        [
+          235.0,
+          186.0
+        ],
+        [
+          237.0,
+          186.0
+        ],
+        [
+          239.0,
+          185.0
+        ],
+        [
+          240.0,
+          184.0
+        ],
+        [
+          243.0,
+          184.0
+        ],
+        [
+          245.0,
+          184.0
+        ],
+        [
+          247.0,
+          184.0
+        ],
+        [
+          249.0,
+          184.0
+        ],
+        [
+          251.0,
+          185.0
+        ],
+        [
+          253.0,
+          186.0
+        ],
+        [
+          254.0,
+          186.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            225.0,
+            187.0
+          ],
+          [
+            227.0,
+            186.0
+          ],
+          [
+            229.0,
+            187.0
+          ],
+          [
+            231.0,
+            187.0
+          ],
+          [
+            233.0,
+            187.0
+          ],
+          [
+            235.0,
+            186.0
+          ],
+          [
+            237.0,
+            186.0
+          ],
+          [
+            239.0,
+            185.0
+          ],
+          [
+            240.0,
+            184.0
+          ],
+          [
+            243.0,
+            184.0
+          ],
+          [
+            245.0,
+            184.0
+          ],
+          [
+            247.0,
+            184.0
+          ],
+          [
+            249.0,
+            184.0
+          ],
+          [
+            251.0,
+            185.0
+          ],
+          [
+            253.0,
+            186.0
+          ],
+          [
+            254.0,
+            186.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            227,
+            180
+          ],
+          [
+            225,
+            182
+          ],
+          [
+            225,
+            183
+          ],
+          [
+            224,
+            184
+          ],
+          [
+            224,
+            190
+          ],
+          [
+            226,
+            192
+          ],
+          [
+            227,
+            192
+          ],
+          [
+            228,
+            193
+          ],
+          [
+            229,
+            193
+          ],
+          [
+            230,
+            194
+          ],
+          [
+            234,
+            194
+          ],
+          [
+            235,
+            193
+          ],
+          [
+            236,
+            193
+          ],
+          [
+            240,
+            189
+          ],
+          [
+            241,
+            189
+          ],
+          [
+            242,
+            188
+          ],
+          [
+            244,
+            188
+          ],
+          [
+            245,
+            189
+          ],
+          [
+            254,
+            189
+          ],
+          [
+            255,
+            188
+          ],
+          [
+            255,
+            185
+          ],
+          [
+            251,
+            181
+          ],
+          [
+            250,
+            181
+          ],
+          [
+            249,
+            180
+          ],
+          [
+            243,
+            180
+          ],
+          [
+            242,
+            181
+          ],
+          [
+            241,
+            180
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        224,
+        180,
+        32,
+        15
+      ],
+      "area_px": 348,
+      "aspect_ratio": 2.446187208759244,
+      "apparent_mask_width_px_median": 10.600725414602561,
+      "apparent_mask_width_px_p10": 8.561644007242833,
+      "angle_image_y_down_deg": 174.4311706198836,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    }
+  ],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "row_groups": [
+    "G0001",
+    "G0002",
+    "G0003",
+    "G0004",
+    "G0005"
+  ],
+  "col_groups": [],
+  "provenance": {
+    "image": "E:\\Internship_2026\\FabricNET\\W114.jpg",
+    "sha256": "e02474379d2bf38597847b19d83fe2faafd22358f8c6cb612d6c322f8cc5f812",
+    "crop_original_xyxy": [
+      80,
+      0,
+      560,
+      480
+    ],
+    "domain": "FabricNET_microscope",
+    "source": "single_RGB_student"
+  }
+}

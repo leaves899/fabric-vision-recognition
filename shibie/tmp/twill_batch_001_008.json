@@ -1,0 +1,1169 @@
+{
+  "range": [
+    1,
+    8
+  ],
+  "summary": {
+    "twill": {
+      "direction_PASS": 7,
+      "angle_PASS": 6,
+      "angle_LOW_CONFIDENCE": 1,
+      "direction_FAIL": 1,
+      "angle_FAIL": 1
+    }
+  },
+  "samples": [
+    {
+      "image": "W001.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 21.141,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "NO_EVIDENCE",
+      "candidate_confidence": 0.0,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.4653,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8272,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 25,
+          "3": 8
+        },
+        "alternation_ratio": 0.5172,
+        "dominant_run_ratio": 0.6757,
+        "run_one_ratio": 0.5256,
+        "repeat_consistency": 0.5625,
+        "repeat_unit": [
+          4,
+          1
+        ],
+        "float_matrix": [
+          [
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            0
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 105.0,
+          "direction_field_coverage": 0.0946,
+          "component_count": 27,
+          "mean_response": 2.4526
+        }
+      ]
+    },
+    {
+      "image": "W002.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 21.881,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": "2/1",
+      "weave_candidate": "2/1",
+      "weave_result_kind": "NO_EVIDENCE",
+      "candidate_confidence": 0.0,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_LONG_FLOAT_OUTSIDE_V1_SCOPE"
+      ],
+      "weave_evidence": {
+        "weave_type": "2/1",
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": "2/1",
+        "weave_result_kind": "CANDIDATE",
+        "candidate_confidence": 0.6146,
+        "reasons": [
+          "WEAVE_LONG_FLOAT_OUTSIDE_V1_SCOPE"
+        ],
+        "valid_ratio": 0.8148,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 5,
+        "unsupported_long_float": true,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 27,
+          "3": 8
+        },
+        "alternation_ratio": 0.5877,
+        "dominant_run_ratio": 0.75,
+        "run_one_ratio": 0.5765,
+        "repeat_consistency": 0.8621,
+        "repeat_unit": [
+          4,
+          4
+        ],
+        "float_matrix": [
+          [
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            0,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1,
+            -1
+          ],
+          [
+            0,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            1,
+            0,
+            -1,
+            0
+          ],
+          [
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            0,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 105.0,
+          "direction_field_coverage": 0.1116,
+          "component_count": 37,
+          "mean_response": 2.3732
+        }
+      ]
+    },
+    {
+      "image": "W003.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 20.066,
+      "direction_reasons": [],
+      "angle_reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "NO_EVIDENCE",
+      "candidate_confidence": 0.0,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.5088,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8395,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 31,
+          "3": 4
+        },
+        "alternation_ratio": 0.4831,
+        "dominant_run_ratio": 0.775,
+        "run_one_ratio": 0.4667,
+        "repeat_consistency": 0.6061,
+        "repeat_unit": [
+          4,
+          4
+        ],
+        "float_matrix": [
+          [
+            -1,
+            0,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 110.0,
+          "direction_field_coverage": 0.0911,
+          "component_count": 27,
+          "mean_response": 2.6999
+        }
+      ]
+    },
+    {
+      "image": "W004.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 18.583,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "NO_EVIDENCE",
+      "candidate_confidence": 0.0,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.4872,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8025,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 27,
+          "3": 8
+        },
+        "alternation_ratio": 0.4911,
+        "dominant_run_ratio": 0.7105,
+        "run_one_ratio": 0.4795,
+        "repeat_consistency": 0.6071,
+        "repeat_unit": [
+          4,
+          4
+        ],
+        "float_matrix": [
+          [
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            0,
+            0,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            0,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 105.0,
+          "direction_field_coverage": 0.1158,
+          "component_count": 35,
+          "mean_response": 2.4312
+        }
+      ]
+    },
+    {
+      "image": "W005.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 67.009,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": "2/1",
+      "weave_candidate": "2/1",
+      "weave_result_kind": "NO_EVIDENCE",
+      "candidate_confidence": 0.0,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_LONG_FLOAT_OUTSIDE_V1_SCOPE"
+      ],
+      "weave_evidence": {
+        "weave_type": "2/1",
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": "2/1",
+        "weave_result_kind": "CANDIDATE",
+        "candidate_confidence": 0.4636,
+        "reasons": [
+          "WEAVE_LONG_FLOAT_OUTSIDE_V1_SCOPE"
+        ],
+        "valid_ratio": 0.8148,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": true,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 20,
+          "3": 8
+        },
+        "alternation_ratio": 0.4211,
+        "dominant_run_ratio": 0.5714,
+        "run_one_ratio": 0.4697,
+        "repeat_consistency": 0.7241,
+        "repeat_unit": [
+          4,
+          4
+        ],
+        "float_matrix": [
+          [
+            1,
+            0,
+            0,
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 20.0,
+          "direction_field_coverage": 0.1019,
+          "component_count": 30,
+          "mean_response": 2.5504
+        }
+      ]
+    },
+    {
+      "image": "W006.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.248,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "NO_EVIDENCE",
+      "candidate_confidence": 0.0,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.5011,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 12,
+          "3": 4
+        },
+        "alternation_ratio": 0.3727,
+        "dominant_run_ratio": 0.4138,
+        "run_one_ratio": 0.5085,
+        "repeat_consistency": 0.6341,
+        "repeat_unit": [
+          2,
+          2
+        ],
+        "float_matrix": [
+          [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            0,
+            0,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.186,
+          "component_count": 44,
+          "mean_response": 2.3375
+        }
+      ]
+    },
+    {
+      "image": "W007.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "FAIL",
+      "angle_status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "direction_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "angle_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": null,
+      "candidate_confidence": null,
+      "weave_status": "NOT_AVAILABLE",
+      "weave_reasons": [
+        "WEAVE_TWILL_SEGMENTS_INSUFFICIENT"
+      ],
+      "weave_evidence": {},
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1587,
+          "component_count": 33,
+          "mean_response": 2.8269
+        }
+      ]
+    },
+    {
+      "image": "W008.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.258,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "NO_EVIDENCE",
+      "candidate_confidence": 0.0,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.5109,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8272,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 16,
+          "3": 6
+        },
+        "alternation_ratio": 0.3621,
+        "dominant_run_ratio": 0.5,
+        "run_one_ratio": 0.4667,
+        "repeat_consistency": 0.6176,
+        "repeat_unit": [
+          1,
+          4
+        ],
+        "float_matrix": [
+          [
+            1,
+            -1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            -1,
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1542,
+          "component_count": 31,
+          "mean_response": 2.5526
+        }
+      ]
+    }
+  ]
+}

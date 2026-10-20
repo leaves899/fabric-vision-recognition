@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>织物图像识别工作台</title><link rel="stylesheet" href="/assets/style.css"></head>
+<body>
+<header><a class="brand" href="/">织物<span> / </span>视觉实验室</a><span class="local"><i></i> 本地运行 · 报告技术路线</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">FABRIC MEASUREMENT WORKBENCH</p><h1>从织物照片，到可检查的识别证据</h1><p>分析纱线方向、中心线、密度、表观宽度与组织候选。每个数值保留来源、质量状态和证据图。</p></div><div class="route-mark">14<span>步技术流程</span></div></section>
+<div class="workspace">
+<section class="panel input-panel"><div class="section-title"><span class="step">01</span><div><h2>照片与测量条件</h2><p>支持单张反射照片，以及同位置反射 / 透射双图</p></div></div>
+<label class="field">此前提供的照片<select id="sample"><option value="">选择一个归档样本…</option></select></label><p id="sampleNote" class="hint">或从本机上传照片，图片仅在本机处理。</p>
+<div class="uploads"><label class="upload">反射图 <b>必填</b><input id="reflection" type="file" accept="image/jpeg,image/png,image/webp,image/bmp,image/tiff"><span id="reflectionName">点击选择照片</span></label><label class="upload">透射图 <b>可选</b><input id="transmission" type="file" accept="image/jpeg,image/png,image/webp,image/bmp,image/tiff"><span id="transmissionName">同位置、另一种光照</span></label></div><button id="clearTransmission" class="text-button" type="button">移除透射图</button>
+<div class="canvas-title"><b>有效织物区域 ROI</b><button id="centerRoi" type="button" class="text-button">重置中心区域</button></div><p class="hint">在照片上拖动框选平整、清晰的区域。保留原生像素，宽高为 128–1200 px。</p>
+<div class="canvas-shell"><div id="emptyCanvas">上传照片后可拖动选择分析区域</div><canvas id="source" aria-label="原始照片与可拖动的 ROI 选择框" hidden></canvas></div>
+<div class="roi-fields"><label>X<input id="roiX" type="number" min="0" step="1"></label><label>Y<input id="roiY" type="number" min="0" step="1"></label><label>宽<input id="roiW" type="number" min="128" max="1200" step="1"></label><label>高<input id="roiH" type="number" min="128" max="1200" step="1"></label></div><p id="imageMeta" class="hint">尚未载入</p>
+<div class="field-grid"><label class="field">经向提示角度（°）<input id="warp" type="number" min="0" max="179.99" step="0.1" placeholder="未知可留空"></label><label class="field">物理尺度（mm/px）<input id="scale" type="number" min="0.000001" step="any" placeholder="无标定请留空"></label></div>
+<p class="hint">角度为最终 ROI 坐标：向右 0°、向下 90°。经向提示仅映射 A/B 身份，不参与自动取向。</p>
+<label class="check"><input id="confirmed" type="checkbox">我已确认尺度适用于最终分析区域与织物平面</label><label class="check"><input id="prealigned" type="checkbox">两张照片已配准（系统仍检查局部对齐情况）</label>
+<details><summary>透视校正与参考规则</summary><label class="field">Camera Profile 名称<input id="camera" maxlength="120" placeholder="可留空，仅记录采集信息"></label><label class="field">透视四角 JSON<textarea id="geometry" rows="4" placeholder='{"front_corners":[[x,y],…],"back_corners":[[x,y],…],"target_size":[宽,高]}'></textarea></label><p class="hint">四角按左上、右上、右下、左下排列。双图分别提供四角。填写后，使用校正后的整幅图；可在 JSON 中用 roi 指定校正后的裁剪范围。上方原图 ROI 不参与此模式。</p><label class="field">Ne / tex 经验规则 JSON<textarea id="rules" rows="4" placeholder='[{"width_mm":[下限,上限],"density_per_cm":[下限,上限],"Ne":[下限,上限],"source":"规则来源"}]'></textarea></label><p class="hint">报告未公开完整分档表。没有有效规则时，纱支参考显示不可计算。</p></details>
+<button id="analyze" class="primary" disabled>开始图像识别 <span>→</span></button><p id="message" role="status" aria-live="polite">请选择照片后开始。</p>
+</section>
+<section class="panel result-panel"><div class="section-title"><span class="step">02</span><div><h2>识别结果与证据</h2><p>实线表示相邻观测，虚线表示跨缺失区域的连接候选</p></div></div>
+<div id="emptyResult" class="empty-result"><div class="weave-art" aria-hidden="true"></div><h3>等待照片分析</h3><p>完成后可查看原图、方向场、中心线、宽度边缘、斜纹与浮沉矩阵。</p><div class="boundary">未确认尺度时保留像素结果。算法候选片段数量不代表真实物理纱线根数。</div></div>
+<div id="result" hidden>
+<p id="resultSource" class="hint"></p>
+<div class="result-banner"><div><small>综合质量 Gate 3</small><strong id="gate"></strong></div><div><small>处理用时</small><strong id="elapsed"></strong></div><div><small>输入方式</small><strong id="mode"></strong></div></div>
+<div id="reasons" class="notices"></div><div class="visual-tabs" id="tabs" role="group" aria-label="证据图切换"></div><a id="evidenceLink" target="_blank" rel="noopener"><img id="evidence" alt="本次分析的证据图"></a><p id="visualNote" class="hint"></p>
+<div class="exports"><a id="review" target="_blank" rel="noopener">逐条核查轨迹 ↗</a><a id="json" download>下载完整 JSON</a><a id="zip">下载证据包 ZIP</a></div>
+<h3>方向与双路径密度</h3><div class="table-wrap"><table><thead><tr><th>方向族</th><th>角度</th><th>候选片段</th><th>中位间距</th><th>计数法 / 间距法</th><th>状态</th></tr></thead><tbody id="families"></tbody></table></div><p id="ratio" class="hint"></p>
+<h3>表观宽度</h3><div id="widths" class="cards"></div>
+<h3>斜纹与组织候选</h3><div id="structure" class="cards"></div>
+<h3>Ne / tex 粗略参考</h3><div id="yarn" class="cards"></div>
+<details><summary>14 步执行状态与输入质量</summary><div id="stages" class="stages"></div><pre id="quality"></pre></details>
+<p class="boundary">质量状态反映本实现的内部检查；Evidence 通过仅表示证据文件可打开。物理准确率尚未评估，输出的密度、宽度和组织均须结合实际纱线核验。</p>
+</div></section>
+</div>
+<section class="panel history-panel"><div class="section-title"><span class="step">03</span><div><h2>本机分析记录</h2><p>每次分析独立保存，可重新打开或下载</p></div><button id="refreshHistory" class="text-button">刷新</button></div><div id="history" class="history"><p class="hint">正在读取记录…</p></div></section>
+<footer>REPORT SYSTEM 1.1 · STRUCTURE TENSOR → STEERABLE FILTER → RIDGE LINKING → MEASUREMENTS<span>本地处理 · 原图保持不变</span></footer>
+</main><script src="/assets/app.js"></script>
+</body></html>

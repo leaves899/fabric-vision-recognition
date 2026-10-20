@@ -1,0 +1,54 @@
+{
+ "engine_version": "0.6.3",
+ "algorithm_profile": "DENIM_ROUTE_V0.6.3_REAL_ROBUST",
+ "input_mode": "STANDARD_REFLECTION_TRANSMISSION",
+ "status": "FAIL",
+ "failure_reasons": [
+  "INSUFFICIENT_VALID_CENTERLINES"
+ ],
+ "gate2": {
+  "status": "PASS",
+  "reasons": [],
+  "metrics": {
+   "front": {
+    "width": 1280,
+    "height": 1280,
+    "laplacian_variance": 306.581,
+    "tenengrad": 13237.545,
+    "dark_ratio": 0.0007,
+    "bright_ratio": 0.0
+   },
+   "transmission": {
+    "width": 1280,
+    "height": 1280,
+    "laplacian_variance": 454.67,
+    "tenengrad": 23511.006,
+    "dark_ratio": 0.00728,
+    "bright_ratio": 0.05944
+   }
+  },
+  "threshold_profile": "POC_UNFROZEN_V0.6.2_GATE2_RELAXED",
+  "thresholds": {
+   "blur_warn_laplacian": 10.0,
+   "blur_fail_laplacian": 3.0,
+   "detail_warn_tenengrad": 30.0,
+   "detail_fail_tenengrad": 10.0,
+   "exposure_warn_ratio": 0.3,
+   "exposure_fail_ratio": 0.6,
+   "max_mm_per_px": 0.015
+  }
+ },
+ "normalization": {
+  "roi": {
+   "mode": "CENTER_ROI_POC_DEFAULT",
+   "x": 64,
+   "y": 64,
+   "width": 1152,
+   "height": 1152
+  },
+  "resize_scale": 1.0,
+  "geometry_mode": "IDENTITY_FIXED_STATION_POC",
+  "homography_applied": false,
+  "local_normalization": "CLAHE"
+ }
+}

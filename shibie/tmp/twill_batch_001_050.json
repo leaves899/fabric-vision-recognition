@@ -1,0 +1,8053 @@
+{
+  "range": [
+    1,
+    50
+  ],
+  "summary": {
+    "plain": {
+      "direction_PASS": 27,
+      "angle_PASS": 27,
+      "direction_LOW_CONFIDENCE": 1,
+      "angle_LOW_CONFIDENCE": 1,
+      "direction_FAIL": 1,
+      "angle_FAIL": 1
+    },
+    "twill": {
+      "direction_PASS": 19,
+      "angle_PASS": 17,
+      "angle_LOW_CONFIDENCE": 2,
+      "direction_FAIL": 2,
+      "angle_FAIL": 2
+    }
+  },
+  "samples": [
+    {
+      "image": "W001.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 21.141,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2424,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2424,
+        "reasons": [
+          "WEAVE_REPEAT_CONSISTENCY_LOW",
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8025,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 22,
+          "3": 9
+        },
+        "alternation_ratio": 0.4821,
+        "dominant_run_ratio": 0.6111,
+        "run_one_ratio": 0.5,
+        "repeat_consistency": 0.5055,
+        "repeat_weight_sum": 38.84,
+        "repeat_unit": [
+          1,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.5065,
+          "2/1": 0.5812,
+          "3/1": 0.6462
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6462,
+        "template_margin": 0.065,
+        "template_weight_mean": 0.5975,
+        "template_weight_sum": 38.84,
+        "float_matrix": [
+          [
+            -1,
+            0,
+            0,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 105.0,
+          "direction_field_coverage": 0.0946,
+          "component_count": 27,
+          "mean_response": 2.4526
+        }
+      ]
+    },
+    {
+      "image": "W002.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 21.881,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3574,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3574,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8395,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 9,
+        "unsupported_long_float": true,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 14,
+          "3": 5
+        },
+        "alternation_ratio": 0.4237,
+        "dominant_run_ratio": 0.4828,
+        "run_one_ratio": 0.5735,
+        "repeat_consistency": 0.7378,
+        "repeat_weight_sum": 39.2381,
+        "repeat_unit": [
+          4,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.6446,
+          "2/1": 0.5958,
+          "3/1": 0.7051
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.7051,
+        "template_margin": 0.0604,
+        "template_weight_mean": 0.577,
+        "template_weight_sum": 39.2381,
+        "float_matrix": [
+          [
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            -1,
+            -1,
+            -1,
+            0,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 105.0,
+          "direction_field_coverage": 0.1116,
+          "component_count": 37,
+          "mean_response": 2.3732
+        }
+      ]
+    },
+    {
+      "image": "W003.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 20.066,
+      "direction_reasons": [],
+      "angle_reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3361,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3361,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8642,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 24,
+          "3": 9
+        },
+        "alternation_ratio": 0.4016,
+        "dominant_run_ratio": 0.5854,
+        "run_one_ratio": 0.3881,
+        "repeat_consistency": 0.6593,
+        "repeat_weight_sum": 41.2919,
+        "repeat_unit": [
+          4,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5005,
+          "2/1": 0.5842,
+          "3/1": 0.7423
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.7423,
+        "template_margin": 0.1582,
+        "template_weight_mean": 0.5899,
+        "template_weight_sum": 41.2919,
+        "float_matrix": [
+          [
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            1,
+            1,
+            0,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            0,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1
+          ]
+        ]
+      },
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 110.0,
+          "direction_field_coverage": 0.0911,
+          "component_count": 27,
+          "mean_response": 2.6999
+        }
+      ]
+    },
+    {
+      "image": "W004.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 18.583,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2722,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2722,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8395,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 15,
+          "3": 11
+        },
+        "alternation_ratio": 0.4831,
+        "dominant_run_ratio": 0.4545,
+        "run_one_ratio": 0.56,
+        "repeat_consistency": 0.5544,
+        "repeat_weight_sum": 39.7794,
+        "repeat_unit": [
+          3,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5967,
+          "2/1": 0.5434,
+          "3/1": 0.6387
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6387,
+        "template_margin": 0.042,
+        "template_weight_mean": 0.585,
+        "template_weight_sum": 39.7794,
+        "float_matrix": [
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 105.0,
+          "direction_field_coverage": 0.1158,
+          "component_count": 35,
+          "mean_response": 2.4312
+        }
+      ]
+    },
+    {
+      "image": "W005.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 67.009,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2713,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2713,
+        "reasons": [
+          "WEAVE_REPEAT_CONSISTENCY_LOW",
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8765,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 19,
+          "3": 8
+        },
+        "alternation_ratio": 0.4113,
+        "dominant_run_ratio": 0.5278,
+        "run_one_ratio": 0.4783,
+        "repeat_consistency": 0.5443,
+        "repeat_weight_sum": 40.3652,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.6194,
+          "2/1": 0.6126,
+          "3/1": 0.64
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.64,
+        "template_margin": 0.0206,
+        "template_weight_mean": 0.5685,
+        "template_weight_sum": 40.3652,
+        "float_matrix": [
+          [
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            0,
+            1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 20.0,
+          "direction_field_coverage": 0.1019,
+          "component_count": 30,
+          "mean_response": 2.5504
+        }
+      ]
+    },
+    {
+      "image": "W006.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.248,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3179,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3179,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7778,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 11,
+          "3": 8
+        },
+        "alternation_ratio": 0.4167,
+        "dominant_run_ratio": 0.3929,
+        "run_one_ratio": 0.5556,
+        "repeat_consistency": 0.6928,
+        "repeat_weight_sum": 37.1672,
+        "repeat_unit": [
+          3,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.5555,
+          "2/1": 0.723,
+          "3/1": 0.6678
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.723,
+        "template_margin": 0.0552,
+        "template_weight_mean": 0.59,
+        "template_weight_sum": 37.1672,
+        "float_matrix": [
+          [
+            0,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.186,
+          "component_count": 44,
+          "mean_response": 2.3375
+        }
+      ]
+    },
+    {
+      "image": "W007.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "FAIL",
+      "angle_status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "direction_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "angle_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": null,
+      "candidate_confidence": null,
+      "weave_status": "NOT_AVAILABLE",
+      "weave_reasons": [
+        "WEAVE_TWILL_SEGMENTS_INSUFFICIENT"
+      ],
+      "weave_evidence": {},
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1587,
+          "component_count": 33,
+          "mean_response": 2.8269
+        }
+      ]
+    },
+    {
+      "image": "W008.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.258,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3127,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3127,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8765,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 20,
+          "3": 11
+        },
+        "alternation_ratio": 0.371,
+        "dominant_run_ratio": 0.4878,
+        "run_one_ratio": 0.3594,
+        "repeat_consistency": 0.6143,
+        "repeat_weight_sum": 41.2289,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5346,
+          "2/1": 0.636,
+          "3/1": 0.6509
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6509,
+        "template_margin": 0.0148,
+        "template_weight_mean": 0.5807,
+        "template_weight_sum": 41.2289,
+        "float_matrix": [
+          [
+            0,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            0
+          ],
+          [
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1542,
+          "component_count": 31,
+          "mean_response": 2.5526
+        }
+      ]
+    },
+    {
+      "image": "W009.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.329,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3205,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3205,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8148,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 16,
+          "3": 5
+        },
+        "alternation_ratio": 0.3509,
+        "dominant_run_ratio": 0.5,
+        "run_one_ratio": 0.4483,
+        "repeat_consistency": 0.6578,
+        "repeat_weight_sum": 39.4626,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.522,
+          "2/1": 0.5807,
+          "3/1": 0.6568
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6568,
+        "template_margin": 0.076,
+        "template_weight_mean": 0.5979,
+        "template_weight_sum": 39.4626,
+        "float_matrix": [
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            -1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0,
+            0,
+            -1,
+            0,
+            -1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            -1,
+            0,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1536,
+          "component_count": 43,
+          "mean_response": 2.7298
+        }
+      ]
+    },
+    {
+      "image": "W010.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.722,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2466,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2466,
+        "reasons": [
+          "WEAVE_REPEAT_CONSISTENCY_LOW",
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.8889,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 22,
+          "3": 11
+        },
+        "alternation_ratio": 0.4762,
+        "dominant_run_ratio": 0.5641,
+        "run_one_ratio": 0.5,
+        "repeat_consistency": 0.5003,
+        "repeat_weight_sum": 39.919,
+        "repeat_unit": [
+          1,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5269,
+          "2/1": 0.5635,
+          "3/1": 0.5505
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.5635,
+        "template_margin": 0.013,
+        "template_weight_mean": 0.5544,
+        "template_weight_sum": 39.919,
+        "float_matrix": [
+          [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1388,
+          "component_count": 37,
+          "mean_response": 2.5606
+        }
+      ]
+    },
+    {
+      "image": "W011.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.154,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2723,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2723,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 18,
+          "3": 7
+        },
+        "alternation_ratio": 0.4909,
+        "dominant_run_ratio": 0.6,
+        "run_one_ratio": 0.5833,
+        "repeat_consistency": 0.5997,
+        "repeat_weight_sum": 36.7782,
+        "repeat_unit": [
+          2,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.5309,
+          "2/1": 0.5612,
+          "3/1": 0.5923
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.5923,
+        "template_margin": 0.031,
+        "template_weight_mean": 0.5747,
+        "template_weight_sum": 36.7782,
+        "float_matrix": [
+          [
+            1,
+            1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            0
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1494,
+          "component_count": 37,
+          "mean_response": 2.638
+        }
+      ]
+    },
+    {
+      "image": "W012.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 24.109,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2492,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2492,
+        "reasons": [
+          "WEAVE_REPEAT_CONSISTENCY_LOW",
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.8148,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 15,
+          "3": 9
+        },
+        "alternation_ratio": 0.5526,
+        "dominant_run_ratio": 0.5172,
+        "run_one_ratio": 0.642,
+        "repeat_consistency": 0.5243,
+        "repeat_weight_sum": 38.5069,
+        "repeat_unit": [
+          2,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5923,
+          "2/1": 0.5996,
+          "3/1": 0.6066
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6066,
+        "template_margin": 0.007,
+        "template_weight_mean": 0.5834,
+        "template_weight_sum": 38.5069,
+        "float_matrix": [
+          [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            0
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.0609,
+          "component_count": 25,
+          "mean_response": 2.3206
+        }
+      ]
+    },
+    {
+      "image": "W013.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.853,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2682,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2682,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8395,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 5,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 19,
+          "3": 6
+        },
+        "alternation_ratio": 0.5169,
+        "dominant_run_ratio": 0.5758,
+        "run_one_ratio": 0.5823,
+        "repeat_consistency": 0.5761,
+        "repeat_weight_sum": 37.7019,
+        "repeat_unit": [
+          2,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.645,
+          "2/1": 0.5733,
+          "3/1": 0.6144
+        },
+        "template_candidate": "plain",
+        "template_score": 0.645,
+        "template_margin": 0.0306,
+        "template_weight_mean": 0.5544,
+        "template_weight_sum": 37.7019,
+        "float_matrix": [
+          [
+            0,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            0,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0943,
+          "component_count": 31,
+          "mean_response": 2.4474
+        }
+      ]
+    },
+    {
+      "image": "W014.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 27.801,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.312,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.312,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8148,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 22,
+          "3": 7
+        },
+        "alternation_ratio": 0.4211,
+        "dominant_run_ratio": 0.6111,
+        "run_one_ratio": 0.4545,
+        "repeat_consistency": 0.6739,
+        "repeat_weight_sum": 37.4987,
+        "repeat_unit": [
+          1,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5049,
+          "2/1": 0.6171,
+          "3/1": 0.6326
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6326,
+        "template_margin": 0.0155,
+        "template_weight_mean": 0.5682,
+        "template_weight_sum": 37.4987,
+        "float_matrix": [
+          [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            0,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1463,
+          "component_count": 53,
+          "mean_response": 2.1772
+        }
+      ]
+    },
+    {
+      "image": "W015.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.57,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.382,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.382,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.8272,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": true,
+        "dominant_float_run": 3,
+        "float_run_counts": {
+          "2": 6,
+          "3": 9
+        },
+        "alternation_ratio": 0.3362,
+        "dominant_run_ratio": 0.3103,
+        "run_one_ratio": 0.4912,
+        "repeat_consistency": 0.7587,
+        "repeat_weight_sum": 40.7883,
+        "repeat_unit": [
+          2,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5328,
+          "2/1": 0.5462,
+          "3/1": 0.5636
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.5636,
+        "template_margin": 0.0174,
+        "template_weight_mean": 0.6088,
+        "template_weight_sum": 40.7883,
+        "float_matrix": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            0,
+            0,
+            1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            0,
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.098,
+          "component_count": 37,
+          "mean_response": 2.6536
+        }
+      ]
+    },
+    {
+      "image": "W016.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 26.203,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2614,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2614,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.8272,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 18,
+          "3": 7
+        },
+        "alternation_ratio": 0.4828,
+        "dominant_run_ratio": 0.5625,
+        "run_one_ratio": 0.5676,
+        "repeat_consistency": 0.5728,
+        "repeat_weight_sum": 36.9548,
+        "repeat_unit": [
+          2,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5991,
+          "2/1": 0.5157,
+          "3/1": 0.5798
+        },
+        "template_candidate": "plain",
+        "template_score": 0.5991,
+        "template_margin": 0.0193,
+        "template_weight_mean": 0.5516,
+        "template_weight_sum": 36.9548,
+        "float_matrix": [
+          [
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            0,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            0,
+            0,
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            0,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            0,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.0989,
+          "component_count": 39,
+          "mean_response": 2.6803
+        }
+      ]
+    },
+    {
+      "image": "W017.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 72.372,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2885,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2885,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.8395,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 12,
+          "3": 10
+        },
+        "alternation_ratio": 0.3814,
+        "dominant_run_ratio": 0.375,
+        "run_one_ratio": 0.4921,
+        "repeat_consistency": 0.5891,
+        "repeat_weight_sum": 39.6668,
+        "repeat_unit": [
+          1,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5238,
+          "2/1": 0.5596,
+          "3/1": 0.6059
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6059,
+        "template_margin": 0.0463,
+        "template_weight_mean": 0.5833,
+        "template_weight_sum": 39.6668,
+        "float_matrix": [
+          [
+            -1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1
+          ],
+          [
+            -1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.1013,
+          "component_count": 38,
+          "mean_response": 3.1409
+        }
+      ]
+    },
+    {
+      "image": "W018.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 73.302,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2962,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2962,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7917,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 8,
+          "3": 5
+        },
+        "alternation_ratio": 0.4124,
+        "dominant_run_ratio": 0.3478,
+        "run_one_ratio": 0.5965,
+        "repeat_consistency": 0.6665,
+        "repeat_weight_sum": 31.996,
+        "repeat_unit": [
+          3,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5341,
+          "2/1": 0.6647,
+          "3/1": 0.6514
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.6647,
+        "template_margin": 0.0133,
+        "template_weight_mean": 0.5613,
+        "template_weight_sum": 31.996,
+        "float_matrix": [
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.1213,
+          "component_count": 38,
+          "mean_response": 2.7213
+        }
+      ]
+    },
+    {
+      "image": "W019.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 73.316,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2485,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2485,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 10,
+          "3": 9
+        },
+        "alternation_ratio": 0.4091,
+        "dominant_run_ratio": 0.3448,
+        "run_one_ratio": 0.5397,
+        "repeat_consistency": 0.561,
+        "repeat_weight_sum": 35.8795,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.521,
+          "2/1": 0.614,
+          "3/1": 0.6623
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6623,
+        "template_margin": 0.0483,
+        "template_weight_mean": 0.5606,
+        "template_weight_sum": 35.8795,
+        "float_matrix": [
+          [
+            0,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.1099,
+          "component_count": 34,
+          "mean_response": 2.8912
+        }
+      ]
+    },
+    {
+      "image": "W020.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 77.248,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3441,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3441,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8333,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": true,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 11,
+          "3": 4
+        },
+        "alternation_ratio": 0.2913,
+        "dominant_run_ratio": 0.4231,
+        "run_one_ratio": 0.4468,
+        "repeat_consistency": 0.7267,
+        "repeat_weight_sum": 34.0952,
+        "repeat_unit": [
+          1,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5257,
+          "2/1": 0.6516,
+          "3/1": 0.6794
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6794,
+        "template_margin": 0.0278,
+        "template_weight_mean": 0.5683,
+        "template_weight_sum": 34.0952,
+        "float_matrix": [
+          [
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.1183,
+          "component_count": 47,
+          "mean_response": 2.8923
+        }
+      ]
+    },
+    {
+      "image": "W021.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 68.127,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3376,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3376,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8056,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": true,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 10,
+          "3": 1
+        },
+        "alternation_ratio": 0.4141,
+        "dominant_run_ratio": 0.5,
+        "run_one_ratio": 0.6552,
+        "repeat_consistency": 0.7146,
+        "repeat_weight_sum": 34.0123,
+        "repeat_unit": [
+          2,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.573,
+          "2/1": 0.6433,
+          "3/1": 0.7031
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.7031,
+        "template_margin": 0.0598,
+        "template_weight_mean": 0.5864,
+        "template_weight_sum": 34.0123,
+        "float_matrix": [
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            0,
+            0,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.1065,
+          "component_count": 38,
+          "mean_response": 2.7361
+        }
+      ]
+    },
+    {
+      "image": "W022.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 66.858,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2812,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2812,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8333,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 16,
+          "3": 4
+        },
+        "alternation_ratio": 0.5728,
+        "dominant_run_ratio": 0.64,
+        "run_one_ratio": 0.6711,
+        "repeat_consistency": 0.5702,
+        "repeat_weight_sum": 35.5133,
+        "repeat_unit": [
+          3,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.6595,
+          "2/1": 0.5615,
+          "3/1": 0.6789
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6789,
+        "template_margin": 0.0194,
+        "template_weight_mean": 0.5919,
+        "template_weight_sum": 35.5133,
+        "float_matrix": [
+          [
+            -1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.1342,
+          "component_count": 31,
+          "mean_response": 2.1989
+        }
+      ]
+    },
+    {
+      "image": "W023.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 75.965,
+      "direction_reasons": [],
+      "angle_reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2732,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2732,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7778,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 12,
+          "3": 9
+        },
+        "alternation_ratio": 0.4722,
+        "dominant_run_ratio": 0.4286,
+        "run_one_ratio": 0.5942,
+        "repeat_consistency": 0.5982,
+        "repeat_weight_sum": 36.9947,
+        "repeat_unit": [
+          2,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5001,
+          "2/1": 0.6891,
+          "3/1": 0.5756
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.6891,
+        "template_margin": 0.1135,
+        "template_weight_mean": 0.5872,
+        "template_weight_sum": 36.9947,
+        "float_matrix": [
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            -1
+          ],
+          [
+            0,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            0
+          ]
+        ]
+      },
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.1008,
+          "component_count": 36,
+          "mean_response": 2.2695
+        }
+      ]
+    },
+    {
+      "image": "W024.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 71.966,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2586,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2586,
+        "reasons": [
+          "WEAVE_REPEAT_CONSISTENCY_LOW",
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8056,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 20,
+          "3": 5
+        },
+        "alternation_ratio": 0.5051,
+        "dominant_run_ratio": 0.6667,
+        "run_one_ratio": 0.5522,
+        "repeat_consistency": 0.5345,
+        "repeat_weight_sum": 34.8387,
+        "repeat_unit": [
+          1,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.5226,
+          "2/1": 0.544,
+          "3/1": 0.6529
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6529,
+        "template_margin": 0.1089,
+        "template_weight_mean": 0.6007,
+        "template_weight_sum": 34.8387,
+        "float_matrix": [
+          [
+            1,
+            0,
+            0,
+            1,
+            1,
+            -1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            0,
+            -1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.101,
+          "component_count": 24,
+          "mean_response": 2.6687
+        }
+      ]
+    },
+    {
+      "image": "W025.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 75.568,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2742,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2742,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8611,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 17,
+          "3": 12
+        },
+        "alternation_ratio": 0.4393,
+        "dominant_run_ratio": 0.5,
+        "run_one_ratio": 0.4688,
+        "repeat_consistency": 0.5725,
+        "repeat_weight_sum": 34.4864,
+        "repeat_unit": [
+          3,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5599,
+          "2/1": 0.6199,
+          "3/1": 0.6592
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6592,
+        "template_margin": 0.0393,
+        "template_weight_mean": 0.5562,
+        "template_weight_sum": 34.4864,
+        "float_matrix": [
+          [
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 10.0,
+          "direction_field_coverage": 0.1278,
+          "component_count": 44,
+          "mean_response": 2.1316
+        }
+      ]
+    },
+    {
+      "image": "W026.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 69.946,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2436,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2436,
+        "reasons": [
+          "WEAVE_REPEAT_CONSISTENCY_LOW",
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.7917,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 16,
+          "3": 6
+        },
+        "alternation_ratio": 0.5258,
+        "dominant_run_ratio": 0.5926,
+        "run_one_ratio": 0.6029,
+        "repeat_consistency": 0.548,
+        "repeat_weight_sum": 32.0078,
+        "repeat_unit": [
+          2,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5503,
+          "2/1": 0.5847,
+          "3/1": 0.5517
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.5847,
+        "template_margin": 0.033,
+        "template_weight_mean": 0.5615,
+        "template_weight_sum": 32.0078,
+        "float_matrix": [
+          [
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            1,
+            1,
+            0,
+            1,
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            0
+          ],
+          [
+            0,
+            -1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            0,
+            1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.1304,
+          "component_count": 43,
+          "mean_response": 2.0214
+        }
+      ]
+    },
+    {
+      "image": "W027.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.252,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2869,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2869,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.8519,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 11,
+          "3": 10
+        },
+        "alternation_ratio": 0.5083,
+        "dominant_run_ratio": 0.3929,
+        "run_one_ratio": 0.6456,
+        "repeat_consistency": 0.5687,
+        "repeat_weight_sum": 40.8648,
+        "repeat_unit": [
+          2,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5332,
+          "2/1": 0.5981,
+          "3/1": 0.5758
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.5981,
+        "template_margin": 0.0222,
+        "template_weight_mean": 0.5922,
+        "template_weight_sum": 40.8648,
+        "float_matrix": [
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1497,
+          "component_count": 49,
+          "mean_response": 2.6076
+        }
+      ]
+    },
+    {
+      "image": "W028.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.105,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3016,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3016,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8025,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 15,
+          "3": 3
+        },
+        "alternation_ratio": 0.4464,
+        "dominant_run_ratio": 0.5357,
+        "run_one_ratio": 0.5882,
+        "repeat_consistency": 0.6279,
+        "repeat_weight_sum": 38.9023,
+        "repeat_unit": [
+          3,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5448,
+          "2/1": 0.7042,
+          "3/1": 0.6903
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.7042,
+        "template_margin": 0.0139,
+        "template_weight_mean": 0.5985,
+        "template_weight_sum": 38.9023,
+        "float_matrix": [
+          [
+            1,
+            0,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            0,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1549,
+          "component_count": 46,
+          "mean_response": 2.4075
+        }
+      ]
+    },
+    {
+      "image": "W029.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.81,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3346,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3346,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8056,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": true,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 8,
+          "3": 6
+        },
+        "alternation_ratio": 0.3535,
+        "dominant_run_ratio": 0.3478,
+        "run_one_ratio": 0.5577,
+        "repeat_consistency": 0.7238,
+        "repeat_weight_sum": 33.2892,
+        "repeat_unit": [
+          2,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.561,
+          "2/1": 0.6601,
+          "3/1": 0.7188
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.7188,
+        "template_margin": 0.0587,
+        "template_weight_mean": 0.574,
+        "template_weight_sum": 33.2892,
+        "float_matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            1
+          ],
+          [
+            -1,
+            0,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            0,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1246,
+          "component_count": 38,
+          "mean_response": 2.4594
+        }
+      ]
+    },
+    {
+      "image": "W030.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.642,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2525,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2525,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.8056,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 5,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 16,
+          "3": 9
+        },
+        "alternation_ratio": 0.4242,
+        "dominant_run_ratio": 0.5,
+        "run_one_ratio": 0.4576,
+        "repeat_consistency": 0.5587,
+        "repeat_weight_sum": 32.532,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5435,
+          "2/1": 0.61,
+          "3/1": 0.604
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.61,
+        "template_margin": 0.006,
+        "template_weight_mean": 0.5609,
+        "template_weight_sum": 32.532,
+        "float_matrix": [
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            0
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            -1,
+            1,
+            0
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1383,
+          "component_count": 42,
+          "mean_response": 2.3239
+        }
+      ]
+    },
+    {
+      "image": "W031.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 17.687,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3887,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3887,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.9028,
+        "matrix_shape": [
+          8,
+          9
+        ],
+        "max_float_run": 9,
+        "unsupported_long_float": false,
+        "dominant_float_run": 3,
+        "float_run_counts": {
+          "2": 6,
+          "3": 8
+        },
+        "alternation_ratio": 0.3894,
+        "dominant_run_ratio": 0.3333,
+        "run_one_ratio": 0.6066,
+        "repeat_consistency": 0.6978,
+        "repeat_weight_sum": 40.1089,
+        "repeat_unit": [
+          4,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.5388,
+          "2/1": 0.6799,
+          "3/1": 0.6984
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6984,
+        "template_margin": 0.0185,
+        "template_weight_mean": 0.6171,
+        "template_weight_sum": 40.1089,
+        "float_matrix": [
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1195,
+          "component_count": 47,
+          "mean_response": 2.2288
+        }
+      ]
+    },
+    {
+      "image": "W032.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.569,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2589,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2589,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 3,
+        "float_run_counts": {
+          "2": 10,
+          "3": 12
+        },
+        "alternation_ratio": 0.4182,
+        "dominant_run_ratio": 0.4,
+        "run_one_ratio": 0.5312,
+        "repeat_consistency": 0.5525,
+        "repeat_weight_sum": 37.9618,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5572,
+          "2/1": 0.5974,
+          "3/1": 0.6232
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6232,
+        "template_margin": 0.0257,
+        "template_weight_mean": 0.5932,
+        "template_weight_sum": 37.9618,
+        "float_matrix": [
+          [
+            -1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            0,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1387,
+          "component_count": 35,
+          "mean_response": 2.4607
+        }
+      ]
+    },
+    {
+      "image": "W033.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.187,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2672,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2672,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8025,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 5,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 20,
+          "3": 7
+        },
+        "alternation_ratio": 0.4464,
+        "dominant_run_ratio": 0.5556,
+        "run_one_ratio": 0.4706,
+        "repeat_consistency": 0.5906,
+        "repeat_weight_sum": 36.6455,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.6029,
+          "2/1": 0.6117,
+          "3/1": 0.6333
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6333,
+        "template_margin": 0.0216,
+        "template_weight_mean": 0.5638,
+        "template_weight_sum": 36.6455,
+        "float_matrix": [
+          [
+            1,
+            0,
+            0,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            0,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            0,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            0,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 65.0,
+          "direction_field_coverage": 0.1137,
+          "component_count": 16,
+          "mean_response": 2.9071
+        }
+      ]
+    },
+    {
+      "image": "W034.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "FAIL",
+      "angle_status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "direction_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "angle_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": null,
+      "candidate_confidence": null,
+      "weave_status": "NOT_AVAILABLE",
+      "weave_reasons": [
+        "WEAVE_TWILL_SEGMENTS_INSUFFICIENT"
+      ],
+      "weave_evidence": {},
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1194,
+          "component_count": 24,
+          "mean_response": 2.692
+        }
+      ]
+    },
+    {
+      "image": "W035.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.764,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2991,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2991,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8148,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 15,
+          "3": 5
+        },
+        "alternation_ratio": 0.3772,
+        "dominant_run_ratio": 0.4688,
+        "run_one_ratio": 0.4754,
+        "repeat_consistency": 0.6226,
+        "repeat_weight_sum": 38.909,
+        "repeat_unit": [
+          2,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5091,
+          "2/1": 0.633,
+          "3/1": 0.5475
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.633,
+        "template_margin": 0.0855,
+        "template_weight_mean": 0.5895,
+        "template_weight_sum": 38.909,
+        "float_matrix": [
+          [
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0
+          ],
+          [
+            0,
+            -1,
+            0,
+            -1,
+            0,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1092,
+          "component_count": 22,
+          "mean_response": 3.1763
+        }
+      ]
+    },
+    {
+      "image": "W036.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 22.222,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3114,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3114,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8519,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 20,
+          "3": 8
+        },
+        "alternation_ratio": 0.35,
+        "dominant_run_ratio": 0.5128,
+        "run_one_ratio": 0.35,
+        "repeat_consistency": 0.6385,
+        "repeat_weight_sum": 39.5045,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5131,
+          "2/1": 0.6299,
+          "3/1": 0.6199
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.6299,
+        "template_margin": 0.0101,
+        "template_weight_mean": 0.5725,
+        "template_weight_sum": 39.5045,
+        "float_matrix": [
+          [
+            1,
+            1,
+            1,
+            -1,
+            0,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1117,
+          "component_count": 28,
+          "mean_response": 2.5977
+        }
+      ]
+    },
+    {
+      "image": "W037.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.745,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3099,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3099,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7407,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 11,
+          "3": 5
+        },
+        "alternation_ratio": 0.4314,
+        "dominant_run_ratio": 0.44,
+        "run_one_ratio": 0.5968,
+        "repeat_consistency": 0.6599,
+        "repeat_weight_sum": 38.0417,
+        "repeat_unit": [
+          3,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5281,
+          "2/1": 0.6782,
+          "3/1": 0.6453
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.6782,
+        "template_margin": 0.0329,
+        "template_weight_mean": 0.634,
+        "template_weight_sum": 38.0417,
+        "float_matrix": [
+          [
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            -1,
+            0,
+            0,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1505,
+          "component_count": 39,
+          "mean_response": 2.8167
+        }
+      ]
+    },
+    {
+      "image": "W038.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 23.014,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2999,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2999,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 13,
+          "3": 7
+        },
+        "alternation_ratio": 0.4636,
+        "dominant_run_ratio": 0.4643,
+        "run_one_ratio": 0.5942,
+        "repeat_consistency": 0.6175,
+        "repeat_weight_sum": 39.3443,
+        "repeat_unit": [
+          4,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.512,
+          "2/1": 0.6179,
+          "3/1": 0.6377
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6377,
+        "template_margin": 0.0198,
+        "template_weight_mean": 0.6148,
+        "template_weight_sum": 39.3443,
+        "float_matrix": [
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1027,
+          "component_count": 28,
+          "mean_response": 3.1101
+        }
+      ]
+    },
+    {
+      "image": "W039.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 16.257,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2317,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2317,
+        "reasons": [
+          "WEAVE_REPEAT_CONSISTENCY_LOW",
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7531,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 5,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 22,
+          "3": 7
+        },
+        "alternation_ratio": 0.4808,
+        "dominant_run_ratio": 0.6471,
+        "run_one_ratio": 0.5,
+        "repeat_consistency": 0.5076,
+        "repeat_weight_sum": 36.9739,
+        "repeat_unit": [
+          1,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.5403,
+          "2/1": 0.6201,
+          "3/1": 0.6894
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6894,
+        "template_margin": 0.0693,
+        "template_weight_mean": 0.6061,
+        "template_weight_sum": 36.9739,
+        "float_matrix": [
+          [
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            0,
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            1
+          ],
+          [
+            0,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            0
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1214,
+          "component_count": 39,
+          "mean_response": 3.0475
+        }
+      ]
+    },
+    {
+      "image": "W040.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 68.487,
+      "direction_reasons": [],
+      "angle_reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3086,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3086,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.9012,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 16,
+          "3": 13
+        },
+        "alternation_ratio": 0.5,
+        "dominant_run_ratio": 0.4571,
+        "run_one_ratio": 0.5732,
+        "repeat_consistency": 0.6063,
+        "repeat_weight_sum": 41.2227,
+        "repeat_unit": [
+          1,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5261,
+          "2/1": 0.6058,
+          "3/1": 0.6079
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6079,
+        "template_margin": 0.0021,
+        "template_weight_mean": 0.5647,
+        "template_weight_sum": 41.2227,
+        "float_matrix": [
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.104,
+          "component_count": 27,
+          "mean_response": 2.8271
+        }
+      ]
+    },
+    {
+      "image": "W041.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.781,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3013,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3013,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 13,
+          "3": 8
+        },
+        "alternation_ratio": 0.3636,
+        "dominant_run_ratio": 0.4194,
+        "run_one_ratio": 0.4655,
+        "repeat_consistency": 0.628,
+        "repeat_weight_sum": 38.8642,
+        "repeat_unit": [
+          1,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5052,
+          "2/1": 0.5984,
+          "3/1": 0.6538
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6538,
+        "template_margin": 0.0554,
+        "template_weight_mean": 0.6073,
+        "template_weight_sum": 38.8642,
+        "float_matrix": [
+          [
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            0,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1328,
+          "component_count": 34,
+          "mean_response": 2.7875
+        }
+      ]
+    },
+    {
+      "image": "W042.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 72.171,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2644,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2644,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7778,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 23,
+          "3": 9
+        },
+        "alternation_ratio": 0.4815,
+        "dominant_run_ratio": 0.6389,
+        "run_one_ratio": 0.4857,
+        "repeat_consistency": 0.5707,
+        "repeat_weight_sum": 37.5306,
+        "repeat_unit": [
+          1,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.5545,
+          "2/1": 0.647,
+          "3/1": 0.5894
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.647,
+        "template_margin": 0.0576,
+        "template_weight_mean": 0.5957,
+        "template_weight_sum": 37.5306,
+        "float_matrix": [
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            0,
+            -1,
+            0
+          ],
+          [
+            0,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            0,
+            1,
+            -1,
+            0,
+            0,
+            -1,
+            0,
+            -1
+          ],
+          [
+            -1,
+            0,
+            0,
+            0,
+            -1,
+            1,
+            1,
+            0,
+            -1
+          ],
+          [
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            0,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            0,
+            0,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0797,
+          "component_count": 29,
+          "mean_response": 3.7199
+        }
+      ]
+    },
+    {
+      "image": "W043.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 67.463,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.246,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.246,
+        "reasons": [
+          "WEAVE_REPEAT_CONSISTENCY_LOW",
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.7654,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 19,
+          "3": 7
+        },
+        "alternation_ratio": 0.4906,
+        "dominant_run_ratio": 0.5938,
+        "run_one_ratio": 0.5429,
+        "repeat_consistency": 0.5449,
+        "repeat_weight_sum": 36.5683,
+        "repeat_unit": [
+          1,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5388,
+          "2/1": 0.5787,
+          "3/1": 0.5524
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.5787,
+        "template_margin": 0.0263,
+        "template_weight_mean": 0.5898,
+        "template_weight_sum": 36.5683,
+        "float_matrix": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            -1
+          ],
+          [
+            0,
+            0,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            -1,
+            -1
+          ],
+          [
+            0,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            0,
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0831,
+          "component_count": 32,
+          "mean_response": 3.7805
+        }
+      ]
+    },
+    {
+      "image": "W044.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 72.222,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2898,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2898,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 5,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 20,
+          "3": 3
+        },
+        "alternation_ratio": 0.4818,
+        "dominant_run_ratio": 0.6061,
+        "run_one_ratio": 0.5352,
+        "repeat_consistency": 0.6001,
+        "repeat_weight_sum": 39.1132,
+        "repeat_unit": [
+          4,
+          4
+        ],
+        "template_scores": {
+          "plain": 0.5395,
+          "2/1": 0.5752,
+          "3/1": 0.6328
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6328,
+        "template_margin": 0.0576,
+        "template_weight_mean": 0.6111,
+        "template_weight_sum": 39.1132,
+        "float_matrix": [
+          [
+            0,
+            1,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            -1,
+            -1,
+            0,
+            -1,
+            0,
+            0,
+            -1,
+            1
+          ],
+          [
+            0,
+            1,
+            -1,
+            0,
+            -1,
+            0,
+            0,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            -1
+          ],
+          [
+            0,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0784,
+          "component_count": 26,
+          "mean_response": 3.2949
+        }
+      ]
+    },
+    {
+      "image": "W045.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 70.702,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2828,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2828,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES",
+          "WEAVE_TEMPLATE_MATCH_LOW"
+        ],
+        "valid_ratio": 0.875,
+        "matrix_shape": [
+          9,
+          8
+        ],
+        "max_float_run": 5,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 13,
+          "3": 12
+        },
+        "alternation_ratio": 0.5596,
+        "dominant_run_ratio": 0.4643,
+        "run_one_ratio": 0.641,
+        "repeat_consistency": 0.5645,
+        "repeat_weight_sum": 36.0688,
+        "repeat_unit": [
+          2,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5485,
+          "2/1": 0.6033,
+          "3/1": 0.6094
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6094,
+        "template_margin": 0.0061,
+        "template_weight_mean": 0.5725,
+        "template_weight_sum": 36.0688,
+        "float_matrix": [
+          [
+            -1,
+            1,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            0,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0859,
+          "component_count": 27,
+          "mean_response": 3.9664
+        }
+      ]
+    },
+    {
+      "image": "W046.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 67.641,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.2673,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.2673,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 7,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 19,
+          "3": 10
+        },
+        "alternation_ratio": 0.4636,
+        "dominant_run_ratio": 0.5588,
+        "run_one_ratio": 0.5072,
+        "repeat_consistency": 0.5673,
+        "repeat_weight_sum": 38.1638,
+        "repeat_unit": [
+          2,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5231,
+          "2/1": 0.6264,
+          "3/1": 0.5811
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.6264,
+        "template_margin": 0.0453,
+        "template_weight_mean": 0.5963,
+        "template_weight_sum": 38.1638,
+        "float_matrix": [
+          [
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            0,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            -1,
+            -1,
+            -1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            -1,
+            0,
+            -1,
+            1
+          ],
+          [
+            0,
+            0,
+            -1,
+            0,
+            -1,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            0
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0855,
+          "component_count": 28,
+          "mean_response": 3.3366
+        }
+      ]
+    },
+    {
+      "image": "W047.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 26.156,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3181,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3181,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8519,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 3,
+        "float_run_counts": {
+          "2": 8,
+          "3": 10
+        },
+        "alternation_ratio": 0.35,
+        "dominant_run_ratio": 0.3333,
+        "run_one_ratio": 0.5,
+        "repeat_consistency": 0.6785,
+        "repeat_weight_sum": 37.9822,
+        "repeat_unit": [
+          2,
+          1
+        ],
+        "template_scores": {
+          "plain": 0.5406,
+          "2/1": 0.6309,
+          "3/1": 0.6815
+        },
+        "template_candidate": "3/1",
+        "template_score": 0.6815,
+        "template_margin": 0.0506,
+        "template_weight_mean": 0.5505,
+        "template_weight_sum": 37.9822,
+        "float_matrix": [
+          [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            0,
+            1
+          ],
+          [
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1115,
+          "component_count": 53,
+          "mean_response": 2.6254
+        }
+      ]
+    },
+    {
+      "image": "W048.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 22.486,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.272,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.272,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.7901,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 6,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 14,
+          "3": 9
+        },
+        "alternation_ratio": 0.5,
+        "dominant_run_ratio": 0.4828,
+        "run_one_ratio": 0.6027,
+        "repeat_consistency": 0.5642,
+        "repeat_weight_sum": 39.0429,
+        "repeat_unit": [
+          1,
+          2
+        ],
+        "template_scores": {
+          "plain": 0.5163,
+          "2/1": 0.694,
+          "3/1": 0.6486
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.694,
+        "template_margin": 0.0454,
+        "template_weight_mean": 0.61,
+        "template_weight_sum": 39.0429,
+        "float_matrix": [
+          [
+            0,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            0
+          ],
+          [
+            1,
+            -1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1
+          ],
+          [
+            0,
+            1,
+            -1,
+            1,
+            0,
+            0,
+            -1,
+            1,
+            1
+          ],
+          [
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1,
+            1,
+            -1,
+            0,
+            0,
+            1,
+            -1
+          ],
+          [
+            -1,
+            0,
+            0,
+            -1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            -1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1304,
+          "component_count": 61,
+          "mean_response": 2.5787
+        }
+      ]
+    },
+    {
+      "image": "W049.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "FAIL",
+      "angle_status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "direction_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "angle_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": null,
+      "candidate_confidence": null,
+      "weave_status": "NOT_AVAILABLE",
+      "weave_reasons": [
+        "WEAVE_TWILL_SEGMENTS_INSUFFICIENT"
+      ],
+      "weave_evidence": {},
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 85.0,
+          "direction_field_coverage": 0.0984,
+          "component_count": 33,
+          "mean_response": 2.4467
+        }
+      ]
+    },
+    {
+      "image": "W050.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "PASS",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 24.519,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "weave_type": null,
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3417,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "weave_evidence": {
+        "weave_type": null,
+        "weave_status": "LOW_CONFIDENCE",
+        "weave_candidate": null,
+        "weave_result_kind": "CANDIDATE_UNCERTAIN",
+        "candidate_confidence": 0.3417,
+        "reasons": [
+          "WEAVE_PATTERN_NOT_IN_V1_RULES"
+        ],
+        "valid_ratio": 0.8272,
+        "matrix_shape": [
+          9,
+          9
+        ],
+        "max_float_run": 8,
+        "unsupported_long_float": false,
+        "dominant_float_run": 2,
+        "float_run_counts": {
+          "2": 15,
+          "3": 3
+        },
+        "alternation_ratio": 0.4397,
+        "dominant_run_ratio": 0.5556,
+        "run_one_ratio": 0.6087,
+        "repeat_consistency": 0.6907,
+        "repeat_weight_sum": 40.0738,
+        "repeat_unit": [
+          3,
+          3
+        ],
+        "template_scores": {
+          "plain": 0.5586,
+          "2/1": 0.7095,
+          "3/1": 0.6744
+        },
+        "template_candidate": "2/1",
+        "template_score": 0.7095,
+        "template_margin": 0.0351,
+        "template_weight_mean": 0.5981,
+        "template_weight_sum": 40.0738,
+        "float_matrix": [
+          [
+            1,
+            1,
+            0,
+            -1,
+            1,
+            -1,
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            -1,
+            0,
+            1,
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            -1,
+            1,
+            1,
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            -1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            -1
+          ]
+        ]
+      },
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1137,
+          "component_count": 51,
+          "mean_response": 2.5905
+        }
+      ]
+    }
+  ]
+}

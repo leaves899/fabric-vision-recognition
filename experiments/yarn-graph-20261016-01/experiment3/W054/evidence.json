@@ -1,0 +1,211 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.00012586805555555555,
+    "class_fraction": [
+      0.00012586805555555555,
+      0.0,
+      0.0,
+      0.9998741319444444
+    ],
+    "visible_region_candidates": 1,
+    "inferred_links": 0,
+    "provisional_groups": 1,
+    "rejected_regions": {},
+    "directions": {
+      "A": {
+        "angle_image_y_down_deg": 45.0,
+        "concentration": 1.0,
+        "unit": [
+          0.7071067811865476,
+          0.7071067811865475
+        ],
+        "physical_direction_verified": false
+      },
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 1,
+        "median_visible_mask_width_px": 3.8253890886005846,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        1,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "OBSERVED_CANDIDATE_INTERVALS_INCOMPLETE_ROOT_SET",
+        "hits": [],
+        "intervals_px": [],
+        "mean_interval_px": null,
+        "interval_cv": null,
+        "verified_adjacent_yarn_pitch": null,
+        "physical_count": null
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "A0001",
+      "family": "A",
+      "points": [
+        [
+          417.0,
+          28.0
+        ],
+        [
+          418.0,
+          29.0
+        ],
+        [
+          419.0,
+          30.0
+        ],
+        [
+          421.0,
+          32.0
+        ],
+        [
+          422.0,
+          33.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            417.0,
+            28.0
+          ],
+          [
+            418.0,
+            29.0
+          ],
+          [
+            419.0,
+            30.0
+          ],
+          [
+            421.0,
+            32.0
+          ],
+          [
+            422.0,
+            33.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            416,
+            27
+          ],
+          [
+            416,
+            29
+          ],
+          [
+            420,
+            33
+          ],
+          [
+            421,
+            33
+          ],
+          [
+            422,
+            34
+          ],
+          [
+            422,
+            32
+          ],
+          [
+            421,
+            31
+          ],
+          [
+            421,
+            30
+          ],
+          [
+            418,
+            27
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        416,
+        27,
+        7,
+        8
+      ],
+      "area_px": 29,
+      "aspect_ratio": 2.758729359031296,
+      "apparent_mask_width_px_median": 3.8253890886005846,
+      "apparent_mask_width_px_p10": 2.2648721329009325,
+      "angle_image_y_down_deg": 47.65583128665395,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    }
+  ],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [
+    []
+  ],
+  "row_groups": [
+    "G0001"
+  ],
+  "col_groups": [],
+  "provenance": {
+    "image": "E:\\Internship_2026\\FabricNET\\W054.jpg",
+    "sha256": "c075e986dda6fa6641d072de002183ece65a8be70db00da9a3548c71c19a3ad6",
+    "crop_original_xyxy": [
+      80,
+      0,
+      560,
+      480
+    ],
+    "domain": "FabricNET_microscope",
+    "source": "single_RGB_student"
+  }
+}

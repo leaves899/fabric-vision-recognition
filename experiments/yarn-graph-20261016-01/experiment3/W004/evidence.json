@@ -1,0 +1,871 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.0047395833333333335,
+    "class_fraction": [
+      0.0047395833333333335,
+      0.0,
+      0.0,
+      0.9952604166666666
+    ],
+    "visible_region_candidates": 3,
+    "inferred_links": 0,
+    "provisional_groups": 3,
+    "rejected_regions": {
+      "small_region": 3,
+      "nonelongated_region": 2
+    },
+    "directions": {
+      "A": {
+        "angle_image_y_down_deg": 105.28646608862972,
+        "concentration": 0.9189838921923116,
+        "unit": [
+          0.26364520323066587,
+          -0.9646197213479833
+        ],
+        "physical_direction_verified": false
+      },
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 3,
+        "median_visible_mask_width_px": 10.211458166555566,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        3,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "OBSERVED_CANDIDATE_INTERVALS_INCOMPLETE_ROOT_SET",
+        "hits": [
+          {
+            "group": "G0003",
+            "xy": [
+              182.0,
+              224.14772013368125
+            ],
+            "position_px": -60.127321385208035
+          }
+        ],
+        "intervals_px": [],
+        "mean_interval_px": null,
+        "interval_cv": null,
+        "verified_adjacent_yarn_pitch": null,
+        "physical_count": null
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "A0001",
+      "family": "A",
+      "points": [
+        [
+          278.0,
+          93.0
+        ],
+        [
+          279.0,
+          91.0
+        ],
+        [
+          279.0,
+          89.0
+        ],
+        [
+          280.0,
+          87.0
+        ],
+        [
+          280.0,
+          85.0
+        ],
+        [
+          280.0,
+          83.0
+        ],
+        [
+          281.0,
+          81.0
+        ],
+        [
+          281.0,
+          79.0
+        ],
+        [
+          281.0,
+          77.0
+        ],
+        [
+          282.0,
+          76.0
+        ],
+        [
+          282.0,
+          74.0
+        ],
+        [
+          282.0,
+          72.0
+        ],
+        [
+          282.0,
+          70.0
+        ],
+        [
+          283.0,
+          68.0
+        ],
+        [
+          283.0,
+          66.0
+        ],
+        [
+          284.0,
+          64.0
+        ],
+        [
+          284.0,
+          62.0
+        ],
+        [
+          286.0,
+          61.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            278.0,
+            93.0
+          ],
+          [
+            279.0,
+            91.0
+          ],
+          [
+            279.0,
+            89.0
+          ],
+          [
+            280.0,
+            87.0
+          ],
+          [
+            280.0,
+            85.0
+          ],
+          [
+            280.0,
+            83.0
+          ],
+          [
+            281.0,
+            81.0
+          ],
+          [
+            281.0,
+            79.0
+          ],
+          [
+            281.0,
+            77.0
+          ],
+          [
+            282.0,
+            76.0
+          ],
+          [
+            282.0,
+            74.0
+          ],
+          [
+            282.0,
+            72.0
+          ],
+          [
+            282.0,
+            70.0
+          ],
+          [
+            283.0,
+            68.0
+          ],
+          [
+            283.0,
+            66.0
+          ],
+          [
+            284.0,
+            64.0
+          ],
+          [
+            284.0,
+            62.0
+          ],
+          [
+            286.0,
+            61.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            282,
+            61
+          ],
+          [
+            279,
+            64
+          ],
+          [
+            279,
+            67
+          ],
+          [
+            278,
+            68
+          ],
+          [
+            278,
+            74
+          ],
+          [
+            277,
+            75
+          ],
+          [
+            277,
+            77
+          ],
+          [
+            276,
+            78
+          ],
+          [
+            276,
+            81
+          ],
+          [
+            275,
+            82
+          ],
+          [
+            275,
+            92
+          ],
+          [
+            277,
+            94
+          ],
+          [
+            280,
+            94
+          ],
+          [
+            282,
+            92
+          ],
+          [
+            283,
+            92
+          ],
+          [
+            283,
+            91
+          ],
+          [
+            284,
+            90
+          ],
+          [
+            284,
+            89
+          ],
+          [
+            285,
+            88
+          ],
+          [
+            285,
+            85
+          ],
+          [
+            286,
+            84
+          ],
+          [
+            286,
+            72
+          ],
+          [
+            287,
+            71
+          ],
+          [
+            287,
+            68
+          ],
+          [
+            288,
+            67
+          ],
+          [
+            288,
+            64
+          ],
+          [
+            287,
+            63
+          ],
+          [
+            287,
+            62
+          ],
+          [
+            286,
+            61
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        275,
+        61,
+        14,
+        34
+      ],
+      "area_px": 329,
+      "aspect_ratio": 3.237691424917367,
+      "apparent_mask_width_px_median": 10.211458166555566,
+      "apparent_mask_width_px_p10": 7.082350850119674,
+      "angle_image_y_down_deg": 100.12892883570119,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    },
+    {
+      "id": "A0002",
+      "family": "A",
+      "points": [
+        [
+          385.0,
+          70.0
+        ],
+        [
+          387.0,
+          69.0
+        ],
+        [
+          389.0,
+          69.0
+        ],
+        [
+          391.0,
+          69.0
+        ],
+        [
+          392.0,
+          69.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            385.0,
+            70.0
+          ],
+          [
+            387.0,
+            69.0
+          ],
+          [
+            389.0,
+            69.0
+          ],
+          [
+            391.0,
+            69.0
+          ],
+          [
+            392.0,
+            69.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            387,
+            67
+          ],
+          [
+            384,
+            70
+          ],
+          [
+            384,
+            71
+          ],
+          [
+            392,
+            71
+          ],
+          [
+            393,
+            70
+          ],
+          [
+            393,
+            68
+          ],
+          [
+            392,
+            68
+          ],
+          [
+            391,
+            67
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        384,
+        67,
+        10,
+        5
+      ],
+      "area_px": 41,
+      "aspect_ratio": 1.980278683105675,
+      "apparent_mask_width_px_median": 5.0929682967903105,
+      "apparent_mask_width_px_p10": 3.108323829546433,
+      "angle_image_y_down_deg": 172.89550298076816,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    },
+    {
+      "id": "A0003",
+      "family": "A",
+      "points": [
+        [
+          183.0,
+          239.0
+        ],
+        [
+          183.0,
+          237.0
+        ],
+        [
+          184.0,
+          235.0
+        ],
+        [
+          184.0,
+          233.0
+        ],
+        [
+          183.0,
+          231.0
+        ],
+        [
+          182.0,
+          229.0
+        ],
+        [
+          182.0,
+          226.0
+        ],
+        [
+          182.0,
+          224.0
+        ],
+        [
+          184.0,
+          223.0
+        ],
+        [
+          185.0,
+          221.0
+        ],
+        [
+          185.0,
+          219.0
+        ],
+        [
+          187.0,
+          218.0
+        ],
+        [
+          188.0,
+          216.0
+        ],
+        [
+          189.0,
+          214.0
+        ],
+        [
+          190.0,
+          212.0
+        ],
+        [
+          191.0,
+          210.0
+        ],
+        [
+          191.0,
+          208.0
+        ],
+        [
+          191.0,
+          206.0
+        ],
+        [
+          191.0,
+          204.0
+        ],
+        [
+          189.0,
+          202.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            183.0,
+            239.0
+          ],
+          [
+            183.0,
+            237.0
+          ],
+          [
+            184.0,
+            235.0
+          ],
+          [
+            184.0,
+            233.0
+          ],
+          [
+            183.0,
+            231.0
+          ],
+          [
+            182.0,
+            229.0
+          ],
+          [
+            182.0,
+            226.0
+          ],
+          [
+            182.0,
+            224.0
+          ],
+          [
+            184.0,
+            223.0
+          ],
+          [
+            185.0,
+            221.0
+          ],
+          [
+            185.0,
+            219.0
+          ],
+          [
+            187.0,
+            218.0
+          ],
+          [
+            188.0,
+            216.0
+          ],
+          [
+            189.0,
+            214.0
+          ],
+          [
+            190.0,
+            212.0
+          ],
+          [
+            191.0,
+            210.0
+          ],
+          [
+            191.0,
+            208.0
+          ],
+          [
+            191.0,
+            206.0
+          ],
+          [
+            191.0,
+            204.0
+          ],
+          [
+            189.0,
+            202.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            189,
+            202
+          ],
+          [
+            188,
+            203
+          ],
+          [
+            188,
+            204
+          ],
+          [
+            186,
+            206
+          ],
+          [
+            186,
+            207
+          ],
+          [
+            176,
+            217
+          ],
+          [
+            176,
+            220
+          ],
+          [
+            175,
+            221
+          ],
+          [
+            175,
+            225
+          ],
+          [
+            176,
+            226
+          ],
+          [
+            176,
+            227
+          ],
+          [
+            177,
+            228
+          ],
+          [
+            177,
+            229
+          ],
+          [
+            178,
+            230
+          ],
+          [
+            178,
+            231
+          ],
+          [
+            179,
+            232
+          ],
+          [
+            179,
+            233
+          ],
+          [
+            180,
+            234
+          ],
+          [
+            180,
+            236
+          ],
+          [
+            181,
+            237
+          ],
+          [
+            181,
+            239
+          ],
+          [
+            182,
+            240
+          ],
+          [
+            184,
+            240
+          ],
+          [
+            185,
+            239
+          ],
+          [
+            186,
+            239
+          ],
+          [
+            188,
+            237
+          ],
+          [
+            188,
+            236
+          ],
+          [
+            189,
+            235
+          ],
+          [
+            189,
+            230
+          ],
+          [
+            190,
+            229
+          ],
+          [
+            190,
+            227
+          ],
+          [
+            195,
+            222
+          ],
+          [
+            195,
+            221
+          ],
+          [
+            197,
+            219
+          ],
+          [
+            197,
+            212
+          ],
+          [
+            196,
+            211
+          ],
+          [
+            196,
+            210
+          ],
+          [
+            195,
+            209
+          ],
+          [
+            195,
+            208
+          ],
+          [
+            194,
+            207
+          ],
+          [
+            194,
+            206
+          ],
+          [
+            190,
+            202
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        175,
+        202,
+        23,
+        39
+      ],
+      "area_px": 527,
+      "aspect_ratio": 1.9433366594491313,
+      "apparent_mask_width_px_median": 14.75392912034025,
+      "apparent_mask_width_px_p10": 7.380146954778917,
+      "angle_image_y_down_deg": 107.9195743997153,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    }
+  ],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [
+    [],
+    [],
+    []
+  ],
+  "row_groups": [
+    "G0003",
+    "G0001",
+    "G0002"
+  ],
+  "col_groups": [],
+  "provenance": {
+    "image": "E:\\Internship_2026\\FabricNET\\W004.jpg",
+    "sha256": "5a87acceb8d74333de197474a0b97dd6072fa34a633565a530f503fbfd5feeb7",
+    "crop_original_xyxy": [
+      80,
+      0,
+      560,
+      480
+    ],
+    "domain": "FabricNET_microscope",
+    "source": "single_RGB_student"
+  }
+}

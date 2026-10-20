@@ -1,0 +1,518 @@
+[
+  {
+    "image": "W001.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      9.3,
+      14.9
+    ],
+    "weft_ne": [
+      10.1,
+      16.2
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W002.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      14.9,
+      22.4
+    ],
+    "weft_ne": [
+      6.5,
+      10.9
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W003.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      9.4,
+      15.0
+    ],
+    "weft_ne": [
+      15.2,
+      22.8
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W004.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      8.9,
+      14.2
+    ],
+    "weft_ne": [
+      11.5,
+      18.4
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W005.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      9.0,
+      14.4
+    ],
+    "weft_ne": [
+      17.3,
+      26.0
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W006.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      20.4,
+      34.0
+    ],
+    "weft_ne": [
+      8.5,
+      13.6
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W007.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "NOT_AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": null,
+    "weft_ne": [
+      11.3,
+      18.1
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W008.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "NOT_AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": null,
+    "weft_ne": [
+      17.6,
+      26.4
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W009.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      10.3,
+      16.5
+    ],
+    "weft_ne": [
+      9.6,
+      15.4
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W010.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "NOT_AVAILABLE",
+    "weft_status": "NOT_AVAILABLE",
+    "warp_ne": null,
+    "weft_ne": null,
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W011.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "NOT_AVAILABLE",
+    "warp_ne": [
+      20.4,
+      34.0
+    ],
+    "weft_ne": null,
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W012.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      13.6,
+      20.4
+    ],
+    "weft_ne": [
+      11.5,
+      18.4
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W013.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      20.4,
+      34.0
+    ],
+    "weft_ne": [
+      10.3,
+      16.5
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W014.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      20.4,
+      34.0
+    ],
+    "weft_ne": [
+      10.5,
+      16.8
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W015.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      8.5,
+      13.6
+    ],
+    "weft_ne": [
+      10.8,
+      17.3
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W016.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      13.6,
+      20.4
+    ],
+    "weft_ne": [
+      16.2,
+      24.3
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W017.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      6.9,
+      11.5
+    ],
+    "weft_ne": [
+      16.6,
+      24.9
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W018.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      6.9,
+      11.5
+    ],
+    "weft_ne": [
+      15.9,
+      23.9
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W019.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      6.9,
+      11.5
+    ],
+    "weft_ne": [
+      16.0,
+      24.0
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W020.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      6.9,
+      11.5
+    ],
+    "weft_ne": [
+      16.6,
+      24.9
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W021.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      6.9,
+      11.5
+    ],
+    "weft_ne": [
+      16.2,
+      24.4
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W022.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      6.9,
+      11.5
+    ],
+    "weft_ne": [
+      9.4,
+      15.1
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W023.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      11.5,
+      18.4
+    ],
+    "weft_ne": [
+      9.2,
+      14.6
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W024.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "NOT_AVAILABLE",
+    "warp_ne": [
+      11.5,
+      18.4
+    ],
+    "weft_ne": null,
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W025.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "NOT_AVAILABLE",
+    "warp_ne": [
+      6.9,
+      11.5
+    ],
+    "weft_ne": null,
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W026.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      6.9,
+      11.5
+    ],
+    "weft_ne": [
+      9.0,
+      14.5
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W027.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      11.5,
+      18.4
+    ],
+    "weft_ne": [
+      13.6,
+      20.4
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W028.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      11.5,
+      18.4
+    ],
+    "weft_ne": [
+      13.6,
+      20.4
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W029.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "AVAILABLE",
+    "warp_ne": [
+      11.5,
+      18.4
+    ],
+    "weft_ne": [
+      6.9,
+      11.5
+    ],
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  },
+  {
+    "image": "W030.jpg",
+    "texture": "其他 / 待确认",
+    "status": "AVAILABLE",
+    "warp_status": "AVAILABLE",
+    "weft_status": "NOT_AVAILABLE",
+    "warp_ne": [
+      11.5,
+      18.4
+    ],
+    "weft_ne": null,
+    "reasons": [
+      "REFERENCE_ONLY_NO_REAL_YARN_COUNT_GROUND_TRUTH"
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "axes": 100,
+  "density_above_reference": 50,
+  "periodicity_centerline_conflict": 11,
+  "conflict_and_density_above_reference": 6,
+  "targets": [
+    {
+      "image": "W066.jpg",
+      "axis": "weft",
+      "reference": 18.0,
+      "density": 26.622,
+      "periodicity_spacing_px": 64.0,
+      "centerline_spacing_px": 43.27684935575002,
+      "periodicity_difference_pct": 38.6348979648501,
+      "autocorrelation_peak": 0.42319285911763826,
+      "periodicity_status": "PASS"
+    },
+    {
+      "image": "W114.jpg",
+      "axis": "warp",
+      "reference": 22.0,
+      "density": 28.351,
+      "periodicity_spacing_px": 63.0,
+      "centerline_spacing_px": 41.98711846558385,
+      "periodicity_difference_pct": 40.029447119847276,
+      "autocorrelation_peak": 0.38177229312865235,
+      "periodicity_status": "PASS"
+    },
+    {
+      "image": "W042.jpg",
+      "axis": "weft",
+      "reference": 18.0,
+      "density": 29.577,
+      "periodicity_spacing_px": 60.0,
+      "centerline_spacing_px": 40.43044488371535,
+      "periodicity_difference_pct": 38.97136000730356,
+      "autocorrelation_peak": 0.5248347501684132,
+      "periodicity_status": "PASS"
+    },
+    {
+      "image": "W063.jpg",
+      "axis": "weft",
+      "reference": 18.0,
+      "density": 29.577,
+      "periodicity_spacing_px": 65.0,
+      "centerline_spacing_px": 37.74801947351784,
+      "periodicity_difference_pct": 53.046240046517,
+      "autocorrelation_peak": 0.5268832479892377,
+      "periodicity_status": "PASS"
+    },
+    {
+      "image": "W046.jpg",
+      "axis": "warp",
+      "reference": 24.0,
+      "density": 42.54,
+      "periodicity_spacing_px": 55.0,
+      "centerline_spacing_px": 30.089164967483065,
+      "periodicity_difference_pct": 58.552308139436185,
+      "autocorrelation_peak": 0.29462187168070514,
+      "periodicity_status": "PASS"
+    },
+    {
+      "image": "W073.jpg",
+      "axis": "warp",
+      "reference": 22.0,
+      "density": 43.145,
+      "periodicity_spacing_px": 61.0,
+      "centerline_spacing_px": 29.663586175778953,
+      "periodicity_difference_pct": 69.12679091132766,
+      "autocorrelation_peak": 0.8344528181480186,
+      "periodicity_status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+[
+ {
+  "tag": "base_x1",
+  "sigmas": [
+   2.3,
+   3.6,
+   4.3,
+   5.0,
+   6.0
+  ],
+  "tensor_sigma": 2.0,
+  "status": "LOW_CONFIDENCE",
+  "warp_density": 8.088,
+  "warp_err_pct": 71.7,
+  "weft_density": 4.924,
+  "warp_spacing_px": 98.91,
+  "valid_centerlines": 10,
+  "spacing_cv": 0.1737,
+  "coverage": 0.3762,
+  "autocorr_px": 28.0,
+  "selected": "bright@3.6",
+  "reasons": [
+   "CENTERLINE_CONTINUITY_LOW",
+   "PERIODICITY_CENTERLINE_DISAGREEMENT",
+   "STEERABLE_SCALE_DENSITY_DISAGREEMENT"
+  ],
+  "sec": 26.7
+ },
+ {
+  "tag": "sig_x2",
+  "sigmas": [
+   4.6,
+   7.2,
+   8.6,
+   10.0,
+   12.0
+  ],
+  "tensor_sigma": 4.0,
+  "status": "LOW_CONFIDENCE",
+  "warp_density": 6.731,
+  "warp_err_pct": 76.4,
+  "weft_density": 6.894,
+  "warp_spacing_px": 118.8486,
+  "valid_centerlines": 8,
+  "spacing_cv": 0.2973,
+  "coverage": 0.3155,
+  "autocorr_px": 41.0,
+  "selected": "dark@4.6",
+  "reasons": [
+   "CENTER_SPACING_MODERATE_VARIATION",
+   "CENTERLINE_CONTINUITY_LOW",
+   "PERIODICITY_CENTERLINE_DISAGREEMENT"
+  ],
+  "sec": 25.8
+ },
+ {
+  "tag": "sig_x3",
+  "sigmas": [
+   6.9,
+   10.8,
+   12.9,
+   15.0,
+   18.0
+  ],
+  "tensor_sigma": 6.0,
+  "status": "LOW_CONFIDENCE",
+  "warp_density": 7.567,
+  "warp_err_pct": 73.5,
+  "weft_density": 3.94,
+  "warp_spacing_px": 105.72,
+  "valid_centerlines": 8,
+  "spacing_cv": 0.4602,
+  "coverage": 0.3214,
+  "autocorr_px": 28.0,
+  "selected": "dark@6.9",
+  "reasons": [
+   "CENTER_SPACING_UNSTABLE",
+   "CENTERLINE_CONTINUITY_LOW",
+   "PERIODICITY_CENTERLINE_DISAGREEMENT",
+   "STEERABLE_SCALE_DENSITY_DISAGREEMENT"
+  ],
+  "sec": 26.3
+ },
+ {
+  "tag": "sig_x4",
+  "sigmas": [
+   9.2,
+   14.4,
+   17.2,
+   20.0,
+   24.0
+  ],
+  "tensor_sigma": 8.0,
+  "status": "FAIL",
+  "warp_density": null,
+  "warp_err_pct": null,
+  "weft_density": null,
+  "warp_spacing_px": null,
+  "valid_centerlines": null,
+  "spacing_cv": null,
+  "coverage": null,
+  "autocorr_px": null,
+  "selected": null,
+  "reasons": null,
+  "sec": 1.9
+ }
+]

@@ -1,0 +1,223 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.11531684027777778,
+    "class_fraction": [
+      0.00018663194444444445,
+      0.11513020833333333,
+      0.0,
+      0.8846831597222222
+    ],
+    "visible_region_candidates": 1,
+    "inferred_links": 0,
+    "provisional_groups": 1,
+    "rejected_regions": {},
+    "directions": {
+      "A": {
+        "angle_image_y_down_deg": 77.77802260979173,
+        "concentration": 1.0,
+        "unit": [
+          0.2116996959579717,
+          0.9773347628787705
+        ],
+        "physical_direction_verified": false
+      },
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 1,
+        "median_visible_mask_width_px": 4.333213130381455,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        1,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "OBSERVED_CANDIDATE_INTERVALS_INCOMPLETE_ROOT_SET",
+        "hits": [],
+        "intervals_px": [],
+        "mean_interval_px": null,
+        "interval_cv": null,
+        "verified_adjacent_yarn_pitch": null,
+        "physical_count": null
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "A0001",
+      "family": "A",
+      "points": [
+        [
+          430.0,
+          19.0
+        ],
+        [
+          431.0,
+          21.0
+        ],
+        [
+          431.0,
+          23.0
+        ],
+        [
+          431.0,
+          25.0
+        ],
+        [
+          432.0,
+          26.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            430.0,
+            19.0
+          ],
+          [
+            431.0,
+            21.0
+          ],
+          [
+            431.0,
+            23.0
+          ],
+          [
+            431.0,
+            25.0
+          ],
+          [
+            432.0,
+            26.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            430,
+            18
+          ],
+          [
+            429,
+            19
+          ],
+          [
+            429,
+            20
+          ],
+          [
+            428,
+            21
+          ],
+          [
+            429,
+            22
+          ],
+          [
+            429,
+            24
+          ],
+          [
+            430,
+            25
+          ],
+          [
+            430,
+            26
+          ],
+          [
+            431,
+            27
+          ],
+          [
+            433,
+            27
+          ],
+          [
+            433,
+            20
+          ],
+          [
+            431,
+            18
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        428,
+        18,
+        6,
+        10
+      ],
+      "area_px": 43,
+      "aspect_ratio": 1.9737445535248974,
+      "apparent_mask_width_px_median": 4.333213130381455,
+      "apparent_mask_width_px_p10": 3.549226836364627,
+      "angle_image_y_down_deg": 78.72181426478203,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    }
+  ],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [
+    []
+  ],
+  "row_groups": [
+    "G0001"
+  ],
+  "col_groups": [],
+  "provenance": {
+    "image": "E:\\Internship_2026\\FabricNET\\W038.jpg",
+    "sha256": "bfe41768dd1c1a6eb8f1741974b60418720b6353ef11788a4949a86f4648ec3b",
+    "crop_original_xyxy": [
+      80,
+      0,
+      560,
+      480
+    ],
+    "domain": "FabricNET_microscope",
+    "source": "single_RGB_student"
+  }
+}

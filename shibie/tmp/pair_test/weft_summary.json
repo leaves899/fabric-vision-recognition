@@ -1,0 +1,77 @@
+[
+ {
+  "tag": "min15",
+  "over": {
+   "density_min_per_cm": 15.0
+  },
+  "sec": 28.0,
+  "warp_density": 26.592,
+  "weft_density": 4.924,
+  "warp": {
+   "spacing_px": 27.855,
+   "lines": 33,
+   "autocorr": 28.0,
+   "peak": 0.58,
+   "sel": "dark@2.3",
+   "range": null
+  },
+  "weft": {
+   "spacing_px": 153.7039,
+   "lines": 7,
+   "autocorr": null,
+   "peak": 0.0,
+   "sel": "dark@2.3",
+   "range": null
+  }
+ },
+ {
+  "tag": "min10",
+  "over": {
+   "density_min_per_cm": 10.0
+  },
+  "sec": 30.4,
+  "warp_density": 26.592,
+  "weft_density": 12.803,
+  "warp": {
+   "spacing_px": 27.855,
+   "lines": 33,
+   "autocorr": 28.0,
+   "peak": 0.58,
+   "sel": "dark@2.3",
+   "range": null
+  },
+  "weft": {
+   "spacing_px": 52.9786,
+   "lines": 16,
+   "autocorr": 49.0,
+   "peak": 0.384,
+   "sel": "dark@4.3",
+   "range": null
+  }
+ },
+ {
+  "tag": "min8",
+  "over": {
+   "density_min_per_cm": 8.0
+  },
+  "sec": 29.9,
+  "warp_density": 26.592,
+  "weft_density": 12.803,
+  "warp": {
+   "spacing_px": 27.855,
+   "lines": 33,
+   "autocorr": 28.0,
+   "peak": 0.58,
+   "sel": "dark@2.3",
+   "range": null
+  },
+  "weft": {
+   "spacing_px": 52.9786,
+   "lines": 16,
+   "autocorr": 49.0,
+   "peak": 0.384,
+   "sel": "dark@4.3",
+   "range": null
+  }
+ }
+]

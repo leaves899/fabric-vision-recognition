@@ -1,0 +1,165 @@
+{
+  "rows": [
+    {
+      "id": "OLP_05",
+      "max_probability_quantiles": [
+        0.33337754011154175,
+        0.360843288898468,
+        0.40154050290584564,
+        0.46177757978439343,
+        0.6045609176158905,
+        0.6480159163475037
+      ],
+      "argmax_vs_teacher_diagnostic_only": {
+        "reference_valid_pixels": 348594,
+        "prediction_resolved_fraction": 1.0,
+        "agreement_on_reference_valid": 0.5292718750179292,
+        "iou_by_class": [
+          0.03801379706812302,
+          0.48481565228314805,
+          0.1746507645627422
+        ],
+        "mean_iou": 0.23249340463800441
+      },
+      "purpose": "Diagnose uncertain student output only; not used to lower the frozen threshold"
+    },
+    {
+      "id": "OLP_10",
+      "max_probability_quantiles": [
+        0.34154054522514343,
+        0.3496739536523819,
+        0.37653107941150665,
+        0.5033277630805969,
+        0.5555701434612275,
+        0.5905383825302124
+      ],
+      "argmax_vs_teacher_diagnostic_only": {
+        "reference_valid_pixels": 298731,
+        "prediction_resolved_fraction": 1.0,
+        "agreement_on_reference_valid": 0.2852867630075218,
+        "iou_by_class": [
+          0.28864698634461267,
+          0.0,
+          0.004834182347437364
+        ],
+        "mean_iou": 0.09782705623068334
+      },
+      "purpose": "Diagnose uncertain student output only; not used to lower the frozen threshold"
+    },
+    {
+      "id": "OLP_15",
+      "max_probability_quantiles": [
+        0.3410683870315552,
+        0.3558888852596283,
+        0.40314774215221405,
+        0.4943878501653671,
+        0.5222564351558685,
+        0.5351488590240479
+      ],
+      "argmax_vs_teacher_diagnostic_only": {
+        "reference_valid_pixels": 319320,
+        "prediction_resolved_fraction": 1.0,
+        "agreement_on_reference_valid": 0.8583395966428661,
+        "iou_by_class": [
+          0.8185405233797451,
+          0.6515010271548674,
+          0.012658227848101266
+        ],
+        "mean_iou": 0.49423325946090463
+      },
+      "purpose": "Diagnose uncertain student output only; not used to lower the frozen threshold"
+    },
+    {
+      "id": "OLP_20",
+      "max_probability_quantiles": [
+        0.3451794683933258,
+        0.3651932030916214,
+        0.4491666108369827,
+        0.47720505595207213,
+        0.48840241342782975,
+        0.49783504009246826
+      ],
+      "argmax_vs_teacher_diagnostic_only": {
+        "reference_valid_pixels": 341540,
+        "prediction_resolved_fraction": 1.0,
+        "agreement_on_reference_valid": 0.9676172629853018,
+        "iou_by_class": [
+          0.970728575131365,
+          0.1654492330168006,
+          0.0
+        ],
+        "mean_iou": 0.3787259360493886
+      },
+      "purpose": "Diagnose uncertain student output only; not used to lower the frozen threshold"
+    },
+    {
+      "id": "OLP_25",
+      "max_probability_quantiles": [
+        0.3333764672279358,
+        0.3514550864696503,
+        0.405490517616272,
+        0.49434770047664645,
+        0.5431391990184784,
+        0.5733675956726074
+      ],
+      "argmax_vs_teacher_diagnostic_only": {
+        "reference_valid_pixels": 292222,
+        "prediction_resolved_fraction": 1.0,
+        "agreement_on_reference_valid": 0.4723703211941606,
+        "iou_by_class": [
+          0.09284718349135528,
+          0.4019413045732656,
+          0.44950882181865187
+        ],
+        "mean_iou": 0.3147657699610909
+      },
+      "purpose": "Diagnose uncertain student output only; not used to lower the frozen threshold"
+    },
+    {
+      "id": "OLP_30",
+      "max_probability_quantiles": [
+        0.3411670923233032,
+        0.37481933534145356,
+        0.4426591396331787,
+        0.47917011976242063,
+        0.5074583214521409,
+        0.535660982131958
+      ],
+      "argmax_vs_teacher_diagnostic_only": {
+        "reference_valid_pixels": 387583,
+        "prediction_resolved_fraction": 1.0,
+        "agreement_on_reference_valid": 0.17285845870432914,
+        "iou_by_class": [
+          0.0,
+          0.17305669486290837,
+          0.0026396832380114386
+        ],
+        "mean_iou": 0.05856545936697327
+      },
+      "purpose": "Diagnose uncertain student output only; not used to lower the frozen threshold"
+    },
+    {
+      "id": "OLP_35",
+      "max_probability_quantiles": [
+        0.33675122261047363,
+        0.34551462829113005,
+        0.3780079185962677,
+        0.48592054545879365,
+        0.5998847126960756,
+        0.6723631024360657
+      ],
+      "argmax_vs_teacher_diagnostic_only": {
+        "reference_valid_pixels": 259147,
+        "prediction_resolved_fraction": 1.0,
+        "agreement_on_reference_valid": 0.48101270707359145,
+        "iou_by_class": [
+          0.27901698751445514,
+          0.390976092933668,
+          0.037484540005708306
+        ],
+        "mean_iou": 0.23582587348461048
+      },
+      "purpose": "Diagnose uncertain student output only; not used to lower the frozen threshold"
+    }
+  ]
+}

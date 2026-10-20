@@ -1,0 +1,792 @@
+{
+  "status": "EXECUTED_PSEUDOLABEL_COMPARISON",
+  "fresh_student_inference": true,
+  "physical_pixel_accuracy": null,
+  "pixel_ground_truth_available": false,
+  "rows": [
+    {
+      "id": "OLP_01",
+      "split": "validation",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 195287,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 195287,
+        "prediction_resolved_fraction": 0.28152587890625,
+        "agreement_on_reference_valid": 0.13838606768499695,
+        "iou_by_class": [
+          0.16189443144839843,
+          0.0,
+          0.06656997395216671
+        ],
+        "mean_iou": 0.07615480180018838
+      },
+      "physical_segmentation_accuracy": null
+    },
+    {
+      "id": "OLP_05",
+      "split": "test",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 348594,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 348594,
+        "prediction_resolved_fraction": 0.370185546875,
+        "agreement_on_reference_valid": 0.04549992254599907,
+        "iou_by_class": [
+          0.0011519150587852305,
+          0.0,
+          0.08153146166175482
+        ],
+        "mean_iou": 0.02756112557351335
+      },
+      "physical_segmentation_accuracy": null,
+      "independent_student_rotation_runs": [
+        {
+          "ccw_degrees": 90,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 180,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 270,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "OLP_06",
+      "split": "validation",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 307211,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 307211,
+        "prediction_resolved_fraction": 0.41271728515625,
+        "agreement_on_reference_valid": 0.23902138920806873,
+        "iou_by_class": [
+          0.2663982005514439,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.08879940018381464
+      },
+      "physical_segmentation_accuracy": null
+    },
+    {
+      "id": "OLP_10",
+      "split": "test",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 298731,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 298731,
+        "prediction_resolved_fraction": 0.410615234375,
+        "agreement_on_reference_valid": 0.1107484660112275,
+        "iou_by_class": [
+          0.14178555669951465,
+          0.0,
+          0.18954645729472458
+        ],
+        "mean_iou": 0.11044400466474641
+      },
+      "physical_segmentation_accuracy": null,
+      "independent_student_rotation_runs": [
+        {
+          "ccw_degrees": 90,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 180,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 270,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "OLP_11",
+      "split": "validation",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 292598,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 292598,
+        "prediction_resolved_fraction": 0.29755615234375,
+        "agreement_on_reference_valid": 0.09486052536244267,
+        "iou_by_class": [
+          0.1060983091271291,
+          0.0,
+          0.1174090991102206
+        ],
+        "mean_iou": 0.07450246941244991
+      },
+      "physical_segmentation_accuracy": null
+    },
+    {
+      "id": "OLP_15",
+      "split": "test",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 319320,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 319320,
+        "prediction_resolved_fraction": 0.35215576171875,
+        "agreement_on_reference_valid": 0.13731679819616685,
+        "iou_by_class": [
+          0.19024765915973407,
+          0.0,
+          0.0033342369205746816
+        ],
+        "mean_iou": 0.06452729869343625
+      },
+      "physical_segmentation_accuracy": null,
+      "independent_student_rotation_runs": [
+        {
+          "ccw_degrees": 90,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 180,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 270,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "OLP_16",
+      "split": "validation",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 268508,
+        "prediction_resolved_fraction": 0.00678955078125,
+        "agreement_on_reference_valid": 0.0012811536341561518,
+        "iou_by_class": [
+          0.08827303053630998,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.029424343512103327
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 268508,
+        "prediction_resolved_fraction": 0.4451171875,
+        "agreement_on_reference_valid": 0.0547544207248946,
+        "iou_by_class": [
+          0.02307390744301529,
+          0.0,
+          0.06965760900489869
+        ],
+        "mean_iou": 0.03091050548263799
+      },
+      "physical_segmentation_accuracy": null
+    },
+    {
+      "id": "OLP_20",
+      "split": "test",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 341540,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 341540,
+        "prediction_resolved_fraction": 0.17808837890625,
+        "agreement_on_reference_valid": 0.07534402998184693,
+        "iou_by_class": [
+          0.06844865821897528,
+          0.0,
+          0.08503467138160621
+        ],
+        "mean_iou": 0.05116110986686049
+      },
+      "physical_segmentation_accuracy": null,
+      "independent_student_rotation_runs": [
+        {
+          "ccw_degrees": 90,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 180,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 270,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "OLP_21",
+      "split": "validation",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 225745,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 225745,
+        "prediction_resolved_fraction": 0.21694091796875,
+        "agreement_on_reference_valid": 0.05530133557775366,
+        "iou_by_class": [
+          0.04099612063571518,
+          0.0,
+          0.21237517133346387
+        ],
+        "mean_iou": 0.08445709732305968
+      },
+      "physical_segmentation_accuracy": null
+    },
+    {
+      "id": "OLP_25",
+      "split": "test",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 292222,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 292222,
+        "prediction_resolved_fraction": 0.33087890625,
+        "agreement_on_reference_valid": 0.03320078570401955,
+        "iou_by_class": [
+          0.07809509309204803,
+          0.0,
+          0.053251938066369534
+        ],
+        "mean_iou": 0.04378234371947252
+      },
+      "physical_segmentation_accuracy": null,
+      "independent_student_rotation_runs": [
+        {
+          "ccw_degrees": 90,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 180,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 270,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "OLP_26",
+      "split": "validation",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 177418,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          null
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 177418,
+        "prediction_resolved_fraction": 0.33308349609375,
+        "agreement_on_reference_valid": 0.25421321399181596,
+        "iou_by_class": [
+          0.2754472001514587,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.09181573338381956
+      },
+      "physical_segmentation_accuracy": null
+    },
+    {
+      "id": "OLP_30",
+      "split": "test",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 387583,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          null,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 387583,
+        "prediction_resolved_fraction": 0.23107666015625,
+        "agreement_on_reference_valid": 0.006119979462463524,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.03787080499409266
+        ],
+        "mean_iou": 0.012623601664697554
+      },
+      "physical_segmentation_accuracy": null,
+      "independent_student_rotation_runs": [
+        {
+          "ccw_degrees": 90,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 180,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 270,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "OLP_31",
+      "split": "validation",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 248710,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 248710,
+        "prediction_resolved_fraction": 0.33520751953125,
+        "agreement_on_reference_valid": 0.034630694383016365,
+        "iou_by_class": [
+          0.028048100660985904,
+          0.0,
+          0.07580400703609873
+        ],
+        "mean_iou": 0.03461736923236155
+      },
+      "physical_segmentation_accuracy": null
+    },
+    {
+      "id": "OLP_35",
+      "split": "test",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 259147,
+        "prediction_resolved_fraction": 0.00028564453125,
+        "agreement_on_reference_valid": 0.00043604595075381924,
+        "iou_by_class": [
+          0.0023603626185403352,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.000786787539513445
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 259147,
+        "prediction_resolved_fraction": 0.265166015625,
+        "agreement_on_reference_valid": 0.04290229097770763,
+        "iou_by_class": [
+          0.09580155310274904,
+          0.0,
+          0.10590946875236153
+        ],
+        "mean_iou": 0.06723700728503686
+      },
+      "physical_segmentation_accuracy": null,
+      "independent_student_rotation_runs": [
+        {
+          "ccw_degrees": 90,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 117,
+            "prediction_resolved_fraction": 0.0003173828125,
+            "agreement_on_reference_valid": 0.0,
+            "iou_by_class": [
+              0.0,
+              null,
+              0.0
+            ],
+            "mean_iou": 0.0
+          }
+        },
+        {
+          "ccw_degrees": 180,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 117,
+            "prediction_resolved_fraction": 0.0003466796875,
+            "agreement_on_reference_valid": 0.5299145299145299,
+            "iou_by_class": [
+              0.5299145299145299,
+              null,
+              null
+            ],
+            "mean_iou": 0.5299145299145299
+          }
+        },
+        {
+          "ccw_degrees": 270,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 117,
+            "prediction_resolved_fraction": 0.000283203125,
+            "agreement_on_reference_valid": 0.0,
+            "iou_by_class": [
+              0.0,
+              null,
+              0.0
+            ],
+            "mean_iou": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "OLP_36",
+      "split": "validation",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 227017,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          null
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 227017,
+        "prediction_resolved_fraction": 0.3590966796875,
+        "agreement_on_reference_valid": 0.20515644202857056,
+        "iou_by_class": [
+          0.2841974871704123,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.09473249572347077
+      },
+      "physical_segmentation_accuracy": null
+    },
+    {
+      "id": "AUTHOR",
+      "split": "reference_only",
+      "student_vs_paired_teacher": {
+        "reference_valid_pixels": 375227,
+        "prediction_resolved_fraction": 0.0,
+        "agreement_on_reference_valid": 0.0,
+        "iou_by_class": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_iou": 0.0
+      },
+      "structure_proxy_vs_paired_teacher": {
+        "reference_valid_pixels": 375227,
+        "prediction_resolved_fraction": 0.21972900390625,
+        "agreement_on_reference_valid": 0.12580118168468687,
+        "iou_by_class": [
+          0.10045720439135236,
+          0.0,
+          0.26170575816294067
+        ],
+        "mean_iou": 0.12072098751809768
+      },
+      "physical_segmentation_accuracy": null,
+      "independent_student_rotation_runs": [
+        {
+          "ccw_degrees": 90,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 180,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        },
+        {
+          "ccw_degrees": 270,
+          "mapped_prediction_vs_original": {
+            "reference_valid_pixels": 0,
+            "prediction_resolved_fraction": 0.0,
+            "agreement_on_reference_valid": null,
+            "iou_by_class": [
+              null,
+              null,
+              null
+            ],
+            "mean_iou": null
+          }
+        }
+      ]
+    }
+  ]
+}

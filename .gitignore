@@ -5,6 +5,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .venv/
+.venv-measurement/
 venv/
 # Local runtime artefacts
 v4_cache/

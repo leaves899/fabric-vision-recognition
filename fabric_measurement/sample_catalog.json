@@ -1,0 +1,130 @@
+[
+  {
+    "id": "U20261013_01",
+    "label": "此前手机照片 1",
+    "reflection": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_01.jpg",
+    "reflection_sha256": "e273162299531d0eea5ff5d79b7c5937ba09d67b1101d8e54db3a313d28d0c91",
+    "options": {
+      "roi": [
+        448,
+        704,
+        640,
+        640
+      ]
+    },
+    "description": "原始照片中心 640×640 原生像素；无确认尺度与经纬身份",
+    "group": "phone"
+  },
+  {
+    "id": "U20261013_02",
+    "label": "此前手机照片 2",
+    "reflection": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_02.jpg",
+    "reflection_sha256": "630cd4ea2245d7420307fae7704e34fb608a4c1f61379564321f03912a5312ca",
+    "options": {
+      "roi": [
+        448,
+        704,
+        640,
+        640
+      ]
+    },
+    "description": "原始照片中心 640×640 原生像素；无确认尺度与经纬身份",
+    "group": "phone"
+  },
+  {
+    "id": "U20261013_03",
+    "label": "此前手机照片 3",
+    "reflection": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_03.jpg",
+    "reflection_sha256": "cc6d2c9507d086a6658f8939576bab84550e8cf532c6f8dc238542ae3e6a488f",
+    "options": {
+      "roi": [
+        448,
+        704,
+        640,
+        640
+      ]
+    },
+    "description": "原始照片中心 640×640 原生像素；无确认尺度与经纬身份",
+    "group": "phone"
+  },
+  {
+    "id": "U20261013_04",
+    "label": "此前手机照片 4",
+    "reflection": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_04.jpg",
+    "reflection_sha256": "ce81fda0384c64381049869759fae7f3b51181c3914412640a3b8d4aa8d24a69",
+    "options": {
+      "roi": [
+        319,
+        533,
+        640,
+        640
+      ]
+    },
+    "description": "原始照片中心 640×640 原生像素；无确认尺度与经纬身份",
+    "group": "phone"
+  },
+  {
+    "id": "U20261013_05",
+    "label": "此前手机照片 5",
+    "reflection": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg",
+    "reflection_sha256": "4530b46cb4fa4236e4f15dcb0a62d97e41c3b34b3a4af6b3ffeeb3d1aa321250",
+    "options": {
+      "roi": [
+        319,
+        533,
+        640,
+        640
+      ]
+    },
+    "description": "原始照片中心 640×640 原生像素；无确认尺度与经纬身份",
+    "group": "phone"
+  },
+  {
+    "id": "U20261013_06",
+    "label": "此前手机照片 6",
+    "reflection": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_06.jpg",
+    "reflection_sha256": "544b0e252daa44e4c1e01ac3d4680a870eb0fd01ae9549d3b9f4fe690ed56488",
+    "options": {
+      "roi": [
+        319,
+        533,
+        640,
+        640
+      ]
+    },
+    "description": "原始照片中心 640×640 原生像素；无确认尺度与经纬身份",
+    "group": "phone"
+  },
+  {
+    "id": "PHONE_BLUE_WHITE",
+    "label": "此前蓝白手机照片",
+    "reflection": "datasets/report_route_samples/phone_blue_white.jpg",
+    "reflection_sha256": "43657923971720220414447a236daeaf7bf0b27c5362e52ed032f5c6474f63bc",
+    "options": {
+      "roi": [
+        1210,
+        1720,
+        640,
+        640
+      ]
+    },
+    "description": "此前实验记录中的原始附件；无确认尺度与经纬身份",
+    "group": "phone"
+  },
+  {
+    "id": "PAIRED_20261016",
+    "label": "此前反射 / 透射双图",
+    "reflection": "datasets/report_route_samples/reflection.png",
+    "transmission": "datasets/report_route_samples/transmission.png",
+    "reflection_sha256": "95a7b38bcaa2ad14c2d31c32fdfd472eaa9fc18a495f1384f310d9ffb911f68f",
+    "transmission_sha256": "33773ffcc094990090d5345bdb341463a7578b9a2e6d8edf03c7dd353884143e",
+    "options": {
+      "warp_angle": 0,
+      "prealigned": true,
+      "mm_per_px": 0.0390625,
+      "scale_confirmed": false
+    },
+    "description": "已有同位置 1080×1080 转正 ROI；历史尺度仅作候选；经向 0°来自既有用户确认记录",
+    "group": "paired"
+  }
+]

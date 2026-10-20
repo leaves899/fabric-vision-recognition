@@ -1,0 +1,809 @@
+{
+  "status": "EXECUTED",
+  "fabricnet_images": 130,
+  "phone_images": 7,
+  "paired_controls": 39,
+  "coarse_confusion_with_abstention": {
+    "plain": {
+      "ABSTAIN": 50
+    },
+    "twill": {
+      "ABSTAIN": 39
+    },
+    "satin": {
+      "ABSTAIN": 41
+    }
+  },
+  "conditional_template_coverage": 0.0,
+  "conditional_candidate_accuracy": null,
+  "verified_physical_weave_accuracy": null,
+  "subtype_accuracy": null,
+  "scored_rows": [
+    {
+      "id": "W001",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W002",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W003",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W004",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W005",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W006",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W007",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W008",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W009",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W010",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W011",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W012",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W013",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W014",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W015",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W016",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W017",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W018",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W019",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W020",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W021",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W022",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W023",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W024",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W025",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W026",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W027",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W028",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W029",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W030",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W031",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W032",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W033",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W034",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W035",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W036",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W037",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W038",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W039",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W040",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W041",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W042",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W043",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W044",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W045",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W046",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W047",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W048",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W049",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W050",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W051",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W052",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W053",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W054",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W055",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W056",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W057",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W058",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W059",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W060",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W061",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W062",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W063",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W064",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W065",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W066",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W067",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W068",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W069",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W070",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W071",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W072",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W073",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W074",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W075",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W076",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W077",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W078",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W079",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W080",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W081",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W082",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W083",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W084",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W085",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W086",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W087",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W088",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W089",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W090",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W091",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W092",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W093",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W094",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W095",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W096",
+      "label": "plain",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W097",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W098",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W099",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W100",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W101",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W102",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W103",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W104",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W105",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W106",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W107",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W108",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W109",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W110",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W111",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W112",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W113",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W114",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W115",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W116",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W117",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W118",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W119",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W120",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W121",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W122",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W123",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W124",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W125",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W126",
+      "label": "twill",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W127",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W128",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W129",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    },
+    {
+      "id": "W130",
+      "label": "satin",
+      "conditional_candidate": null,
+      "correct_if_candidate": null
+    }
+  ],
+  "limits": [
+    "Microscope data, not certified phone data",
+    "No subtype or pixel/instance truth",
+    "Template row/column adjacency unverified",
+    "Possible related FabricNET images; image-level counts are not independent fabric confidence intervals"
+  ]
+}

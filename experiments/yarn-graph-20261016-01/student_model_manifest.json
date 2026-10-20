@@ -1,0 +1,7 @@
+{
+  "sha256": "a01464ddd2c8e873eade2b92a5767a636e36f3b61f37f65780af628bacbbcf0c",
+  "architecture": "SmallUNet-16-32-64",
+  "source_model": "d2439b2fd7c94154950ec2805b99ece91472150f53b7ad1760d7645b894944b7",
+  "trained_this_run": true,
+  "physical_accuracy_validated": false
+}

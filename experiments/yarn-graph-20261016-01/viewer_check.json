@@ -1,0 +1,7 @@
+{
+  "javascript_syntax": "PASS",
+  "browser_rendering": "NOT_EXECUTED",
+  "reason": "Built-in browser URL policy disallows file protocol; no workaround attempted",
+  "image_decode_check": "1232 experiment3 PNGs passed, see verification.json",
+  "visual_inspection": "Experiment1 AUTHOR; Experiment2 U20261013_03; Experiment3 PAIRED_AUTHOR"
+}

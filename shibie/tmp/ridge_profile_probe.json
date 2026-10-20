@@ -1,0 +1,60 @@
+{
+  "samples": [
+    {
+      "image": "W066.jpg",
+      "warp_density_per_cm": 26.864,
+      "weft_density_per_cm": 17.748,
+      "status": "LOW_CONFIDENCE",
+      "warp_profile_rejected": 0,
+      "weft_profile_rejected": 0
+    },
+    {
+      "image": "W114.jpg",
+      "warp_density_per_cm": 21.557,
+      "weft_density_per_cm": 29.358,
+      "status": "LOW_CONFIDENCE",
+      "warp_profile_rejected": 14,
+      "weft_profile_rejected": 0
+    },
+    {
+      "image": "W042.jpg",
+      "warp_density_per_cm": 25.008,
+      "weft_density_per_cm": 20.417,
+      "status": "LOW_CONFIDENCE",
+      "warp_profile_rejected": 1,
+      "weft_profile_rejected": 0
+    },
+    {
+      "image": "W063.jpg",
+      "warp_density_per_cm": 22.081,
+      "weft_density_per_cm": 17.746,
+      "status": "LOW_CONFIDENCE",
+      "warp_profile_rejected": 0,
+      "weft_profile_rejected": 0
+    },
+    {
+      "image": "W046.jpg",
+      "warp_density_per_cm": 23.426,
+      "weft_density_per_cm": 18.4,
+      "status": "LOW_CONFIDENCE",
+      "warp_profile_rejected": 1,
+      "weft_profile_rejected": 0
+    },
+    {
+      "image": "W073.jpg",
+      "warp_density_per_cm": 43.145,
+      "weft_density_per_cm": 45.786,
+      "status": "LOW_CONFIDENCE",
+      "warp_profile_rejected": 0,
+      "weft_profile_rejected": 0
+    },
+    {
+      "image": "W088.jpg",
+      "warp_density_per_cm": 27.422,
+      "weft_density_per_cm": 43.876,
+      "status": "PASS",
+      "warp_profile_rejected": 0,
+      "weft_profile_rejected": 0
+    }
+  ]
+}

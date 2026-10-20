@@ -1,0 +1,62 @@
+{
+  "timestamp_utc": "2026-10-16T16:35:55.629900+00:00",
+  "automated_tests": {
+    "command": "python -m pytest fabric_measurement/tests -q",
+    "result": "61 passed in 14.37s",
+    "scope": "software mechanics and input/persistence contracts; not fabric recognition accuracy"
+  },
+  "real_photo_cases": {
+    "cases": 8,
+    "photos": 9,
+    "execution_passed": 8,
+    "gate3_low_confidence": 8,
+    "weave_candidates": 0
+  },
+  "live_http_persistence_checks": [
+    {
+      "run_id": "19da359878204e558d304df2f1fe3182",
+      "mode": "REFLECTION_ONLY",
+      "http_equals_disk": true,
+      "zip_image_decode": "PASS",
+      "file_count": 14
+    },
+    {
+      "run_id": "d8864ffddfb548459c4f33d64e24e9b5",
+      "mode": "PAIRED",
+      "http_equals_disk": true,
+      "zip_image_decode": "PASS",
+      "file_count": 15
+    }
+  ],
+  "browser_checks": {
+    "single_photo_analysis": "PASS",
+    "paired_photo_analysis": "PASS",
+    "float_matrix_tab": "PASS",
+    "history_shows_saved_results": "PASS",
+    "console_errors_or_warnings": 0,
+    "viewport_width": 526,
+    "body_scroll_width": 526,
+    "screenshot_size": [
+      526,
+      728
+    ]
+  },
+  "syntax_checks": {
+    "javascript": "PASS",
+    "powershell": "PASS",
+    "git_diff_whitespace": "PASS"
+  },
+  "unchanged_import_source_hashes": {
+    "report_reproduction/config.py": true,
+    "report_reproduction/geometry.py": true,
+    "report_reproduction/centerlines.py": true,
+    "report_reproduction/measurements.py": true,
+    "report_reproduction/structure.py": true,
+    "report_reproduction/pipeline.py": true,
+    "standalone_centerline/density.py": true,
+    "report_reproduction/tests/test_route.py": true
+  },
+  "existing_v4_v5_git_diff": "EMPTY",
+  "physical_accuracy": "NOT_EVALUATED",
+  "cleanup_note": "Task-generated .cache_report and experiments/report-system-20261017 were retained after recursive cleanup was rejected as blocked by policy. The latter README marks it as superseded."
+}

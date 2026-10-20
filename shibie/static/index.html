@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>工艺智能推算 · 图片识别</title>
+<style>
+:root{--line:#dbe5f1;--text:#253348;--sub:#7c8da5;--blue:#4a8fe5;--soft:#eef6ff}
+*{box-sizing:border-box}
+body{margin:0;background:#f6f8fb;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;color:var(--text)}
+.page{min-height:100vh;background:#fff}
+.top{height:62px;border-bottom:1px solid #e8edf4;display:flex;align-items:center;padding:0 20px;font-size:20px;font-weight:700}
+.content{padding:16px}
+.card{border:1px solid var(--line);border-radius:10px;margin-bottom:14px;background:#fff}
+.head{padding:16px 16px 10px}.title{font-size:17px;font-weight:700}.sub{font-size:13px;color:var(--sub);margin-top:4px}
+.inner{padding:0 16px 16px}
+.image-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{border:1px solid var(--line);border-radius:9px;background:#fbfcfe;padding:14px;min-width:0}
+.boxhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.name{font-weight:700;font-size:16px}.desc{font-size:13px;color:var(--sub);margin-top:4px}
+.badge{font-size:12px;padding:4px 10px;border:1px solid #d7e1ed;border-radius:6px;color:#718198;background:#f3f6fa;white-space:nowrap}
+.badge.ok{background:#edf8f3;border-color:#bfe6d2;color:#2e8b62}
+.upload{height:300px;margin-top:10px;border:1px dashed #b9cde5;border-radius:8px;background:#f8fafd;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}
+.placeholder{text-align:center;color:#8797ab}.plus{font-size:42px;margin-bottom:10px}
+.preview{display:none;width:100%;height:100%;object-fit:contain;background:#eef3f8}
+.actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}.btn{height:36px;padding:0 15px;border:1px solid #cfdbea;border-radius:6px;background:#fff;cursor:pointer;color:#314761}
+.btn.primary{height:40px;border:0;background:#5d9eea;color:#fff;font-weight:700}.btn.primary:disabled{background:#aec9ea}
+.advanced{margin-top:14px;border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px}
+.advanced summary{cursor:pointer;font-size:13px;color:#4a607a;font-weight:700}
+.fields{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}.field label{display:block;font-size:12px;color:#788aa1;margin-bottom:5px}
+.field input,.field select{height:36px;border:1px solid #cedaea;border-radius:6px;padding:0 10px}
+.run{margin-top:12px;border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;align-items:center;justify-content:flex-end}
+.runtip{font-size:13px;color:#718198}
+.results{padding:14px 16px 18px;display:grid;grid-template-columns:1fr 1fr 1fr 1.8fr;gap:12px}
+.metric{min-height:180px;border:1px solid var(--line);border-radius:9px;padding:15px}
+.mtitle{font-size:14px;font-weight:700}.center{height:115px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.value{font-size:40px;font-weight:700;color:#2074d8}.unit{font-size:13px;color:#8190a4;margin-top:10px}
+.width-output{margin:0 16px 16px;border-top:1px solid var(--line);padding-top:14px}.width-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;font-weight:700}.width-status{font-size:12px;color:#59718d;font-weight:400}.width-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}.width-direction{border:1px solid var(--line);border-radius:7px;padding:11px;background:#fbfcfe}.width-name{font-size:13px;font-weight:700}.width-values{margin-top:6px;font-size:14px;color:#2074d8;line-height:1.65}.width-note{margin-top:5px;font-size:12px;color:#7c8da5}
+.twill-output{margin:0 16px 16px;border-top:1px solid var(--line);padding-top:14px}.twill-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;font-weight:700}.twill-values{margin-top:10px;font-size:15px;color:#2074d8;line-height:1.65}.twill-note{margin-top:5px;font-size:12px;color:#7c8da5}
+.extra-output{margin:0 16px 16px;border-top:1px solid var(--line);padding-top:14px}.extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}.extra-box{border:1px solid var(--line);border-radius:7px;padding:11px;background:#fbfcfe}.extra-name{font-size:13px;font-weight:700}.extra-values{margin-top:7px;font-size:14px;color:#2074d8;line-height:1.65}.extra-note{margin-top:4px;font-size:12px;color:#7c8da5;line-height:1.5}
+.statusline{padding:0 16px 16px;font-size:13px;color:#59718d}
+@media(max-width:900px){.image-grid{grid-template-columns:1fr}.results{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.results{grid-template-columns:1fr}.run{align-items:stretch}.btn.primary{width:100%}}
+@media(max-width:620px){.width-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.extra-grid{grid-template-columns:1fr}}
+.head .sub,.boxhead .desc,#runTip{display:none!important}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">工艺智能推算 · 图片识别</div>
+  <div class="content">
+    <section class="card">
+      <div class="head">
+        <div class="title">图片识别采集</div>
+        <div class="sub">分别上传正面图与透视图，系统实际计算经密、纬密、经纬比及后续结构指标</div>
+      </div>
+      <div class="inner">
+        <div class="image-grid">
+          <div class="box">
+            <div class="boxhead">
+              <div><div class="name">正面图</div><div class="desc">用于正面结构特征分析</div></div>
+              <div id="frontBadge" class="badge">未上传</div>
+            </div>
+            <label class="upload" for="frontFileInput">
+              <div id="frontPlaceholder" class="placeholder"><div class="plus">＋</div><div>尚未上传正面图</div></div>
+              <img id="frontPreview" class="preview" alt="正面图预览"/>
+            </label>
+            <div class="actions">
+              <button id="frontCameraBtn" class="btn">📷 拍照</button>
+              <button id="frontUploadBtn" class="btn">上传图片</button>
+              <button id="frontDeleteBtn" class="btn" style="display:none">删除图片</button>
+            </div>
+            <input id="frontFileInput" type="file" accept="image/jpeg,image/png" hidden>
+            <input id="frontCameraInput" type="file" accept="image/*" capture="environment" hidden>
+          </div>
+
+          <div class="box">
+            <div class="boxhead">
+              <div><div class="name">透视图</div><div class="desc">用于两组纱线方向、中心线及密度计算</div></div>
+              <div id="transmissionBadge" class="badge">未上传</div>
+            </div>
+            <label class="upload" for="transmissionFileInput">
+              <div id="transmissionPlaceholder" class="placeholder"><div class="plus">＋</div><div>尚未上传透视图</div></div>
+              <img id="transmissionPreview" class="preview" alt="透视图预览"/>
+            </label>
+            <div class="actions">
+              <button id="transmissionCameraBtn" class="btn">📷 拍照</button>
+              <button id="transmissionUploadBtn" class="btn">上传图片</button>
+              <button id="transmissionDeleteBtn" class="btn" style="display:none">删除图片</button>
+            </div>
+            <input id="transmissionFileInput" type="file" accept="image/jpeg,image/png" hidden>
+            <input id="transmissionCameraInput" type="file" accept="image/*" capture="environment" hidden>
+          </div>
+        </div>
+
+        <details class="advanced">
+          <summary>采集标定参数</summary>
+          <div class="fields">
+            <div class="field">
+              <label>mm/px X</label>
+              <input id="mmppX" type="number" value="" placeholder="请输入标定值" step="0.0001" min="0.0001">
+            </div>
+            <div class="field">
+              <label>mm/px Y</label>
+              <input id="mmppY" type="number" value="" placeholder="请输入标定值" step="0.0001" min="0.0001">
+            </div>
+            <div class="field">
+              <label>经向提示</label>
+              <select id="warpHint">
+                <option value="vertical">垂直</option>
+                <option value="horizontal">水平</option>
+              </select>
+            </div>
+          </div>
+        </details>
+
+        <div class="run">
+          <div id="runTip" class="runtip"></div>
+          <button id="runBtn" class="btn primary" disabled>启动图片识别</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="head"><div class="title">图片识别结果</div><div class="sub">以下数值由 Python/OpenCV 实际计算，不是页面写死的演示值</div></div>
+      <div class="results" style="grid-template-columns:1fr 1fr 1fr">
+        <div class="metric"><div class="mtitle">经密</div><div class="center"><div id="warp" class="value">--</div><div class="unit">根/cm</div></div></div>
+        <div class="metric"><div class="mtitle">纬密</div><div class="center"><div id="weft" class="value">--</div><div class="unit">根/cm</div></div></div>
+        <div class="metric"><div class="mtitle">经纬比</div><div class="center"><div id="ratio" class="value">--</div><div class="unit">经密 ÷ 纬密</div></div></div>
+      </div>
+      <div class="width-output">
+        <div class="width-heading"><span>经纬纱表观宽度</span><span id="widthStatus" class="width-status">--</span></div>
+        <div class="width-grid">
+          <div class="width-direction"><div class="width-name">经纱</div><div id="warpWidth" class="width-values">P10/P50/P90：--</div><div id="warpWidthNote" class="width-note"></div></div>
+          <div class="width-direction"><div class="width-name">纬纱</div><div id="weftWidth" class="width-values">P10/P50/P90：--</div><div id="weftWidthNote" class="width-note"></div></div>
+        </div>
+      </div>
+      <div class="twill-output">
+        <div class="twill-heading"><span>斜纹方向与角度</span><span id="twillStatus" class="width-status">--</span></div>
+        <div id="twillValues" class="twill-values">左/右斜：--；角度：--</div>
+        <div id="twillNote" class="twill-note"></div>
+      </div>
+      <div class="extra-output">
+        <div class="twill-heading"><span>组织候选与 Ne/tex 粗略参考</span></div>
+        <div class="extra-grid">
+          <div class="extra-box"><div class="extra-name">组织候选</div><div id="weaveValues" class="extra-values">--</div><div id="weaveNote" class="extra-note"></div></div>
+          <div class="extra-box"><div class="extra-name">Ne/tex</div><div id="yarnValues" class="extra-values">--</div><div id="yarnNote" class="extra-note"></div></div>
+        </div>
+      </div>
+      <div id="statusLine" class="statusline"></div>
+    </section>
+  </div>
+</div>
+<script>
+const state={front:null,transmission:null,urls:{front:null,transmission:null}};
+const $=id=>document.getElementById(id);
+
+function bindImageSlot(type){
+  const cap=type==="front"?"Front":"Transmission";
+  const fileInput=$(type+"FileInput");
+  const cameraInput=$(type+"CameraInput");
+  $(type+"UploadBtn").onclick=()=>{fileInput.value="";fileInput.click();};
+  $(type+"CameraBtn").onclick=()=>{cameraInput.value="";cameraInput.click();};
+  fileInput.onchange=e=>setFile(type,e.target.files[0]);
+  cameraInput.onchange=e=>setFile(type,e.target.files[0]);
+  $(type+"DeleteBtn").onclick=()=>removeFile(type);
+}
+
+function setFile(type,file){
+  if(!file)return;
+  state[type]=file;
+  if(state.urls[type])URL.revokeObjectURL(state.urls[type]);
+  state.urls[type]=URL.createObjectURL(file);
+  renderSlot(type);ready();clearResult();
+}
+
+function removeFile(type){
+  state[type]=null;
+  if(state.urls[type])URL.revokeObjectURL(state.urls[type]);
+  state.urls[type]=null;
+  renderSlot(type);ready();clearResult();
+}
+
+function renderSlot(type){
+  const file=state[type],url=state.urls[type];
+  const preview=$(type+"Preview");
+  const placeholder=$(type+"Placeholder");
+  const badge=$(type+"Badge");
+  const del=$(type+"DeleteBtn");
+  if(file){
+    preview.src=url;preview.style.display="block";placeholder.style.display="none";
+    badge.textContent="已上传";badge.classList.add("ok");del.style.display="";
+  }else{
+    preview.removeAttribute("src");preview.style.display="none";placeholder.style.display="";
+    badge.textContent="未上传";badge.classList.remove("ok");del.style.display="none";
+  }
+}
+
+function ready(){
+  const x=parseFloat($("mmppX").value);
+  const y=parseFloat($("mmppY").value);
+  const calibrationOk=Number.isFinite(x)&&x>0&&Number.isFinite(y)&&y>0;
+  $("runBtn").disabled=!(state.front&&state.transmission&&calibrationOk);
+}
+
+$("mmppX").addEventListener("input",ready);
+$("mmppY").addEventListener("input",ready);
+function clearResult(){
+  ["warp","weft","ratio"].forEach(id=>$(id).textContent="--");
+  $("widthStatus").textContent="--";$("warpWidth").textContent="P10/P50/P90：--";$("weftWidth").textContent="P10/P50/P90：--";
+  $("warpWidthNote").textContent="";$("weftWidthNote").textContent="";$("statusLine").textContent="";
+  $("twillStatus").textContent="--";$("twillValues").textContent="左/右斜：--；角度：--";$("twillNote").textContent="";
+  $("weaveValues").textContent="--";$("weaveNote").textContent="";$("yarnValues").textContent="--";$("yarnNote").textContent="";
+}
+
+function renderWidth(directionId,noteId,direction){
+  if(!direction){$(directionId).textContent="P10/P50/P90：--";$(noteId).textContent="未测量";return;}
+  if(typeof direction.p10_mm==="number"){
+    $(directionId).textContent=`P10/P50/P90：${direction.p10_mm} / ${direction.p50_mm} / ${direction.p90_mm} mm`;
+    $(noteId).textContent=direction.status||"";
+  }else{$(directionId).textContent="P10/P50/P90：--";$(noteId).textContent=(direction.reasons||["未测量"]).join("、");}
+}
+
+$("runBtn").onclick=async()=>{
+  $("runBtn").disabled=true;$("runBtn").textContent="识别中...";
+  clearResult();
+  const fd=new FormData();
+  fd.append("front_image",state.front);
+  fd.append("transmission_image",state.transmission);
+  fd.append("mm_per_px_x",$("mmppX").value);
+  fd.append("mm_per_px_y",$("mmppY").value);
+  fd.append("warp_axis_hint",$("warpHint").value);
+  try{
+    const resp=await fetch("/api/measure",{method:"POST",body:fd});
+    const data=await resp.json();
+    if(!resp.ok)throw new Error(data.detail||"识别失败");
+    if(typeof data.warp_density_per_cm==="number"){
+      $("warp").textContent=data.warp_density_per_cm;
+      $("weft").textContent=data.weft_density_per_cm;
+      $("ratio").textContent=data.warp_weft_ratio;
+    }
+    const width=data.apparent_width;
+    $("widthStatus").textContent=width?width.status:"未测量";
+    renderWidth("warpWidth","warpWidthNote",width&&width.warp);
+    renderWidth("weftWidth","weftWidthNote",width&&width.weft);
+    const twill=data.twill;
+    $("twillStatus").textContent=twill?twill.status:"未测量";
+    if(twill&&twill.status!=="FAIL"&&typeof twill.angle_deg==="number"){
+      const prefix=twill.status==="PASS"?"左/右斜":"候选左/右斜";
+      $("twillValues").textContent=`${prefix}：${twill.direction==="right"?"右斜":"左斜"}；角度：${twill.angle_deg}°`;
+      $("twillNote").textContent=(twill.reasons||[]).join("、")||"几何证据可用";
+    }else{$("twillValues").textContent="左/右斜：--；角度：--";$("twillNote").textContent=(twill&&twill.reasons||["未检测到可靠斜纹"]).join("、");}
+    const weave=twill&&twill.weave_candidate;
+    $("weaveValues").textContent=`${weave||"无明确组织候选"}（${twill&&twill.weave_status||"未测量"}）`;
+    $("weaveNote").textContent=(twill&&twill.weave_reasons||["组织证据未提供"]).join("、");
+    const yarn=data.yarn_advisory||{};
+    const yarnText=axis=>{const a=yarn[axis]||{};const ne=a.range_ne||[];const tex=a.range_tex||[];return `${axis==="warp"?"经":"纬"} Ne ${ne.join("-")||"-"} / tex ${tex.join("-")||"-"}`;};
+    $("yarnValues").textContent=`${yarnText("warp")}；${yarnText("weft")}`;
+    $("yarnNote").textContent=yarn.reference_only?"粗略参考":"未生成参考区间";
+    $("statusLine").textContent="状态："+data.status+(data.input_mode?"；模式："+data.input_mode:"")+
+      (data.failure_reasons&&data.failure_reasons.length?"；原因："+data.failure_reasons.join("、"):"");
+  }catch(e){
+    $("statusLine").textContent="识别失败："+e.message;
+  }finally{
+    $("runBtn").textContent="重新识别";ready();
+  }
+};
+
+bindImageSlot("front");
+bindImageSlot("transmission");
+renderSlot("front");renderSlot("transmission");ready();
+</script>
+</body>
+</html>

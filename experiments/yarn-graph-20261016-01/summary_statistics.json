@@ -1,0 +1,8 @@
+{
+  "test_student_macro_mean_iou": 0.00011239821993049214,
+  "test_student_macro_resolved_fraction": 4.080636160714285e-05,
+  "test_structure_macro_mean_iou": 0.053905213066823346,
+  "fabricnet_no_regions": 103,
+  "fabricnet_with_regions": 27,
+  "all_prediction_rows": 176
+}

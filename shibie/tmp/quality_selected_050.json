@@ -1,0 +1,2325 @@
+{
+  "count": 50,
+  "selection": "full 130-sample rerun ranked by warp/weft apparent-width quality",
+  "samples": [
+    {
+      "image": "W088.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "LOW_CONFIDENCE",
+      "angle_deg": 66.663,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6458,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.11964,
+        "p50_mm": 0.20553,
+        "p90_mm": 0.25406,
+        "valid_sample_count": 32,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.12656,
+        "p50_mm": 0.15693,
+        "p90_mm": 0.17139,
+        "valid_sample_count": 39,
+        "valid_yarn_count": 14,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        8.5,
+        13.6
+      ]
+    },
+    {
+      "image": "W004.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 18.583,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4872,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.13684,
+        "p50_mm": 0.16061,
+        "p90_mm": 0.18665,
+        "valid_sample_count": 31,
+        "valid_yarn_count": 13,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.11068,
+        "p50_mm": 0.16297,
+        "p90_mm": 0.18802,
+        "valid_sample_count": 31,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        8.9,
+        14.2
+      ],
+      "weft_ne": [
+        11.5,
+        18.4
+      ]
+    },
+    {
+      "image": "W093.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 16.498,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4815,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.12936,
+        "p50_mm": 0.16328,
+        "p90_mm": 0.17841,
+        "valid_sample_count": 28,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.13619,
+        "p50_mm": 0.18061,
+        "p90_mm": 0.23922,
+        "valid_sample_count": 33,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        10.9,
+        17.5
+      ],
+      "weft_ne": [
+        6.7,
+        11.1
+      ]
+    },
+    {
+      "image": "W113.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 71.743,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5882,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.20976,
+        "p50_mm": 0.2398,
+        "p90_mm": 0.26875,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 8,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.10598,
+        "p50_mm": 0.20884,
+        "p90_mm": 0.25168,
+        "valid_sample_count": 22,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        6.6,
+        11.1
+      ]
+    },
+    {
+      "image": "W015.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 20.57,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6064,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.13083,
+        "p50_mm": 0.16117,
+        "p90_mm": 0.18451,
+        "valid_sample_count": 19,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.11022,
+        "p50_mm": 0.14872,
+        "p90_mm": 0.17699,
+        "valid_sample_count": 42,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        8.5,
+        13.6
+      ],
+      "weft_ne": [
+        10.8,
+        17.3
+      ]
+    },
+    {
+      "image": "W066.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 18.601,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4259,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.09745,
+        "p50_mm": 0.15613,
+        "p90_mm": 0.16674,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.17622,
+        "p50_mm": 0.23163,
+        "p90_mm": 0.26464,
+        "valid_sample_count": 18,
+        "valid_yarn_count": 6,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        11.5,
+        18.4
+      ],
+      "weft_ne": [
+        6.9,
+        11.5
+      ]
+    },
+    {
+      "image": "W114.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 70.569,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6404,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.23054,
+        "p50_mm": 0.2434,
+        "p90_mm": 0.25723,
+        "valid_sample_count": 17,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.11072,
+        "p50_mm": 0.16164,
+        "p90_mm": 0.18405,
+        "valid_sample_count": 21,
+        "valid_yarn_count": 12,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        8.5,
+        13.6
+      ]
+    },
+    {
+      "image": "W079.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 71.211,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.8398,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.0993,
+        "p50_mm": 0.17212,
+        "p90_mm": 0.1981,
+        "valid_sample_count": 24,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.14733,
+        "p50_mm": 0.16901,
+        "p90_mm": 0.18257,
+        "valid_sample_count": 16,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        11.5,
+        18.4
+      ],
+      "weft_ne": [
+        9.1,
+        14.5
+      ]
+    },
+    {
+      "image": "W042.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 72.171,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5732,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.13495,
+        "p50_mm": 0.17019,
+        "p90_mm": 0.18147,
+        "valid_sample_count": 15,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.16925,
+        "p50_mm": 0.20261,
+        "p90_mm": 0.23373,
+        "valid_sample_count": 24,
+        "valid_yarn_count": 7,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        9.8,
+        15.7
+      ],
+      "weft_ne": [
+        6.9,
+        11.5
+      ]
+    },
+    {
+      "image": "W054.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 45.984,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5183,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.10748,
+        "p50_mm": 0.12935,
+        "p90_mm": 0.16339,
+        "valid_sample_count": 15,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.18901,
+        "p50_mm": 0.21206,
+        "p90_mm": 0.24246,
+        "valid_sample_count": 27,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        8.5,
+        13.6
+      ],
+      "weft_ne": [
+        6.9,
+        11.5
+      ]
+    },
+    {
+      "image": "W029.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 18.81,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6279,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.10884,
+        "p50_mm": 0.17249,
+        "p90_mm": 0.20439,
+        "valid_sample_count": 24,
+        "valid_yarn_count": 8,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.14215,
+        "p50_mm": 0.18789,
+        "p90_mm": 0.20754,
+        "valid_sample_count": 13,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        11.5,
+        18.4
+      ],
+      "weft_ne": [
+        6.9,
+        11.5
+      ]
+    },
+    {
+      "image": "W065.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 20.261,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.666,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.11792,
+        "p50_mm": 0.18072,
+        "p90_mm": 0.22891,
+        "valid_sample_count": 18,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.22736,
+        "p50_mm": 0.25892,
+        "p90_mm": 0.30528,
+        "valid_sample_count": 13,
+        "valid_yarn_count": 5,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        6.9,
+        11.5
+      ]
+    },
+    {
+      "image": "W063.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "LOW_CONFIDENCE",
+      "angle_deg": 20.355,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5747,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "PASS",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.11898,
+        "p50_mm": 0.16858,
+        "p90_mm": 0.18837,
+        "valid_sample_count": 20,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.22861,
+        "p50_mm": 0.25111,
+        "p90_mm": 0.28744,
+        "valid_sample_count": 12,
+        "valid_yarn_count": 6,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        11.5,
+        18.4
+      ],
+      "weft_ne": [
+        6.9,
+        11.5
+      ]
+    },
+    {
+      "image": "W012.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 24.109,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4462,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.06523,
+        "p50_mm": 0.08899,
+        "p90_mm": 0.13504,
+        "valid_sample_count": 69,
+        "valid_yarn_count": 14,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.11341,
+        "p50_mm": 0.17188,
+        "p90_mm": 0.24591,
+        "valid_sample_count": 44,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        13.6,
+        20.4
+      ],
+      "weft_ne": [
+        11.5,
+        18.4
+      ]
+    },
+    {
+      "image": "W016.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 26.203,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5868,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.06883,
+        "p50_mm": 0.10087,
+        "p90_mm": 0.12586,
+        "valid_sample_count": 42,
+        "valid_yarn_count": 13,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08374,
+        "p50_mm": 0.11192,
+        "p90_mm": 0.17063,
+        "valid_sample_count": 42,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        13.6,
+        20.4
+      ],
+      "weft_ne": [
+        16.2,
+        24.3
+      ]
+    },
+    {
+      "image": "W089.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 71.976,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4477,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.12078,
+        "p50_mm": 0.17506,
+        "p90_mm": 0.2178,
+        "valid_sample_count": 41,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.05081,
+        "p50_mm": 0.06552,
+        "p90_mm": 0.10262,
+        "valid_sample_count": 37,
+        "valid_yarn_count": 15,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        11.3,
+        18.1
+      ],
+      "weft_ne": [
+        20.4,
+        34.0
+      ]
+    },
+    {
+      "image": "W001.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 21.141,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4653,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.07786,
+        "p50_mm": 0.12856,
+        "p90_mm": 0.16395,
+        "valid_sample_count": 43,
+        "valid_yarn_count": 12,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.09256,
+        "p50_mm": 0.15114,
+        "p90_mm": 0.18104,
+        "valid_sample_count": 35,
+        "valid_yarn_count": 12,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        9.3,
+        14.9
+      ],
+      "weft_ne": [
+        10.1,
+        16.2
+      ]
+    },
+    {
+      "image": "W013.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 20.853,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6862,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.06412,
+        "p50_mm": 0.07698,
+        "p90_mm": 0.12016,
+        "valid_sample_count": 56,
+        "valid_yarn_count": 14,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.09165,
+        "p50_mm": 0.13214,
+        "p90_mm": 0.16408,
+        "valid_sample_count": 35,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        20.4,
+        34.0
+      ],
+      "weft_ne": [
+        10.3,
+        16.5
+      ]
+    },
+    {
+      "image": "W087.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 68.532,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4047,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.11924,
+        "p50_mm": 0.17889,
+        "p90_mm": 0.21455,
+        "valid_sample_count": 38,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.0588,
+        "p50_mm": 0.08161,
+        "p90_mm": 0.10873,
+        "valid_sample_count": 33,
+        "valid_yarn_count": 12,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        11.0,
+        17.6
+      ],
+      "weft_ne": [
+        13.6,
+        20.4
+      ]
+    },
+    {
+      "image": "W090.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 71.67,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4961,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.15993,
+        "p50_mm": 0.18979,
+        "p90_mm": 0.24357,
+        "valid_sample_count": 33,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.0516,
+        "p50_mm": 0.06314,
+        "p90_mm": 0.08113,
+        "valid_sample_count": 38,
+        "valid_yarn_count": 14,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        20.4,
+        34.0
+      ]
+    },
+    {
+      "image": "W056.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 69.793,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5581,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08116,
+        "p50_mm": 0.13725,
+        "p90_mm": 0.16612,
+        "valid_sample_count": 32,
+        "valid_yarn_count": 12,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.09274,
+        "p50_mm": 0.12504,
+        "p90_mm": 0.16535,
+        "valid_sample_count": 46,
+        "valid_yarn_count": 10,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        8.5,
+        13.6
+      ],
+      "weft_ne": [
+        11.5,
+        18.4
+      ]
+    },
+    {
+      "image": "W005.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 67.009,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.59,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.09963,
+        "p50_mm": 0.12103,
+        "p90_mm": 0.15113,
+        "valid_sample_count": 39,
+        "valid_yarn_count": 14,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.0815,
+        "p50_mm": 0.09898,
+        "p90_mm": 0.12874,
+        "valid_sample_count": 30,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        9.0,
+        14.4
+      ],
+      "weft_ne": [
+        17.3,
+        26.0
+      ]
+    },
+    {
+      "image": "W017.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 72.372,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6186,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.17249,
+        "p50_mm": 0.22477,
+        "p90_mm": 0.253,
+        "valid_sample_count": 30,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.07403,
+        "p50_mm": 0.1036,
+        "p90_mm": 0.21159,
+        "valid_sample_count": 34,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        16.6,
+        24.9
+      ]
+    },
+    {
+      "image": "W078.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 67.337,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4703,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.14128,
+        "p50_mm": 0.18309,
+        "p90_mm": 0.23492,
+        "valid_sample_count": 37,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.05247,
+        "p50_mm": 0.06518,
+        "p90_mm": 0.10451,
+        "valid_sample_count": 30,
+        "valid_yarn_count": 12,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        20.4,
+        34.0
+      ]
+    },
+    {
+      "image": "W002.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 21.881,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.7024,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.07275,
+        "p50_mm": 0.0897,
+        "p90_mm": 0.12637,
+        "valid_sample_count": 35,
+        "valid_yarn_count": 13,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.17015,
+        "p50_mm": 0.19157,
+        "p90_mm": 0.20925,
+        "valid_sample_count": 29,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        14.9,
+        22.4
+      ],
+      "weft_ne": [
+        6.5,
+        10.9
+      ]
+    },
+    {
+      "image": "W003.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "LOW_CONFIDENCE",
+      "angle_deg": 20.066,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5088,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08272,
+        "p50_mm": 0.14791,
+        "p90_mm": 0.17531,
+        "valid_sample_count": 36,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.0806,
+        "p50_mm": 0.09885,
+        "p90_mm": 0.13727,
+        "valid_sample_count": 29,
+        "valid_yarn_count": 12,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        9.4,
+        15.0
+      ],
+      "weft_ne": [
+        15.2,
+        22.8
+      ]
+    },
+    {
+      "image": "W091.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 71.84,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4537,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.17906,
+        "p50_mm": 0.2167,
+        "p90_mm": 0.24546,
+        "valid_sample_count": 37,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.0601,
+        "p50_mm": 0.07543,
+        "p90_mm": 0.11286,
+        "valid_sample_count": 29,
+        "valid_yarn_count": 14,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.8,
+        11.3
+      ],
+      "weft_ne": [
+        20.4,
+        34.0
+      ]
+    },
+    {
+      "image": "W100.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "LOW_CONFIDENCE",
+      "angle_deg": 68.207,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.7475,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.09196,
+        "p50_mm": 0.15593,
+        "p90_mm": 0.20076,
+        "valid_sample_count": 29,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.05057,
+        "p50_mm": 0.10072,
+        "p90_mm": 0.1329,
+        "valid_sample_count": 33,
+        "valid_yarn_count": 15,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        10.8,
+        17.3
+      ],
+      "weft_ne": [
+        13.6,
+        20.4
+      ]
+    },
+    {
+      "image": "W095.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 16.462,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5085,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.10184,
+        "p50_mm": 0.12598,
+        "p90_mm": 0.14529,
+        "valid_sample_count": 54,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08667,
+        "p50_mm": 0.11423,
+        "p90_mm": 0.18884,
+        "valid_sample_count": 28,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        10.2,
+        16.3
+      ],
+      "weft_ne": [
+        17.6,
+        26.4
+      ]
+    },
+    {
+      "image": "W020.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 77.248,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.8716,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.20778,
+        "p50_mm": 0.23835,
+        "p90_mm": 0.26351,
+        "valid_sample_count": 29,
+        "valid_yarn_count": 8,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08453,
+        "p50_mm": 0.09704,
+        "p90_mm": 0.12608,
+        "valid_sample_count": 27,
+        "valid_yarn_count": 10,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        16.6,
+        24.9
+      ]
+    },
+    {
+      "image": "W055.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "LOW_CONFIDENCE",
+      "angle_deg": 65.853,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5428,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08734,
+        "p50_mm": 0.1247,
+        "p90_mm": 0.15698,
+        "valid_sample_count": 27,
+        "valid_yarn_count": 13,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.10212,
+        "p50_mm": 0.16143,
+        "p90_mm": 0.18977,
+        "valid_sample_count": 35,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        8.5,
+        13.6
+      ],
+      "weft_ne": [
+        11.5,
+        18.4
+      ]
+    },
+    {
+      "image": "W075.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 71.943,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5203,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.19846,
+        "p50_mm": 0.22824,
+        "p90_mm": 0.27188,
+        "valid_sample_count": 36,
+        "valid_yarn_count": 8,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.0578,
+        "p50_mm": 0.09922,
+        "p90_mm": 0.14365,
+        "valid_sample_count": 27,
+        "valid_yarn_count": 16,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        13.6,
+        20.4
+      ]
+    },
+    {
+      "image": "W105.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 66.516,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5419,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.07677,
+        "p50_mm": 0.10313,
+        "p90_mm": 0.14927,
+        "valid_sample_count": 27,
+        "valid_yarn_count": 13,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08756,
+        "p50_mm": 0.10684,
+        "p90_mm": 0.14833,
+        "valid_sample_count": 31,
+        "valid_yarn_count": 9,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        13.6,
+        20.4
+      ],
+      "weft_ne": [
+        18.4,
+        27.6
+      ]
+    },
+    {
+      "image": "W067.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "LOW_CONFIDENCE",
+      "angle_deg": 72.062,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5926,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.10185,
+        "p50_mm": 0.15624,
+        "p90_mm": 0.17168,
+        "valid_sample_count": 26,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.04344,
+        "p50_mm": 0.08865,
+        "p90_mm": 0.11691,
+        "valid_sample_count": 34,
+        "valid_yarn_count": 17,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        11.0,
+        17.6
+      ],
+      "weft_ne": [
+        13.6,
+        20.4
+      ]
+    },
+    {
+      "image": "W050.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 24.519,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5015,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.0554,
+        "p50_mm": 0.09904,
+        "p90_mm": 0.11413,
+        "valid_sample_count": 25,
+        "valid_yarn_count": 17,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.14584,
+        "p50_mm": 0.1986,
+        "p90_mm": 0.23126,
+        "valid_sample_count": 39,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        13.6,
+        20.4
+      ],
+      "weft_ne": [
+        6.6,
+        11.0
+      ]
+    },
+    {
+      "image": "W094.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 17.802,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4801,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.10763,
+        "p50_mm": 0.15191,
+        "p90_mm": 0.17142,
+        "valid_sample_count": 42,
+        "valid_yarn_count": 13,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.06163,
+        "p50_mm": 0.08574,
+        "p90_mm": 0.1207,
+        "valid_sample_count": 25,
+        "valid_yarn_count": 12,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        10.0,
+        16.1
+      ],
+      "weft_ne": [
+        13.6,
+        20.4
+      ]
+    },
+    {
+      "image": "W053.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 75.16,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4969,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.09646,
+        "p50_mm": 0.14441,
+        "p90_mm": 0.16592,
+        "valid_sample_count": 32,
+        "valid_yarn_count": 15,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08444,
+        "p50_mm": 0.11132,
+        "p90_mm": 0.16798,
+        "valid_sample_count": 24,
+        "valid_yarn_count": 10,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        8.5,
+        13.6
+      ],
+      "weft_ne": [
+        18.2,
+        27.3
+      ]
+    },
+    {
+      "image": "W080.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 66.381,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.3849,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.13636,
+        "p50_mm": 0.17079,
+        "p90_mm": 0.22283,
+        "valid_sample_count": 30,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.05732,
+        "p50_mm": 0.06356,
+        "p90_mm": 0.08905,
+        "valid_sample_count": 24,
+        "valid_yarn_count": 15,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        11.5,
+        18.4
+      ],
+      "weft_ne": [
+        20.4,
+        34.0
+      ]
+    },
+    {
+      "image": "W014.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "LOW_CONFIDENCE",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 27.801,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6105,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.05734,
+        "p50_mm": 0.06954,
+        "p90_mm": 0.0867,
+        "valid_sample_count": 44,
+        "valid_yarn_count": 14,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.09567,
+        "p50_mm": 0.14938,
+        "p90_mm": 0.18816,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 10,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        20.4,
+        34.0
+      ],
+      "weft_ne": [
+        10.5,
+        16.8
+      ]
+    },
+    {
+      "image": "W018.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 73.302,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.8472,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.16501,
+        "p50_mm": 0.19267,
+        "p90_mm": 0.20808,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 8,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08055,
+        "p50_mm": 0.10547,
+        "p90_mm": 0.15152,
+        "valid_sample_count": 25,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        15.9,
+        23.9
+      ]
+    },
+    {
+      "image": "W021.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 68.127,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6532,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.22544,
+        "p50_mm": 0.25437,
+        "p90_mm": 0.29036,
+        "valid_sample_count": 33,
+        "valid_yarn_count": 8,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08603,
+        "p50_mm": 0.09815,
+        "p90_mm": 0.11649,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        16.2,
+        24.4
+      ]
+    },
+    {
+      "image": "W044.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 72.222,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5247,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08178,
+        "p50_mm": 0.10226,
+        "p90_mm": 0.15375,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08254,
+        "p50_mm": 0.12437,
+        "p90_mm": 0.14261,
+        "valid_sample_count": 26,
+        "valid_yarn_count": 12,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        13.6,
+        20.4
+      ],
+      "weft_ne": [
+        8.5,
+        13.6
+      ]
+    },
+    {
+      "image": "W046.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 67.641,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5093,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.05943,
+        "p50_mm": 0.07864,
+        "p90_mm": 0.11123,
+        "valid_sample_count": 24,
+        "valid_yarn_count": 10,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.22672,
+        "p50_mm": 0.27025,
+        "p90_mm": 0.29857,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 8,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        20.4,
+        34.0
+      ],
+      "weft_ne": [
+        6.9,
+        11.5
+      ]
+    },
+    {
+      "image": "W048.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 22.486,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5026,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.04722,
+        "p50_mm": 0.08635,
+        "p90_mm": 0.11758,
+        "valid_sample_count": 36,
+        "valid_yarn_count": 21,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.18783,
+        "p50_mm": 0.2002,
+        "p90_mm": 0.21921,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 11,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        13.6,
+        20.4
+      ],
+      "weft_ne": [
+        6.6,
+        11.0
+      ]
+    },
+    {
+      "image": "W058.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 17.148,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.6247,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.05434,
+        "p50_mm": 0.0883,
+        "p90_mm": 0.10795,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 15,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.0945,
+        "p50_mm": 0.16412,
+        "p90_mm": 0.19587,
+        "valid_sample_count": 40,
+        "valid_yarn_count": 11,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        13.6,
+        20.4
+      ],
+      "weft_ne": [
+        10.5,
+        16.9
+      ]
+    },
+    {
+      "image": "W081.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 70.577,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4396,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.12625,
+        "p50_mm": 0.22279,
+        "p90_mm": 0.25139,
+        "valid_sample_count": 35,
+        "valid_yarn_count": 9,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.05083,
+        "p50_mm": 0.06422,
+        "p90_mm": 0.07736,
+        "valid_sample_count": 23,
+        "valid_yarn_count": 13,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        20.4,
+        34.0
+      ]
+    },
+    {
+      "image": "W074.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 70.275,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.5188,
+      "weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.16691,
+        "p50_mm": 0.21413,
+        "p90_mm": 0.24947,
+        "valid_sample_count": 30,
+        "valid_yarn_count": 7,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.06125,
+        "p50_mm": 0.08747,
+        "p90_mm": 0.10698,
+        "valid_sample_count": 22,
+        "valid_yarn_count": 13,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        13.6,
+        20.4
+      ]
+    },
+    {
+      "image": "W096.jpg",
+      "fabricnet_texture": "plain",
+      "direction_status": "FAIL",
+      "direction": null,
+      "angle_status": "FAIL",
+      "angle_deg": null,
+      "weave_status": "NOT_AVAILABLE",
+      "weave_candidate": null,
+      "weave_result_kind": null,
+      "candidate_confidence": null,
+      "weave_reasons": [
+        "WEAVE_TWILL_SEGMENTS_INSUFFICIENT"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08029,
+        "p50_mm": 0.10483,
+        "p90_mm": 0.16686,
+        "valid_sample_count": 32,
+        "valid_yarn_count": 10,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.07681,
+        "p50_mm": 0.11119,
+        "p90_mm": 0.16416,
+        "valid_sample_count": 22,
+        "valid_yarn_count": 13,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        17.1,
+        25.6
+      ],
+      "weft_ne": [
+        13.7,
+        20.6
+      ]
+    },
+    {
+      "image": "W073.jpg",
+      "fabricnet_texture": "satin",
+      "direction_status": "PASS",
+      "direction": "left",
+      "angle_status": "PASS",
+      "angle_deg": 72.98,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.4041,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "PASS",
+        "p10_mm": 0.13575,
+        "p50_mm": 0.2063,
+        "p90_mm": 0.24811,
+        "valid_sample_count": 40,
+        "valid_yarn_count": 7,
+        "reasons": []
+      },
+      "weft_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.08105,
+        "p50_mm": 0.12962,
+        "p90_mm": 0.16268,
+        "valid_sample_count": 21,
+        "valid_yarn_count": 15,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        6.9,
+        11.5
+      ],
+      "weft_ne": [
+        8.5,
+        13.6
+      ]
+    },
+    {
+      "image": "W104.jpg",
+      "fabricnet_texture": "twill",
+      "direction_status": "PASS",
+      "direction": "right",
+      "angle_status": "PASS",
+      "angle_deg": 72.435,
+      "weave_status": "LOW_CONFIDENCE",
+      "weave_candidate": null,
+      "weave_result_kind": "CANDIDATE_UNCERTAIN",
+      "candidate_confidence": 0.381,
+      "weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "width_status": "LOW_CONFIDENCE",
+      "warp_width": {
+        "status": "LOW_CONFIDENCE",
+        "p10_mm": 0.03666,
+        "p50_mm": 0.05579,
+        "p90_mm": 0.07424,
+        "valid_sample_count": 21,
+        "valid_yarn_count": 17,
+        "reasons": [
+          "WIDTH_P10_BELOW_GATE"
+        ]
+      },
+      "weft_width": {
+        "status": "PASS",
+        "p10_mm": 0.11035,
+        "p50_mm": 0.12344,
+        "p90_mm": 0.19836,
+        "valid_sample_count": 32,
+        "valid_yarn_count": 10,
+        "reasons": []
+      },
+      "yarn_status": "AVAILABLE",
+      "yarn_reference_only": true,
+      "warp_ne": [
+        20.4,
+        34.0
+      ],
+      "weft_ne": [
+        11.5,
+        18.4
+      ]
+    }
+  ]
+}

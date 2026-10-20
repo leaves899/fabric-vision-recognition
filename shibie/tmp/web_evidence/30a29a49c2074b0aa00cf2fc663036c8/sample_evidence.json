@@ -1,0 +1,23 @@
+{
+  "sample_id": "sample",
+  "status": "PASS",
+  "files": {
+    "width": "E:\\Internship_2026\\织物识别工作区\\shibie\\tmp\\web_evidence\\30a29a49c2074b0aa00cf2fc663036c8\\sample_width.png",
+    "twill": "E:\\Internship_2026\\织物识别工作区\\shibie\\tmp\\web_evidence\\30a29a49c2074b0aa00cf2fc663036c8\\sample_twill.png",
+    "direction_field": "E:\\Internship_2026\\织物识别工作区\\shibie\\tmp\\web_evidence\\30a29a49c2074b0aa00cf2fc663036c8\\sample_direction_field.png",
+    "centerlines": "E:\\Internship_2026\\织物识别工作区\\shibie\\tmp\\web_evidence\\30a29a49c2074b0aa00cf2fc663036c8\\sample_centerlines.png"
+  },
+  "statuses": {
+    "width": "FAIL",
+    "direction": "FAIL",
+    "angle": "FAIL",
+    "weave": "NOT_AVAILABLE"
+  },
+  "measurement_reference": {
+    "engine_version": "0.6.3",
+    "algorithm_profile": "DENIM_ROUTE_V0.6.3_REAL_ROBUST"
+  },
+  "not_rendered": [
+    "fft_or_autocorrelation_plot"
+  ]
+}

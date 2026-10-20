@@ -1,0 +1,24 @@
+{
+  "sample_id": "W046",
+  "status": "PASS",
+  "files": {
+    "width": "D:\\zhongban\\tmp\\evidence_050\\W046\\W046_width.png",
+    "twill": "D:\\zhongban\\tmp\\evidence_050\\W046\\W046_twill.png",
+    "weave_matrix": "D:\\zhongban\\tmp\\evidence_050\\W046\\W046_weave_matrix.png"
+  },
+  "statuses": {
+    "width": "LOW_CONFIDENCE",
+    "direction": "PASS",
+    "angle": "PASS",
+    "weave": "LOW_CONFIDENCE"
+  },
+  "measurement_reference": {
+    "engine_version": "0.6.3",
+    "algorithm_profile": "DENIM_ROUTE_V0.6.3_REAL_ROBUST"
+  },
+  "not_rendered": [
+    "orientation_field",
+    "fft_or_autocorrelation_plot",
+    "centerline_overlay"
+  ]
+}

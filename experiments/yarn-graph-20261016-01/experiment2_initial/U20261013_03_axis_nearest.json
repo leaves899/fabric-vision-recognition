@@ -1,0 +1,2564 @@
+{
+  "segments": [
+    {
+      "id": "r0001",
+      "points": [
+        [
+          606.3335,
+          664.0
+        ],
+        [
+          645.6665,
+          649.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0002",
+      "points": [
+        [
+          668.6665,
+          641.6665
+        ],
+        [
+          699.3335,
+          625.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0003",
+      "points": [
+        [
+          723.3335,
+          620.3335
+        ],
+        [
+          758.6665,
+          607.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0004",
+      "points": [
+        [
+          782.3335,
+          599.3335
+        ],
+        [
+          813.6665,
+          585.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0005",
+      "points": [
+        [
+          840.3335,
+          579.0
+        ],
+        [
+          875.6665,
+          567.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0006",
+      "points": [
+        [
+          899.6665,
+          563.3335
+        ],
+        [
+          930.0,
+          551.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0007",
+      "points": [
+        [
+          594.3335,
+          684.6665
+        ],
+        [
+          630.0,
+          669.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0008",
+      "points": [
+        [
+          653.6665,
+          663.0
+        ],
+        [
+          684.0,
+          650.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0009",
+      "points": [
+        [
+          710.3335,
+          638.0
+        ],
+        [
+          742.0,
+          625.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0010",
+      "points": [
+        [
+          764.6665,
+          621.0
+        ],
+        [
+          799.6665,
+          606.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0011",
+      "points": [
+        [
+          823.6665,
+          600.6665
+        ],
+        [
+          860.0,
+          586.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0012",
+      "points": [
+        [
+          635.6665,
+          684.6665
+        ],
+        [
+          672.0,
+          670.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0013",
+      "points": [
+        [
+          699.3335,
+          662.0
+        ],
+        [
+          730.0,
+          649.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0014",
+      "points": [
+        [
+          749.6665,
+          643.6665
+        ],
+        [
+          787.6665,
+          628.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0015",
+      "points": [
+        [
+          811.0,
+          619.6665
+        ],
+        [
+          842.6665,
+          607.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0016",
+      "points": [
+        [
+          734.3335,
+          663.0
+        ],
+        [
+          770.0,
+          648.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0017",
+      "points": [
+        [
+          792.6665,
+          639.3335
+        ],
+        [
+          830.6665,
+          624.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0018",
+      "points": [
+        [
+          854.6665,
+          617.6665
+        ],
+        [
+          882.0,
+          603.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0019",
+      "points": [
+        [
+          864.3335,
+          600.6665
+        ],
+        [
+          900.6665,
+          590.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0020",
+      "points": [
+        [
+          882.3335,
+          582.3335
+        ],
+        [
+          919.0,
+          569.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0021",
+      "points": [
+        [
+          930.3335,
+          581.0
+        ],
+        [
+          959.6665,
+          571.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0022",
+      "points": [
+        [
+          915.6665,
+          597.6665
+        ],
+        [
+          944.6665,
+          587.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0023",
+      "points": [
+        [
+          845.0,
+          636.3335
+        ],
+        [
+          868.0,
+          625.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0024",
+      "points": [
+        [
+          782.3335,
+          659.6665
+        ],
+        [
+          816.6665,
+          647.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0025",
+      "points": [
+        [
+          722.3335,
+          681.0
+        ],
+        [
+          761.6665,
+          669.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0026",
+      "points": [
+        [
+          671.6665,
+          700.0
+        ],
+        [
+          694.6665,
+          692.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0027",
+      "points": [
+        [
+          684.6665,
+          682.6665
+        ],
+        [
+          717.0,
+          667.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0028",
+      "points": [
+        [
+          624.6665,
+          699.0
+        ],
+        [
+          657.0,
+          692.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0029",
+      "points": [
+        [
+          610.3335,
+          718.6665
+        ],
+        [
+          643.6665,
+          706.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0030",
+      "points": [
+        [
+          621.0,
+          646.6665
+        ],
+        [
+          656.6665,
+          632.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0031",
+      "points": [
+        [
+          678.6665,
+          619.6665
+        ],
+        [
+          717.6665,
+          607.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0032",
+      "points": [
+        [
+          734.6665,
+          600.0
+        ],
+        [
+          769.0,
+          586.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0033",
+      "points": [
+        [
+          791.6665,
+          580.6665
+        ],
+        [
+          827.6665,
+          569.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0034",
+      "points": [
+        [
+          853.6665,
+          564.0
+        ],
+        [
+          891.0,
+          551.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0035",
+      "points": [
+        [
+          564.0,
+          662.6665
+        ],
+        [
+          601.6665,
+          651.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0036",
+      "points": [
+        [
+          550.3335,
+          681.6665
+        ],
+        [
+          585.6665,
+          669.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0037",
+      "points": [
+        [
+          534.3335,
+          702.0
+        ],
+        [
+          573.0,
+          689.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0038",
+      "points": [
+        [
+          576.0,
+          701.6665
+        ],
+        [
+          613.6665,
+          689.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0039",
+      "points": [
+        [
+          561.3335,
+          721.6665
+        ],
+        [
+          598.0,
+          709.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0040",
+      "points": [
+        [
+          516.3335,
+          720.6665
+        ],
+        [
+          559.0,
+          704.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0041",
+      "points": [
+        [
+          548.3335,
+          744.0
+        ],
+        [
+          587.0,
+          728.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0042",
+      "points": [
+        [
+          593.6665,
+          736.0
+        ],
+        [
+          627.0,
+          727.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0043",
+      "points": [
+        [
+          649.6665,
+          720.3335
+        ],
+        [
+          680.6665,
+          710.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0044",
+      "points": [
+        [
+          708.6665,
+          700.6665
+        ],
+        [
+          743.0,
+          684.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0045",
+      "points": [
+        [
+          766.6665,
+          681.0
+        ],
+        [
+          803.0,
+          666.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0046",
+      "points": [
+        [
+          818.6665,
+          659.6665
+        ],
+        [
+          859.0,
+          644.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0047",
+      "points": [
+        [
+          881.6665,
+          636.6665
+        ],
+        [
+          913.6665,
+          621.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0048",
+      "points": [
+        [
+          894.6665,
+          616.6665
+        ],
+        [
+          933.0,
+          604.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0049",
+      "points": [
+        [
+          942.6665,
+          618.6665
+        ],
+        [
+          980.0,
+          604.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0050",
+      "points": [
+        [
+          576.6665,
+          758.3335
+        ],
+        [
+          616.3335,
+          743.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0051",
+      "points": [
+        [
+          635.6665,
+          738.6665
+        ],
+        [
+          675.6665,
+          725.0
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0052",
+      "points": [
+        [
+          691.6665,
+          721.3335
+        ],
+        [
+          732.6665,
+          704.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0053",
+      "points": [
+        [
+          750.6665,
+          700.6665
+        ],
+        [
+          791.0,
+          686.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0054",
+      "points": [
+        [
+          807.0,
+          680.6665
+        ],
+        [
+          846.6665,
+          665.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0055",
+      "points": [
+        [
+          864.3335,
+          660.0
+        ],
+        [
+          902.0,
+          646.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0056",
+      "points": [
+        [
+          927.0,
+          636.0
+        ],
+        [
+          964.6665,
+          623.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0057",
+      "points": [
+        [
+          557.3335,
+          780.0
+        ],
+        [
+          603.6665,
+          763.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0058",
+      "points": [
+        [
+          622.6665,
+          758.3335
+        ],
+        [
+          662.3335,
+          744.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0059",
+      "points": [
+        [
+          679.3335,
+          740.3335
+        ],
+        [
+          718.0,
+          723.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0060",
+      "points": [
+        [
+          738.6665,
+          719.3335
+        ],
+        [
+          775.6665,
+          706.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0061",
+      "points": [
+        [
+          794.3335,
+          700.6665
+        ],
+        [
+          831.0,
+          687.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0062",
+      "points": [
+        [
+          850.6665,
+          679.0
+        ],
+        [
+          891.6665,
+          665.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0063",
+      "points": [
+        [
+          913.0,
+          659.6665
+        ],
+        [
+          952.0,
+          643.0
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0064",
+      "points": [
+        [
+          604.0,
+          781.6665
+        ],
+        [
+          649.0,
+          762.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0065",
+      "points": [
+        [
+          664.0,
+          761.6665
+        ],
+        [
+          702.0,
+          742.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0066",
+      "points": [
+        [
+          720.6665,
+          739.6665
+        ],
+        [
+          760.6665,
+          725.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0067",
+      "points": [
+        [
+          774.3335,
+          719.0
+        ],
+        [
+          819.6665,
+          704.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0068",
+      "points": [
+        [
+          835.0,
+          699.3335
+        ],
+        [
+          876.6665,
+          685.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0069",
+      "points": [
+        [
+          896.6665,
+          680.3335
+        ],
+        [
+          936.0,
+          663.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0070",
+      "points": [
+        [
+          952.6665,
+          659.3335
+        ],
+        [
+          988.0,
+          644.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0071",
+      "points": [
+        [
+          589.3335,
+          796.6665
+        ],
+        [
+          630.3335,
+          784.0
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0072",
+      "points": [
+        [
+          648.0,
+          779.6665
+        ],
+        [
+          686.6665,
+          763.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0073",
+      "points": [
+        [
+          705.0,
+          759.3335
+        ],
+        [
+          744.0,
+          746.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0074",
+      "points": [
+        [
+          766.0,
+          739.3335
+        ],
+        [
+          805.6665,
+          724.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0075",
+      "points": [
+        [
+          829.0,
+          718.3335
+        ],
+        [
+          860.6665,
+          702.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0076",
+      "points": [
+        [
+          880.6665,
+          699.6665
+        ],
+        [
+          921.6665,
+          685.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0077",
+      "points": [
+        [
+          939.0,
+          678.6665
+        ],
+        [
+          979.0,
+          663.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0078",
+      "points": [
+        [
+          570.6665,
+          816.6665
+        ],
+        [
+          614.0,
+          803.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0079",
+      "points": [
+        [
+          634.0,
+          798.6665
+        ],
+        [
+          677.0,
+          783.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0080",
+      "points": [
+        [
+          698.0,
+          776.6665
+        ],
+        [
+          734.6665,
+          763.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0081",
+      "points": [
+        [
+          752.6665,
+          757.6665
+        ],
+        [
+          787.0,
+          744.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0082",
+      "points": [
+        [
+          810.6665,
+          734.6665
+        ],
+        [
+          844.0,
+          724.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0083",
+      "points": [
+        [
+          863.6665,
+          716.6665
+        ],
+        [
+          908.0,
+          704.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0084",
+      "points": [
+        [
+          922.6665,
+          700.3335
+        ],
+        [
+          961.0,
+          686.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0085",
+      "points": [
+        [
+          562.0,
+          838.0
+        ],
+        [
+          600.3335,
+          823.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    }
+  ],
+  "connections": {
+    "method": "axis_nearest",
+    "edges": [
+      [
+        0,
+        34
+      ],
+      [
+        1,
+        29
+      ],
+      [
+        2,
+        30
+      ],
+      [
+        3,
+        31
+      ],
+      [
+        4,
+        32
+      ],
+      [
+        5,
+        33
+      ],
+      [
+        6,
+        35
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        13,
+        8
+      ],
+      [
+        14,
+        9
+      ],
+      [
+        15,
+        12
+      ],
+      [
+        16,
+        13
+      ],
+      [
+        17,
+        14
+      ],
+      [
+        18,
+        10
+      ],
+      [
+        19,
+        4
+      ],
+      [
+        20,
+        19
+      ],
+      [
+        21,
+        18
+      ],
+      [
+        22,
+        16
+      ],
+      [
+        23,
+        15
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        25,
+        27
+      ],
+      [
+        26,
+        11
+      ],
+      [
+        27,
+        37
+      ],
+      [
+        28,
+        38
+      ],
+      [
+        37,
+        36
+      ],
+      [
+        38,
+        39
+      ],
+      [
+        41,
+        40
+      ],
+      [
+        42,
+        28
+      ],
+      [
+        43,
+        25
+      ],
+      [
+        44,
+        24
+      ],
+      [
+        45,
+        23
+      ],
+      [
+        46,
+        22
+      ],
+      [
+        47,
+        17
+      ],
+      [
+        48,
+        47
+      ],
+      [
+        50,
+        41
+      ],
+      [
+        51,
+        42
+      ],
+      [
+        52,
+        43
+      ],
+      [
+        53,
+        44
+      ],
+      [
+        54,
+        45
+      ],
+      [
+        55,
+        46
+      ],
+      [
+        57,
+        49
+      ],
+      [
+        58,
+        50
+      ],
+      [
+        59,
+        51
+      ],
+      [
+        60,
+        52
+      ],
+      [
+        61,
+        53
+      ],
+      [
+        62,
+        54
+      ],
+      [
+        63,
+        56
+      ],
+      [
+        64,
+        57
+      ],
+      [
+        65,
+        58
+      ],
+      [
+        66,
+        59
+      ],
+      [
+        67,
+        60
+      ],
+      [
+        68,
+        61
+      ],
+      [
+        69,
+        62
+      ],
+      [
+        71,
+        63
+      ],
+      [
+        72,
+        64
+      ],
+      [
+        73,
+        65
+      ],
+      [
+        74,
+        66
+      ],
+      [
+        75,
+        67
+      ],
+      [
+        76,
+        68
+      ],
+      [
+        78,
+        70
+      ],
+      [
+        79,
+        71
+      ],
+      [
+        80,
+        72
+      ],
+      [
+        81,
+        73
+      ],
+      [
+        82,
+        74
+      ],
+      [
+        83,
+        75
+      ]
+    ],
+    "candidates": [
+      {
+        "a": 7,
+        "b": 0,
+        "cost": 0.2296433492339595,
+        "turn_deg": 2.104041361524521,
+        "gap_px": 2.664147410587077,
+        "lateral_offset_px": 15.402028729293095,
+        "mean_fragment_length_px": 37.304150233727626,
+        "axis_lateral_px": 0.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 0,
+        "b": 34,
+        "cost": 0.2126515181900126,
+        "turn_deg": 3.2770982218914844,
+        "gap_px": 0.4174251868867316,
+        "lateral_offset_px": 13.455796345818188,
+        "mean_fragment_length_px": 40.59888444507387,
+        "axis_lateral_px": 0.16674999999997908,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 8,
+        "b": 1,
+        "cost": 0.24619757394414,
+        "turn_deg": 6.2725879277996786,
+        "gap_px": 4.866664646949644,
+        "lateral_offset_px": 15.760873910936636,
+        "mean_fragment_length_px": 34.28675748558629,
+        "axis_lateral_px": 1.833250000000021,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 1,
+        "b": 29,
+        "cost": 0.24998598247981102,
+        "turn_deg": 6.121297834940941,
+        "gap_px": 7.137158393492754,
+        "lateral_offset_px": 13.264421650851762,
+        "mean_fragment_length_px": 36.45286826204983,
+        "axis_lateral_px": 6.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 9,
+        "b": 2,
+        "cost": 0.2181875599197589,
+        "turn_deg": 2.070519786687358,
+        "gap_px": 0.636469129985521,
+        "lateral_offset_px": 14.91018923122714,
+        "mean_fragment_length_px": 37.73496528940388,
+        "axis_lateral_px": 0.00024999999993724487,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 2,
+        "b": 30,
+        "cost": 0.21812135833443996,
+        "turn_deg": 2.6514247421222197,
+        "gap_px": 1.1463737163923042,
+        "lateral_offset_px": 14.17188455809912,
+        "mean_fragment_length_px": 39.27611547677723,
+        "axis_lateral_px": 0.33349999999995816,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 10,
+        "b": 3,
+        "cost": 0.23986833325248602,
+        "turn_deg": 2.493492902901217,
+        "gap_px": 3.5456201516921837,
+        "lateral_offset_px": 17.725624033851915,
+        "mean_fragment_length_px": 36.56069830840875,
+        "axis_lateral_px": 1.1665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 3,
+        "b": 31,
+        "cost": 0.2596187545987821,
+        "turn_deg": 1.8610302594234263,
+        "gap_px": 7.298446496717013,
+        "lateral_offset_px": 17.15276609858713,
+        "mean_fragment_length_px": 35.56874347757636,
+        "axis_lateral_px": 0.6667499999999791,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 19,
+        "b": 4,
+        "cost": 0.22505019399683265,
+        "turn_deg": 0.7856947231739663,
+        "gap_px": 1.5148326286342595,
+        "lateral_offset_px": 16.339339785655703,
+        "mean_fragment_length_px": 38.00104818520927,
+        "axis_lateral_px": 2.833250000000021,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 4,
+        "b": 32,
+        "cost": 0.2581328058251563,
+        "turn_deg": 0.7982639259971261,
+        "gap_px": 9.087945921987952,
+        "lateral_offset_px": 13.089513760628343,
+        "mean_fragment_length_px": 37.47548025481757,
+        "axis_lateral_px": 1.833250000000021,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 5,
+        "b": 33,
+        "cost": 0.23597219648877807,
+        "turn_deg": 2.842828313682429,
+        "gap_px": 3.9881286577422586,
+        "lateral_offset_px": 14.336200241427694,
+        "mean_fragment_length_px": 36.022300210244005,
+        "axis_lateral_px": 0.3332500000000209,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 11,
+        "b": 6,
+        "cost": 0.21401606593695877,
+        "turn_deg": 1.734368400115447,
+        "gap_px": 0.0,
+        "lateral_offset_px": 16.337229225054426,
+        "mean_fragment_length_px": 38.94053441416017,
+        "axis_lateral_px": 0.5,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 6,
+        "b": 35,
+        "cost": 0.23183941838903666,
+        "turn_deg": 4.021266064934616,
+        "gap_px": 2.4963099941308613,
+        "lateral_offset_px": 17.407280065695772,
+        "mean_fragment_length_px": 38.12312385565253,
+        "axis_lateral_px": 1.5,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 12,
+        "b": 7,
+        "cost": 0.27818717935316056,
+        "turn_deg": 0.31610211147714656,
+        "gap_px": 9.890408648425769,
+        "lateral_offset_px": 16.300989125416777,
+        "mean_fragment_length_px": 32.96222485329779,
+        "axis_lateral_px": 1.1665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 13,
+        "b": 8,
+        "cost": 0.22787243460760448,
+        "turn_deg": 0.6941075230437739,
+        "gap_px": 0.4919777534417591,
+        "lateral_offset_px": 19.537258354244738,
+        "mean_fragment_length_px": 37.48019747559271,
+        "axis_lateral_px": 4.166749999999979,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 14,
+        "b": 9,
+        "cost": 0.24883060889687822,
+        "turn_deg": 0.9913188446406496,
+        "gap_px": 5.701016285163298,
+        "lateral_offset_px": 16.260110432291093,
+        "mean_fragment_length_px": 35.902329972736396,
+        "axis_lateral_px": 0.3332500000000209,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 18,
+        "b": 10,
+        "cost": 0.2122665927315303,
+        "turn_deg": 5.197039943488095,
+        "gap_px": 0.0,
+        "lateral_offset_px": 14.625341253011738,
+        "mean_fragment_length_px": 38.35559902172966,
+        "axis_lateral_px": 1.8334999999999582,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 26,
+        "b": 11,
+        "cost": 0.251977154350843,
+        "turn_deg": 3.3588366627491153,
+        "gap_px": 6.765452670503329,
+        "lateral_offset_px": 16.37653548902841,
+        "mean_fragment_length_px": 37.350919660260594,
+        "axis_lateral_px": 2.333499999999958,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 15,
+        "b": 12,
+        "cost": 0.20944568056023338,
+        "turn_deg": 0.5486009416229486,
+        "gap_px": 0.0,
+        "lateral_offset_px": 14.304008018127785,
+        "mean_fragment_length_px": 35.809160186899916,
+        "axis_lateral_px": 0.16650000000004184,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 16,
+        "b": 13,
+        "cost": 0.2114115757676423,
+        "turn_deg": 0.8687997548947038,
+        "gap_px": 0.6110438321040306,
+        "lateral_offset_px": 12.066599267300123,
+        "mean_fragment_length_px": 40.854570622795734,
+        "axis_lateral_px": 4.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 17,
+        "b": 14,
+        "cost": 0.2571913873821085,
+        "turn_deg": 5.841978923992753,
+        "gap_px": 6.667637170828449,
+        "lateral_offset_px": 14.42743080372369,
+        "mean_fragment_length_px": 32.346821208774415,
+        "axis_lateral_px": 2.833499999999958,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 23,
+        "b": 15,
+        "cost": 0.2533549546304372,
+        "turn_deg": 2.628558717949159,
+        "gap_px": 7.669972772478921,
+        "lateral_offset_px": 14.609646042841849,
+        "mean_fragment_length_px": 37.40429487135394,
+        "axis_lateral_px": 2.166749999999979,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 22,
+        "b": 16,
+        "cost": 0.27087682235973487,
+        "turn_deg": 4.454689157238561,
+        "gap_px": 8.515373822274611,
+        "lateral_offset_px": 16.686025251693003,
+        "mean_fragment_length_px": 33.11370262436134,
+        "axis_lateral_px": 1.1665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 47,
+        "b": 17,
+        "cost": 0.2567787996700303,
+        "turn_deg": 9.738843791866026,
+        "gap_px": 6.672507007286775,
+        "lateral_offset_px": 17.22979079189491,
+        "mean_fragment_length_px": 35.43906277190257,
+        "axis_lateral_px": 0.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 21,
+        "b": 18,
+        "cost": 0.2786525686932602,
+        "turn_deg": 3.735910832969855,
+        "gap_px": 12.033451019351098,
+        "lateral_offset_px": 11.669416288986895,
+        "mean_fragment_length_px": 34.27982942723713,
+        "axis_lateral_px": 3.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 20,
+        "b": 19,
+        "cost": 0.25488764850792467,
+        "turn_deg": 1.4076422655908132,
+        "gap_px": 7.185449755252087,
+        "lateral_offset_px": 14.276581423234518,
+        "mean_fragment_length_px": 34.78748597708329,
+        "axis_lateral_px": 0.3332500000000209,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 46,
+        "b": 22,
+        "cost": 0.2708925010008834,
+        "turn_deg": 0.4451302856803057,
+        "gap_px": 7.5016659141514666,
+        "lateral_offset_px": 16.110477598698356,
+        "mean_fragment_length_px": 30.418145831054254,
+        "axis_lateral_px": 1.6669999999999163,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 45,
+        "b": 23,
+        "cost": 0.19803250534605787,
+        "turn_deg": 1.5491360302357533,
+        "gap_px": 0.0,
+        "lateral_offset_px": 11.91296848805229,
+        "mean_fragment_length_px": 39.75967263490435,
+        "axis_lateral_px": 1.6665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 24,
+        "b": 26,
+        "cost": 0.21477322909249122,
+        "turn_deg": 8.366497547283076,
+        "gap_px": 0.17298841442410406,
+        "lateral_offset_px": 14.554366525699319,
+        "mean_fragment_length_px": 38.33508503336866,
+        "axis_lateral_px": 0.00024999999993724487,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 44,
+        "b": 24,
+        "cost": 0.2140417864303866,
+        "turn_deg": 5.00834317464464,
+        "gap_px": 0.8855954602410492,
+        "lateral_offset_px": 12.702133369469793,
+        "mean_fragment_length_px": 40.04265072349743,
+        "axis_lateral_px": 1.3334999999999582,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 25,
+        "b": 27,
+        "cost": 0.2957591674081761,
+        "turn_deg": 6.784617422015646,
+        "gap_px": 12.124084566427832,
+        "lateral_offset_px": 11.469680336531093,
+        "mean_fragment_length_px": 28.628835433742637,
+        "axis_lateral_px": 0.5,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 43,
+        "b": 25,
+        "cost": 0.2751101361985353,
+        "turn_deg": 7.006611801680837,
+        "gap_px": 9.814856338241164,
+        "lateral_offset_px": 12.539107785653549,
+        "mean_fragment_length_px": 31.132272829317827,
+        "axis_lateral_px": 3.666749999999979,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 27,
+        "b": 37,
+        "cost": 0.25327852496631964,
+        "turn_deg": 6.479846206494665,
+        "gap_px": 8.088652808604714,
+        "lateral_offset_px": 11.981408062815309,
+        "mean_fragment_length_px": 36.32388670890998,
+        "axis_lateral_px": 0.16674999999997908,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 28,
+        "b": 38,
+        "cost": 0.25592501369672205,
+        "turn_deg": 1.2083804637366053,
+        "gap_px": 8.577245825198197,
+        "lateral_offset_px": 12.886349992830164,
+        "mean_fragment_length_px": 37.05615489921405,
+        "axis_lateral_px": 2.833499999999958,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 42,
+        "b": 28,
+        "cost": 0.22505553074522627,
+        "turn_deg": 1.9203623601640651,
+        "gap_px": 1.2606248524833177,
+        "lateral_offset_px": 14.848396655356334,
+        "mean_fragment_length_px": 34.000114334538914,
+        "axis_lateral_px": 2.6669999999999163,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 37,
+        "b": 36,
+        "cost": 0.20500778421919383,
+        "turn_deg": 0.008128247609585637,
+        "gap_px": 0.0,
+        "lateral_offset_px": 12.654120908378637,
+        "mean_fragment_length_px": 40.161243511952854,
+        "axis_lateral_px": 0.16674999999997908,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 38,
+        "b": 39,
+        "cost": 0.19962803440656188,
+        "turn_deg": 2.3564764093564095,
+        "gap_px": 0.0,
+        "lateral_offset_px": 17.02874554661127,
+        "mean_fragment_length_px": 42.185464249073945,
+        "axis_lateral_px": 3.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 41,
+        "b": 40,
+        "cost": 0.22548094739215951,
+        "turn_deg": 8.019861653202774,
+        "gap_px": 3.8704459915763323,
+        "lateral_offset_px": 9.097196088453767,
+        "mean_fragment_length_px": 38.039582257378896,
+        "axis_lateral_px": 4.333499999999958,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 50,
+        "b": 41,
+        "cost": 0.23663553949943156,
+        "turn_deg": 4.826928091288946,
+        "gap_px": 5.162826248046379,
+        "lateral_offset_px": 12.837333627682781,
+        "mean_fragment_length_px": 38.31482802278643,
+        "axis_lateral_px": 0.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 51,
+        "b": 42,
+        "cost": 0.24499365379080093,
+        "turn_deg": 4.243645135578155,
+        "gap_px": 6.547930404551664,
+        "lateral_offset_px": 13.882581425988063,
+        "mean_fragment_length_px": 38.415600987019566,
+        "axis_lateral_px": 2.333499999999958,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 52,
+        "b": 43,
+        "cost": 0.22308281557491788,
+        "turn_deg": 6.298992108112554,
+        "gap_px": 0.8371197381329125,
+        "lateral_offset_px": 18.14881044299673,
+        "mean_fragment_length_px": 40.35731437321486,
+        "axis_lateral_px": 1.1665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 53,
+        "b": 44,
+        "cost": 0.205959674076867,
+        "turn_deg": 0.3952426374384808,
+        "gap_px": 0.0,
+        "lateral_offset_px": 14.501913603798466,
+        "mean_fragment_length_px": 40.792708492604206,
+        "axis_lateral_px": 0.8332500000000209,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 54,
+        "b": 45,
+        "cost": 0.21347817701237953,
+        "turn_deg": 1.3212066474475819,
+        "gap_px": 0.0,
+        "lateral_offset_px": 16.526462465653257,
+        "mean_fragment_length_px": 41.55323380946871,
+        "axis_lateral_px": 1.333250000000021,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 55,
+        "b": 46,
+        "cost": 0.25699779997410427,
+        "turn_deg": 6.984344027186454,
+        "gap_px": 7.043838191975631,
+        "lateral_offset_px": 18.368907314113212,
+        "mean_fragment_length_px": 37.48776412829257,
+        "axis_lateral_px": 0.6667499999999791,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 48,
+        "b": 47,
+        "cost": 0.23743380026357896,
+        "turn_deg": 3.173643267728079,
+        "gap_px": 4.575378141343386,
+        "lateral_offset_px": 16.385988430922126,
+        "mean_fragment_length_px": 40.020018293060986,
+        "axis_lateral_px": 1.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 57,
+        "b": 49,
+        "cost": 0.21841785870567193,
+        "turn_deg": 1.280986104832455,
+        "gap_px": 1.029008762740773,
+        "lateral_offset_px": 15.940626162204023,
+        "mean_fragment_length_px": 42.123586032437615,
+        "axis_lateral_px": 0.5,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 58,
+        "b": 50,
+        "cost": 0.20353021755619616,
+        "turn_deg": 4.86965701696962,
+        "gap_px": 0.0,
+        "lateral_offset_px": 15.618869625316526,
+        "mean_fragment_length_px": 42.25441363649503,
+        "axis_lateral_px": 0.00024999999993724487,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 59,
+        "b": 51,
+        "cost": 0.21563347809391992,
+        "turn_deg": 2.76334755572483,
+        "gap_px": 0.4048696427225451,
+        "lateral_offset_px": 15.780532926254471,
+        "mean_fragment_length_px": 41.73777506324481,
+        "axis_lateral_px": 0.16650000000004184,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 60,
+        "b": 52,
+        "cost": 0.20508832465501542,
+        "turn_deg": 0.37961745407976144,
+        "gap_px": 0.0,
+        "lateral_offset_px": 14.320433433866349,
+        "mean_fragment_length_px": 40.79850766695088,
+        "axis_lateral_px": 0.5,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 61,
+        "b": 53,
+        "cost": 0.20685192634398245,
+        "turn_deg": 2.699162749854545,
+        "gap_px": 0.0,
+        "lateral_offset_px": 14.221871343062487,
+        "mean_fragment_length_px": 42.87229093860984,
+        "axis_lateral_px": 0.8332500000000209,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 62,
+        "b": 54,
+        "cost": 0.23976943283008084,
+        "turn_deg": 3.6458877684429045,
+        "gap_px": 5.500908429729613,
+        "lateral_offset_px": 16.070272226163414,
+        "mean_fragment_length_px": 41.184377326485944,
+        "axis_lateral_px": 2.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 63,
+        "b": 56,
+        "cost": 0.18780910686334448,
+        "turn_deg": 3.47176834694413,
+        "gap_px": 0.0,
+        "lateral_offset_px": 16.911584995533797,
+        "mean_fragment_length_px": 48.98719543276781,
+        "axis_lateral_px": 0.3332500000000209,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 64,
+        "b": 57,
+        "cost": 0.19187654950157265,
+        "turn_deg": 7.554002661071023,
+        "gap_px": 0.0,
+        "lateral_offset_px": 16.301069517703937,
+        "mean_fragment_length_px": 42.220358828903485,
+        "axis_lateral_px": 0.6665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 65,
+        "b": 58,
+        "cost": 0.19830301271470868,
+        "turn_deg": 4.019159414549245,
+        "gap_px": 0.0,
+        "lateral_offset_px": 16.16440820924217,
+        "mean_fragment_length_px": 42.36449813208556,
+        "axis_lateral_px": 0.6665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 66,
+        "b": 59,
+        "cost": 0.18370200811193027,
+        "turn_deg": 1.81295282900013,
+        "gap_px": 0.0,
+        "lateral_offset_px": 11.659222268296254,
+        "mean_fragment_length_px": 43.38118777916918,
+        "axis_lateral_px": 1.0002499999999372,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 67,
+        "b": 60,
+        "cost": 0.20880627928125417,
+        "turn_deg": 1.3618401206255049,
+        "gap_px": 0.014998689687502065,
+        "lateral_offset_px": 12.363035775276481,
+        "mean_fragment_length_px": 41.37677936971987,
+        "axis_lateral_px": 1.6665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 68,
+        "b": 61,
+        "cost": 0.20991822390325643,
+        "turn_deg": 4.9393367473408105,
+        "gap_px": 0.0,
+        "lateral_offset_px": 15.80462741054504,
+        "mean_fragment_length_px": 43.033881040445365,
+        "axis_lateral_px": 0.3332500000000209,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 69,
+        "b": 62,
+        "cost": 0.18731534507880448,
+        "turn_deg": 0.13675534114879695,
+        "gap_px": 0.0,
+        "lateral_offset_px": 15.28593824895564,
+        "mean_fragment_length_px": 40.39878005336017,
+        "axis_lateral_px": 0.5002499999999372,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 71,
+        "b": 63,
+        "cost": 0.18010823387771407,
+        "turn_deg": 0.41103000636915427,
+        "gap_px": 0.0,
+        "lateral_offset_px": 15.28664000045942,
+        "mean_fragment_length_px": 45.34641225089482,
+        "axis_lateral_px": 0.5,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 72,
+        "b": 64,
+        "cost": 0.19886436457921644,
+        "turn_deg": 8.571520380886554,
+        "gap_px": 0.0,
+        "lateral_offset_px": 16.504828215544332,
+        "mean_fragment_length_px": 41.745407118566135,
+        "axis_lateral_px": 0.8334999999999582,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 73,
+        "b": 65,
+        "cost": 0.2128271333862275,
+        "turn_deg": 1.0003831100984923,
+        "gap_px": 0.16598327889581554,
+        "lateral_offset_px": 14.980951935558705,
+        "mean_fragment_length_px": 42.44916199736693,
+        "axis_lateral_px": 0.6665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 74,
+        "b": 66,
+        "cost": 0.2309584335446861,
+        "turn_deg": 8.7778612962416,
+        "gap_px": 3.43095658049112,
+        "lateral_offset_px": 16.631569978265304,
+        "mean_fragment_length_px": 41.43760971243902,
+        "axis_lateral_px": 1.333250000000021,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 82,
+        "b": 66,
+        "cost": 0.37982619481872704,
+        "turn_deg": 2.0001695409873306,
+        "gap_px": 38.753493283194615,
+        "lateral_offset_px": 24.020274098222792,
+        "mean_fragment_length_px": 46.78100439681313,
+        "axis_lateral_px": 1.333250000000021,
+        "state": "PROPOSAL",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 75,
+        "b": 67,
+        "cost": 0.20775101188187964,
+        "turn_deg": 1.1089071274212279,
+        "gap_px": 0.0,
+        "lateral_offset_px": 14.545239718285446,
+        "mean_fragment_length_px": 43.641905364846075,
+        "axis_lateral_px": 0.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 76,
+        "b": 68,
+        "cost": 0.19947151503642815,
+        "turn_deg": 2.818030731718199,
+        "gap_px": 0.0,
+        "lateral_offset_px": 15.340535065411279,
+        "mean_fragment_length_px": 42.78501941142447,
+        "axis_lateral_px": 0.6669999999999163,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 78,
+        "b": 70,
+        "cost": 0.206545850195108,
+        "turn_deg": 2.0627125570530245,
+        "gap_px": 0.0,
+        "lateral_offset_px": 15.05429205175301,
+        "mean_fragment_length_px": 44.226597859696525,
+        "axis_lateral_px": 0.8332500000000209,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 79,
+        "b": 71,
+        "cost": 0.2425298460336399,
+        "turn_deg": 2.496791526222186,
+        "gap_px": 5.846963992170963,
+        "lateral_offset_px": 16.191029044422685,
+        "mean_fragment_length_px": 40.43076067891309,
+        "axis_lateral_px": 1.6665000000000418,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 80,
+        "b": 72,
+        "cost": 0.23319163486068645,
+        "turn_deg": 3.2295484787723727,
+        "gap_px": 4.456994897082218,
+        "lateral_offset_px": 13.329282396519428,
+        "mean_fragment_length_px": 38.91850263731315,
+        "axis_lateral_px": 2.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 81,
+        "b": 73,
+        "cost": 0.21529348556773753,
+        "turn_deg": 4.01508910399057,
+        "gap_px": 1.3981288012913495,
+        "lateral_offset_px": 11.257519249185673,
+        "mean_fragment_length_px": 38.60454797607211,
+        "axis_lateral_px": 2.1669999999999163,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 82,
+        "b": 74,
+        "cost": 0.20160506320596244,
+        "turn_deg": 10.778030837228536,
+        "gap_px": 0.0,
+        "lateral_offset_px": 14.649577463023633,
+        "mean_fragment_length_px": 40.673581653168945,
+        "axis_lateral_px": 0.0,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      },
+      {
+        "a": 83,
+        "b": 75,
+        "cost": 0.19313287449578023,
+        "turn_deg": 0.7941130850107198,
+        "gap_px": 0.0,
+        "lateral_offset_px": 14.470686223722824,
+        "mean_fragment_length_px": 42.121560981102974,
+        "axis_lateral_px": 0.8334999999999582,
+        "state": "INFERRED_LINK",
+        "evidence": "endpoint geometry only; occlusion not verified"
+      }
+    ],
+    "groups": [
+      [
+        0,
+        7,
+        12,
+        15,
+        23,
+        34,
+        45,
+        54,
+        62,
+        69
+      ],
+      [
+        1,
+        8,
+        13,
+        16,
+        22,
+        29,
+        46,
+        55
+      ],
+      [
+        2,
+        9,
+        14,
+        17,
+        30,
+        47,
+        48
+      ],
+      [
+        3,
+        10,
+        18,
+        21,
+        31
+      ],
+      [
+        4,
+        19,
+        20,
+        32
+      ],
+      [
+        5,
+        33
+      ],
+      [
+        6,
+        11,
+        24,
+        26,
+        35,
+        44,
+        53,
+        61,
+        68,
+        76
+      ],
+      [
+        25,
+        27,
+        36,
+        37,
+        43,
+        52,
+        60,
+        67,
+        75,
+        83
+      ],
+      [
+        28,
+        38,
+        39,
+        42,
+        51,
+        59,
+        66,
+        74,
+        82
+      ],
+      [
+        40,
+        41,
+        50,
+        58,
+        65,
+        73,
+        81
+      ],
+      [
+        49,
+        57,
+        64,
+        72,
+        80
+      ],
+      [
+        56,
+        63,
+        71,
+        79
+      ],
+      [
+        70,
+        78
+      ],
+      [
+        77
+      ],
+      [
+        84
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "weak_reference_posthoc_score": {
+    "known_same_pairs": 72,
+    "direct_same_recovered": 0,
+    "same_recovered_via_graph": 0,
+    "same_pair_recall_weak": 0.0,
+    "proposed_links": 70,
+    "proposed_links_without_direct_reference": 70,
+    "precision": null,
+    "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+    "physical_count": null,
+    "provisional_component_count": 15,
+    "branching_nodes": 0
+  },
+  "review_sha256": "8debcd73121196675ccf1b4ccb700efa139656676266f8995932584502e48f8d",
+  "provenance": {
+    "annotation_image_kind": "UNMARKED_2X_CENTER_CROP",
+    "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
+    "original_image_path": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_03.jpg",
+    "original_image_sha256": "cc6d2c9507d086a6658f8939576bab84550e8cf532c6f8dc238542ae3e6a488f",
+    "crop_original_xyxy": [
+      353,
+      471,
+      1183,
+      1577
+    ],
+    "enlargement_scale": 2
+  }
+}

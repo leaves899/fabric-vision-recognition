@@ -1,0 +1,115 @@
+"""Geometry proposals between observed fragments. Links are hypotheses, not GT."""
+from __future__ import annotations
+import numpy as np
+from scipy.optimize import linear_sum_assignment
+
+
+def feature(points):
+    p=np.asarray(points,float)
+    center=p.mean(0)
+    _,_,v=np.linalg.svd(p-center,full_matrices=False)
+    u=v[0]
+    if u[0]<0 or (abs(u[0])<1e-8 and u[1]<0):u=-u
+    t=(p-center)@u
+    return {'center':center,'tangent':u,'length':max(float(t.max()-t.min()),1e-6),
+            'ends':np.array([center+t.min()*u,center+t.max()*u])}
+
+
+def angle_delta(a,b):
+    return float(np.degrees(np.arccos(np.clip(abs(np.dot(a,b)),0,1))))
+
+
+def components(n,edges):
+    parent=list(range(n))
+    def find(x):
+        while parent[x]!=x:
+            parent[x]=parent[parent[x]];x=parent[x]
+        return x
+    for a,b in edges:
+        x,y=find(a),find(b)
+        if x!=y:parent[y]=x
+    groups={}
+    for i in range(n):groups.setdefault(find(i),[]).append(i)
+    return sorted(groups.values(),key=lambda g:g[0])
+
+
+def connect(segments,method='assignment',max_turn=30,max_gap=4,max_side=.6):
+    """Only segment geometry enters. No labels, weave periods, or regular grids."""
+    fs=[feature(s['points']) for s in segments];n=len(fs);candidates=[]
+    for i,a in enumerate(fs):
+        for j in range(i+1,n):
+            b=fs[j]
+            if segments[i].get('family')!=segments[j].get('family'):continue
+            turn=angle_delta(a['tangent'],b['tangent'])
+            if turn>max_turn:continue
+            u=b['tangent']*(1 if np.dot(a['tangent'],b['tangent'])>=0 else -1)+a['tangent']
+            u/=np.linalg.norm(u);d=b['center']-a['center'];L=(a['length']+b['length'])/2
+            axial=abs(float(d@u));side=abs(float(u[0]*d[1]-u[1]*d[0]))
+            gap=max(0.,axial-L)
+            # Overlapping fragments may be parts of a broad region, not a justified connection.
+            if axial<.45*L or gap>max_gap*L or side>max_side*L:continue
+            axis_side=None
+            if method=='axis_nearest':
+                axis=np.array([1.,0.]) if abs(u[0])>=abs(u[1]) else np.array([0.,1.])
+                axis_side=abs(float(axis[0]*d[1]-axis[1]*d[0]))
+                if axis_side>.25*L:continue
+                cost=float(np.linalg.norm(d)/L/5)
+            else:cost=.45*gap/(max_gap*L)+.35*side/(max_side*L)+.20*turn/max_turn
+            candidates.append({'a':i,'b':j,'cost':cost,'turn_deg':turn,'gap_px':gap,
+                'lateral_offset_px':side,'mean_fragment_length_px':L,'axis_lateral_px':axis_side,
+                'state':'PROPOSAL','evidence':'endpoint geometry only; occlusion not verified'})
+    # Use one projection direction in each candidate component; reversal changes neither identity nor constraints.
+    groups=components(n,[(c['a'],c['b']) for c in candidates])
+    group_axis={}
+    for group in groups:
+        cov=sum(np.outer(fs[i]['tangent'],fs[i]['tangent']) for i in group)
+        _,vec=np.linalg.eigh(cov);u=vec[:,-1]
+        for i in group:group_axis[i]=u
+    for c in candidates:
+        i,j=c['a'],c['b']
+        if float((fs[j]['center']-fs[i]['center'])@group_axis[i])<0:i,j=j,i
+        c['a'],c['b']=i,j
+    chosen=[]
+    if method in ('axis_nearest','local_tangent'):
+        for i in range(n):
+            rows=sorted([c for c in candidates if c['a']==i],key=lambda c:(c['cost'],c['b']))
+            if rows:chosen.append(rows[0])
+    elif method=='assignment':
+        cost=np.full((n,2*n),1e6);cost[:,n:]=1.25
+        index={}
+        for c in candidates:
+            cost[c['a'],c['b']]=c['cost'];index[c['a'],c['b']]=c
+        if n:
+            ri,ci=linear_sum_assignment(cost)
+            for i,j in zip(ri,ci):
+                if j>=n or (i,j) not in index:continue
+                c=index[i,j]
+                alternatives=[q['cost'] for q in candidates if q is not c and (q['a']==i or q['b']==j)]
+                c['local_competitor_margin']=min(alternatives)-c['cost'] if alternatives else None
+                if alternatives and min(alternatives)-c['cost']<.15:
+                    c['state']='AMBIGUOUS';continue
+                chosen.append(c)
+    else:raise ValueError(method)
+    for c in chosen:c['state']='INFERRED_LINK'
+    edges=[(c['a'],c['b']) for c in chosen]
+    indegree=np.zeros(n,int);outdegree=np.zeros(n,int)
+    for a,b in edges:outdegree[a]+=1;indegree[b]+=1
+    return {'method':method,'edges':edges,'candidates':candidates,'groups':components(n,edges),
+            'branching_nodes':int(((indegree>1)|(outdegree>1)).sum()),
+            'physical_identity_verified':False}
+
+
+def score_same_only(segments,result,relations):
+    """Unlabelled pairs cannot be assigned false/Different labels."""
+    ids={s['id']:i for i,s in enumerate(segments)}
+    known={tuple(sorted((ids[r['a']],ids[r['b']]))) for r in relations
+           if r.get('relation')=='SAME_PHYSICAL_YARN' and r['a'] in ids and r['b'] in ids}
+    pred={tuple(sorted(e)) for e in result['edges']}
+    membership={i:g for g,items in enumerate(result['groups']) for i in items}
+    direct=len(known&pred);transitive=sum(membership[a]==membership[b] for a,b in known)
+    return {'known_same_pairs':len(known),'direct_same_recovered':direct,
+        'same_recovered_via_graph':transitive,'same_pair_recall_weak':transitive/len(known) if known else None,
+        'proposed_links':len(pred),'proposed_links_without_direct_reference':len(pred-known),
+        'precision':None,'precision_unavailable_reason':'No exhaustive DIFFERENT labels; unlabelled is not false',
+        'physical_count':None,'provisional_component_count':len(result['groups']),
+        'branching_nodes':result['branching_nodes']}

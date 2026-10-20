@@ -1,0 +1,29 @@
+{
+  "purpose": "Feasibility report representative sample set",
+  "source": "FabricNET W001-W130",
+  "selection_note": "Selected from existing batch results; no images were rerun.",
+  "groups": {
+    "core_pass_direction_angle": [
+      "W001.jpg", "W002.jpg", "W004.jpg", "W005.jpg", "W006.jpg",
+      "W008.jpg", "W009.jpg", "W010.jpg", "W011.jpg", "W032.jpg",
+      "W012.jpg", "W013.jpg", "W015.jpg", "W016.jpg", "W017.jpg",
+      "W018.jpg", "W019.jpg", "W020.jpg", "W021.jpg", "W022.jpg",
+      "W068.jpg", "W069.jpg", "W071.jpg", "W072.jpg", "W073.jpg",
+      "W074.jpg", "W075.jpg", "W076.jpg", "W083.jpg", "W084.jpg"
+    ],
+    "angle_low_confidence": [
+      "W003.jpg", "W040.jpg", "W125.jpg",
+      "W023.jpg", "W055.jpg", "W062.jpg",
+      "W067.jpg", "W070.jpg", "W082.jpg"
+    ],
+    "direction_angle_fail": [
+      "W007.jpg", "W034.jpg", "W049.jpg", "W052.jpg", "W096.jpg"
+    ],
+    "weave_candidate": [
+      "W044.jpg", "W058.jpg", "W077.jpg", "W101.jpg", "W114.jpg"
+    ],
+    "direction_low_confidence": [
+      "W014.jpg"
+    ]
+  }
+}

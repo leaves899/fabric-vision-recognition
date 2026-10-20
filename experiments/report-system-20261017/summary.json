@@ -1,0 +1,59 @@
+{
+  "version": "report-system-1.1",
+  "created_utc": "2026-10-16T16:25:23.518913+00:00",
+  "elapsed_seconds": 45.667478700001084,
+  "case_count": 8,
+  "input_photo_count": 9,
+  "execution_passed": 0,
+  "physical_accuracy": "NOT_EVALUATED",
+  "records": [
+    {
+      "sample_id": "U20261013_01",
+      "label": "此前手机照片 1",
+      "execution": "FAILED",
+      "error": ""
+    },
+    {
+      "sample_id": "U20261013_02",
+      "label": "此前手机照片 2",
+      "execution": "FAILED",
+      "error": ""
+    },
+    {
+      "sample_id": "U20261013_03",
+      "label": "此前手机照片 3",
+      "execution": "FAILED",
+      "error": ""
+    },
+    {
+      "sample_id": "U20261013_04",
+      "label": "此前手机照片 4",
+      "execution": "FAILED",
+      "error": ""
+    },
+    {
+      "sample_id": "U20261013_05",
+      "label": "此前手机照片 5",
+      "execution": "FAILED",
+      "error": ""
+    },
+    {
+      "sample_id": "U20261013_06",
+      "label": "此前手机照片 6",
+      "execution": "FAILED",
+      "error": ""
+    },
+    {
+      "sample_id": "PHONE_BLUE_WHITE",
+      "label": "此前蓝白手机照片",
+      "execution": "FAILED",
+      "error": ""
+    },
+    {
+      "sample_id": "PAIRED_20261016",
+      "label": "此前反射 / 透射双图",
+      "execution": "FAILED",
+      "error": ""
+    }
+  ]
+}

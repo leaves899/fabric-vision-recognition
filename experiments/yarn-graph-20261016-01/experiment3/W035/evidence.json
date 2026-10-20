@@ -1,0 +1,626 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.056692708333333335,
+    "class_fraction": [
+      0.006861979166666666,
+      0.049830729166666664,
+      0.0,
+      0.9433072916666667
+    ],
+    "visible_region_candidates": 1,
+    "inferred_links": 0,
+    "provisional_groups": 1,
+    "rejected_regions": {
+      "nonelongated_region": 1
+    },
+    "directions": {
+      "A": {
+        "angle_image_y_down_deg": 153.00458593967434,
+        "concentration": 1.0,
+        "unit": [
+          0.8910428586188393,
+          -0.4539191823489811
+        ],
+        "physical_direction_verified": false
+      },
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 1,
+        "median_visible_mask_width_px": 19.356864314086717,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        1,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "OBSERVED_CANDIDATE_INTERVALS_INCOMPLETE_ROOT_SET",
+        "hits": [
+          {
+            "group": "G0001",
+            "xy": [
+              128.46830129878106,
+              21.063397402437896
+            ],
+            "position_px": -245.70827371527872
+          }
+        ],
+        "intervals_px": [],
+        "mean_interval_px": null,
+        "interval_cv": null,
+        "verified_adjacent_yarn_pitch": null,
+        "physical_count": null
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "A0001",
+      "family": "A",
+      "points": [
+        [
+          119.0,
+          30.0
+        ],
+        [
+          120.0,
+          29.0
+        ],
+        [
+          122.0,
+          28.0
+        ],
+        [
+          124.0,
+          27.0
+        ],
+        [
+          125.0,
+          25.0
+        ],
+        [
+          127.0,
+          25.0
+        ],
+        [
+          128.0,
+          22.0
+        ],
+        [
+          129.0,
+          20.0
+        ],
+        [
+          130.0,
+          17.0
+        ],
+        [
+          130.0,
+          14.0
+        ],
+        [
+          131.0,
+          12.0
+        ],
+        [
+          133.0,
+          11.0
+        ],
+        [
+          134.0,
+          9.0
+        ],
+        [
+          136.0,
+          8.0
+        ],
+        [
+          139.0,
+          8.0
+        ],
+        [
+          143.0,
+          11.0
+        ],
+        [
+          145.0,
+          13.0
+        ],
+        [
+          147.0,
+          12.0
+        ],
+        [
+          149.0,
+          11.0
+        ],
+        [
+          151.0,
+          10.0
+        ],
+        [
+          153.0,
+          9.0
+        ],
+        [
+          154.0,
+          8.0
+        ],
+        [
+          156.0,
+          7.0
+        ],
+        [
+          158.0,
+          6.0
+        ],
+        [
+          160.0,
+          6.0
+        ],
+        [
+          162.0,
+          6.0
+        ],
+        [
+          164.0,
+          4.0
+        ],
+        [
+          166.0,
+          4.0
+        ],
+        [
+          167.0,
+          3.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            119.0,
+            30.0
+          ],
+          [
+            120.0,
+            29.0
+          ],
+          [
+            122.0,
+            28.0
+          ],
+          [
+            124.0,
+            27.0
+          ],
+          [
+            125.0,
+            25.0
+          ],
+          [
+            127.0,
+            25.0
+          ],
+          [
+            128.0,
+            22.0
+          ],
+          [
+            129.0,
+            20.0
+          ],
+          [
+            130.0,
+            17.0
+          ],
+          [
+            130.0,
+            14.0
+          ],
+          [
+            131.0,
+            12.0
+          ],
+          [
+            133.0,
+            11.0
+          ],
+          [
+            134.0,
+            9.0
+          ],
+          [
+            136.0,
+            8.0
+          ],
+          [
+            139.0,
+            8.0
+          ],
+          [
+            143.0,
+            11.0
+          ],
+          [
+            145.0,
+            13.0
+          ],
+          [
+            147.0,
+            12.0
+          ],
+          [
+            149.0,
+            11.0
+          ],
+          [
+            151.0,
+            10.0
+          ],
+          [
+            153.0,
+            9.0
+          ],
+          [
+            154.0,
+            8.0
+          ],
+          [
+            156.0,
+            7.0
+          ],
+          [
+            158.0,
+            6.0
+          ],
+          [
+            160.0,
+            6.0
+          ],
+          [
+            162.0,
+            6.0
+          ],
+          [
+            164.0,
+            4.0
+          ],
+          [
+            166.0,
+            4.0
+          ],
+          [
+            167.0,
+            3.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            140,
+            1
+          ],
+          [
+            139,
+            2
+          ],
+          [
+            130,
+            2
+          ],
+          [
+            129,
+            3
+          ],
+          [
+            126,
+            3
+          ],
+          [
+            125,
+            4
+          ],
+          [
+            125,
+            5
+          ],
+          [
+            124,
+            6
+          ],
+          [
+            124,
+            7
+          ],
+          [
+            123,
+            8
+          ],
+          [
+            123,
+            11
+          ],
+          [
+            122,
+            12
+          ],
+          [
+            122,
+            13
+          ],
+          [
+            119,
+            16
+          ],
+          [
+            119,
+            17
+          ],
+          [
+            117,
+            19
+          ],
+          [
+            117,
+            22
+          ],
+          [
+            116,
+            23
+          ],
+          [
+            116,
+            26
+          ],
+          [
+            117,
+            27
+          ],
+          [
+            117,
+            29
+          ],
+          [
+            118,
+            30
+          ],
+          [
+            118,
+            31
+          ],
+          [
+            119,
+            32
+          ],
+          [
+            119,
+            33
+          ],
+          [
+            121,
+            35
+          ],
+          [
+            122,
+            35
+          ],
+          [
+            123,
+            36
+          ],
+          [
+            125,
+            36
+          ],
+          [
+            126,
+            37
+          ],
+          [
+            127,
+            37
+          ],
+          [
+            128,
+            36
+          ],
+          [
+            131,
+            36
+          ],
+          [
+            134,
+            33
+          ],
+          [
+            134,
+            32
+          ],
+          [
+            135,
+            31
+          ],
+          [
+            135,
+            25
+          ],
+          [
+            136,
+            24
+          ],
+          [
+            136,
+            19
+          ],
+          [
+            137,
+            18
+          ],
+          [
+            137,
+            16
+          ],
+          [
+            139,
+            14
+          ],
+          [
+            141,
+            14
+          ],
+          [
+            142,
+            15
+          ],
+          [
+            143,
+            15
+          ],
+          [
+            146,
+            18
+          ],
+          [
+            146,
+            19
+          ],
+          [
+            150,
+            23
+          ],
+          [
+            153,
+            23
+          ],
+          [
+            155,
+            21
+          ],
+          [
+            155,
+            20
+          ],
+          [
+            156,
+            19
+          ],
+          [
+            156,
+            18
+          ],
+          [
+            157,
+            17
+          ],
+          [
+            157,
+            16
+          ],
+          [
+            163,
+            10
+          ],
+          [
+            164,
+            10
+          ],
+          [
+            167,
+            7
+          ],
+          [
+            167,
+            3
+          ],
+          [
+            166,
+            2
+          ],
+          [
+            165,
+            2
+          ],
+          [
+            164,
+            1
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        116,
+        1,
+        52,
+        37
+      ],
+      "area_px": 1059,
+      "aspect_ratio": 2.099923755644475,
+      "apparent_mask_width_px_median": 19.356864314086717,
+      "apparent_mask_width_px_p10": 10.945246208043612,
+      "angle_image_y_down_deg": 151.14097049081036,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    }
+  ],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [
+    []
+  ],
+  "row_groups": [
+    "G0001"
+  ],
+  "col_groups": [],
+  "provenance": {
+    "image": "E:\\Internship_2026\\FabricNET\\W035.jpg",
+    "sha256": "50cb3c2508392189e576a5e0faa2e70876ff62aa388aac37aca90ce467f62784",
+    "crop_original_xyxy": [
+      80,
+      0,
+      560,
+      480
+    ],
+    "domain": "FabricNET_microscope",
+    "source": "single_RGB_student"
+  }
+}

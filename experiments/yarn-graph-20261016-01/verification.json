@@ -1,0 +1,1831 @@
+{
+  "timestamp": "2026-10-16T09:10:07.970896+08:00",
+  "checks": [
+    {
+      "name": "All 176 expected predictions present exactly once",
+      "status": "PASS"
+    },
+    {
+      "name": "Every source hash matches its initial manifest",
+      "status": "PASS"
+    },
+    {
+      "name": "All 1232 experiment3 PNGs decode",
+      "status": "PASS"
+    },
+    {
+      "name": "JSON and NPZ sparse matrices agree, including unknown cells",
+      "status": "PASS"
+    },
+    {
+      "name": "Every physical roots/cm field stays null",
+      "status": "PASS"
+    },
+    {
+      "name": "Training/validation/test Textile IDs are disjoint",
+      "status": "PASS"
+    },
+    {
+      "name": "10 mechanics tests passed",
+      "status": "PASS"
+    },
+    {
+      "name": "8 fresh teacher stability-control records present",
+      "status": "PASS"
+    },
+    {
+      "name": "No pre-existing tracked worktree or index changes",
+      "status": "PASS"
+    },
+    {
+      "name": "Every evidence JSON includes source/crop provenance",
+      "status": "PASS"
+    }
+  ],
+  "verified_source_count": 220,
+  "source_hashes": [
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_1\\1\\c_fl0041.png",
+      "sha256": "9db10a1488104d4d8586c48e2f71b4e2c376153ce296bf81c787fcac429773f4"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_1\\1\\c_bl0041.png",
+      "sha256": "3df13e6f0f347ca650e7fad4e5b40a7143b25a56df68ecbad4012b891858cead"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_2\\2\\c_fl0031.png",
+      "sha256": "acc8f08d015202bf219269c118e28429d1a3dd812de1ffd8de0b33cbdf9a3921"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_2\\2\\c_bl0031.png",
+      "sha256": "303eb0475b34b1d0b92fe516ad7dfe926db52941c2a1e1c9ba4aba993aa18ebb"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_3\\2\\c_fl0031.png",
+      "sha256": "16814a1a876cbe0815cdb1c11b19b5fa236f29ef08274218f0ead33a1bd78a88"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_3\\2\\c_bl0031.png",
+      "sha256": "0ace5c81797ee2ee500a57e6154693b9cd985765f6a46d2a9a66cedd0418b466"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_4\\3\\c_fl0083.png",
+      "sha256": "b98fbd29dd320f2e2a9109bcf69060449c87c929ffcfa2ec5d5ea415f2cc05fc"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_4\\3\\c_bl0083.png",
+      "sha256": "ad2a99997a460ddbb4bfb6aebfe2020bae45ebd586629793fe407d55689d9c38"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_5\\1\\c_fl0068.png",
+      "sha256": "210d1bb7a2a6ca66e8c28795130f738ef137122d08787cb9d2c64ecac7078458"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_5\\1\\c_bl0068.png",
+      "sha256": "941873fb3a46ed978e9a3a624c3d8059c38231ec9459af0a117e8d709ab51d23"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_6\\angeschmutzte_kettfaeden0\\c_fl_x93_y125.png",
+      "sha256": "922d268b190e3a4fb3c2ae83876c70ad451a65e6d7b7aed230f5b8a2640fbec1"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_6\\angeschmutzte_kettfaeden0\\c_bl_x93_y125.png",
+      "sha256": "9ab20cde482887356b414135312b550d3e1d6f771c9df86f9758ccd531a3ba3c"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_7\\4\\c_fl0083.png",
+      "sha256": "ee5355e24969255813717c378270d544890490192cbbed1bd0a54ff1f9d3535e"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_7\\4\\c_bl0083.png",
+      "sha256": "f27918d3d2affecff77ee11e4b281b14717650e2dd2997d89518c5be0f29aa01"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_8\\1\\c_fl0081.png",
+      "sha256": "3b81aecc70e8eb9b8248059fa73f0160511fcfda4d9501382dfc316a064d15dc"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_8\\1\\c_bl0081.png",
+      "sha256": "6de592c317a0a5998063d05b06152cd6067ddb8bf99ba48a25d6a81e806dcafd"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_9\\1\\f_fl0052.png",
+      "sha256": "43cfd173bdb7039de30e6ff252b279f3fa5093d8524a294eab0cad9c1dd8bdc5"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_9\\1\\f_bl0052.png",
+      "sha256": "277d31a01bfc3cc8e739158d6cee9b8ef1d1be7b5b5f293755d3b3dcd649a113"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_10\\1\\c_fl0071.png",
+      "sha256": "50c86f43bd423585da7f57ee194f764eb9a04c127e9bdd673f9d1f764ff69b86"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_10\\1\\c_bl0071.png",
+      "sha256": "349868789165b8a1c454ee4bf2a8daa119d65d29aaefe57c877b876cf47bbcf5"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_11\\1\\c_fl0068.png",
+      "sha256": "6770ebdc1be3e1ec4b0bbf9b6299caba33085e7255acc2862fde828c6337a972"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_11\\1\\c_bl0068.png",
+      "sha256": "1a7c508c6e2b08dab8e6e65ee688f22d4726c722b1adba4aa96189b5d17f1a40"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_12\\2\\c_fl0031.png",
+      "sha256": "9c2e90ec38b01349e200c738f96ec40ffc7401923153f2d422b822ff61c484cb"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_12\\2\\c_bl0031.png",
+      "sha256": "730cce03c170bc15bf415b9a4e633488fbb1c45a02f256e7567c0e3773e55781"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_13\\einzugsfehler1\\c_fl_x93_y125.png",
+      "sha256": "ae3a9020f3b28e7d560b6a354a7885afa472f23549e5bf119ed0e5ae50562120"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_13\\einzugsfehler1\\c_bl_x93_y125.png",
+      "sha256": "db50ebae4d46b33ae31fa549def04b95f4e7097aff3babfe911fbe04d959c1e9"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_14\\1\\c_fl0083.png",
+      "sha256": "54862bf52cb1f7212d2a59e30e6538a2c730eb6047ecd17cdce93c8135d8ab66"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_14\\1\\c_bl0083.png",
+      "sha256": "46af6418f17b7a573e8a39387b7ff5c638b1aa3b23fdc3bbceaa6df9c7f6a89e"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_15\\1\\c_fl0026.png",
+      "sha256": "c9c72cf2b173120d4650efa0375f02201210578c4df1dd425ae100f1ee8c1a87"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_15\\1\\c_bl0026.png",
+      "sha256": "de3e1ad244f3ac859d6cc0ae6e5cfde376c4830997b45ce3ca52e2aa0d5dfe39"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_16\\2\\c_fl0006.png",
+      "sha256": "dac53c6cf93a3215b0b7b90f17baa6e42db5db82078bb0672823fc482970ac03"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_16\\2\\c_bl0006.png",
+      "sha256": "ff412435c6d2753f1d1c2b82b0890d55be3fc81d384d868d21ff67565087f4e9"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_17\\1\\c_fl0031.png",
+      "sha256": "68eeb718c85b9683ad229934d1eb138569136f08088520d2952eb5240233b7a8"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_17\\1\\c_bl0031.png",
+      "sha256": "1a6da69266f067e7d35d7911ffd3f4999f4c092b75b09f7566375f6aaf889c4a"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_18\\1\\c_fl0031.png",
+      "sha256": "7f089bee43a80aaaf4d4e1d98269a955d97aa46dc88619fc0133f69fac4f8c12"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_18\\1\\c_bl0031.png",
+      "sha256": "7fa72dd08deab3508a4aaecbdfaf8bcd4753b22ede84d15dec8bd93105b4d9c2"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_19\\1\\f_fl0046.png",
+      "sha256": "61176491f24dd1b6c7280604791b27041300d9e031f78d0f932204e6c61c4aa4"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_19\\1\\f_bl0046.png",
+      "sha256": "33e5a005b8d8cd2847ee074becfe9f48ca24b52dab0a3165358069ba5b7060dc"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_20\\1\\f_fl0036.png",
+      "sha256": "d80ba3c5e2f177f098afe4aaa7b7c757d52d3f346bc36b64d7b923e3738c6874"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_20\\1\\f_bl0036.png",
+      "sha256": "d5686e9d67099e2161300155ceabecc51a29b0194a958f8aab940b877f11c23d"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_21\\1\\c_fl0031.png",
+      "sha256": "0d550ecd7c41b867384fcf651f312e5d55ee0d899912d66e91bd95ad3294687a"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_21\\1\\c_bl0031.png",
+      "sha256": "2c71a7568d3483dd7cbbb98352973d4ab8795d3c43a7890ac58c18fa6232b1ee"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_22\\knoten_kettfaden0\\c_fl_x62_y200.png",
+      "sha256": "921f3097ae47c17692889f73aa5db3aff4eb8f0b477c240e00b5dd4e9442bcfd"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_22\\knoten_kettfaden0\\c_bl_x62_y200.png",
+      "sha256": "daeb4e48167949943ba0a6487ae3e46ee820747a271f841d2769fb9eecf762b3"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_23\\kettbruch2\\c_fl_x0_y125.png",
+      "sha256": "5a79a60d70d12eac772aa9c31b60ea5afdcc58ec80a799f9bc926608fbfc9bf6"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_23\\kettbruch2\\c_bl_x0_y125.png",
+      "sha256": "08accb182f7fb359c34a02ab6b2a4c9f7bdb81f9b80f72a10c735baf65d62ed8"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_24\\garnaufschieber0\\c_fl_x93_y100.png",
+      "sha256": "ec4236cc3a4347c579a44a7945961bad2ea180f538396c94b5423b5fa6759484"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_24\\garnaufschieber0\\c_bl_x93_y100.png",
+      "sha256": "dddbcfef9b8d4faae625bcf5e321b290814620b9a88ec290d49a164d556a4df7"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_25\\verlierer0\\c_fl_x124_y125.png",
+      "sha256": "e7a8aa8b1641391536771bde6b098af70cf6c1092faca6f65d2767d7e50c350a"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_25\\verlierer0\\c_bl_x124_y125.png",
+      "sha256": "2386e5ade6dd2db58126afc889223eae05e8e73c1ed9113f60212bdd5ae2f552"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_26\\einschlage0\\c_fl_x155_y0.png",
+      "sha256": "f90b40c15b6148606cb61d2432a878111195210830e845c0e6fa2747a879a4fb"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_26\\einschlage0\\c_bl_x155_y0.png",
+      "sha256": "2c1eb368fb8405899426cd39abf8ca96a10b68d2bd4c79710a3dcbc63542d463"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_27\\dickstelle_schuss3\\c_fl_x124_y125.png",
+      "sha256": "c4860b00068479af12cf6ccf12a520f25cbd3973b10fd947668416f80a5d99b4"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_27\\dickstelle_schuss3\\c_bl_x124_y125.png",
+      "sha256": "c52a3da23b09bc044ab475d632636f5da94536b740bb0c6467f9b44d1b2469ce"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_28\\spannfaden_kette0\\c_fl_x124_y25.png",
+      "sha256": "23fbac026b59124b8da67275cbe2782db6b0a6493c4df57efd1063e79c4b0a9b"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_28\\spannfaden_kette0\\c_bl_x124_y25.png",
+      "sha256": "767b200529aab43afd65232161b51a69e6970ecd8d33a0a7ef7245c8779de681"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_29\\kettbruch0\\c_fl_x62_y200.png",
+      "sha256": "bce86adb086dcbe397240cf8a855b0821e747bc65ca6ba9662412bda43654fd7"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_29\\kettbruch0\\c_bl_x62_y200.png",
+      "sha256": "45e7803095524c76253cfdec4e269bbfba62f0035b46e5a867ec1994e98aab09"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_30\\musterfehler1\\c_fl_x62_y200.png",
+      "sha256": "73428e96f3c9664118b15826fb6e5775ac0bde03ab7743cc4dbc3e8bb03f49fa"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_30\\musterfehler1\\c_bl_x62_y200.png",
+      "sha256": "2d5567391f2a16aa1ce7b72611a87b89f7ee695588ac27a992b6f79808105bf3"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_31\\einschlag_schuss0\\c_fl_x124_y25.png",
+      "sha256": "b44fbdc5d6dd0ed3ce4bcd77962c0e3eb0718443cc969d1766aa64a3bd5740d8"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_31\\einschlag_schuss0\\c_bl_x124_y25.png",
+      "sha256": "feecd5233db8e8a0835b21178c45e9d05a16a7ba8ba5ca86a4d87029d103d995"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_32\\knotenschuss2\\f_fl_x124_y50.png",
+      "sha256": "3b1c0fe317a04d23accbc66d126bb0692e918162ca6a5adb75b7f1a6d06b7a5d"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_32\\knotenschuss2\\f_bl_x124_y50.png",
+      "sha256": "1d8c4054695310e4ffbf5186ef62594c4f1f27c48e677cb3bbcd54f2527d635a"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_33\\doppelter_kettfaden0\\c_fl_x62_y200.png",
+      "sha256": "f4aea88f40c070d8b1cde60959ddfb8ed208ffe556a54fa3d036e6b458c685a2"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_33\\doppelter_kettfaden0\\c_bl_x62_y200.png",
+      "sha256": "c3f22a4ff4b755f484303a992d6467d641fd62757ba62d602b57c6314dde8f05"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_34\\dickstelle_schuss0\\c_fl_x0_y125.png",
+      "sha256": "82c3a34ab663e62edccca25394d5b24b3882f3c0e5be2a491d0424d0e4acd478"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_34\\dickstelle_schuss0\\c_bl_x0_y125.png",
+      "sha256": "64a6736fe199265a655f772f09dd6d00fd0b5e9b4b6e0bd737d5a684a264805a"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_35\\musterfehler0\\f_fl_x124_y0.png",
+      "sha256": "09eeaf0328418823cab5e1c3e9df8e5e3102479a298060b659a50a31f872dafb"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_35\\musterfehler0\\f_bl_x124_y0.png",
+      "sha256": "65bb85b099b11fd5315a6db4719ec83e0669823b7f040d5a3f675606a5a4d30b"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_36\\dickstelle_schuss1\\c_fl_x62_y200.png",
+      "sha256": "c2fac421b31bd5668c5be3c9b9db10c4b811778c681dc8b2496cfa9f5cee310d"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_36\\dickstelle_schuss1\\c_bl_x62_y200.png",
+      "sha256": "8c8686dd116784e546b3dd653294df94c9dd7692e8f7ef7ba154f09730978d89"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_37\\schlinge_dickstelle_schuss0\\c_fl_x155_y0.png",
+      "sha256": "dc43455def011f55587e52996d4863654ba7f3c17cb229200d37d9e40d1ed51b"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_37\\schlinge_dickstelle_schuss0\\c_bl_x155_y0.png",
+      "sha256": "6c06b98c0a02e891f0da5a730e7bbc52207d416e9abcb77620429fc6dcd88b20"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_38\\dickstelle_zurueckspringer0\\c_fl_x155_y175.png",
+      "sha256": "1377b63bb3ea40d26d0873323489e8a48813cc6b6ab2b8172ec51d9e00907cb2"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\datasets\\OLP\\per_textile\\Textile_38\\dickstelle_zurueckspringer0\\c_bl_x155_y175.png",
+      "sha256": "e263404496a90e6c83f71b64502a2f004f02b6183e0583514976b93c7aa26271"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W001.jpg",
+      "sha256": "1d8c5e5dd70b5f7517e47be4ee9c229ca58d2dc41d76cdc7466fc88d7992c818"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W002.jpg",
+      "sha256": "16de05f8f089bd8fb70d07c0f97c806c854729bebcf067818608f06c5850e9bf"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W003.jpg",
+      "sha256": "72039b66b3518cdc63bd081d330d15d20dfb58ced7fdc3b981113041bb053266"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W004.jpg",
+      "sha256": "5a87acceb8d74333de197474a0b97dd6072fa34a633565a530f503fbfd5feeb7"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W005.jpg",
+      "sha256": "475bd3e5975036aff4630698347d910cdf4f88a8fe779734aa02c867a5798aa3"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W006.jpg",
+      "sha256": "7980b003801ac20a86b774ebb79c631583e2a9729dffcd9f0200c1f5ebd52664"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W007.jpg",
+      "sha256": "b7c7a5697d04c7254abe0e41a7541a7a39df2166817c5d18fcb337aa411cc74f"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W008.jpg",
+      "sha256": "90a321d1d92e9638c47784b9d687718a75669fa4bf4da116c4854cf5ab7ba967"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W009.jpg",
+      "sha256": "4595efe744efb85910f8c931134bd9a202d488231bd94e59d0a5ed116dd30fc3"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W010.jpg",
+      "sha256": "49da820737bfa850344cd2ef61c41686962a211025bdf7c225f035e5d79730b3"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W011.jpg",
+      "sha256": "8eb6a0f5d5ab452d6fefdc642758116b84132c2a9dda9ad9c2495aed60627ece"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W012.jpg",
+      "sha256": "79cb47ed1c1b0b47ac3bd6b4c6266cdeae9081e5702161140a73c5ba2f9f41d9"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W013.jpg",
+      "sha256": "f1e0fdd445dd2fe5644ab046a348158a51b91ecce78c25976bdb6bfd2959648c"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W014.jpg",
+      "sha256": "cf4c38b903e4af81704aa0e853d31c49132327541b7198901b754073080aa474"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W015.jpg",
+      "sha256": "bf6d77f9b161b04485de7116add7374fd8189cfd0e89d5f50a8273205bfe07ac"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W016.jpg",
+      "sha256": "442df11a2fcf62a2a714a2d40dfd72ecd7ac56da5d9461544c77f04ec4af2066"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W017.jpg",
+      "sha256": "9e49d815765967a38325c2b633512da919ef76c851a950cea2de247356afce35"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W018.jpg",
+      "sha256": "bfb07b8be69a0187bedc4d95baf1fd9204edf2ae051f91446b619e8f0d7e047a"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W019.jpg",
+      "sha256": "d1d9dbcfdbdc3225c4d50f2d668a01415ae754494ec179ed1d8469e0d4d6bd9b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W020.jpg",
+      "sha256": "8ec18ed523ab4e6dae2fd64a104712ea4bcad5cfcda4bcc556c77367d7eee9fc"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W021.jpg",
+      "sha256": "d5f71866393fa126f13c49e138dc30c75d92d529fc7a4f09024658ad788659e2"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W022.jpg",
+      "sha256": "042701d043cc65a4a8bffddb77398a94aa2c852227ea9c7f0e2dd7a239208a1b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W023.jpg",
+      "sha256": "83969ac21370e55674a0a07fc41fd1b7ae04d206c9d2d85292947d9e59ae8867"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W024.jpg",
+      "sha256": "481fc3489e1a91a728964085214105e4a4197c4e8ccf0c806f0ccf9c319fa02a"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W025.jpg",
+      "sha256": "6233d7a8496366362b50f0a2115feec71416d473b378f5a66f93b1f32d89ba51"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W026.jpg",
+      "sha256": "2e40733ca9851b88d0dbe86beb3227223012c548c4fa8623a0ea6a55f25e9b65"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W027.jpg",
+      "sha256": "4bf026715e143a5e771dbab36a42cc6eca063956c68c1b40c230e133038bdbfa"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W028.jpg",
+      "sha256": "2ba8a10a701a29b1c22ba4239bc9528dbcae4f5f19979cf8fd0c16efe890b4d1"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W029.jpg",
+      "sha256": "a1dced891660dcb9f4b75daa25228e3bfe90d6d9d3a85b6c83db6fdaae28dd0a"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W030.jpg",
+      "sha256": "eebb40c7c4506b09a5230c083001dce4d83ffac8b598845e9d92c40cd13c8cac"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W031.jpg",
+      "sha256": "6eec90820e25a6809209800d8885454b3d35ad32638b659af8c159531c2dcadd"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W032.jpg",
+      "sha256": "7e1ff174eae5cbde7012250f150f03f9c9376a9549724cfb561ea2f4a753c61f"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W033.jpg",
+      "sha256": "e5b0aae7c8b4ace77978ef3439407414dcdb0b7f941640c0667ae821bb2a5438"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W034.jpg",
+      "sha256": "2f54a00561e843221b57c17c466d30aa5bd25f1f6ea04c05e0bd8e82baf6878e"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W035.jpg",
+      "sha256": "50cb3c2508392189e576a5e0faa2e70876ff62aa388aac37aca90ce467f62784"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W036.jpg",
+      "sha256": "7658037e756a71fa347458787fe0c89c8828d5165213f92eef684e1d0ca2e44b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W037.jpg",
+      "sha256": "a2280dd6e886058eea6dc5a35106871e1a96581251a6854a33c2823abf74c546"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W038.jpg",
+      "sha256": "bfe41768dd1c1a6eb8f1741974b60418720b6353ef11788a4949a86f4648ec3b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W039.jpg",
+      "sha256": "7627425c65cae724cb7670b0be27f6d0bcd737086f5f6a780532807d4ff044e3"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W040.jpg",
+      "sha256": "895dadd796f460f9adab2e694069c3825c6e11d2bd0205bf9fbe7fe85aac7e8b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W041.jpg",
+      "sha256": "bb9e37188b476fb66647f03a9b0bc3cfc90af514ac3aae01a5b6c5d65d795951"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W042.jpg",
+      "sha256": "9a7bcfa77bdbab4bcbb69dae219117f6f50edd6870bc83402793c60b9a8f4a09"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W043.jpg",
+      "sha256": "3f3e5e446e8e52621a21824e19e53ecfbed181ad34dca7c126784a0cfd35350a"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W044.jpg",
+      "sha256": "7b5f3e2786fa28a52301e2a6e03cb93ddaed641d7abb84f147d788b4c17d2707"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W045.jpg",
+      "sha256": "30a54114c074e5b8dd1bd4fa42a8c2ea31d2b57a802118c10c1d7f1eddf71f88"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W046.jpg",
+      "sha256": "b1a4faa4c24b83c415803a2f94d1b11f79ffacab742eaee18f15d8d79d14c1d1"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W047.jpg",
+      "sha256": "677db8dc142c5f169116e65eec1ece3bfd6f1fa58da72fcc8187b1962da8ce97"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W048.jpg",
+      "sha256": "0b6dcc7b95c0b4ad535ead9fa65890bcc00155838c1347388950473e88472046"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W049.jpg",
+      "sha256": "78c03e6426311bbb5a089709edc306b80497de16fc5c4202b9c0318de1fabc07"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W050.jpg",
+      "sha256": "ef7ccc5a9218bd3ecce90246e386f45a14ddf6bef15417c8f94d0e2e37cb37f1"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W051.jpg",
+      "sha256": "921a0e065e26cc658eb2a0bd53300b479de301eab02cd9346d2635991e00a0e3"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W052.jpg",
+      "sha256": "673f9c2e108e98f4f12864d5c03c12bb7a7ff5848a0db8ee5f0b6b33bf30fa00"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W053.jpg",
+      "sha256": "e7b6d38521b5729564417771d3b677cfd89c2dd27d324ab9ac621801e4aed0d4"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W054.jpg",
+      "sha256": "c075e986dda6fa6641d072de002183ece65a8be70db00da9a3548c71c19a3ad6"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W055.jpg",
+      "sha256": "a06e59ed895e9c890770ab56658bbe8b98322ecea6a930ace37f33edf75a165b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W056.jpg",
+      "sha256": "7a4bf0b2a28b7a9509ca6eed14a6670c8dc388d50d42fea3865c49b206dc32e5"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W057.jpg",
+      "sha256": "2c7f5be0bc0161f558b78e4858af35555ef1203a138c754b0c1ce922dafbf131"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W058.jpg",
+      "sha256": "32f47e864694a0c767de09d47729a6f2617ab46c5a30bb0362f6038584e98035"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W059.jpg",
+      "sha256": "4ab43aa902acb328772401c1dde21b4671fdc578c43e20c0fefd9f05d333f385"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W060.jpg",
+      "sha256": "8f271cbd80c4ca383b74ca6aa7f1a7c2652650d5a5ff6a5b39a0c44ff538ee6d"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W061.jpg",
+      "sha256": "e80a139804de9d58c445d7367609eca0905d3bdc4417ac4ad12ffaffc0f09267"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W062.jpg",
+      "sha256": "0eb14e8b33d3a59bb607e662a2650b2449f6ed3845a24c06a5af782549284fe6"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W063.jpg",
+      "sha256": "c27d3235773cfc34d26ea0f3c97d0dd087462181d27b5780411f5455a99efeef"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W064.jpg",
+      "sha256": "ba307e48a57f464151f9eb12a45f6bcfd24b58a88c42bdbc78b439eefdebf8be"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W065.jpg",
+      "sha256": "1dc6bb4a33c0d708a4f03c4d9fcaca29b3d70989994fe4df630dc3d64865f339"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W066.jpg",
+      "sha256": "60d27105832b247dc2e26f6642116c67841474372218f8d18769bbe63e26819b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W067.jpg",
+      "sha256": "35a95ebe8ad37b561a32e6b9fbbf228c5be68ef904883cda9b929418c376c3f6"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W068.jpg",
+      "sha256": "dbece21711d0714a3afac1f810ec7b851e71fe2ab98b39c13e5232218de821be"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W069.jpg",
+      "sha256": "6f0d97fc2d9695ae80b5dd196b9d672efd59faa8464fd4dc989b8a46e0ff0daf"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W070.jpg",
+      "sha256": "be36e7ea992bb31c75710849f01e9d6fd350167ec6035b78bc49ab840f3966b4"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W071.jpg",
+      "sha256": "cf82ff0cfaeea4afff72e630f2da6bdd291562b70042bd887a355b0aa3e1bd27"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W072.jpg",
+      "sha256": "7b3175edc799e084495d87b1b50b0603bd45c7ffe1d2860bdcea755ca61097d0"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W073.jpg",
+      "sha256": "d7f43263d24a8e5f3d01ebc979b0ffc8a02aedaaa9bb9c8e6fa4d4a0d15ac1ea"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W074.jpg",
+      "sha256": "716a27b5726e546462cb6f6b5b082500fbb1c4472c6bdf2c61f5cd00b8c00a8f"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W075.jpg",
+      "sha256": "98a66511341050079ec86f70086f4129e1c9cf34bc22d8cd5272e62524ede816"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W076.jpg",
+      "sha256": "18f6c2272691710ffdeb7ce0def741b10f03103d5e1d8b8e5cc6c9b97b9debcb"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W077.jpg",
+      "sha256": "48c032da8c1c6786c019e677a82d8035e7f9a134db9f6c382a610b6f8140fe68"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W078.jpg",
+      "sha256": "7552b5c01a3f9783544b610fe043eea5660532036c62c0eba1fe82e91021196e"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W079.jpg",
+      "sha256": "6473baa41946b00e7ef02f4105e51c3b38d209df94ad862678116ef29749e50f"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W080.jpg",
+      "sha256": "e4a2f01a3e1dd0837ed5cd107a6cdc53c03c6075aedf4e9c9b05c6ef128ecdcb"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W081.jpg",
+      "sha256": "4542129ca10c4de219acfc2d66e9e492cf4e306187c93ac14bb463197039ae46"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W082.jpg",
+      "sha256": "073e1fa857a943b9f88dcf2b7ac686c706a1f2ee3c3d2f21abb6128efbad0fb6"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W083.jpg",
+      "sha256": "5a5d002f0c4d4b6e09426900f564a498b3395cb0a40e5c0c0dfdb6750aa59b6d"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W084.jpg",
+      "sha256": "732e4f07945c662d05d7242113c211facd7fc706d822f6648dd0e235d89c8fc0"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W085.jpg",
+      "sha256": "aecd1782ab3b90b3f357d8b9dcd2e03832b248a3a5b47d0efeaa83e969fb4444"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W086.jpg",
+      "sha256": "c9e32e01748936a14f691ab0fb220654829c46ff8c17dcf9d610333601d130a2"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W087.jpg",
+      "sha256": "baacb7bd1c014ecbd2bc784dd20e16a0cc809350b58cbe9bcff129953de8b086"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W088.jpg",
+      "sha256": "77bd36cad5fc8eec30ed85c14d55b7f55e46db15e5c68fda8a9d1101677f915b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W089.jpg",
+      "sha256": "1a7c1dc1dbd6f12bbfae7b080bf54662d9a10997eba7b20b26bc310d11466f4e"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W090.jpg",
+      "sha256": "b50fe5432e91186d897af3338a15b481a240d2e4e923108f18d72af61a42df18"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W091.jpg",
+      "sha256": "f676c10a3a1afe9d78aef8e422afe794b7d9e4bb1132649d5ebcda9d028a5a9a"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W092.jpg",
+      "sha256": "a4a7e08cb1e6ac3f2740e29a2ee57356f5c6612a34e7f54961d70465facb9b82"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W093.jpg",
+      "sha256": "85f133137c9ecc8a282b6d3845c0dd7fa99af6955656059d9b7541f10ff69b4a"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W094.jpg",
+      "sha256": "31e789c973298f4a082658a863acdfcaefe8d796e452805651f647502215c28e"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W095.jpg",
+      "sha256": "b08b0c6d9007d292618bfa29b4e7e03037de8401dee0607efb9721884847e950"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W096.jpg",
+      "sha256": "5b7ba2b22a99119845e77ea0c101657bf1cd7e970269a76421d4d07048ea08c3"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W097.jpg",
+      "sha256": "7d1cabeef80b81c4f48daa431a4222e381bb75bd2cbeff503a0a912cc3146b01"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W098.jpg",
+      "sha256": "e7c478257a8468dec722d415553e1a879039b7a4dd8eb0b1328490f7cab7594d"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W099.jpg",
+      "sha256": "173e767547e7ab85903442a2c064af1bb22e9d067109d67a7a107be4a52b7dbf"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W100.jpg",
+      "sha256": "8c76288aa045f45c413fac538e1b97449ecbaa4cc7f50e2d4f7a5c24cd4be5bc"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W101.jpg",
+      "sha256": "7201dbd11f68e1c3b34cd2122ae6de558851c98aa17c1f80b26d9d94d4e403b8"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W102.jpg",
+      "sha256": "0049c8b2f2b18a6d75de24f39ac023e1fc42e2c20dcd65b4fa4e94b7f67def66"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W103.jpg",
+      "sha256": "24a2ac1a1cdfde070dde02bc17ae091cbffedf1df8ea158cd120005c5c33c6f5"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W104.jpg",
+      "sha256": "867fe4d20d5570ca50ee2064ac2f610d203f4242b3f3a57e2fde276c0dcbb947"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W105.jpg",
+      "sha256": "a53b9c5c5767ee40d780b99f23cd7f136a54995b33e8971a7bd0451e11a6d6b1"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W106.jpg",
+      "sha256": "dc546c21ddc1a31a075d84b2daedac6e76916cecbef3bbac07e4da80d458d2d7"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W107.jpg",
+      "sha256": "c70726b9c73d21b517466bf2e1ba8634ab0c356deb1a94e9a79b46258939e15c"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W108.jpg",
+      "sha256": "77bbde7589c3395b9980f47a458da666fe9ae0eb52de945de09f7331b17de71f"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W109.jpg",
+      "sha256": "2548e81b95c18e63482ed4dc61c7e8e9fa326cc7c33fc07de22c0cb3711bbcb1"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W110.jpg",
+      "sha256": "d1d52de353b002d143fdc070b4e0bd267190708040aac4c51e9761de77f61026"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W111.jpg",
+      "sha256": "ce49df5a8d3645221974e3104d19ce88279a91f623e6c3509c997cc5e431794f"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W112.jpg",
+      "sha256": "72d3543b0edbc79f9499e5ddadceb88b3c12b62ed8831ec3a41e53d77e614f2b"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W113.jpg",
+      "sha256": "b49b3a21c02ba4d1c673b436e3abe5b481081bea4683d3c1d164f6808185a9f4"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W114.jpg",
+      "sha256": "e02474379d2bf38597847b19d83fe2faafd22358f8c6cb612d6c322f8cc5f812"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W115.jpg",
+      "sha256": "5fe85f1a48726913f135822883a0a2613de2474647ef7aae403d7bd54b829935"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W116.jpg",
+      "sha256": "d647cccee67094961e4fe71545a9b9a26a74b8ca619a02c732aef2d2672fbb7c"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W117.jpg",
+      "sha256": "fb8ff8a7223bb0608334dffb3f31bcef486b9bae4b1c7c2ea16cdcd4cadc2427"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W118.jpg",
+      "sha256": "bc61172ad5d001c3e47d5d0e38f62e2e61facdcba4728c2b91f438d125659a08"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W119.jpg",
+      "sha256": "3b22eb3da88d381f30f401e092c637a70f0aac811d368bddf2fabd249dadbc6d"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W120.jpg",
+      "sha256": "dd8d74ae31329613e526ab40d41143cadd243ef8e738807500156710fa201f55"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W121.jpg",
+      "sha256": "f98f461bbd50e23a39f2d1e9c1c795e83f7176251503b9c07b9790fca9678b9c"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W122.jpg",
+      "sha256": "94b3b8ff0d4b398163b3466913a3df133a889ab7d5c300b23914fd1c2bf7d2ea"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W123.jpg",
+      "sha256": "ee843e170c564345ae317a4c9813281a2d7b888b516292769e611ab7a843aed2"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W124.jpg",
+      "sha256": "5eee003152ac68295bac62e379b7b588bb861c3136927f3b85bb670ef2357191"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W125.jpg",
+      "sha256": "0dfa8aa13b722402744807ce97f8fa37a83a704c628898d1024491598f9697b5"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W126.jpg",
+      "sha256": "3a1773d62dc825eda9969ad162414661b24287418fe0fe62fa549b5609a609c8"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W127.jpg",
+      "sha256": "ebebf8941685e7de6ce282fd0d6178af28fdf10e22148e374e64c22d8004cad3"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W128.jpg",
+      "sha256": "64d2d8d6cbd969eddd86340c7ac7484e97da3e64df8e38315bece500a298ec19"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W129.jpg",
+      "sha256": "1c47ef42204f3f54b25d2d2e0bc727a9cb755c3aa362f7f9ab66166a8724f497"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\W130.jpg",
+      "sha256": "09c127aea39c94fc9787ca8e364920632525ae0fa300cd377718025698770de8"
+    },
+    {
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\codex-clipboard-c1995be3-3bff-4985-87e2-d08c449b9ea4.jpg",
+      "sha256": "43657923971720220414447a236daeaf7bf0b27c5362e52ed032f5c6474f63bc"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\external\\upstream\\example\\net.h5",
+      "sha256": "d2439b2fd7c94154950ec2805b99ece91472150f53b7ad1760d7645b894944b7"
+    },
+    {
+      "path": "E:\\Internship_2026\\FabricNET\\FabricNet_parameters.xlsx",
+      "sha256": "6b1c6b9bd40af8eb82126be5fb500ad6c7305e5992220f95298bae01a6f50944"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\external\\upstream\\example\\orig_fabric\\fl01.png",
+      "sha256": "3e852000415711b604351c34960aef787d1d3d6f68316e54a68027c0c69e1bb2"
+    },
+    {
+      "path": "E:\\Internship_2026\\demo111\\TextileDefectDetection_standalone_demo\\external\\upstream\\example\\orig_fabric\\bl01.png",
+      "sha256": "aa94b4edae1703bed15baedde90fb72a261208d9e99431e2df60718b7b6d91ba"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\user_contributed\\2026-10-13-six-fabric-images\\images\\U20261013_01.jpg",
+      "sha256": "e273162299531d0eea5ff5d79b7c5937ba09d67b1101d8e54db3a313d28d0c91"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\user_contributed\\2026-10-13-six-fabric-images\\images\\U20261013_02.jpg",
+      "sha256": "630cd4ea2245d7420307fae7704e34fb608a4c1f61379564321f03912a5312ca"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\user_contributed\\2026-10-13-six-fabric-images\\images\\U20261013_03.jpg",
+      "sha256": "cc6d2c9507d086a6658f8939576bab84550e8cf532c6f8dc238542ae3e6a488f"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\user_contributed\\2026-10-13-six-fabric-images\\images\\U20261013_04.jpg",
+      "sha256": "ce81fda0384c64381049869759fae7f3b51181c3914412640a3b8d4aa8d24a69"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\user_contributed\\2026-10-13-six-fabric-images\\images\\U20261013_05.jpg",
+      "sha256": "4530b46cb4fa4236e4f15dcb0a62d97e41c3b34b3a4af6b3ffeeb3d1aa321250"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\user_contributed\\2026-10-13-six-fabric-images\\images\\U20261013_06.jpg",
+      "sha256": "544b0e252daa44e4c1e01ac3d4680a870eb0fd01ae9549d3b9f4fe690ed56488"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\physical_evidence_labels\\manual_image_reviews\\U20261013_01.json",
+      "sha256": "95effe622cca4e4cae9577e5b0580955258f8b482cd58108ea6972c6a08dbda3"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\physical_evidence_labels\\manual_image_reviews\\U20261013_03.json",
+      "sha256": "8debcd73121196675ccf1b4ccb700efa139656676266f8995932584502e48f8d"
+    },
+    {
+      "path": "E:\\Internship_2026\\fabric-vision-recognition\\datasets\\physical_evidence_labels\\manual_image_reviews\\U20261013_06.json",
+      "sha256": "df409b6766a0b7bf7796073dc9cb72e73ec428aec75d0660358d977022808756"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "W001",
+      "evidence_sha256": "6e140741bef66e26c6e33af1b84b3daac823c8f5b82640b6f231527e7c2239af",
+      "npz_sha256": "76ba42f1b0a0a78f8681f608d9c36e8a470fa2a98258c89414729fb8a17dff76"
+    },
+    {
+      "id": "W002",
+      "evidence_sha256": "d57d7d66d53c160e071be9b9f5d64890e44d39cbfa27bf809a1776a6668328c6",
+      "npz_sha256": "465aee8e5ad36485cc6ddf967772adeb59c8aa11436a0b02031d1b815bfe8db8"
+    },
+    {
+      "id": "W003",
+      "evidence_sha256": "065b339ef7fec40bab3db562bfd95cd57e60ed04a7202c4c4d2013a7eea078d4",
+      "npz_sha256": "73cebc78cde2f78da8a7f1562425945ae8876dabf7c3e052dc78027547f53398"
+    },
+    {
+      "id": "W004",
+      "evidence_sha256": "a725df41c1f2b3613002317fd8072bc9fe7d9ba9774c4458080c12555ce9e98e",
+      "npz_sha256": "be66fd01106f3225a1156f17c3f2105b6b65aa57b691e8fe18cf0587fefdf52c"
+    },
+    {
+      "id": "W005",
+      "evidence_sha256": "f15c49bbbc68a3ae63d94580cf2a3fd1bbff8f675972c51ebd8a29efb3a8c04c",
+      "npz_sha256": "99429d99f22a198a86c5e3c44f17ae6ffae5d3f4bf3421ca17242b0bac9e2ec8"
+    },
+    {
+      "id": "W006",
+      "evidence_sha256": "7ba03fa3f77bb53e263438b6c0de3f23afffbf369764803ce1c616433f08d46b",
+      "npz_sha256": "3ca33cc34655641661b0016f1b3ef19bdbd0336f8dbe94d51ef60ef1e6973da6"
+    },
+    {
+      "id": "W007",
+      "evidence_sha256": "0106aa40f28e60e638d6007f010a5a68fe4313d85593a35cb454dff583f72682",
+      "npz_sha256": "7ae72a6e80105afb5d1554855d01e7c79a94d7ed4608360e2d22c17b997f23f3"
+    },
+    {
+      "id": "W008",
+      "evidence_sha256": "3b5d02854834ded76770be6b5416f059e3da2afd807a13f6fc9e183074a917e9",
+      "npz_sha256": "f691ef3b88ddb140f1e65b4b1bff0180cadd0024d9ce5dc8bf37ef00ce9841e2"
+    },
+    {
+      "id": "W009",
+      "evidence_sha256": "49e2a73847397446328c821bc9ca7fe5911286ea219f9311871516087c6aaa47",
+      "npz_sha256": "5f8a6fc7d1df9acf6efa28c0faf3dac75cd70be84ba61b13e8ef6b517c168a23"
+    },
+    {
+      "id": "W010",
+      "evidence_sha256": "6f8eeb7c66ad166e5a5dab812af0d60753459470ab891e531b858ee5c7217aaa",
+      "npz_sha256": "00aa6b371db64b174f94141d52db2264e2ca43995a3180b63568691d49c3fe83"
+    },
+    {
+      "id": "W011",
+      "evidence_sha256": "598c14730388369491d0fa0f39ac365579913aca3aaaae00d212353b2fe28839",
+      "npz_sha256": "5842ef524d1698455f5327c5ee338b8ec49f691591be29cfe97b24dd60f73440"
+    },
+    {
+      "id": "W012",
+      "evidence_sha256": "5096db0b24e1fd10b10603d7f7f8ea72dcfb43809c1bd9ea1a0f8b56aa83d125",
+      "npz_sha256": "31f7730e85826ccaa0be4791d965e7583f9d17ddf4b52a856ac877da6b6d8679"
+    },
+    {
+      "id": "W013",
+      "evidence_sha256": "7c16b74a230a0b9ea764ea363bab08d71920de4c821511df1c12125a3cc700fc",
+      "npz_sha256": "3a2f3e0266cbb85ee34555953e190c3108b5d6e16f8ccc7686dfe55f4d52c059"
+    },
+    {
+      "id": "W014",
+      "evidence_sha256": "c50add096302fc028e38cd807cd7e9f4eefcfeb7c9df006e467af14f025da28a",
+      "npz_sha256": "ccf0d08d99f36fd4cf51c516e305740cbcc435505be5ee349a2e42be6c79a392"
+    },
+    {
+      "id": "W015",
+      "evidence_sha256": "a6ac2f609fe7aafc631371531ce18c6631318e01d400e05fb389ddd760e5fc85",
+      "npz_sha256": "c71e48f19fdd122b25fa51fc94295bc36a080dfcac30c3d677774570506947f0"
+    },
+    {
+      "id": "W016",
+      "evidence_sha256": "955ebbb6f0788a48b3d50ecb7e40fa376fc3d22d4576704ca77888620b24e9a7",
+      "npz_sha256": "5bc9be833c1d9d0ad5178db62a5e446cfb6b0044a20700e77313443d880e95ca"
+    },
+    {
+      "id": "W017",
+      "evidence_sha256": "8da2c23b96c5fe1ef333c0c29da7fb7854f02af8055c29c089334258b127ff43",
+      "npz_sha256": "58f83add0c331f2e0ba7619e3a7fdb4079f48b7acdd486effceea9e9c8840878"
+    },
+    {
+      "id": "W018",
+      "evidence_sha256": "396a11a483fbb2ab622c557fd38f5aeb0bf64fc4e5961cd5ec8d4045214c7ec8",
+      "npz_sha256": "289a4dcd469fc27def9610a5662039722a3d290ec327f864455e2724a015bc76"
+    },
+    {
+      "id": "W019",
+      "evidence_sha256": "5652d36668f47c736f3dc79aa92f3e16d4eb1ee551c3bf0f581842b0a49cbb20",
+      "npz_sha256": "96abc8b6da977d88000ee930d121b70831dd2b1e3ac9ddd4e2c9e8bbc977c93e"
+    },
+    {
+      "id": "W020",
+      "evidence_sha256": "30355c2ef3c749559235785ce256ca16d3d66cd3b3d07c25441700db17f0fdf9",
+      "npz_sha256": "1a27af20f0c558f10d4b39eefa2bf7b70d21d2edfbba3593e7eb7caf06a0887a"
+    },
+    {
+      "id": "W021",
+      "evidence_sha256": "0f9bbfca5d71b709559ab4ec93934db63b1fe30d2cd9588a533baf3beb9e1933",
+      "npz_sha256": "30c15f2952dba3f8c6f1d0c3852ae570ee0bfa85385cf63ff6985d8743ca6fc1"
+    },
+    {
+      "id": "W022",
+      "evidence_sha256": "ab1acde4f4143b12a7b8c2b2bc759d7c88f5d73b493e46cc22d5dd380ea6c5b8",
+      "npz_sha256": "dce05591f9e2409760a92c355d832fa5f7e43519648423a69c11ccaf66613316"
+    },
+    {
+      "id": "W023",
+      "evidence_sha256": "77c51c6493edc8db2bbe6da73de45185cb0f7f59a6614bc0285e1b423b19d0a8",
+      "npz_sha256": "aeee48901d48d47ff3b3f26cba9f488a3f37579793829e098e52bf7e26f6cbcc"
+    },
+    {
+      "id": "W024",
+      "evidence_sha256": "c774f5af2f884fcc7e87e14b42a037b75e749753342e0f3887cafcee22c25487",
+      "npz_sha256": "7b6069dde738e4da0759324284da3a5d55022abb93dd2f4a89fe72d0ab3a86e8"
+    },
+    {
+      "id": "W025",
+      "evidence_sha256": "61c29b2236d3dbf300cd7ad898db9d6d133a20a86ef875b201dcecd7fa257f7e",
+      "npz_sha256": "efedfb7026463279a22eba4482eae3266fc594d206317121c33fc314eacd2674"
+    },
+    {
+      "id": "W026",
+      "evidence_sha256": "60f8c9aba103d0a0254eef35c1945ec4d05d42d6706cc9c5c1fa0d1b10338a4f",
+      "npz_sha256": "0fd2c1d4b2df7c0c1e31f83756c1419bbd9fee861c85ce837983611e0b8494a1"
+    },
+    {
+      "id": "W027",
+      "evidence_sha256": "56469da65ce7bcb9341042ff7f4e6a54e756f8bdd2415fcae4606f1e9a0e9601",
+      "npz_sha256": "10e2b7036a1b1685cfc10cd9930a52d05c14070b9f023939105b4238b5444afd"
+    },
+    {
+      "id": "W028",
+      "evidence_sha256": "3aaf18aa2a828a9d0633c31172a57200cb2424456d4679ca9685bfba218dd079",
+      "npz_sha256": "8d2b62f678034b2d9efc9cbbdf25efd9e2bcc6d7b7dfd235568895c947f27459"
+    },
+    {
+      "id": "W029",
+      "evidence_sha256": "36df91f6bfadec8997c7cc8582eecc928c0cb2f5a467bc105b91d6c81545eed9",
+      "npz_sha256": "f45e35a324bd63cc1946962dbb38da350f08dd5bbb95de4b10657bfffa10d68a"
+    },
+    {
+      "id": "W030",
+      "evidence_sha256": "5ee6a12a792b56b087597b81d7bc75c2bb0de3a4c6f90c336bc5cee460a9d27a",
+      "npz_sha256": "b916ca6bfb457bbbef34b71f71733d30ed48bb6672f45a0bf0c9ff9fcd8177a5"
+    },
+    {
+      "id": "W031",
+      "evidence_sha256": "3792f12ff0cbad45fa33dd1409381b9c7142620f6e14d798015f2f70c581ce0a",
+      "npz_sha256": "3472a59749eeb990173c9d207c5e8ccc67cf34e32bbba82eaddd45c0220ed6ab"
+    },
+    {
+      "id": "W032",
+      "evidence_sha256": "c29b7913befcbb1439627af0985505fef441c991d2ab1f1bb6426c9ce4d5c78c",
+      "npz_sha256": "89d1dc0a8895d6ef5eb437e55df59966b21044b70e8533780d61c5906db10f2d"
+    },
+    {
+      "id": "W033",
+      "evidence_sha256": "07fd576c31ccba45ef9e2c664d7cc5dd669ccf672db1e2a4e23cb57e8c0e32d8",
+      "npz_sha256": "0ebd7ba0b2c8e34e9050befe6bb9b79434e799a528718fcbf0cca5bca7cb4a8c"
+    },
+    {
+      "id": "W034",
+      "evidence_sha256": "3c023f031656e6a5d4e531ca38e8e44d6306f10a4e6a9bec6de7b3430173b5ed",
+      "npz_sha256": "12c977a344e00d05a8ff5219e971b134f1c546f7939a8a11aebaf0e3ecb4ddd9"
+    },
+    {
+      "id": "W035",
+      "evidence_sha256": "6f611bc752d9c9df3ba61b8e7ffc5627377d555113f1b19945a9a5fb41c88d9f",
+      "npz_sha256": "baccce8f1f1784aae54bcd4ada512d5b3fa306c0fa5ae5e8d6d9eac2b37b5771"
+    },
+    {
+      "id": "W036",
+      "evidence_sha256": "b47f05e50bf3395af021860893a91666cd9d7fabbcad985daee1052a76b55429",
+      "npz_sha256": "ec29efb0382cc28ca60035029845be2283b100c933cf4faf3aef84317aab0ea4"
+    },
+    {
+      "id": "W037",
+      "evidence_sha256": "5ba2566f26c73c93f5067140838e1e86ae1bd431f9916253fd6e32afd52f12c6",
+      "npz_sha256": "7c48a559e8b4005d2040043a35ae712897ac43c931a9acbd4a31f234959c2805"
+    },
+    {
+      "id": "W038",
+      "evidence_sha256": "725c4e0baa97f6e3028e42f34d4750b9dc2856617589b35221b9328093675626",
+      "npz_sha256": "4429d0a0d2488423129326694c32cc59154b29a0899199d7af3654a6fc825799"
+    },
+    {
+      "id": "W039",
+      "evidence_sha256": "a3d54f0b27ba03b4a366c618c581ffc4270bb88deb88ce3facd9a9c7ea9553c9",
+      "npz_sha256": "f7429a9aafe99b0062cbc9d379fbc801310f7cc5191dd1b693d1cee2889d8a97"
+    },
+    {
+      "id": "W040",
+      "evidence_sha256": "62ddbb42f95c38cdaad65e319c36bd7ce7f0bb6a8580a490d15293e393c88e8a",
+      "npz_sha256": "4683149f0de092606d3d6ca3d7b4835408f83471e68ea4c5e0d27f99759ec067"
+    },
+    {
+      "id": "W041",
+      "evidence_sha256": "303278c852daa776a8fb3bdd57f54be36d03686e108a5a98739712a239c1d510",
+      "npz_sha256": "31704ac12c75355bf9a05b52a9942f246990bf5e0fe82bfaa9b968361942ac3f"
+    },
+    {
+      "id": "W042",
+      "evidence_sha256": "c51635a0f9b81fac6e816dc8a45ab0f0570edab0dd4da4f40221e99056a4cb1d",
+      "npz_sha256": "d51c096d5c520f47d1b4174097537e9d62bc2d3fcaeafc43c360e08ce03039c3"
+    },
+    {
+      "id": "W043",
+      "evidence_sha256": "de0109015f191e2c48384745a1e7107d10858cb9457927e0443385d7e679a238",
+      "npz_sha256": "27487f701cccf6daa129a79db90fb8e42912f5f2d2c8a56664b2eb12c6b3c938"
+    },
+    {
+      "id": "W044",
+      "evidence_sha256": "e63681719174635be750fe5ecb833626f8eeb4fb09474b181dfe36d36e5eb39b",
+      "npz_sha256": "efcaf59e93695158cae22111c0b11d3c97b9b10e955f675541974878cd593bd2"
+    },
+    {
+      "id": "W045",
+      "evidence_sha256": "07d53196467bd7660473691092131d7c5fc3fc3c8f284d727348e56a13361e07",
+      "npz_sha256": "3ed585ca1d7158e79ea0c45563f3c2ab01a112b2c0f253407cb899cd4fa3ba08"
+    },
+    {
+      "id": "W046",
+      "evidence_sha256": "b780de27d170b7ed9ff643d78299bf8c64546be2bc61aacafca20a49d5c9488e",
+      "npz_sha256": "85fb433258708ecd9277a5d2cee613a762aa1816e5acf6c08c7a0c48974a6971"
+    },
+    {
+      "id": "W047",
+      "evidence_sha256": "1648be600a288adecc549a6ee03e218bf6ea69571bbcb9f44c236c89b8d25264",
+      "npz_sha256": "d4c75ef425a8f71f17b835bab6a88009dd1354c5622aa439e210336d31df0e64"
+    },
+    {
+      "id": "W048",
+      "evidence_sha256": "dfc6614f26dc80aadd39e29ab22591885bcba80ee3f5aaf28d6804937e582968",
+      "npz_sha256": "e55d57c978ad759739c0edd8c56137b15419481c775d71052fdf95078b7e5aff"
+    },
+    {
+      "id": "W049",
+      "evidence_sha256": "59b5c40cc1087ff16e3eca5f34e7d432d54950933c94b1365b8609de591003e7",
+      "npz_sha256": "f740e273605512b44ecbda2531a17fd7ddc2a080125f74f03b2390cfe60ccc49"
+    },
+    {
+      "id": "W050",
+      "evidence_sha256": "df9d1a9881f3c8568fae4af2681ddccc95d62ca46bfb15b9dee7b5e8a62b3b72",
+      "npz_sha256": "0620db519386c26123b74cdde3d51ae6750dfc20e408055d5d4f22f24604b970"
+    },
+    {
+      "id": "W051",
+      "evidence_sha256": "98caf183d8e65a5c0081450b9328ba78c861647f2179d4293a6a87618704901e",
+      "npz_sha256": "297ef47de879c4a8d6b3eab72282c45ef9aca9525eb2b228293bcc2342910b4c"
+    },
+    {
+      "id": "W052",
+      "evidence_sha256": "fb15e37b6d37a49ed3982c3d960629d8227fba7bdc7e5da1222f4e22df29f5c1",
+      "npz_sha256": "f253e88f233400bc69e6567e67d2e0df446fa05bd51bd0f266dc953aeee0a9de"
+    },
+    {
+      "id": "W053",
+      "evidence_sha256": "f186fb38c468a17245a266fa61368ce0942923e45e6440f980cf415c69c880ce",
+      "npz_sha256": "18ef28916f6def97abd0eb198427b5b7b8765543618ccb4051837244c4f9a8b4"
+    },
+    {
+      "id": "W054",
+      "evidence_sha256": "146a3634e0f174d7e30fe4aec9b9c551a5752c050169f9c6b62411a08eb2db77",
+      "npz_sha256": "baacb6adf77c3df9e78c4b6cd309ff4e3cbd0cfcf917dc4a79777fdb7cd37854"
+    },
+    {
+      "id": "W055",
+      "evidence_sha256": "1e8f4223704d9d764f4608b85ded58e4db3f200df14237d2b6764a9cc34b95f7",
+      "npz_sha256": "9d598afe122d5028dc33d55db1f18f2cf6fd791452151b4df1533337208b8669"
+    },
+    {
+      "id": "W056",
+      "evidence_sha256": "e4e91fad2afd0ce5b844c1cae24193099f2f8e3e1ab2d622a65c60b94134328c",
+      "npz_sha256": "5224dee6952a730cd32fa513ce0413f6107b1d98cafa8427bd4c5a4dc3103873"
+    },
+    {
+      "id": "W057",
+      "evidence_sha256": "937d8a010962315e25046cdaa0282f1b148c76b4f359c7d4ec265f25151d04b7",
+      "npz_sha256": "f9775019ae317706d360da7ac3ce9efa67885a1bead319532b9f254cc0642c72"
+    },
+    {
+      "id": "W058",
+      "evidence_sha256": "80b24507d22c50ad8433e3392c1b01d6c4eff87c033d674141f658cf7cedf345",
+      "npz_sha256": "6f0cdc232e3ea39874168efbaf202d8b5937ff9574216b5ae45b0a34940c30fc"
+    },
+    {
+      "id": "W059",
+      "evidence_sha256": "8fcb0f67462fef23f4f4ba0384e47f7b92ba57ab643335bbbe97690c5e889de4",
+      "npz_sha256": "30853bebb8068674b2ed804f9dc43348d0a9e61035086f7d37b87019b2f756be"
+    },
+    {
+      "id": "W060",
+      "evidence_sha256": "60635c760dc73492bb7e8f3df1903363ef2ac1873e71bd020c483528930263c4",
+      "npz_sha256": "94cde215b64be758a8c61bfa22cfbb57cd0f2635dd25d2e8ab5e87471d6578a9"
+    },
+    {
+      "id": "W061",
+      "evidence_sha256": "86beab9c6c543c5c9ead0059076ee02cf81f6be6641d9e559475801014d8f43a",
+      "npz_sha256": "91b828a7c5e93f6df6906e38afb19fe56564bd440de02bc4115fff8fadb93c2f"
+    },
+    {
+      "id": "W062",
+      "evidence_sha256": "2415c34d4e400d6f78d8454e67984fdd2f7b9117bb3509d816763d239c4d5418",
+      "npz_sha256": "5f560aba3b1c38546b5bc2304b7e14e7291fbe5cbdad35495cfd7544aa74cd8e"
+    },
+    {
+      "id": "W063",
+      "evidence_sha256": "aaa854422ea46ac88e60bfd7d2d81c7dbd6fb16e03e8d54f3b6e2b70067fd074",
+      "npz_sha256": "b8a024fe0fe52e39ebc44c6bd84267971cb644734a869f0c22a00eadce8ed0cb"
+    },
+    {
+      "id": "W064",
+      "evidence_sha256": "cb6b0450efb4c6e5b3c9a0f5a4840da1b2d8d2b28ae0dbd7a001aaa2d06ce45e",
+      "npz_sha256": "22e4a20f2a42d624d5de25184114da9bfd7f042fb7241b847d8b569da9cb7a34"
+    },
+    {
+      "id": "W065",
+      "evidence_sha256": "df37a21da50eb4ecf99db685f0b506ca126aa3af742d7fde690297fc85140a10",
+      "npz_sha256": "6b86b958e778fbd7670cb8193eba42fbd0036acea75b96ffe1d2103054a20a81"
+    },
+    {
+      "id": "W066",
+      "evidence_sha256": "093bad103080cee11a39d2fe6533a2cf7cff20b6377b01911e8a4bc383460498",
+      "npz_sha256": "0f6b568635c819884505b6005f70f44d81a17976c2b42eb9553e6293cadb3862"
+    },
+    {
+      "id": "W067",
+      "evidence_sha256": "be98b5cc54d279f19a81650a1b7271992ed4d0bd0bfde61de6e0831fc3251a13",
+      "npz_sha256": "12d7eacfa471fdb73314db1a17d88053c88706907f0f68e5356eba1460a529df"
+    },
+    {
+      "id": "W068",
+      "evidence_sha256": "06a3ae63b4d97dd9d67f2328d4d0995c372c7ee2438c6f91efa44fb47b5b9023",
+      "npz_sha256": "328ff6657490462ceac038ace5cdf14423acd608ef2cbced585f9813575fb4df"
+    },
+    {
+      "id": "W069",
+      "evidence_sha256": "ffd3763474112afc57e942f169f01640fde02da30ef65f1c2e62fde1e9a4bf95",
+      "npz_sha256": "bb1b26a35ee39d8795ed9ad7757b0a68b0db63a9237379f976f1dc83fe621437"
+    },
+    {
+      "id": "W070",
+      "evidence_sha256": "1c3e69578c38a25fc50c8a93cee477769e9d84e4918f4ce68f9ff3d3b2affe9b",
+      "npz_sha256": "50f3ca914991e8281db826f6a104c360845c485f28f8e46511f295f3d7dfcece"
+    },
+    {
+      "id": "W071",
+      "evidence_sha256": "c91eed2431b964295c0d8a38d0ba10f5e44a44fcd00f785d4c2bf99b94547af4",
+      "npz_sha256": "40e977da437872f4f0ecc76ed01c95db7d56e241c3ae85a71fd22839c6509dbc"
+    },
+    {
+      "id": "W072",
+      "evidence_sha256": "23b91c2b0c68e852729cf8c02c207b962fad5c3683ab08c02df7b6b1f5b3ec59",
+      "npz_sha256": "1fd569c9796c7da146beab3cff294f3842731560593bea41f77e1562f7bbe432"
+    },
+    {
+      "id": "W073",
+      "evidence_sha256": "645f7a807217e8d789385580640beda87a6c1a8036d0f58dc19e54f06d94adb8",
+      "npz_sha256": "dbe092888cd45376fe87b77b8727ded1c3adf41821e880463138bd4a2fd57fe3"
+    },
+    {
+      "id": "W074",
+      "evidence_sha256": "681af834a3d3904f63c13cca36c13557ea73c0117d20221614ba3453a4aa0c13",
+      "npz_sha256": "0b89ddfa1396285e55936fbcebdae66412350d94c412fcffa9bab3c38c8c7510"
+    },
+    {
+      "id": "W075",
+      "evidence_sha256": "a7c752342df3870f96218fe8712e752f2db43a9751e8e7c2e5b464575d176f45",
+      "npz_sha256": "b0b5dfe700de25452001c11bec344c7ae92a3975153665161889722b166c34e9"
+    },
+    {
+      "id": "W076",
+      "evidence_sha256": "64eb083ee2fce052547d343523273d8d8654c477b2dbdc17c6d4a04a884e6522",
+      "npz_sha256": "cf27fc7d127de3950662f46b16ebbc117a5a6a4d8c0f3be59fc92e8ac64be866"
+    },
+    {
+      "id": "W077",
+      "evidence_sha256": "f9633ad48a3e0fe5daa518fdb174a93667a8791339e019c61c153857eb0d47e5",
+      "npz_sha256": "1a99322e96e00d40239e8d15b8cdbf03e735816caddc62d98ddea30b9856efd8"
+    },
+    {
+      "id": "W078",
+      "evidence_sha256": "3af52d64799ba5cb8b07376ddc781123ac0eab58ba6388d6fbcee18fa06c15f8",
+      "npz_sha256": "db461a8ed739731d55dffe0deffdac4bbefa3a87023588f1db4348acf6251998"
+    },
+    {
+      "id": "W079",
+      "evidence_sha256": "5ecd6053a4f0205cffff7824bec33a8d4ca2227cc4deacfb1b985ce97bb121de",
+      "npz_sha256": "c1fcd36b54c05673d6d9af8123111930c5281f57fab0304895a051d1f88368f3"
+    },
+    {
+      "id": "W080",
+      "evidence_sha256": "699a11331d016b111cdb70cfa2ea5002876ff998c598784d9f77184834b75e14",
+      "npz_sha256": "51de59e26d6631ec11d7727c63efe78663151f1aa431feea858b6dd7f292d857"
+    },
+    {
+      "id": "W081",
+      "evidence_sha256": "5ceba7425649b096dda33b8c737bb79a137cf4c10ea4d2d2422f40e01746dc87",
+      "npz_sha256": "87a2ffde3dfbc05f06bdd5c134755f792b065c1ed0152e579a88d90c23413ae6"
+    },
+    {
+      "id": "W082",
+      "evidence_sha256": "45a4bf534ccb38cd3275923e23cdd2a809f915d734b28c75f4e20f45e0c2a356",
+      "npz_sha256": "aa86172cf94826a1609fe21587027ca8b1e90f110aaddaaec6b9948f2f11509f"
+    },
+    {
+      "id": "W083",
+      "evidence_sha256": "b92b34bb246ebd538395e7a625bffcc24618115c4a6cc57e99164ea98d18248a",
+      "npz_sha256": "7b158779284aa7c9927f1bbcd7dafa650d9e02fb7a07c7d93f77cbd891ec3804"
+    },
+    {
+      "id": "W084",
+      "evidence_sha256": "40fdc13d77fae883b0577f0cba15b058d7eef6f864f3165e2768fcd1b3675c9e",
+      "npz_sha256": "fe8ab42cd85b0cee82fb98dd9957d296c66d8f88727872149fd570d1585d31d5"
+    },
+    {
+      "id": "W085",
+      "evidence_sha256": "3aaf024dd8df0258152b50285736caebbf2b1b9e60a637c05d8799e38cd2dcaa",
+      "npz_sha256": "46320e19b33a0fdd0496d80ba030ddaa30faba803585cf37251b1aa29e2a6cde"
+    },
+    {
+      "id": "W086",
+      "evidence_sha256": "51a1549737f7b2190163d1513f399a5f32d78c9693e209536974f47a3cdcc5ab",
+      "npz_sha256": "ba58473e02963bfb0874286a4277a77cfb17a359a51e7081d3622776b9974cbb"
+    },
+    {
+      "id": "W087",
+      "evidence_sha256": "64fb7ffe0de4b415823be7d28c49e4fa5bdd2c98b31a3f21d10a3aa956b252eb",
+      "npz_sha256": "a70b3b29393f54d59fb671ce6e12c0f186c1ae3eab628e9820e7d968840b6f5f"
+    },
+    {
+      "id": "W088",
+      "evidence_sha256": "99a21022091bcf2409f7f87daad671b3dd5c71cd76b74f897328772863934f61",
+      "npz_sha256": "1fcadd0f6527ce0b6c4950c5e5d7361dc94857eed88d72900b01c6cdeb353405"
+    },
+    {
+      "id": "W089",
+      "evidence_sha256": "1e2ed05b088c6406288212b195cb5175a6b77bbfd4703029b34cbc347c97c164",
+      "npz_sha256": "487edb60485378e2fa25b6fd6931b262ae5af7adb5f7e8f70425c0203ca422c2"
+    },
+    {
+      "id": "W090",
+      "evidence_sha256": "69909316f97ee1c5f877ca5d1925f5f20587d67755f5d307857ee360535b2b76",
+      "npz_sha256": "84637eb295443cab138c4a954a3128fff6c69aed740d64bb01c3adf5b3704ab4"
+    },
+    {
+      "id": "W091",
+      "evidence_sha256": "5455339fafd2295e685de69c7ffa89f734dacf611ffda3fc37db875eb0ad4180",
+      "npz_sha256": "4e2e43229b9d53f9672644310a7ecce4ef5e0aaf43c6f473bced8fd0301a5f6b"
+    },
+    {
+      "id": "W092",
+      "evidence_sha256": "306675e698b7df7869a08827c7fc6b1c60ff2005432f84196f15d66448f0585b",
+      "npz_sha256": "d2f6d572229337ad608e4ed4b19857910fc5b83ae042dd17043b94303f1155a7"
+    },
+    {
+      "id": "W093",
+      "evidence_sha256": "b1e8b29e560e33974b7679a9c13720524d40059d4ce205ef6a67f76d8ccd0205",
+      "npz_sha256": "136027411773eca91e6d53d58a1e245fbd6beda043a4c7df17b2e331b10a1bb9"
+    },
+    {
+      "id": "W094",
+      "evidence_sha256": "a70dbeddfc424a7c9dac69b324e894eb163627fee6bfb17411bf89b809660e81",
+      "npz_sha256": "dde91e46a2ff34b041d3d594fb2fa54e99877246d1fec160d54539fd37f53357"
+    },
+    {
+      "id": "W095",
+      "evidence_sha256": "97c7c63c478d1e5f20250a61c1c36ffcb35d7f393e183358c28ff591b03aad5f",
+      "npz_sha256": "dca050d8c4ab2129df67d9b7aef335ca5e5a002b6782b0bc315e86613d789c62"
+    },
+    {
+      "id": "W096",
+      "evidence_sha256": "d139c414c082c36ef5fb2f8df829d34250391253a2fa1d334b465b433200b0c7",
+      "npz_sha256": "bff8bf7f63f83be9ef7063a54f965e54c90a7962292733925e0e63ff1740813f"
+    },
+    {
+      "id": "W097",
+      "evidence_sha256": "418bbf9fb0c794675beece3f454b0ddcce33738b4f546da5b0f8169c9a4d235b",
+      "npz_sha256": "05facff9346c2aa3e1f166d1e0076f832cf9af28ced5cbe448d895b42767c4e5"
+    },
+    {
+      "id": "W098",
+      "evidence_sha256": "aeea13f70de37fa53981bb5fe920ab2f64695e1df333a9dac1ec35679de9b82e",
+      "npz_sha256": "6e89ab60954b5cda613adf541a95e5ed56c1ff4a6a00eaf5ce6780c55f665b6b"
+    },
+    {
+      "id": "W099",
+      "evidence_sha256": "3b121b4d6f7fcf014fa9c209815d582185f8b86d3fb477396a07cc56e1850d48",
+      "npz_sha256": "025510c3e3fb857019766359be6b0c757ea30b5c7dbc80676232d515c0e969c7"
+    },
+    {
+      "id": "W100",
+      "evidence_sha256": "de4f819bbba44d30baa06a71b059d225133a1a5dcbcbd5a9938b14ca60add247",
+      "npz_sha256": "d5c6093dffde8b6f94d7d62cd220cfe4e0b6a68430b3c81d27bdea6b93635412"
+    },
+    {
+      "id": "W101",
+      "evidence_sha256": "1488160ea8caf8e585e2a8169fb1615a40681d406fd9c0d7dd13e97cf071a3ed",
+      "npz_sha256": "7db1068860c57f7da6fc347b6b9938bfec55330e3e433191bc3eea85cec6b140"
+    },
+    {
+      "id": "W102",
+      "evidence_sha256": "c6c6a1291bedd91e7abc011d9c96402a266089c9e6ec01a727296e487259c522",
+      "npz_sha256": "6029d29dd2de6acc6c5456949d14bed3c7099aef109e60be0f4b939b17737aa8"
+    },
+    {
+      "id": "W103",
+      "evidence_sha256": "5c09abc3eab5e6ac4f673ca2ccc246aca68d1c569e390ea8edc0966a1137d04f",
+      "npz_sha256": "146288c5a99ccc61009f2a6e6d08d65882dea6a51968f380ef002082b6722c81"
+    },
+    {
+      "id": "W104",
+      "evidence_sha256": "815a733f946bfb0141106e725ef2ce0f3ffb5c435082066c14d4430dee759ffc",
+      "npz_sha256": "5ef5f4816a081e5a7b07b03356ea3a391541f7701e7661823225c73e34d97187"
+    },
+    {
+      "id": "W105",
+      "evidence_sha256": "90473a5a2e90b7a39a4f7b3e75b240309ab5437dd6eda2ab495d113a552358fc",
+      "npz_sha256": "ac895e5d65e584a5794fa8bb1047ace9eaad2a47663073962b4290bbb6c3c382"
+    },
+    {
+      "id": "W106",
+      "evidence_sha256": "dbfac4e4439050554a1da53515f3f0a71342067e0acfd79afa7b5d6b18610d38",
+      "npz_sha256": "57a9fd8242afe5ae1672e5ea4aea1d7a1175de35326ff8c0b69eae09b7a2e96f"
+    },
+    {
+      "id": "W107",
+      "evidence_sha256": "05cbda012b40fd01c9f997ae752657e5cae81a82334a063605ae0e3e276157da",
+      "npz_sha256": "0ac5f4923cd32c8a2c960b835bedbd4b6ec8c77d0df07ec6c83e44ddbbd54669"
+    },
+    {
+      "id": "W108",
+      "evidence_sha256": "61eae71f95a6618671d3ad115d0c8b459c379c4ebb9f4732639b98bd595e8e5f",
+      "npz_sha256": "469442d2aa65cdbf9c3828b7938a5f2f1b20ad2954ef7999d1710a6289fbf768"
+    },
+    {
+      "id": "W109",
+      "evidence_sha256": "2c7e73c5bb8ca9fd9f13bd7b1da335382027e034c32db1108f181a34d19a92f9",
+      "npz_sha256": "5290de8d67ed4f0f57fcc76055ce0292e40b7ff328199b2b71ad45f2123c8b94"
+    },
+    {
+      "id": "W110",
+      "evidence_sha256": "ea4d6f69e46d8f46d68b44a77447af51d078725a5dd860684fc4544176a35b5c",
+      "npz_sha256": "0494bbef8359981e0edf90c8a60ffb5dbca6c49e588c0e721dd78f027ab7d3e6"
+    },
+    {
+      "id": "W111",
+      "evidence_sha256": "473e503b9aa12e6a7a2296bcf299cc1e260a65d89c6ffb0104dcabbc94df0e76",
+      "npz_sha256": "6c018ad7130fbab877cae8a7153cf862a978adf1a78945813ab7cbac57d19571"
+    },
+    {
+      "id": "W112",
+      "evidence_sha256": "f783ac97672c1e71afc269671e2f01bdda05dd4a825f0f0437a5fc26a73aeb97",
+      "npz_sha256": "e49b021b4f562f05a0cad563198e431ca095c4cef6925e3fab5013fc5cee7aa8"
+    },
+    {
+      "id": "W113",
+      "evidence_sha256": "1e399db7597a88503c980bfe6a73f83dd152252ad42b686ccd1884244d02b365",
+      "npz_sha256": "9db9bc6c94d1b3a01118eaba5afd55cde7ee1acca0acf313369e474be29d6db8"
+    },
+    {
+      "id": "W114",
+      "evidence_sha256": "cab632511488d0012a22d94bf28d7248667946a1416df37f49286426aa7d5e33",
+      "npz_sha256": "e767c2549feaf7c3abb66b20ac37c1bea44c7ab6ab284ac7351b0cabcb8f90b5"
+    },
+    {
+      "id": "W115",
+      "evidence_sha256": "16f716b1ff9e2175a3b236461c0beb8e49af1eff4603a37657ce35339ad47a4a",
+      "npz_sha256": "486fbb5c2bb095fd7fcc690e78733bf6a4e7319a27ed8b06288f740414327525"
+    },
+    {
+      "id": "W116",
+      "evidence_sha256": "d000ea30eeb869aad9690e658d20f9390d25e009d8e62ae4bfca19554f2b18d0",
+      "npz_sha256": "3d3c463053c330e0892d3d4ea9e9e35f19aa772599d9f47dcd6c9efbfd3bdc0c"
+    },
+    {
+      "id": "W117",
+      "evidence_sha256": "be994d5db8e0dc99b3f7ed8eec36b150eb1adb82e6e5cb849262b3db5fab567c",
+      "npz_sha256": "897e4ecd261a42b550a763581a6572e22e97a84f353da3b0c1490c7b7f170f64"
+    },
+    {
+      "id": "W118",
+      "evidence_sha256": "fe1e639b3329b9ce649621cc711ebb2f61efe151dad4aef9ce3142389e368400",
+      "npz_sha256": "c41b3c2d3f705bd4c4bea34b23809782b9984990650290cfbb214d5c766d6f12"
+    },
+    {
+      "id": "W119",
+      "evidence_sha256": "14d62a87f54b06568756e3ec44d0345a2680ffc874d069554f40097254b8452c",
+      "npz_sha256": "190369a7035454f01909cdfc8a78d44e56a70a0d316e6d69997c6625afccf9d3"
+    },
+    {
+      "id": "W120",
+      "evidence_sha256": "8f0919565a255e06ecbe5bf0cb297b69fbd298a810b47c1ff3ec9f335e14eaae",
+      "npz_sha256": "4c8ba6bbaaaa8394555fe473d4db3bab7e21f64c40fa7356d4bd21a7c8a34297"
+    },
+    {
+      "id": "W121",
+      "evidence_sha256": "2a73fbed396b06538fb5a101c58d29cd82d3659ad74b369a1a241cd56e664180",
+      "npz_sha256": "94d36772e00c1a2c37a31b16a4cd0228abe738e047bcb134bd6735f580149937"
+    },
+    {
+      "id": "W122",
+      "evidence_sha256": "248b4709a9136b71ae5763639052d67872ea4bcd464013dd27a7a2d14b62b032",
+      "npz_sha256": "2407d4681c3bc4460281eac674438761e6326a9a73d4864e789aad0f9de59701"
+    },
+    {
+      "id": "W123",
+      "evidence_sha256": "647a98cfce59743bce34dd0c852ad5d67205c12e91ec48c041af52e4b12b6a83",
+      "npz_sha256": "2eb4358d15e0a95d32edfe6e691ea0b32759a1247991346869a1bfd476521f17"
+    },
+    {
+      "id": "W124",
+      "evidence_sha256": "f2b07e63ef0235314becd87bc7861429cf2a2b8df51d8810d36340443c99f4b2",
+      "npz_sha256": "fdb7cab1bcef3df4652bcefa17d2e7b179a1b1903873cb090c9ac68946a34cc8"
+    },
+    {
+      "id": "W125",
+      "evidence_sha256": "c5fc3c7f3a7eb7740fff84e0311cf72b8ea508a98384ecb63482c733346522bb",
+      "npz_sha256": "806fcdfb49aba373f326808141640d1746bc5492f71f78a15a7e4b00b5e4c3dc"
+    },
+    {
+      "id": "W126",
+      "evidence_sha256": "a5b56da2ef3b127a3c53822b1a315f10f7a9e3a79cbaf8f7502ad3285fa7254e",
+      "npz_sha256": "5702cd67570afc34cf091df81738652d1ac4594fd4624d573adb6d7af91e7d5d"
+    },
+    {
+      "id": "W127",
+      "evidence_sha256": "5dd8565f217faf5e39b0a4bd1222af9261aa32077a6f32299aacf8c1dd268ab7",
+      "npz_sha256": "81f2184e4ce6a8e469597a5f833ccaa29027bf7b5ea9b9a2ae58da6d19b068e8"
+    },
+    {
+      "id": "W128",
+      "evidence_sha256": "5e4e9c4e641af8ca978db13548d924e5f5fa5c19cf84b81c306ae3a9f4fe75c0",
+      "npz_sha256": "b4a3a52c16644052171000c4b5b3fcb01110d3b49172bae69181df7ab204465d"
+    },
+    {
+      "id": "W129",
+      "evidence_sha256": "06c4359c1687879cf5362e094f0c689aad2e1ed087f2d431b4c61275d1699d22",
+      "npz_sha256": "678569e46b31a8690cfbd4cd7037c7cedba86cff9af840594afc8dfc144176f8"
+    },
+    {
+      "id": "W130",
+      "evidence_sha256": "040e65e5468c5449e3bd85637f055e126c8deaf5e4c044245ef71727fd911525",
+      "npz_sha256": "edf7339efbc2cc8900a91dd9753dca32c73a854f486be2af254e5ac664586875"
+    },
+    {
+      "id": "PHONE_ATTACHMENT",
+      "evidence_sha256": "5e827ceb13a6ab560e648d7dd5184542b98166c339e350d47c81202308af7cc1",
+      "npz_sha256": "56dda555e937a8c46a821667600a866d8e502db4c4e1201ad80a76ead085ad8f"
+    },
+    {
+      "id": "U20261013_01",
+      "evidence_sha256": "b2a1a5aa38fe3e482f15a76b743d4001b663bbd1e2f49bae20f68079826c8099",
+      "npz_sha256": "8d5c38cb09681cdf64cecc95d52a9cc4f9bb287aed7282133914c983c89fb8ae"
+    },
+    {
+      "id": "U20261013_02",
+      "evidence_sha256": "bfeae04c079e3f0602c9059ffd73ea87a1399a83f2f43a8e9b320d70c1b067e8",
+      "npz_sha256": "aadad99cab0913adbb306ad04a280954f8a56062b570cf0c1397be9f048c0ee2"
+    },
+    {
+      "id": "U20261013_03",
+      "evidence_sha256": "916e4bc9b9bfccc913e8d5ad17d6e264816bdcd793f13839db033a65fcb09a06",
+      "npz_sha256": "2864a2b3e1b34b6046e45a73cb7a042a4be1d8387d09a929b2bd69b79891083e"
+    },
+    {
+      "id": "U20261013_04",
+      "evidence_sha256": "8667f4120cffe150f6758520171242d7db9552324065b1229bc4d4eef5c3ecc5",
+      "npz_sha256": "7ef0e18efc79705bca2ada60c0efbb951444b6cf0360f2e2b97eb60ede075531"
+    },
+    {
+      "id": "U20261013_05",
+      "evidence_sha256": "77530914339c32192b89cf41928273030c870772aaf3d5864a84f53468c4e2a6",
+      "npz_sha256": "c5a4118f50ce13c0afc42a30e6f9bc4789173a772d2d019d233e4726be79286a"
+    },
+    {
+      "id": "U20261013_06",
+      "evidence_sha256": "a112a086660eda51d924af61f919d8ce7f93bac5a460253f3a18966defeb76ea",
+      "npz_sha256": "f5d2db8301041013d29cc57d2168f5418fa3251927a94514f5b29986188f3dde"
+    },
+    {
+      "id": "PAIRED_AUTHOR",
+      "evidence_sha256": "13ab59c06069d8c7a4c6857cb04ae9ecf365e35399b2afcf9d8cfb220a6a2998",
+      "npz_sha256": "24f2a6dd9238fd2452739767589896b68dcd0e944b6688c0a2cf220ad2b39551"
+    },
+    {
+      "id": "PAIRED_OLP_01",
+      "evidence_sha256": "2aaceeaa24e955191d0f7e2b0bd75b950834eef29410e798c2a42aac88c3e79b",
+      "npz_sha256": "94a2e0157b35aa093d1a4f290c7b2ea2e53057ee57ac13a5935652f9bb8f89bb"
+    },
+    {
+      "id": "PAIRED_OLP_02",
+      "evidence_sha256": "65fff319e6938c477d2b7dec4a7ecf548e388ac30f1e197867b168f3cef6f790",
+      "npz_sha256": "9fdb0a0ce75952939478df0005961d70b09809ac9f409f3660bb4e82e9ed3471"
+    },
+    {
+      "id": "PAIRED_OLP_03",
+      "evidence_sha256": "61d61e856f8c55c5d448f5b2e520f755f43a6c08e9fcf08ef8ec4278eba6edb9",
+      "npz_sha256": "9a4edc553b2460622f937f43ca61ff2e9af2973a7a01d01f04f3b855e88eeade"
+    },
+    {
+      "id": "PAIRED_OLP_04",
+      "evidence_sha256": "aac4677b4c73046e5dfe1b12155e660a2d1d4556e8505d5df09fcbf612be180e",
+      "npz_sha256": "90ca681cb8f12003133fbe2922b9faf8fc7be60434a014b0888aa704f5b5f8ad"
+    },
+    {
+      "id": "PAIRED_OLP_05",
+      "evidence_sha256": "756e1df1d7e278001529c925e6e8ffd9b4e260a2a65b19274636d07cbea76f3b",
+      "npz_sha256": "b5f062d8ebd44df35a4b1c42de8306e0470c60d912918f867ad9fb58ca544bf9"
+    },
+    {
+      "id": "PAIRED_OLP_06",
+      "evidence_sha256": "6f724275ad08a00bb9302e41485ae6790700d3e9cd136c28e20998bb63c78ae9",
+      "npz_sha256": "57253c80589663b14726613f07eda3466ae5ddcf95d9708d5e10a4e2bc74119c"
+    },
+    {
+      "id": "PAIRED_OLP_07",
+      "evidence_sha256": "4cdac6bdb10e3d4327460291deff8069866147f32698c8a3631c6966a1606f51",
+      "npz_sha256": "9aedc17db723286aff9a2eaa28e2b53af7f497a54e4d335eaac64ca6d9d7cd3b"
+    },
+    {
+      "id": "PAIRED_OLP_08",
+      "evidence_sha256": "70f4ca69078fc281e5d30e672ed3213d84f26c51a40ec533586a84e79a1a0e83",
+      "npz_sha256": "c0c1b0d7c1c539424b7d0a37d99b5251321e45b6685cf4e98d334f1c947912b3"
+    },
+    {
+      "id": "PAIRED_OLP_09",
+      "evidence_sha256": "71b939212f34264501bd658467d3ee7c77d064c774f0ced94b5b62a3a354e77b",
+      "npz_sha256": "a870485182aac12762179b9d589af768d9e7271bc57c7baa24366684e0581c06"
+    },
+    {
+      "id": "PAIRED_OLP_10",
+      "evidence_sha256": "529cace84d9bbc2aff0a2db37d11c413850010632219327891fcc069432688eb",
+      "npz_sha256": "47980bff23eed68e1efb4ea84f3713101fef01739d5c73cae66ce2dbf16d1dec"
+    },
+    {
+      "id": "PAIRED_OLP_11",
+      "evidence_sha256": "23458e40661f855a5268086ade4b083b3173fa665e47584033133dc5d628391d",
+      "npz_sha256": "8d929fef2ece87c5df9150a81838d07115bd085c4cb34b7bc73e9c83874652c4"
+    },
+    {
+      "id": "PAIRED_OLP_12",
+      "evidence_sha256": "2bc4fc1ebc26602e04a45325bb031662e6e4168f1eef73ba30ef3f831ecc7d31",
+      "npz_sha256": "28a6b3276b941e6d59c5529ac001d03cb469ee34690b03b28263e579f7f532dc"
+    },
+    {
+      "id": "PAIRED_OLP_13",
+      "evidence_sha256": "e9865983fcd8baaa3250ebfe1493b9335c0f3357f1f4c20fb618626127d3cd7a",
+      "npz_sha256": "500e181731f0e1a2230fa2c054db82e6275e0121377725b6801832f2ee324192"
+    },
+    {
+      "id": "PAIRED_OLP_14",
+      "evidence_sha256": "058566f74826193929f980f971fad106cdcd6c8f98d273988f6a373ad518b21e",
+      "npz_sha256": "7513c569ddab8f1e9d43f826d4f73e90eecb47a39fdff6f25fe1fb808c03266e"
+    },
+    {
+      "id": "PAIRED_OLP_15",
+      "evidence_sha256": "5c8dcb49542d3097d0e39586a57284b9369b694c8f108d8d7fbdfa7e6149ba20",
+      "npz_sha256": "63ea927e8dce9279ffa7269e9e143b1cd83f8176dfedad3d53ae1af44f9e94d7"
+    },
+    {
+      "id": "PAIRED_OLP_16",
+      "evidence_sha256": "5e6653dda61c194bce4356043d2cbedc16fcd9b266ea5cfdee05658e85197d82",
+      "npz_sha256": "3004bf4938b9b8d35421bd5343af9e31f2ea6cefd6454982656fdd510ebc14db"
+    },
+    {
+      "id": "PAIRED_OLP_17",
+      "evidence_sha256": "b828b88b0441f58e3f9f80813d62ef3c792c65dceda152e52f9f4b195f310615",
+      "npz_sha256": "88326a167ae9244c4b82cc33da6ef4c6f264835d36e652c4cb02ed5e0e85ece9"
+    },
+    {
+      "id": "PAIRED_OLP_18",
+      "evidence_sha256": "f84cd47b8484c970a6edd6203f60fb84d8ac9e3c1ba333ec90789a521cc369b0",
+      "npz_sha256": "291e610d01b5ecedc9b01ee1df4c843ee8756a529b9beb6745daff3284c3c121"
+    },
+    {
+      "id": "PAIRED_OLP_19",
+      "evidence_sha256": "6be1a5ffa98a77805bcf52a26a5a2175c861a9c3eb005800603d95d98bc0b63e",
+      "npz_sha256": "870b02a63902a66b73cdb10b8c088225c709bd3db4406f2f6be28745b545d752"
+    },
+    {
+      "id": "PAIRED_OLP_20",
+      "evidence_sha256": "eb7c18a058420946e3f517452ea77dcd307405582c40b34a329436cfa3b269fb",
+      "npz_sha256": "e472fea65dd2180972a7423742927669b2b7f1c21a0b5824912e5f29ba7d5f0c"
+    },
+    {
+      "id": "PAIRED_OLP_21",
+      "evidence_sha256": "506f81a0ccb4e00093d81a6fb85c28713a32837e94e60d57f4396b400bd65167",
+      "npz_sha256": "ec9745ab08ff827169625255a7ad2e28ab59cea333ca227772768c6bb14166fc"
+    },
+    {
+      "id": "PAIRED_OLP_22",
+      "evidence_sha256": "13d653f8ae7b7477f2a43d6abb658123224ec86863f2d90c4b583472b60163c7",
+      "npz_sha256": "9d92d6cf8bbe71b50521c20035658b7ad235a921ef46bd7e5fd994ca86bca677"
+    },
+    {
+      "id": "PAIRED_OLP_23",
+      "evidence_sha256": "439e7a234cd329be65571ccead534f15bc81ce0ba452da9327fa5189c42cac7e",
+      "npz_sha256": "afbb43378bff7ed47c809116ffcac2096780b20dc8cc9bafb0938fddeb651448"
+    },
+    {
+      "id": "PAIRED_OLP_24",
+      "evidence_sha256": "604ad9f7d04e8ad354f8a1060e089192d48b540d8f9f06970572ac8f3207183c",
+      "npz_sha256": "379cd121ca6512041e32a3aef2f3881d7d7d0cfae75554ca7aef8bd0fd0fc2b3"
+    },
+    {
+      "id": "PAIRED_OLP_25",
+      "evidence_sha256": "73f511b5d24be1e147bcff4ed5248e6f5fc1362cb06d44c0d1d56a28b39b6695",
+      "npz_sha256": "ba9b5ff0999769ea76e1a0da960937a0328d8557faf973b4c91444d6e0386479"
+    },
+    {
+      "id": "PAIRED_OLP_26",
+      "evidence_sha256": "5651146c22a69c3044718432dc730643017182110f73eb774443b0be33a5d01d",
+      "npz_sha256": "ba583c3f683ef9d09c17bb6e1c027a75674818127b3789bacdc7b8da34810213"
+    },
+    {
+      "id": "PAIRED_OLP_27",
+      "evidence_sha256": "42d047e1235a52b40dca9bde83806ad6c0b997243d185a7bbb77d99af1265186",
+      "npz_sha256": "0c36a59cf15100ca938bdfb84994fbf47a345e4fbc26086b58e3077a6295295f"
+    },
+    {
+      "id": "PAIRED_OLP_28",
+      "evidence_sha256": "ab469e8b13537303d302b97d50323bdd5e976c3589492cee5c4dfd526035c789",
+      "npz_sha256": "b9d89da8c7bb332c29507ea338c7909da1b7198bc7ef9ca59ff128a9bf491949"
+    },
+    {
+      "id": "PAIRED_OLP_29",
+      "evidence_sha256": "86dfc6d88b43cf7a20722f154677281832b2181ebc7d54b1fcb8f0afbc109761",
+      "npz_sha256": "f403881fabe9b71a0323250ced281f03068961446da1fdbe65d185adc112f6dd"
+    },
+    {
+      "id": "PAIRED_OLP_30",
+      "evidence_sha256": "70e10dc92d36a2abda04a7e7777c8b60f084f69df829a67cb242aa8704a1f1b6",
+      "npz_sha256": "8f3478f29b9f823bd1b1fe95bc8e80673c992b2e32eb05f2070f53613391ae39"
+    },
+    {
+      "id": "PAIRED_OLP_31",
+      "evidence_sha256": "c8752e27def7be380dbc96c01c67f7d67bd28136ff86c6b55a72995f96cee945",
+      "npz_sha256": "00a184a88dbbb458fdc5d7d426465840e573539a05355879a7683b2904cfdbe1"
+    },
+    {
+      "id": "PAIRED_OLP_32",
+      "evidence_sha256": "a6ee6dad6784bcf4b91efa093e16f58296e8fe2b720af4499f25b059119eb547",
+      "npz_sha256": "ec8a19fdf9143cacc0d1703d6e099227d9458370081c5e40c29f6bd53004d77b"
+    },
+    {
+      "id": "PAIRED_OLP_33",
+      "evidence_sha256": "6ffdf53fb01e9966a00b55c305d743a4f13789c9b04f21c4fe0dc2bed56eac9b",
+      "npz_sha256": "ebf71fcda9d54ff86088529bc9a2046f1a5b022db69bc9c1ffb42c4d3f834c97"
+    },
+    {
+      "id": "PAIRED_OLP_34",
+      "evidence_sha256": "43de8f40e09a7753ea11327c783b5e959919a5672f4fb4761bc3c92e0f422161",
+      "npz_sha256": "5b36eabfaec5d93c3bc80335ba9533cba33281d929b6868f5f13f7b879eb395e"
+    },
+    {
+      "id": "PAIRED_OLP_35",
+      "evidence_sha256": "b97cd4f6c17acc217ba7881f23d698cae71f0c19b266322ae240a2c6fc107342",
+      "npz_sha256": "58d0fa862200bb989b8eb26b6eda75242fbf166a07707fe0c7ccccbefd6794c7"
+    },
+    {
+      "id": "PAIRED_OLP_36",
+      "evidence_sha256": "5ff0224befaf20173a33888636796b01006a5003474cf488dcf819ae5329494d",
+      "npz_sha256": "c3b9f40a60cd45e7288c7529f2a2c4ae5db3c83683d4293d639160965fe36dfe"
+    },
+    {
+      "id": "PAIRED_OLP_37",
+      "evidence_sha256": "92f0a6b567fa02be622d05d655fd92708d70ed7a1b0dc565e5632532daf079ee",
+      "npz_sha256": "cee742ca3d5bef995fd4f1d372a1c2af704de92435017af6e68660b33d9a7c01"
+    },
+    {
+      "id": "PAIRED_OLP_38",
+      "evidence_sha256": "fb9167ef02e52114b8f6527dc31ed648b72ae98665ffd4f0cac41e780eb91e23",
+      "npz_sha256": "21f69041dee7d31b096c39afdc2674e71af5491e3da1c8879c7d59d47a524cb7"
+    }
+  ],
+  "code_hashes": {
+    "benchmark\\yarn_graph_experiments\\__init__.py": "695e61ee4d5f3c1afca271228cc2d458d57c0b82f3e9619383d2c3d7353af393",
+    "benchmark\\yarn_graph_experiments\\common.py": "8b082a5bf173c54a8d286c966101bde7e8b930e6a2bc30bc2e9e5d93142e6bb1",
+    "benchmark\\yarn_graph_experiments\\connections.py": "70e6cc64dc09ce2993cde7d9e7d1ea1a652b7b6b2efbe1f9737a265fdb66ad8c",
+    "benchmark\\yarn_graph_experiments\\graph.py": "614b7f7c0e5aa5163963e440cdb196e63492dd3a48e3115ceeea653fed86f0dd",
+    "benchmark\\yarn_graph_experiments\\prepare.py": "0ddf363f8fac88878e220564c25c5fe92a92d77c4ff74252c2aa7bf63ebe6275",
+    "benchmark\\yarn_graph_experiments\\reconstruction.py": "785044d46c415f4db2d9c427efd1a3ff211a7f8715437af031df386b9bc1fb49",
+    "benchmark\\yarn_graph_experiments\\report.py": "8807d4cc4688e669b8bbfcb951717daec7f2fd9ae5685a1c8fe96cbdac485430",
+    "benchmark\\yarn_graph_experiments\\single_rgb.py": "229fef899a2bab10cceccef6db3b425fd55d1f298014d213bbfb299f41b36d25",
+    "benchmark\\yarn_graph_experiments\\teacher.py": "f056384c6c8f4940a2ba89d8fe4d844bfb01d464b16d89d7146a40e728bc5b77",
+    "benchmark\\yarn_graph_experiments\\teacher_controls.py": "fa54a86a6ed7f344c372b448ffd6986a20809a9f5971d6225bfde0216a7009bf",
+    "benchmark\\yarn_graph_experiments\\test_mechanics.py": "eff378d16713d336bc5779cbd3f29cc039ad76f54babb4bd8d339707e4fcf40f",
+    "benchmark\\yarn_graph_experiments\\verify.py": "dea5379eebb2201cd1056faf0a35d30a8f7562cf816325a31b82af39a66670f1",
+    "benchmark\\yarn_graph_experiments\\viewer.html": "5ec803e9d2e4e9595b6d08ef678d9f8662f52ced5358c5a0d1adeda30fb0783a",
+    "benchmark\\yarn_graph_experiments\\weave.py": "0d890b6fc1a2b94d45d15cbc9156d1e8e9c544b637b02799716f27a2a8c439f7"
+  },
+  "python": "3.13.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "git_head": "6e03113170a92d104afd158f249b5520b83f996e",
+  "physical_accuracy_verified": false,
+  "phone_station_certification_executed": false
+}

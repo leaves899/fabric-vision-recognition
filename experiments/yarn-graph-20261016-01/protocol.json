@@ -1,0 +1,69 @@
+{
+  "version": "2026-10-16-first-round-1",
+  "frozen_before_inference": true,
+  "seed": 20261016,
+  "native_crop_side": 640,
+  "split_counts": {
+    "validation": 8,
+    "train": 23,
+    "test": 7
+  },
+  "fabricnet_label_counts": {
+    "twill": 39,
+    "plain": 50,
+    "satin": 41
+  },
+  "experiment1": {
+    "teacher": "original six-channel paired FCN, probabilities retained",
+    "student": "three-channel small U-Net, distillation from TRAIN fabric IDs only",
+    "selection": "best validation soft-target loss, 12 epochs x 40 batches, no test selection",
+    "metrics": "teacher agreement, resolved coverage, independent image rotations; NO pixel accuracy GT",
+    "negative_control": "single-image multiscale Hessian orientation candidates"
+  },
+  "experiment2": {
+    "fixed_inputs": "existing PHONE_IMAGE_OPERATOR_REVIEW short lines, DRAFT; not exact masks",
+    "methods": [
+      "axis_nearest",
+      "local_tangent",
+      "local_tangent_with_competing_assignment"
+    ],
+    "relation_use": "posthoc evaluation only; absent SAME is NOT a negative; different connected groups are NOT automatically different yarns",
+    "scope": "01/03 SAME relations, 06 no SAME -> unscorable identity"
+  },
+  "experiment3": {
+    "input": "FabricNET all 130 center crops, no label input to reconstruction",
+    "templates": [
+      "plain",
+      "2/1 both slopes",
+      "3/1 both slopes",
+      "2/2 both slopes",
+      "5-harness satin"
+    ],
+    "coarse_labels": "posthoc only; no subtype accuracy; no density conversion from Warp/Weft fields",
+    "matrix_observation": "only geometrical intersections that fall on image-supported visible region; uncertain cells stay unknown"
+  },
+  "decisions": {
+    "confidence": 0.65,
+    "margin": 0.2,
+    "neighbor_turn_deg": 30,
+    "max_gap_over_fragment_length": 4,
+    "max_side_offset_over_fragment_length": 0.6,
+    "weave_min_rows_cols": 6,
+    "weave_min_cells": 36,
+    "weave_max_mismatch": 0.2,
+    "weave_min_runnerup_margin": 0.08
+  },
+  "untouched_sources": [
+    "frozen V4",
+    "existing benchmark modules",
+    "TDD demo",
+    "FabricNET",
+    "operator JSON"
+  ],
+  "limits": [
+    "No independent pixel masks currently supplied",
+    "Same phone labels are weak observations",
+    "FabricNET microscope results do not establish ordinary phone performance",
+    "Teacher predictions are pseudo-labels, not truth; teacher training overlap with OLP unknown"
+  ]
+}

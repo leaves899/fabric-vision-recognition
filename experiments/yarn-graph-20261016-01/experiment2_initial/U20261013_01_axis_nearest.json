@@ -1,0 +1,220 @@
+{
+  "segments": [
+    {
+      "id": "r0001",
+      "points": [
+        [
+          684.3335,
+          575.6665
+        ],
+        [
+          714.3335,
+          563.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0002",
+      "points": [
+        [
+          731.0,
+          558.6665
+        ],
+        [
+          765.6665,
+          548.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0003",
+      "points": [
+        [
+          778.3335,
+          543.3335
+        ],
+        [
+          809.3335,
+          532.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0004",
+      "points": [
+        [
+          829.3335,
+          527.6665
+        ],
+        [
+          860.3335,
+          518.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0005",
+      "points": [
+        [
+          635.6665,
+          589.3335
+        ],
+        [
+          667.3335,
+          583.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0006",
+      "points": [
+        [
+          591.3335,
+          609.0
+        ],
+        [
+          615.6665,
+          600.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0007",
+      "points": [
+        [
+          544.3335,
+          621.6665
+        ],
+        [
+          573.6665,
+          615.3335
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0008",
+      "points": [
+        [
+          497.33349999999996,
+          638.6665
+        ],
+        [
+          527.6665,
+          629.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0009",
+      "points": [
+        [
+          443.0,
+          659.6665
+        ],
+        [
+          473.3335,
+          645.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    },
+    {
+      "id": "r0010",
+      "points": [
+        [
+          396.3335,
+          675.0
+        ],
+        [
+          426.3335,
+          664.6665
+        ]
+      ],
+      "evidence": "DRAFT_OPERATOR_VISIBLE_STROKE",
+      "family": null
+    }
+  ],
+  "connections": {
+    "method": "axis_nearest",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "weak_reference_posthoc_score": {
+    "known_same_pairs": 9,
+    "direct_same_recovered": 0,
+    "same_recovered_via_graph": 0,
+    "same_pair_recall_weak": 0.0,
+    "proposed_links": 0,
+    "proposed_links_without_direct_reference": 0,
+    "precision": null,
+    "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+    "physical_count": null,
+    "provisional_component_count": 10,
+    "branching_nodes": 0
+  },
+  "review_sha256": "95effe622cca4e4cae9577e5b0580955258f8b482cd58108ea6972c6a08dbda3",
+  "provenance": {
+    "annotation_image_kind": "UNMARKED_2X_CENTER_CROP",
+    "coordinate_space": "ZOOM_2X_NATIVE_PIXELS",
+    "original_image_path": "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_01.jpg",
+    "original_image_sha256": "e273162299531d0eea5ff5d79b7c5937ba09d67b1101d8e54db3a313d28d0c91",
+    "crop_original_xyxy": [
+      353,
+      471,
+      1183,
+      1577
+    ],
+    "enlargement_scale": 2
+  }
+}

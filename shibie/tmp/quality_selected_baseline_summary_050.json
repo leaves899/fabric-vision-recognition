@@ -1,0 +1,71 @@
+{
+  "sample_count": 50,
+  "source_results": "D:\\zhongban\\tmp\\quality_selected_latest_050.json",
+  "main_status": {
+    "PASS": 17,
+    "LOW_CONFIDENCE": 33
+  },
+  "gate3_status": {
+    "PASS": 1,
+    "LOW_CONFIDENCE": 49
+  },
+  "width_status": {
+    "PASS": 13,
+    "LOW_CONFIDENCE": 37
+  },
+  "warp_width_status": {
+    "PASS": 32,
+    "LOW_CONFIDENCE": 18
+  },
+  "weft_width_status": {
+    "PASS": 20,
+    "LOW_CONFIDENCE": 30
+  },
+  "twill_direction_status": {
+    "PASS": 48,
+    "LOW_CONFIDENCE": 1,
+    "FAIL": 1
+  },
+  "twill_angle_status": {
+    "LOW_CONFIDENCE": 6,
+    "PASS": 43,
+    "FAIL": 1
+  },
+  "weave_status": {
+    "LOW_CONFIDENCE": 49,
+    "NOT_AVAILABLE": 1
+  },
+  "evidence_status": {
+    "PASS": 50
+  },
+  "yarn_status": {
+    "AVAILABLE": 50
+  },
+  "yarn_confidence": {
+    "LOW": 50
+  },
+  "gate3_warning_frequency": {
+    "GATE3_TWILL_ANGLE_LOW_CONFIDENCE": 6,
+    "GATE3_WEAVE_LOW_CONFIDENCE": 49,
+    "WEAVE_PATTERN_NOT_IN_V1_RULES": 49,
+    "GATE3_DENSITY_LOW_CONFIDENCE": 33,
+    "WEAVE_REPEAT_CONSISTENCY_LOW": 9,
+    "WEAVE_TEMPLATE_MATCH_LOW": 14,
+    "GATE3_GATE2_INPUT_LOW_CONFIDENCE": 6,
+    "GATE3_WIDTH_LOW_CONFIDENCE": 37,
+    "WARP_WIDTH_P10_BELOW_GATE": 18,
+    "WEFT_WIDTH_P10_BELOW_GATE": 30,
+    "GATE3_TWILL_DIRECTION_LOW_CONFIDENCE": 1,
+    "GATE3_WEAVE_NOT_AVAILABLE": 1,
+    "WEAVE_TWILL_SEGMENTS_INSUFFICIENT": 1
+  },
+  "technology": {
+    "main_route": "双图输入 -> 预处理/归一化 -> Structure Tensor 方向候选 -> Steerable filter -> Ridge/中心线 -> 清洗 -> 双路径密度",
+    "apparent_width": "透射图中心线 -> 反射/透射梯度相位相关配准 -> 中心线映射 -> 法向灰度剖面 -> 多边缘候选配对 -> Pitch/剖面一致性筛选 -> MAD 异常值剔除 -> P10/P50/P90",
+    "twill": "反射图局部归一化 -> 多尺度 Gabor 对角纹理带 -> Structure Tensor 局部方向场 -> 连通候选带 -> Canny/Hough 线段 -> 支持度、方向簇和角度离散度 -> 左/右斜与角度分别输出",
+    "weave": "已有经纬中心线 -> 反射/透射配准 -> 交叉网格 -> 交点方向性对比度 -> 浮沉符号矩阵 -> 浮长/重复一致性 -> plain、2/1、3/1 模板候选匹配",
+    "yarn_advisory": "经纬密度 + 经/纬表观宽度 P50 -> 粗粒度经验分档 -> Ne 区间与 tex 区间；reference_only、LOW confidence",
+    "gate3": "Gate2、密度、宽度作为核心质量项；斜纹方向、角度、组织、Ne/tex、Evidence 作为辅助项；汇总 PASS/LOW_CONFIDENCE/FAIL 和 warnings",
+    "evidence": "复用已计算结果生成宽度边缘图、斜纹 Hough 图、浮沉矩阵图和 evidence JSON 索引"
+  }
+}

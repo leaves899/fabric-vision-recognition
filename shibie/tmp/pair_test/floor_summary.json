@@ -1,0 +1,75 @@
+[
+ {
+  "tag": "min15_base",
+  "over": {
+   "density_min_per_cm": 15.0
+  },
+  "status": "LOW_CONFIDENCE",
+  "warp_density": 8.088,
+  "weft_density": 4.924,
+  "warp_err_vs_28px_pct": 71.7,
+  "spacing_px": 98.91,
+  "lines": 10,
+  "cv": 0.1737,
+  "coverage": 0.3762,
+  "selected": "bright@3.6",
+  "width_status": "PASS",
+  "warp_p50_mm": 0.79227,
+  "sec": 26.4
+ },
+ {
+  "tag": "min30",
+  "over": {
+   "density_min_per_cm": 30.0
+  },
+  "status": "LOW_CONFIDENCE",
+  "warp_density": 8.088,
+  "weft_density": 4.924,
+  "warp_err_vs_28px_pct": 71.7,
+  "spacing_px": 98.91,
+  "lines": 10,
+  "cv": 0.1737,
+  "coverage": 0.3762,
+  "selected": "bright@3.6",
+  "width_status": "PASS",
+  "warp_p50_mm": 0.79227,
+  "sec": 27.5
+ },
+ {
+  "tag": "min40",
+  "over": {
+   "density_min_per_cm": 40.0
+  },
+  "status": "LOW_CONFIDENCE",
+  "warp_density": 8.088,
+  "weft_density": 4.924,
+  "warp_err_vs_28px_pct": 71.7,
+  "spacing_px": 98.91,
+  "lines": 10,
+  "cv": 0.1737,
+  "coverage": 0.3762,
+  "selected": "bright@3.6",
+  "width_status": "PASS",
+  "warp_p50_mm": 0.79227,
+  "sec": 28.4
+ },
+ {
+  "tag": "min40_max200",
+  "over": {
+   "density_min_per_cm": 40.0,
+   "density_max_per_cm": 200.0
+  },
+  "status": "LOW_CONFIDENCE",
+  "warp_density": 5.909,
+  "weft_density": 5.909,
+  "warp_err_vs_28px_pct": 79.3,
+  "spacing_px": 132.1913,
+  "lines": 7,
+  "cv": 0.2167,
+  "coverage": 0.4014,
+  "selected": "bright@2.3",
+  "width_status": "PASS",
+  "warp_p50_mm": 0.73426,
+  "sec": 26.6
+ }
+]

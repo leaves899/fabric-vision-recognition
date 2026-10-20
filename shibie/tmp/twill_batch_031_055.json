@@ -1,0 +1,605 @@
+{
+  "range": [
+    31,
+    55
+  ],
+  "summary": {
+    "plain": {
+      "direction_LOW_CONFIDENCE": 13,
+      "angle_PASS": 12,
+      "direction_FAIL": 2,
+      "angle_FAIL": 2,
+      "angle_LOW_CONFIDENCE": 1
+    },
+    "twill": {
+      "direction_LOW_CONFIDENCE": 9,
+      "angle_PASS": 8,
+      "direction_FAIL": 1,
+      "angle_FAIL": 1,
+      "angle_LOW_CONFIDENCE": 1
+    }
+  },
+  "samples": [
+    {
+      "image": "W031.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 17.687,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1195,
+          "component_count": 47,
+          "mean_response": 2.2288
+        }
+      ]
+    },
+    {
+      "image": "W032.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.569,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1387,
+          "component_count": 35,
+          "mean_response": 2.4607
+        }
+      ]
+    },
+    {
+      "image": "W033.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.187,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 65.0,
+          "direction_field_coverage": 0.1137,
+          "component_count": 16,
+          "mean_response": 2.9071
+        }
+      ]
+    },
+    {
+      "image": "W034.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "FAIL",
+      "angle_status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "direction_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "angle_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1194,
+          "component_count": 24,
+          "mean_response": 2.692
+        }
+      ]
+    },
+    {
+      "image": "W035.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.764,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1092,
+          "component_count": 22,
+          "mean_response": 3.1763
+        }
+      ]
+    },
+    {
+      "image": "W036.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 22.222,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.1117,
+          "component_count": 28,
+          "mean_response": 2.5977
+        }
+      ]
+    },
+    {
+      "image": "W037.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.745,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1505,
+          "component_count": 39,
+          "mean_response": 2.8167
+        }
+      ]
+    },
+    {
+      "image": "W038.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 23.014,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1027,
+          "component_count": 28,
+          "mean_response": 3.1101
+        }
+      ]
+    },
+    {
+      "image": "W039.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 16.257,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1214,
+          "component_count": 39,
+          "mean_response": 3.0475
+        }
+      ]
+    },
+    {
+      "image": "W040.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 68.487,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW",
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.104,
+          "component_count": 27,
+          "mean_response": 2.8271
+        }
+      ]
+    },
+    {
+      "image": "W041.jpg",
+      "fabricnet_texture": "twill",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.781,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1328,
+          "component_count": 34,
+          "mean_response": 2.7875
+        }
+      ]
+    },
+    {
+      "image": "W042.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 72.171,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0797,
+          "component_count": 29,
+          "mean_response": 3.7199
+        }
+      ]
+    },
+    {
+      "image": "W043.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 67.463,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0831,
+          "component_count": 32,
+          "mean_response": 3.7805
+        }
+      ]
+    },
+    {
+      "image": "W044.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 72.222,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0784,
+          "component_count": 26,
+          "mean_response": 3.2949
+        }
+      ]
+    },
+    {
+      "image": "W045.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 70.702,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0859,
+          "component_count": 27,
+          "mean_response": 3.9664
+        }
+      ]
+    },
+    {
+      "image": "W046.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 67.641,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0855,
+          "component_count": 28,
+          "mean_response": 3.3366
+        }
+      ]
+    },
+    {
+      "image": "W047.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 26.156,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1115,
+          "component_count": 53,
+          "mean_response": 2.6254
+        }
+      ]
+    },
+    {
+      "image": "W048.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 22.486,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1304,
+          "component_count": 61,
+          "mean_response": 2.5787
+        }
+      ]
+    },
+    {
+      "image": "W049.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "FAIL",
+      "angle_status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "direction_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "angle_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 85.0,
+          "direction_field_coverage": 0.0984,
+          "component_count": 33,
+          "mean_response": 2.4467
+        }
+      ]
+    },
+    {
+      "image": "W050.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 24.519,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1137,
+          "component_count": 51,
+          "mean_response": 2.5905
+        }
+      ]
+    },
+    {
+      "image": "W051.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 30.072,
+      "direction_reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "angle_reasons": [],
+      "reasons": [
+        "TWILL_DIRECTION_DOMINANCE_LOW"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.1096,
+          "component_count": 49,
+          "mean_response": 2.7108
+        }
+      ]
+    },
+    {
+      "image": "W052.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "FAIL",
+      "angle_status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "direction_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "angle_reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 80.0,
+          "direction_field_coverage": 0.0538,
+          "component_count": 22,
+          "mean_response": 2.7381
+        }
+      ]
+    },
+    {
+      "image": "W053.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 75.16,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.0606,
+          "component_count": 25,
+          "mean_response": 2.3128
+        }
+      ]
+    },
+    {
+      "image": "W054.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 45.984,
+      "direction_reasons": [],
+      "angle_reasons": [],
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 55.0,
+          "direction_field_coverage": 0.0533,
+          "component_count": 26,
+          "mean_response": 2.6204
+        }
+      ]
+    },
+    {
+      "image": "W055.jpg",
+      "fabricnet_texture": "plain",
+      "status": "SEPARATE_RESULTS",
+      "direction_status": "LOW_CONFIDENCE",
+      "angle_status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 65.853,
+      "direction_reasons": [],
+      "angle_reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 20.0,
+          "direction_field_coverage": 0.0505,
+          "component_count": 19,
+          "mean_response": 2.344
+        }
+      ]
+    }
+  ]
+}

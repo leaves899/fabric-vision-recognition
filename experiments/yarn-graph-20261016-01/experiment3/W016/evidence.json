@@ -1,0 +1,266 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.0005946180555555556,
+    "class_fraction": [
+      0.0005946180555555556,
+      0.0,
+      0.0,
+      0.9994053819444444
+    ],
+    "visible_region_candidates": 1,
+    "inferred_links": 0,
+    "provisional_groups": 1,
+    "rejected_regions": {
+      "small_region": 1,
+      "nonelongated_region": 1
+    },
+    "directions": {
+      "A": {
+        "angle_image_y_down_deg": 171.5964561321349,
+        "concentration": 1.0,
+        "unit": [
+          0.989263295519448,
+          -0.14614421691603507
+        ],
+        "physical_direction_verified": false
+      },
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 1,
+        "median_visible_mask_width_px": 6.123591267463522,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        1,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "OBSERVED_CANDIDATE_INTERVALS_INCOMPLETE_ROOT_SET",
+        "hits": [],
+        "intervals_px": [],
+        "mean_interval_px": null,
+        "interval_cv": null,
+        "verified_adjacent_yarn_pitch": null,
+        "physical_count": null
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "A0001",
+      "family": "A",
+      "points": [
+        [
+          337.0,
+          55.0
+        ],
+        [
+          339.0,
+          55.0
+        ],
+        [
+          341.0,
+          54.0
+        ],
+        [
+          343.0,
+          55.0
+        ],
+        [
+          345.0,
+          54.0
+        ],
+        [
+          347.0,
+          54.0
+        ],
+        [
+          348.0,
+          53.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            337.0,
+            55.0
+          ],
+          [
+            339.0,
+            55.0
+          ],
+          [
+            341.0,
+            54.0
+          ],
+          [
+            343.0,
+            55.0
+          ],
+          [
+            345.0,
+            54.0
+          ],
+          [
+            347.0,
+            54.0
+          ],
+          [
+            348.0,
+            53.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            343,
+            51
+          ],
+          [
+            342,
+            52
+          ],
+          [
+            339,
+            52
+          ],
+          [
+            338,
+            53
+          ],
+          [
+            337,
+            53
+          ],
+          [
+            336,
+            54
+          ],
+          [
+            336,
+            55
+          ],
+          [
+            337,
+            56
+          ],
+          [
+            338,
+            56
+          ],
+          [
+            339,
+            57
+          ],
+          [
+            342,
+            57
+          ],
+          [
+            343,
+            58
+          ],
+          [
+            345,
+            58
+          ],
+          [
+            346,
+            57
+          ],
+          [
+            347,
+            57
+          ],
+          [
+            348,
+            56
+          ],
+          [
+            348,
+            52
+          ],
+          [
+            347,
+            51
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        336,
+        51,
+        13,
+        8
+      ],
+      "area_px": 77,
+      "aspect_ratio": 1.7730098728608807,
+      "apparent_mask_width_px_median": 6.123591267463522,
+      "apparent_mask_width_px_p10": 3.6345688103391587,
+      "angle_image_y_down_deg": 176.1297683485987,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    }
+  ],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [
+    []
+  ],
+  "row_groups": [
+    "G0001"
+  ],
+  "col_groups": [],
+  "provenance": {
+    "image": "E:\\Internship_2026\\FabricNET\\W016.jpg",
+    "sha256": "442df11a2fcf62a2a714a2d40dfd72ecd7ac56da5d9461544c77f04ec4af2066",
+    "crop_original_xyxy": [
+      80,
+      0,
+      560,
+      480
+    ],
+    "domain": "FabricNET_microscope",
+    "source": "single_RGB_student"
+  }
+}

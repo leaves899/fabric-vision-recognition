@@ -1,0 +1,24 @@
+{
+  "sample_id": "sample",
+  "status": "PASS",
+  "files": {
+    "width": "D:\\zhongban\\tmp\\web_evidence\\628680d59af34c6c85ee4d61091a4a52\\sample_width.png",
+    "twill": "D:\\zhongban\\tmp\\web_evidence\\628680d59af34c6c85ee4d61091a4a52\\sample_twill.png",
+    "direction_field": "D:\\zhongban\\tmp\\web_evidence\\628680d59af34c6c85ee4d61091a4a52\\sample_direction_field.png",
+    "centerlines": "D:\\zhongban\\tmp\\web_evidence\\628680d59af34c6c85ee4d61091a4a52\\sample_centerlines.png",
+    "weave_matrix": "D:\\zhongban\\tmp\\web_evidence\\628680d59af34c6c85ee4d61091a4a52\\sample_weave_matrix.png"
+  },
+  "statuses": {
+    "width": "PASS",
+    "direction": "PASS",
+    "angle": "LOW_CONFIDENCE",
+    "weave": "LOW_CONFIDENCE"
+  },
+  "measurement_reference": {
+    "engine_version": "0.6.3",
+    "algorithm_profile": "DENIM_ROUTE_V0.6.3_REAL_ROBUST"
+  },
+  "not_rendered": [
+    "fft_or_autocorrelation_plot"
+  ]
+}

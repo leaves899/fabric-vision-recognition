@@ -1,0 +1,641 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.0024782986111111112,
+    "class_fraction": [
+      0.0024782986111111112,
+      0.0,
+      0.0,
+      0.9975217013888888
+    ],
+    "visible_region_candidates": 3,
+    "inferred_links": 0,
+    "provisional_groups": 3,
+    "rejected_regions": {
+      "nonelongated_region": 1
+    },
+    "directions": {
+      "A": {
+        "angle_image_y_down_deg": 153.75711902194791,
+        "concentration": 0.5185759874495155,
+        "unit": [
+          0.8969276891440346,
+          -0.44217725003299513
+        ],
+        "physical_direction_verified": false
+      },
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 3,
+        "median_visible_mask_width_px": 6.1424461479114525,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        3,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "OBSERVED_CANDIDATE_INTERVALS_INCOMPLETE_ROOT_SET",
+        "hits": [],
+        "intervals_px": [],
+        "mean_interval_px": null,
+        "interval_cv": null,
+        "verified_adjacent_yarn_pitch": null,
+        "physical_count": null
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [
+    {
+      "id": "A0001",
+      "family": "A",
+      "points": [
+        [
+          368.0,
+          10.0
+        ],
+        [
+          370.0,
+          9.0
+        ],
+        [
+          372.0,
+          9.0
+        ],
+        [
+          374.0,
+          9.0
+        ],
+        [
+          376.0,
+          9.0
+        ],
+        [
+          378.0,
+          9.0
+        ],
+        [
+          380.0,
+          9.0
+        ],
+        [
+          382.0,
+          9.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            368.0,
+            10.0
+          ],
+          [
+            370.0,
+            9.0
+          ],
+          [
+            372.0,
+            9.0
+          ],
+          [
+            374.0,
+            9.0
+          ],
+          [
+            376.0,
+            9.0
+          ],
+          [
+            378.0,
+            9.0
+          ],
+          [
+            380.0,
+            9.0
+          ],
+          [
+            382.0,
+            9.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            369,
+            8
+          ],
+          [
+            367,
+            10
+          ],
+          [
+            368,
+            11
+          ],
+          [
+            382,
+            11
+          ],
+          [
+            382,
+            9
+          ],
+          [
+            381,
+            8
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        367,
+        8,
+        16,
+        4
+      ],
+      "area_px": 59,
+      "aspect_ratio": 3.922049288070294,
+      "apparent_mask_width_px_median": 4.006932698703491,
+      "apparent_mask_width_px_p10": 3.70345910225246,
+      "angle_image_y_down_deg": 179.800873375715,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    },
+    {
+      "id": "A0002",
+      "family": "A",
+      "points": [
+        [
+          458.0,
+          11.0
+        ],
+        [
+          459.0,
+          11.0
+        ],
+        [
+          461.0,
+          12.0
+        ],
+        [
+          463.0,
+          12.0
+        ],
+        [
+          465.0,
+          14.0
+        ],
+        [
+          467.0,
+          15.0
+        ],
+        [
+          469.0,
+          16.0
+        ],
+        [
+          470.0,
+          17.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            458.0,
+            11.0
+          ],
+          [
+            459.0,
+            11.0
+          ],
+          [
+            461.0,
+            12.0
+          ],
+          [
+            463.0,
+            12.0
+          ],
+          [
+            465.0,
+            14.0
+          ],
+          [
+            467.0,
+            15.0
+          ],
+          [
+            469.0,
+            16.0
+          ],
+          [
+            470.0,
+            17.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            457,
+            10
+          ],
+          [
+            457,
+            12
+          ],
+          [
+            458,
+            13
+          ],
+          [
+            459,
+            13
+          ],
+          [
+            460,
+            14
+          ],
+          [
+            461,
+            14
+          ],
+          [
+            464,
+            17
+          ],
+          [
+            465,
+            17
+          ],
+          [
+            466,
+            18
+          ],
+          [
+            470,
+            18
+          ],
+          [
+            470,
+            17
+          ],
+          [
+            471,
+            16
+          ],
+          [
+            470,
+            15
+          ],
+          [
+            470,
+            14
+          ],
+          [
+            467,
+            11
+          ],
+          [
+            466,
+            11
+          ],
+          [
+            465,
+            10
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        457,
+        10,
+        15,
+        9
+      ],
+      "area_px": 85,
+      "aspect_ratio": 2.309913150601211,
+      "apparent_mask_width_px_median": 6.1424461479114525,
+      "apparent_mask_width_px_p10": 3.6812850420870706,
+      "angle_image_y_down_deg": 26.4375814246357,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    },
+    {
+      "id": "A0003",
+      "family": "A",
+      "points": [
+        [
+          85.0,
+          92.0
+        ],
+        [
+          85.0,
+          90.0
+        ],
+        [
+          85.0,
+          88.0
+        ],
+        [
+          85.0,
+          86.0
+        ],
+        [
+          86.0,
+          84.0
+        ],
+        [
+          86.0,
+          82.0
+        ],
+        [
+          87.0,
+          80.0
+        ],
+        [
+          87.0,
+          78.0
+        ],
+        [
+          88.0,
+          76.0
+        ],
+        [
+          89.0,
+          75.0
+        ],
+        [
+          89.0,
+          73.0
+        ],
+        [
+          90.0,
+          71.0
+        ],
+        [
+          90.0,
+          69.0
+        ]
+      ],
+      "observed_runs": [
+        [
+          [
+            85.0,
+            92.0
+          ],
+          [
+            85.0,
+            90.0
+          ],
+          [
+            85.0,
+            88.0
+          ],
+          [
+            85.0,
+            86.0
+          ],
+          [
+            86.0,
+            84.0
+          ],
+          [
+            86.0,
+            82.0
+          ],
+          [
+            87.0,
+            80.0
+          ],
+          [
+            87.0,
+            78.0
+          ],
+          [
+            88.0,
+            76.0
+          ],
+          [
+            89.0,
+            75.0
+          ],
+          [
+            89.0,
+            73.0
+          ],
+          [
+            90.0,
+            71.0
+          ],
+          [
+            90.0,
+            69.0
+          ]
+        ]
+      ],
+      "contours": [
+        [
+          [
+            89,
+            69
+          ],
+          [
+            88,
+            70
+          ],
+          [
+            88,
+            71
+          ],
+          [
+            87,
+            72
+          ],
+          [
+            87,
+            73
+          ],
+          [
+            86,
+            74
+          ],
+          [
+            86,
+            75
+          ],
+          [
+            85,
+            76
+          ],
+          [
+            84,
+            76
+          ],
+          [
+            83,
+            77
+          ],
+          [
+            83,
+            78
+          ],
+          [
+            81,
+            80
+          ],
+          [
+            81,
+            81
+          ],
+          [
+            80,
+            82
+          ],
+          [
+            80,
+            87
+          ],
+          [
+            81,
+            88
+          ],
+          [
+            81,
+            89
+          ],
+          [
+            82,
+            90
+          ],
+          [
+            82,
+            91
+          ],
+          [
+            84,
+            93
+          ],
+          [
+            87,
+            93
+          ],
+          [
+            90,
+            90
+          ],
+          [
+            90,
+            89
+          ],
+          [
+            91,
+            88
+          ],
+          [
+            91,
+            86
+          ],
+          [
+            92,
+            85
+          ],
+          [
+            92,
+            81
+          ],
+          [
+            91,
+            80
+          ],
+          [
+            91,
+            69
+          ]
+        ]
+      ],
+      "bbox_xywh": [
+        80,
+        69,
+        13,
+        25
+      ],
+      "area_px": 216,
+      "aspect_ratio": 2.077258803237929,
+      "apparent_mask_width_px_median": 9.24496481031021,
+      "apparent_mask_width_px_p10": 4.568744054071041,
+      "angle_image_y_down_deg": 103.0400315737768,
+      "evidence": "MODEL_VISIBLE_REGION_CANDIDATE",
+      "physical_identity_verified": false
+    }
+  ],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [
+    [],
+    [],
+    []
+  ],
+  "row_groups": [
+    "G0003",
+    "G0001",
+    "G0002"
+  ],
+  "col_groups": [],
+  "provenance": {
+    "image": "E:\\Internship_2026\\FabricNET\\W045.jpg",
+    "sha256": "30a54114c074e5b8dd1bd4fa42a8c2ea31d2b57a802118c10c1d7f1eddf71f88",
+    "crop_original_xyxy": [
+      80,
+      0,
+      560,
+      480
+    ],
+    "domain": "FabricNET_microscope",
+    "source": "single_RGB_student"
+  }
+}

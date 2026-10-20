@@ -1,0 +1,10 @@
+V0.6.3 双图标准输入 + 测试代码清理补丁
+
+1. 前端恢复为必须上传两张图片：正面图 + 透视图。
+2. 保留“采集标定参数”区域，仅删除公开数据集/单图验证模式。
+3. 后端 /api/measure 强制要求 front_image 和 transmission_image。
+4. 删除 PUBLIC_SINGLE_IMAGE_VALIDATION 相关测试专用代码。
+5. 保留当前 Structure Tensor Top-N、多指标方向对评分、Steerable、Ridge、Centerline 等算法优化。
+6. 不包含 FabricNET 测试脚本、测试 CSV、测试图片和回归测试目录。
+
+若用本补丁覆盖旧项目：覆盖文件后，运行一次“清理测试文件.bat”。

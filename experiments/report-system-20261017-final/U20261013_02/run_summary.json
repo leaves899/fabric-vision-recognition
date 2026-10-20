@@ -1,0 +1,183 @@
+{
+  "version": "report-system-1.1",
+  "created_utc": "2026-10-16T16:26:23.907328+00:00",
+  "gate3": {
+    "status": "LOW_CONFIDENCE",
+    "reasons": [
+      "transmission_not_provided",
+      "registration",
+      "physical_scale_not_confirmed",
+      "density_or_centerlines",
+      "warp_weft_identity_not_mapped",
+      "widths"
+    ],
+    "auxiliary_warnings": [
+      "twill_low_confidence",
+      "weave_low_confidence",
+      "Ne_tex_reference_unavailable"
+    ],
+    "physical_accuracy": "NOT_EVALUATED",
+    "eligible_for_physical_release": false,
+    "meaning": "implementation quality conditions, not physical ground-truth accuracy"
+  },
+  "stages": [
+    {
+      "id": "01",
+      "name": "图片质量 Gate",
+      "status": "PASS",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "02",
+      "name": "有效织物 ROI",
+      "status": "PASS",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "03",
+      "name": "几何与光照归一化、双图配准",
+      "status": "NOT_APPLICABLE",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "04",
+      "name": "Structure Tensor 局部方向场",
+      "status": "LOW_CONFIDENCE",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "05",
+      "name": "分方向滤波增强",
+      "status": "PASS",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "06",
+      "name": "Ridge Detection 与中心线连接",
+      "status": "PASS",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "07",
+      "name": "中心线清洗",
+      "status": "PASS",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "08",
+      "name": "经向提示映射",
+      "status": "UNAVAILABLE",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "09",
+      "name": "计数与中位间距双路径密度",
+      "status": "LOW_CONFIDENCE",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "10",
+      "name": "经密、纬密与经纬比",
+      "status": "LOW_CONFIDENCE",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "11",
+      "name": "经纬纱表观宽度",
+      "status": "LOW_CONFIDENCE",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "12",
+      "name": "左斜右斜与斜纹角度",
+      "status": "LOW_CONFIDENCE",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "13",
+      "name": "交点浮沉与组织候选",
+      "status": "LOW_CONFIDENCE",
+      "implemented": true,
+      "executed": true
+    },
+    {
+      "id": "14",
+      "name": "Gate 3 综合质量判断",
+      "status": "LOW_CONFIDENCE",
+      "implemented": true,
+      "executed": true
+    }
+  ],
+  "source": {
+    "sample_id": "U20261013_02",
+    "filenames": [
+      "U20261013_02.jpg"
+    ],
+    "reflection_sha256": "630cd4ea2245d7420307fae7704e34fb608a4c1f61379564321f03912a5312ca",
+    "transmission_sha256": null,
+    "reflection_shape_hw": [
+      2048,
+      1536
+    ],
+    "transmission_shape_hw": null,
+    "options": {
+      "roi": [
+        448,
+        704,
+        640,
+        640
+      ],
+      "warp_angle": null,
+      "mm_per_px": null,
+      "scale_confirmed": false,
+      "prealigned": false,
+      "front_corners": null,
+      "back_corners": null,
+      "target_size": null,
+      "yarn_reference_rules": [],
+      "camera_profile": ""
+    },
+    "coordinate_convention": "EXIF oriented source; ROI in source pixels, or rectified pixels when corners supplied"
+  },
+  "source_hashes": {
+    "__init__.py": "b69d1e8c87a6e9503215961deef1a2a6e206ad1a7e7ddf67be54739ec86878be",
+    "__main__.py": "1fd7b035071c661a7c87587f8ff182ad9984eba6ffaeefbaabf677a8593e777c",
+    "batch.py": "3bc44f0b60ae35b482123defef79861b50b80a08dcd0f1d26be79d5e95d38ca2",
+    "centerlines.py": "dbd278aad9effe82b8479d131ebbd6754f2a3087e034c17f74a616aa459d111f",
+    "config.py": "dc7222fd5140d39f1a08be87c1a7a83123b583d94d2d4dd1295555bbd67d992b",
+    "geometry.py": "c003fb8e98f513dcb6bd1a188b6f032cc5becb598fe1a5786b16af2f077d7161",
+    "measurements.py": "46aa3af4478f753fee6d09c08bdf62af1f5a4a66155f0eab070605a1e6cef879",
+    "pipeline.py": "f78e92c484043fdff88416b1f175ef885c80fb4bbe0852515b9ea09058ba943e",
+    "primitives.py": "e32f9ad5fe3c3d26fdc33cba06ff3477ec043e1282e293f38fc44b9c8fbbebfe",
+    "server.py": "9a45b6eeb168a85481fb8f61f2a95c8310901f652aff8714596f6b0947527e35",
+    "service.py": "6f70eb755953630631e179dfdee4365f9ed0a8a441fc82c2a8384b9e8e3bb946",
+    "structure.py": "92f54ead3e96d744d975708ea61fe777a6cba658077ea5dac15c087001ae6344"
+  },
+  "outputs": [
+    "result.json",
+    "review.html",
+    "centerlines_A.png",
+    "centerlines_B.png",
+    "centerlines_both.png",
+    "direction_field.png",
+    "float_matrix.png",
+    "reflection.png",
+    "response_A.png",
+    "response_B.png",
+    "twill.png",
+    "valid_mask.png",
+    "width_edges.png"
+  ]
+}

@@ -1,0 +1,74 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>技术路线复现结果</title><style>body{font:16px system-ui;background:#18202a;color:#eee;max-width:1200px;margin:24px auto;padding:0 16px}a{color:#8de}label{margin-right:16px}.viewport{overflow:auto}svg{width:100%;height:auto}.point{display:none}table{border-collapse:collapse;width:100%}td,th{text-align:left;border:1px solid #53616d;padding:8px}pre{white-space:pre-wrap;overflow-wrap:anywhere}.evidence img{max-width:100%}button,select{padding:6px}</style>
+<h1>可行性报告技术路线复现</h1><p>版本 report-system-1.1；Gate 3：LOW_CONFIDENCE。未形成两组中心线</p>
+<p>候选片段编号不等于物理纱线根数。实线连接相邻观测，虚线跨越缺失采样。未有独立真值的准确率记为 NOT_EVALUATED。</p>
+<p><label><input id="showA" type="checkbox" checked onchange="toggle('A',this.checked)">A组</label><label><input id="showB" type="checkbox" checked onchange="toggle('B',this.checked)">B组</label>
+<label><input type="checkbox" onchange="document.querySelectorAll('.point').forEach(n=>n.style.display=this.checked?'inline':'none')">采样点</label>
+<select aria-label="选择候选轨迹" onchange="document.querySelectorAll('.track').forEach(n=>n.style.display=this.value==='all'||n.dataset.id===this.value?'inline':'none')"><option value="all">全部轨迹</option></select>
+<button onclick="document.getElementById('base').setAttribute('href','reflection.png')">反射图</button><span>单张反射图：无透射证据</span></p>
+<p>缩放 <input aria-label="缩放" type="range" min="100" max="250" value="100" oninput="document.getElementById('canvas').style.width=this.value+'%'"> · <a href="result.json">完整逐点JSON</a> · <a href="run_summary.json">运行记录</a></p>
+<div class="viewport"><svg id="canvas" viewBox="0 0 640 640"><image id="base" href="reflection.png" width="640" height="640"/></svg></div>
+<h2>技术路线各步骤</h2><table><tr><th>步骤</th><th>模块</th><th>本次输出状态</th></tr><tr><td>01</td><td>图片质量 Gate</td><td>PASS</td></tr><tr><td>02</td><td>有效织物 ROI</td><td>PASS</td></tr><tr><td>03</td><td>几何与光照归一化、双图配准</td><td>NOT_APPLICABLE</td></tr><tr><td>04</td><td>Structure Tensor 局部方向场</td><td>REJECTED</td></tr><tr><td>05</td><td>分方向滤波增强</td><td>UNAVAILABLE</td></tr><tr><td>06</td><td>Ridge Detection 与中心线连接</td><td>LOW_CONFIDENCE</td></tr><tr><td>07</td><td>中心线清洗</td><td>LOW_CONFIDENCE</td></tr><tr><td>08</td><td>经向提示映射</td><td>UNAVAILABLE</td></tr><tr><td>09</td><td>计数与中位间距双路径密度</td><td>LOW_CONFIDENCE</td></tr><tr><td>10</td><td>经密、纬密与经纬比</td><td>LOW_CONFIDENCE</td></tr><tr><td>11</td><td>经纬纱表观宽度</td><td>LOW_CONFIDENCE</td></tr><tr><td>12</td><td>左斜右斜与斜纹角度</td><td>LOW_CONFIDENCE</td></tr><tr><td>13</td><td>交点浮沉与组织候选</td><td>UNAVAILABLE</td></tr><tr><td>14</td><td>Gate 3 综合质量判断</td><td>LOW_CONFIDENCE</td></tr></table>
+<h2>测量与质量结果</h2><pre>{
+  &quot;density&quot;: {
+    &quot;families&quot;: {},
+    &quot;calibration_status&quot;: &quot;UNAVAILABLE&quot;,
+    &quot;candidate_ratio_count&quot;: null,
+    &quot;ratio_count&quot;: null,
+    &quot;candidate_ratio_spacing&quot;: null,
+    &quot;ratio_spacing&quot;: null,
+    &quot;dependency&quot;: &quot;Both density paths use the same detected centers; agreement is not independent truth&quot;
+  },
+  &quot;widths&quot;: [],
+  &quot;twill&quot;: {
+    &quot;status&quot;: &quot;LOW_CONFIDENCE&quot;,
+    &quot;reasons&quot;: [
+      &quot;weak_direction_support_fraction&quot;
+    ],
+    &quot;image_angle_deg&quot;: 118.54857285282044,
+    &quot;acute_angle_deg&quot;: 61.45142714717956,
+    &quot;gabor_angle_deg&quot;: 117.0,
+    &quot;hough_dispersion_deg&quot;: 5.859286294014533,
+    &quot;angle_source&quot;: &quot;length_weighted_Hough_cluster&quot;,
+    &quot;direction_scope&quot;: &quot;image slant only; face, mirroring and warp identity must be checked for physical twill handedness&quot;,
+    &quot;direction&quot;: &quot;right_rising&quot;,
+    &quot;direction_convention&quot;: &quot;right_rising=/ rises toward upper right; left_rising=\\ rises toward upper left; image y points down&quot;,
+    &quot;multiscale_winner_deg&quot;: [
+      117.0,
+      117.0,
+      117.0
+    ],
+    &quot;multiscale_max_deviation_deg&quot;: 0.0,
+    &quot;Hough_support_fraction&quot;: 0.08263506370043656,
+    &quot;tensor_mass_within_12deg&quot;: 0.6467859629827823,
+    &quot;physical_accuracy&quot;: &quot;NOT_EVALUATED&quot;
+  },
+  &quot;weave&quot;: {
+    &quot;status&quot;: &quot;UNAVAILABLE&quot;,
+    &quot;reasons&quot;: [
+      &quot;two_centerline_families_required&quot;
+    ],
+    &quot;candidate&quot;: null
+  },
+  &quot;yarn_reference&quot;: [],
+  &quot;gate3&quot;: {
+    &quot;status&quot;: &quot;LOW_CONFIDENCE&quot;,
+    &quot;reasons&quot;: [
+      &quot;transmission_not_provided&quot;,
+      &quot;registration&quot;,
+      &quot;physical_scale_not_confirmed&quot;,
+      &quot;density_or_centerlines&quot;,
+      &quot;warp_weft_identity_not_mapped&quot;,
+      &quot;widths&quot;
+    ],
+    &quot;auxiliary_warnings&quot;: [
+      &quot;twill_low_confidence&quot;,
+      &quot;weave_low_confidence&quot;,
+      &quot;Ne_tex_reference_unavailable&quot;
+    ],
+    &quot;physical_accuracy&quot;: &quot;NOT_EVALUATED&quot;,
+    &quot;eligible_for_physical_release&quot;: false,
+    &quot;meaning&quot;: &quot;implementation quality conditions, not physical ground-truth accuracy&quot;
+  }
+}</pre>
+<h2>可视化证据</h2><div class="evidence"><h3>局部方向场</h3><a href="direction_field.png"><img loading="lazy" src="direction_field.png" alt="局部方向场"></a><h3>A组中心线</h3><a href="centerlines_A.png"><img loading="lazy" src="centerlines_A.png" alt="A组中心线"></a><h3>B组中心线</h3><a href="centerlines_B.png"><img loading="lazy" src="centerlines_B.png" alt="B组中心线"></a><h3>宽度边缘</h3><a href="width_edges.png"><img loading="lazy" src="width_edges.png" alt="宽度边缘"></a><h3>斜纹线段</h3><a href="twill.png"><img loading="lazy" src="twill.png" alt="斜纹线段"></a><h3>交点浮沉矩阵</h3><a href="float_matrix.png"><img loading="lazy" src="float_matrix.png" alt="交点浮沉矩阵"></a></div><script>function toggle(id,on){document.getElementById(id)?.setAttribute("visibility",on?"visible":"hidden")}</script></html>

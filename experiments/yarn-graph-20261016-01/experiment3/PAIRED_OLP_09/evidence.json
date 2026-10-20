@@ -1,0 +1,88 @@
+{
+  "summary": {
+    "resolved_pixel_fraction": 0.96328369140625,
+    "class_fraction": [
+      0.96328369140625,
+      0.0,
+      0.0,
+      0.03671630859375
+    ],
+    "visible_region_candidates": 0,
+    "inferred_links": 0,
+    "provisional_groups": 0,
+    "rejected_regions": {
+      "nonelongated_region": 1
+    },
+    "directions": {
+      "A": null,
+      "B": null
+    },
+    "direction_separation_deg": null,
+    "widths": {
+      "A": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      },
+      "B": {
+        "candidate_regions": 0,
+        "median_visible_mask_width_px": null,
+        "physical_width_verified": false
+      }
+    },
+    "weave": {
+      "observed_cells": 0,
+      "shape": [
+        0,
+        0
+      ],
+      "unknown_cells": 0,
+      "coarse_candidate": null,
+      "status": "TWO_DIRECTIONS_UNSUPPORTED",
+      "physical_weave_verified": false,
+      "index_continuity_verified": false,
+      "handedness": "NOT_ASSIGNED_WITHOUT_CONFIRMED_WARP_AND_FACE"
+    },
+    "physical_yarn_count": null,
+    "warp_per_cm": null,
+    "weft_per_cm": null,
+    "root_index_continuity": "UNVERIFIED; no missing roots filled",
+    "coordinate_system": "native crop pixels, x right y down, angle modulo 180",
+    "independent_physical_accuracy": null,
+    "candidate_spacing": {
+      "A": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      },
+      "B": {
+        "status": "NO_DIRECTION",
+        "intervals_px": []
+      }
+    }
+  },
+  "segments": [],
+  "graph": {
+    "method": "assignment",
+    "edges": [],
+    "candidates": [],
+    "groups": [],
+    "branching_nodes": 0,
+    "physical_identity_verified": false
+  },
+  "crossings": [],
+  "matrix": [],
+  "row_groups": [],
+  "col_groups": [],
+  "provenance": {
+    "coordinate_space": "native center crop",
+    "crop_original_xyxy": [
+      904,
+      705,
+      1544,
+      1345
+    ],
+    "source_front_sha256": "43cfd173bdb7039de30e6ff252b279f3fa5093d8524a294eab0cad9c1dd8bdc5",
+    "source_back_sha256": "277d31a01bfc3cc8e739158d6cee9b8ef1d1be7b5b5f293755d3b3dcd649a113",
+    "source_lookup": "inputs.json pairs and teacher_execution.json; AUTHOR under demo example/orig_fabric"
+  }
+}

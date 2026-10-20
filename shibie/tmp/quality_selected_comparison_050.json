@@ -1,0 +1,417 @@
+{
+  "sample_count": 50,
+  "baseline": "D:\\zhongban\\tmp\\quality_selected_baseline_050.json",
+  "optimized": "D:\\zhongban\\tmp\\quality_selected_latest_050.json",
+  "metrics": {
+    "main_status": {
+      "baseline": {
+        "PASS": 17,
+        "LOW_CONFIDENCE": 33
+      },
+      "optimized": {
+        "PASS": 17,
+        "LOW_CONFIDENCE": 33
+      },
+      "changed": false
+    },
+    "gate3_status": {
+      "baseline": {
+        "PASS": 1,
+        "LOW_CONFIDENCE": 49
+      },
+      "optimized": {
+        "PASS": 1,
+        "LOW_CONFIDENCE": 49
+      },
+      "changed": false
+    },
+    "width_status": {
+      "baseline": {
+        "PASS": 13,
+        "LOW_CONFIDENCE": 37
+      },
+      "optimized": {
+        "PASS": 13,
+        "LOW_CONFIDENCE": 37
+      },
+      "changed": false
+    },
+    "warp_width_status": {
+      "baseline": {
+        "PASS": 32,
+        "LOW_CONFIDENCE": 18
+      },
+      "optimized": {
+        "PASS": 32,
+        "LOW_CONFIDENCE": 18
+      },
+      "changed": false
+    },
+    "weft_width_status": {
+      "baseline": {
+        "PASS": 20,
+        "LOW_CONFIDENCE": 30
+      },
+      "optimized": {
+        "PASS": 20,
+        "LOW_CONFIDENCE": 30
+      },
+      "changed": false
+    },
+    "twill_direction_status": {
+      "baseline": {
+        "PASS": 48,
+        "LOW_CONFIDENCE": 1,
+        "FAIL": 1
+      },
+      "optimized": {
+        "PASS": 48,
+        "LOW_CONFIDENCE": 1,
+        "FAIL": 1
+      },
+      "changed": false
+    },
+    "twill_angle_status": {
+      "baseline": {
+        "LOW_CONFIDENCE": 6,
+        "PASS": 43,
+        "FAIL": 1
+      },
+      "optimized": {
+        "LOW_CONFIDENCE": 6,
+        "PASS": 43,
+        "FAIL": 1
+      },
+      "changed": false
+    },
+    "weave_status": {
+      "baseline": {
+        "LOW_CONFIDENCE": 49,
+        "NOT_AVAILABLE": 1
+      },
+      "optimized": {
+        "LOW_CONFIDENCE": 49,
+        "NOT_AVAILABLE": 1
+      },
+      "changed": false
+    }
+  },
+  "gate3_warning_frequency": {
+    "baseline": {
+      "GATE3_TWILL_ANGLE_LOW_CONFIDENCE": 6,
+      "GATE3_WEAVE_LOW_CONFIDENCE": 49,
+      "WEAVE_PATTERN_NOT_IN_V1_RULES": 49,
+      "GATE3_DENSITY_LOW_CONFIDENCE": 33,
+      "WEAVE_REPEAT_CONSISTENCY_LOW": 9,
+      "WEAVE_TEMPLATE_MATCH_LOW": 14,
+      "GATE3_GATE2_INPUT_LOW_CONFIDENCE": 6,
+      "GATE3_WIDTH_LOW_CONFIDENCE": 37,
+      "WARP_WIDTH_P10_BELOW_GATE": 18,
+      "WEFT_WIDTH_P10_BELOW_GATE": 30,
+      "GATE3_TWILL_DIRECTION_LOW_CONFIDENCE": 1,
+      "GATE3_WEAVE_NOT_AVAILABLE": 1,
+      "WEAVE_TWILL_SEGMENTS_INSUFFICIENT": 1
+    },
+    "optimized": {
+      "GATE3_TWILL_ANGLE_LOW_CONFIDENCE": 6,
+      "GATE3_WEAVE_LOW_CONFIDENCE": 49,
+      "WEAVE_PATTERN_NOT_IN_V1_RULES": 48,
+      "GATE3_DENSITY_LOW_CONFIDENCE": 33,
+      "WEAVE_REPEAT_CONSISTENCY_LOW": 13,
+      "WEAVE_TEMPLATE_MATCH_LOW": 14,
+      "GATE3_GATE2_INPUT_LOW_CONFIDENCE": 6,
+      "GATE3_WIDTH_LOW_CONFIDENCE": 37,
+      "WARP_WIDTH_P10_BELOW_GATE": 18,
+      "WEFT_WIDTH_P10_BELOW_GATE": 30,
+      "WEAVE_LONG_FLOAT_OUTSIDE_V1_SCOPE": 1,
+      "GATE3_TWILL_DIRECTION_LOW_CONFIDENCE": 1,
+      "GATE3_WEAVE_NOT_AVAILABLE": 1,
+      "WEAVE_TWILL_SEGMENTS_INSUFFICIENT": 1
+    }
+  },
+  "changed_weave_warning_samples": [
+    {
+      "image": "W004.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W093.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W113.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W015.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W066.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W054.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W016.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W089.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W001.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W013.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W087.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W090.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W056.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W005.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W017.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W078.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W095.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W075.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W105.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W067.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W080.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_LONG_FLOAT_OUTSIDE_V1_SCOPE"
+      ]
+    },
+    {
+      "image": "W046.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W048.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W058.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ]
+    },
+    {
+      "image": "W081.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W074.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    },
+    {
+      "image": "W073.jpg",
+      "baseline_weave_reasons": [
+        "WEAVE_REPEAT_CONSISTENCY_LOW",
+        "WEAVE_PATTERN_NOT_IN_V1_RULES",
+        "WEAVE_TEMPLATE_MATCH_LOW"
+      ],
+      "optimized_weave_reasons": [
+        "WEAVE_PATTERN_NOT_IN_V1_RULES"
+      ]
+    }
+  ]
+}

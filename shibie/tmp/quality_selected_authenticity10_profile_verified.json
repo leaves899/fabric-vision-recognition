@@ -1,0 +1,238 @@
+{
+  "count": 10,
+  "mm_per_px_x": 0.0078125,
+  "mm_per_px_y": 0.0083333,
+  "warp_axis_hint": "vertical",
+  "samples": [
+    {
+      "image": "W088.jpg",
+      "reference_warp": 30,
+      "reference_weft": 45,
+      "warp_density_per_cm": 26.808,
+      "weft_density_per_cm": 44.105,
+      "warp_density_before": 27.422,
+      "weft_density_before": 43.876,
+      "warp_delta_vs_reference": -3.192,
+      "weft_delta_vs_reference": -0.8950000000000031,
+      "warp_weft_ratio": 0.607829,
+      "status": "LOW_CONFIDENCE",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W004.jpg",
+      "reference_warp": 32,
+      "reference_weft": 30,
+      "warp_density_per_cm": 35.639,
+      "weft_density_per_cm": 31.177,
+      "warp_density_before": 36.054,
+      "weft_density_before": 26.517,
+      "warp_delta_vs_reference": 3.639000000000003,
+      "weft_delta_vs_reference": 1.1769999999999996,
+      "warp_weft_ratio": 1.143124,
+      "status": "LOW_CONFIDENCE",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W063.jpg",
+      "reference_warp": 26,
+      "reference_weft": 18,
+      "warp_density_per_cm": 22.081,
+      "weft_density_per_cm": 17.746,
+      "warp_density_before": 26.159,
+      "weft_density_before": 19.573,
+      "warp_delta_vs_reference": -3.9190000000000005,
+      "weft_delta_vs_reference": -0.25400000000000134,
+      "warp_weft_ratio": 1.244274,
+      "status": "LOW_CONFIDENCE",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W012.jpg",
+      "reference_warp": 38,
+      "reference_weft": 33,
+      "warp_density_per_cm": 38.884,
+      "weft_density_per_cm": 27.259,
+      "warp_density_before": 38.71,
+      "weft_density_before": 27.22,
+      "warp_delta_vs_reference": 0.8840000000000003,
+      "weft_delta_vs_reference": -5.741,
+      "warp_weft_ratio": 1.426489,
+      "status": "PASS",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W014.jpg",
+      "reference_warp": 38,
+      "reference_weft": 33,
+      "warp_density_per_cm": 39.937,
+      "weft_density_per_cm": 30.43,
+      "warp_density_before": 39.808,
+      "weft_density_before": 30.558,
+      "warp_delta_vs_reference": 1.9369999999999976,
+      "weft_delta_vs_reference": -2.5700000000000003,
+      "warp_weft_ratio": 1.312448,
+      "status": "PASS",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W001.jpg",
+      "reference_warp": 32,
+      "reference_weft": 30,
+      "warp_density_per_cm": 34.408,
+      "weft_density_per_cm": 29.781,
+      "warp_density_before": 34.451,
+      "weft_density_before": 29.584,
+      "warp_delta_vs_reference": 2.4080000000000013,
+      "weft_delta_vs_reference": -0.2190000000000012,
+      "warp_weft_ratio": 1.155363,
+      "status": "LOW_CONFIDENCE",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W003.jpg",
+      "reference_warp": 32,
+      "reference_weft": 30,
+      "warp_density_per_cm": 33.83,
+      "weft_density_per_cm": 28.414,
+      "warp_density_before": 34.077,
+      "weft_density_before": 33.682,
+      "warp_delta_vs_reference": 1.8299999999999983,
+      "weft_delta_vs_reference": -1.5859999999999985,
+      "warp_weft_ratio": 1.190632,
+      "status": "LOW_CONFIDENCE",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W100.jpg",
+      "reference_warp": 30,
+      "reference_weft": 50,
+      "warp_density_per_cm": 30.086,
+      "weft_density_per_cm": 50.778,
+      "warp_density_before": 29.624,
+      "weft_density_before": 50.777,
+      "warp_delta_vs_reference": 0.08599999999999852,
+      "weft_delta_vs_reference": 0.7779999999999987,
+      "warp_weft_ratio": 0.592489,
+      "status": "PASS",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W096.jpg",
+      "reference_warp": 30,
+      "reference_weft": 15,
+      "warp_density_per_cm": 28.57,
+      "weft_density_per_cm": 28.212,
+      "warp_density_before": 29.993,
+      "weft_density_before": 35.493,
+      "warp_delta_vs_reference": -1.4299999999999997,
+      "weft_delta_vs_reference": 13.212,
+      "warp_weft_ratio": 1.0127,
+      "status": "LOW_CONFIDENCE",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    },
+    {
+      "image": "W050.jpg",
+      "reference_warp": 62,
+      "reference_weft": 30,
+      "warp_density_per_cm": 64.84,
+      "weft_density_per_cm": 28.312,
+      "warp_density_before": 63.261,
+      "weft_density_before": 28.976,
+      "warp_delta_vs_reference": 2.8400000000000034,
+      "weft_delta_vs_reference": -1.6879999999999988,
+      "warp_weft_ratio": 2.290217,
+      "status": "LOW_CONFIDENCE",
+      "warp_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      },
+      "weft_spacing": {
+        "median_spacing_px": null,
+        "spacing_cv": null,
+        "valid_centerline_count": null
+      }
+    }
+  ]
+}

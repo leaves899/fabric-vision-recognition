@@ -1,0 +1,468 @@
+{
+  "status": "EXECUTED_FIXED_WEAK_SEGMENTS",
+  "rows": [
+    {
+      "id": "U20261013_01",
+      "observed_segments": 10,
+      "review_state": "DRAFT",
+      "reference_quality": "DRAFT_PHONE_REVIEW_NOT_INDEPENDENT_PHYSICAL_GT",
+      "methods": [
+        {
+          "method": "axis_nearest",
+          "score": {
+            "known_same_pairs": 9,
+            "direct_same_recovered": 0,
+            "same_recovered_via_graph": 0,
+            "same_pair_recall_weak": 0.0,
+            "proposed_links": 0,
+            "proposed_links_without_direct_reference": 0,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 10,
+            "branching_nodes": 0
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        },
+        {
+          "method": "local_tangent",
+          "score": {
+            "known_same_pairs": 9,
+            "direct_same_recovered": 9,
+            "same_recovered_via_graph": 9,
+            "same_pair_recall_weak": 1.0,
+            "proposed_links": 9,
+            "proposed_links_without_direct_reference": 0,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 1,
+            "branching_nodes": 0
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        },
+        {
+          "method": "assignment",
+          "score": {
+            "known_same_pairs": 9,
+            "direct_same_recovered": 4,
+            "same_recovered_via_graph": 4,
+            "same_pair_recall_weak": 0.4444444444444444,
+            "proposed_links": 4,
+            "proposed_links_without_direct_reference": 0,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 6,
+            "branching_nodes": 0
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U20261013_03",
+      "observed_segments": 85,
+      "review_state": "DRAFT",
+      "reference_quality": "DRAFT_PHONE_REVIEW_NOT_INDEPENDENT_PHYSICAL_GT",
+      "methods": [
+        {
+          "method": "axis_nearest",
+          "score": {
+            "known_same_pairs": 72,
+            "direct_same_recovered": 0,
+            "same_recovered_via_graph": 0,
+            "same_pair_recall_weak": 0.0,
+            "proposed_links": 70,
+            "proposed_links_without_direct_reference": 70,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 15,
+            "branching_nodes": 0
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 0.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        },
+        {
+          "method": "local_tangent",
+          "score": {
+            "known_same_pairs": 72,
+            "direct_same_recovered": 69,
+            "same_recovered_via_graph": 71,
+            "same_pair_recall_weak": 0.9861111111111112,
+            "proposed_links": 80,
+            "proposed_links_without_direct_reference": 11,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 5,
+            "branching_nodes": 8
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 0.7777777777777778,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 0.7777777777777778,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        },
+        {
+          "method": "assignment",
+          "score": {
+            "known_same_pairs": 72,
+            "direct_same_recovered": 4,
+            "same_recovered_via_graph": 4,
+            "same_pair_recall_weak": 0.05555555555555555,
+            "proposed_links": 4,
+            "proposed_links_without_direct_reference": 0,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 81,
+            "branching_nodes": 0
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U20261013_06",
+      "observed_segments": 55,
+      "review_state": "DRAFT",
+      "reference_quality": "DRAFT_PHONE_REVIEW_NOT_INDEPENDENT_PHYSICAL_GT",
+      "methods": [
+        {
+          "method": "axis_nearest",
+          "score": {
+            "known_same_pairs": 0,
+            "direct_same_recovered": 0,
+            "same_recovered_via_graph": 0,
+            "same_pair_recall_weak": null,
+            "proposed_links": 36,
+            "proposed_links_without_direct_reference": 36,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 19,
+            "branching_nodes": 4
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 0.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 0.775,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        },
+        {
+          "method": "local_tangent",
+          "score": {
+            "known_same_pairs": 0,
+            "direct_same_recovered": 0,
+            "same_recovered_via_graph": 0,
+            "same_pair_recall_weak": null,
+            "proposed_links": 47,
+            "proposed_links_without_direct_reference": 47,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 8,
+            "branching_nodes": 13
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 0.4,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        },
+        {
+          "method": "assignment",
+          "score": {
+            "known_same_pairs": 0,
+            "direct_same_recovered": 0,
+            "same_recovered_via_graph": 0,
+            "same_pair_recall_weak": null,
+            "proposed_links": 2,
+            "proposed_links_without_direct_reference": 2,
+            "precision": null,
+            "precision_unavailable_reason": "No exhaustive DIFFERENT labels; unlabelled is not false",
+            "physical_count": null,
+            "provisional_component_count": 53,
+            "branching_nodes": 0
+          },
+          "transform_checks": [
+            {
+              "rotation_deg": 45,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 90,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 180,
+              "coordinate_scale": 1,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 0.5,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            },
+            {
+              "rotation_deg": 0,
+              "coordinate_scale": 2,
+              "edge_jaccard": 1.0,
+              "kind": "COORDINATE_MECHANICS_NOT_NEW_PHOTO"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "axis_baseline": "Axis-aligned nearest-neighbor style adapted to strokes; not exact upstream region-area routine",
+  "not_evaluated": [
+    "pixel segmentation accuracy",
+    "false link precision",
+    "independent physical count"
+  ],
+  "link_inputs": "geometry only; annotation relations used only after prediction"
+}

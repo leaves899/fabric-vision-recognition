@@ -1,0 +1,690 @@
+{
+  "range": [
+    1,
+    43
+  ],
+  "summary": {
+    "plain": {
+      "FAIL": 6,
+      "LOW_CONFIDENCE": 15,
+      "PASS": 1
+    },
+    "twill": {
+      "FAIL": 10,
+      "LOW_CONFIDENCE": 11
+    }
+  },
+  "samples": [
+    {
+      "image": "W001.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_COHERENT_DIAGONAL_BAND_NOT_FOUND"
+      ],
+      "band_evidence": []
+    },
+    {
+      "image": "W002.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_COHERENT_DIAGONAL_BAND_NOT_FOUND"
+      ],
+      "band_evidence": []
+    },
+    {
+      "image": "W003.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 71.463,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.0125,
+          "component_count": 6,
+          "mean_response": 2.8831
+        }
+      ]
+    },
+    {
+      "image": "W004.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 18.583,
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 105.0,
+          "direction_field_coverage": 0.0174,
+          "component_count": 8,
+          "mean_response": 2.2776
+        }
+      ]
+    },
+    {
+      "image": "W005.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_COHERENT_DIAGONAL_BAND_NOT_FOUND"
+      ],
+      "band_evidence": []
+    },
+    {
+      "image": "W006.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.248,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0313,
+          "component_count": 14,
+          "mean_response": 2.4448
+        }
+      ]
+    },
+    {
+      "image": "W007.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0394,
+          "component_count": 16,
+          "mean_response": 2.4833
+        }
+      ]
+    },
+    {
+      "image": "W008.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.258,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.0308,
+          "component_count": 11,
+          "mean_response": 2.5407
+        }
+      ]
+    },
+    {
+      "image": "W009.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.329,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.04,
+          "component_count": 14,
+          "mean_response": 2.4914
+        }
+      ]
+    },
+    {
+      "image": "W010.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 17.867,
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 100.0,
+          "direction_field_coverage": 0.0271,
+          "component_count": 12,
+          "mean_response": 2.3336
+        }
+      ]
+    },
+    {
+      "image": "W011.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.154,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.0292,
+          "component_count": 8,
+          "mean_response": 2.8432
+        }
+      ]
+    },
+    {
+      "image": "W012.jpg",
+      "fabricnet_texture": "plain",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_COHERENT_DIAGONAL_BAND_NOT_FOUND"
+      ],
+      "band_evidence": []
+    },
+    {
+      "image": "W013.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.853,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0137,
+          "component_count": 7,
+          "mean_response": 2.0805
+        }
+      ]
+    },
+    {
+      "image": "W014.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 17.118,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 80.0,
+          "direction_field_coverage": 0.012,
+          "component_count": 6,
+          "mean_response": 1.7132
+        }
+      ]
+    },
+    {
+      "image": "W015.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.17,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 80.0,
+          "direction_field_coverage": 0.0121,
+          "component_count": 6,
+          "mean_response": 2.1481
+        }
+      ]
+    },
+    {
+      "image": "W016.jpg",
+      "fabricnet_texture": "plain",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_COHERENT_DIAGONAL_BAND_NOT_FOUND"
+      ],
+      "band_evidence": []
+    },
+    {
+      "image": "W017.jpg",
+      "fabricnet_texture": "plain",
+      "status": "FAIL",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 72.372,
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.0155,
+          "component_count": 7,
+          "mean_response": 2.4153
+        }
+      ]
+    },
+    {
+      "image": "W018.jpg",
+      "fabricnet_texture": "plain",
+      "status": "FAIL",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 69.177,
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.0222,
+          "component_count": 11,
+          "mean_response": 2.238
+        }
+      ]
+    },
+    {
+      "image": "W019.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 73.316,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.0211,
+          "component_count": 9,
+          "mean_response": 2.6053
+        }
+      ]
+    },
+    {
+      "image": "W020.jpg",
+      "fabricnet_texture": "plain",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_COHERENT_DIAGONAL_BAND_NOT_FOUND"
+      ],
+      "band_evidence": []
+    },
+    {
+      "image": "W021.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 68.127,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.0324,
+          "component_count": 16,
+          "mean_response": 2.4116
+        }
+      ]
+    },
+    {
+      "image": "W022.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 66.858,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.0249,
+          "component_count": 8,
+          "mean_response": 1.7182
+        }
+      ]
+    },
+    {
+      "image": "W023.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 75.965,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.03,
+          "component_count": 11,
+          "mean_response": 1.7998
+        }
+      ]
+    },
+    {
+      "image": "W024.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 71.966,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 170.0,
+          "direction_field_coverage": 0.0329,
+          "component_count": 8,
+          "mean_response": 2.0719
+        }
+      ]
+    },
+    {
+      "image": "W025.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 75.568,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 10.0,
+          "direction_field_coverage": 0.0209,
+          "component_count": 8,
+          "mean_response": 1.6764
+        }
+      ]
+    },
+    {
+      "image": "W026.jpg",
+      "fabricnet_texture": "plain",
+      "status": "FAIL",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 69.946,
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.0201,
+          "component_count": 9,
+          "mean_response": 1.7811
+        }
+      ]
+    },
+    {
+      "image": "W027.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.252,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0376,
+          "component_count": 15,
+          "mean_response": 2.0544
+        }
+      ]
+    },
+    {
+      "image": "W028.jpg",
+      "fabricnet_texture": "plain",
+      "status": "PASS",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.105,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0502,
+          "component_count": 20,
+          "mean_response": 1.8566
+        }
+      ]
+    },
+    {
+      "image": "W029.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.81,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0279,
+          "component_count": 11,
+          "mean_response": 2.0536
+        }
+      ]
+    },
+    {
+      "image": "W030.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 19.642,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.026,
+          "component_count": 11,
+          "mean_response": 2.1279
+        }
+      ]
+    },
+    {
+      "image": "W031.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 17.687,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.0301,
+          "component_count": 13,
+          "mean_response": 1.7845
+        }
+      ]
+    },
+    {
+      "image": "W032.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.569,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.0192,
+          "component_count": 8,
+          "mean_response": 2.3942
+        }
+      ]
+    },
+    {
+      "image": "W033.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.187,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 65.0,
+          "direction_field_coverage": 0.0418,
+          "component_count": 11,
+          "mean_response": 2.4721
+        }
+      ]
+    },
+    {
+      "image": "W034.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_BAND_HOUGH_SEGMENTS_INSUFFICIENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0299,
+          "component_count": 11,
+          "mean_response": 1.7735
+        }
+      ]
+    },
+    {
+      "image": "W035.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 20.764,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 70.0,
+          "direction_field_coverage": 0.0189,
+          "component_count": 9,
+          "mean_response": 3.0894
+        }
+      ]
+    },
+    {
+      "image": "W036.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 70.783,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 10.0,
+          "direction_field_coverage": 0.0204,
+          "component_count": 7,
+          "mean_response": 2.4038
+        }
+      ]
+    },
+    {
+      "image": "W037.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 66.272,
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 15.0,
+          "direction_field_coverage": 0.0264,
+          "component_count": 13,
+          "mean_response": 2.482
+        }
+      ]
+    },
+    {
+      "image": "W038.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 23.014,
+      "reasons": [
+        "TWILL_SCALE_DIRECTION_INCONSISTENT"
+      ],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0235,
+          "component_count": 10,
+          "mean_response": 2.8137
+        }
+      ]
+    },
+    {
+      "image": "W039.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 16.257,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0305,
+          "component_count": 12,
+          "mean_response": 2.5521
+        }
+      ]
+    },
+    {
+      "image": "W040.jpg",
+      "fabricnet_texture": "twill",
+      "status": "FAIL",
+      "candidate_direction": null,
+      "candidate_angle_deg": null,
+      "reasons": [
+        "TWILL_COHERENT_DIAGONAL_BAND_NOT_FOUND"
+      ],
+      "band_evidence": []
+    },
+    {
+      "image": "W041.jpg",
+      "fabricnet_texture": "twill",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "left",
+      "candidate_angle_deg": 18.781,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 75.0,
+          "direction_field_coverage": 0.0269,
+          "component_count": 10,
+          "mean_response": 2.3897
+        }
+      ]
+    },
+    {
+      "image": "W042.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 72.171,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0179,
+          "component_count": 9,
+          "mean_response": 3.5103
+        }
+      ]
+    },
+    {
+      "image": "W043.jpg",
+      "fabricnet_texture": "plain",
+      "status": "LOW_CONFIDENCE",
+      "candidate_direction": "right",
+      "candidate_angle_deg": 67.463,
+      "reasons": [],
+      "band_evidence": [
+        {
+          "image_line_angle_deg": 165.0,
+          "direction_field_coverage": 0.0233,
+          "component_count": 11,
+          "mean_response": 3.7796
+        }
+      ]
+    }
+  ]
+}

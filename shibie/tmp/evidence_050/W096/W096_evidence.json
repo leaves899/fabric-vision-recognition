@@ -1,0 +1,23 @@
+{
+  "sample_id": "W096",
+  "status": "PASS",
+  "files": {
+    "width": "D:\\zhongban\\tmp\\evidence_050\\W096\\W096_width.png",
+    "twill": "D:\\zhongban\\tmp\\evidence_050\\W096\\W096_twill.png"
+  },
+  "statuses": {
+    "width": "LOW_CONFIDENCE",
+    "direction": "FAIL",
+    "angle": "FAIL",
+    "weave": "NOT_AVAILABLE"
+  },
+  "measurement_reference": {
+    "engine_version": "0.6.3",
+    "algorithm_profile": "DENIM_ROUTE_V0.6.3_REAL_ROBUST"
+  },
+  "not_rendered": [
+    "orientation_field",
+    "fft_or_autocorrelation_plot",
+    "centerline_overlay"
+  ]
+}
