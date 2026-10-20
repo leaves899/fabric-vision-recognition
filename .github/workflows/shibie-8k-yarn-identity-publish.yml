@@ -1,0 +1,36 @@
+name: publish native8k physical yarn ID evidence from completed run
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-yarn-identity-publish.yml
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download four completed native8k inference results
+        run: gh run download 39443643770 --repo "$GITHUB_REPOSITORY" --dir /tmp/physical-id
+      - name: Summarize genuine A/B/C and frozen holdout
+        run: |
+          python shibie/summarize_8k_yarn_identity.py \
+            --artifacts /tmp/physical-id \
+            --out experiments/shibie-8k-capture-multiwindow/yarn-identity
+          cat experiments/shibie-8k-capture-multiwindow/yarn-identity/REPORT.md
+      - name: Push report and actual algorithm image overlays
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/yarn-identity
+          git commit -m "test(shibie): publish 4 verified 8k physical-yarn-ID identity benchmarks [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
