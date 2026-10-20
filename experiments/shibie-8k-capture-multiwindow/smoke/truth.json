@@ -1,4 +1,9 @@
 {
+  "physical_width_p10_px": {
+    "warp": 15.281,
+    "weft": 17.903
+  },
+  "passes_capture_p10_gate": true,
   "generator": "native8k_physical_fabric_v1",
   "synthetic": true,
   "real_capture_certified": false,
@@ -177603,8 +177608,8 @@
     "transmission": "transmission_8000x6000.jpg"
   },
   "sha256": {
-    "reflection": "45d7a5a2655a437c290d3ae10cb1d5b0d931d75762581b8da3a1b900acc04a9a",
-    "transmission": "4540e189a24aa619e3f6bff7890d1e3991f108040c0eb6f028177db4d6facf21"
+    "reflection": "cbe0613fda0226c937ffe97d043c592947a8deba6603d9efcadb2ec949f8432a",
+    "transmission": "4573628a88c29a99d203b07b8f6f84a844253fbf459f358bf487ac3ced40b7d8"
   },
-  "runtime_seconds": 13.458
+  "runtime_seconds": 20.662
 }

@@ -5,8 +5,8 @@
     "WARP_CENTER_SPACING_MODERATE_VARIATION",
     "WEFT_CENTERLINE_CONTINUITY_LOW"
   ],
-  "runtime_seconds": 26.51,
-  "peak_rss_mib": 1422.7,
+  "runtime_seconds": 22.52,
+  "peak_rss_mib": 1373.65,
   "normalization": {
     "roi": {
       "mode": "CENTER_ROI_POC_DEFAULT",
@@ -21,36 +21,36 @@
     "local_normalization": "CLAHE"
   },
   "density": {
-    "warp": 23.621,
-    "weft": 24.612
+    "warp": 23.778,
+    "weft": 24.578
   },
   "recorded_input": {
-    "reflection": "45d7a5a2655a437c290d3ae10cb1d5b0d931d75762581b8da3a1b900acc04a9a",
-    "transmission": "4540e189a24aa619e3f6bff7890d1e3991f108040c0eb6f028177db4d6facf21"
+    "reflection": "cbe0613fda0226c937ffe97d043c592947a8deba6603d9efcadb2ec949f8432a",
+    "transmission": "4573628a88c29a99d203b07b8f6f84a844253fbf459f358bf487ac3ced40b7d8"
   },
   "baseline_version": "V0.6.3_UNMODIFIED",
   "warp": {
-    "f1_proxy": 0.2837,
-    "matched": 40,
+    "f1_proxy": 0.3039,
+    "matched": 43,
     "truth": 157,
-    "predicted": 125,
-    "median_nearest_gt_fraction_pitch": 0.4281,
-    "half_pitch_candidate_fraction": 0.656,
+    "predicted": 126,
+    "median_nearest_gt_fraction_pitch": 0.4153,
+    "half_pitch_candidate_fraction": 0.619,
     "note": "mid-ROI projection proxy; not occlusion-aware curve identity F1",
     "expected_angle_deg": 97.028,
-    "predicted_angle_deg": 94.549,
-    "angle_error_deg": 2.479
+    "predicted_angle_deg": 94.55,
+    "angle_error_deg": 2.478
   },
   "weft": {
-    "f1_proxy": 0.9807,
-    "matched": 127,
+    "f1_proxy": 0.973,
+    "matched": 126,
     "truth": 131,
     "predicted": 128,
-    "median_nearest_gt_fraction_pitch": 0.0628,
-    "half_pitch_candidate_fraction": 0.0078,
+    "median_nearest_gt_fraction_pitch": 0.0563,
+    "half_pitch_candidate_fraction": 0.0156,
     "note": "mid-ROI projection proxy; not occlusion-aware curve identity F1",
     "expected_angle_deg": 6.972,
-    "predicted_angle_deg": 6.43,
-    "angle_error_deg": 0.542
+    "predicted_angle_deg": 6.442,
+    "angle_error_deg": 0.53
   }
 }
