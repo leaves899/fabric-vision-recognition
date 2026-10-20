@@ -1,0 +1,57 @@
+name: shibie ACF independent image regression
+on:
+  push:
+    branches:
+      - experiment/shibie-review-20261020
+    paths:
+      - .github/workflows/shibie-acf-holdout.yml
+      - shibie/run_acf_holdout.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: python -m pip install -r shibie/requirements.txt
+      - name: Run unmodified and ACF-enhanced configurations on ten images
+        run: python shibie/run_acf_holdout.py
+      - name: Show metrics
+        if: always()
+        shell: bash
+        run: |
+          if test -f experiments/shibie-acf-holdout-20261020/report.md; then
+            cat experiments/shibie-acf-holdout-20261020/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shibie-acf-holdout-photo-evidence
+          path: experiments/shibie-acf-holdout-20261020/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit review report and small images
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/shibie-acf-holdout-20261020/
+          if ! git diff --cached --quiet; then
+            git commit -m "test(shibie): save ACF regression and visual sample evidence [skip ci]"
+            for attempt in 1 2 3; do
+              git fetch origin experiment/shibie-review-20261020
+              git rebase origin/experiment/shibie-review-20261020 || exit 1
+              if git push origin HEAD:experiment/shibie-review-20261020; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
