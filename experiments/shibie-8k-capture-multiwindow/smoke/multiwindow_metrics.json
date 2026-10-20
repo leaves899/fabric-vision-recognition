@@ -65,8 +65,8 @@
     "competition_px": [],
     "reason": "MULTIWINDOW_PITCH_IS_NOT_PHYSICAL_YARN_PROOF"
   },
-  "runtime_seconds": 1.09,
-  "peak_rss_mib": 586.83,
+  "runtime_seconds": 1.04,
+  "peak_rss_mib": 541.61,
   "warnings": [
     "SIMULATED_DATA_NOT_REAL_CAMERA",
     "NO_COMPLETE_YARN_IDENTITY_TRAJECTORY_SCORE",
@@ -108,6 +108,7 @@
         607.0
       ],
       "width_fraction": 0.5926,
+      "apparent_core_width_px": 16.0,
       "relative_phase_margin": 0.5514,
       "continuity_phase_drift_fraction": 0.0,
       "R_center_polarity": 1,
@@ -205,6 +206,7 @@
         616.0
       ],
       "width_fraction": 0.5469,
+      "apparent_core_width_px": 17.501,
       "relative_phase_margin": 0.306,
       "continuity_phase_drift_fraction": 0.125,
       "R_center_polarity": 1,
@@ -306,6 +308,7 @@
         619.0
       ],
       "width_fraction": 0.6111,
+      "apparent_core_width_px": 16.5,
       "relative_phase_margin": 0.5929,
       "continuity_phase_drift_fraction": 0.037,
       "R_center_polarity": 1,
@@ -403,6 +406,7 @@
         616.0
       ],
       "width_fraction": 0.5469,
+      "apparent_core_width_px": 17.501,
       "relative_phase_margin": 0.3072,
       "continuity_phase_drift_fraction": 0.0,
       "R_center_polarity": 1,
@@ -503,6 +507,7 @@
         603.0
       ],
       "width_fraction": 0.6111,
+      "apparent_core_width_px": 16.5,
       "relative_phase_margin": 0.5966,
       "continuity_phase_drift_fraction": 0.0,
       "R_center_polarity": 1,
@@ -600,6 +605,7 @@
         616.0
       ],
       "width_fraction": 0.5469,
+      "apparent_core_width_px": 17.501,
       "relative_phase_margin": 0.3263,
       "continuity_phase_drift_fraction": 0.125,
       "R_center_polarity": 1,
@@ -700,6 +706,7 @@
         609.0
       ],
       "width_fraction": 0.6111,
+      "apparent_core_width_px": 16.5,
       "relative_phase_margin": 0.5969,
       "continuity_phase_drift_fraction": 0.0,
       "R_center_polarity": 1,
@@ -796,6 +803,7 @@
         586.0
       ],
       "width_fraction": 0.5469,
+      "apparent_core_width_px": 17.501,
       "relative_phase_margin": 0.2909,
       "continuity_phase_drift_fraction": 0.0938,
       "R_center_polarity": 1,
@@ -897,6 +905,7 @@
         621.0
       ],
       "width_fraction": 0.5926,
+      "apparent_core_width_px": 16.0,
       "relative_phase_margin": 0.5551,
       "continuity_phase_drift_fraction": 0.0,
       "R_center_polarity": 1,
@@ -993,6 +1002,7 @@
         587.0
       ],
       "width_fraction": 0.5469,
+      "apparent_core_width_px": 17.501,
       "relative_phase_margin": 0.2903,
       "continuity_phase_drift_fraction": 0.0312,
       "R_center_polarity": 1,
@@ -1093,6 +1103,7 @@
         604.0
       ],
       "width_fraction": 0.5926,
+      "apparent_core_width_px": 16.0,
       "relative_phase_margin": 0.5532,
       "continuity_phase_drift_fraction": 0.037,
       "R_center_polarity": 1,
@@ -1190,6 +1201,7 @@
         616.0
       ],
       "width_fraction": 0.5469,
+      "apparent_core_width_px": 17.501,
       "relative_phase_margin": 0.2913,
       "continuity_phase_drift_fraction": 0.0938,
       "R_center_polarity": 1,
@@ -1290,6 +1302,7 @@
         611.0
       ],
       "width_fraction": 0.6111,
+      "apparent_core_width_px": 16.5,
       "relative_phase_margin": 0.5978,
       "continuity_phase_drift_fraction": 0.037,
       "R_center_polarity": 1,
@@ -1386,6 +1399,7 @@
         591.0
       ],
       "width_fraction": 0.5469,
+      "apparent_core_width_px": 17.501,
       "relative_phase_margin": 0.2851,
       "continuity_phase_drift_fraction": 0.0938,
       "R_center_polarity": 1,
@@ -1486,6 +1500,7 @@
         596.0
       ],
       "width_fraction": 0.6111,
+      "apparent_core_width_px": 16.5,
       "relative_phase_margin": 0.5977,
       "continuity_phase_drift_fraction": 0.0,
       "R_center_polarity": 1,
@@ -1582,6 +1597,7 @@
         588.0
       ],
       "width_fraction": 0.5469,
+      "apparent_core_width_px": 17.501,
       "relative_phase_margin": 0.2985,
       "continuity_phase_drift_fraction": 0.125,
       "R_center_polarity": 1,
@@ -1682,6 +1698,7 @@
         606.0
       ],
       "width_fraction": 0.6111,
+      "apparent_core_width_px": 16.5,
       "relative_phase_margin": 0.5964,
       "continuity_phase_drift_fraction": 0.0,
       "R_center_polarity": 1,
@@ -1778,6 +1795,7 @@
         590.0
       ],
       "width_fraction": 0.5312,
+      "apparent_core_width_px": 16.998,
       "relative_phase_margin": 0.2687,
       "continuity_phase_drift_fraction": 0.0938,
       "R_center_polarity": 1,

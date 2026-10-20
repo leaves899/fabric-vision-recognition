@@ -19,8 +19,8 @@
       "weft_angle_error_deg": 0.53,
       "warp_density": 23.778,
       "weft_density": 24.578,
-      "runtime_seconds": 19.1,
-      "peak_rss_mib": 1421.75
+      "runtime_seconds": 22.15,
+      "peak_rss_mib": 1373.81
     },
     {
       "variant": "B_acf_candidate",
@@ -36,8 +36,8 @@
       "weft_angle_error_deg": 0.53,
       "warp_density": 23.778,
       "weft_density": 24.578,
-      "runtime_seconds": 19.36,
-      "peak_rss_mib": 1442.04
+      "runtime_seconds": 22.29,
+      "peak_rss_mib": 1393.92
     },
     {
       "variant": "C_guard_dark",
@@ -53,8 +53,8 @@
       "weft_angle_error_deg": 0.53,
       "warp_density": 23.778,
       "weft_density": 24.63,
-      "runtime_seconds": 18.84,
-      "peak_rss_mib": 1449.19
+      "runtime_seconds": 22.51,
+      "peak_rss_mib": 1400.02
     },
     {
       "variant": "D_native8k_multiwindow",
@@ -66,8 +66,8 @@
       "weft_f1_local_proxy": 0.9594,
       "warp_pitch_px": 27.0,
       "weft_pitch_px": 32.0,
-      "runtime_seconds": 1.09,
-      "peak_rss_mib": 586.83,
+      "runtime_seconds": 1.04,
+      "peak_rss_mib": 541.61,
       "scoring_warning": "local-only, not comparable to original global ROI F1"
     }
   ]
