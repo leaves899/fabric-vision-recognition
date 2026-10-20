@@ -1,0 +1,42 @@
+name: shibie image-only cloth-axis rotation validation at native 8k
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-local-axis.yml
+      - shibie/run_local_axis_experiment.py
+      - shibie/engine/local_axis_rectification.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  axis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: independent_15deg, fabrot: 15}
+          - {name: same_fixture_0deg, fabrot: 0}
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Generate true native 8k R/T physical yarns and image-only pose experiment
+        run: |
+          python -c "import sys;from pathlib import Path;sys.path.insert(0,'shibie');from synthetic_capture_8k import CaptureScene,generate;generate(CaptureScene(name='${{ matrix.name }}',fabric_rotation_deg=${{ matrix.fabrot }},seed=812613),Path('experiments/shibie-8k-capture-multiwindow/stress/${{ matrix.name }}'))"
+          /usr/bin/time -v python -u shibie/run_local_axis_experiment.py --case ${{ matrix.name }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shibie-local-axis-${{ matrix.name }}
+          path: experiments/shibie-8k-capture-multiwindow/stress/${{ matrix.name }}/
+          retention-days: 14
+          if-no-files-found: warn
