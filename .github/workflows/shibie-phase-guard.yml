@@ -1,0 +1,95 @@
+name: shibie optical phase pitch guard validation
+on:
+  push:
+    branches:
+      - experiment/shibie-phase-guard-20261020
+    paths:
+      - .github/workflows/shibie-phase-guard.yml
+      - shibie/experiment_phase_guard.py
+      - shibie/experiment_phase_guard_real.py
+      - shibie/engine/config.py
+      - shibie/engine/pipeline.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - run: cd shibie && python -m unittest discover -s tests -q
+      - name: Benchmark nine synthetic physical-fabric scenes
+        run: python shibie/experiment_phase_guard.py
+      - name: Publish summary
+        if: always()
+        run: |
+          if test -f experiments/shibie-phase-guard-20261020/report.md; then
+            cat experiments/shibie-phase-guard-20261020/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: guarded-synthetic
+          path: experiments/shibie-phase-guard-20261020/
+          if-no-files-found: warn
+
+  real:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Compare guarded and unguarded on real paired images
+        run: python shibie/experiment_phase_guard_real.py
+      - name: Publish summary
+        if: always()
+        run: |
+          if test -f experiments/shibie-phase-guard-real-20261020/report.md; then
+            cat experiments/shibie-phase-guard-real-20261020/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: guarded-real-paired
+          path: experiments/shibie-phase-guard-real-20261020/
+          if-no-files-found: warn
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [synthetic, real]
+    if: ${{ needs.synthetic.result == 'success' && needs.real.result == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: guarded-synthetic
+          path: experiments/shibie-phase-guard-20261020
+      - uses: actions/download-artifact@v4
+        with:
+          name: guarded-real-paired
+          path: experiments/shibie-phase-guard-real-20261020
+      - name: Persist metrics and both actual comparison sheets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/shibie-phase-guard-20261020/report.md experiments/shibie-phase-guard-20261020/results.csv experiments/shibie-phase-guard-20261020/results.json experiments/shibie-phase-guard-20261020/review_sheet.jpg experiments/shibie-phase-guard-real-20261020/report.md experiments/shibie-phase-guard-real-20261020/measurements.csv experiments/shibie-phase-guard-real-20261020/measurements.json experiments/shibie-phase-guard-real-20261020/review_contact_sheet.jpg experiments/shibie-phase-guard-real-20261020/review_crops/*.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "test(shibie): archive pitch-guard synthetic vs real physical-center results [skip ci]"
+            for attempt in 1 2 3; do
+              git fetch origin experiment/shibie-phase-guard-20261020
+              git rebase origin/experiment/shibie-phase-guard-20261020 || exit 1
+              if git push origin HEAD:experiment/shibie-phase-guard-20261020; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
