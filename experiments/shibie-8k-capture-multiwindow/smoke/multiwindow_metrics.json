@@ -65,8 +65,8 @@
     "competition_px": [],
     "reason": "MULTIWINDOW_PITCH_IS_NOT_PHYSICAL_YARN_PROOF"
   },
-  "runtime_seconds": 1.04,
-  "peak_rss_mib": 541.61,
+  "runtime_seconds": 0.63,
+  "peak_rss_mib": 541.95,
   "warnings": [
     "SIMULATED_DATA_NOT_REAL_CAMERA",
     "NO_COMPLETE_YARN_IDENTITY_TRAJECTORY_SCORE",
