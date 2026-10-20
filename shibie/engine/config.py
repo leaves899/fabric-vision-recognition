@@ -65,6 +65,11 @@ class EngineConfig:
     # Do not enable for reflected-only or uncalibrated capture.
     transmission_yarn_contrast_mode: str = "off"  # off | dark | bright
     transmission_center_evidence_weight: float = 0.0
+    # If >0, phase evidence may influence candidate choice only for a pitch
+    # family close to the PHASE-BLIND candidate's measured pixel spacing.
+    # This prevents dark/bright polarity assumptions from selecting 2x/4x
+    # harmonics. Does not use labels; default 0 preserves the old algorithm.
+    transmission_phase_pitch_guard_ratio: float = 0.0
 
 
     # Ridge Detection + Centerline Linking
