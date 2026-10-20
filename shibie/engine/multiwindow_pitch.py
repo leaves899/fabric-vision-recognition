@@ -170,7 +170,12 @@ def collect_pitch_windows(R,T,frame,settings=PitchSettings()):
         clusters=[]
         for root in sorted(set(choices)):
             members=[v for v in choices if abs(v/root-1)<.12]
-            clusters.append((len(members),float(np.median(members)),members))
+            center=float(np.median(members))
+            # One family of pitches may be supported by roots 26 and 27 px;
+            # it is not two incompatible period hypotheses.
+            if any(abs(center/other[1]-1.)<.12 for other in clusters):
+                continue
+            clusters.append((len(members),center,members))
         clusters.sort(reverse=True,key=lambda z:z[0])
         best=clusters[0]
         supports=len(best[2])
