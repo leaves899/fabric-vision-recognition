@@ -1,0 +1,301 @@
+{
+  "splits": {
+    "rotation15_development": "DEVELOPMENT",
+    "zero_development": "DEVELOPMENT",
+    "twill21_angleholdout": "INDEPENDENT_HOLDOUT",
+    "bright_angleholdout": "INDEPENDENT_HOLDOUT"
+  },
+  "cases": {
+    "bright_angleholdout": {
+      "case": "bright_angleholdout",
+      "native_pair_shape": [
+        6000,
+        8000
+      ],
+      "image_only_rotation": 20,
+      "axis_status": "CANDIDATE_ONLY",
+      "same_input_sha256": {
+        "reflection": "ab6704d0be49f88543646dafa66496ab597dae2a65d5d870143cf9db6a613afc",
+        "transmission": "218a3b87adbb52ebf95c3bb2aa01f2d8f2b25a26ee922c41458f742eb41185d9"
+      },
+      "truth_weave_FOR_AUDIT_ONLY": "plain",
+      "truth_rotation_FOR_AUDIT_ONLY": 19,
+      "physical_width_P10_passes_capture_gate": true,
+      "summary": {
+        "warp": {
+          "old": {
+            "mean_id_trajectory_f1": 0.9677,
+            "total_matches": 135,
+            "total_proposed_tracks": 135,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.9677,
+            "total_matches": 135,
+            "total_proposed_tracks": 135,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.9677,
+            "total_matches": 135,
+            "total_proposed_tracks": 135,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          }
+        },
+        "weft": {
+          "old": {
+            "mean_id_trajectory_f1": 0.9605,
+            "total_matches": 134,
+            "total_proposed_tracks": 134,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.9567,
+            "total_matches": 133,
+            "total_proposed_tracks": 133,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.9643,
+            "total_matches": 135,
+            "total_proposed_tracks": 135,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          }
+        }
+      },
+      "image_only_inference_seconds": 4.13,
+      "total_eval_runtime_seconds": 8.3,
+      "peak_process_rss_mib": 587.0,
+      "scope": [
+        "LOCAL_TILE_ID_LINK_NOT_GLOBAL_50MM_ID",
+        "CURVE_CONTINUITY_SCORING_NOT_OCCLUSION_PIXEL_VISIBILITY",
+        "EXPERIMENTAL_SYNTHETIC_NOT_REAL_CAMERA_R_T"
+      ]
+    },
+    "rotation15_development": {
+      "case": "rotation15_development",
+      "native_pair_shape": [
+        6000,
+        8000
+      ],
+      "image_only_rotation": 16,
+      "axis_status": "CANDIDATE_ONLY",
+      "same_input_sha256": {
+        "reflection": "29eb522c18081c6c212f9f4460b0a12affe56e66fa630f89e912dc880270e287",
+        "transmission": "7539e92eadbe69b7b40ddd619a1208581979e72d86cfcd20576906ac10902943"
+      },
+      "truth_weave_FOR_AUDIT_ONLY": "plain",
+      "truth_rotation_FOR_AUDIT_ONLY": 15,
+      "physical_width_P10_passes_capture_gate": true,
+      "summary": {
+        "warp": {
+          "old": {
+            "mean_id_trajectory_f1": 0.8532,
+            "total_matches": 143,
+            "total_proposed_tracks": 143,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 8
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.9645,
+            "total_matches": 162,
+            "total_proposed_tracks": 162,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.9735,
+            "total_matches": 165,
+            "total_proposed_tracks": 165,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          }
+        },
+        "weft": {
+          "old": {
+            "mean_id_trajectory_f1": 0.9529,
+            "total_matches": 132,
+            "total_proposed_tracks": 132,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.9452,
+            "total_matches": 130,
+            "total_proposed_tracks": 130,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.9643,
+            "total_matches": 135,
+            "total_proposed_tracks": 135,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          }
+        }
+      },
+      "image_only_inference_seconds": 4.39,
+      "total_eval_runtime_seconds": 10.08,
+      "peak_process_rss_mib": 541.1,
+      "scope": [
+        "LOCAL_TILE_ID_LINK_NOT_GLOBAL_50MM_ID",
+        "CURVE_CONTINUITY_SCORING_NOT_OCCLUSION_PIXEL_VISIBILITY",
+        "EXPERIMENTAL_SYNTHETIC_NOT_REAL_CAMERA_R_T"
+      ]
+    },
+    "twill21_angleholdout": {
+      "case": "twill21_angleholdout",
+      "native_pair_shape": [
+        6000,
+        8000
+      ],
+      "image_only_rotation": -11,
+      "axis_status": "CANDIDATE_ONLY",
+      "same_input_sha256": {
+        "reflection": "8cdb641ac392c9164f3b72a5a0ae94286f4f624abcd378a75f241b0248a94a86",
+        "transmission": "3ffd2a8262c8b1d695602c20df4aa8c4b56148e4354c3e95703181f187587f8d"
+      },
+      "truth_weave_FOR_AUDIT_ONLY": "twill_2_1",
+      "truth_rotation_FOR_AUDIT_ONLY": -10,
+      "physical_width_P10_passes_capture_gate": true,
+      "summary": {
+        "warp": {
+          "old": {
+            "mean_id_trajectory_f1": 0.5402,
+            "total_matches": 89,
+            "total_proposed_tracks": 89,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 5
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.7562,
+            "total_matches": 124,
+            "total_proposed_tracks": 124,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 7
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.7686,
+            "total_matches": 128,
+            "total_proposed_tracks": 128,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 7
+          }
+        },
+        "weft": {
+          "old": {
+            "mean_id_trajectory_f1": 0.9488,
+            "total_matches": 130,
+            "total_proposed_tracks": 130,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.9526,
+            "total_matches": 131,
+            "total_proposed_tracks": 131,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.9603,
+            "total_matches": 133,
+            "total_proposed_tracks": 133,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          }
+        }
+      },
+      "image_only_inference_seconds": 2.42,
+      "total_eval_runtime_seconds": 4.81,
+      "peak_process_rss_mib": 586.8,
+      "scope": [
+        "LOCAL_TILE_ID_LINK_NOT_GLOBAL_50MM_ID",
+        "CURVE_CONTINUITY_SCORING_NOT_OCCLUSION_PIXEL_VISIBILITY",
+        "EXPERIMENTAL_SYNTHETIC_NOT_REAL_CAMERA_R_T"
+      ]
+    },
+    "zero_development": {
+      "case": "zero_development",
+      "native_pair_shape": [
+        6000,
+        8000
+      ],
+      "image_only_rotation": 1,
+      "axis_status": "LOW_CONFIDENCE",
+      "same_input_sha256": {
+        "reflection": "3c2a22c45b13d5b35b7eb8e065e4603fe3ef6cec9fc922180d5b9680aa6dbff8",
+        "transmission": "7aed13428a131e8496ca3b418f86e5bcad550215505c77fd3736607a1f77333d"
+      },
+      "truth_weave_FOR_AUDIT_ONLY": "plain",
+      "truth_rotation_FOR_AUDIT_ONLY": 0,
+      "physical_width_P10_passes_capture_gate": true,
+      "summary": {
+        "warp": {
+          "old": {
+            "mean_id_trajectory_f1": 0.9616,
+            "total_matches": 162,
+            "total_proposed_tracks": 162,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.9616,
+            "total_matches": 162,
+            "total_proposed_tracks": 162,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.9706,
+            "total_matches": 165,
+            "total_proposed_tracks": 165,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          }
+        },
+        "weft": {
+          "old": {
+            "mean_id_trajectory_f1": 0.9601,
+            "total_matches": 133,
+            "total_proposed_tracks": 133,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.9639,
+            "total_matches": 134,
+            "total_proposed_tracks": 134,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.9749,
+            "total_matches": 137,
+            "total_proposed_tracks": 137,
+            "potential_gt_id_switches": 0,
+            "passing_windows": 9
+          }
+        }
+      },
+      "image_only_inference_seconds": 4.17,
+      "total_eval_runtime_seconds": 9.81,
+      "peak_process_rss_mib": 584.4,
+      "scope": [
+        "LOCAL_TILE_ID_LINK_NOT_GLOBAL_50MM_ID",
+        "CURVE_CONTINUITY_SCORING_NOT_OCCLUSION_PIXEL_VISIBILITY",
+        "EXPERIMENTAL_SYNTHETIC_NOT_REAL_CAMERA_R_T"
+      ]
+    }
+  },
+  "declines": [],
+  "full_window_details_only_in_actions_artifacts": true,
+  "scoring_limit": "SAMPLED_LOCAL_ID_NOT_FULL_IMAGE_OR_OCCLUSION_VISIBILITY"
+}
