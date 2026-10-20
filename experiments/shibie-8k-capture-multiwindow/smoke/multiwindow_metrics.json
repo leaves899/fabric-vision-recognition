@@ -1,0 +1,1847 @@
+{
+  "frame": {
+    "status": "PASS",
+    "frame_corners_raw_px": [
+      [
+        2255.44580078125,
+        761.511474609375
+      ],
+      [
+        6238.4462890625,
+        1247.4375
+      ],
+      [
+        5744.55419921875,
+        5222.4716796875
+      ],
+      [
+        1761.553955078125,
+        4728.57958984375
+      ]
+    ],
+    "raw_to_frame": [
+      [
+        0.9923688928997135,
+        0.12354789227097746,
+        -2332.317389944749
+      ],
+      [
+        -0.12134501354473004,
+        0.9946313285250092,
+        -483.7360684325562
+      ],
+      [
+        4.822185953722356e-07,
+        1.2179800133631194e-07,
+        1.0
+      ]
+    ],
+    "frame_size_px": 4000,
+    "detection_score": 0.9925,
+    "threshold": 214
+  },
+  "status": "CANDIDATE_ONLY",
+  "warp_local_f1_proxy": 0.9614,
+  "warp_passed_windows": 9,
+  "warp_pitch_candidate": {
+    "status": "CANDIDATE_ONLY",
+    "pitch_px": 27.0,
+    "density_per_cm": 29.63,
+    "window_support": 9,
+    "window_count": 9,
+    "window_cv": 0.0,
+    "competition_px": [],
+    "reason": "MULTIWINDOW_PITCH_IS_NOT_PHYSICAL_YARN_PROOF"
+  },
+  "weft_local_f1_proxy": 0.9594,
+  "weft_passed_windows": 9,
+  "weft_pitch_candidate": {
+    "status": "CANDIDATE_ONLY",
+    "pitch_px": 32.0,
+    "density_per_cm": 25.0,
+    "window_support": 9,
+    "window_count": 9,
+    "window_cv": 0.0,
+    "competition_px": [],
+    "reason": "MULTIWINDOW_PITCH_IS_NOT_PHYSICAL_YARN_PROOF"
+  },
+  "runtime_seconds": 0.72,
+  "peak_rss_mib": 541.76,
+  "warnings": [
+    "SIMULATED_DATA_NOT_REAL_CAMERA",
+    "NO_COMPLETE_YARN_IDENTITY_TRAJECTORY_SCORE",
+    "FRAME_CORNERS_DETECTED_FROM_IMAGE_NOT_FROM_SYNTHETIC_TRUTH"
+  ],
+  "window_evidence": [
+    {
+      "grid": [
+        0,
+        0
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 13,
+      "center_positions_px": [
+        40.0,
+        67.0,
+        94.0,
+        121.0,
+        148.0,
+        175.0,
+        202.0,
+        229.0,
+        256.0,
+        283.0,
+        310.0,
+        337.0,
+        364.0,
+        391.0,
+        418.0,
+        445.0,
+        472.0,
+        499.0,
+        526.0,
+        553.0,
+        580.0,
+        607.0
+      ],
+      "width_fraction": 0.5926,
+      "relative_phase_margin": 0.5525,
+      "continuity_phase_drift_fraction": 0.0,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 26,
+      "phase_candidates": [
+        {
+          "phase_px": 13,
+          "score": 0.8954642713759327,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9832
+        },
+        {
+          "phase_px": 12,
+          "score": 0.8901313757880849,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9966
+        },
+        {
+          "phase_px": 14,
+          "score": 0.8780954275924782,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9914
+        },
+        {
+          "phase_px": 11,
+          "score": 0.8272703502275603,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9481
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9565,
+        "matched": 22,
+        "truth": 24,
+        "predicted": 22,
+        "median_nearest_fraction_pitch": 0.0587,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        0,
+        0
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 4,
+      "center_positions_px": [
+        36.0,
+        68.0,
+        100.0,
+        132.0,
+        164.0,
+        196.0,
+        228.0,
+        260.0,
+        292.0,
+        324.0,
+        356.0,
+        388.0,
+        420.0,
+        452.0,
+        484.0,
+        516.0,
+        548.0,
+        580.0,
+        612.0
+      ],
+      "width_fraction": 0.5469,
+      "relative_phase_margin": 0.2994,
+      "continuity_phase_drift_fraction": 0.0,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 24,
+      "phase_candidates": [
+        {
+          "phase_px": 4,
+          "score": 0.6969128863060597,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9912
+        },
+        {
+          "phase_px": 9,
+          "score": 0.6781376245544446,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4688,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9276
+        },
+        {
+          "phase_px": 8,
+          "score": 0.6583968635390459,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4062,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9103
+        },
+        {
+          "phase_px": 5,
+          "score": 0.643187699338756,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4062,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8587
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9744,
+        "matched": 19,
+        "truth": 20,
+        "predicted": 19,
+        "median_nearest_fraction_pitch": 0.0752,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        0,
+        1
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 25,
+      "center_positions_px": [
+        25.0,
+        52.0,
+        79.0,
+        106.0,
+        133.0,
+        160.0,
+        187.0,
+        214.0,
+        241.0,
+        268.0,
+        295.0,
+        322.0,
+        349.0,
+        376.0,
+        403.0,
+        430.0,
+        457.0,
+        484.0,
+        511.0,
+        538.0,
+        565.0,
+        592.0,
+        619.0
+      ],
+      "width_fraction": 0.6111,
+      "relative_phase_margin": 0.5984,
+      "continuity_phase_drift_fraction": 0.0,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 11,
+      "phase_candidates": [
+        {
+          "phase_px": 25,
+          "score": 0.9417459980729334,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.983
+        },
+        {
+          "phase_px": 26,
+          "score": 0.9331705150019904,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9926
+        },
+        {
+          "phase_px": 24,
+          "score": 0.8722134455436573,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9836
+        },
+        {
+          "phase_px": 0,
+          "score": 0.8248893526361673,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9539
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9787,
+        "matched": 23,
+        "truth": 24,
+        "predicted": 23,
+        "median_nearest_fraction_pitch": 0.0768,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        0,
+        1
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 4,
+      "center_positions_px": [
+        36.0,
+        68.0,
+        100.0,
+        132.0,
+        164.0,
+        196.0,
+        228.0,
+        260.0,
+        292.0,
+        324.0,
+        356.0,
+        388.0,
+        420.0,
+        452.0,
+        484.0,
+        516.0,
+        548.0,
+        580.0,
+        612.0
+      ],
+      "width_fraction": 0.5469,
+      "relative_phase_margin": 0.3133,
+      "continuity_phase_drift_fraction": 0.1562,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 25,
+      "phase_candidates": [
+        {
+          "phase_px": 4,
+          "score": 0.6995172377574891,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9885
+        },
+        {
+          "phase_px": 8,
+          "score": 0.6901124078566718,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9108
+        },
+        {
+          "phase_px": 5,
+          "score": 0.6788531702248192,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8662
+        },
+        {
+          "phase_px": 9,
+          "score": 0.6396256180732806,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9165
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9744,
+        "matched": 19,
+        "truth": 20,
+        "predicted": 19,
+        "median_nearest_fraction_pitch": 0.0706,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        0,
+        2
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 8,
+      "center_positions_px": [
+        35.0,
+        62.0,
+        89.0,
+        116.0,
+        143.0,
+        170.0,
+        197.0,
+        224.0,
+        251.0,
+        278.0,
+        305.0,
+        332.0,
+        359.0,
+        386.0,
+        413.0,
+        440.0,
+        467.0,
+        494.0,
+        521.0,
+        548.0,
+        575.0,
+        602.0
+      ],
+      "width_fraction": 0.6111,
+      "relative_phase_margin": 0.5967,
+      "continuity_phase_drift_fraction": 0.0,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 21,
+      "phase_candidates": [
+        {
+          "phase_px": 8,
+          "score": 0.939462277112263,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9833
+        },
+        {
+          "phase_px": 9,
+          "score": 0.9339616118048052,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9881
+        },
+        {
+          "phase_px": 7,
+          "score": 0.9031722535292311,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9716
+        },
+        {
+          "phase_px": 10,
+          "score": 0.8806720492814909,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9634
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9565,
+        "matched": 22,
+        "truth": 24,
+        "predicted": 22,
+        "median_nearest_fraction_pitch": 0.0733,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        0,
+        2
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 9,
+      "center_positions_px": [
+        41.0,
+        73.0,
+        105.0,
+        137.0,
+        169.0,
+        201.0,
+        233.0,
+        265.0,
+        297.0,
+        329.0,
+        361.0,
+        393.0,
+        425.0,
+        457.0,
+        489.0,
+        521.0,
+        553.0,
+        585.0,
+        617.0
+      ],
+      "width_fraction": 0.5625,
+      "relative_phase_margin": 0.322,
+      "continuity_phase_drift_fraction": 0.1562,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 23,
+      "phase_candidates": [
+        {
+          "phase_px": 9,
+          "score": 0.7127389602940045,
+          "width_fraction": 0.5625,
+          "modality_widths": [
+            0.4688,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9279
+        },
+        {
+          "phase_px": 8,
+          "score": 0.6976087299019741,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.916
+        },
+        {
+          "phase_px": 4,
+          "score": 0.6969743557181021,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9765
+        },
+        {
+          "phase_px": 5,
+          "score": 0.6878702781614273,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8813
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9744,
+        "matched": 19,
+        "truth": 20,
+        "predicted": 19,
+        "median_nearest_fraction_pitch": 0.0857,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        1,
+        0
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 14,
+      "center_positions_px": [
+        41.0,
+        68.0,
+        95.0,
+        122.0,
+        149.0,
+        176.0,
+        203.0,
+        230.0,
+        257.0,
+        284.0,
+        311.0,
+        338.0,
+        365.0,
+        392.0,
+        419.0,
+        446.0,
+        473.0,
+        500.0,
+        527.0,
+        554.0,
+        581.0,
+        608.0
+      ],
+      "width_fraction": 0.5926,
+      "relative_phase_margin": 0.553,
+      "continuity_phase_drift_fraction": 0.037,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 0,
+      "phase_candidates": [
+        {
+          "phase_px": 14,
+          "score": 0.8952606230504442,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9879
+        },
+        {
+          "phase_px": 15,
+          "score": 0.8929895066991248,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.984
+        },
+        {
+          "phase_px": 16,
+          "score": 0.8514433687459202,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9714
+        },
+        {
+          "phase_px": 13,
+          "score": 0.8495863846244702,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.961
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9565,
+        "matched": 22,
+        "truth": 24,
+        "predicted": 22,
+        "median_nearest_fraction_pitch": 0.068,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        1,
+        0
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 13,
+      "center_positions_px": [
+        45.0,
+        77.0,
+        109.0,
+        141.0,
+        173.0,
+        205.0,
+        237.0,
+        269.0,
+        301.0,
+        333.0,
+        365.0,
+        397.0,
+        429.0,
+        461.0,
+        493.0,
+        525.0,
+        557.0,
+        589.0
+      ],
+      "width_fraction": 0.5312,
+      "relative_phase_margin": 0.2624,
+      "continuity_phase_drift_fraction": 0.125,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 29,
+      "phase_candidates": [
+        {
+          "phase_px": 13,
+          "score": 0.6623883500563789,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9282
+        },
+        {
+          "phase_px": 9,
+          "score": 0.6607327622556269,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.966
+        },
+        {
+          "phase_px": 10,
+          "score": 0.6429600697871874,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4062,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8519
+        },
+        {
+          "phase_px": 12,
+          "score": 0.6425153239257013,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4062,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8341
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9474,
+        "matched": 18,
+        "truth": 20,
+        "predicted": 18,
+        "median_nearest_fraction_pitch": 0.0547,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        1,
+        1
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 0,
+      "center_positions_px": [
+        27.0,
+        54.0,
+        81.0,
+        108.0,
+        135.0,
+        162.0,
+        189.0,
+        216.0,
+        243.0,
+        270.0,
+        297.0,
+        324.0,
+        351.0,
+        378.0,
+        405.0,
+        432.0,
+        459.0,
+        486.0,
+        513.0,
+        540.0,
+        567.0,
+        594.0,
+        621.0
+      ],
+      "width_fraction": 0.6111,
+      "relative_phase_margin": 0.5979,
+      "continuity_phase_drift_fraction": 0.037,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 13,
+      "phase_candidates": [
+        {
+          "phase_px": 0,
+          "score": 0.9411477237688072,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9856
+        },
+        {
+          "phase_px": 26,
+          "score": 0.937660218366998,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9958
+        },
+        {
+          "phase_px": 1,
+          "score": 0.8683798974013364,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.99
+        },
+        {
+          "phase_px": 25,
+          "score": 0.8001001228632871,
+          "width_fraction": 0.5741,
+          "modality_widths": [
+            0.5185,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9615
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9787,
+        "matched": 23,
+        "truth": 24,
+        "predicted": 23,
+        "median_nearest_fraction_pitch": 0.0865,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        1,
+        1
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 12,
+      "center_positions_px": [
+        44.0,
+        76.0,
+        108.0,
+        140.0,
+        172.0,
+        204.0,
+        236.0,
+        268.0,
+        300.0,
+        332.0,
+        364.0,
+        396.0,
+        428.0,
+        460.0,
+        492.0,
+        524.0,
+        556.0,
+        588.0
+      ],
+      "width_fraction": 0.5469,
+      "relative_phase_margin": 0.2864,
+      "continuity_phase_drift_fraction": 0.125,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 24,
+      "phase_candidates": [
+        {
+          "phase_px": 12,
+          "score": 0.6940581628199272,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.935
+        },
+        {
+          "phase_px": 9,
+          "score": 0.6822497637396165,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8628
+        },
+        {
+          "phase_px": 8,
+          "score": 0.6751542308458437,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9939
+        },
+        {
+          "phase_px": 11,
+          "score": 0.6725304192495274,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.832
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9474,
+        "matched": 18,
+        "truth": 20,
+        "predicted": 18,
+        "median_nearest_fraction_pitch": 0.0564,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        1,
+        2
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 10,
+      "center_positions_px": [
+        37.0,
+        64.0,
+        91.0,
+        118.0,
+        145.0,
+        172.0,
+        199.0,
+        226.0,
+        253.0,
+        280.0,
+        307.0,
+        334.0,
+        361.0,
+        388.0,
+        415.0,
+        442.0,
+        469.0,
+        496.0,
+        523.0,
+        550.0,
+        577.0,
+        604.0
+      ],
+      "width_fraction": 0.5926,
+      "relative_phase_margin": 0.5533,
+      "continuity_phase_drift_fraction": 0.037,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 23,
+      "phase_candidates": [
+        {
+          "phase_px": 10,
+          "score": 0.8962630639945309,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9758
+        },
+        {
+          "phase_px": 9,
+          "score": 0.8896732376924612,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.998
+        },
+        {
+          "phase_px": 11,
+          "score": 0.8815563094404413,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9952
+        },
+        {
+          "phase_px": 8,
+          "score": 0.8167737018487404,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9335
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9565,
+        "matched": 22,
+        "truth": 24,
+        "predicted": 22,
+        "median_nearest_fraction_pitch": 0.0721,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        1,
+        2
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 8,
+      "center_positions_px": [
+        40.0,
+        72.0,
+        104.0,
+        136.0,
+        168.0,
+        200.0,
+        232.0,
+        264.0,
+        296.0,
+        328.0,
+        360.0,
+        392.0,
+        424.0,
+        456.0,
+        488.0,
+        520.0,
+        552.0,
+        584.0,
+        616.0
+      ],
+      "width_fraction": 0.5469,
+      "relative_phase_margin": 0.2804,
+      "continuity_phase_drift_fraction": 0.0312,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 23,
+      "phase_candidates": [
+        {
+          "phase_px": 8,
+          "score": 0.6897165165416363,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8729
+        },
+        {
+          "phase_px": 10,
+          "score": 0.6807707516482814,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8459
+        },
+        {
+          "phase_px": 7,
+          "score": 0.6779131004854736,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9924
+        },
+        {
+          "phase_px": 9,
+          "score": 0.6773386396251594,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8237
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9744,
+        "matched": 19,
+        "truth": 20,
+        "predicted": 19,
+        "median_nearest_fraction_pitch": 0.0342,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        2,
+        0
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 16,
+      "center_positions_px": [
+        43.0,
+        70.0,
+        97.0,
+        124.0,
+        151.0,
+        178.0,
+        205.0,
+        232.0,
+        259.0,
+        286.0,
+        313.0,
+        340.0,
+        367.0,
+        394.0,
+        421.0,
+        448.0,
+        475.0,
+        502.0,
+        529.0,
+        556.0,
+        583.0,
+        610.0
+      ],
+      "width_fraction": 0.6111,
+      "relative_phase_margin": 0.5973,
+      "continuity_phase_drift_fraction": 0.037,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 2,
+      "phase_candidates": [
+        {
+          "phase_px": 16,
+          "score": 0.9401664200314397,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9862
+        },
+        {
+          "phase_px": 17,
+          "score": 0.9345043802993558,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9887
+        },
+        {
+          "phase_px": 15,
+          "score": 0.8634325453251087,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9738
+        },
+        {
+          "phase_px": 18,
+          "score": 0.8379005834123014,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9665
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9565,
+        "matched": 22,
+        "truth": 24,
+        "predicted": 22,
+        "median_nearest_fraction_pitch": 0.0544,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        2,
+        0
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 17,
+      "center_positions_px": [
+        49.0,
+        81.0,
+        113.0,
+        145.0,
+        177.0,
+        209.0,
+        241.0,
+        273.0,
+        305.0,
+        337.0,
+        369.0,
+        401.0,
+        433.0,
+        465.0,
+        497.0,
+        529.0,
+        561.0,
+        593.0
+      ],
+      "width_fraction": 0.5469,
+      "relative_phase_margin": 0.2765,
+      "continuity_phase_drift_fraction": 0.125,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 2,
+      "phase_candidates": [
+        {
+          "phase_px": 17,
+          "score": 0.6845413743072637,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8626
+        },
+        {
+          "phase_px": 15,
+          "score": 0.6800706940463677,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8478
+        },
+        {
+          "phase_px": 18,
+          "score": 0.6757354404664105,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9813
+        },
+        {
+          "phase_px": 16,
+          "score": 0.6740995210868751,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8198
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9474,
+        "matched": 18,
+        "truth": 20,
+        "predicted": 18,
+        "median_nearest_fraction_pitch": 0.0403,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        2,
+        1
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 1,
+      "center_positions_px": [
+        28.0,
+        55.0,
+        82.0,
+        109.0,
+        136.0,
+        163.0,
+        190.0,
+        217.0,
+        244.0,
+        271.0,
+        298.0,
+        325.0,
+        352.0,
+        379.0,
+        406.0,
+        433.0,
+        460.0,
+        487.0,
+        514.0,
+        541.0,
+        568.0,
+        595.0
+      ],
+      "width_fraction": 0.5926,
+      "relative_phase_margin": 0.5523,
+      "continuity_phase_drift_fraction": 0.037,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 14,
+      "phase_candidates": [
+        {
+          "phase_px": 1,
+          "score": 0.8948608951854783,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9845
+        },
+        {
+          "phase_px": 2,
+          "score": 0.8918783890930235,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9899
+        },
+        {
+          "phase_px": 0,
+          "score": 0.862226075766476,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9774
+        },
+        {
+          "phase_px": 3,
+          "score": 0.8409410662554823,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5185,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9617
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9565,
+        "matched": 22,
+        "truth": 24,
+        "predicted": 22,
+        "median_nearest_fraction_pitch": 0.0617,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        2,
+        1
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 12,
+      "center_positions_px": [
+        44.0,
+        76.0,
+        108.0,
+        140.0,
+        172.0,
+        204.0,
+        236.0,
+        268.0,
+        300.0,
+        332.0,
+        364.0,
+        396.0,
+        428.0,
+        460.0,
+        492.0,
+        524.0,
+        556.0,
+        588.0
+      ],
+      "width_fraction": 0.5469,
+      "relative_phase_margin": 0.2924,
+      "continuity_phase_drift_fraction": 0.125,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 0,
+      "phase_candidates": [
+        {
+          "phase_px": 12,
+          "score": 0.6985963223892835,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9285
+        },
+        {
+          "phase_px": 15,
+          "score": 0.6857037526644164,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.872
+        },
+        {
+          "phase_px": 13,
+          "score": 0.6812036194318425,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8404
+        },
+        {
+          "phase_px": 16,
+          "score": 0.6727960101907565,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.995
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9474,
+        "matched": 18,
+        "truth": 20,
+        "predicted": 18,
+        "median_nearest_fraction_pitch": 0.0546,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        2,
+        2
+      ],
+      "family": "warp",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 27,
+      "phase_px": 11,
+      "center_positions_px": [
+        38.0,
+        65.0,
+        92.0,
+        119.0,
+        146.0,
+        173.0,
+        200.0,
+        227.0,
+        254.0,
+        281.0,
+        308.0,
+        335.0,
+        362.0,
+        389.0,
+        416.0,
+        443.0,
+        470.0,
+        497.0,
+        524.0,
+        551.0,
+        578.0,
+        605.0
+      ],
+      "width_fraction": 0.6111,
+      "relative_phase_margin": 0.5973,
+      "continuity_phase_drift_fraction": 0.0,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 24,
+      "phase_candidates": [
+        {
+          "phase_px": 11,
+          "score": 0.940027440270488,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.981
+        },
+        {
+          "phase_px": 12,
+          "score": 0.9346565627717495,
+          "width_fraction": 0.6111,
+          "modality_widths": [
+            0.5556,
+            0.6667
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9908
+        },
+        {
+          "phase_px": 10,
+          "score": 0.866697365641987,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.979
+        },
+        {
+          "phase_px": 13,
+          "score": 0.8295075821233279,
+          "width_fraction": 0.5926,
+          "modality_widths": [
+            0.5556,
+            0.6296
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9497
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9565,
+        "matched": 22,
+        "truth": 24,
+        "predicted": 22,
+        "median_nearest_fraction_pitch": 0.0738,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    },
+    {
+      "grid": [
+        2,
+        2
+      ],
+      "family": "weft",
+      "status": "PASS",
+      "reason": "BILATERAL_EDGE_AND_RT_CONSISTENCY",
+      "pitch_px": 32,
+      "phase_px": 13,
+      "center_positions_px": [
+        45.0,
+        77.0,
+        109.0,
+        141.0,
+        173.0,
+        205.0,
+        237.0,
+        269.0,
+        301.0,
+        333.0,
+        365.0,
+        397.0,
+        429.0,
+        461.0,
+        493.0,
+        525.0,
+        557.0,
+        589.0
+      ],
+      "width_fraction": 0.5469,
+      "relative_phase_margin": 0.2813,
+      "continuity_phase_drift_fraction": 0.0938,
+      "R_center_polarity": 1,
+      "T_center_polarity": -1,
+      "alternative_phase_px": 30,
+      "phase_candidates": [
+        {
+          "phase_px": 13,
+          "score": 0.6910665632672319,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8797
+        },
+        {
+          "phase_px": 11,
+          "score": 0.6814649853127899,
+          "width_fraction": 0.5469,
+          "modality_widths": [
+            0.4375,
+            0.6562
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.8413
+        },
+        {
+          "phase_px": 14,
+          "score": 0.6786571800162868,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9974
+        },
+        {
+          "phase_px": 10,
+          "score": 0.6637966808603765,
+          "width_fraction": 0.5312,
+          "modality_widths": [
+            0.4375,
+            0.625
+          ],
+          "R_polarity": 1,
+          "T_polarity": -1,
+          "RT_support": 0.9256
+        }
+      ],
+      "ground_truth_assessment_only": {
+        "f1_proxy": 0.9474,
+        "matched": 18,
+        "truth": 20,
+        "predicted": 18,
+        "median_nearest_fraction_pitch": 0.0334,
+        "half_pitch_fraction": 0.0,
+        "note": "window mid-cross-section proxy, not occlusion-aware identity F1"
+      }
+    }
+  ]
+}
