@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/shibie-8k-stress.yml
       - shibie/run_native8k_case.py
+      - shibie/synthetic_capture_8k.py
   workflow_dispatch:
 permissions:
   contents: read
