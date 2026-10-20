@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from dataclasses import replace
+
 import cv2
 import numpy as np
 
@@ -454,8 +456,22 @@ def run_measurement(
     mm_y_working = float(mm_per_px_y) / scale
 
     try:
-        orient0 = structure_tensor_directions(normalized, DEFAULT_CONFIG)
+        if DEFAULT_CONFIG.orientation_roi_ratio is None:
+            orientation_input = normalized
+            orientation_source = "SAME_ROI_AS_DENSITY_V063"
+        else:
+            ratio = float(DEFAULT_CONFIG.orientation_roi_ratio)
+            if not (0.30 <= ratio <= float(DEFAULT_CONFIG.roi_ratio)):
+                raise ValueError("ORIENTATION_ROI_RATIO_INVALID")
+            # Detect direction on a compact, independently normalized crop,
+            # but verify measured ridges on the larger measurement ROI.
+            orientation_input, _ = normalize_transmission(
+                transmission, replace(DEFAULT_CONFIG, roi_ratio=ratio)
+            )
+            orientation_source = "INDEPENDENT_INNER_ROI"
+        orient0 = structure_tensor_directions(orientation_input, DEFAULT_CONFIG)
         orient, mapping, warp, weft = _choose_direction_pair(normalized, orient0, mm_x_working, mm_y_working, warp_axis_hint)
+        orient["orientation_candidate_roi_source"] = orientation_source
     except ValueError as exc:
         return {
             "engine_version": "0.6.3",
