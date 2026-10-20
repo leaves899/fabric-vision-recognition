@@ -86,7 +86,6 @@ def _stripe_features(xbase,ybase,s):
 
 def _render_strip(s, y0, y1, inverse, rng):
     yy,xx=np.mgrid[y0:y1,0:s.width].astype(np.float32)
-    xx=xx+s.shift_reflection_x*0.0
     X=inverse[0,0]*xx+inverse[0,1]*yy+inverse[0,2]
     Y=inverse[1,0]*xx+inverse[1,1]*yy+inverse[1,2]
     D=inverse[2,0]*xx+inverse[2,1]*yy+inverse[2,2]
@@ -131,7 +130,12 @@ def _render_strip(s, y0, y1, inverse, rng):
     r=np.clip(reflect,0,255).astype(np.uint8)
     t=np.clip(transmission,0,255).astype(np.uint8)
     # Channel offsets simulate different yarn spectral properties, no full RGB floats.
-    return np.stack([r,np.clip(r.astype(np.int16)+7,0,255).astype(np.uint8),r],axis=2),np.stack([t,t,np.clip(t.astype(np.int16)-4,0,255).astype(np.uint8)],axis=2)
+    rgb_r=np.stack([r,np.clip(r.astype(np.int16)+7,0,255).astype(np.uint8),r],axis=2)
+    rgb_t=np.stack([t,t,np.clip(t.astype(np.int16)-4,0,255).astype(np.uint8)],axis=2)
+    if s.shift_reflection_x:
+        m=np.float32([[1,0,s.shift_reflection_x],[0,1,0]])
+        rgb_r=cv2.warpAffine(rgb_r,m,(s.width,y1-y0),borderMode=cv2.BORDER_REFLECT101)
+    return rgb_r,rgb_t
 
 def _truth_lines(s,H):
     wp=10/(s.warp_density_cm*s.mm_per_px)
@@ -166,8 +170,13 @@ def generate(scene:CaptureScene, out:Path, strip_rows:int=96):
     rng=np.random.default_rng(scene.seed)
     for y in range(0,scene.height,strip_rows):
         y1=min(y+strip_rows,scene.height)
-        a,b=_render_strip(scene,y,y1,Hinv,rng)
-        R[y:y1]=a;T[y:y1]=b
+        halo=4
+        ry0=max(0,y-halo);ry1=min(scene.height,y1+halo)
+        a,b=_render_strip(scene,ry0,ry1,Hinv,rng)
+        a=cv2.GaussianBlur(a,(5,5),sigmaX=.75,sigmaY=.75)
+        b=cv2.GaussianBlur(b,(5,5),sigmaX=.75,sigmaY=.75)
+        R[y:y1]=a[y-ry0:y1-ry0]
+        T[y:y1]=b[y-ry0:y1-ry0]
     R.flush();T.flush()
     # No resizing: JPEG encoder sees the native original 8000x6000 arrays.
     rpath=out/"reflection_8000x6000.jpg";tpath=out/"transmission_8000x6000.jpg"
@@ -179,7 +188,21 @@ def generate(scene:CaptureScene, out:Path, strip_rows:int=96):
     q=50/scene.mm_per_px/2
     corners=np.float32([[[fcx-q,fcy-q],[fcx+q,fcy-q],[fcx+q,fcy+q],[fcx-q,fcy+q]]])
     mapped=cv2.perspectiveTransform(corners,H)[0]
+    # Directly sample the generated per-ID width model (independent of pitch gate).
+    width_p10={}
+    for family,density in (("warp",scene.warp_density_cm),("weft",scene.weft_density_cm)):
+        pitch=10/(density*scene.mm_per_px)
+        ids=np.arange(-160,161,dtype=np.float64)[:,None]
+        positions=np.linspace(500,scene.height-500,50)[None,:]
+        if family=="warp":
+            widths=pitch*(.62+.045*np.sin(ids*1.79)+.02*np.sin(positions/130+ids))
+        else:
+            positions=np.linspace(500,scene.width-500,50)[None,:]
+            widths=pitch*(.61+.047*np.sin(ids*1.53)+.022*np.sin(positions/150+ids))
+        width_p10[family]=round(float(np.percentile(widths,10)),3)
     gt={
+        "physical_width_p10_px":width_p10,
+        "passes_capture_p10_gate":all(value>=12 for value in width_p10.values()),
         "generator":"native8k_physical_fabric_v1","synthetic":True,
         "real_capture_certified":False,"source_scene":asdict(scene),
         "true_weave":scene.weave,"weave_label_not_for_inference":True,
