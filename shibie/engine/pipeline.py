@@ -260,6 +260,9 @@ def _run_direction(normalized: np.ndarray, direction_deg: float, mm_x_working: f
             )
             agreement = _periodicity_agreement(run)
             run["periodicity_agreement"] = round(float(agreement), 5)
+            run["candidate_quality_neutral"] = round(
+                float(_direction_quality(run) + min(sigma_used, 6.0) * 0.008), 5
+            )
             run["candidate_quality_base"] = round(float(base_quality), 5)
             # 尺度质量 × 周期一致性：只改变候选之间的排序，不改写密度主路线的计算方式。
             run["candidate_quality"] = round(float(base_quality) * float(agreement), 5)
@@ -268,6 +271,40 @@ def _run_direction(normalized: np.ndarray, direction_deg: float, mm_x_working: f
             last_error = str(exc)
     if not attempts:
         raise ValueError(last_error or "DIRECTION_RUN_FAILED")
+    # Optical phase can distinguish a yarn axis from a pore axis at the SAME
+    # measured pitch. It cannot legitimately claim a different number of yarns.
+    # Freeze a phase-blind physical-spacing family before applying phase evidence.
+    # Existing behavior is preserved unless explicitly enabled by the caller.
+    guard_ratio = float(DEFAULT_CONFIG.transmission_phase_pitch_guard_ratio)
+    if guard_ratio > 0.0 and DEFAULT_CONFIG.transmission_yarn_contrast_mode != "off":
+        if not (0.02 <= guard_ratio <= 0.60):
+            raise ValueError("PHASE_PITCH_GUARD_OUT_OF_RANGE")
+        phase_blind = sorted(
+            attempts,
+            key=lambda item: (
+                item["_base_confidence_status"] != "FAIL",
+                float(item["candidate_quality_neutral"]),
+                float(item["candidate_quality_neutral"]) * _periodicity_agreement(item),
+            ),
+            reverse=True,
+        )[0]
+        reference_pitch = float(phase_blind["centerline"]["median_center_spacing_px"])
+        for item in attempts:
+            pitch = float(item["centerline"]["median_center_spacing_px"])
+            compatible = abs(pitch / max(reference_pitch, 1e-9) - 1.0) <= guard_ratio
+            item["phase_guard_reference_pitch_px"] = round(reference_pitch, 5)
+            item["phase_guard_pitch_compatible"] = bool(compatible)
+            item["phase_guard_ratio"] = guard_ratio
+            if not compatible:
+                # Reject *only* the optical evidence bonus; the candidate still
+                # participates in phase-blind V0.6.3 scale selection.
+                item["candidate_quality_base"] = item["candidate_quality_neutral"]
+                item["candidate_quality"] = round(
+                    float(item["candidate_quality_base"]) * _periodicity_agreement(item), 5
+                )
+                item["phase_evidence_rejected_by_pitch_guard"] = True
+            else:
+                item["phase_evidence_rejected_by_pitch_guard"] = False
     # 两级裁决：先用原始中心线质量确定领先者，只在「质量接近」的候选之间
     # 让周期一致性做最终裁决，避免参考项推翻一个本来就明显更优的候选。
     attempts.sort(key=lambda r: (r["_base_confidence_status"] != "FAIL", r["candidate_quality_base"]), reverse=True)
@@ -306,6 +343,9 @@ def _run_direction(normalized: np.ndarray, direction_deg: float, mm_x_working: f
             "candidate_quality_base": item.get("candidate_quality_base"),
             "physical_center_phase_support": item.get("physical_center_phase_support"),
             "capture_phase_mode": item.get("capture_phase_mode"),
+            "phase_guard_reference_pitch_px": item.get("phase_guard_reference_pitch_px"),
+            "phase_guard_pitch_compatible": item.get("phase_guard_pitch_compatible"),
+            "phase_evidence_rejected_by_pitch_guard": item.get("phase_evidence_rejected_by_pitch_guard"),
             "periodicity_agreement": item.get("periodicity_agreement"),
             "periodicity_spacing_px": (item.get("periodicity") or {}).get("spacing_px"),
             "base_status": item["_base_confidence_status"],
