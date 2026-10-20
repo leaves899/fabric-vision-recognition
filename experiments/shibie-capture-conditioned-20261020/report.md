@@ -10,10 +10,9 @@ ACF 峰仅作为辅助周期，不是单根物理纱线真值。任何看似增�
 | 参数 | warp中心线 | 纬向中心线 | warp中心间距px | 纬向中心间距px | warp ACFpx | 纬向ACFpx | 状态 |
 |---|---:|---:|---:|---:|---:|---:|---|
 | default_v063 | 33 | 9 | 27.855 | 109.1606 | 28.0 | None | LOW_CONFIDENCE |
-| min_density_10 | 33 | 9 | 27.855 | 109.1606 | 28.0 | 49.0 | LOW_CONFIDENCE |
 | acf_strict | 33 | 16 | 27.855 | 52.9786 | 28.0 | 49.0 | LOW_CONFIDENCE |
-| ridges_local | 34 | 9 | 27.7928 | 102.2991 | 28.0 | 49.0 | LOW_CONFIDENCE |
-| acf_plus_ridges | 21 | 23 | 41.7612 | 40.9401 | 41.0 | 51.0 | LOW_CONFIDENCE |
+| roi96_direction90 | 36 | 12 | 28.0 | 79.6663 | 28.0 | None | LOW_CONFIDENCE |
+| acf_roi96_direction90 | 36 | 12 | 28.0 | 79.6663 | 28.0 | 50.0 | LOW_CONFIDENCE |
 
 ## 检视入口
 在 GitHub Actions 的图像 artifact 中查看 `original_transmission.png`、`original_reflection.png` 和 `overlays/*.png`，对比每条线是否为实体纱线。
