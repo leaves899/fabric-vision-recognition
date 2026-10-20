@@ -1,4 +1,7 @@
 name: shibie 8k native smoke and physical center audit
+concurrency:
+  group: shibie-8k-smoke-one-active
+  cancel-in-progress: true
 on:
   push:
     branches:
