@@ -65,6 +65,20 @@ def main():
             lines.append(f"- {label}/{var}：平均中心线F1={v:.4f}")
     lines.extend(["","注意：一对一匹配仅按投影线位置，不保证跨遮挡完整轨迹。此分数仅对特定程序化生成分布有效。"])
     (ev.OUT/"report.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
+    # Contact sheet is measured/ground-truth overlays, never AI-generated imagery.
+    import cv2
+    tile=310
+    sheet=np.full((len(SCENES+HOLDOUT_SCENES)*tile,3*tile,3),243,np.uint8)
+    for ri,scene in enumerate(SCENES+HOLDOUT_SCENES):
+        for ci,suff in enumerate(("GT_physical_yarns","guarded_dark","guarded_bright")):
+            img=cv2.imread(str(ev.OUT/"visuals"/f"{scene.name}_{suff}.jpg"))
+            if img is None:raise FileNotFoundError(f"{scene.name}_{suff}.jpg")
+            img=cv2.resize(img,(tile,tile),interpolation=cv2.INTER_AREA)
+            sheet[ri*tile:(ri+1)*tile,ci*tile:(ci+1)*tile]=img
+            cv2.rectangle(sheet,(ci*tile,ri*tile),(ci*tile+tile-1,ri*tile+22),(240,240,240),-1)
+            cv2.putText(sheet,f"{scene.name} {suff}",(ci*tile+4,ri*tile+16),
+                cv2.FONT_HERSHEY_SIMPLEX,.37,(30,30,30),1,cv2.LINE_AA)
+    cv2.imwrite(str(ev.OUT/"review_sheet.jpg"),sheet,[cv2.IMWRITE_JPEG_QUALITY,92])
 
 if __name__=="__main__":
     main()
