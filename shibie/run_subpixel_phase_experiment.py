@@ -15,6 +15,7 @@ from engine.multiwindow_pitch import PitchSettings, detect_calibration_frame, fr
 from engine.local_axis_rectification import estimate_fabric_axis_from_frame, adjusted_window_homography
 from engine.physical_center_validation import validate_physical_centers
 from engine.subpixel_physical_phase import validate_centers_fractional
+from engine.midsection_anchor import validate_midsection_anchor
 from run_local_axis_experiment import raw_gt_projected, score_centers
 
 
@@ -60,8 +61,9 @@ def evaluate(case: str):
             guess = candidates[0]["pitch_px"] if candidates else None
             before = validate_physical_centers(rr, tt, family, guess)
             after = validate_centers_fractional(rr, tt, family, guess)
+            midline = validate_midsection_anchor(rr, tt, family, guess)
             rows.append({"grid": [i, j], "family": family, "raw_to_tile": transform.tolist(),
-                         "pitch_initial": guess, "old": before, "new": after})
+                         "pitch_initial": guess, "old": before, "new": after, "midline": midline})
     # The hidden synthetic physical labels are first read here, AFTER both paths.
     gt = json.loads((image_path / "truth.json").read_text(encoding="utf-8"))
     results = {}
@@ -72,7 +74,7 @@ def evaluate(case: str):
                 continue
             truth = raw_gt_projected(gt, family, np.asarray(item["raw_to_tile"], np.float64), 520)
             scores = {}
-            for key in ("old", "new"):
+            for key in ("old", "new", "midline"):
                 data = item[key]
                 coords = data.get("center_positions_px", []) if data.get("status") == "PASS" else []
                 scores[key] = score_centers(coords, truth, gt["true_pitch_px_canonical"][family])
@@ -81,8 +83,10 @@ def evaluate(case: str):
         results[family] = {
             "old_f1_proxy": round(float(np.mean([q["truth_assessment_only"]["old"]["f1_proxy"] for q in cases])), 4),
             "new_f1_proxy": round(float(np.mean([q["truth_assessment_only"]["new"]["f1_proxy"] for q in cases])), 4),
+            "midline_f1_proxy": round(float(np.mean([q["truth_assessment_only"]["midline"]["f1_proxy"] for q in cases])), 4),
             "old_pass_windows": sum(q["old"]["status"] == "PASS" for q in cases),
             "new_pass_windows": sum(q["new"]["status"] == "PASS" for q in cases),
+            "midline_pass_windows": sum(q["midline"]["status"] == "PASS" for q in cases),
             "new_period_mape": round(float(np.mean([
                abs(q["new"].get("pitch_px",0)-gt["true_pitch_px_canonical"][family])
                / gt["true_pitch_px_canonical"][family]
@@ -98,15 +102,15 @@ def evaluate(case: str):
             item = next(q for q in rows if q["grid"] == [1, 1] and q["family"] == family)
             truth = raw_gt_projected(gt, family, M, 520)
             panels.append(_overlay(center_patches["T"], family, truth, (255, 50, 190)))
-            for name in ("old", "new"):
+            for name in ("old", "new", "midline"):
                 q = item[name]
                 coords = q.get("center_positions_px", []) if q["status"] == "PASS" else []
                 panels.append(_overlay(center_patches["T"], family, coords, (30, 50, 250)))
-        labels = ["Reflection", "Transmission", "Truth warp", "Old warp", "New warp",
-                  "Truth weft", "Old weft", "New weft"]
-        canvas = np.full((1040, 2080, 3), 230, dtype=np.uint8)
+        labels = ["Reflection", "Transmission", "Truth warp", "Old warp", "Float warp",
+                  "Midline warp", "Truth weft", "Old weft", "Float weft", "Midline weft"]
+        canvas = np.full((1040, 2600, 3), 230, dtype=np.uint8)
         for index, (panel, label) in enumerate(zip(panels, labels)):
-            y, x = divmod(index, 4)
+            y, x = divmod(index, 5)
             canvas[y*520:(y+1)*520, x*520:(x+1)*520] = panel
             cv2.rectangle(canvas, (x*520,y*520), (x*520+195,y*520+30), (255,255,255), -1)
             cv2.putText(canvas,label,(x*520+9,y*520+22),
