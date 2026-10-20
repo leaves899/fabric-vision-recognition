@@ -1,0 +1,79 @@
+name: shibie native8k independently tracked physical yarn entities
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-independent-entities.yml
+      - shibie/engine/individual_yarn_tracelets.py
+      - shibie/run_8k_individual_comparison.py
+      - shibie/tests/test_individual_yarn_tracelets.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: shibie-8k-individual-entity-run
+  cancel-in-progress: false
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {case: holdout_twill21_wave028, weave: twill_2_1, rotation: -13, seed: 931129, warp: 30, weft: 25, optical: mixed, wave: 0.28}
+          - {case: holdout_twill31_wave028, weave: twill_3_1, rotation: 18, seed: 931130, warp: 30, weft: 25, optical: bright, wave: 0.28}
+          - {case: medium_twill21_wave014_fresh, weave: twill_2_1, rotation: -16, seed: 938444, warp: 30, weft: 25, optical: mixed, wave: 0.14}
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: All original, physical yarn-ID and independent optical evidence unit tests
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Directly generate native8000x6000 physical R/T pair
+        run: |
+          python -c "import sys;from pathlib import Path;sys.path.insert(0,'shibie');from synthetic_capture_8k import CaptureScene,generate;generate(CaptureScene(name='${{ matrix.case }}',fabric_rotation_deg=${{ matrix.rotation }},seed=${{ matrix.seed }},weave='${{ matrix.weave }}',warp_density_cm=${{ matrix.warp }},weft_density_cm=${{ matrix.weft }},contrast_polarity='${{ matrix.optical }}',wave_fraction=${{ matrix.wave }},shift_reflection_x=1.8,noise_sigma=4.),Path('experiments/shibie-8k-capture-multiwindow/stress/${{ matrix.case }}'))"
+      - name: Frozen independent native8k R/T baseline and 7-slice yarn identity scorer
+        run: /usr/bin/time -v python -u shibie/run_8k_yarn_identity.py --case ${{ matrix.case }}
+      - name: Independent per-yarn RT optical core trajectory without GT during inference
+        run: /usr/bin/time -v python -u shibie/run_8k_individual_comparison.py --case ${{ matrix.case }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: individual-rt-${{ matrix.case }}
+          path: experiments/shibie-8k-capture-multiwindow/individual-tracklets/${{ matrix.case }}/
+          if-no-files-found: warn
+          retention-days: 21
+  publish:
+    needs: measure
+    if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: individual-rt-*
+          path: /tmp/native8k-individual
+          merge-multiple: false
+      - name: Audit exact program-generated physical ID overlays and results
+        run: |
+          python shibie/summarize_8k_individual.py \
+            --artifacts /tmp/native8k-individual \
+            --out experiments/shibie-8k-capture-multiwindow/individual-holdout
+          cat experiments/shibie-8k-capture-multiwindow/individual-holdout/REPORT.md
+      - name: Commit honest negative/positive evidence without touching main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/individual-holdout
+          git commit -m "test(shibie): record true8k individual physical-yarn RT optical holdout [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
