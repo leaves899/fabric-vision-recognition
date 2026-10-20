@@ -1,0 +1,43 @@
+name: rescore frozen 8k yarn identity with strict no-switch definition
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-strict-identity.yml
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  strict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: All existing and strict physical ID continuity regression tests
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Read frozen pixel-only individual R/T inference artifacts
+        run: gh run download 39445943439 --repo "$GITHUB_REPOSITORY" --dir /tmp/independent-rt-frozen
+      - name: Reconstruct physical ground truth after inference and strictly rescore
+        run: |
+          python -u shibie/replay_strict_identity.py \
+            --artifacts /tmp/independent-rt-frozen \
+            --out experiments/shibie-8k-capture-multiwindow/strict-identity
+          cat experiments/shibie-8k-capture-multiwindow/strict-identity/REPORT.md
+      - name: Commit verified stricter entity evidence to research branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/strict-identity/
+          git commit -m "test(shibie): publish strict no-switch 8k physical yarn ID evaluation [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
