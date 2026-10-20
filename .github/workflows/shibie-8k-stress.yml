@@ -1,4 +1,7 @@
 name: shibie native 8k frozen stress matrix
+concurrency:
+  group: shibie-8k-stress-one-active
+  cancel-in-progress: true
 on:
   push:
     branches:
