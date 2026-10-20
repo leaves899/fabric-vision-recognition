@@ -1,0 +1,36 @@
+name: publish verified native8k high curvature negative evidence
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-curvature-publish.yml
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve completed high curvature synthetic experiment outputs
+        run: gh run download 39444581720 --repo "$GITHUB_REPOSITORY" --dir /tmp/native8k-high-curve
+      - name: Verify two holdout metrics and copy actual algorithm rendered image overlays
+        run: |
+          python shibie/summarize_8k_curvature_failures.py \
+            --artifacts /tmp/native8k-high-curve \
+            --out experiments/shibie-8k-capture-multiwindow/curvature-failures
+          cat experiments/shibie-8k-capture-multiwindow/curvature-failures/REPORT.md
+      - name: Commit negative findings on isolated research branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/curvature-failures
+          git commit -m "test(shibie): publish failed 8k wavy-yarn physical ID holdout [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
