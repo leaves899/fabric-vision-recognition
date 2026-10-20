@@ -16,6 +16,10 @@ class EngineConfig:
     gate2_exposure_fail_ratio: float = 0.60
 
     roi_ratio: float = 0.90
+    # Optional independently defined inner ROI for orientation candidate generation.
+    # Default None preserves V0.6.3 behavior exactly; both ROI modes use
+    # original images (never artificial high-resolution interpolation).
+    orientation_roi_ratio: float | None = None
     orientation_max_side: int = 1600
     density_max_side: int = 2200
 
