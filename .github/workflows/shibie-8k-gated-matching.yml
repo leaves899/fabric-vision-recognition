@@ -5,6 +5,8 @@ on:
       - experiment/shibie-8k-capture-multiwindow
     paths:
       - .github/workflows/shibie-8k-gated-matching.yml
+      - shibie/tests/test_center_matching.py
+      - shibie/evaluate_center_matching.py
   workflow_dispatch:
 permissions:
   actions: read
