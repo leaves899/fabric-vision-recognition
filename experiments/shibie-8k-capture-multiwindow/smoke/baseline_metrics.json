@@ -1,0 +1,56 @@
+{
+  "engine_status": "LOW_CONFIDENCE",
+  "engine_reasons": [
+    "WARP_CENTERLINE_CONTINUITY_LOW",
+    "WARP_CENTER_SPACING_MODERATE_VARIATION",
+    "WEFT_CENTERLINE_CONTINUITY_LOW"
+  ],
+  "runtime_seconds": 32.99,
+  "peak_rss_mib": 1481.02,
+  "normalization": {
+    "roi": {
+      "mode": "CENTER_ROI_POC_DEFAULT",
+      "x": 400,
+      "y": 300,
+      "width": 7200,
+      "height": 5400
+    },
+    "resize_scale": 0.3055555555555556,
+    "geometry_mode": "IDENTITY_FIXED_STATION_POC",
+    "homography_applied": false,
+    "local_normalization": "CLAHE"
+  },
+  "density": {
+    "warp": 23.621,
+    "weft": 24.612
+  },
+  "recorded_input": {
+    "reflection": "45d7a5a2655a437c290d3ae10cb1d5b0d931d75762581b8da3a1b900acc04a9a",
+    "transmission": "4540e189a24aa619e3f6bff7890d1e3991f108040c0eb6f028177db4d6facf21"
+  },
+  "baseline_version": "V0.6.3_UNMODIFIED",
+  "warp": {
+    "f1_proxy": 0.2837,
+    "matched": 40,
+    "truth": 157,
+    "predicted": 125,
+    "median_nearest_gt_fraction_pitch": 0.4281,
+    "half_pitch_candidate_fraction": 0.656,
+    "note": "mid-ROI projection proxy; not occlusion-aware curve identity F1",
+    "expected_angle_deg": 97.028,
+    "predicted_angle_deg": 94.549,
+    "angle_error_deg": 2.479
+  },
+  "weft": {
+    "f1_proxy": 0.9807,
+    "matched": 127,
+    "truth": 131,
+    "predicted": 128,
+    "median_nearest_gt_fraction_pitch": 0.0628,
+    "half_pitch_candidate_fraction": 0.0078,
+    "note": "mid-ROI projection proxy; not occlusion-aware curve identity F1",
+    "expected_angle_deg": 6.972,
+    "predicted_angle_deg": 6.43,
+    "angle_error_deg": 0.542
+  }
+}
