@@ -417,6 +417,34 @@ def _choose_direction_pair(normalized: np.ndarray, orient: dict, mm_x_working: f
     })
     return chosen_orient, mapping, warp, weft
 
+def _choose_operator_reference_pair(normalized: np.ndarray, reference_angle_deg: float, mm_x_working: float, mm_y_working: float, warp_axis_hint: str):
+    """Run the same measurement chain with two operator-confirmed perpendicular axes.
+
+    This *does not* claim a detected line is a real yarn; that must be evaluated
+    separately against physical evidence. Do not alter the operator angle to fit
+    a stronger twill/texture direction.
+    """
+    a = float(reference_angle_deg) % 180.0
+    b = (a + 90.0) % 180.0
+    run_a = _run_direction(normalized, a, mm_x_working, mm_y_working)
+    run_b = _run_direction(normalized, b, mm_x_working, mm_y_working)
+    mapping = map_warp_weft(a, b, warp_axis_hint)
+    warp, weft = (run_a, run_b) if angular_distance(mapping["warp_direction_deg"], a) < 1e-4 else (run_b, run_a)
+    orientation = {
+        "direction_a_deg": round(a, 5),
+        "direction_b_deg": round(b, 5),
+        "angle_gap_deg": 90.0,
+        "pair_selection": "OPERATOR_CONFIRMED_PHYSICAL_YARN_REFERENCE",
+        "orientation_source": "OPERATOR_CONFIRMED_TWO_POINTS",
+        "direction_runs_cached": 2,
+        "pair_quality": None,
+        "direction_candidates": [],
+        "direction_field_samples": [],
+        "field_shape": [int(normalized.shape[1]), int(normalized.shape[0])],
+    }
+    return orientation, mapping, warp, weft
+
+
 def run_measurement(
     front_image_bytes: bytes,
     transmission_image_bytes: bytes,
@@ -426,6 +454,7 @@ def run_measurement(
     warp_axis_hint: str = "vertical",
     evidence_output_dir: str | None = None,
     sample_id: str = "sample",
+    reference_points: tuple[tuple[float, float], tuple[float, float]] | None = None,
 ) -> dict:
     if mm_per_px_x is None:
         mm_per_px_x = mm_per_px
@@ -454,8 +483,30 @@ def run_measurement(
     mm_y_working = float(mm_per_px_y) / scale
 
     try:
-        orient0 = structure_tensor_directions(normalized, DEFAULT_CONFIG)
-        orient, mapping, warp, weft = _choose_direction_pair(normalized, orient0, mm_x_working, mm_y_working, warp_axis_hint)
+        if reference_points is None:
+            orient0 = structure_tensor_directions(normalized, DEFAULT_CONFIG)
+            orient, mapping, warp, weft = _choose_direction_pair(normalized, orient0, mm_x_working, mm_y_working, warp_axis_hint)
+        else:
+            if len(reference_points) != 2:
+                raise ValueError("REFERENCE_P1_P2_REQUIRED")
+            (x1, y1), (x2, y2) = reference_points
+            vals = np.array([x1, y1, x2, y2], dtype=np.float64)
+            if not np.all(np.isfinite(vals)):
+                raise ValueError("REFERENCE_POINT_NONFINITE")
+            # Input coordinates are ORIGINAL front/transmission image pixels.
+            height, width = transmission.shape[:2]
+            if not (0 <= x1 < width and 0 <= x2 < width and 0 <= y1 < height and 0 <= y2 < height):
+                raise ValueError("REFERENCE_POINT_OUT_OF_IMAGE")
+            if np.hypot(x2 - x1, y2 - y1) < 8.0:
+                raise ValueError("REFERENCE_POINT_TOO_CLOSE")
+            reference_angle = float(np.degrees(np.arctan2(y2 - y1, x2 - x1)) % 180.0)
+            # The current PoC applies an isotropic crop+resize only.
+            # With a calibrated homography, transform BOTH reference points
+            # before using this method; angles do not survive perspective warps.
+            orient, mapping, warp, weft = _choose_operator_reference_pair(
+                normalized, reference_angle, mm_x_working, mm_y_working, warp_axis_hint
+            )
+            orient["reference_points"] = [[float(x1), float(y1)], [float(x2), float(y2)]]
     except ValueError as exc:
         return {
             "engine_version": "0.6.3",
