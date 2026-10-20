@@ -1,0 +1,61 @@
+name: shibie 8k native smoke and physical center audit
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-research.yml
+      - shibie/synthetic_capture_8k.py
+      - shibie/run_native8k_smoke.py
+      - shibie/engine/multiwindow_pitch.py
+      - shibie/engine/physical_center_validation.py
+      - shibie/run_native8k_multiwindow.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  native-8k:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install requirements
+        run: python -m pip install -r shibie/requirements.txt
+      - name: Existing engine regression tests
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Generate actual native 8000x6000 pair and run frozen baseline
+        run: /usr/bin/time -v python -u shibie/run_native8k_smoke.py
+      - name: Check native dimensions
+        if: always()
+        run: |
+          if test -f experiments/shibie-8k-capture-multiwindow/smoke/truth.json; then
+            python -c "import cv2; from pathlib import Path; d=Path('experiments/shibie-8k-capture-multiwindow/smoke'); assert cv2.imread(str(d/'transmission_8000x6000.jpg')).shape[:2]==(6000,8000);print('NATIVE_IMAGES_VERIFIED')"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shibie-native8k-rt-full-and-audit
+          path: experiments/shibie-8k-capture-multiwindow/smoke/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Publish small metrics and visual previews to experiment branch
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          find experiments/shibie-8k-capture-multiwindow/smoke -maxdepth 1 -type f -name '*.json' -print0 | xargs -0 -r git add -f
+          find experiments/shibie-8k-capture-multiwindow/smoke -maxdepth 1 -type f -name '*overlay*.jpg' -print0 | xargs -0 -r git add -f
+          find experiments/shibie-8k-capture-multiwindow/smoke -maxdepth 1 -type f -name '*crop*.jpg' -print0 | xargs -0 -r git add -f
+          if ! git diff --cached --quiet; then
+            git commit -m "test(shibie): publish verified 8k smoke measurements and crops [skip ci]"
+            git fetch origin experiment/shibie-8k-capture-multiwindow
+            git rebase origin/experiment/shibie-8k-capture-multiwindow
+            git push origin HEAD:experiment/shibie-8k-capture-multiwindow
+          fi
