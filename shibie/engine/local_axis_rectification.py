@@ -15,7 +15,7 @@ from .multiwindow_pitch import PitchSettings, _lags, frame_windows
 class AxisScanConfig:
     min_angle_deg: int = -30
     max_angle_deg: int = 30
-    step_deg: int = 2
+    step_deg: int = 1
     inner_px: int = 520
     min_score: float = .13
     min_gain_over_zero: float = .02
