@@ -335,11 +335,24 @@ def _run_direction(normalized: np.ndarray, direction_deg: float, mm_x_working: f
         close_set = [lead]
     close_set.sort(key=lambda r: r["candidate_quality"], reverse=True)
     selected = close_set[0]
+    guard_fallback = False
+    if guard_ratio > 0.0 and DEFAULT_CONFIG.transmission_yarn_contrast_mode != "off":
+        # Critical enforcement: not merely disabling a bonus. An incompatible
+        # spacing candidate could win again through ACF or quality ranking.
+        # Guard means the published candidate MUST belong to the phase-blind
+        # physical pitch family, otherwise restore the exact phase-blind winner.
+        chosen_pitch = float(selected["centerline"]["median_center_spacing_px"])
+        if abs(chosen_pitch / max(reference_pitch, 1e-9) - 1.0) > guard_ratio:
+            selected = phase_blind
+            guard_fallback = True
     selected["selection_rule"] = (
-        "PERIODICITY_TIEBREAK_WITHIN_CLOSE_MARGIN"
-        if DEFAULT_CONFIG.steerable_periodicity_tiebreak
-        else "CENTERLINE_QUALITY_ONLY"
+        "PITCH_GUARD_FALLBACK_TO_PHASE_BLIND"
+        if guard_fallback
+        else ("PERIODICITY_TIEBREAK_WITHIN_CLOSE_MARGIN"
+            if DEFAULT_CONFIG.steerable_periodicity_tiebreak
+            else "CENTERLINE_QUALITY_ONLY")
     )
+    selected["optical_phase_pitch_guard_fallback"] = bool(guard_fallback)
     selected["close_margin_candidate_count"] = len(close_set)
     scale_consistency = assess_scale_consistency(attempts, selected, DEFAULT_CONFIG)
     selected["confidence"] = confidence_for_direction(
