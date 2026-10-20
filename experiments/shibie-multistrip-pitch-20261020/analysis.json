@@ -1,0 +1,1439 @@
+{
+  "method": "multi_strip_local_evidence",
+  "labels_are_post_inference_only": true,
+  "development": [
+    "U20261013_01",
+    "U20261013_03",
+    "U20261013_05"
+  ],
+  "holdout": [
+    "U20261013_02",
+    "U20261013_06"
+  ],
+  "feature_candidates": [
+    "intensity",
+    "edge_energy"
+  ],
+  "selected_using_development_only": "edge_energy",
+  "development_mean_pitch_error_pct": {
+    "intensity": 134.81540640686055,
+    "edge_energy": 110.32194994335696
+  },
+  "holdout_mean_pitch_error_pct": {
+    "intensity": 119.9158200757889,
+    "edge_energy": 157.31180588102657
+  },
+  "conclusion": "EXPERIMENTAL__NOT_AN_APPROVED_PHYSICAL_YARN_COUNT",
+  "rows": [
+    {
+      "sample": "U20261013_01",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "development",
+      "feature": "intensity",
+      "operator_angle_error_deg": 27.844,
+      "truth_px": [
+        16.55010813917008,
+        33.34579476780918
+      ],
+      "estimated_px": [
+        34.0,
+        48.0
+      ],
+      "support": [
+        1.0,
+        1.0
+      ],
+      "relative_errors_pct": [
+        1.961882260555279,
+        190.02831640958087
+      ],
+      "mean_error_pct": 95.99509933506808,
+      "peak_data": [
+        {
+          "pitch_px": 34.0,
+          "strength": 0.1801,
+          "cross_strip_support": 1.0,
+          "peaks": [
+            {
+              "lag": 34,
+              "weighted": 0.1801,
+              "support": 1.0
+            },
+            {
+              "lag": 66,
+              "weighted": 0.1269,
+              "support": 0.714
+            },
+            {
+              "lag": 96,
+              "weighted": 0.1686,
+              "support": 1.0
+            }
+          ]
+        },
+        {
+          "pitch_px": 48.0,
+          "strength": 0.1528,
+          "cross_strip_support": 1.0,
+          "peaks": [
+            {
+              "lag": 25,
+              "weighted": 0.0831,
+              "support": 0.714
+            },
+            {
+              "lag": 48,
+              "weighted": 0.1528,
+              "support": 1.0
+            },
+            {
+              "lag": 68,
+              "weighted": 0.1108,
+              "support": 1.0
+            },
+            {
+              "lag": 91,
+              "weighted": 0.0897,
+              "support": 1.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_03",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "development",
+      "feature": "intensity",
+      "operator_angle_error_deg": 9.311,
+      "truth_px": [
+        16.413665518946623,
+        26.00574111086011
+      ],
+      "estimated_px": [
+        105.0,
+        39.0
+      ],
+      "support": [
+        0.857,
+        0.857
+      ],
+      "relative_errors_pct": [
+        303.7569994732876,
+        137.6068889364263
+      ],
+      "mean_error_pct": 220.68194420485693,
+      "peak_data": [
+        {
+          "pitch_px": 105.0,
+          "strength": 0.2288,
+          "cross_strip_support": 0.857,
+          "peaks": [
+            {
+              "lag": 51,
+              "weighted": 0.0773,
+              "support": 0.714
+            },
+            {
+              "lag": 105,
+              "weighted": 0.2059,
+              "support": 0.857
+            }
+          ]
+        },
+        {
+          "pitch_px": 39.0,
+          "strength": 0.0995,
+          "cross_strip_support": 0.857,
+          "peaks": [
+            {
+              "lag": 11,
+              "weighted": 0.0372,
+              "support": 0.714
+            },
+            {
+              "lag": 39,
+              "weighted": 0.0896,
+              "support": 0.857
+            },
+            {
+              "lag": 57,
+              "weighted": 0.1052,
+              "support": 0.857
+            },
+            {
+              "lag": 66,
+              "weighted": 0.0595,
+              "support": 0.571
+            },
+            {
+              "lag": 96,
+              "weighted": 0.0874,
+              "support": 0.857
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_05",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "development",
+      "feature": "intensity",
+      "operator_angle_error_deg": 11.894,
+      "truth_px": [
+        11.713833063550304,
+        21.091975472768777
+      ],
+      "estimated_px": [
+        14.0,
+        54.0
+      ],
+      "support": [
+        1.0,
+        1.0
+      ],
+      "relative_errors_pct": [
+        19.516813361149183,
+        156.02153800016404
+      ],
+      "mean_error_pct": 87.76917568065662,
+      "peak_data": [
+        {
+          "pitch_px": 14.0,
+          "strength": 0.1113,
+          "cross_strip_support": 1.0,
+          "peaks": [
+            {
+              "lag": 14,
+              "weighted": 0.1113,
+              "support": 1.0
+            },
+            {
+              "lag": 31,
+              "weighted": 0.0301,
+              "support": 0.714
+            },
+            {
+              "lag": 45,
+              "weighted": 0.0902,
+              "support": 1.0
+            },
+            {
+              "lag": 60,
+              "weighted": 0.0791,
+              "support": 1.0
+            },
+            {
+              "lag": 75,
+              "weighted": 0.0616,
+              "support": 0.857
+            },
+            {
+              "lag": 90,
+              "weighted": 0.0462,
+              "support": 0.714
+            },
+            {
+              "lag": 105,
+              "weighted": 0.0649,
+              "support": 0.714
+            }
+          ]
+        },
+        {
+          "pitch_px": 54.0,
+          "strength": 0.1025,
+          "cross_strip_support": 1.0,
+          "peaks": [
+            {
+              "lag": 8,
+              "weighted": 0.0152,
+              "support": 0.429
+            },
+            {
+              "lag": 18,
+              "weighted": 0.0026,
+              "support": 0.429
+            },
+            {
+              "lag": 36,
+              "weighted": 0.0388,
+              "support": 0.714
+            },
+            {
+              "lag": 54,
+              "weighted": 0.1025,
+              "support": 1.0
+            },
+            {
+              "lag": 84,
+              "weighted": 0.0254,
+              "support": 0.571
+            },
+            {
+              "lag": 94,
+              "weighted": 0.0316,
+              "support": 0.571
+            },
+            {
+              "lag": 104,
+              "weighted": 0.043,
+              "support": 0.571
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_02",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "holdout",
+      "feature": "intensity",
+      "operator_angle_error_deg": 8.706,
+      "truth_px": [
+        14.368434251567399,
+        32.14950584459341
+      ],
+      "estimated_px": [
+        41.0,
+        52.0
+      ],
+      "support": [
+        0.857,
+        1.0
+      ],
+      "relative_errors_pct": [
+        27.5291763369202,
+        261.9044294567274
+      ],
+      "mean_error_pct": 144.71680289682382,
+      "peak_data": [
+        {
+          "pitch_px": 41.0,
+          "strength": 0.1496,
+          "cross_strip_support": 0.857,
+          "peaks": [
+            {
+              "lag": 41,
+              "weighted": 0.1347,
+              "support": 0.857
+            },
+            {
+              "lag": 92,
+              "weighted": 0.0758,
+              "support": 0.857
+            }
+          ]
+        },
+        {
+          "pitch_px": 52.0,
+          "strength": 0.1204,
+          "cross_strip_support": 1.0,
+          "peaks": [
+            {
+              "lag": 7,
+              "weighted": 0.0868,
+              "support": 1.0
+            },
+            {
+              "lag": 15,
+              "weighted": 0.0299,
+              "support": 0.571
+            },
+            {
+              "lag": 39,
+              "weighted": 0.0891,
+              "support": 0.857
+            },
+            {
+              "lag": 45,
+              "weighted": 0.0958,
+              "support": 0.714
+            },
+            {
+              "lag": 52,
+              "weighted": 0.1204,
+              "support": 1.0
+            },
+            {
+              "lag": 60,
+              "weighted": 0.0049,
+              "support": 0.429
+            },
+            {
+              "lag": 89,
+              "weighted": 0.1402,
+              "support": 1.0
+            },
+            {
+              "lag": 98,
+              "weighted": 0.0557,
+              "support": 0.857
+            },
+            {
+              "lag": 105,
+              "weighted": 0.0118,
+              "support": 0.429
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_06",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "holdout",
+      "feature": "intensity",
+      "operator_angle_error_deg": 7.897,
+      "truth_px": [
+        6.454701702708066,
+        13.876446135850955
+      ],
+      "estimated_px": [
+        16.0,
+        8.0
+      ],
+      "support": [
+        1.0,
+        0.714
+      ],
+      "relative_errors_pct": [
+        147.88132336599242,
+        42.348351143515536
+      ],
+      "mean_error_pct": 95.11483725475398,
+      "peak_data": [
+        {
+          "pitch_px": 16.0,
+          "strength": 0.2203,
+          "cross_strip_support": 1.0,
+          "peaks": [
+            {
+              "lag": 13,
+              "weighted": 0.019,
+              "support": 0.714
+            },
+            {
+              "lag": 16,
+              "weighted": 0.2203,
+              "support": 1.0
+            },
+            {
+              "lag": 20,
+              "weighted": 0.1797,
+              "support": 1.0
+            },
+            {
+              "lag": 37,
+              "weighted": 0.1524,
+              "support": 0.857
+            },
+            {
+              "lag": 50,
+              "weighted": 0.0328,
+              "support": 0.714
+            },
+            {
+              "lag": 54,
+              "weighted": 0.1174,
+              "support": 1.0
+            },
+            {
+              "lag": 71,
+              "weighted": 0.0988,
+              "support": 1.0
+            },
+            {
+              "lag": 87,
+              "weighted": 0.0617,
+              "support": 0.714
+            },
+            {
+              "lag": 90,
+              "weighted": 0.1024,
+              "support": 1.0
+            },
+            {
+              "lag": 106,
+              "weighted": 0.0756,
+              "support": 0.714
+            }
+          ]
+        },
+        {
+          "pitch_px": 8.0,
+          "strength": 0.0786,
+          "cross_strip_support": 0.714,
+          "peaks": [
+            {
+              "lag": 8,
+              "weighted": 0.0629,
+              "support": 0.714
+            },
+            {
+              "lag": 40,
+              "weighted": 0.0865,
+              "support": 0.714
+            },
+            {
+              "lag": 49,
+              "weighted": 0.0378,
+              "support": 0.714
+            },
+            {
+              "lag": 71,
+              "weighted": 0.0273,
+              "support": 0.571
+            },
+            {
+              "lag": 78,
+              "weighted": 0.0376,
+              "support": 0.714
+            },
+            {
+              "lag": 87,
+              "weighted": 0.0286,
+              "support": 0.571
+            },
+            {
+              "lag": 95,
+              "weighted": 0.0005,
+              "support": 0.286
+            },
+            {
+              "lag": 103,
+              "weighted": 0.0122,
+              "support": 0.429
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_01",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "development",
+      "feature": "edge_energy",
+      "operator_angle_error_deg": 27.844,
+      "truth_px": [
+        16.55010813917008,
+        33.34579476780918
+      ],
+      "estimated_px": [
+        49.0,
+        18.0
+      ],
+      "support": [
+        1.0,
+        0.857
+      ],
+      "relative_errors_pct": [
+        46.945065610800256,
+        8.760618653592825
+      ],
+      "mean_error_pct": 27.852842132196542,
+      "peak_data": [
+        {
+          "pitch_px": 49.0,
+          "strength": 0.025,
+          "cross_strip_support": 1.0,
+          "peaks": [
+            {
+              "lag": 13,
+              "weighted": 0.0149,
+              "support": 0.429
+            },
+            {
+              "lag": 18,
+              "weighted": 0.015,
+              "support": 0.571
+            },
+            {
+              "lag": 26,
+              "weighted": 0.013,
+              "support": 0.429
+            },
+            {
+              "lag": 36,
+              "weighted": 0.0162,
+              "support": 0.571
+            },
+            {
+              "lag": 39,
+              "weighted": 0.0209,
+              "support": 0.429
+            },
+            {
+              "lag": 49,
+              "weighted": 0.025,
+              "support": 1.0
+            },
+            {
+              "lag": 53,
+              "weighted": 0.0054,
+              "support": 0.0
+            },
+            {
+              "lag": 56,
+              "weighted": 0.0062,
+              "support": 0.286
+            },
+            {
+              "lag": 68,
+              "weighted": 0.0163,
+              "support": 0.429
+            },
+            {
+              "lag": 78,
+              "weighted": 0.0234,
+              "support": 0.857
+            },
+            {
+              "lag": 84,
+              "weighted": 0.0104,
+              "support": 0.571
+            },
+            {
+              "lag": 88,
+              "weighted": 0.0185,
+              "support": 0.571
+            },
+            {
+              "lag": 96,
+              "weighted": 0.0193,
+              "support": 0.714
+            },
+            {
+              "lag": 105,
+              "weighted": 0.0152,
+              "support": 0.429
+            }
+          ]
+        },
+        {
+          "pitch_px": 18.0,
+          "strength": 0.0576,
+          "cross_strip_support": 0.857,
+          "peaks": [
+            {
+              "lag": 18,
+              "weighted": 0.0518,
+              "support": 0.857
+            },
+            {
+              "lag": 23,
+              "weighted": 0.0214,
+              "support": 0.857
+            },
+            {
+              "lag": 33,
+              "weighted": 0.0224,
+              "support": 0.714
+            },
+            {
+              "lag": 46,
+              "weighted": 0.0252,
+              "support": 0.857
+            },
+            {
+              "lag": 49,
+              "weighted": 0.0155,
+              "support": 0.571
+            },
+            {
+              "lag": 53,
+              "weighted": 0.0078,
+              "support": 0.429
+            },
+            {
+              "lag": 56,
+              "weighted": 0.0053,
+              "support": 0.286
+            },
+            {
+              "lag": 62,
+              "weighted": 0.0042,
+              "support": 0.143
+            },
+            {
+              "lag": 70,
+              "weighted": 0.0145,
+              "support": 0.571
+            },
+            {
+              "lag": 74,
+              "weighted": 0.0168,
+              "support": 0.714
+            },
+            {
+              "lag": 88,
+              "weighted": 0.0126,
+              "support": 0.714
+            },
+            {
+              "lag": 95,
+              "weighted": 0.0071,
+              "support": 0.571
+            },
+            {
+              "lag": 107,
+              "weighted": 0.0197,
+              "support": 0.429
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_03",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "development",
+      "feature": "edge_energy",
+      "operator_angle_error_deg": 9.311,
+      "truth_px": [
+        16.413665518946623,
+        26.00574111086011
+      ],
+      "estimated_px": [
+        12.0,
+        49.0
+      ],
+      "support": [
+        0.714,
+        0.571
+      ],
+      "relative_errors_pct": [
+        53.856342917338566,
+        198.53173225345867
+      ],
+      "mean_error_pct": 126.19403758539862,
+      "peak_data": [
+        {
+          "pitch_px": 12.0,
+          "strength": 0.0408,
+          "cross_strip_support": 0.714,
+          "peaks": [
+            {
+              "lag": 12,
+              "weighted": 0.0326,
+              "support": 0.714
+            },
+            {
+              "lag": 25,
+              "weighted": 0.0178,
+              "support": 0.429
+            },
+            {
+              "lag": 35,
+              "weighted": 0.0131,
+              "support": 0.429
+            },
+            {
+              "lag": 41,
+              "weighted": 0.0052,
+              "support": 0.286
+            },
+            {
+              "lag": 44,
+              "weighted": 0.0066,
+              "support": 0.429
+            },
+            {
+              "lag": 50,
+              "weighted": 0.0206,
+              "support": 0.714
+            },
+            {
+              "lag": 60,
+              "weighted": 0.029,
+              "support": 0.714
+            },
+            {
+              "lag": 66,
+              "weighted": 0.0146,
+              "support": 0.429
+            },
+            {
+              "lag": 70,
+              "weighted": 0.0101,
+              "support": 0.429
+            },
+            {
+              "lag": 76,
+              "weighted": 0.0244,
+              "support": 0.714
+            },
+            {
+              "lag": 80,
+              "weighted": 0.0282,
+              "support": 0.571
+            },
+            {
+              "lag": 84,
+              "weighted": 0.0104,
+              "support": 0.571
+            },
+            {
+              "lag": 92,
+              "weighted": 0.0056,
+              "support": 0.286
+            },
+            {
+              "lag": 95,
+              "weighted": 0.0177,
+              "support": 0.714
+            },
+            {
+              "lag": 100,
+              "weighted": 0.0323,
+              "support": 0.714
+            }
+          ]
+        },
+        {
+          "pitch_px": 49.0,
+          "strength": 0.038,
+          "cross_strip_support": 0.571,
+          "peaks": [
+            {
+              "lag": 18,
+              "weighted": 0.0148,
+              "support": 0.429
+            },
+            {
+              "lag": 21,
+              "weighted": 0.02,
+              "support": 0.571
+            },
+            {
+              "lag": 25,
+              "weighted": 0.0002,
+              "support": 0.571
+            },
+            {
+              "lag": 29,
+              "weighted": 0.004,
+              "support": 0.571
+            },
+            {
+              "lag": 33,
+              "weighted": 0.0198,
+              "support": 0.571
+            },
+            {
+              "lag": 39,
+              "weighted": 0.017,
+              "support": 0.857
+            },
+            {
+              "lag": 45,
+              "weighted": 0.0114,
+              "support": 0.714
+            },
+            {
+              "lag": 49,
+              "weighted": 0.0266,
+              "support": 0.571
+            },
+            {
+              "lag": 57,
+              "weighted": 0.037,
+              "support": 0.857
+            },
+            {
+              "lag": 64,
+              "weighted": 0.0178,
+              "support": 0.714
+            },
+            {
+              "lag": 81,
+              "weighted": 0.0149,
+              "support": 0.429
+            },
+            {
+              "lag": 85,
+              "weighted": 0.0085,
+              "support": 0.429
+            },
+            {
+              "lag": 93,
+              "weighted": 0.0112,
+              "support": 0.429
+            },
+            {
+              "lag": 102,
+              "weighted": 0.0168,
+              "support": 0.429
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_05",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "development",
+      "feature": "edge_energy",
+      "operator_angle_error_deg": 11.894,
+      "truth_px": [
+        11.713833063550304,
+        21.091975472768777
+      ],
+      "estimated_px": [
+        52.0,
+        19.0
+      ],
+      "support": [
+        0.857,
+        0.714
+      ],
+      "relative_errors_pct": [
+        343.9195924842684,
+        9.91834774068301
+      ],
+      "mean_error_pct": 176.9189701124757,
+      "peak_data": [
+        {
+          "pitch_px": 52.0,
+          "strength": 0.0516,
+          "cross_strip_support": 0.857,
+          "peaks": [
+            {
+              "lag": 15,
+              "weighted": 0.0061,
+              "support": 0.429
+            },
+            {
+              "lag": 20,
+              "weighted": 0.019,
+              "support": 0.714
+            },
+            {
+              "lag": 30,
+              "weighted": 0.0326,
+              "support": 0.857
+            },
+            {
+              "lag": 37,
+              "weighted": 0.0111,
+              "support": 0.857
+            },
+            {
+              "lag": 40,
+              "weighted": 0.0164,
+              "support": 0.571
+            },
+            {
+              "lag": 43,
+              "weighted": 0.0305,
+              "support": 0.714
+            },
+            {
+              "lag": 52,
+              "weighted": 0.0465,
+              "support": 0.857
+            },
+            {
+              "lag": 55,
+              "weighted": 0.011,
+              "support": 0.714
+            },
+            {
+              "lag": 60,
+              "weighted": 0.0111,
+              "support": 0.571
+            },
+            {
+              "lag": 64,
+              "weighted": 0.0382,
+              "support": 0.857
+            },
+            {
+              "lag": 77,
+              "weighted": 0.0483,
+              "support": 1.0
+            },
+            {
+              "lag": 81,
+              "weighted": 0.009,
+              "support": 0.429
+            },
+            {
+              "lag": 85,
+              "weighted": 0.0231,
+              "support": 0.571
+            },
+            {
+              "lag": 89,
+              "weighted": 0.0266,
+              "support": 0.571
+            },
+            {
+              "lag": 98,
+              "weighted": 0.0202,
+              "support": 0.571
+            },
+            {
+              "lag": 104,
+              "weighted": 0.0052,
+              "support": 0.429
+            }
+          ]
+        },
+        {
+          "pitch_px": 19.0,
+          "strength": 0.0333,
+          "cross_strip_support": 0.714,
+          "peaks": [
+            {
+              "lag": 19,
+              "weighted": 0.0266,
+              "support": 0.714
+            },
+            {
+              "lag": 23,
+              "weighted": 0.0122,
+              "support": 0.429
+            },
+            {
+              "lag": 29,
+              "weighted": 0.0124,
+              "support": 0.857
+            },
+            {
+              "lag": 32,
+              "weighted": 0.0081,
+              "support": 0.429
+            },
+            {
+              "lag": 42,
+              "weighted": 0.0082,
+              "support": 0.571
+            },
+            {
+              "lag": 47,
+              "weighted": 0.0226,
+              "support": 0.857
+            },
+            {
+              "lag": 54,
+              "weighted": 0.0072,
+              "support": 0.429
+            },
+            {
+              "lag": 59,
+              "weighted": 0.0101,
+              "support": 0.429
+            },
+            {
+              "lag": 62,
+              "weighted": 0.0212,
+              "support": 0.714
+            },
+            {
+              "lag": 74,
+              "weighted": 0.0154,
+              "support": 0.571
+            },
+            {
+              "lag": 78,
+              "weighted": 0.0116,
+              "support": 0.714
+            },
+            {
+              "lag": 82,
+              "weighted": 0.014,
+              "support": 0.714
+            },
+            {
+              "lag": 90,
+              "weighted": 0.0122,
+              "support": 0.429
+            },
+            {
+              "lag": 96,
+              "weighted": 0.0077,
+              "support": 0.429
+            },
+            {
+              "lag": 106,
+              "weighted": 0.0197,
+              "support": 0.714
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_02",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "holdout",
+      "feature": "edge_energy",
+      "operator_angle_error_deg": 8.706,
+      "truth_px": [
+        14.368434251567399,
+        32.14950584459341
+      ],
+      "estimated_px": [
+        15.0,
+        19.0
+      ],
+      "support": [
+        1.0,
+        0.714
+      ],
+      "relative_errors_pct": [
+        53.34298426698042,
+        32.234310763035026
+      ],
+      "mean_error_pct": 42.788647515007725,
+      "peak_data": [
+        {
+          "pitch_px": 15.0,
+          "strength": 0.0433,
+          "cross_strip_support": 1.0,
+          "peaks": [
+            {
+              "lag": 15,
+              "weighted": 0.0433,
+              "support": 1.0
+            },
+            {
+              "lag": 23,
+              "weighted": 0.0255,
+              "support": 0.714
+            },
+            {
+              "lag": 33,
+              "weighted": 0.0119,
+              "support": 0.429
+            },
+            {
+              "lag": 37,
+              "weighted": 0.0105,
+              "support": 0.571
+            },
+            {
+              "lag": 44,
+              "weighted": 0.0031,
+              "support": 0.571
+            },
+            {
+              "lag": 55,
+              "weighted": 0.0235,
+              "support": 0.714
+            },
+            {
+              "lag": 67,
+              "weighted": 0.0172,
+              "support": 0.714
+            },
+            {
+              "lag": 80,
+              "weighted": 0.0098,
+              "support": 0.571
+            },
+            {
+              "lag": 86,
+              "weighted": 0.0211,
+              "support": 0.857
+            },
+            {
+              "lag": 96,
+              "weighted": 0.0323,
+              "support": 1.0
+            },
+            {
+              "lag": 102,
+              "weighted": 0.0295,
+              "support": 0.857
+            }
+          ]
+        },
+        {
+          "pitch_px": 19.0,
+          "strength": 0.0343,
+          "cross_strip_support": 0.714,
+          "peaks": [
+            {
+              "lag": 19,
+              "weighted": 0.0274,
+              "support": 0.714
+            },
+            {
+              "lag": 27,
+              "weighted": 0.0201,
+              "support": 0.714
+            },
+            {
+              "lag": 44,
+              "weighted": 0.0277,
+              "support": 0.714
+            },
+            {
+              "lag": 52,
+              "weighted": 0.0268,
+              "support": 0.714
+            },
+            {
+              "lag": 56,
+              "weighted": 0.0288,
+              "support": 0.714
+            },
+            {
+              "lag": 60,
+              "weighted": 0.0066,
+              "support": 0.571
+            },
+            {
+              "lag": 64,
+              "weighted": 0.0033,
+              "support": 0.143
+            },
+            {
+              "lag": 68,
+              "weighted": 0.0243,
+              "support": 0.714
+            },
+            {
+              "lag": 75,
+              "weighted": 0.0168,
+              "support": 0.714
+            },
+            {
+              "lag": 83,
+              "weighted": 0.0186,
+              "support": 0.571
+            },
+            {
+              "lag": 88,
+              "weighted": 0.0192,
+              "support": 0.571
+            },
+            {
+              "lag": 94,
+              "weighted": 0.0287,
+              "support": 0.857
+            },
+            {
+              "lag": 99,
+              "weighted": 0.0075,
+              "support": 0.286
+            },
+            {
+              "lag": 103,
+              "weighted": 0.0169,
+              "support": 0.571
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "U20261013_06",
+      "variant": "v063_angles",
+      "family": "independent_two_axis_local_profiles",
+      "split": "holdout",
+      "feature": "edge_energy",
+      "operator_angle_error_deg": 7.897,
+      "truth_px": [
+        6.454701702708066,
+        13.876446135850955
+      ],
+      "estimated_px": [
+        28.0,
+        43.0
+      ],
+      "support": [
+        0.857,
+        0.714
+      ],
+      "relative_errors_pct": [
+        333.7923158904868,
+        209.87761260360404
+      ],
+      "mean_error_pct": 271.83496424704543,
+      "peak_data": [
+        {
+          "pitch_px": 28.0,
+          "strength": 0.0307,
+          "cross_strip_support": 0.857,
+          "peaks": [
+            {
+              "lag": 17,
+              "weighted": 0.0213,
+              "support": 0.714
+            },
+            {
+              "lag": 23,
+              "weighted": 0.0163,
+              "support": 0.714
+            },
+            {
+              "lag": 28,
+              "weighted": 0.0276,
+              "support": 0.857
+            },
+            {
+              "lag": 32,
+              "weighted": 0.0279,
+              "support": 0.857
+            },
+            {
+              "lag": 35,
+              "weighted": 0.0259,
+              "support": 0.857
+            },
+            {
+              "lag": 47,
+              "weighted": 0.0078,
+              "support": 0.571
+            },
+            {
+              "lag": 53,
+              "weighted": 0.0384,
+              "support": 0.714
+            },
+            {
+              "lag": 61,
+              "weighted": 0.0238,
+              "support": 0.714
+            },
+            {
+              "lag": 72,
+              "weighted": 0.0386,
+              "support": 0.857
+            },
+            {
+              "lag": 78,
+              "weighted": 0.008,
+              "support": 0.714
+            },
+            {
+              "lag": 83,
+              "weighted": 0.0122,
+              "support": 0.571
+            },
+            {
+              "lag": 88,
+              "weighted": 0.0261,
+              "support": 0.857
+            },
+            {
+              "lag": 97,
+              "weighted": 0.009,
+              "support": 0.429
+            },
+            {
+              "lag": 100,
+              "weighted": 0.0019,
+              "support": 0.286
+            },
+            {
+              "lag": 104,
+              "weighted": 0.008,
+              "support": 0.429
+            },
+            {
+              "lag": 107,
+              "weighted": 0.0093,
+              "support": 0.571
+            }
+          ]
+        },
+        {
+          "pitch_px": 43.0,
+          "strength": 0.0321,
+          "cross_strip_support": 0.714,
+          "peaks": [
+            {
+              "lag": 13,
+              "weighted": 0.0105,
+              "support": 0.429
+            },
+            {
+              "lag": 23,
+              "weighted": 0.0133,
+              "support": 0.571
+            },
+            {
+              "lag": 27,
+              "weighted": 0.0177,
+              "support": 0.429
+            },
+            {
+              "lag": 31,
+              "weighted": 0.0186,
+              "support": 0.571
+            },
+            {
+              "lag": 36,
+              "weighted": 0.0231,
+              "support": 0.571
+            },
+            {
+              "lag": 43,
+              "weighted": 0.0257,
+              "support": 0.714
+            },
+            {
+              "lag": 55,
+              "weighted": 0.0354,
+              "support": 0.714
+            },
+            {
+              "lag": 63,
+              "weighted": 0.0184,
+              "support": 0.714
+            },
+            {
+              "lag": 66,
+              "weighted": 0.0217,
+              "support": 0.714
+            },
+            {
+              "lag": 71,
+              "weighted": 0.0158,
+              "support": 0.714
+            },
+            {
+              "lag": 76,
+              "weighted": 0.0161,
+              "support": 0.571
+            },
+            {
+              "lag": 85,
+              "weighted": 0.009,
+              "support": 0.714
+            },
+            {
+              "lag": 92,
+              "weighted": 0.0165,
+              "support": 0.286
+            },
+            {
+              "lag": 98,
+              "weighted": 0.0088,
+              "support": 0.286
+            },
+            {
+              "lag": 103,
+              "weighted": 0.0085,
+              "support": 0.429
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
