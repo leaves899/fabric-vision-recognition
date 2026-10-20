@@ -27,38 +27,21 @@ OUT = REPO / "experiments" / "shibie-capture-conditioned-20261020"
 # All variants are registered before looking at results. First is frozen default.
 VARIANTS = {
     "default_v063": {},
-    # Control: previous experiments showed no real centerline gain.
-    "min_density_10": {"density_min_per_cm": 10.0},
     "acf_strict": {
         "density_min_per_cm": 10.0,
         "steerable_quality_close_margin": 0.22,
         "steerable_periodicity_tiebreak_floor": 0.08,
     },
-    "ridges_local": {
-        "density_min_per_cm": 10.0,
-        "ridge_global_smoothing_sigma": 1.1,
-        "ridge_strip_smoothing_sigma": 0.65,
-        "ridge_min_coverage": 0.20,
-        "ridge_peak_distance_ratio": 0.60,
-    },
-    "acf_plus_ridges": {
-        "density_min_per_cm": 10.0,
-        "steerable_quality_close_margin": 0.22,
-        "steerable_periodicity_tiebreak_floor": 0.08,
-        "ridge_global_smoothing_sigma": 1.1,
-        "ridge_strip_smoothing_sigma": 0.65,
-        "ridge_min_coverage": 0.20,
-        "ridge_peak_distance_ratio": 0.60,
-    },
-    # The 0.96 full field previously triggered a false ~12 degree tilt.
-    # Evaluate physically smaller but INDEPENDENT orientation estimation ROIs.
     "roi96_direction90": {
         "roi_ratio": 0.96,
         "orientation_roi_ratio": 0.90,
     },
-    "roi96_direction75": {
+    "acf_roi96_direction90": {
+        "density_min_per_cm": 10.0,
+        "steerable_quality_close_margin": 0.22,
+        "steerable_periodicity_tiebreak_floor": 0.08,
         "roi_ratio": 0.96,
-        "orientation_roi_ratio": 0.75,
+        "orientation_roi_ratio": 0.90,
     },
 }
 
@@ -183,7 +166,7 @@ def main():
     for name in VARIANTS:
         image = cv2.imread(str(OUT / "overlays" / (name + ".png")))
         tiles.append((name, save_review(name, image)))
-    montage = np.full((1040, 1500, 3), 245, dtype=np.uint8)
+    montage = np.full((((len(tiles)+2)//3)*520, 1500, 3), 245, dtype=np.uint8)
     for idx, (name, tile) in enumerate(tiles):
         row, col = divmod(idx, 3)
         tx, ty = col * 500, row * 520
