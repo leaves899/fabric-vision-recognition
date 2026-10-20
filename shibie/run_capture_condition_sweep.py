@@ -134,6 +134,31 @@ def main():
         w.writeheader()
         w.writerows(rows)
     (OUT / "measurements.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    # Commit small 1:1 center crops for independent visual inspection.
+    # Full-resolution overlays remain downloadable via workflow artifact.
+    preview_dir = OUT / "review_crops"
+    preview_dir.mkdir(parents=True, exist_ok=True)
+    h, w = timg.shape[:2]
+    patch = min(640, h, w)
+    x0 = (w - patch) // 2
+    y0 = (h - patch) // 2
+    def save_review(name, img):
+        tile = img[y0:y0+patch, x0:x0+patch]
+        cv2.imwrite(str(preview_dir / (name + ".jpg")), tile, [cv2.IMWRITE_JPEG_QUALITY, 94])
+        return cv2.resize(tile, (500, 500), interpolation=cv2.INTER_AREA)
+    tiles = [("original_transmission", save_review("original_transmission", timg))]
+    for name in VARIANTS:
+        image = cv2.imread(str(OUT / "overlays" / (name + ".png")))
+        tiles.append((name, save_review(name, image)))
+    montage = np.full((1040, 1500, 3), 245, dtype=np.uint8)
+    for idx, (name, tile) in enumerate(tiles):
+        row, col = divmod(idx, 3)
+        tx, ty = col * 500, row * 520
+        montage[ty+20:ty+520, tx:tx+500] = tile
+        cv2.rectangle(montage, (tx, ty), (tx + 499, ty + 20), (245, 245, 245), -1)
+        cv2.putText(montage, name, (tx + 7, ty + 16), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.50, (0, 0, 0), 1, cv2.LINE_AA)
+    cv2.imwrite(str(OUT / "review_contact_sheet.jpg"), montage, [cv2.IMWRITE_JPEG_QUALITY, 92])
     report = [
         "# 真实反射/透射双图：采集条件针对性参数消融",
         "",
