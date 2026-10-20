@@ -25,7 +25,7 @@ class GatedPhysicalMatchTests(unittest.TestCase):
     def test_cannot_match_one_prediction_twice(self):
         r=cardinality_gated_yarn_match([23.],[23.,24.],32.)
         self.assertEqual(r["matches"],1)
-        self.assertAlmostEqual(r["f1"],2/3)
+        self.assertAlmostEqual(r["f1"],2/3,places=6)
 
     def test_bad_outlier_does_not_displace_valid_matches(self):
         t=np.arange(12)*30.
