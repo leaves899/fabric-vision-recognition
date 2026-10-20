@@ -1,0 +1,42 @@
+name: test physical-centre conflict guard on measured 8k candidates
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-phase-conflicts.yml
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  conflict-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Retrieve finished 3-arm native8k synthetic measurement artifacts
+        run: gh run download 39437637934 --repo "$GITHUB_REPOSITORY" --dir /tmp/actual-abc
+      - name: Perform truth-free conflict decisions then audit against withheld F1
+        run: |
+          python -u shibie/audit_phase_conflict_artifacts.py \
+            --artifacts /tmp/actual-abc \
+            --out experiments/shibie-8k-capture-multiwindow/phase-conflicts
+          cat experiments/shibie-8k-capture-multiwindow/phase-conflicts/REPORT.md
+      - name: Preserve physical comparisons without altering production code
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/phase-conflicts/
+          git commit -m "test(shibie): publish observed conflict guard misses and synthetic overlays [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
