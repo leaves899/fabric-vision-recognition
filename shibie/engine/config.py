@@ -59,6 +59,13 @@ class EngineConfig:
     steerable_periodicity_tiebreak_floor: float = 0.5
     # 自相关峰低于该值时视为「参考不可用」，不参与裁决。
     steerable_periodicity_tiebreak_min_peak: float = 0.18
+    # Optical entity-phase experiment: the acquisition mode must be independently
+    # calibrated. OFF by default for all real data; never infer it from GT labels.
+    # DARK means transmissive yarn centers are darker than adjacent pores.
+    # Do not enable for reflected-only or uncalibrated capture.
+    transmission_yarn_contrast_mode: str = "off"  # off | dark | bright
+    transmission_center_evidence_weight: float = 0.0
+
 
     # Ridge Detection + Centerline Linking
     density_min_per_cm: float = 15.0
