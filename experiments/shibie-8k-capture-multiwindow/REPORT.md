@@ -96,3 +96,38 @@ GitHub Actions 真正运行与完整大图（下载Artifacts）：
 32项现有 shibie 单元测试在 smoke CI 中通过，仍不足以代替物理识别验收。
 
 备注：为避免重复任务并发提交相同truth/metrics造成Git rebase冲突，已启用workflow concurrency。高分辨率真实原图以Actions Artifact保存，Artifact会按设定保留期过期；源码配置+种子+Git Commit+SHA256可复现。
+
+
+## 2026-10-20 后续研发：亚像素相位 + 计分器修复（已真实运行）
+
+### 执行内容与代码（未触碰 V0.6.3 默认 pipeline）
+- `shibie/engine/subpixel_physical_phase.py`：不取整局部纱距的ACF局部拟合、连续浮点相位折叠、R/T双侧边界及纵向一致性候选审查。
+- `shibie/engine/midsection_anchor.py`：额外中截面相位重锚定的独立试验。
+- `shibie/engine/phase_conflict_audit.py`：按测得实体宽度建立两种中心候选的冲突警报；在本轮中**漏报**严重下降个例，不得声称安全可靠。
+- `shibie/evaluate_center_matching.py`：**已证实的关键评估修复**。不能先最小化无门限L1距离、再计算门内F1；那会错误地把周期纱线配到旁边整根。现在首先在阈值内最大化唯一正确配对数量，再做微小的距离次级排序。
+- `shibie/replay_corrected_center_matching.py` 和单元测试：使用冻结的旧/新检测坐标，推理完成后重建合成真值并公平重评分。
+
+三种固定场景每个重新运行了原生8000×6000 R/T双图：15°布料相对框独立旋转30/25、0°对照30/25、反相光照25/25。第一轮与第二轮共六次完整原生R/T生成；重复同一随机种子，**不能当作六个独立留出样本**。
+
+### 修正后公允比较：同窗口、同图、同物理真值和门限
+| 场景 | 纱线族 | 原整数算法F1 | 新浮点算法F1 | 中段重锚定F1 |
+|---|---|---:|---:|---:|
+| 15°旋转30/25 | 经向 | .8144 | **.8890** | .8860 |
+| 15°旋转30/25 | 纬向 | **.8449** | .8360 | .8360 |
+| 0°对照30/25 | 经向 | .9587 | .9587 | .9587 |
+| 0°对照30/25 | 纬向 | .9601 | **.9639** | .9639 |
+| 25/25光学反相 | 经向 | .9476 | .9476 | .9476 |
+| 25/25光学反相 | 纬向 | .9543 | .9543 | .9543 |
+
+**重要撤销旧结论**：旧评分曾将15°旋转角落窗口浮点纬向F1错误算为0.0800，实际上按门内最大唯一匹配是**0.8000**（整数版0.8462）。这是评分错误放大，并非物理中心必然整体差一个纱距。该窗口的绝对最近物理真值中位距离仅0.0184纱距，但旧评估器施加的匈牙利L1配对中位距离竟达到1.0047纱距；详见 `metric-sensitivity/REPORT.md`。
+
+在3个场景共54个局部窗口上，基于旧/新中心候选的宽度尺度冲突审计只发出0次警报，无法捕捉此前错误评分判定的一个大跌分窗口；该路线本轮未验证，**不推荐启用**。中段重新锚定亦未在本轮合理评分下优于浮点版，不予推广。
+
+45个 `shibie` 单元测试在完成的[新一对一评分工作流](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39439539261)中通过。
+- [三场景第一轮原生8K像素级对照](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39436283053)
+- [三场景第二轮同种子三方对照](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39437637934)
+- [F1计分阈值审计](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39438732029)
+- [纠正后的原生8K F1完整结果](https://github.com/leaves899/fabric-vision-recognition/blob/experiment/shibie-8k-capture-multiwindow/experiments/shibie-8k-capture-multiwindow/corrected-matching/REPORT.md)
+- [新旧算法与真实纱线标记的程序生成叠图](https://github.com/leaves899/fabric-vision-recognition/tree/experiment/shibie-8k-capture-multiwindow/experiments/shibie-8k-capture-multiwindow/phase-conflicts)
+
+当前适用范围**仅为合成的局部单截面中心线位置匹配**，不是完整物理纱线跨遮挡身份F1。没有新的符合工位条件的真实8K R/T黄金标注，故**真实样本非退化仍未验证；不得合并main或部署RK3576**。下一步需独立补齐可见轨迹覆盖、连续性及真实R/T证据，不能继续沿用原始错误计分器。
