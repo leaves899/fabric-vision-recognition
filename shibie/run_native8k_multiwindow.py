@@ -79,6 +79,9 @@ def _composite(R,T,window_mats,pitch,gt,rows,out):
             cv2.putText(vis,labels[k],(j*size+8,i*size+23),
                 cv2.FONT_HERSHEY_SIMPLEX,.7,(10,10,10),2,cv2.LINE_AA)
         cv2.imwrite(str(out/"multiwindow_center_evidence.jpg"),vis)
+        small=cv2.resize(vis,(960,640),interpolation=cv2.INTER_AREA)
+        cv2.imwrite(str(out/"multiwindow_center_evidence_preview.jpg"),small,
+                    [cv2.IMWRITE_JPEG_QUALITY,76])
 
 def main():
     start=time.perf_counter()
