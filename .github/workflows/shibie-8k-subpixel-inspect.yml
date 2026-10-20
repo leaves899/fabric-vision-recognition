@@ -1,0 +1,36 @@
+name: inspect and publish verified native8k A/B artifacts
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-subpixel-inspect.yml
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download completed native8k comparison artifacts
+        run: gh run download 39436283053 --repo "$GITHUB_REPOSITORY" --dir /tmp/verified-subpixel
+      - name: Compare every window and preserve real algorithm overlays
+        run: |
+          python shibie/report_subpixel_ab.py \
+            --artifacts /tmp/verified-subpixel \
+            --out experiments/shibie-8k-capture-multiwindow/subpixel/verified
+          cat experiments/shibie-8k-capture-multiwindow/subpixel/verified/AB_REVIEW.md
+      - name: Commit evidence to isolated branch (not main)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/subpixel/verified
+          git commit -m "test(shibie): publish measured subpixel A/B declines and actual overlays [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
