@@ -1,0 +1,53 @@
+name: shibie synthetic phase real R-T transfer diagnostic
+on:
+  push:
+    branches:
+      - experiment/shibie-synthetic-physics-20261020
+    paths:
+      - .github/workflows/shibie-rt-phase-transfer.yml
+      - shibie/experiment_capture_contrast_transfer.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  paired:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Real paired-image optical polarity diagnostics
+        run: python shibie/experiment_capture_contrast_transfer.py
+      - name: Show differences
+        if: always()
+        run: |
+          if test -f experiments/shibie-phase-transfer-20261020/report.md; then
+            cat experiments/shibie-phase-transfer-20261020/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shibie-phase-real-paired-test
+          path: experiments/shibie-phase-transfer-20261020/
+          if-no-files-found: warn
+      - name: Commit objective report and compact visual panel
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/shibie-phase-transfer-20261020/report.md experiments/shibie-phase-transfer-20261020/measurements.csv experiments/shibie-phase-transfer-20261020/measurements.json experiments/shibie-phase-transfer-20261020/review_contact_sheet.jpg experiments/shibie-phase-transfer-20261020/review_crops/*.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "test(shibie): real R/T polarity transfer evidence [skip ci]"
+            for attempt in 1 2 3; do
+              git fetch origin experiment/shibie-synthetic-physics-20261020
+              git rebase origin/experiment/shibie-synthetic-physics-20261020 || exit 1
+              if git push origin HEAD:experiment/shibie-synthetic-physics-20261020; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
