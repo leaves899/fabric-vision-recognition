@@ -23,7 +23,7 @@ sys.path.insert(0,str(HERE))
 from engine import pipeline
 from engine.config import EngineConfig
 from engine.width import map_centerlines_to_reflection
-from synthetic_physical_fabric import SCENES,synthesize
+from synthetic_physical_fabric import SCENES, HOLDOUT_SCENES, synthesize
 
 OUT=ROOT/"experiments/shibie-synthetic-physics-20261020"
 
@@ -34,6 +34,13 @@ VARIANTS={
      "density_min_per_cm": 10.0,
      "steerable_quality_close_margin": 0.22,
      "steerable_periodicity_tiebreak_floor": 0.08,
+ },
+ "calibrated_dark_phase": {
+     # Capture-mode optical setting, not a label-derived model shortcut:
+     # dark filaments absorb more T light than open pores in this simulator.
+     # Must not be used for real camera input without acquisition calibration.
+     "transmission_yarn_contrast_mode": "dark",
+     "transmission_center_evidence_weight": 0.45,
  },
 }
 
@@ -119,7 +126,9 @@ def evaluate(scene,name,overrides,reflected,transmitted,gt):
     norm=m.get("normalization") or {}
     geometry=np.asarray([[1.,0.,0.],[0.,1.,0.]],np.float32)
     overlay=transmitted.copy()
-    result={"case":scene.name,"variant":name,"weave_truth":scene.weave,
+    result={"case":scene.name,"variant":name,
+      "split":"held_out_synthetic" if scene in HOLDOUT_SCENES else "development_synthetic",
+      "weave_truth":scene.weave,
       "engine_status":m.get("status"),"gate3":(m.get("gate3") or {}).get("status"),
       "warp_pitch_gt":scene.warp_pitch_px,"weft_pitch_gt":scene.weft_pitch_px,
       "mm_per_px_simulated":scene.mm_per_px,
@@ -166,7 +175,7 @@ def main():
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/"visuals").mkdir(exist_ok=True)
     results=[]
-    for scene in SCENES:
+    for scene in SCENES + HOLDOUT_SCENES:
         R,T,truth=synthesize(scene)
         cv2.imwrite(str(OUT/"visuals"/f"{scene.name}_reflection.jpg"),R,[cv2.IMWRITE_JPEG_QUALITY,92])
         cv2.imwrite(str(OUT/"visuals"/f"{scene.name}_transmission.jpg"),T,[cv2.IMWRITE_JPEG_QUALITY,92])
@@ -179,26 +188,37 @@ def main():
         writer=csv.DictWriter(f,fieldnames=list(results[0]))
         writer.writeheader();writer.writerows(results)
     (OUT/"synthetic_metrics.json").write_text(json.dumps(results,indent=2,ensure_ascii=False),encoding="utf-8")
-    lines=["# 合成物理机织布：真实纱线一对一合成标注与shibie回归","","",
-      "输入为程序化合成、同场景双光照图片。标签只由评估器读取：算法仅收到R/T像素和模拟的mm/px。",
-      "每根纱线中心线有持久的物理ID，过交织遮挡仍连续；可测单根线精确率、召回率、F1。",
-      "匹配规则：沿实物纱线法向投影、一对一匈牙利匹配、容差为模拟纱距32%，且角度误差不超过10°。",
-      "测试仅模拟简化的圆柱/扁平纱截面、拍摄模糊、光照、噪声、颜色斜纹干扰，不能表明真实布料精度。",
-      "分数会受中心ROI筛选影响，与完整画面验收指标不是同一个量。","","| 场景 | 组织真值 | baseline Warp/Weft F1 | ACF Warp/Weft F1 | baseline 角误差 Warp/Weft | ACF 角误差 Warp/Weft |","|---|---|---|---|---|---|"]
-    for scene in SCENES:
-        b,a=(next(x for x in results if x["case"]==scene.name and x["variant"]==v) for v in VARIANTS)
-        lines.append(f"| {scene.name} | {scene.weave} | {b['warp_f1']:.3f}/{b['weft_f1']:.3f} | {a['warp_f1']:.3f}/{a['weft_f1']:.3f} | {b['warp_direction_error_deg']:.2f}/{b['weft_direction_error_deg']:.2f}° | {a['warp_direction_error_deg']:.2f}/{a['weft_direction_error_deg']:.2f}° |")
-    for v in VARIANTS:
-        subset=[r for r in results if r["variant"]==v]
-        avg=np.mean([r["mean_f1"] for r in subset])
-        lines.append(f"\n- {v}：六类合成场景平均两组中心线 F1 = {avg:.4f} (仅合成分布)。")
-    lines.append("\n**推广要求**：任何合成场景得分改善，都必须另用已标注真实手机照片和未参与调参的真实 R/T 双图确认。")
+    lines=["# 合成物理机织布：纱线一对一标注与光学中心相位诊断",
+      "",
+      "合成的R/T图及物理纱线中心线源自同一套几何实体。标签只在推理后读取，不交给算法。",
+      "全程保留已知纱线的持久ID，跨遮挡为同一根纱线。",
+      "物理匹配采用中央视野法向投影、一对一匹配、误差<=0.32个纱距，角误差>10°直接F1=0。",
+      "合成器设定真实背光下纱线较间隙暗；新光学相位配置需独立验证现实设备的明暗规律，正式配置默认OFF。",
+      "6个开发诊断场景 + 3个先冻结种子的合成留出场景。",
+      "",
+      "| 场景 | 数据划分 | 组织标签（仅验收） | baseline Warp/Weft F1 | ACF F1 | 光学相位 F1 |",
+      "|---|---|---|---|---|---|"]
+    for scene in SCENES + HOLDOUT_SCENES:
+        records={v:next(x for x in results if x["case"]==scene.name and x["variant"]==v) for v in VARIANTS}
+        textcell=lambda x:f"{x['warp_f1']:.3f}/{x['weft_f1']:.3f}"
+        lines.append(f"| {scene.name} | {'holdout' if scene in HOLDOUT_SCENES else 'development'} | {scene.weave} | {textcell(records['v063_default'])} | {textcell(records['acf_candidate'])} | {textcell(records['calibrated_dark_phase'])} |")
+    lines.append("")
+    for split in ("development_synthetic","held_out_synthetic"):
+        for v in VARIANTS:
+            subset=[r for r in results if r["variant"]==v and r["split"]==split]
+            avg=float(np.mean([r["mean_f1"] for r in subset]))
+            lines.append(f"- {split} / {v}: 平均两轴中心线F1={avg:.4f}")
+    lines.extend(["",
+        "该项光学证据只改变候选尺度与极性排序，不使用真实物理纱线位置，也不合成中心线。",
+        "半周期位置错位即使计数、间距正确，也被本指标判为识别失败。",
+        "真实织物、相机光学、8000×6000原生R/T图与P1/P2/P3实体框验收尚未完成；勿把合成F1当现实精度。"])
     (OUT/"report.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
     # Easy-to-review, 3-row / 3-column contact sheet
     tile=350
-    sheet=np.full((len(SCENES)*tile,3*tile,3),243,np.uint8)
-    for ri,scene in enumerate(SCENES):
-        for ci,suffix in enumerate(("transmission","v063_default","acf_candidate")):
+    all_scenes=SCENES+HOLDOUT_SCENES
+    sheet=np.full((len(all_scenes)*tile,4*tile,3),243,np.uint8)
+    for ri,scene in enumerate(all_scenes):
+        for ci,suffix in enumerate(("transmission","v063_default","acf_candidate","calibrated_dark_phase")):
             fname=f"{scene.name}_{suffix}.jpg"
             image=cv2.imread(str(OUT/"visuals"/fname))
             if image is None:continue
