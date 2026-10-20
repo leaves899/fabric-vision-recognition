@@ -1,0 +1,74 @@
+{
+  "scoring_warning": "A/B/C GLOBAL vs D LOCAL F1 not commensurate",
+  "shared_source": {
+    "reflection": "cbe0613fda0226c937ffe97d043c592947a8deba6603d9efcadb2ec949f8432a",
+    "transmission": "4573628a88c29a99d203b07b8f6f84a844253fbf459f358bf487ac3ced40b7d8"
+  },
+  "variants": [
+    {
+      "variant": "A_v063",
+      "physical_source_sha256": {
+        "reflection": "cbe0613fda0226c937ffe97d043c592947a8deba6603d9efcadb2ec949f8432a",
+        "transmission": "4573628a88c29a99d203b07b8f6f84a844253fbf459f358bf487ac3ced40b7d8"
+      },
+      "warp_f1_global_proxy": 0.3039,
+      "weft_f1_global_proxy": 0.973,
+      "warp_half_pitch_fraction": 0.619,
+      "weft_half_pitch_fraction": 0.0156,
+      "warp_angle_error_deg": 2.478,
+      "weft_angle_error_deg": 0.53,
+      "warp_density": 23.778,
+      "weft_density": 24.578,
+      "runtime_seconds": 19.1,
+      "peak_rss_mib": 1421.75
+    },
+    {
+      "variant": "B_acf_candidate",
+      "physical_source_sha256": {
+        "reflection": "cbe0613fda0226c937ffe97d043c592947a8deba6603d9efcadb2ec949f8432a",
+        "transmission": "4573628a88c29a99d203b07b8f6f84a844253fbf459f358bf487ac3ced40b7d8"
+      },
+      "warp_f1_global_proxy": 0.3039,
+      "weft_f1_global_proxy": 0.973,
+      "warp_half_pitch_fraction": 0.619,
+      "weft_half_pitch_fraction": 0.0156,
+      "warp_angle_error_deg": 2.478,
+      "weft_angle_error_deg": 0.53,
+      "warp_density": 23.778,
+      "weft_density": 24.578,
+      "runtime_seconds": 19.36,
+      "peak_rss_mib": 1442.04
+    },
+    {
+      "variant": "C_guard_dark",
+      "physical_source_sha256": {
+        "reflection": "cbe0613fda0226c937ffe97d043c592947a8deba6603d9efcadb2ec949f8432a",
+        "transmission": "4573628a88c29a99d203b07b8f6f84a844253fbf459f358bf487ac3ced40b7d8"
+      },
+      "warp_f1_global_proxy": 0.3039,
+      "weft_f1_global_proxy": 0.0,
+      "warp_half_pitch_fraction": 0.619,
+      "weft_half_pitch_fraction": 0.9924,
+      "warp_angle_error_deg": 2.478,
+      "weft_angle_error_deg": 0.53,
+      "warp_density": 23.778,
+      "weft_density": 24.63,
+      "runtime_seconds": 18.84,
+      "peak_rss_mib": 1449.19
+    },
+    {
+      "variant": "D_native8k_multiwindow",
+      "physical_source_sha256": {
+        "reflection": "cbe0613fda0226c937ffe97d043c592947a8deba6603d9efcadb2ec949f8432a",
+        "transmission": "4573628a88c29a99d203b07b8f6f84a844253fbf459f358bf487ac3ced40b7d8"
+      },
+      "warp_f1_local_proxy": 0.9614,
+      "weft_f1_local_proxy": 0.9594,
+      "warp_pitch_px": 27.0,
+      "weft_pitch_px": 32.0,
+      "runtime_seconds": 1.09,
+      "peak_rss_mib": 586.83,
+      "scoring_warning": "local-only, not comparable to original global ROI F1"
+    }
+  ]
+}

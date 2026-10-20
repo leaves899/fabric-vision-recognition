@@ -5,8 +5,8 @@
     "WARP_CENTER_SPACING_MODERATE_VARIATION",
     "WEFT_CENTERLINE_CONTINUITY_LOW"
   ],
-  "runtime_seconds": 22.52,
-  "peak_rss_mib": 1373.65,
+  "runtime_seconds": 19.1,
+  "peak_rss_mib": 1421.75,
   "normalization": {
     "roi": {
       "mode": "CENTER_ROI_POC_DEFAULT",
