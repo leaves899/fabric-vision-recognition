@@ -16,11 +16,13 @@ FROZEN={
 def summarize(artifacts:Path, out:Path):
     files=sorted(artifacts.rglob("report.json"))
     found={}
+    source_by_case={}
     for f in files:
         row=json.loads(f.read_text(encoding="utf-8"))
         case=row["case"]
         if case in found:raise RuntimeError("DUPLICATE_SCENE_"+case)
         found[case]=row
+        source_by_case[case]=f
     if set(found)!=set(FROZEN):
         raise RuntimeError("MISSING_CASES: "+repr(set(FROZEN)-set(found)))
     out.mkdir(parents=True,exist_ok=True)
@@ -36,7 +38,7 @@ def summarize(artifacts:Path, out:Path):
     declines=[]
     for case,split in FROZEN.items():
         row=found[case]
-        source=next(f for f in files if f.parent.name==case)
+        source=source_by_case[case]
         im=source.parent/"true_id_trajectory_comparison.jpg"
         if not im.exists():raise RuntimeError("MISSING_ALGORITHM_OVERLAY_"+case)
         shutil.copy2(im,out/(case+"_real_tracking_overlay.jpg"))
