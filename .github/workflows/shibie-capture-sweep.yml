@@ -45,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add experiments/shibie-capture-conditioned-20261020/report.md experiments/shibie-capture-conditioned-20261020/measurements.csv experiments/shibie-capture-conditioned-20261020/measurements.json
+          git add experiments/shibie-capture-conditioned-20261020/report.md experiments/shibie-capture-conditioned-20261020/measurements.csv experiments/shibie-capture-conditioned-20261020/measurements.json experiments/shibie-capture-conditioned-20261020/review_contact_sheet.jpg experiments/shibie-capture-conditioned-20261020/review_crops/*.jpg
           if ! git diff --cached --quiet; then
             git commit -m "test(shibie): record capture-conditioned R/T param and centerline evidence [skip ci]"
             for attempt in 1 2 3; do
