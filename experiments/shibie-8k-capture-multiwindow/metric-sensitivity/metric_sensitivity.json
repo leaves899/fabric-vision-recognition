@@ -1,0 +1,4650 @@
+{
+  "thresholds": [
+    0.2,
+    0.25,
+    0.3,
+    0.32,
+    0.35,
+    0.4,
+    0.45,
+    0.5
+  ],
+  "windows": [
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 10,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.9138,
+            "10": 0.9424,
+            "25": 0.9849,
+            "50": 1.0168,
+            "75": 1.0296,
+            "90": 1.0392,
+            "100": 1.0396
+          },
+          "median_nearest_gt_fraction_pitch": 0.0222,
+          "mean_assigned_distance_fraction_pitch": 1.0013,
+          "F1_by_threshold": {
+            "0.2": 0.0,
+            "0.25": 0.0,
+            "0.3": 0.0,
+            "0.32": 0.0,
+            "0.35": 0.0,
+            "0.4": 0.0,
+            "0.45": 0.0,
+            "0.5": 0.0
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 10,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0677,
+            "10": 0.9166,
+            "25": 1.035,
+            "50": 1.0708,
+            "75": 1.0868,
+            "90": 1.1859,
+            "100": 2.0478
+          },
+          "median_nearest_gt_fraction_pitch": 0.0788,
+          "mean_assigned_distance_fraction_pitch": 1.061,
+          "F1_by_threshold": {
+            "0.2": 0.0714,
+            "0.25": 0.0714,
+            "0.3": 0.0714,
+            "0.32": 0.0714,
+            "0.35": 0.0714,
+            "0.4": 0.0714,
+            "0.45": 0.0714,
+            "0.5": 0.0714
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 10,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0677,
+            "10": 0.9166,
+            "25": 1.035,
+            "50": 1.0708,
+            "75": 1.0868,
+            "90": 1.1859,
+            "100": 2.0478
+          },
+          "median_nearest_gt_fraction_pitch": 0.0788,
+          "mean_assigned_distance_fraction_pitch": 1.061,
+          "F1_by_threshold": {
+            "0.2": 0.0714,
+            "0.25": 0.0714,
+            "0.3": 0.0714,
+            "0.32": 0.0714,
+            "0.35": 0.0714,
+            "0.4": 0.0714,
+            "0.45": 0.0714,
+            "0.5": 0.0714
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0008,
+            "10": 0.0035,
+            "25": 0.008,
+            "50": 0.0139,
+            "75": 0.0276,
+            "90": 0.0342,
+            "100": 0.0388
+          },
+          "median_nearest_gt_fraction_pitch": 0.0162,
+          "mean_assigned_distance_fraction_pitch": 0.0178,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0122,
+            "10": 0.0126,
+            "25": 0.0179,
+            "50": 0.0359,
+            "75": 0.0472,
+            "90": 0.0594,
+            "100": 0.0663
+          },
+          "median_nearest_gt_fraction_pitch": 0.037,
+          "mean_assigned_distance_fraction_pitch": 0.0348,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0056,
+            "10": 0.0199,
+            "25": 0.0256,
+            "50": 0.0387,
+            "75": 0.0472,
+            "90": 0.0516,
+            "100": 0.074
+          },
+          "median_nearest_gt_fraction_pitch": 0.0411,
+          "mean_assigned_distance_fraction_pitch": 0.0373,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 17,
+          "n_true": 18,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0022,
+            "10": 0.024,
+            "25": 0.0313,
+            "50": 0.0417,
+            "75": 0.0589,
+            "90": 0.0756,
+            "100": 0.078
+          },
+          "median_nearest_gt_fraction_pitch": 0.0452,
+          "mean_assigned_distance_fraction_pitch": 0.0455,
+          "F1_by_threshold": {
+            "0.2": 0.9714,
+            "0.25": 0.9714,
+            "0.3": 0.9714,
+            "0.32": 0.9714,
+            "0.35": 0.9714,
+            "0.4": 0.9714,
+            "0.45": 0.9714,
+            "0.5": 0.9714
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 18,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0024,
+            "10": 0.0055,
+            "25": 0.0168,
+            "50": 0.0338,
+            "75": 0.0503,
+            "90": 0.0681,
+            "100": 0.0743
+          },
+          "median_nearest_gt_fraction_pitch": 0.0338,
+          "mean_assigned_distance_fraction_pitch": 0.0353,
+          "F1_by_threshold": {
+            "0.2": 1.0,
+            "0.25": 1.0,
+            "0.3": 1.0,
+            "0.32": 1.0,
+            "0.35": 1.0,
+            "0.4": 1.0,
+            "0.45": 1.0,
+            "0.5": 1.0
+          }
+        },
+        "midline": {
+          "n_pred": 19,
+          "n_true": 18,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0005,
+            "10": 0.0058,
+            "25": 0.0136,
+            "50": 0.0227,
+            "75": 0.0345,
+            "90": 0.0494,
+            "100": 0.0556
+          },
+          "median_nearest_gt_fraction_pitch": 0.0227,
+          "mean_assigned_distance_fraction_pitch": 0.0253,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0015,
+            "10": 0.0052,
+            "25": 0.0229,
+            "50": 0.0466,
+            "75": 0.0693,
+            "90": 0.0777,
+            "100": 0.0822
+          },
+          "median_nearest_gt_fraction_pitch": 0.0547,
+          "mean_assigned_distance_fraction_pitch": 0.0464,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0,
+            "10": 0.0012,
+            "25": 0.0091,
+            "50": 0.0203,
+            "75": 0.0758,
+            "90": 0.1076,
+            "100": 0.1134
+          },
+          "median_nearest_gt_fraction_pitch": 0.0213,
+          "mean_assigned_distance_fraction_pitch": 0.0403,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0052,
+            "10": 0.0078,
+            "25": 0.0091,
+            "50": 0.0158,
+            "75": 0.0835,
+            "90": 0.1154,
+            "100": 0.1212
+          },
+          "median_nearest_gt_fraction_pitch": 0.0168,
+          "mean_assigned_distance_fraction_pitch": 0.0436,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0037,
+            "10": 0.0141,
+            "25": 0.0286,
+            "50": 0.0396,
+            "75": 0.087,
+            "90": 0.0984,
+            "100": 0.1047
+          },
+          "median_nearest_gt_fraction_pitch": 0.0404,
+          "mean_assigned_distance_fraction_pitch": 0.0519,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0011,
+            "10": 0.0065,
+            "25": 0.0138,
+            "50": 0.0213,
+            "75": 0.0385,
+            "90": 0.0454,
+            "100": 0.051
+          },
+          "median_nearest_gt_fraction_pitch": 0.0232,
+          "mean_assigned_distance_fraction_pitch": 0.0254,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0011,
+            "10": 0.0065,
+            "25": 0.0138,
+            "50": 0.0213,
+            "75": 0.0385,
+            "90": 0.0454,
+            "100": 0.051
+          },
+          "median_nearest_gt_fraction_pitch": 0.0232,
+          "mean_assigned_distance_fraction_pitch": 0.0254,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 11,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0022,
+            "10": 0.0038,
+            "25": 0.0094,
+            "50": 0.0268,
+            "75": 0.0455,
+            "90": 0.0561,
+            "100": 0.0599
+          },
+          "median_nearest_gt_fraction_pitch": 0.0268,
+          "mean_assigned_distance_fraction_pitch": 0.0279,
+          "F1_by_threshold": {
+            "0.2": 0.8462,
+            "0.25": 0.8462,
+            "0.3": 0.8462,
+            "0.32": 0.8462,
+            "0.35": 0.8462,
+            "0.4": 0.8462,
+            "0.45": 0.8462,
+            "0.5": 0.8462
+          }
+        },
+        "new": {
+          "n_pred": 14,
+          "n_true": 11,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0039,
+            "10": 0.9875,
+            "25": 0.9924,
+            "50": 1.0047,
+            "75": 1.0409,
+            "90": 1.0759,
+            "100": 2.0215
+          },
+          "median_nearest_gt_fraction_pitch": 0.0184,
+          "mean_assigned_distance_fraction_pitch": 1.0149,
+          "F1_by_threshold": {
+            "0.2": 0.08,
+            "0.25": 0.08,
+            "0.3": 0.08,
+            "0.32": 0.08,
+            "0.35": 0.08,
+            "0.4": 0.08,
+            "0.45": 0.08,
+            "0.5": 0.08
+          }
+        },
+        "midline": {
+          "n_pred": 14,
+          "n_true": 11,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.9797,
+            "10": 0.9825,
+            "25": 0.9889,
+            "50": 0.9975,
+            "75": 1.0128,
+            "90": 1.0462,
+            "100": 1.0681
+          },
+          "median_nearest_gt_fraction_pitch": 0.0226,
+          "mean_assigned_distance_fraction_pitch": 1.0072,
+          "F1_by_threshold": {
+            "0.2": 0.0,
+            "0.25": 0.0,
+            "0.3": 0.0,
+            "0.32": 0.0,
+            "0.35": 0.0,
+            "0.4": 0.0,
+            "0.45": 0.0,
+            "0.5": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0031,
+            "10": 0.0051,
+            "25": 0.0093,
+            "50": 0.0319,
+            "75": 0.1087,
+            "90": 0.1298,
+            "100": 0.1365
+          },
+          "median_nearest_gt_fraction_pitch": 0.0377,
+          "mean_assigned_distance_fraction_pitch": 0.0546,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0034,
+            "10": 0.0068,
+            "25": 0.0142,
+            "50": 0.0271,
+            "75": 0.0333,
+            "90": 0.0414,
+            "100": 0.0475
+          },
+          "median_nearest_gt_fraction_pitch": 0.0272,
+          "mean_assigned_distance_fraction_pitch": 0.0249,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0034,
+            "10": 0.0068,
+            "25": 0.0142,
+            "50": 0.0271,
+            "75": 0.0333,
+            "90": 0.0414,
+            "100": 0.0475
+          },
+          "median_nearest_gt_fraction_pitch": 0.0272,
+          "mean_assigned_distance_fraction_pitch": 0.0249,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0014,
+            "10": 0.0054,
+            "25": 0.0131,
+            "50": 0.0355,
+            "75": 0.0464,
+            "90": 0.0544,
+            "100": 0.0599
+          },
+          "median_nearest_gt_fraction_pitch": 0.0376,
+          "mean_assigned_distance_fraction_pitch": 0.0315,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0003,
+            "10": 0.0037,
+            "25": 0.0105,
+            "50": 0.0211,
+            "75": 0.0417,
+            "90": 0.0764,
+            "100": 0.081
+          },
+          "median_nearest_gt_fraction_pitch": 0.0246,
+          "mean_assigned_distance_fraction_pitch": 0.0305,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "midline": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0001,
+            "10": 0.0026,
+            "25": 0.0075,
+            "50": 0.0168,
+            "75": 0.0455,
+            "90": 0.0842,
+            "100": 0.0888
+          },
+          "median_nearest_gt_fraction_pitch": 0.0204,
+          "mean_assigned_distance_fraction_pitch": 0.0301,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0005,
+            "10": 0.0028,
+            "25": 0.0081,
+            "50": 0.0381,
+            "75": 0.0832,
+            "90": 0.0993,
+            "100": 0.1054
+          },
+          "median_nearest_gt_fraction_pitch": 0.0507,
+          "mean_assigned_distance_fraction_pitch": 0.0461,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0004,
+            "10": 0.0055,
+            "25": 0.0137,
+            "50": 0.0207,
+            "75": 0.0404,
+            "90": 0.0544,
+            "100": 0.0615
+          },
+          "median_nearest_gt_fraction_pitch": 0.0212,
+          "mean_assigned_distance_fraction_pitch": 0.0258,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0032,
+            "10": 0.0052,
+            "25": 0.0108,
+            "50": 0.0301,
+            "75": 0.043,
+            "90": 0.0638,
+            "100": 0.0708
+          },
+          "median_nearest_gt_fraction_pitch": 0.0305,
+          "mean_assigned_distance_fraction_pitch": 0.0303,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.001,
+            "10": 0.0064,
+            "25": 0.0213,
+            "50": 0.0504,
+            "75": 0.0668,
+            "90": 0.0717,
+            "100": 0.0772
+          },
+          "median_nearest_gt_fraction_pitch": 0.0532,
+          "mean_assigned_distance_fraction_pitch": 0.0427,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0,
+            "10": 0.0033,
+            "25": 0.0113,
+            "50": 0.0284,
+            "75": 0.0492,
+            "90": 0.0671,
+            "100": 0.0735
+          },
+          "median_nearest_gt_fraction_pitch": 0.0353,
+          "mean_assigned_distance_fraction_pitch": 0.0322,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.006,
+            "10": 0.016,
+            "25": 0.0237,
+            "50": 0.0339,
+            "75": 0.0506,
+            "90": 0.0531,
+            "100": 0.0579
+          },
+          "median_nearest_gt_fraction_pitch": 0.0392,
+          "mean_assigned_distance_fraction_pitch": 0.0353,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0049,
+            "10": 0.0064,
+            "25": 0.0184,
+            "50": 0.0397,
+            "75": 0.0801,
+            "90": 0.0911,
+            "100": 0.0976
+          },
+          "median_nearest_gt_fraction_pitch": 0.0404,
+          "mean_assigned_distance_fraction_pitch": 0.0477,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.003,
+            "10": 0.0085,
+            "25": 0.0164,
+            "50": 0.0277,
+            "75": 0.0393,
+            "90": 0.0699,
+            "100": 0.0781
+          },
+          "median_nearest_gt_fraction_pitch": 0.0335,
+          "mean_assigned_distance_fraction_pitch": 0.0328,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.003,
+            "10": 0.0085,
+            "25": 0.0164,
+            "50": 0.0277,
+            "75": 0.0393,
+            "90": 0.0699,
+            "100": 0.0781
+          },
+          "median_nearest_gt_fraction_pitch": 0.0335,
+          "mean_assigned_distance_fraction_pitch": 0.0328,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0049,
+            "10": 0.0104,
+            "25": 0.018,
+            "50": 0.0283,
+            "75": 0.0328,
+            "90": 0.0388,
+            "100": 0.0398
+          },
+          "median_nearest_gt_fraction_pitch": 0.03,
+          "mean_assigned_distance_fraction_pitch": 0.0258,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "new": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0033,
+            "10": 0.0238,
+            "25": 0.0294,
+            "50": 0.0401,
+            "75": 0.0561,
+            "90": 0.0713,
+            "100": 0.0821
+          },
+          "median_nearest_gt_fraction_pitch": 0.0459,
+          "mean_assigned_distance_fraction_pitch": 0.0427,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "midline": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0045,
+            "10": 0.016,
+            "25": 0.0237,
+            "50": 0.0365,
+            "75": 0.0483,
+            "90": 0.079,
+            "100": 0.0898
+          },
+          "median_nearest_gt_fraction_pitch": 0.0383,
+          "mean_assigned_distance_fraction_pitch": 0.04,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0135,
+            "10": 0.0238,
+            "25": 0.0364,
+            "50": 0.0609,
+            "75": 0.0849,
+            "90": 0.1032,
+            "100": 0.1587
+          },
+          "median_nearest_gt_fraction_pitch": 0.0662,
+          "mean_assigned_distance_fraction_pitch": 0.0642,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0063,
+            "10": 0.012,
+            "25": 0.0202,
+            "50": 0.0259,
+            "75": 0.0528,
+            "90": 0.0646,
+            "100": 0.0718
+          },
+          "median_nearest_gt_fraction_pitch": 0.0259,
+          "mean_assigned_distance_fraction_pitch": 0.035,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0023,
+            "10": 0.0121,
+            "25": 0.0178,
+            "50": 0.0349,
+            "75": 0.0621,
+            "90": 0.0739,
+            "100": 0.0811
+          },
+          "median_nearest_gt_fraction_pitch": 0.0352,
+          "mean_assigned_distance_fraction_pitch": 0.0402,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0018,
+            "10": 0.0068,
+            "25": 0.0138,
+            "50": 0.0213,
+            "75": 0.0491,
+            "90": 0.0653,
+            "100": 0.0706
+          },
+          "median_nearest_gt_fraction_pitch": 0.029,
+          "mean_assigned_distance_fraction_pitch": 0.0303,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "new": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0038,
+            "10": 0.0051,
+            "25": 0.0152,
+            "50": 0.0306,
+            "75": 0.0428,
+            "90": 0.0595,
+            "100": 0.0839
+          },
+          "median_nearest_gt_fraction_pitch": 0.0335,
+          "mean_assigned_distance_fraction_pitch": 0.0323,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "midline": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0038,
+            "10": 0.0051,
+            "25": 0.0152,
+            "50": 0.0306,
+            "75": 0.0428,
+            "90": 0.0595,
+            "100": 0.0839
+          },
+          "median_nearest_gt_fraction_pitch": 0.0335,
+          "mean_assigned_distance_fraction_pitch": 0.0323,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0063,
+            "10": 0.0302,
+            "25": 0.0489,
+            "50": 0.0567,
+            "75": 0.073,
+            "90": 0.1431,
+            "100": 0.1759
+          },
+          "median_nearest_gt_fraction_pitch": 0.0578,
+          "mean_assigned_distance_fraction_pitch": 0.0701,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0128,
+            "10": 0.017,
+            "25": 0.0235,
+            "50": 0.0403,
+            "75": 0.0637,
+            "90": 0.073,
+            "100": 0.0761
+          },
+          "median_nearest_gt_fraction_pitch": 0.0446,
+          "mean_assigned_distance_fraction_pitch": 0.0438,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0034,
+            "10": 0.0077,
+            "25": 0.0141,
+            "50": 0.031,
+            "75": 0.0544,
+            "90": 0.0637,
+            "100": 0.0668
+          },
+          "median_nearest_gt_fraction_pitch": 0.0352,
+          "mean_assigned_distance_fraction_pitch": 0.0345,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 2,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 1.0276,
+            "10": 1.0299,
+            "25": 1.0333,
+            "50": 1.0391,
+            "75": 1.0449,
+            "90": 1.0483,
+            "100": 1.0506
+          },
+          "median_nearest_gt_fraction_pitch": 0.5391,
+          "mean_assigned_distance_fraction_pitch": 1.0391,
+          "F1_by_threshold": {
+            "0.2": 0.0,
+            "0.25": 0.0,
+            "0.3": 0.0,
+            "0.32": 0.0,
+            "0.35": 0.0,
+            "0.4": 0.0,
+            "0.45": 0.0,
+            "0.5": 0.0
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 2,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.9744,
+            "10": 0.9754,
+            "25": 0.977,
+            "50": 0.9797,
+            "75": 0.9823,
+            "90": 0.9839,
+            "100": 0.9849
+          },
+          "median_nearest_gt_fraction_pitch": 0.5115,
+          "mean_assigned_distance_fraction_pitch": 0.9797,
+          "F1_by_threshold": {
+            "0.2": 0.0,
+            "0.25": 0.0,
+            "0.3": 0.0,
+            "0.32": 0.0,
+            "0.35": 0.0,
+            "0.4": 0.0,
+            "0.45": 0.0,
+            "0.5": 0.0
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 2,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.9744,
+            "10": 0.9754,
+            "25": 0.977,
+            "50": 0.9797,
+            "75": 0.9823,
+            "90": 0.9839,
+            "100": 0.9849
+          },
+          "median_nearest_gt_fraction_pitch": 0.5115,
+          "mean_assigned_distance_fraction_pitch": 0.9797,
+          "F1_by_threshold": {
+            "0.2": 0.0,
+            "0.25": 0.0,
+            "0.3": 0.0,
+            "0.32": 0.0,
+            "0.35": 0.0,
+            "0.4": 0.0,
+            "0.45": 0.0,
+            "0.5": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 0,
+          "n_true": 10,
+          "distance_fraction_quantiles": null,
+          "F1_by_threshold": {
+            "0.2": 0.0,
+            "0.25": 0.0,
+            "0.3": 0.0,
+            "0.32": 0.0,
+            "0.35": 0.0,
+            "0.4": 0.0,
+            "0.45": 0.0,
+            "0.5": 0.0
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 10,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 1.012,
+            "10": 1.0167,
+            "25": 1.0239,
+            "50": 1.0538,
+            "75": 1.0767,
+            "90": 1.0881,
+            "100": 1.0896
+          },
+          "median_nearest_gt_fraction_pitch": 0.0639,
+          "mean_assigned_distance_fraction_pitch": 1.052,
+          "F1_by_threshold": {
+            "0.2": 0.0,
+            "0.25": 0.0,
+            "0.3": 0.0,
+            "0.32": 0.0,
+            "0.35": 0.0,
+            "0.4": 0.0,
+            "0.45": 0.0,
+            "0.5": 0.0
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 10,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 1.012,
+            "10": 1.0167,
+            "25": 1.0239,
+            "50": 1.0538,
+            "75": 1.0767,
+            "90": 1.0881,
+            "100": 1.0896
+          },
+          "median_nearest_gt_fraction_pitch": 0.0639,
+          "mean_assigned_distance_fraction_pitch": 1.052,
+          "F1_by_threshold": {
+            "0.2": 0.0,
+            "0.25": 0.0,
+            "0.3": 0.0,
+            "0.32": 0.0,
+            "0.35": 0.0,
+            "0.4": 0.0,
+            "0.45": 0.0,
+            "0.5": 0.0
+          }
+        }
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0021,
+            "10": 0.0104,
+            "25": 0.0223,
+            "50": 0.0285,
+            "75": 0.0389,
+            "90": 0.0415,
+            "100": 0.0472
+          },
+          "median_nearest_gt_fraction_pitch": 0.0304,
+          "mean_assigned_distance_fraction_pitch": 0.0279,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "new": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0011,
+            "10": 0.0067,
+            "25": 0.0078,
+            "50": 0.021,
+            "75": 0.0298,
+            "90": 0.0765,
+            "100": 0.0973
+          },
+          "median_nearest_gt_fraction_pitch": 0.0242,
+          "mean_assigned_distance_fraction_pitch": 0.0295,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "midline": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0011,
+            "10": 0.0067,
+            "25": 0.0078,
+            "50": 0.021,
+            "75": 0.0298,
+            "90": 0.0765,
+            "100": 0.0973
+          },
+          "median_nearest_gt_fraction_pitch": 0.0242,
+          "mean_assigned_distance_fraction_pitch": 0.0295,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0001,
+            "10": 0.0037,
+            "25": 0.0055,
+            "50": 0.0207,
+            "75": 0.0349,
+            "90": 0.0456,
+            "100": 0.0506
+          },
+          "median_nearest_gt_fraction_pitch": 0.0229,
+          "mean_assigned_distance_fraction_pitch": 0.0226,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0034,
+            "10": 0.0065,
+            "25": 0.0113,
+            "50": 0.0194,
+            "75": 0.03,
+            "90": 0.0511,
+            "100": 0.0702
+          },
+          "median_nearest_gt_fraction_pitch": 0.0229,
+          "mean_assigned_distance_fraction_pitch": 0.0244,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0028,
+            "10": 0.0035,
+            "25": 0.0098,
+            "50": 0.0197,
+            "75": 0.0333,
+            "90": 0.0555,
+            "100": 0.078
+          },
+          "median_nearest_gt_fraction_pitch": 0.0216,
+          "mean_assigned_distance_fraction_pitch": 0.0259,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0082,
+            "10": 0.0101,
+            "25": 0.0157,
+            "50": 0.0298,
+            "75": 0.0397,
+            "90": 0.0448,
+            "100": 0.0467
+          },
+          "median_nearest_gt_fraction_pitch": 0.0341,
+          "mean_assigned_distance_fraction_pitch": 0.028,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0034,
+            "10": 0.0082,
+            "25": 0.0106,
+            "50": 0.0235,
+            "75": 0.0289,
+            "90": 0.0319,
+            "100": 0.0363
+          },
+          "median_nearest_gt_fraction_pitch": 0.0244,
+          "mean_assigned_distance_fraction_pitch": 0.0202,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0031,
+            "10": 0.0036,
+            "25": 0.0141,
+            "50": 0.018,
+            "75": 0.0269,
+            "90": 0.0318,
+            "100": 0.0377
+          },
+          "median_nearest_gt_fraction_pitch": 0.0201,
+          "mean_assigned_distance_fraction_pitch": 0.0192,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0003,
+            "10": 0.0061,
+            "25": 0.0144,
+            "50": 0.0378,
+            "75": 0.0485,
+            "90": 0.0542,
+            "100": 0.0576
+          },
+          "median_nearest_gt_fraction_pitch": 0.0399,
+          "mean_assigned_distance_fraction_pitch": 0.0312,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0026,
+            "10": 0.0064,
+            "25": 0.0201,
+            "50": 0.0266,
+            "75": 0.0375,
+            "90": 0.0387,
+            "100": 0.0449
+          },
+          "median_nearest_gt_fraction_pitch": 0.0279,
+          "mean_assigned_distance_fraction_pitch": 0.0258,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0046,
+            "10": 0.0078,
+            "25": 0.0116,
+            "50": 0.0156,
+            "75": 0.0356,
+            "90": 0.0539,
+            "100": 0.0605
+          },
+          "median_nearest_gt_fraction_pitch": 0.0219,
+          "mean_assigned_distance_fraction_pitch": 0.0246,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0088,
+            "10": 0.0121,
+            "25": 0.0142,
+            "50": 0.0308,
+            "75": 0.0384,
+            "90": 0.0475,
+            "100": 0.0525
+          },
+          "median_nearest_gt_fraction_pitch": 0.0312,
+          "mean_assigned_distance_fraction_pitch": 0.0293,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0045,
+            "10": 0.0067,
+            "25": 0.0105,
+            "50": 0.0224,
+            "75": 0.0257,
+            "90": 0.0339,
+            "100": 0.0388
+          },
+          "median_nearest_gt_fraction_pitch": 0.0226,
+          "mean_assigned_distance_fraction_pitch": 0.0197,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0019,
+            "10": 0.0027,
+            "25": 0.0083,
+            "50": 0.0162,
+            "75": 0.0284,
+            "90": 0.0309,
+            "100": 0.0347
+          },
+          "median_nearest_gt_fraction_pitch": 0.0166,
+          "mean_assigned_distance_fraction_pitch": 0.0174,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.003,
+            "10": 0.0053,
+            "25": 0.0126,
+            "50": 0.018,
+            "75": 0.045,
+            "90": 0.0783,
+            "100": 0.085
+          },
+          "median_nearest_gt_fraction_pitch": 0.0205,
+          "mean_assigned_distance_fraction_pitch": 0.0314,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.001,
+            "10": 0.0109,
+            "25": 0.0179,
+            "50": 0.0278,
+            "75": 0.034,
+            "90": 0.0362,
+            "100": 0.0404
+          },
+          "median_nearest_gt_fraction_pitch": 0.0285,
+          "mean_assigned_distance_fraction_pitch": 0.0247,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.001,
+            "10": 0.0109,
+            "25": 0.0179,
+            "50": 0.0278,
+            "75": 0.034,
+            "90": 0.0362,
+            "100": 0.0404
+          },
+          "median_nearest_gt_fraction_pitch": 0.0285,
+          "mean_assigned_distance_fraction_pitch": 0.0247,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.004,
+            "10": 0.0073,
+            "25": 0.0139,
+            "50": 0.0298,
+            "75": 0.0432,
+            "90": 0.0619,
+            "100": 0.0928
+          },
+          "median_nearest_gt_fraction_pitch": 0.0328,
+          "mean_assigned_distance_fraction_pitch": 0.0327,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0018,
+            "10": 0.0069,
+            "25": 0.0111,
+            "50": 0.0197,
+            "75": 0.0257,
+            "90": 0.0319,
+            "100": 0.0351
+          },
+          "median_nearest_gt_fraction_pitch": 0.022,
+          "mean_assigned_distance_fraction_pitch": 0.0193,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0018,
+            "10": 0.0069,
+            "25": 0.0111,
+            "50": 0.0197,
+            "75": 0.0257,
+            "90": 0.0319,
+            "100": 0.0351
+          },
+          "median_nearest_gt_fraction_pitch": 0.022,
+          "mean_assigned_distance_fraction_pitch": 0.0193,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0004,
+            "10": 0.0041,
+            "25": 0.0155,
+            "50": 0.0225,
+            "75": 0.0312,
+            "90": 0.0493,
+            "100": 0.0589
+          },
+          "median_nearest_gt_fraction_pitch": 0.0232,
+          "mean_assigned_distance_fraction_pitch": 0.0244,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0018,
+            "10": 0.0023,
+            "25": 0.011,
+            "50": 0.0201,
+            "75": 0.037,
+            "90": 0.0454,
+            "100": 0.0491
+          },
+          "median_nearest_gt_fraction_pitch": 0.0217,
+          "mean_assigned_distance_fraction_pitch": 0.0233,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0018,
+            "10": 0.0023,
+            "25": 0.011,
+            "50": 0.0201,
+            "75": 0.037,
+            "90": 0.0454,
+            "100": 0.0491
+          },
+          "median_nearest_gt_fraction_pitch": 0.0217,
+          "mean_assigned_distance_fraction_pitch": 0.0233,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0025,
+            "10": 0.0084,
+            "25": 0.0183,
+            "50": 0.031,
+            "75": 0.0479,
+            "90": 0.0601,
+            "100": 0.0711
+          },
+          "median_nearest_gt_fraction_pitch": 0.0394,
+          "mean_assigned_distance_fraction_pitch": 0.0338,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0038,
+            "10": 0.0062,
+            "25": 0.0135,
+            "50": 0.0154,
+            "75": 0.0324,
+            "90": 0.0416,
+            "100": 0.0433
+          },
+          "median_nearest_gt_fraction_pitch": 0.0304,
+          "mean_assigned_distance_fraction_pitch": 0.0228,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0038,
+            "10": 0.0062,
+            "25": 0.0135,
+            "50": 0.0154,
+            "75": 0.0324,
+            "90": 0.0416,
+            "100": 0.0433
+          },
+          "median_nearest_gt_fraction_pitch": 0.0304,
+          "mean_assigned_distance_fraction_pitch": 0.0228,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0017,
+            "10": 0.004,
+            "25": 0.0129,
+            "50": 0.0312,
+            "75": 0.0502,
+            "90": 0.0655,
+            "100": 0.07
+          },
+          "median_nearest_gt_fraction_pitch": 0.0341,
+          "mean_assigned_distance_fraction_pitch": 0.032,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.002,
+            "10": 0.0069,
+            "25": 0.0115,
+            "50": 0.0176,
+            "75": 0.0348,
+            "90": 0.0503,
+            "100": 0.0559
+          },
+          "median_nearest_gt_fraction_pitch": 0.0248,
+          "mean_assigned_distance_fraction_pitch": 0.0241,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.002,
+            "10": 0.0052,
+            "25": 0.0099,
+            "50": 0.0203,
+            "75": 0.0297,
+            "90": 0.0348,
+            "100": 0.0404
+          },
+          "median_nearest_gt_fraction_pitch": 0.0228,
+          "mean_assigned_distance_fraction_pitch": 0.0203,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0072,
+            "10": 0.0142,
+            "25": 0.0221,
+            "50": 0.0353,
+            "75": 0.0505,
+            "90": 0.0528,
+            "100": 0.0588
+          },
+          "median_nearest_gt_fraction_pitch": 0.0364,
+          "mean_assigned_distance_fraction_pitch": 0.0348,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0002,
+            "10": 0.0078,
+            "25": 0.0129,
+            "50": 0.0239,
+            "75": 0.037,
+            "90": 0.048,
+            "100": 0.0536
+          },
+          "median_nearest_gt_fraction_pitch": 0.028,
+          "mean_assigned_distance_fraction_pitch": 0.0257,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0023,
+            "10": 0.0038,
+            "25": 0.0074,
+            "50": 0.0255,
+            "75": 0.0402,
+            "90": 0.0448,
+            "100": 0.0464
+          },
+          "median_nearest_gt_fraction_pitch": 0.0266,
+          "mean_assigned_distance_fraction_pitch": 0.0245,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0043,
+            "10": 0.0168,
+            "25": 0.0212,
+            "50": 0.0317,
+            "75": 0.0443,
+            "90": 0.0565,
+            "100": 0.0623
+          },
+          "median_nearest_gt_fraction_pitch": 0.0321,
+          "mean_assigned_distance_fraction_pitch": 0.0339,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0057,
+            "10": 0.0069,
+            "25": 0.0113,
+            "50": 0.0258,
+            "75": 0.0334,
+            "90": 0.0412,
+            "100": 0.0467
+          },
+          "median_nearest_gt_fraction_pitch": 0.0286,
+          "mean_assigned_distance_fraction_pitch": 0.0237,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0009,
+            "10": 0.0063,
+            "25": 0.0101,
+            "50": 0.0222,
+            "75": 0.0475,
+            "90": 0.0568,
+            "100": 0.0623
+          },
+          "median_nearest_gt_fraction_pitch": 0.025,
+          "mean_assigned_distance_fraction_pitch": 0.0279,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0019,
+            "10": 0.0081,
+            "25": 0.0196,
+            "50": 0.0364,
+            "75": 0.0497,
+            "90": 0.0544,
+            "100": 0.0583
+          },
+          "median_nearest_gt_fraction_pitch": 0.0382,
+          "mean_assigned_distance_fraction_pitch": 0.0333,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0024,
+            "10": 0.0044,
+            "25": 0.0113,
+            "50": 0.0228,
+            "75": 0.0373,
+            "90": 0.0489,
+            "100": 0.0548
+          },
+          "median_nearest_gt_fraction_pitch": 0.024,
+          "mean_assigned_distance_fraction_pitch": 0.0255,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0024,
+            "10": 0.0044,
+            "25": 0.0113,
+            "50": 0.0228,
+            "75": 0.0373,
+            "90": 0.0489,
+            "100": 0.0548
+          },
+          "median_nearest_gt_fraction_pitch": 0.024,
+          "mean_assigned_distance_fraction_pitch": 0.0255,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.005,
+            "10": 0.0115,
+            "25": 0.0176,
+            "50": 0.0329,
+            "75": 0.038,
+            "90": 0.0488,
+            "100": 0.0546
+          },
+          "median_nearest_gt_fraction_pitch": 0.0332,
+          "mean_assigned_distance_fraction_pitch": 0.0292,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0029,
+            "10": 0.006,
+            "25": 0.0139,
+            "50": 0.0209,
+            "75": 0.042,
+            "90": 0.0611,
+            "100": 0.081
+          },
+          "median_nearest_gt_fraction_pitch": 0.0281,
+          "mean_assigned_distance_fraction_pitch": 0.0294,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0029,
+            "10": 0.006,
+            "25": 0.0139,
+            "50": 0.0209,
+            "75": 0.042,
+            "90": 0.0611,
+            "100": 0.081
+          },
+          "median_nearest_gt_fraction_pitch": 0.0281,
+          "mean_assigned_distance_fraction_pitch": 0.0294,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.003,
+            "10": 0.0086,
+            "25": 0.0149,
+            "50": 0.03,
+            "75": 0.0627,
+            "90": 0.0805,
+            "100": 0.0863
+          },
+          "median_nearest_gt_fraction_pitch": 0.036,
+          "mean_assigned_distance_fraction_pitch": 0.0396,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0001,
+            "10": 0.0041,
+            "25": 0.0137,
+            "50": 0.0366,
+            "75": 0.0545,
+            "90": 0.0741,
+            "100": 0.0784
+          },
+          "median_nearest_gt_fraction_pitch": 0.0367,
+          "mean_assigned_distance_fraction_pitch": 0.0349,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0001,
+            "10": 0.0041,
+            "25": 0.0137,
+            "50": 0.0366,
+            "75": 0.0545,
+            "90": 0.0741,
+            "100": 0.0784
+          },
+          "median_nearest_gt_fraction_pitch": 0.0367,
+          "mean_assigned_distance_fraction_pitch": 0.0349,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0048,
+            "10": 0.005,
+            "25": 0.0145,
+            "50": 0.0202,
+            "75": 0.0466,
+            "90": 0.062,
+            "100": 0.0673
+          },
+          "median_nearest_gt_fraction_pitch": 0.0287,
+          "mean_assigned_distance_fraction_pitch": 0.0299,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0004,
+            "10": 0.002,
+            "25": 0.0068,
+            "50": 0.0205,
+            "75": 0.0397,
+            "90": 0.0571,
+            "100": 0.0628
+          },
+          "median_nearest_gt_fraction_pitch": 0.0212,
+          "mean_assigned_distance_fraction_pitch": 0.025,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 17,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0004,
+            "10": 0.002,
+            "25": 0.0068,
+            "50": 0.0205,
+            "75": 0.0397,
+            "90": 0.0571,
+            "100": 0.0628
+          },
+          "median_nearest_gt_fraction_pitch": 0.0212,
+          "mean_assigned_distance_fraction_pitch": 0.025,
+          "F1_by_threshold": {
+            "0.2": 0.9375,
+            "0.25": 0.9375,
+            "0.3": 0.9375,
+            "0.32": 0.9375,
+            "0.35": 0.9375,
+            "0.4": 0.9375,
+            "0.45": 0.9375,
+            "0.5": 0.9375
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0018,
+            "10": 0.0053,
+            "25": 0.0134,
+            "50": 0.0244,
+            "75": 0.0391,
+            "90": 0.0474,
+            "100": 0.0605
+          },
+          "median_nearest_gt_fraction_pitch": 0.0249,
+          "mean_assigned_distance_fraction_pitch": 0.0261,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0017,
+            "10": 0.0061,
+            "25": 0.0159,
+            "50": 0.0228,
+            "75": 0.0334,
+            "90": 0.0394,
+            "100": 0.0435
+          },
+          "median_nearest_gt_fraction_pitch": 0.0276,
+          "mean_assigned_distance_fraction_pitch": 0.0243,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0053,
+            "10": 0.0079,
+            "25": 0.0127,
+            "50": 0.0265,
+            "75": 0.037,
+            "90": 0.0412,
+            "100": 0.0513
+          },
+          "median_nearest_gt_fraction_pitch": 0.0275,
+          "mean_assigned_distance_fraction_pitch": 0.0256,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0039,
+            "10": 0.0061,
+            "25": 0.014,
+            "50": 0.0334,
+            "75": 0.0522,
+            "90": 0.0833,
+            "100": 0.0894
+          },
+          "median_nearest_gt_fraction_pitch": 0.036,
+          "mean_assigned_distance_fraction_pitch": 0.0373,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0055,
+            "10": 0.0072,
+            "25": 0.0125,
+            "50": 0.0259,
+            "75": 0.0385,
+            "90": 0.0481,
+            "100": 0.053
+          },
+          "median_nearest_gt_fraction_pitch": 0.0265,
+          "mean_assigned_distance_fraction_pitch": 0.027,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0055,
+            "10": 0.0072,
+            "25": 0.0125,
+            "50": 0.0259,
+            "75": 0.0385,
+            "90": 0.0481,
+            "100": 0.053
+          },
+          "median_nearest_gt_fraction_pitch": 0.0265,
+          "mean_assigned_distance_fraction_pitch": 0.027,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0027,
+            "10": 0.0083,
+            "25": 0.0136,
+            "50": 0.0266,
+            "75": 0.0301,
+            "90": 0.0548,
+            "100": 0.0595
+          },
+          "median_nearest_gt_fraction_pitch": 0.0267,
+          "mean_assigned_distance_fraction_pitch": 0.0265,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0037,
+            "10": 0.0041,
+            "25": 0.0116,
+            "50": 0.02,
+            "75": 0.0402,
+            "90": 0.0649,
+            "100": 0.0739
+          },
+          "median_nearest_gt_fraction_pitch": 0.0255,
+          "mean_assigned_distance_fraction_pitch": 0.029,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0021,
+            "10": 0.0035,
+            "25": 0.0085,
+            "50": 0.0264,
+            "75": 0.0436,
+            "90": 0.0603,
+            "100": 0.0661
+          },
+          "median_nearest_gt_fraction_pitch": 0.0271,
+          "mean_assigned_distance_fraction_pitch": 0.0295,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0055,
+            "10": 0.036,
+            "25": 0.0454,
+            "50": 0.0577,
+            "75": 0.067,
+            "90": 0.0789,
+            "100": 0.0888
+          },
+          "median_nearest_gt_fraction_pitch": 0.0602,
+          "mean_assigned_distance_fraction_pitch": 0.0557,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0074,
+            "10": 0.0106,
+            "25": 0.0128,
+            "50": 0.0284,
+            "75": 0.0392,
+            "90": 0.0435,
+            "100": 0.056
+          },
+          "median_nearest_gt_fraction_pitch": 0.0301,
+          "mean_assigned_distance_fraction_pitch": 0.0279,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0074,
+            "10": 0.0106,
+            "25": 0.0128,
+            "50": 0.0284,
+            "75": 0.0392,
+            "90": 0.0435,
+            "100": 0.056
+          },
+          "median_nearest_gt_fraction_pitch": 0.0301,
+          "mean_assigned_distance_fraction_pitch": 0.0279,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0019,
+            "10": 0.0078,
+            "25": 0.0142,
+            "50": 0.0255,
+            "75": 0.0358,
+            "90": 0.0491,
+            "100": 0.0541
+          },
+          "median_nearest_gt_fraction_pitch": 0.0256,
+          "mean_assigned_distance_fraction_pitch": 0.0257,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0006,
+            "10": 0.0023,
+            "25": 0.0146,
+            "50": 0.0273,
+            "75": 0.0394,
+            "90": 0.0528,
+            "100": 0.057
+          },
+          "median_nearest_gt_fraction_pitch": 0.0302,
+          "mean_assigned_distance_fraction_pitch": 0.0278,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0066,
+            "10": 0.009,
+            "25": 0.0146,
+            "50": 0.0302,
+            "75": 0.041,
+            "90": 0.0456,
+            "100": 0.0492
+          },
+          "median_nearest_gt_fraction_pitch": 0.0312,
+          "mean_assigned_distance_fraction_pitch": 0.0281,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0143,
+            "10": 0.0386,
+            "25": 0.0507,
+            "50": 0.0676,
+            "75": 0.08,
+            "90": 0.0952,
+            "100": 0.1462
+          },
+          "median_nearest_gt_fraction_pitch": 0.0687,
+          "mean_assigned_distance_fraction_pitch": 0.0681,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0008,
+            "10": 0.0048,
+            "25": 0.011,
+            "50": 0.0246,
+            "75": 0.0373,
+            "90": 0.0469,
+            "100": 0.0541
+          },
+          "median_nearest_gt_fraction_pitch": 0.0264,
+          "mean_assigned_distance_fraction_pitch": 0.0246,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0025,
+            "10": 0.0038,
+            "25": 0.0087,
+            "50": 0.0214,
+            "75": 0.0399,
+            "90": 0.0563,
+            "100": 0.0635
+          },
+          "median_nearest_gt_fraction_pitch": 0.022,
+          "mean_assigned_distance_fraction_pitch": 0.0261,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0028,
+            "10": 0.0061,
+            "25": 0.0116,
+            "50": 0.0296,
+            "75": 0.0494,
+            "90": 0.0646,
+            "100": 0.0691
+          },
+          "median_nearest_gt_fraction_pitch": 0.0307,
+          "mean_assigned_distance_fraction_pitch": 0.0313,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0,
+            "10": 0.0044,
+            "25": 0.0139,
+            "50": 0.0211,
+            "75": 0.0289,
+            "90": 0.0331,
+            "100": 0.0376
+          },
+          "median_nearest_gt_fraction_pitch": 0.0214,
+          "mean_assigned_distance_fraction_pitch": 0.0201,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.002,
+            "10": 0.0032,
+            "25": 0.0096,
+            "50": 0.0144,
+            "75": 0.0225,
+            "90": 0.0347,
+            "100": 0.0399
+          },
+          "median_nearest_gt_fraction_pitch": 0.015,
+          "mean_assigned_distance_fraction_pitch": 0.0172,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0087,
+            "10": 0.0161,
+            "25": 0.0225,
+            "50": 0.0429,
+            "75": 0.1085,
+            "90": 0.1383,
+            "100": 0.1592
+          },
+          "median_nearest_gt_fraction_pitch": 0.0577,
+          "mean_assigned_distance_fraction_pitch": 0.0665,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0053,
+            "10": 0.0101,
+            "25": 0.0132,
+            "50": 0.0276,
+            "75": 0.0336,
+            "90": 0.0393,
+            "100": 0.0439
+          },
+          "median_nearest_gt_fraction_pitch": 0.0283,
+          "mean_assigned_distance_fraction_pitch": 0.0253,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0053,
+            "10": 0.0101,
+            "25": 0.0132,
+            "50": 0.0276,
+            "75": 0.0336,
+            "90": 0.0393,
+            "100": 0.0439
+          },
+          "median_nearest_gt_fraction_pitch": 0.0283,
+          "mean_assigned_distance_fraction_pitch": 0.0253,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0017,
+            "10": 0.0066,
+            "25": 0.0117,
+            "50": 0.0154,
+            "75": 0.0386,
+            "90": 0.0574,
+            "100": 0.0664
+          },
+          "median_nearest_gt_fraction_pitch": 0.0179,
+          "mean_assigned_distance_fraction_pitch": 0.0256,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0038,
+            "10": 0.0055,
+            "25": 0.0117,
+            "50": 0.0216,
+            "75": 0.0304,
+            "90": 0.0341,
+            "100": 0.0364
+          },
+          "median_nearest_gt_fraction_pitch": 0.0218,
+          "mean_assigned_distance_fraction_pitch": 0.0208,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0001,
+            "10": 0.0042,
+            "25": 0.0119,
+            "50": 0.0184,
+            "75": 0.0382,
+            "90": 0.0419,
+            "100": 0.0442
+          },
+          "median_nearest_gt_fraction_pitch": 0.0222,
+          "mean_assigned_distance_fraction_pitch": 0.0229,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0104,
+            "10": 0.0147,
+            "25": 0.0203,
+            "50": 0.0429,
+            "75": 0.0988,
+            "90": 0.1253,
+            "100": 0.1312
+          },
+          "median_nearest_gt_fraction_pitch": 0.0562,
+          "mean_assigned_distance_fraction_pitch": 0.0598,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0013,
+            "10": 0.0018,
+            "25": 0.0147,
+            "50": 0.02,
+            "75": 0.0307,
+            "90": 0.0353,
+            "100": 0.042
+          },
+          "median_nearest_gt_fraction_pitch": 0.0218,
+          "mean_assigned_distance_fraction_pitch": 0.0205,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0047,
+            "10": 0.0073,
+            "25": 0.0107,
+            "50": 0.0229,
+            "75": 0.0388,
+            "90": 0.0447,
+            "100": 0.0514
+          },
+          "median_nearest_gt_fraction_pitch": 0.0276,
+          "mean_assigned_distance_fraction_pitch": 0.0244,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0016,
+            "10": 0.0043,
+            "25": 0.0135,
+            "50": 0.0208,
+            "75": 0.0298,
+            "90": 0.063,
+            "100": 0.0806
+          },
+          "median_nearest_gt_fraction_pitch": 0.021,
+          "mean_assigned_distance_fraction_pitch": 0.0267,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0005,
+            "10": 0.0024,
+            "25": 0.0079,
+            "50": 0.0197,
+            "75": 0.0496,
+            "90": 0.0753,
+            "100": 0.0952
+          },
+          "median_nearest_gt_fraction_pitch": 0.0223,
+          "mean_assigned_distance_fraction_pitch": 0.0314,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0002,
+            "10": 0.0084,
+            "25": 0.0099,
+            "50": 0.0159,
+            "75": 0.0464,
+            "90": 0.081,
+            "100": 0.103
+          },
+          "median_nearest_gt_fraction_pitch": 0.0165,
+          "mean_assigned_distance_fraction_pitch": 0.0319,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0013,
+            "10": 0.0039,
+            "25": 0.0142,
+            "50": 0.0447,
+            "75": 0.0974,
+            "90": 0.1049,
+            "100": 0.1101
+          },
+          "median_nearest_gt_fraction_pitch": 0.052,
+          "mean_assigned_distance_fraction_pitch": 0.0522,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0006,
+            "10": 0.0044,
+            "25": 0.0137,
+            "50": 0.0187,
+            "75": 0.0364,
+            "90": 0.0505,
+            "100": 0.0577
+          },
+          "median_nearest_gt_fraction_pitch": 0.0196,
+          "mean_assigned_distance_fraction_pitch": 0.0246,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0014,
+            "10": 0.0073,
+            "25": 0.0109,
+            "50": 0.0257,
+            "75": 0.0406,
+            "90": 0.0599,
+            "100": 0.067
+          },
+          "median_nearest_gt_fraction_pitch": 0.0262,
+          "mean_assigned_distance_fraction_pitch": 0.0282,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0033,
+            "10": 0.0046,
+            "25": 0.0083,
+            "50": 0.029,
+            "75": 0.0438,
+            "90": 0.0618,
+            "100": 0.0678
+          },
+          "median_nearest_gt_fraction_pitch": 0.0316,
+          "mean_assigned_distance_fraction_pitch": 0.03,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0048,
+            "10": 0.0132,
+            "25": 0.0221,
+            "50": 0.0306,
+            "75": 0.0598,
+            "90": 0.0777,
+            "100": 0.0838
+          },
+          "median_nearest_gt_fraction_pitch": 0.0354,
+          "mean_assigned_distance_fraction_pitch": 0.0403,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0048,
+            "10": 0.0132,
+            "25": 0.0221,
+            "50": 0.0306,
+            "75": 0.0598,
+            "90": 0.0777,
+            "100": 0.0838
+          },
+          "median_nearest_gt_fraction_pitch": 0.0354,
+          "mean_assigned_distance_fraction_pitch": 0.0403,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0047,
+            "10": 0.0323,
+            "25": 0.0434,
+            "50": 0.0571,
+            "75": 0.0778,
+            "90": 0.0813,
+            "100": 0.1011
+          },
+          "median_nearest_gt_fraction_pitch": 0.0633,
+          "mean_assigned_distance_fraction_pitch": 0.0574,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0002,
+            "10": 0.0037,
+            "25": 0.0145,
+            "50": 0.024,
+            "75": 0.0393,
+            "90": 0.0473,
+            "100": 0.0543
+          },
+          "median_nearest_gt_fraction_pitch": 0.0267,
+          "mean_assigned_distance_fraction_pitch": 0.0257,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0002,
+            "10": 0.0037,
+            "25": 0.0145,
+            "50": 0.024,
+            "75": 0.0393,
+            "90": 0.0473,
+            "100": 0.0543
+          },
+          "median_nearest_gt_fraction_pitch": 0.0267,
+          "mean_assigned_distance_fraction_pitch": 0.0257,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0031,
+            "10": 0.0081,
+            "25": 0.0184,
+            "50": 0.0374,
+            "75": 0.0491,
+            "90": 0.0535,
+            "100": 0.0565
+          },
+          "median_nearest_gt_fraction_pitch": 0.0387,
+          "mean_assigned_distance_fraction_pitch": 0.0328,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0053,
+            "10": 0.0132,
+            "25": 0.0281,
+            "50": 0.0499,
+            "75": 0.0567,
+            "90": 0.0712,
+            "100": 0.0765
+          },
+          "median_nearest_gt_fraction_pitch": 0.0502,
+          "mean_assigned_distance_fraction_pitch": 0.0435,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0025,
+            "10": 0.0054,
+            "25": 0.0236,
+            "50": 0.0421,
+            "75": 0.0645,
+            "90": 0.079,
+            "100": 0.0843
+          },
+          "median_nearest_gt_fraction_pitch": 0.0439,
+          "mean_assigned_distance_fraction_pitch": 0.0433,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.006,
+            "10": 0.0328,
+            "25": 0.0419,
+            "50": 0.0531,
+            "75": 0.063,
+            "90": 0.0701,
+            "100": 0.0786
+          },
+          "median_nearest_gt_fraction_pitch": 0.0533,
+          "mean_assigned_distance_fraction_pitch": 0.0513,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0005,
+            "10": 0.0038,
+            "25": 0.0157,
+            "50": 0.0318,
+            "75": 0.043,
+            "90": 0.0542,
+            "100": 0.0649
+          },
+          "median_nearest_gt_fraction_pitch": 0.0354,
+          "mean_assigned_distance_fraction_pitch": 0.0304,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0038,
+            "10": 0.0076,
+            "25": 0.0187,
+            "50": 0.0315,
+            "75": 0.0513,
+            "90": 0.0635,
+            "100": 0.0742
+          },
+          "median_nearest_gt_fraction_pitch": 0.0315,
+          "mean_assigned_distance_fraction_pitch": 0.0344,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0037,
+            "10": 0.0041,
+            "25": 0.0149,
+            "50": 0.0265,
+            "75": 0.0412,
+            "90": 0.057,
+            "100": 0.062
+          },
+          "median_nearest_gt_fraction_pitch": 0.0316,
+          "mean_assigned_distance_fraction_pitch": 0.0285,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "new": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0009,
+            "10": 0.0091,
+            "25": 0.0195,
+            "50": 0.032,
+            "75": 0.0526,
+            "90": 0.0648,
+            "100": 0.0687
+          },
+          "median_nearest_gt_fraction_pitch": 0.0402,
+          "mean_assigned_distance_fraction_pitch": 0.0356,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "midline": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0009,
+            "10": 0.0091,
+            "25": 0.0195,
+            "50": 0.032,
+            "75": 0.0526,
+            "90": 0.0648,
+            "100": 0.0687
+          },
+          "median_nearest_gt_fraction_pitch": 0.0402,
+          "mean_assigned_distance_fraction_pitch": 0.0356,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0109,
+            "10": 0.0325,
+            "25": 0.0526,
+            "50": 0.0596,
+            "75": 0.0814,
+            "90": 0.0977,
+            "100": 0.1558
+          },
+          "median_nearest_gt_fraction_pitch": 0.0615,
+          "mean_assigned_distance_fraction_pitch": 0.0666,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0021,
+            "10": 0.013,
+            "25": 0.0195,
+            "50": 0.0287,
+            "75": 0.0494,
+            "90": 0.0678,
+            "100": 0.0721
+          },
+          "median_nearest_gt_fraction_pitch": 0.0295,
+          "mean_assigned_distance_fraction_pitch": 0.0351,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 19,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0078,
+            "10": 0.0095,
+            "25": 0.0132,
+            "50": 0.0302,
+            "75": 0.04,
+            "90": 0.0585,
+            "100": 0.0628
+          },
+          "median_nearest_gt_fraction_pitch": 0.0304,
+          "mean_assigned_distance_fraction_pitch": 0.031,
+          "F1_by_threshold": {
+            "0.2": 0.973,
+            "0.25": 0.973,
+            "0.3": 0.973,
+            "0.32": 0.973,
+            "0.35": 0.973,
+            "0.4": 0.973,
+            "0.45": 0.973,
+            "0.5": 0.973
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 14,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0089,
+            "10": 0.0098,
+            "25": 0.0112,
+            "50": 0.0224,
+            "75": 0.0319,
+            "90": 0.0401,
+            "100": 0.0668
+          },
+          "median_nearest_gt_fraction_pitch": 0.0245,
+          "mean_assigned_distance_fraction_pitch": 0.0245,
+          "F1_by_threshold": {
+            "0.2": 0.9333,
+            "0.25": 0.9333,
+            "0.3": 0.9333,
+            "0.32": 0.9333,
+            "0.35": 0.9333,
+            "0.4": 0.9333,
+            "0.45": 0.9333,
+            "0.5": 0.9333
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0015,
+            "10": 0.0078,
+            "25": 0.0148,
+            "50": 0.0263,
+            "75": 0.0337,
+            "90": 0.0391,
+            "100": 0.049
+          },
+          "median_nearest_gt_fraction_pitch": 0.0277,
+          "mean_assigned_distance_fraction_pitch": 0.0246,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0018,
+            "10": 0.0053,
+            "25": 0.0154,
+            "50": 0.0232,
+            "75": 0.0348,
+            "90": 0.0425,
+            "100": 0.0568
+          },
+          "median_nearest_gt_fraction_pitch": 0.0257,
+          "mean_assigned_distance_fraction_pitch": 0.0253,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 26.666666666666668,
+      "results": {
+        "old": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0065,
+            "10": 0.0325,
+            "25": 0.0393,
+            "50": 0.0566,
+            "75": 0.0893,
+            "90": 0.1662,
+            "100": 0.2003
+          },
+          "median_nearest_gt_fraction_pitch": 0.0577,
+          "mean_assigned_distance_fraction_pitch": 0.0767,
+          "F1_by_threshold": {
+            "0.2": 0.8947,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "new": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0005,
+            "10": 0.0042,
+            "25": 0.0094,
+            "50": 0.0278,
+            "75": 0.0409,
+            "90": 0.0503,
+            "100": 0.0584
+          },
+          "median_nearest_gt_fraction_pitch": 0.0286,
+          "mean_assigned_distance_fraction_pitch": 0.0267,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        },
+        "midline": {
+          "n_pred": 18,
+          "n_true": 20,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0044,
+            "10": 0.0102,
+            "25": 0.015,
+            "50": 0.027,
+            "75": 0.0502,
+            "90": 0.0596,
+            "100": 0.0677
+          },
+          "median_nearest_gt_fraction_pitch": 0.0345,
+          "mean_assigned_distance_fraction_pitch": 0.0319,
+          "F1_by_threshold": {
+            "0.2": 0.9474,
+            "0.25": 0.9474,
+            "0.3": 0.9474,
+            "0.32": 0.9474,
+            "0.35": 0.9474,
+            "0.4": 0.9474,
+            "0.45": 0.9474,
+            "0.5": 0.9474
+          }
+        }
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "pitch_px_truth_evaluation_only": 32.0,
+      "results": {
+        "old": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0017,
+            "10": 0.0039,
+            "25": 0.0124,
+            "50": 0.03,
+            "75": 0.0433,
+            "90": 0.0488,
+            "100": 0.0535
+          },
+          "median_nearest_gt_fraction_pitch": 0.0325,
+          "mean_assigned_distance_fraction_pitch": 0.0279,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "new": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0003,
+            "10": 0.0015,
+            "25": 0.0133,
+            "50": 0.0296,
+            "75": 0.0466,
+            "90": 0.0688,
+            "100": 0.0742
+          },
+          "median_nearest_gt_fraction_pitch": 0.0326,
+          "mean_assigned_distance_fraction_pitch": 0.0327,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        },
+        "midline": {
+          "n_pred": 15,
+          "n_true": 16,
+          "assignment_quantiles_fraction_pitch": {
+            "0": 0.0041,
+            "10": 0.0059,
+            "25": 0.0076,
+            "50": 0.0279,
+            "75": 0.0479,
+            "90": 0.0714,
+            "100": 0.082
+          },
+          "median_nearest_gt_fraction_pitch": 0.0291,
+          "mean_assigned_distance_fraction_pitch": 0.0318,
+          "F1_by_threshold": {
+            "0.2": 0.9677,
+            "0.25": 0.9677,
+            "0.3": 0.9677,
+            "0.32": 0.9677,
+            "0.35": 0.9677,
+            "0.4": 0.9677,
+            "0.45": 0.9677,
+            "0.5": 0.9677
+          }
+        }
+      }
+    }
+  ],
+  "verification": "ALL_FROZEN_0_32_F1_VALUES_REPRODUCED",
+  "scope": "SYNTHETIC_ONLY_NOT_COMPLETE_PHYSICAL_ID_F1"
+}
