@@ -131,3 +131,55 @@ GitHub Actions 真正运行与完整大图（下载Artifacts）：
 - [新旧算法与真实纱线标记的程序生成叠图](https://github.com/leaves899/fabric-vision-recognition/tree/experiment/shibie-8k-capture-multiwindow/experiments/shibie-8k-capture-multiwindow/phase-conflicts)
 
 当前适用范围**仅为合成的局部单截面中心线位置匹配**，不是完整物理纱线跨遮挡身份F1。没有新的符合工位条件的真实8K R/T黄金标注，故**真实样本非退化仍未验证；不得合并main或部署RK3576**。下一步需独立补齐可见轨迹覆盖、连续性及真实R/T证据，不能继续沿用原始错误计分器。
+
+
+## 2026-10-20 进一步研发：多截线物理ID关联与强弯曲反证
+
+**分支继续隔离，未修改默认shibie/engine/pipeline.py，未合并main。** 所有试验均是真正程序原生8000×6000 R/T双图（直接物理坐标生成，不是小图插值），真实相机工位认证**不存在**。这一轮按4组开发/留出、2组独立强弯曲及3组逐根跟踪复测共运行9组原生8K生成；其中已有两个固定失败场景重复用于回归，不能把9组说成9个独立样本。
+
+### 研发代码（核心模块真实执行）
+- `shibie/engine/local_yarn_tracks.py`：同窗7个独立截线，以R/T相位、宽度和极性生成**整组公共相位曲线候选**。
+- `shibie/evaluate_yarn_track_identity.py`：将每条候选与合成时已分配的同一根`physical_yarn_id`作多截面匹配，使用门限内最大一对一匹配而非有漏洞的后阈值Hungarian。
+- `shibie/engine/individual_yarn_tracelets.py`：每根纱线独立根据相邻孔隙/实体的R/T光学证据更新中心位置，对邻近不同候选执行非重叠排他，不读取合成纱线ID或组织先验。
+- `shibie/evaluate_strict_yarn_identity.py`：修正身份验收漏洞。宽松版只需60%采样点持续对应同根；严格版至少85%且任何已确认跳至别根ID都否决该候选。
+- `shibie/run_8k_yarn_identity.py`、`shibie/run_8k_individual_comparison.py`、`shibie/replay_strict_identity.py`：同R/T真值隔离推理、多算法同图对比、冻结输出后严格重评分。
+
+### 4组原生8K开发/新留出（局部同ID宽松轨迹F1，不能和此前单截面F1比较）
+| 场景 | 方向 | 浮点直线 | 公共相位7截线 |
+|---|---|---:|---:|
+| 平纹布相对标定框15°（开发） | 经/纬 | .9645/.9452 | **.9735/.9643** |
+| 平纹0°（开发） | 经/纬 | .9616/.9639 | **.9706/.9749** |
+| 2/1斜纹−10°混合光学（新留出） | 经/纬 | .7562/.9526 | **.7686/.9603** |
+| 平纹19°光学反相（新留出） | 经/纬 | .9677/.9567 | .9677/**.9643** |
+
+上述结果提示曲线化有改善，但并不具备强弯曲的覆盖。本轮随后在**之前未用过的新种子**构造0.28纱距弯曲强度的2/1、3/1高压样本，一开始使用冻结公共相位算法，发现严重崩溃：
+
+| 强弯曲反证 | 方向 | 浮点直线 | 公共相位7截线 |
+|---|---|---:|---:|
+| 2/1混合光学，wave_fraction=.28 | 经/纬 | .2518/.3915 | .2496/.3916 |
+| 3/1光学反相，wave_fraction=.28 | 经/纬 | .4824/.6116 | .4822/.6247 |
+
+原因尚未完全证明，但整组纱线共享一个相位偏移不能表达**逐根独立弯曲**，与错误ID连续性的观测一致。改为逐根R/T物理中心短轨迹后再次运行（已见过失败场景，所以**现在是回归，不再是新留出**）：
+
+| 场景 | 方向 | 公共相位7截线F1 | 逐根独立R/T F1（宽松） | 逐根独立R/T F1（严格） |
+|---|---|---:|---:|---:|
+| 2/1高弯曲 | 经/纬 | .2496/.3916 | **.4474/.5446** | .3829/.2688 |
+| 3/1高弯曲 | 经/纬 | .4822/.6247 | **.8232/.7698** | .6276/.3040 |
+| 2/1中等弯曲（新种子留出） | 经/纬 | **.9853/.9679** | .9673/.9605 | .9673/.9605 |
+
+**严格身份F1并未同口径计算旧公共相位7截线，因此严格列不得用于新旧相对提升宣称。** 严格评估重建物理真值并逐窗口验证冻结宽松分数完全复现后才计算；在高弯曲下出现大量ID候选关联风险，说明简单放宽连续性门限会掩盖错误。
+
+### CI、性能与视觉产物
+- [原生8K 4场景多截线实测](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39443643770)（其中算法运行均成功，最初汇总脚本有路径错误；已在[独立修复汇总任务](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39444280148)成功归档）。
+- [2组高曲率原生8K独立压力测试](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39444581720)与[程序生成的失败叠图](https://github.com/leaves899/fabric-vision-recognition/tree/experiment/shibie-8k-capture-multiwindow/experiments/shibie-8k-capture-multiwindow/curvature-failures)。
+- [逐根R/T光学追踪3场景真实运行及归档](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39445943439)；[对应多窗具体失败表与叠图](https://github.com/leaves899/fabric-vision-recognition/tree/experiment/shibie-8k-capture-multiwindow/experiments/shibie-8k-capture-multiwindow/individual-holdout)。
+- [严格同ID评价59项单元测试与后验重评分](https://github.com/leaves899/fabric-vision-recognition/actions/runs/39446998739)；[严格身份验收报告](https://github.com/leaves899/fabric-vision-recognition/blob/experiment/shibie-8k-capture-multiwindow/experiments/shibie-8k-capture-multiwindow/strict-identity/REPORT.md)。
+- 逐根子算法与图像加载的单独进程时间约1.5至3.0秒、峰值RSS约541至587MiB（GitHub Ubuntu Runner，**不是**RK3576端到端耗时）。
+
+以上6宫格叠图均为算法根据真实程序图像/轨迹结果绘制并保存；本会话无法通过容器直接进行像素级人工图像审阅，故只能确认**已实际生成和保存**，不能把其称作已完成人工视觉验收。已提供可直接打开的GitHub图片链接供独立审阅。
+
+### 合并结论
+- **已实证**：真正8K多截面同ID评估、正确门限内一对一物理身份匹配、逐根R/T证据对部分强弯曲样本显著优于整组公共相位；自动化结果可复现，59测试通过。
+- **被否定**：仅靠公共相位曲线就能泛化高曲率；宽松60%同ID F1可以当作严格可靠的身份指标；逐根追踪可无条件替代既有算法（中等弯曲新留出有退化）。
+- **仍未证明**：对不同实物纱线跨遮挡区域恢复唯一物理ID、以真实8K相机R/T完成非退化验收、设备RK3576 4GB+前端共存。
+- **执行决策**：继续保留独立研发分支；不将未达标识别模块写入生产默认pipeline，更不合并main。
