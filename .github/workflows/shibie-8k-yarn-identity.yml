@@ -1,0 +1,80 @@
+name: shibie native8k multi-slice physical yarn identity A/B/C
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-yarn-identity.yml
+      - shibie/engine/local_yarn_tracks.py
+      - shibie/evaluate_yarn_track_identity.py
+      - shibie/run_8k_yarn_identity.py
+      - shibie/tests/test_yarn_track_identity.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: shibie-8k-identity-only-one
+  cancel-in-progress: false
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {case: rotation15_development, weave: plain, rotation: 15, seed: 812613, warp: 30, weft: 25, optical: dark}
+          - {case: zero_development, weave: plain, rotation: 0, seed: 812613, warp: 30, weft: 25, optical: dark}
+          - {case: twill21_angleholdout, weave: twill_2_1, rotation: -10, seed: 912734, warp: 30, weft: 25, optical: mixed}
+          - {case: bright_angleholdout, weave: plain, rotation: 19, seed: 912735, warp: 25, weft: 25, optical: bright}
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Frozen original and new physical entity unit tests
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Generate true native8000x6000 R/T from physical yarn entities
+        run: |
+          python -c "import sys;from pathlib import Path;sys.path.insert(0,'shibie');from synthetic_capture_8k import CaptureScene,generate;generate(CaptureScene(name='${{ matrix.case }}',fabric_rotation_deg=${{ matrix.rotation }},seed=${{ matrix.seed }},weave='${{ matrix.weave }}',warp_density_cm=${{ matrix.warp }},weft_density_cm=${{ matrix.weft }},contrast_polarity='${{ matrix.optical }}'),Path('experiments/shibie-8k-capture-multiwindow/stress/${{ matrix.case }}'))"
+      - name: Native 8k image-only local yarn tracing with identity audit
+        run: /usr/bin/time -v python -u shibie/run_8k_yarn_identity.py --case ${{ matrix.case }}
+      - name: Upload actual algorithm overlays and audit without full JPEG inputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: yarn-id-${{ matrix.case }}
+          path: experiments/shibie-8k-capture-multiwindow/identity-tracking/${{ matrix.case }}/
+          if-no-files-found: warn
+          retention-days: 21
+  publish:
+    needs: measure
+    if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: yarn-id-*
+          path: /tmp/native8k-id-evidence
+          merge-multiple: false
+      - name: Aggregate all development and independent holdout cases
+        run: |
+          python shibie/summarize_8k_yarn_identity.py \
+            --artifacts /tmp/native8k-id-evidence \
+            --out experiments/shibie-8k-capture-multiwindow/yarn-identity
+          cat experiments/shibie-8k-capture-multiwindow/yarn-identity/REPORT.md
+      - name: Preserve only small images/measurements on isolated experimental branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/yarn-identity/
+          git commit -m "test(shibie): preserve measured 8k yarn-ID trajectory identity metrics [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
