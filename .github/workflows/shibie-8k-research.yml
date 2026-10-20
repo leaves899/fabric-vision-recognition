@@ -58,6 +58,7 @@ jobs:
           find experiments/shibie-8k-capture-multiwindow/smoke -maxdepth 1 -type f -name '*overlay*.jpg' -print0 | xargs -0 -r git add -f
           find experiments/shibie-8k-capture-multiwindow/smoke -maxdepth 1 -type f -name '*crop*.jpg' -print0 | xargs -0 -r git add -f
           git add -f experiments/shibie-8k-capture-multiwindow/smoke/multiwindow_center_evidence.jpg || true
+          git add -f experiments/shibie-8k-capture-multiwindow/smoke/multiwindow_center_evidence_preview.jpg || true
           git add -f experiments/shibie-8k-capture-multiwindow/smoke/ablation_visual_compare.jpg || true
           git add -f experiments/shibie-8k-capture-multiwindow/smoke/ablation_4way.json || true
           if ! git diff --cached --quiet; then
