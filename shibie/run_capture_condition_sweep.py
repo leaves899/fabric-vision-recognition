@@ -50,6 +50,16 @@ VARIANTS = {
         "ridge_min_coverage": 0.20,
         "ridge_peak_distance_ratio": 0.60,
     },
+    # The 0.96 full field previously triggered a false ~12 degree tilt.
+    # Evaluate physically smaller but INDEPENDENT orientation estimation ROIs.
+    "roi96_direction90": {
+        "roi_ratio": 0.96,
+        "orientation_roi_ratio": 0.90,
+    },
+    "roi96_direction75": {
+        "roi_ratio": 0.96,
+        "orientation_roi_ratio": 0.75,
+    },
 }
 
 
@@ -124,6 +134,9 @@ def run_once(name, override, front_bytes, trans_bytes, raw_trans):
         "weft_spacing_px": ((dens.get("weft") or {}).get("centerline") or {}).get("median_center_spacing_px"),
         "warp_acf_px": ((dens.get("warp") or {}).get("periodicity") or {}).get("spacing_px"),
         "weft_acf_px": ((dens.get("weft") or {}).get("periodicity") or {}).get("spacing_px"),
+        "warp_direction_deg": orientation.get("warp_direction_deg"),
+        "weft_direction_deg": orientation.get("weft_direction_deg"),
+        "orientation_roi_source": orientation.get("orientation_candidate_roi_source"),
         "warp_reasons": "|".join((((dens.get("warp") or {}).get("confidence") or {}).get("reasons") or [])),
         "weft_reasons": "|".join((((dens.get("weft") or {}).get("confidence") or {}).get("reasons") or [])),
         "weave_candidate": twill.get("weave_candidate"),
