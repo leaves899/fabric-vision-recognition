@@ -279,15 +279,29 @@ def _run_direction(normalized: np.ndarray, direction_deg: float, mm_x_working: f
     if guard_ratio > 0.0 and DEFAULT_CONFIG.transmission_yarn_contrast_mode != "off":
         if not (0.02 <= guard_ratio <= 0.60):
             raise ValueError("PHASE_PITCH_GUARD_OUT_OF_RANGE")
-        phase_blind = sorted(
+        neutral_ranked = sorted(
             attempts,
             key=lambda item: (
                 item["_base_confidence_status"] != "FAIL",
                 float(item["candidate_quality_neutral"]),
-                float(item["candidate_quality_neutral"]) * _periodicity_agreement(item),
             ),
             reverse=True,
-        )[0]
+        )
+        neutral_lead = neutral_ranked[0]
+        neutral_close = [
+            item for item in neutral_ranked
+            if item["_base_confidence_status"] == neutral_lead["_base_confidence_status"]
+            and float(neutral_lead["candidate_quality_neutral"])
+                - float(item["candidate_quality_neutral"])
+                <= float(DEFAULT_CONFIG.steerable_quality_close_margin)
+        ]
+        # Reproduce the frozen V0.6.3 two-stage selection before applying
+        # *any* optical phase bonus, including ACF tie-break behavior.
+        phase_blind = max(
+            neutral_close,
+            key=lambda item: float(item["candidate_quality_neutral"])
+                * _periodicity_agreement(item),
+        )
         reference_pitch = float(phase_blind["centerline"]["median_center_spacing_px"])
         for item in attempts:
             pitch = float(item["centerline"]["median_center_spacing_px"])
