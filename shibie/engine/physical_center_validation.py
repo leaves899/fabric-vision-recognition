@@ -106,6 +106,14 @@ def validate_physical_centers(Rpatch,Tpatch,normal_family,pitch_px):
     status="PASS" if (width>=.50 and margin>=.06 and top["RT_support"]>=.24 and
                        len(positions)>=5) else "LOW_CONFIDENCE"
     reason= "BILATERAL_EDGE_AND_RT_CONSISTENCY" if status=="PASS" else "PHASE_OR_WIDTH_AMBIGUOUS"
+    # Approximate apparent yarn-core width is measured from image profiles,
+    # NOT inferred from nominal density/pitch. The station requires P10>=12.
+    # A single window has no certified P10 estimate, so treat a narrow core as
+    # a warning/abstention, never as confirmed station-qualified evidence.
+    apparent_width=round(float(width*pitch_round),3)
+    if apparent_width<12.0:
+        status="LOW_CONFIDENCE"
+        reason="OPTICAL_CORE_WIDTH_BELOW_CAPTURE_GATE_UNCONFIRMED_P10"
     # Independent longitudinal check: 3 sections of SAME window. Do not
     # require center rigidly straight at subpixel scale.
     chunks=np.array_split(np.arange(r.shape[axis]),3)
@@ -123,7 +131,7 @@ def validate_physical_centers(Rpatch,Tpatch,normal_family,pitch_px):
         status="LOW_CONFIDENCE";reason="LONGITUDINAL_PHASE_INCONSISTENT"
     return {"status":status,"reason":reason,"pitch_px":pitch_round,
        "phase_px":int(top["phase_px"]),"center_positions_px":np.round(positions,2).tolist(),
-       "width_fraction":width,"relative_phase_margin":round(float(margin),4),
+       "width_fraction":width,"apparent_core_width_px":apparent_width,"relative_phase_margin":round(float(margin),4),
        "continuity_phase_drift_fraction":round(float(max_phase_drift),4),
        "R_center_polarity":top["R_polarity"],"T_center_polarity":top["T_polarity"],
        "alternative_phase_px":competitor["phase_px"] if competitor else None,
