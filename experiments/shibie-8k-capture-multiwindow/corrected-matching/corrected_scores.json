@@ -1,0 +1,5528 @@
+{
+  "frozen_run_id": 39437637934,
+  "scorer": "MAXIMUM_WITHIN_GATE_CARDINALITY_THEN_DISTANCE_TIEBREAK",
+  "threshold_fraction_pitch": 0.32,
+  "summary": [
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "old_gated_f1": 0.8144,
+      "new_gated_f1": 0.889,
+      "midline_gated_f1": 0.886,
+      "old_old_report_f1": 0.7509,
+      "new_old_report_f1": 0.762,
+      "midline_old_report_f1": 0.759
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "old_gated_f1": 0.8449,
+      "new_gated_f1": 0.836,
+      "midline_gated_f1": 0.836,
+      "old_old_report_f1": 0.8319,
+      "new_old_report_f1": 0.7429,
+      "midline_old_report_f1": 0.734
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "old_gated_f1": 0.9476,
+      "new_gated_f1": 0.9476,
+      "midline_gated_f1": 0.9476,
+      "old_old_report_f1": 0.9476,
+      "new_old_report_f1": 0.9476,
+      "midline_old_report_f1": 0.9476
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "old_gated_f1": 0.9543,
+      "new_gated_f1": 0.9543,
+      "midline_gated_f1": 0.9543,
+      "old_old_report_f1": 0.9543,
+      "new_old_report_f1": 0.9543,
+      "midline_old_report_f1": 0.9543
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "old_gated_f1": 0.9587,
+      "new_gated_f1": 0.9587,
+      "midline_gated_f1": 0.9587,
+      "old_old_report_f1": 0.9588,
+      "new_old_report_f1": 0.9588,
+      "midline_old_report_f1": 0.9588
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "old_gated_f1": 0.9601,
+      "new_gated_f1": 0.9639,
+      "midline_gated_f1": 0.9639,
+      "old_old_report_f1": 0.9601,
+      "new_old_report_f1": 0.9639,
+      "midline_old_report_f1": 0.9639
+    }
+  ],
+  "critical_window": {
+    "case": "independent_15deg",
+    "family": "weft",
+    "grid": [
+      0,
+      2
+    ],
+    "true_pitch_px_evaluation_only": 32.0,
+    "old": {
+      "score": {
+        "matches": 11,
+        "predicted": 15,
+        "truth": 11,
+        "precision": 0.733333,
+        "recall": 1.0,
+        "f1": 0.846154,
+        "matched_distances_fraction_pitch": [
+          0.056068,
+          0.059947,
+          0.0517,
+          0.034286,
+          0.014194,
+          0.002229,
+          0.008782,
+          0.003789,
+          0.009958,
+          0.0268,
+          0.039269
+        ],
+        "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+      },
+      "f1_from_old_unbounded_scorer": 0.8462,
+      "status": "PASS"
+    },
+    "new": {
+      "score": {
+        "matches": 10,
+        "predicted": 14,
+        "truth": 11,
+        "precision": 0.714286,
+        "recall": 0.909091,
+        "f1": 0.8,
+        "matched_distances_fraction_pitch": [
+          0.002791,
+          0.003919,
+          0.00412,
+          0.014838,
+          0.021885,
+          0.019064,
+          0.004696,
+          0.018427,
+          0.044644,
+          0.066488
+        ],
+        "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+      },
+      "f1_from_old_unbounded_scorer": 0.08,
+      "status": "PASS"
+    },
+    "midline": {
+      "score": {
+        "matches": 10,
+        "predicted": 14,
+        "truth": 11,
+        "precision": 0.714286,
+        "recall": 0.909091,
+        "f1": 0.8,
+        "matched_distances_fraction_pitch": [
+          0.00499,
+          0.003863,
+          0.011901,
+          0.022619,
+          0.029667,
+          0.026845,
+          0.012477,
+          0.010646,
+          0.036863,
+          0.058707
+        ],
+        "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+      },
+      "f1_from_old_unbounded_scorer": 0.0,
+      "status": "PASS"
+    }
+  },
+  "all_windows": [
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 8,
+          "predicted": 18,
+          "truth": 10,
+          "precision": 0.444444,
+          "recall": 0.8,
+          "f1": 0.571429,
+          "matched_distances_fraction_pitch": [
+            0.006702,
+            0.015341,
+            0.0271,
+            0.026609,
+            0.017696,
+            0.006766,
+            0.001744,
+            0.066885
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 8,
+          "predicted": 18,
+          "truth": 10,
+          "precision": 0.444444,
+          "recall": 0.8,
+          "f1": 0.571429,
+          "matched_distances_fraction_pitch": [
+            0.081798,
+            0.090716,
+            0.08935,
+            0.075734,
+            0.053696,
+            0.029641,
+            0.011494,
+            0.06774
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0714,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 8,
+          "predicted": 18,
+          "truth": 10,
+          "precision": 0.444444,
+          "recall": 0.8,
+          "f1": 0.571429,
+          "matched_distances_fraction_pitch": [
+            0.081798,
+            0.090716,
+            0.08935,
+            0.075734,
+            0.053696,
+            0.029641,
+            0.011494,
+            0.06774
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0714,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 17,
+          "predicted": 17,
+          "truth": 18,
+          "precision": 1.0,
+          "recall": 0.944444,
+          "f1": 0.971429,
+          "matched_distances_fraction_pitch": [
+            0.048631,
+            0.058872,
+            0.070987,
+            0.078028,
+            0.073995,
+            0.057508,
+            0.031279,
+            0.002193,
+            0.022691,
+            0.03765,
+            0.041683,
+            0.036317,
+            0.028586,
+            0.024895,
+            0.03144,
+            0.049937,
+            0.078038
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9714,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "matched_distances_fraction_pitch": [
+            0.029406,
+            0.00604,
+            0.019199,
+            0.039365,
+            0.048458,
+            0.045095,
+            0.031991,
+            0.01603,
+            0.004271,
+            0.002438,
+            0.01153,
+            0.030021,
+            0.050876,
+            0.067692,
+            0.074272,
+            0.0689,
+            0.053924,
+            0.035598
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 1.0,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 19,
+          "truth": 18,
+          "precision": 0.947368,
+          "recall": 1.0,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.048081,
+            0.024715,
+            0.000524,
+            0.02069,
+            0.029783,
+            0.02642,
+            0.013316,
+            0.002645,
+            0.014404,
+            0.016237,
+            0.007145,
+            0.011346,
+            0.032201,
+            0.049017,
+            0.055597,
+            0.050225,
+            0.035249,
+            0.016923
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.08388,
+            0.096003,
+            0.104719,
+            0.103869,
+            0.089412,
+            0.062837,
+            0.029228,
+            0.003732,
+            0.028633,
+            0.04039,
+            0.038727,
+            0.028632,
+            0.016512,
+            0.010661,
+            0.015531,
+            0.03319,
+            0.059411,
+            0.088015
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.043507,
+            0.018259,
+            0.003582,
+            0.015857,
+            0.014525,
+            0.001074,
+            0.019409,
+            0.039245,
+            0.051021,
+            0.049652,
+            0.034864,
+            0.011644,
+            0.013601,
+            0.032576,
+            0.040832,
+            0.036297,
+            0.023202,
+            0.007722
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.043507,
+            0.018259,
+            0.003582,
+            0.015857,
+            0.014525,
+            0.001074,
+            0.019409,
+            0.039245,
+            0.051021,
+            0.049652,
+            0.034864,
+            0.011644,
+            0.013601,
+            0.032576,
+            0.040832,
+            0.036297,
+            0.023202,
+            0.007722
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.065152,
+            0.03774,
+            0.011019,
+            0.008662,
+            0.016723,
+            0.013871,
+            0.003971,
+            0.005621,
+            0.007302,
+            0.003127,
+            0.026157,
+            0.058297,
+            0.092239,
+            0.119655,
+            0.134956,
+            0.136477,
+            0.127566,
+            0.114131
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.013036,
+            0.027322,
+            0.040919,
+            0.047475,
+            0.04241,
+            0.026433,
+            0.003409,
+            0.019308,
+            0.034115,
+            0.036811,
+            0.026906,
+            0.00789,
+            0.012927,
+            0.027217,
+            0.029393,
+            0.017789,
+            0.004246,
+            0.030807
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.013036,
+            0.027322,
+            0.040919,
+            0.047475,
+            0.04241,
+            0.026433,
+            0.003409,
+            0.019308,
+            0.034115,
+            0.036811,
+            0.026906,
+            0.00789,
+            0.012927,
+            0.027217,
+            0.029393,
+            0.017789,
+            0.004246,
+            0.030807
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.083771,
+            0.050653,
+            0.02004,
+            0.001315,
+            0.010213,
+            0.008051,
+            0.000518,
+            0.008099,
+            0.007761,
+            0.003505,
+            0.025555,
+            0.053307,
+            0.079683,
+            0.098531,
+            0.105414,
+            0.101223,
+            0.091127,
+            0.081387
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.015754,
+            0.035747,
+            0.053235,
+            0.061465,
+            0.057238,
+            0.041951,
+            0.020257,
+            0.000449,
+            0.013236,
+            0.015095,
+            0.00617,
+            0.008457,
+            0.021708,
+            0.027431,
+            0.021189,
+            0.003873,
+            0.019348,
+            0.042213
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.025092,
+            0.045084,
+            0.062572,
+            0.070803,
+            0.066576,
+            0.051288,
+            0.029594,
+            0.008889,
+            0.003898,
+            0.005757,
+            0.003167,
+            0.017794,
+            0.031045,
+            0.036769,
+            0.030526,
+            0.01321,
+            0.01001,
+            0.032876
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.04068,
+            0.016467,
+            0.004857,
+            0.006037,
+            0.017452,
+            0.031588,
+            0.040154,
+            0.037796,
+            0.021308,
+            0.006587,
+            0.039212,
+            0.068987,
+            0.089511,
+            0.097567,
+            0.094715,
+            0.086145,
+            0.079254,
+            0.080438
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.067057,
+            0.078145,
+            0.076631,
+            0.062325,
+            0.037786,
+            0.010525,
+            0.011166,
+            0.021933,
+            0.018571,
+            0.0038,
+            0.0157,
+            0.03235,
+            0.039749,
+            0.034679,
+            0.018702,
+            0.002992,
+            0.023009,
+            0.034949
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.067057,
+            0.078145,
+            0.076631,
+            0.062325,
+            0.037786,
+            0.010525,
+            0.011166,
+            0.021933,
+            0.018571,
+            0.0038,
+            0.0157,
+            0.03235,
+            0.039749,
+            0.034679,
+            0.018702,
+            0.002992,
+            0.023009,
+            0.034949
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.027841,
+            0.035573,
+            0.038769,
+            0.032036,
+            0.013529,
+            0.014219,
+            0.04498,
+            0.071053,
+            0.086506,
+            0.088865,
+            0.079953,
+            0.066171,
+            0.055585,
+            0.054746,
+            0.067538,
+            0.093426,
+            0.126048,
+            0.158676
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.062459,
+            0.041602,
+            0.025281,
+            0.018889,
+            0.024271,
+            0.038894,
+            0.05653,
+            0.069478,
+            0.071806,
+            0.06104,
+            0.039003,
+            0.012096,
+            0.011615,
+            0.025579,
+            0.025912,
+            0.013149,
+            0.006348,
+            0.025851
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.071796,
+            0.050939,
+            0.034618,
+            0.028227,
+            0.033609,
+            0.048231,
+            0.065868,
+            0.078815,
+            0.081143,
+            0.070377,
+            0.048341,
+            0.021433,
+            0.002277,
+            0.016241,
+            0.016574,
+            0.003811,
+            0.015685,
+            0.035188
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.050984,
+            0.05705,
+            0.051486,
+            0.033331,
+            0.006273,
+            0.023013,
+            0.047227,
+            0.061349,
+            0.064053,
+            0.058484,
+            0.050759,
+            0.048237,
+            0.05631,
+            0.075986,
+            0.104584,
+            0.135337,
+            0.161073,
+            0.175877
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.040478,
+            0.023163,
+            0.017476,
+            0.024381,
+            0.040189,
+            0.058226,
+            0.071189,
+            0.074062,
+            0.065515,
+            0.048696,
+            0.029722,
+            0.015949,
+            0.012772,
+            0.021199,
+            0.038547,
+            0.058049,
+            0.072536,
+            0.07609
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.031141,
+            0.013825,
+            0.008139,
+            0.015044,
+            0.030852,
+            0.048888,
+            0.061852,
+            0.064724,
+            0.056178,
+            0.039359,
+            0.020384,
+            0.006612,
+            0.003435,
+            0.011861,
+            0.029209,
+            0.048712,
+            0.063198,
+            0.066752
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 0,
+          "predicted": 0,
+          "truth": 10,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "matched_distances_fraction_pitch": []
+        },
+        "f1_from_old_unbounded_scorer": 0.0,
+        "status": "LOW_CONFIDENCE"
+      },
+      "new": {
+        "score": {
+          "matches": 9,
+          "predicted": 18,
+          "truth": 10,
+          "precision": 0.5,
+          "recall": 0.9,
+          "f1": 0.642857,
+          "matched_distances_fraction_pitch": [
+            0.010705,
+            0.015943,
+            0.032938,
+            0.055655,
+            0.076528,
+            0.088314,
+            0.086643,
+            0.072205,
+            0.04952
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 9,
+          "predicted": 18,
+          "truth": 10,
+          "precision": 0.5,
+          "recall": 0.9,
+          "f1": 0.642857,
+          "matched_distances_fraction_pitch": [
+            0.010705,
+            0.015943,
+            0.032938,
+            0.055655,
+            0.076528,
+            0.088314,
+            0.086643,
+            0.072205,
+            0.04952
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.000835,
+            0.018375,
+            0.028327,
+            0.026844,
+            0.013932,
+            0.005585,
+            0.024976,
+            0.037315,
+            0.038797,
+            0.029422,
+            0.013282,
+            0.002155,
+            0.010539,
+            0.006954,
+            0.009056
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.06629,
+            0.039375,
+            0.020048,
+            0.012156,
+            0.015693,
+            0.025835,
+            0.035851,
+            0.038815,
+            0.030922,
+            0.012172,
+            0.013343,
+            0.038155,
+            0.055914,
+            0.061704,
+            0.055069
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.07404,
+            0.047125,
+            0.027798,
+            0.019906,
+            0.023443,
+            0.033585,
+            0.043601,
+            0.046565,
+            0.038672,
+            0.019922,
+            0.005593,
+            0.030405,
+            0.048164,
+            0.053954,
+            0.047319
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.04575,
+            0.064153,
+            0.070426,
+            0.062745,
+            0.044908,
+            0.022992,
+            0.005451,
+            0.001532,
+            0.005032,
+            0.022729,
+            0.04662,
+            0.068117,
+            0.081152,
+            0.082222,
+            0.072561
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.105969,
+            0.113434,
+            0.10877,
+            0.090151,
+            0.061377,
+            0.028523,
+            4.4e-05,
+            0.017875,
+            0.02225,
+            0.01549,
+            0.002536,
+            0.008023,
+            0.010121,
+            0.000253,
+            0.020345
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.113719,
+            0.121184,
+            0.11652,
+            0.097901,
+            0.069127,
+            0.036273,
+            0.007794,
+            0.010125,
+            0.0145,
+            0.00774,
+            0.005214,
+            0.015773,
+            0.017871,
+            0.008003,
+            0.012595
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 11,
+          "predicted": 15,
+          "truth": 11,
+          "precision": 0.733333,
+          "recall": 1.0,
+          "f1": 0.846154,
+          "matched_distances_fraction_pitch": [
+            0.056068,
+            0.059947,
+            0.0517,
+            0.034286,
+            0.014194,
+            0.002229,
+            0.008782,
+            0.003789,
+            0.009958,
+            0.0268,
+            0.039269
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.8462,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 10,
+          "predicted": 14,
+          "truth": 11,
+          "precision": 0.714286,
+          "recall": 0.909091,
+          "f1": 0.8,
+          "matched_distances_fraction_pitch": [
+            0.002791,
+            0.003919,
+            0.00412,
+            0.014838,
+            0.021885,
+            0.019064,
+            0.004696,
+            0.018427,
+            0.044644,
+            0.066488
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.08,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 10,
+          "predicted": 14,
+          "truth": 11,
+          "precision": 0.714286,
+          "recall": 0.909091,
+          "f1": 0.8,
+          "matched_distances_fraction_pitch": [
+            0.00499,
+            0.003863,
+            0.011901,
+            0.022619,
+            0.029667,
+            0.026845,
+            0.012477,
+            0.010646,
+            0.036863,
+            0.058707
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.025564,
+            0.042406,
+            0.055861,
+            0.059872,
+            0.052205,
+            0.035493,
+            0.014985,
+            0.001434,
+            0.008287,
+            0.003407,
+            0.011162,
+            0.029698,
+            0.044147,
+            0.048728,
+            0.039779
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.03825,
+            0.01542,
+            0.002034,
+            0.000327,
+            0.007663,
+            0.018797,
+            0.025841,
+            0.023319,
+            0.009063,
+            0.014881,
+            0.042792,
+            0.066616,
+            0.080572,
+            0.080997
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.030469,
+            0.007639,
+            0.005747,
+            0.007455,
+            0.000118,
+            0.011015,
+            0.018059,
+            0.015537,
+            0.001282,
+            0.022662,
+            0.050573,
+            0.074397,
+            0.088353,
+            0.088779
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.026061,
+            0.050369,
+            0.065674,
+            0.067858,
+            0.056792,
+            0.037271,
+            0.01663,
+            0.002885,
+            0.000979,
+            0.011622,
+            0.031139,
+            0.053212,
+            0.070333,
+            0.077186,
+            0.072595
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.049498,
+            0.065994,
+            0.073486,
+            0.067858,
+            0.048979,
+            0.021646,
+            0.006808,
+            0.028365,
+            0.038083,
+            0.035253,
+            0.023548,
+            0.009288,
+            2e-05,
+            0.000939,
+            0.013343
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.033873,
+            0.050369,
+            0.057861,
+            0.052233,
+            0.033354,
+            0.006021,
+            0.022433,
+            0.04399,
+            0.053708,
+            0.050878,
+            0.039173,
+            0.024913,
+            0.015605,
+            0.016564,
+            0.028968
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.02778,
+            0.038553,
+            0.039756,
+            0.028821,
+            0.009014,
+            0.013474,
+            0.031587,
+            0.038839,
+            0.033147,
+            0.016305,
+            0.004912,
+            0.023033,
+            0.03113,
+            0.025275
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.057626,
+            0.035916,
+            0.023775,
+            0.023773,
+            0.032642,
+            0.044193,
+            0.051368,
+            0.047683,
+            0.031053,
+            0.003274,
+            0.028881,
+            0.057939,
+            0.076974,
+            0.082056
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.049845,
+            0.028135,
+            0.015994,
+            0.015992,
+            0.024861,
+            0.036411,
+            0.043587,
+            0.039902,
+            0.023272,
+            0.004508,
+            0.036662,
+            0.065721,
+            0.084755,
+            0.089838
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.027079,
+            0.014319,
+            0.001824,
+            0.013585,
+            0.015491,
+            0.005127,
+            0.015244,
+            0.039559,
+            0.06035,
+            0.070574,
+            0.067401,
+            0.052245,
+            0.030909,
+            0.010801
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.08386,
+            0.061725,
+            0.036207,
+            0.015071,
+            0.003791,
+            0.004779,
+            0.015775,
+            0.030716,
+            0.042132,
+            0.04298,
+            0.030432,
+            0.005901,
+            0.02481,
+            0.054292
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.08386,
+            0.061725,
+            0.036207,
+            0.015071,
+            0.003791,
+            0.004779,
+            0.015775,
+            0.030716,
+            0.042132,
+            0.04298,
+            0.030432,
+            0.005901,
+            0.02481,
+            0.054292
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 1,
+          "predicted": 15,
+          "truth": 2,
+          "precision": 0.066667,
+          "recall": 0.5,
+          "f1": 0.117647,
+          "matched_distances_fraction_pitch": [
+            0.027568
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 1,
+          "predicted": 15,
+          "truth": 2,
+          "precision": 0.066667,
+          "recall": 0.5,
+          "f1": 0.117647,
+          "matched_distances_fraction_pitch": [
+            0.03812
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 1,
+          "predicted": 15,
+          "truth": 2,
+          "precision": 0.066667,
+          "recall": 0.5,
+          "f1": 0.117647,
+          "matched_distances_fraction_pitch": [
+            0.03812
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.0,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "independent_15deg",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.025758,
+            0.040208,
+            0.047191,
+            0.042036,
+            0.025617,
+            0.00214,
+            0.021173,
+            0.036774,
+            0.039657,
+            0.029293,
+            0.009643,
+            0.012155,
+            0.027712,
+            0.03159
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.03043,
+            0.006604,
+            0.009753,
+            0.013973,
+            0.006929,
+            0.007172,
+            0.021111,
+            0.027336,
+            0.020844,
+            0.001106,
+            0.02792,
+            0.059092,
+            0.084024,
+            0.097277
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.03043,
+            0.006604,
+            0.009753,
+            0.013973,
+            0.006929,
+            0.007172,
+            0.021111,
+            0.027336,
+            0.020844,
+            0.001106,
+            0.02792,
+            0.059092,
+            0.084024,
+            0.097277
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            9.8e-05,
+            0.005713,
+            0.020703,
+            0.037831,
+            0.049706,
+            0.050612,
+            0.039343,
+            0.019033,
+            0.004079,
+            0.022859,
+            0.031914,
+            0.029445,
+            0.018572,
+            0.005203,
+            0.003476
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.070215,
+            0.056787,
+            0.033985,
+            0.009044,
+            0.010643,
+            0.019362,
+            0.015905,
+            0.003408,
+            0.011891,
+            0.022859,
+            0.024101,
+            0.01382,
+            0.004866,
+            0.026047,
+            0.042539
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.078027,
+            0.0646,
+            0.041797,
+            0.016857,
+            0.002831,
+            0.011549,
+            0.008093,
+            0.004404,
+            0.019704,
+            0.030671,
+            0.031914,
+            0.021632,
+            0.002947,
+            0.018234,
+            0.034726
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.057635,
+            0.0559,
+            0.041049,
+            0.015596,
+            0.013274,
+            0.03782,
+            0.051443,
+            0.051628,
+            0.039948,
+            0.022659,
+            0.00696,
+            0.000334,
+            0.005524,
+            0.022301,
+            0.045594
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.026635,
+            0.03115,
+            0.022549,
+            0.003346,
+            0.019274,
+            0.03757,
+            0.044943,
+            0.038878,
+            0.020948,
+            0.002591,
+            0.02454,
+            0.037416,
+            0.038476,
+            0.027949,
+            0.010906
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.011104,
+            0.015619,
+            0.007018,
+            0.012185,
+            0.034805,
+            0.053102,
+            0.060474,
+            0.054409,
+            0.03648,
+            0.012941,
+            0.009009,
+            0.021885,
+            0.022945,
+            0.012418,
+            0.004625
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.015191,
+            0.005122,
+            0.016371,
+            0.016098,
+            0.005531,
+            0.010015,
+            0.023072,
+            0.027101,
+            0.017971,
+            0.002987,
+            0.031116,
+            0.058964,
+            0.078389,
+            0.084994,
+            0.078238
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.015215,
+            0.029279,
+            0.034277,
+            0.027754,
+            0.010938,
+            0.010858,
+            0.030166,
+            0.040444,
+            0.037565,
+            0.022857,
+            0.000978,
+            0.02062,
+            0.033795,
+            0.034151,
+            0.021144
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.015215,
+            0.029279,
+            0.034277,
+            0.027754,
+            0.010938,
+            0.010858,
+            0.030166,
+            0.040444,
+            0.037565,
+            0.022857,
+            0.000978,
+            0.02062,
+            0.033795,
+            0.034151,
+            0.021144
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.053908,
+            0.042413,
+            0.022503,
+            0.000387,
+            0.01673,
+            0.023234,
+            0.017907,
+            0.003454,
+            0.014359,
+            0.027217,
+            0.029114,
+            0.017589,
+            0.005176,
+            0.033282,
+            0.058857
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.004595,
+            0.002212,
+            0.017435,
+            0.034863,
+            0.047292,
+            0.049109,
+            0.039095,
+            0.019954,
+            0.002547,
+            0.020092,
+            0.026676,
+            0.019839,
+            0.001762,
+            0.021657,
+            0.042544
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.004595,
+            0.002212,
+            0.017435,
+            0.034863,
+            0.047292,
+            0.049109,
+            0.039095,
+            0.019954,
+            0.002547,
+            0.020092,
+            0.026676,
+            0.019839,
+            0.001762,
+            0.021657,
+            0.042544
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.015806,
+            0.031193,
+            0.034132,
+            0.026113,
+            0.011565,
+            0.00175,
+            0.007256,
+            0.001846,
+            0.014224,
+            0.035907,
+            0.056329,
+            0.068995,
+            0.070035,
+            0.060217,
+            0.044128
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.046806,
+            0.055943,
+            0.052632,
+            0.038363,
+            0.017565,
+            0.002,
+            0.013756,
+            0.014596,
+            0.004776,
+            0.010657,
+            0.024829,
+            0.031245,
+            0.026035,
+            0.009967,
+            0.012372
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.031275,
+            0.040411,
+            0.037101,
+            0.022831,
+            0.002034,
+            0.017531,
+            0.029287,
+            0.030128,
+            0.020307,
+            0.004874,
+            0.009298,
+            0.015713,
+            0.010504,
+            0.005564,
+            0.027903
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.014602,
+            0.032439,
+            0.041826,
+            0.038149,
+            0.021304,
+            0.004304,
+            0.031446,
+            0.052629,
+            0.062286,
+            0.059156,
+            0.0467,
+            0.031686,
+            0.021065,
+            0.020137,
+            0.031102
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.032273,
+            0.006623,
+            0.010576,
+            0.014712,
+            0.005679,
+            0.012117,
+            0.031446,
+            0.044817,
+            0.046661,
+            0.035719,
+            0.01545,
+            0.007377,
+            0.02581,
+            0.034551,
+            0.031398
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.047898,
+            0.022248,
+            0.005049,
+            0.000913,
+            0.009946,
+            0.027742,
+            0.047071,
+            0.060442,
+            0.062286,
+            0.051344,
+            0.031075,
+            0.008248,
+            0.010185,
+            0.018926,
+            0.015773
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.025537,
+            0.020722,
+            0.004983,
+            0.015804,
+            0.033417,
+            0.041027,
+            0.034901,
+            0.016881,
+            0.008608,
+            0.032915,
+            0.049681,
+            0.054551,
+            0.047583,
+            0.033158,
+            0.018344
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.081006,
+            0.069941,
+            0.047951,
+            0.020915,
+            0.002948,
+            0.016808,
+            0.016932,
+            0.005162,
+            0.014077,
+            0.032134,
+            0.042649,
+            0.04127,
+            0.028051,
+            0.007377,
+            0.013687
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.081006,
+            0.069941,
+            0.047951,
+            0.020915,
+            0.002948,
+            0.016808,
+            0.016932,
+            0.005162,
+            0.014077,
+            0.032134,
+            0.042649,
+            0.04127,
+            0.028051,
+            0.007377,
+            0.013687
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.0158,
+            0.020179,
+            0.013238,
+            0.00494,
+            0.028738,
+            0.051264,
+            0.065679,
+            0.067331,
+            0.056434,
+            0.037426,
+            0.017505,
+            0.005092,
+            0.004831,
+            0.01835,
+            0.041877
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.00945,
+            0.000384,
+            0.002637,
+            0.016128,
+            0.035238,
+            0.053077,
+            0.062804,
+            0.059769,
+            0.044184,
+            0.020488,
+            0.00412,
+            0.021221,
+            0.026169,
+            0.017338,
+            0.001502
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.00945,
+            0.000384,
+            0.002637,
+            0.016128,
+            0.035238,
+            0.053077,
+            0.062804,
+            0.059769,
+            0.044184,
+            0.020488,
+            0.00412,
+            0.021221,
+            0.026169,
+            0.017338,
+            0.001502
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.008275,
+            0.015053,
+            0.033397,
+            0.041733,
+            0.038817,
+            0.027153,
+            0.013006,
+            0.003866,
+            0.004726,
+            0.017476,
+            0.038609,
+            0.062604,
+            0.081285,
+            0.089358,
+            0.08462
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.021756,
+            0.038835,
+            0.050928,
+            0.053014,
+            0.043848,
+            0.025934,
+            0.005537,
+            0.009853,
+            0.015242,
+            0.008743,
+            0.00614,
+            0.023885,
+            0.036316,
+            0.03814,
+            0.027152
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.021756,
+            0.038835,
+            0.050928,
+            0.053014,
+            0.043848,
+            0.025934,
+            0.005537,
+            0.009853,
+            0.015242,
+            0.008743,
+            0.00614,
+            0.023885,
+            0.036316,
+            0.03814,
+            0.027152
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.015117,
+            0.024166,
+            0.036332,
+            0.044476,
+            0.042908,
+            0.029782,
+            0.008179,
+            0.016217,
+            0.036524,
+            0.046712,
+            0.044961,
+            0.034051,
+            0.019983,
+            0.009937,
+            0.010266
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.010258,
+            0.003447,
+            0.020301,
+            0.033163,
+            0.036283,
+            0.027814,
+            0.010897,
+            0.00878,
+            0.024399,
+            0.029899,
+            0.023461,
+            0.007863,
+            0.010892,
+            0.025625,
+            0.029984
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.01804,
+            0.004303,
+            0.012551,
+            0.025382,
+            0.028501,
+            0.020064,
+            0.003147,
+            0.016561,
+            0.03218,
+            0.037681,
+            0.031242,
+            0.015645,
+            0.00311,
+            0.017844,
+            0.022202
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.031166,
+            0.013675,
+            0.008821,
+            0.014661,
+            0.026526,
+            0.037106,
+            0.039603,
+            0.030808,
+            0.011683,
+            0.012749,
+            0.03525,
+            0.049567,
+            0.052526,
+            0.044519,
+            0.030484
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.009615,
+            0.022418,
+            0.022585,
+            0.012058,
+            0.004495,
+            0.019762,
+            0.026947,
+            0.02284,
+            0.008402,
+            0.011342,
+            0.029156,
+            0.038786,
+            0.037057,
+            0.024363,
+            0.00564
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.001865,
+            0.014668,
+            0.014835,
+            0.004308,
+            0.012245,
+            0.027512,
+            0.034697,
+            0.03059,
+            0.016152,
+            0.003592,
+            0.021406,
+            0.031036,
+            0.029307,
+            0.016613,
+            0.00211
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.092813,
+            0.064257,
+            0.035467,
+            0.013578,
+            0.003975,
+            0.006304,
+            0.016546,
+            0.028366,
+            0.03427,
+            0.029844,
+            0.014171,
+            0.008748,
+            0.03283,
+            0.050971,
+            0.058372
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.0225,
+            0.001757,
+            0.01922,
+            0.033297,
+            0.035087,
+            0.024946,
+            0.006892,
+            0.012741,
+            0.026458,
+            0.029844,
+            0.021983,
+            0.006877,
+            0.009393,
+            0.019721,
+            0.01931
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.0225,
+            0.001757,
+            0.01922,
+            0.033297,
+            0.035087,
+            0.024946,
+            0.006892,
+            0.012741,
+            0.026458,
+            0.029844,
+            0.021983,
+            0.006877,
+            0.009393,
+            0.019721,
+            0.01931
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.064511,
+            0.053574,
+            0.031019,
+            0.002529,
+            0.024067,
+            0.04146,
+            0.046288,
+            0.039429,
+            0.02565,
+            0.012459,
+            0.006431,
+            0.011404,
+            0.027349,
+            0.04957,
+            0.071141
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.039418,
+            0.033168,
+            0.015301,
+            0.008503,
+            0.030411,
+            0.043116,
+            0.043257,
+            0.03171,
+            0.013244,
+            0.004635,
+            0.015351,
+            0.015065,
+            0.003807,
+            0.013726,
+            0.03061
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 17,
+          "precision": 1.0,
+          "recall": 0.882353,
+          "f1": 0.9375,
+          "matched_distances_fraction_pitch": [
+            0.039418,
+            0.033168,
+            0.015301,
+            0.008503,
+            0.030411,
+            0.043116,
+            0.043257,
+            0.03171,
+            0.013244,
+            0.004635,
+            0.015351,
+            0.015065,
+            0.003807,
+            0.013726,
+            0.03061
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9375,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.035324,
+            0.05161,
+            0.058829,
+            0.053203,
+            0.034405,
+            0.007163,
+            0.021014,
+            0.042591,
+            0.052132,
+            0.049408,
+            0.037521,
+            0.023128,
+            0.014004,
+            0.014601,
+            0.026816
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.023855,
+            0.043267,
+            0.05361,
+            0.051109,
+            0.035436,
+            0.011319,
+            0.013732,
+            0.032185,
+            0.0386,
+            0.032752,
+            0.01774,
+            0.000221,
+            0.012027,
+            0.014555,
+            0.005465
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.016074,
+            0.035485,
+            0.045829,
+            0.043328,
+            0.027655,
+            0.003538,
+            0.021514,
+            0.039966,
+            0.046382,
+            0.040533,
+            0.025521,
+            0.008003,
+            0.004246,
+            0.006774,
+            0.002316
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.001895,
+            0.005812,
+            0.022075,
+            0.039907,
+            0.051163,
+            0.050529,
+            0.036418,
+            0.011617,
+            0.017212,
+            0.041917,
+            0.056563,
+            0.058291,
+            0.048951,
+            0.034859,
+            0.022986
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.01327,
+            0.002438,
+            0.01695,
+            0.037907,
+            0.052288,
+            0.054779,
+            0.043793,
+            0.022117,
+            0.003587,
+            0.025167,
+            0.036688,
+            0.035291,
+            0.022826,
+            0.005609,
+            0.009389
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.01327,
+            0.002438,
+            0.01695,
+            0.037907,
+            0.052288,
+            0.054779,
+            0.043793,
+            0.022117,
+            0.003587,
+            0.025167,
+            0.036688,
+            0.035291,
+            0.022826,
+            0.005609,
+            0.009389
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.029447,
+            0.042174,
+            0.041924,
+            0.03002,
+            0.011146,
+            0.006838,
+            0.016641,
+            0.013245,
+            0.003033,
+            0.028691,
+            0.055589,
+            0.07682,
+            0.086331,
+            0.082956,
+            0.069717
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.015959,
+            0.000107,
+            0.002768,
+            0.006011,
+            0.02176,
+            0.03662,
+            0.043297,
+            0.036776,
+            0.017374,
+            0.01141,
+            0.041432,
+            0.065789,
+            0.078425,
+            0.078175,
+            0.068061
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.015959,
+            0.000107,
+            0.002768,
+            0.006011,
+            0.02176,
+            0.03662,
+            0.043297,
+            0.036776,
+            0.017374,
+            0.01141,
+            0.041432,
+            0.065789,
+            0.078425,
+            0.078175,
+            0.068061
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.048165,
+            0.025309,
+            0.001819,
+            0.015011,
+            0.019824,
+            0.011709,
+            0.005228,
+            0.024416,
+            0.037972,
+            0.040206,
+            0.028319,
+            0.00545,
+            0.02184,
+            0.046232,
+            0.060507
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.021415,
+            0.001684,
+            0.018681,
+            0.032386,
+            0.034074,
+            0.022834,
+            0.002772,
+            0.019541,
+            0.036222,
+            0.041581,
+            0.032819,
+            0.013075,
+            0.01109,
+            0.032357,
+            0.043507
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.013634,
+            0.006097,
+            0.026462,
+            0.040168,
+            0.041855,
+            0.030615,
+            0.010554,
+            0.01176,
+            0.028441,
+            0.0338,
+            0.025038,
+            0.005294,
+            0.018871,
+            0.040138,
+            0.051288
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "plain_25_25_inverted",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.059438,
+            0.059467,
+            0.047854,
+            0.026824,
+            0.002683,
+            0.017324,
+            0.026912,
+            0.023558,
+            0.009482,
+            0.009974,
+            0.026637,
+            0.03326,
+            0.026686,
+            0.007545,
+            0.019115
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.073907,
+            0.07081,
+            0.056073,
+            0.031917,
+            0.004651,
+            0.01848,
+            0.031193,
+            0.030964,
+            0.020014,
+            0.003683,
+            0.009856,
+            0.013354,
+            0.003654,
+            0.018612,
+            0.048397
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.066125,
+            0.063029,
+            0.048291,
+            0.024136,
+            0.00313,
+            0.026261,
+            0.038975,
+            0.038745,
+            0.027795,
+            0.011464,
+            0.002075,
+            0.005573,
+            0.004127,
+            0.026393,
+            0.056178
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.051314,
+            0.057915,
+            0.069727,
+            0.078871,
+            0.078976,
+            0.065453,
+            0.039415,
+            0.005506,
+            0.028109,
+            0.05381,
+            0.067092,
+            0.066791,
+            0.057526,
+            0.046003,
+            0.040123,
+            0.045229,
+            0.062486,
+            0.088758
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.056011,
+            0.036285,
+            0.011348,
+            0.010921,
+            0.024151,
+            0.023753,
+            0.01084,
+            0.009944,
+            0.030434,
+            0.04301,
+            0.043167,
+            0.029741,
+            0.007351,
+            0.017297,
+            0.036302,
+            0.044321,
+            0.040189,
+            0.027042
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.056011,
+            0.036285,
+            0.011348,
+            0.010921,
+            0.024151,
+            0.023753,
+            0.01084,
+            0.009944,
+            0.030434,
+            0.04301,
+            0.043167,
+            0.029741,
+            0.007351,
+            0.017297,
+            0.036302,
+            0.044321,
+            0.040189,
+            0.027042
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.071629,
+            0.081296,
+            0.084487,
+            0.076078,
+            0.053997,
+            0.021728,
+            0.014252,
+            0.045831,
+            0.066471,
+            0.073574,
+            0.06869,
+            0.058181,
+            0.049541,
+            0.049599,
+            0.062108,
+            0.085968,
+            0.116607,
+            0.146169
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.036034,
+            0.011366,
+            0.006825,
+            0.013416,
+            0.006335,
+            0.010935,
+            0.031915,
+            0.048494,
+            0.054133,
+            0.046237,
+            0.026352,
+            0.000843,
+            0.022796,
+            0.037739,
+            0.040229,
+            0.031369,
+            0.01573,
+            0.001169
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.045371,
+            0.020704,
+            0.002513,
+            0.004078,
+            0.003003,
+            0.020272,
+            0.041252,
+            0.057831,
+            0.063471,
+            0.055574,
+            0.03569,
+            0.010181,
+            0.013459,
+            0.028401,
+            0.030892,
+            0.022032,
+            0.006393,
+            0.008169
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.127122,
+            0.110159,
+            0.080758,
+            0.044513,
+            0.008657,
+            0.018979,
+            0.033438,
+            0.034827,
+            0.027171,
+            0.01727,
+            0.013456,
+            0.020924,
+            0.041188,
+            0.070892,
+            0.103667,
+            0.132664,
+            0.151552,
+            0.159177
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.037909,
+            0.034071,
+            0.017795,
+            0.005324,
+            0.028056,
+            0.042567,
+            0.043901,
+            0.032165,
+            0.011384,
+            0.011642,
+            0.028582,
+            0.034238,
+            0.027099,
+            0.010521,
+            0.00913,
+            0.025002,
+            0.030764,
+            0.025265
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.037909,
+            0.034071,
+            0.017795,
+            0.005324,
+            0.028056,
+            0.042567,
+            0.043901,
+            0.032165,
+            0.011384,
+            0.011642,
+            0.028582,
+            0.034238,
+            0.027099,
+            0.010521,
+            0.00913,
+            0.025002,
+            0.030764,
+            0.025265
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.100732,
+            0.078956,
+            0.048417,
+            0.015997,
+            0.010415,
+            0.025936,
+            0.029428,
+            0.023833,
+            0.015668,
+            0.012458,
+            0.01906,
+            0.037346,
+            0.063958,
+            0.092884,
+            0.116588,
+            0.130051,
+            0.13115,
+            0.123228
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.028395,
+            0.017868,
+            0.001421,
+            0.02259,
+            0.037753,
+            0.042024,
+            0.034265,
+            0.01742,
+            0.001995,
+            0.016454,
+            0.021102,
+            0.014067,
+            0.001295,
+            0.018971,
+            0.031425,
+            0.033638,
+            0.023488,
+            0.004315
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.01902,
+            0.008493,
+            0.010796,
+            0.031965,
+            0.047128,
+            0.051399,
+            0.04364,
+            0.026795,
+            0.00738,
+            0.007079,
+            0.011727,
+            0.004692,
+            0.01067,
+            0.028346,
+            0.0408,
+            0.043013,
+            0.032863,
+            0.01369
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.103779,
+            0.069248,
+            0.037382,
+            0.014117,
+            0.003624,
+            0.004041,
+            0.010835,
+            0.01649,
+            0.014559,
+            0.001331,
+            0.022488,
+            0.051985,
+            0.080354,
+            0.100872,
+            0.110085,
+            0.10766,
+            0.099232,
+            0.092002
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.012996,
+            0.032527,
+            0.049393,
+            0.057658,
+            0.053151,
+            0.037734,
+            0.01594,
+            0.004715,
+            0.017784,
+            0.019556,
+            0.010737,
+            0.00376,
+            0.017129,
+            0.022647,
+            0.01686,
+            0.000565,
+            0.023993,
+            0.046223
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.022334,
+            0.041864,
+            0.058731,
+            0.066995,
+            0.062488,
+            0.047071,
+            0.025277,
+            0.004623,
+            0.008447,
+            0.010218,
+            0.0014,
+            0.013097,
+            0.026466,
+            0.031984,
+            0.026198,
+            0.008773,
+            0.014656,
+            0.036885
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.063946,
+            0.045353,
+            0.039916,
+            0.043439,
+            0.049619,
+            0.051555,
+            0.043379,
+            0.023886,
+            0.004669,
+            0.035882,
+            0.062576,
+            0.079178,
+            0.084122,
+            0.080145,
+            0.073476,
+            0.071015,
+            0.079456,
+            0.101122
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.050729,
+            0.054322,
+            0.044759,
+            0.026236,
+            0.005056,
+            0.01188,
+            0.018704,
+            0.014211,
+            0.000656,
+            0.015557,
+            0.027251,
+            0.028853,
+            0.018797,
+            0.00018,
+            0.021849,
+            0.03931,
+            0.045869,
+            0.039203
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.050729,
+            0.054322,
+            0.044759,
+            0.026236,
+            0.005056,
+            0.01188,
+            0.018704,
+            0.014211,
+            0.000656,
+            0.015557,
+            0.027251,
+            0.028853,
+            0.018797,
+            0.00018,
+            0.021849,
+            0.03931,
+            0.045869,
+            0.039203
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.05135,
+            0.049063,
+            0.054638,
+            0.062093,
+            0.064219,
+            0.056156,
+            0.035631,
+            0.005977,
+            0.026297,
+            0.053311,
+            0.069435,
+            0.071624,
+            0.063297,
+            0.049711,
+            0.039534,
+            0.039238,
+            0.052881,
+            0.078566
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.0649,
+            0.054062,
+            0.035362,
+            0.014782,
+            0.000469,
+            0.005531,
+            0.001869,
+            0.018398,
+            0.037547,
+            0.051436,
+            0.054435,
+            0.043499,
+            0.022047,
+            0.004664,
+            0.027966,
+            0.041387,
+            0.040869,
+            0.028309
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.074237,
+            0.063399,
+            0.044699,
+            0.024119,
+            0.008869,
+            0.003806,
+            0.011207,
+            0.027735,
+            0.046885,
+            0.060774,
+            0.063772,
+            0.052836,
+            0.031385,
+            0.004673,
+            0.018629,
+            0.032049,
+            0.031532,
+            0.018972
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.046646,
+            0.052721,
+            0.056871,
+            0.053119,
+            0.037232,
+            0.010863,
+            0.021621,
+            0.052604,
+            0.075728,
+            0.085659,
+            0.083255,
+            0.072898,
+            0.061512,
+            0.057603,
+            0.065818,
+            0.088025,
+            0.12034,
+            0.155752
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.069716,
+            0.048641,
+            0.029491,
+            0.018244,
+            0.01913,
+            0.0305,
+            0.047984,
+            0.063966,
+            0.07209,
+            0.067022,
+            0.049617,
+            0.02426,
+            0.002126,
+            0.021035,
+            0.027819,
+            0.020613,
+            0.003297,
+            0.017114
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 19,
+          "precision": 1.0,
+          "recall": 0.947368,
+          "f1": 0.972973,
+          "matched_distances_fraction_pitch": [
+            0.060379,
+            0.039304,
+            0.020154,
+            0.008906,
+            0.009793,
+            0.021162,
+            0.038646,
+            0.054629,
+            0.062753,
+            0.057684,
+            0.04028,
+            0.014923,
+            0.011463,
+            0.030372,
+            0.037157,
+            0.02995,
+            0.012635,
+            0.007777
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.973,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 26.666666666666668,
+      "old": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.090548,
+            0.08013,
+            0.058036,
+            0.027294,
+            0.006523,
+            0.035096,
+            0.052769,
+            0.057373,
+            0.051399,
+            0.04138,
+            0.034724,
+            0.038641,
+            0.055734,
+            0.085686,
+            0.122341,
+            0.157935,
+            0.185318,
+            0.200266
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.005077,
+            0.000495,
+            0.007589,
+            0.023331,
+            0.042148,
+            0.055721,
+            0.058394,
+            0.047998,
+            0.027024,
+            0.002005,
+            0.019651,
+            0.030734,
+            0.028641,
+            0.013689,
+            0.007966,
+            0.02856,
+            0.040943,
+            0.040891
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 18,
+          "predicted": 18,
+          "truth": 20,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.947368,
+          "matched_distances_fraction_pitch": [
+            0.014377,
+            0.009795,
+            0.016889,
+            0.032631,
+            0.051448,
+            0.065021,
+            0.067694,
+            0.057298,
+            0.036324,
+            0.011305,
+            0.010351,
+            0.021434,
+            0.019341,
+            0.004389,
+            0.017266,
+            0.03786,
+            0.050243,
+            0.050191
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9474,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.013378,
+            0.025724,
+            0.041162,
+            0.052526,
+            0.054114,
+            0.044073,
+            0.025493,
+            0.004077,
+            0.013269,
+            0.020502,
+            0.015796,
+            0.001939,
+            0.015047,
+            0.027966,
+            0.030443
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.027253,
+            0.036474,
+            0.048787,
+            0.057026,
+            0.055489,
+            0.042323,
+            0.020618,
+            0.003923,
+            0.024394,
+            0.034752,
+            0.033171,
+            0.022439,
+            0.008578,
+            0.001216,
+            0.000568
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.019472,
+            0.028693,
+            0.041006,
+            0.049245,
+            0.047708,
+            0.034541,
+            0.012836,
+            0.011704,
+            0.032176,
+            0.042533,
+            0.040952,
+            0.03022,
+            0.016359,
+            0.006566,
+            0.007213
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.014677,
+            0.029562,
+            0.031812,
+            0.023376,
+            0.008934,
+            0.004183,
+            0.00916,
+            0.002783,
+            0.013984,
+            0.036104,
+            0.056323,
+            0.068373,
+            0.069074,
+            0.058821,
+            0.042561
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.018271,
+            0.030031,
+            0.029156,
+            0.017594,
+            2.7e-05,
+            0.016214,
+            0.024316,
+            0.021064,
+            0.007423,
+            0.011573,
+            0.028667,
+            0.037591,
+            0.035167,
+            0.021789,
+            0.002404
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.002677,
+            0.014437,
+            0.013562,
+            0.002001,
+            0.015566,
+            0.031808,
+            0.03991,
+            0.036658,
+            0.023016,
+            0.004021,
+            0.013073,
+            0.021998,
+            0.019574,
+            0.006196,
+            0.013189
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.066439,
+            0.03986,
+            0.013015,
+            0.00695,
+            0.014639,
+            0.01041,
+            0.001712,
+            0.01538,
+            0.023085,
+            0.020405,
+            0.006423,
+            0.01485,
+            0.037321,
+            0.053877,
+            0.05971
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.025939,
+            0.004048,
+            0.01811,
+            0.033388,
+            0.036389,
+            0.027472,
+            0.010663,
+            0.007692,
+            0.020085,
+            0.022092,
+            0.012798,
+            0.003787,
+            0.021571,
+            0.033439,
+            0.034585
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.018157,
+            0.003733,
+            0.025891,
+            0.041169,
+            0.044171,
+            0.035254,
+            0.018444,
+            8.9e-05,
+            0.012303,
+            0.014311,
+            0.005017,
+            0.011568,
+            0.029352,
+            0.041221,
+            0.042366
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.080615,
+            0.07134,
+            0.050393,
+            0.023468,
+            0.001594,
+            0.01747,
+            0.020799,
+            0.012458,
+            0.002776,
+            0.017385,
+            0.024787,
+            0.021135,
+            0.006463,
+            0.014526,
+            0.0349
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.095209,
+            0.082808,
+            0.058737,
+            0.028687,
+            0.0005,
+            0.018502,
+            0.024955,
+            0.019739,
+            0.00763,
+            0.003854,
+            0.008131,
+            0.001354,
+            0.016443,
+            0.040558,
+            0.064056
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.10299,
+            0.09059,
+            0.066518,
+            0.036468,
+            0.008281,
+            0.01072,
+            0.017174,
+            0.011958,
+            0.000151,
+            0.011635,
+            0.015912,
+            0.009135,
+            0.008662,
+            0.032776,
+            0.056275
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.042218,
+            0.059589,
+            0.067846,
+            0.06321,
+            0.045355,
+            0.019014,
+            0.008296,
+            0.029036,
+            0.03776,
+            0.034247,
+            0.0216,
+            0.00648,
+            0.00333,
+            0.003378,
+            0.008237
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.064468,
+            0.078714,
+            0.083846,
+            0.076085,
+            0.055105,
+            0.025639,
+            0.004796,
+            0.028661,
+            0.04051,
+            0.040122,
+            0.0306,
+            0.018605,
+            0.01192,
+            0.014997,
+            0.029737
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.064468,
+            0.078714,
+            0.083846,
+            0.076085,
+            0.055105,
+            0.025639,
+            0.004796,
+            0.028661,
+            0.04051,
+            0.040122,
+            0.0306,
+            0.018605,
+            0.01192,
+            0.014997,
+            0.029737
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.003138,
+            0.005027,
+            0.021716,
+            0.039939,
+            0.051546,
+            0.051225,
+            0.037386,
+            0.012821,
+            0.015805,
+            0.040341,
+            0.054851,
+            0.056476,
+            0.047066,
+            0.03294,
+            0.021071
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.011174,
+            0.016215,
+            0.029779,
+            0.044876,
+            0.053359,
+            0.049912,
+            0.032949,
+            0.005259,
+            0.026493,
+            0.054154,
+            0.071788,
+            0.076538,
+            0.070253,
+            0.059252,
+            0.050509
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.003393,
+            0.008433,
+            0.021998,
+            0.037095,
+            0.045577,
+            0.042131,
+            0.025168,
+            0.002523,
+            0.034274,
+            0.061935,
+            0.079569,
+            0.084319,
+            0.078034,
+            0.067034,
+            0.05829
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.004034,
+            0.016663,
+            0.016348,
+            0.004415,
+            0.014452,
+            0.032393,
+            0.042116,
+            0.038606,
+            0.022182,
+            0.003655,
+            0.030765,
+            0.052244,
+            0.062039,
+            0.058988
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.026841,
+            0.011087,
+            0.008277,
+            0.017085,
+            0.032827,
+            0.047643,
+            0.054241,
+            0.047606,
+            0.028057,
+            0.000905,
+            0.03114,
+            0.055744,
+            0.068664,
+            0.068738
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.026841,
+            0.011087,
+            0.008277,
+            0.017085,
+            0.032827,
+            0.047643,
+            0.054241,
+            0.047606,
+            0.028057,
+            0.000905,
+            0.03114,
+            0.055744,
+            0.068664,
+            0.068738
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 14,
+          "predicted": 14,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.933333,
+          "matched_distances_fraction_pitch": [
+            0.036945,
+            0.013586,
+            0.01044,
+            0.027845,
+            0.033274,
+            0.025817,
+            0.009583,
+            0.008865,
+            0.02165,
+            0.023085,
+            0.010375,
+            0.01334,
+            0.041508,
+            0.066813
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9333,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.026257,
+            0.006024,
+            0.014878,
+            0.029158,
+            0.031461,
+            0.02088,
+            0.00152,
+            0.020053,
+            0.035963,
+            0.040522,
+            0.030938,
+            0.010348,
+            0.014695,
+            0.036876,
+            0.048981
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.018476,
+            0.001758,
+            0.022659,
+            0.036939,
+            0.039242,
+            0.028661,
+            0.009302,
+            0.012272,
+            0.028182,
+            0.032741,
+            0.023156,
+            0.002566,
+            0.022476,
+            0.044657,
+            0.056762
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    },
+    {
+      "case": "same_fixture_0deg",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "true_pitch_px_evaluation_only": 32.0,
+      "old": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.043895,
+            0.042797,
+            0.030035,
+            0.007831,
+            0.017512,
+            0.03876,
+            0.049636,
+            0.047623,
+            0.034938,
+            0.016917,
+            0.001722,
+            0.003411,
+            0.004668,
+            0.025328,
+            0.053531
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "new": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.074208,
+            0.069984,
+            0.054097,
+            0.028769,
+            0.000301,
+            0.024072,
+            0.038074,
+            0.039185,
+            0.029625,
+            0.01473,
+            0.00266,
+            0.000651,
+            0.011856,
+            0.03564,
+            0.066968
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      },
+      "midline": {
+        "score": {
+          "matches": 15,
+          "predicted": 15,
+          "truth": 16,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "f1": 0.967742,
+          "matched_distances_fraction_pitch": [
+            0.081989,
+            0.077765,
+            0.061878,
+            0.03655,
+            0.008082,
+            0.016291,
+            0.030293,
+            0.031404,
+            0.021844,
+            0.006948,
+            0.005121,
+            0.00713,
+            0.004074,
+            0.027859,
+            0.059187
+          ],
+          "scoring": "MAX_CARDINALITY_WITHIN_PHYSICAL_GATE"
+        },
+        "f1_from_old_unbounded_scorer": 0.9677,
+        "status": "PASS"
+      }
+    }
+  ],
+  "limits": [
+    "STILL_ONLY_LOCAL_CROSS_SECTION_MATCHING",
+    "NO_VISIBILITY_OR_YARN_ID_CONTINUITY_F1",
+    "TRUE_SYNTHETIC_GEOMETRY_ONLY_AFTER_FROZEN_INFERENCE",
+    "NOT_REAL_R_T_VALIDATION"
+  ]
+}
