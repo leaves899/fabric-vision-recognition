@@ -1,0 +1,59 @@
+name: shibie physical synthetic R-T benchmark
+on:
+  push:
+    branches:
+      - experiment/shibie-synthetic-physics-20261020
+    paths:
+      - .github/workflows/shibie-synthetic-physics.yml
+      - shibie/synthetic_physical_fabric.py
+      - shibie/evaluate_synthetic_physical.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  synthetic-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install engine dependencies
+        run: python -m pip install -r shibie/requirements.txt
+      - name: Check original engine tests
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Simulate paired fabric photos and evaluate centerlines one-to-one
+        run: python shibie/evaluate_synthetic_physical.py
+      - name: Report
+        if: always()
+        shell: bash
+        run: |
+          if test -f experiments/shibie-synthetic-physics-20261020/report.md; then
+            cat experiments/shibie-synthetic-physics-20261020/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Archive all labeled R/T image pairs and results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shibie-synthetic-pairs-physical-labels-and-overlays
+          path: experiments/shibie-synthetic-physics-20261020/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Keep metrics and visual overview on the experiment branch
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/shibie-synthetic-physics-20261020/report.md experiments/shibie-synthetic-physics-20261020/synthetic_metrics.csv experiments/shibie-synthetic-physics-20261020/synthetic_metrics.json experiments/shibie-synthetic-physics-20261020/review_sheet.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "test(shibie): record labeled synthetic paired benchmark [skip ci]"
+            for attempt in 1 2 3; do
+              git fetch origin experiment/shibie-synthetic-physics-20261020
+              git rebase origin/experiment/shibie-synthetic-physics-20261020 || exit 1
+              if git push origin HEAD:experiment/shibie-synthetic-physics-20261020; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
