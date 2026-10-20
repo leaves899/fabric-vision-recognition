@@ -48,6 +48,21 @@ SCENES = (
     Scene("plain_soft_low_contrast", weave="plain", warp_pitch_px=16.5, weft_pitch_px=19., blur_sigma=1.3, sensor_noise=8., contrast=.66, reflection_shift_px=1.6, seed=56),
 )
 
+# Seeds and nuisances are frozen before evaluating the optical phase candidate.
+# These three images are held out from the six diagnostic scenarios above.
+HOLDOUT_SCENES = (
+    Scene("holdout_plain_33deg", weave="plain", warp_pitch_px=18.5,
+          weft_pitch_px=29.0, rotation_deg=33., center_jitter_px=1.15,
+          diagonal_decoy=8., sensor_noise=6., seed=7051),
+    Scene("holdout_twill_3_1_soft", weave="twill_3_1", warp_pitch_px=22.,
+          weft_pitch_px=28.5, rotation_deg=-11., wave_px=1.9, blur_sigma=1.25,
+          diagonal_decoy=16., sensor_noise=7., seed=7052),
+    Scene("holdout_satin_5_2", weave="satin_5_2", warp_pitch_px=21.,
+          weft_pitch_px=30.5, rotation_deg=14., contrast=.7,
+          uneven_illumination=.3, center_jitter_px=1.1, seed=7053),
+)
+
+
 
 def _is_warp_up(warp_id: int, weft_id: int, weave: str) -> bool:
     if weave == "plain":
