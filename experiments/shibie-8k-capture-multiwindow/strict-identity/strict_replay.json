@@ -1,0 +1,812 @@
+{
+  "reconstructed_gt_validated": "ALL_OLD_RELAXED_WINDOW_SCORES_MATCH",
+  "overview": [
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "relaxed_f1": 0.4474,
+      "strict_f1": 0.3829,
+      "strict_rejected_count": 11,
+      "potential_switch_events": 11
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "relaxed_f1": 0.5446,
+      "strict_f1": 0.2688,
+      "strict_rejected_count": 44,
+      "potential_switch_events": 44
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "relaxed_f1": 0.8232,
+      "strict_f1": 0.6276,
+      "strict_rejected_count": 28,
+      "potential_switch_events": 28
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "relaxed_f1": 0.7698,
+      "strict_f1": 0.304,
+      "strict_rejected_count": 80,
+      "potential_switch_events": 80
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "relaxed_f1": 0.9673,
+      "strict_f1": 0.9673,
+      "strict_rejected_count": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "relaxed_f1": 0.9605,
+      "strict_f1": 0.9605,
+      "strict_rejected_count": 0,
+      "potential_switch_events": 0
+    }
+  ],
+  "windows": [
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "relaxed_id_f1": 0.0,
+      "strict_id_f1": 0.0,
+      "same_id_match_count": 0,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "relaxed_id_f1": 0.8276,
+      "strict_id_f1": 0.4828,
+      "same_id_match_count": 7,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 6,
+      "potential_switch_events": 6
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "relaxed_id_f1": 0.9444,
+      "strict_id_f1": 0.7778,
+      "same_id_match_count": 14,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 3,
+      "potential_switch_events": 3
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "relaxed_id_f1": 0.0,
+      "strict_id_f1": 0.0,
+      "same_id_match_count": 0,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "relaxed_id_f1": 0.0,
+      "strict_id_f1": 0.0,
+      "same_id_match_count": 0,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "relaxed_id_f1": 0.8276,
+      "strict_id_f1": 0.4828,
+      "same_id_match_count": 7,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 6,
+      "potential_switch_events": 6
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "relaxed_id_f1": 0.0,
+      "strict_id_f1": 0.0,
+      "same_id_match_count": 0,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "relaxed_id_f1": 0.0,
+      "strict_id_f1": 0.0,
+      "same_id_match_count": 0,
+      "ground_truth_yarn_count": 17,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "relaxed_id_f1": 0.0,
+      "strict_id_f1": 0.0,
+      "same_id_match_count": 0,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "relaxed_id_f1": 0.6897,
+      "strict_id_f1": 0.4828,
+      "same_id_match_count": 7,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 6,
+      "potential_switch_events": 6
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "relaxed_id_f1": 0.8571,
+      "strict_id_f1": 0.6857,
+      "same_id_match_count": 12,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 4,
+      "potential_switch_events": 4
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "relaxed_id_f1": 0.9286,
+      "strict_id_f1": 0.4286,
+      "same_id_match_count": 6,
+      "ground_truth_yarn_count": 15,
+      "strict_rejected": 7,
+      "potential_switch_events": 7
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "relaxed_id_f1": 0.7333,
+      "strict_id_f1": 0.7333,
+      "same_id_match_count": 11,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "relaxed_id_f1": 0.0,
+      "strict_id_f1": 0.0,
+      "same_id_match_count": 0,
+      "ground_truth_yarn_count": 15,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "relaxed_id_f1": 0.8485,
+      "strict_id_f1": 0.6061,
+      "same_id_match_count": 10,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 4,
+      "potential_switch_events": 4
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "relaxed_id_f1": 0.8276,
+      "strict_id_f1": 0.2759,
+      "same_id_match_count": 4,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 9,
+      "potential_switch_events": 9
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "relaxed_id_f1": 0.6429,
+      "strict_id_f1": 0.6429,
+      "same_id_match_count": 9,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "relaxed_id_f1": 0.8,
+      "strict_id_f1": 0.2667,
+      "same_id_match_count": 4,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 10,
+      "potential_switch_events": 10
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "relaxed_id_f1": 0.8485,
+      "strict_id_f1": 0.6667,
+      "same_id_match_count": 11,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 3,
+      "potential_switch_events": 3
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "relaxed_id_f1": 0.8276,
+      "strict_id_f1": 0.6207,
+      "same_id_match_count": 9,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 4,
+      "potential_switch_events": 4
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "relaxed_id_f1": 0.8387,
+      "strict_id_f1": 0.5806,
+      "same_id_match_count": 9,
+      "ground_truth_yarn_count": 18,
+      "strict_rejected": 4,
+      "potential_switch_events": 4
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "relaxed_id_f1": 0.8276,
+      "strict_id_f1": 0.4828,
+      "same_id_match_count": 7,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 6,
+      "potential_switch_events": 6
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "relaxed_id_f1": 0.7333,
+      "strict_id_f1": 0.5333,
+      "same_id_match_count": 8,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 3,
+      "potential_switch_events": 3
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "relaxed_id_f1": 0.7333,
+      "strict_id_f1": 0.3333,
+      "same_id_match_count": 5,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 9,
+      "potential_switch_events": 9
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "relaxed_id_f1": 0.8125,
+      "strict_id_f1": 0.5625,
+      "same_id_match_count": 9,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 4,
+      "potential_switch_events": 4
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "relaxed_id_f1": 0.6897,
+      "strict_id_f1": 0.2069,
+      "same_id_match_count": 3,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 10,
+      "potential_switch_events": 10
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "relaxed_id_f1": 0.9091,
+      "strict_id_f1": 0.7879,
+      "same_id_match_count": 13,
+      "ground_truth_yarn_count": 18,
+      "strict_rejected": 2,
+      "potential_switch_events": 2
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "relaxed_id_f1": 0.6897,
+      "strict_id_f1": 0.2759,
+      "same_id_match_count": 4,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 9,
+      "potential_switch_events": 9
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "relaxed_id_f1": 0.8387,
+      "strict_id_f1": 0.6452,
+      "same_id_match_count": 10,
+      "ground_truth_yarn_count": 18,
+      "strict_rejected": 3,
+      "potential_switch_events": 3
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "relaxed_id_f1": 0.7742,
+      "strict_id_f1": 0.129,
+      "same_id_match_count": 2,
+      "ground_truth_yarn_count": 17,
+      "strict_rejected": 12,
+      "potential_switch_events": 12
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "relaxed_id_f1": 0.7333,
+      "strict_id_f1": 0.6,
+      "same_id_match_count": 9,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 2,
+      "potential_switch_events": 2
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "relaxed_id_f1": 0.7586,
+      "strict_id_f1": 0.2759,
+      "same_id_match_count": 4,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 9,
+      "potential_switch_events": 9
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "relaxed_id_f1": 0.8824,
+      "strict_id_f1": 0.6471,
+      "same_id_match_count": 11,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 4,
+      "potential_switch_events": 4
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "relaxed_id_f1": 0.8276,
+      "strict_id_f1": 0.3448,
+      "same_id_match_count": 5,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 8,
+      "potential_switch_events": 8
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "relaxed_id_f1": 0.8125,
+      "strict_id_f1": 0.625,
+      "same_id_match_count": 10,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 3,
+      "potential_switch_events": 3
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "relaxed_id_f1": 0.8,
+      "strict_id_f1": 0.0667,
+      "same_id_match_count": 1,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 13,
+      "potential_switch_events": 13
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        0,
+        0
+      ],
+      "relaxed_id_f1": 0.973,
+      "strict_id_f1": 0.973,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        0,
+        0
+      ],
+      "relaxed_id_f1": 0.9677,
+      "strict_id_f1": 0.9677,
+      "same_id_match_count": 15,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        0,
+        1
+      ],
+      "relaxed_id_f1": 0.973,
+      "strict_id_f1": 0.973,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        0,
+        1
+      ],
+      "relaxed_id_f1": 0.9677,
+      "strict_id_f1": 0.9677,
+      "same_id_match_count": 15,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        0,
+        2
+      ],
+      "relaxed_id_f1": 0.973,
+      "strict_id_f1": 0.973,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        0,
+        2
+      ],
+      "relaxed_id_f1": 0.9677,
+      "strict_id_f1": 0.9677,
+      "same_id_match_count": 15,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        1,
+        0
+      ],
+      "relaxed_id_f1": 0.973,
+      "strict_id_f1": 0.973,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        1,
+        0
+      ],
+      "relaxed_id_f1": 0.9333,
+      "strict_id_f1": 0.9333,
+      "same_id_match_count": 14,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        1,
+        1
+      ],
+      "relaxed_id_f1": 0.973,
+      "strict_id_f1": 0.973,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        1,
+        1
+      ],
+      "relaxed_id_f1": 0.9677,
+      "strict_id_f1": 0.9677,
+      "same_id_match_count": 15,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        1,
+        2
+      ],
+      "relaxed_id_f1": 0.9474,
+      "strict_id_f1": 0.9474,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 20,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        1,
+        2
+      ],
+      "relaxed_id_f1": 0.9677,
+      "strict_id_f1": 0.9677,
+      "same_id_match_count": 15,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        2,
+        0
+      ],
+      "relaxed_id_f1": 0.973,
+      "strict_id_f1": 0.973,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        2,
+        0
+      ],
+      "relaxed_id_f1": 0.9677,
+      "strict_id_f1": 0.9677,
+      "same_id_match_count": 15,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        2,
+        1
+      ],
+      "relaxed_id_f1": 0.973,
+      "strict_id_f1": 0.973,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 19,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        2,
+        1
+      ],
+      "relaxed_id_f1": 0.9677,
+      "strict_id_f1": 0.9677,
+      "same_id_match_count": 15,
+      "ground_truth_yarn_count": 16,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "warp",
+      "grid": [
+        2,
+        2
+      ],
+      "relaxed_id_f1": 0.9474,
+      "strict_id_f1": 0.9474,
+      "same_id_match_count": 18,
+      "ground_truth_yarn_count": 20,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    },
+    {
+      "case": "medium_twill21_wave014_fresh",
+      "family": "weft",
+      "grid": [
+        2,
+        2
+      ],
+      "relaxed_id_f1": 0.9375,
+      "strict_id_f1": 0.9375,
+      "same_id_match_count": 15,
+      "ground_truth_yarn_count": 17,
+      "strict_rejected": 0,
+      "potential_switch_events": 0
+    }
+  ],
+  "scope": "SYNTHETIC_TILE_ID_ONLY"
+}
