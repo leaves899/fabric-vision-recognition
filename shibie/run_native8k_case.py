@@ -17,12 +17,14 @@ def main():
     p.add_argument("--polarity",required=True,choices=["dark","bright","mixed"])
     p.add_argument("--rotation",required=True,type=float)
     p.add_argument("--seed",required=True,type=int)
+    p.add_argument("--fabric-rotation",type=float,default=0.)
     a=p.parse_args()
     out=Path("experiments/shibie-8k-capture-multiwindow/stress")/a.case
     scene=CaptureScene(name=a.case,weave=a.weave,warp_density_cm=a.warp,
          weft_density_cm=a.weft,contrast_polarity=a.polarity,rotation_deg=a.rotation,
          diagonal_decoy=14. if "twill" in a.weave else 8.,
-         noise_sigma=5. if a.polarity=="mixed" else 3.,seed=a.seed)
+         noise_sigma=5. if a.polarity=="mixed" else 3.,seed=a.seed,
+         fabric_rotation_deg=a.fabric_rotation)
     t=time.perf_counter()
     synth=generate(scene,out)
     baseline=run_native8k_smoke.run(out)
@@ -31,7 +33,7 @@ def main():
     m=json.loads((out/"multiwindow_metrics.json").read_text(encoding="utf-8"))
     report={
         "case":a.case,"split":"STRESS_FROZEN", "source_shape":[scene.height,scene.width],
-        "weave_label_only_for_scoring":a.weave,"optical_model":a.polarity,
+        "weave_label_only_for_scoring":a.weave,"optical_model":a.polarity,"fabric_rotation_relative_to_frame_deg":a.fabric_rotation,
         "density_truth_cm":{"warp":a.warp,"weft":a.weft},
         "input_hash":synth["sha256"],
         "width_p10_px":synth["physical_width_p10_px"],
