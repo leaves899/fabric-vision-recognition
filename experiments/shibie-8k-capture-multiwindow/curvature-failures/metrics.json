@@ -1,0 +1,180 @@
+{
+  "source_workflow_run": 39444581720,
+  "scenarios": {
+    "holdout_twill21_wave028": {
+      "case": "holdout_twill21_wave028",
+      "native_pair_shape": [
+        6000,
+        8000
+      ],
+      "image_only_rotation": -10,
+      "axis_status": "CANDIDATE_ONLY",
+      "same_input_sha256": {
+        "reflection": "09619026f9b3a1260dd2d840e88f9ba8dc897631725b8afeb934361f561923a3",
+        "transmission": "751625653fbe97b9981023dcfd0d216e66ee976f4e9955ef8b0ca38ca07b2764"
+      },
+      "truth_weave_FOR_AUDIT_ONLY": "twill_2_1",
+      "truth_rotation_FOR_AUDIT_ONLY": -13,
+      "physical_width_P10_passes_capture_gate": true,
+      "summary": {
+        "warp": {
+          "old": {
+            "mean_id_trajectory_f1": 0.0513,
+            "total_matches": 9,
+            "total_proposed_tracks": 20,
+            "potential_gt_id_switches": 15,
+            "passing_windows": 1
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.2518,
+            "total_matches": 44,
+            "total_proposed_tracks": 99,
+            "potential_gt_id_switches": 75,
+            "passing_windows": 5
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.2496,
+            "total_matches": 44,
+            "total_proposed_tracks": 101,
+            "potential_gt_id_switches": 79,
+            "passing_windows": 5
+          }
+        },
+        "weft": {
+          "old": {
+            "mean_id_trajectory_f1": 0.3791,
+            "total_matches": 50,
+            "total_proposed_tracks": 81,
+            "potential_gt_id_switches": 59,
+            "passing_windows": 6
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.3915,
+            "total_matches": 51,
+            "total_proposed_tracks": 79,
+            "potential_gt_id_switches": 60,
+            "passing_windows": 6
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.3916,
+            "total_matches": 52,
+            "total_proposed_tracks": 82,
+            "potential_gt_id_switches": 67,
+            "passing_windows": 6
+          }
+        }
+      },
+      "image_only_inference_seconds": 3.24,
+      "total_eval_runtime_seconds": 5.65,
+      "peak_process_rss_mib": 586.9,
+      "scope": [
+        "LOCAL_TILE_ID_LINK_NOT_GLOBAL_50MM_ID",
+        "CURVE_CONTINUITY_SCORING_NOT_OCCLUSION_PIXEL_VISIBILITY",
+        "EXPERIMENTAL_SYNTHETIC_NOT_REAL_CAMERA_R_T"
+      ]
+    },
+    "holdout_twill31_wave028": {
+      "case": "holdout_twill31_wave028",
+      "native_pair_shape": [
+        6000,
+        8000
+      ],
+      "image_only_rotation": 22,
+      "axis_status": "CANDIDATE_ONLY",
+      "same_input_sha256": {
+        "reflection": "ef14f49bdec6bb35841c0e144caee5282ce755f0a4de899bfdfc274a5f3a951a",
+        "transmission": "ee953e0df0eac5d2f237103a795c23ed063485424a0759584e3ba59a600e8fd8"
+      },
+      "truth_weave_FOR_AUDIT_ONLY": "twill_3_1",
+      "truth_rotation_FOR_AUDIT_ONLY": 18,
+      "physical_width_P10_passes_capture_gate": true,
+      "summary": {
+        "warp": {
+          "old": {
+            "mean_id_trajectory_f1": 0.3066,
+            "total_matches": 53,
+            "total_proposed_tracks": 119,
+            "potential_gt_id_switches": 93,
+            "passing_windows": 6
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.4824,
+            "total_matches": 84,
+            "total_proposed_tracks": 179,
+            "potential_gt_id_switches": 136,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.4822,
+            "total_matches": 85,
+            "total_proposed_tracks": 183,
+            "potential_gt_id_switches": 137,
+            "passing_windows": 9
+          }
+        },
+        "weft": {
+          "old": {
+            "mean_id_trajectory_f1": 0.5555,
+            "total_matches": 74,
+            "total_proposed_tracks": 108,
+            "potential_gt_id_switches": 87,
+            "passing_windows": 8
+          },
+          "float": {
+            "mean_id_trajectory_f1": 0.6116,
+            "total_matches": 81,
+            "total_proposed_tracks": 120,
+            "potential_gt_id_switches": 95,
+            "passing_windows": 9
+          },
+          "seven": {
+            "mean_id_trajectory_f1": 0.6247,
+            "total_matches": 84,
+            "total_proposed_tracks": 124,
+            "potential_gt_id_switches": 100,
+            "passing_windows": 9
+          }
+        }
+      },
+      "image_only_inference_seconds": 3.34,
+      "total_eval_runtime_seconds": 7.2,
+      "peak_process_rss_mib": 586.9,
+      "scope": [
+        "LOCAL_TILE_ID_LINK_NOT_GLOBAL_50MM_ID",
+        "CURVE_CONTINUITY_SCORING_NOT_OCCLUSION_PIXEL_VISIBILITY",
+        "EXPERIMENTAL_SYNTHETIC_NOT_REAL_CAMERA_R_T"
+      ]
+    }
+  },
+  "failed_conditions": [
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "warp",
+      "reason": "ID_F1_BELOW_TARGET",
+      "f1": 0.2496,
+      "possible_identity_switches": 79
+    },
+    {
+      "case": "holdout_twill21_wave028",
+      "family": "weft",
+      "reason": "ID_F1_BELOW_TARGET",
+      "f1": 0.3916,
+      "possible_identity_switches": 67
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "warp",
+      "reason": "ID_F1_BELOW_TARGET",
+      "f1": 0.4822,
+      "possible_identity_switches": 137
+    },
+    {
+      "case": "holdout_twill31_wave028",
+      "family": "weft",
+      "reason": "ID_F1_BELOW_TARGET",
+      "f1": 0.6247,
+      "possible_identity_switches": 100
+    }
+  ],
+  "scope": "NATIVE8K_SYNTHETIC_LOCAL_IDENTITY_ONLY"
+}
