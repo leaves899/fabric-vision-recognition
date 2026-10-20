@@ -1,0 +1,53 @@
+name: shibie confirmed physical yarn spacing audit
+on:
+  push:
+    branches:
+      - experiment/shibie-review-20261020
+    paths:
+      - .github/workflows/shibie-pitch-audit.yml
+      - shibie/evaluate_labeled_yarn_pitch.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Compute physical yarn intervals and blind-inference pitch error
+        run: python shibie/evaluate_labeled_yarn_pitch.py
+      - name: Publish report
+        if: always()
+        shell: bash
+        run: |
+          if test -f experiments/shibie-acf-holdout-20261020/manual_pitch_audit.md; then
+            cat experiments/shibie-acf-holdout-20261020/manual_pitch_audit.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shibie-physical-yarn-label-audit
+          path: experiments/shibie-acf-holdout-20261020/manual_pitch_audit.*
+          if-no-files-found: warn
+      - name: Save audit without altering model parameters
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add experiments/shibie-acf-holdout-20261020/manual_pitch_audit.*
+          if ! git diff --cached --quiet; then
+            git commit -m "test(shibie): record confirmed physical yarn pitch error audit [skip ci]"
+            for attempt in 1 2 3; do
+              git fetch origin experiment/shibie-review-20261020
+              git rebase origin/experiment/shibie-review-20261020 || exit 1
+              if git push origin HEAD:experiment/shibie-review-20261020; then exit 0; fi
+              sleep 3
+            done
+            exit 1
+          fi
