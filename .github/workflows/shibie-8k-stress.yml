@@ -1,0 +1,41 @@
+name: shibie native 8k frozen stress matrix
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-stress.yml
+      - shibie/run_native8k_case.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {name: plain_25_25_inverted, weave: plain, warp: 25, weft: 25, polarity: bright, rotation: -12, seed: 802602}
+          - {name: twill21_40_30, weave: twill_2_1, warp: 40, weft: 30, polarity: dark, rotation: 14, seed: 802603}
+          - {name: twill31_50_40_mixed, weave: twill_3_1, warp: 50, weft: 40, polarity: mixed, rotation: -17, seed: 802604}
+          - {name: satin_60_50_inverted, weave: satin_5_2, warp: 60, weft: 50, polarity: bright, rotation: 22, seed: 802605}
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Native image, original engine and independent new module
+        run: /usr/bin/time -v python -u shibie/run_native8k_case.py --case ${{ matrix.name }} --weave ${{ matrix.weave }} --warp ${{ matrix.warp }} --weft ${{ matrix.weft }} --polarity ${{ matrix.polarity }} --rotation ${{ matrix.rotation }} --seed ${{ matrix.seed }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shibie-8k-stress-${{ matrix.name }}
+          path: experiments/shibie-8k-capture-multiwindow/stress/${{ matrix.name }}/
+          if-no-files-found: warn
+          retention-days: 14
