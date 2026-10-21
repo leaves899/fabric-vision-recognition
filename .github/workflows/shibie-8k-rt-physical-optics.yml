@@ -1,0 +1,51 @@
+name: Native 8k physical RT optics and frozen detector AB
+on:
+  push:
+    branches: [experiment/shibie-8k-rt-physical-optics]
+    paths:
+      - shibie/synthetic_rt_heightfield_8k.py
+      - shibie/compare_physical_rt_8k.py
+      - shibie/audit_heightfield_rt.py
+      - .github/workflows/shibie-8k-rt-physical-optics.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-rt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {case: plain_dev, weave: plain, seed: 38121, material: development}
+          - {case: twill21_dev, weave: twill_2_1, seed: 38121, material: development}
+          - {case: twill31_dev, weave: twill_3_1, seed: 38121, material: development}
+          - {case: plain_material_holdout, weave: plain, seed: 91837, material: holdout}
+          - {case: twill31_material_holdout, weave: twill_3_1, seed: 72091, material: holdout}
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: Regression and known legacy physics failures
+        run: cd shibie && python -m unittest discover -s tests -v
+      - name: Native render, independent renderer audit, blind detector AB
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="experiments/shibie-8k-rt-physical-optics/native/${{ matrix.case }}"
+          mkdir -p "$out"
+          /usr/bin/time -v -o "$out/render_time.txt" python -u shibie/synthetic_rt_heightfield_8k.py --out "$out" --weave '${{ matrix.weave }}' --seed '${{ matrix.seed }}' --material '${{ matrix.material }}' | tee "$out/render.log"
+          python shibie/audit_heightfield_rt.py --images "$out" --reference datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg > "$out/optics_audit.log"
+          /usr/bin/time -v -o "$out/AB_time.txt" python -u shibie/compare_physical_rt_8k.py --case '${{ matrix.case }}' --images "$out" --out "$out/AB" | tee "$out/AB.log"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: physical-rt-8k-${{ matrix.case }}
+          path: experiments/shibie-8k-rt-physical-optics/native/${{ matrix.case }}/
+          retention-days: 30
+          if-no-files-found: error
