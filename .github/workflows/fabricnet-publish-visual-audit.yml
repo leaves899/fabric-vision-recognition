@@ -1,0 +1,68 @@
+name: Publish selected FabricNET algorithm overlays for independent visual audit
+on:
+  push:
+    branches:
+      - experiment/fabricnet-latest-130-validation-20261021
+    paths:
+      - .github/workflows/fabricnet-publish-visual-audit.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish-visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download frozen complete V0.6.3 130-image output
+        uses: actions/download-artifact@v4
+        with:
+          name: fabricnet-latest-130-replay-and-visual-evidence
+          run-id: 39538548889
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: leaves899/fabric-vision-recognition
+          path: /tmp/base-evidence
+      - name: Download frozen optimizer output
+        uses: actions/download-artifact@v4
+        with:
+          name: fabricnet-latest-optimizer-130-candidate-traces
+          run-id: 39539100618
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: leaves899/fabric-vision-recognition
+          path: /tmp/optimizer-evidence
+      - name: Publish representative successes and failures (no algorithm changes)
+        shell: bash
+        run: |
+          set -euo pipefail
+          folder="experiments/fabricnet-latest-130-validation/visual_samples"
+          mkdir -p "$folder"
+          for img in W022 W038 W056 W067 W089 W111; do
+            cp "/tmp/base-evidence/overlays/$img.jpg" "$folder/V063_$img.jpg"
+            cp "/tmp/optimizer-evidence/overlays/FLOAT_LOCAL/$img.jpg" "$folder/FLOAT_$img.jpg"
+            cp "/tmp/optimizer-evidence/overlays/SHARED_SEVEN/$img.jpg" "$folder/SHARED_$img.jpg"
+            cp "/tmp/optimizer-evidence/overlays/INDIVIDUAL_SEVEN/$img.jpg" "$folder/INDIVIDUAL_$img.jpg"
+          done
+          cp /tmp/base-evidence/summary.json "$folder/V063_summary.json"
+          cp /tmp/optimizer-evidence/summary.json "$folder/OPTIMIZER_summary.json"
+          cat > "$folder/README.md" <<'EOF'
+          # FabricNET visual inspection subset (6 of 130 images)
+          
+          Each JPEG is a crop/overlay of the actual recorded algorithm output, never a truth-guided grid.
+          V063 is direct original engine; FLOAT, SHARED and INDIVIDUAL are isolated 8k
+          experimental modules run on duplicated single microscope images. No genuine R/T exists.
+          Actual 130-image output, all failure cases and truth comparisons remain in
+          Actions runs 39538548889 and 39539100618 respectively.
+          Original FabricNET photographs: Mine Seçkin, Ahmet Çağdaş Seçkin,
+          Pinar Demircioglu, Ismail Bogrekci (2023), Sustainability 15(21), 15197.
+          Source https://huggingface.co/datasets/acseckin/FabricNET
+          FabricNET dataset license CC BY-NC-SA 4.0; this visual review subset is
+          research-only and remains subject to dataset attribution/license conditions.
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$folder"
+          git commit -m 'test(fabricnet): publish 24 genuine algorithm overlays from two completed 130-photo runs'
+          git push origin HEAD:refs/heads/experiment/fabricnet-latest-130-validation-20261021
