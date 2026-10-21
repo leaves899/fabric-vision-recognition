@@ -1,0 +1,122 @@
+name: FabricNET 130 photos factorial horizontal-detector ablation
+on:
+  push:
+    branches: [experiment/fabricnet-horizontal-ablation-20261021]
+    paths: [.github/workflows/fabricnet-horizontal-ablation.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  each-arm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        arm:
+          - DIRECT_FIXED
+          - ROT90_FIXED
+          - DIRECT_ESTIMATED
+          - ROT90_ESTIMATED
+          - ROT270_FIXED
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing Shibie engine and experiment deps
+        run: |
+          python -m pip install -r shibie/requirements.txt
+          python -m pip install pandas requests
+          python -m py_compile shibie/fabricnet_horizontal_ablation_20261021.py shibie/summarize_fabricnet_horizontal_ablation_20261021.py
+      - name: Actually run 130 images for this single predeclared arm
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="experiments/fabricnet-horizontal-ablation/runs/${{ matrix.arm }}"
+          mkdir -p "$out"
+          /usr/bin/time -v -o "$out/resource_usage.txt" \
+            python -u shibie/fabricnet_horizontal_ablation_20261021.py \
+              --arm ${{ matrix.arm }} --out "$out" \
+            2>&1 | tee "$out/run.log"
+          test -s "$out/summary.json"
+          test -s "$out/metrics.csv"
+          test "$(find "$out/overlays" -name 'W*.jpg' -type f | wc -l)" -eq 130
+      - name: Preserve every raw centerline overlay and actual measurements
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fabricnet-ablate-${{ matrix.arm }}
+          path: experiments/fabricnet-horizontal-ablation/runs/${{ matrix.arm }}/
+          retention-days: 30
+          if-no-files-found: warn
+  paired-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: each-arm
+    if: success()
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: true}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install analysis libraries
+        run: |
+          python -m pip install -r shibie/requirements.txt
+          python -m pip install scipy
+      - name: Download all frozen five-arm source test artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fabricnet-ablate-*
+          path: /tmp/fabricnet-ablation-runs
+          merge-multiple: false
+      - name: Run strict paired tests and create real-overlaid four-arm visual audits
+        shell: bash
+        run: |
+          set -euo pipefail
+          output=experiments/fabricnet-horizontal-ablation/analysis
+          mkdir -p "$output"
+          /usr/bin/time -v -o "$output/resource_usage.txt" \
+            python -u shibie/summarize_fabricnet_horizontal_ablation_20261021.py \
+              --inputs /tmp/fabricnet-ablation-runs \
+              --out "$output" \
+              --baseline experiments/fabricnet-latest-130-validation/visual_samples/V063_all130_metrics.csv \
+              --previous-h2 experiments/fabricnet-horizontal-twice/measurements/horizontal_twice_metrics.csv \
+            2>&1 | tee "$output/analysis.log"
+          test -s "$output/REPORT.md"
+          test -s "$output/summary.json"
+          test -s "$output/ablation_per_image.csv"
+          test "$(find "$output/visual_4arm" -name '*_4arm.jpg' -type f | wc -l)" -eq 20
+      - name: Upload analysis and 20 four-way physical-centerline visual panels
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fabricnet-horizontal-ablation-all-arm-comparisons
+          path: experiments/fabricnet-horizontal-ablation/analysis/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Publish verified real outcomes to dedicated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          output=experiments/fabricnet-horizontal-ablation/analysis
+          dir=experiments/fabricnet-horizontal-ablation/arm_metrics
+          mkdir -p "$dir"
+          for arm in DIRECT_FIXED ROT90_FIXED DIRECT_ESTIMATED ROT90_ESTIMATED ROT270_FIXED; do
+            test -s "/tmp/fabricnet-ablation-runs/fabricnet-ablate-$arm/metrics.csv"
+            test -s "/tmp/fabricnet-ablation-runs/fabricnet-ablate-$arm/summary.json"
+            cp "/tmp/fabricnet-ablation-runs/fabricnet-ablate-$arm/metrics.csv" "$dir/$arm.csv"
+            cp "/tmp/fabricnet-ablation-runs/fabricnet-ablate-$arm/summary.json" "$dir/$arm.json"
+          done
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$output" "$dir"
+          git commit -m 'test(fabricnet): publish 130-photo controlled horizontal ablation statistics and visual comparisons'
+          git push origin HEAD:refs/heads/experiment/fabricnet-horizontal-ablation-20261021
