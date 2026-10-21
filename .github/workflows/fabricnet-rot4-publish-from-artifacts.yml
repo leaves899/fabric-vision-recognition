@@ -1,0 +1,66 @@
+name: Publish successful FabricNET rot4 520-inference archived results
+on:
+  push:
+    branches: [experiment/fabricnet-rot4-invariance-20261021]
+    paths: [.github/workflows/fabricnet-rot4-publish-from-artifacts.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish-previously-computed-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: true}
+      - name: Recover already-completed four angle summary artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: fabricnet-rot4-comparison-complete
+          run-id: 39552664047
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: leaves899/fabric-vision-recognition
+          path: /tmp/recovered-rot4-report
+      - name: Recover all four frozen angle raw metrics
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fabricnet-rot-angle-*
+          run-id: 39552664047
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: leaves899/fabric-vision-recognition
+          path: /tmp/recovered-rot4-runs
+          merge-multiple: false
+      - name: Verify archive paths and publish report WITHOUT new inference
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Recovered summary structure:"
+          find /tmp/recovered-rot4-report -maxdepth 4 -type f | head -n 45
+          report="$(find /tmp/recovered-rot4-report -name rotation_summary.md -type f -print -quit)"
+          if [[ -z "$report" ]]; then echo "NO_SUMMARY_IN_VALIDATED_ARTIFACT";exit 1;fi
+          reportdir="$(dirname "$report")"
+          echo "Using report directory: $reportdir"
+          test -s "$reportdir/rotation_summary.json"
+          test -s "$reportdir/rotation_comparison.csv"
+          echo "Found four-way images:"
+          find "$reportdir" -name '*rot4.jpg' -type f | head -n 25
+          target=experiments/fabricnet-rotation-runs/combined
+          mkdir -p "$target"
+          cp -a "$reportdir/." "$target/"
+          find "$target" -type f | wc -l
+          test "$(find "$target" -type f -name '*rot4.jpg' | wc -l)" -ge 20
+          dir=experiments/fabricnet-rotation-runs/metrics_by_angle
+          mkdir -p "$dir"
+          for angle in 0 90 180 270; do
+            src="/tmp/recovered-rot4-runs/fabricnet-rot-angle-$angle"
+            test -s "$src/metrics.csv"
+            test -s "$src/summary.json"
+            cp "$src/metrics.csv" "$dir/metrics_$angle.csv"
+            cp "$src/summary.json" "$dir/summary_$angle.json"
+          done
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$target" "$dir"
+          git commit -m 'test(fabricnet): publish 520 actual quarter-turn predictions and 20 original-coordinate visual audits'
+          git push origin HEAD:refs/heads/experiment/fabricnet-rot4-invariance-20261021
