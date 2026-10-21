@@ -1,0 +1,47 @@
+name: FabricNET 130 blind replay latest Shibie
+on:
+  push:
+    branches:
+      - experiment/fabricnet-latest-130-validation-20261021
+    paths:
+      - .github/workflows/fabricnet-latest-130-validation.yml
+      - shibie/validate_fabricnet_latest_20261021.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fabricnet-130:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install original Shibie dependencies + spreadsheet and download
+        run: |
+          python -m pip install -r shibie/requirements.txt
+          python -m pip install pandas requests
+      - name: Download entire public dataset and run all 130 images with source engine
+        shell: bash
+        run: |
+          mkdir -p experiments/fabricnet-latest-130-validation
+          /usr/bin/time -v -o experiments/fabricnet-latest-130-validation/resource_usage.txt \
+            python -u shibie/validate_fabricnet_latest_20261021.py \
+              --output experiments/fabricnet-latest-130-validation \
+              --rev "$GITHUB_SHA" \
+            2>&1 | tee experiments/fabricnet-latest-130-validation/run.log
+          test -f experiments/fabricnet-latest-130-validation/summary.json
+          test "$(find experiments/fabricnet-latest-130-validation/overlays -type f -name 'W*.jpg' | wc -l)" = "130"
+      - name: Upload all 130 raw image overlays, error sheets, metrics, logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fabricnet-latest-130-replay-and-visual-evidence
+          path: experiments/fabricnet-latest-130-validation
+          retention-days: 30
+          if-no-files-found: warn
