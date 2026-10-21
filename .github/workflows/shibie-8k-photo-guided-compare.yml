@@ -1,0 +1,89 @@
+name: shibie V0.6.3 vs optimized same-photo flat8k A/B accuracy
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-photo-guided-compare.yml
+      - shibie/compare_flat_photo_8k_v063_vs_optimized.py
+      - shibie/publish_flat_photo_AB.py
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: shibie-photo-guided-flat-ab
+  cancel-in-progress: false
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [plain_photo_flat, twill31_photo_flat]
+    env:
+      GH_TOKEN: ${{ github.token }}
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r shibie/requirements.txt
+      - name: All regression tests (baseline untouched)
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Download exact previously rendered 8k R/T photos and GT (no regeneration)
+        run: |
+          gh run download 39523817497 \
+            --repo "$GITHUB_REPOSITORY" \
+            --name photo-guided-flat-${{ matrix.case }} \
+            --dir /tmp/exact-render
+      - name: Compare original V0.6.3 vs 4 optimized candidates with one unbiased scorer
+        shell: bash
+        run: |
+          set -euo pipefail
+          raw="$(find /tmp/exact-render -type f -name reflection_8000x6000.jpg -print -quit)"
+          test -n "$raw"
+          input_dir="$(dirname "$raw")"
+          test -f "$input_dir/transmission_8000x6000.jpg"
+          test -f "$input_dir/truth.json"
+          /usr/bin/time -v python -u shibie/compare_flat_photo_8k_v063_vs_optimized.py \
+            --case ${{ matrix.case }} \
+            --images "$input_dir" \
+            --out "experiments/shibie-8k-capture-multiwindow/flat-photo-accuracy/${{ matrix.case }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: flat8k-ab-${{ matrix.case }}
+          path: experiments/shibie-8k-capture-multiwindow/flat-photo-accuracy/${{ matrix.case }}/
+          retention-days: 30
+          if-no-files-found: warn
+  publish:
+    needs: compare
+    if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: flat8k-ab-*
+          path: /tmp/fair-flat8k-ab
+          merge-multiple: false
+      - name: Aggregate frozen 9-window F1 and density, visual overlays and misses
+        run: |
+          python shibie/publish_flat_photo_AB.py \
+            --artifacts /tmp/fair-flat8k-ab \
+            --out experiments/shibie-8k-capture-multiwindow/flat-photo-accuracy/verified
+          cat experiments/shibie-8k-capture-multiwindow/flat-photo-accuracy/verified/AB_REPORT.md
+      - name: Commit measured outputs to experiment branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/flat-photo-accuracy/verified/
+          git commit -m "test(shibie): publish original versus optimized same-photo flat8k accuracy [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
