@@ -198,7 +198,7 @@ def compare(case,image_dir,output_dir):
                 predictions["FLOAT_LOCAL"][fam]=(
                     floating.get("center_positions_px",[]) if floating.get("status")=="PASS" else [])
                 predictions["SHARED_SEVEN"][fam]=(
-                    _sample_tracks(shared["tracks"]) if shared.get("status")=="PASS" else [])
+                    _sample_tracks(shared["tracks"],fam) if shared.get("status")=="PASS" else [])
                 predictions["INDIVIDUAL_SEVEN"][fam]=(
                     _sample_tracks(individual["tracks"],fam) if individual.get("status")=="PASS" else [])
                 details[fam]={"raw_acf_pitch_candidates":guesses[:3],
