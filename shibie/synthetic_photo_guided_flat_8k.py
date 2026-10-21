@@ -21,7 +21,7 @@ import numpy as np
 from synthetic_capture_8k import CaptureScene, generate, hash_file
 
 
-DEFAULT_REFERENCE=Path(
+DEFAULT_REFERENCE=(Path(__file__).resolve().parent.parent /
     "datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg"
 )
 
