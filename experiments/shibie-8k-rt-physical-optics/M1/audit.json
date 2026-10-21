@@ -1,0 +1,212 @@
+{
+  "same_geometry_seed_noise_off": true,
+  "native_coordinate_rectangle": [
+    0,
+    2700,
+    8000,
+    3300
+  ],
+  "R_mean_absolute_difference": 21.2771325,
+  "T_mean_absolute_difference": 0.0,
+  "T_changed_values": 0,
+  "regions": {
+    "pore": {
+      "R": {
+        "count": 13394,
+        "mean": 46.49678960728684,
+        "std": 2.17016093261062,
+        "histogram_16": [
+          0,
+          0,
+          8982,
+          4412,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "T": {
+        "count": 13394,
+        "mean": 211.38054352695238,
+        "std": 4.869380686760277,
+        "histogram_16": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3159,
+          10205,
+          30,
+          0
+        ]
+      }
+    },
+    "warp_only": {
+      "R": {
+        "count": 91432,
+        "mean": 157.40140213491995,
+        "std": 7.318887636935333,
+        "histogram_16": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5933,
+          43069,
+          42430,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "T": {
+        "count": 91432,
+        "mean": 101.43168693673987,
+        "std": 6.964323950146534,
+        "histogram_16": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          15603,
+          65080,
+          10748,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "weft_only": {
+      "R": {
+        "count": 79475,
+        "mean": 123.10649889902486,
+        "std": 5.404704291482791,
+        "histogram_16": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2949,
+          59601,
+          16925,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "T": {
+        "count": 79475,
+        "mean": 95.40241585404215,
+        "std": 7.277291214846451,
+        "histogram_16": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          51340,
+          24596,
+          3539,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "cross": {
+      "R": {
+        "count": 539888,
+        "mean": 197.7419668523842,
+        "std": 21.438077791472008,
+        "histogram_16": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5247,
+          72877,
+          196704,
+          43347,
+          140039,
+          81674,
+          0
+        ]
+      },
+      "T": {
+        "count": 539888,
+        "mean": 17.434423435971905,
+        "std": 0.495733372750726,
+        "histogram_16": [
+          0,
+          539888,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "failed_physics_gates": [
+    "T_IGNORES_WEAVE",
+    "NO_NORMAL_OR_LIGHT_PARAMETER",
+    "NONPHYSICAL_POLARITY_INVERSION"
+  ],
+  "T_order_invariance_note": "Absorption alone can legitimately be order invariant. Legacy has no topology-dependent geometry or scattering; zero difference alone is not a universal physical failure."
+}
