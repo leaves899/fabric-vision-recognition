@@ -166,17 +166,32 @@ def main():
             if a is not None and b is not None:
                 diffs.append(abs(a-b))
     valid_repro=max(diffs) if diffs else None
-    if valid_repro is None or valid_repro>0.005:
-        raise RuntimeError("REPRODUCIBILITY_FAILURE_H2_ROT90_FIXED max_delta="+str(valid_repro))
+    mismatch_details=[]
+    for name in sorted(old):
+        for fam in ("warp","weft"):
+            new_density=nn(all_data["ROT90_FIXED"][name].get(fam+"_density"))
+            previous_density=nn(h2[name].get(fam+"_density_per_cm"))
+            if new_density is not None and previous_density is not None and abs(new_density-previous_density)>0.005:
+                mismatch_details.append({
+                    "image":name,"family":fam,"new_density":new_density,
+                    "previous_density":previous_density,
+                    "difference_per_cm":round(new_density-previous_density,5)})
+    # This is a *measurement* of reproducibility, not a reason to omit all
+    # valid 130-photo experiment results. Never claim strict reproducibility
+    # when this diagnostic fails.
     result={"image_n":130,"arm_summary":{},"comparisons":{},
        "previous_h2_reproduction_max_abs_density_per_cm":valid_repro,
+       "previous_h2_mismatch_count_over_0_005_per_cm":len(mismatch_details),
+       "previous_h2_mismatch_details":mismatch_details,
+       "previous_h2_reproduced_all":len(mismatch_details)==0,
        "interpretation_limits":[
            "Ablation on image-aligned 640x480 FabricNET microscope photos, NOT real 8K R/T",
            "DIRECT and ROTATED forms use the same _run_direction code but rotating may change crops/CLAHE and internal warp edges",
            "FIXED vs ESTIMATED uses tensor candidate nearest to image axis, no GT-guided selection",
            "V063 full pipeline includes pair scoring and Gate3; simple-axis confidence PASS not directly comparable",
            "None of the arms is per-physical-yarn identity accuracy or an out-of-sample generalization test",
-           "Do not choose best arm per image based on truth"]}
+           "Do not choose best arm per image based on truth",
+           "A previous frozen horizontal-twice run may differ at a few photos; preserve mismatch diagnostics rather than concealing failures"]}
     for arm in ("V063","H2_PREVIOUS")+ARMS:
         vals=list(all_data[arm].values())
         if arm=="V063":
@@ -252,7 +267,11 @@ def main():
     ]
     for arm,val in result["arm_summary"].items():
         lines.append(f"|{arm}|{val['warp_mae']}|{val['weft_mae']}|{val['both10']}/130|{val['pass']}/130|")
-    lines+=["","## 预设成对对照（新-旧；负的MAE差表示改善，正的达标数差表示改善）",
+    lines+=["","## 重跑可重复性检查",
+        f"- 前次双横向H2与本轮ROT90_FIXED最大差：{valid_repro}根/cm；差异超过0.005根/cm的方向实例：{len(mismatch_details)}/260。",
+        "- 如存在差异，这是影响极细微提升归因的实验不确定性；本轮五种消融严格同环境运行，跨轮比较仍需谨慎。",
+        "",
+        "## 预设成对对照（新-旧；负的MAE差表示改善，正的达标数差表示改善）",
             "|比较|经密MAE差[95% bootstrap CI]|纬密MAE差[95% bootstrap CI]|双向10%达标差[95% CI, 百分点]|改善/退化张数|精确配对p|",
             "|---|---|---|---|---|---|"]
     for key,x in result["comparisons"].items():
