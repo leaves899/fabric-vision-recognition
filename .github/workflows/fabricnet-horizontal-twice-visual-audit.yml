@@ -1,0 +1,69 @@
+name: Publish FabricNET horizontal-twice visual A-B evidence
+on:
+  push:
+    branches: [experiment/fabricnet-horizontal-twice-20261021]
+    paths: [.github/workflows/fabricnet-horizontal-twice-visual-audit.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish-10-visual-pairs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install opencv-python-headless==4.10.0.84 numpy
+      - name: Fetch completed 130-image twice-horizontal detector archive
+        uses: actions/download-artifact@v4
+        with:
+          name: fabricnet-horizontal-twice-130-real-results
+          run-id: 39556565410
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: leaves899/fabric-vision-recognition
+          path: /tmp/fabricnet-horizontal-twice-artifact
+      - name: Publish exact raw overlays and labeled side-by-side comparisons
+        shell: bash
+        run: |
+          set -euo pipefail
+          find /tmp/fabricnet-horizontal-twice-artifact -maxdepth 3 -type f | head -n 15
+          for id in W120 W115 W119 W035 W067 W095 W105 W112 W032 W037; do
+            test -s "/tmp/fabricnet-horizontal-twice-artifact/overlays_original/$id.jpg"
+            test -s "experiments/fabricnet-latest-130-validation/worst20_fullsize/$id.jpg"
+          done
+          python - <<'PY'
+          from pathlib import Path
+          import cv2
+          import numpy as np
+          target=Path('experiments/fabricnet-horizontal-twice/visual_samples')
+          target.mkdir(parents=True,exist_ok=True)
+          for id in 'W120 W115 W119 W035 W067 W095 W105 W112 W032 W037'.split():
+              a=cv2.imread('experiments/fabricnet-latest-130-validation/worst20_fullsize/'+id+'.jpg')
+              b=cv2.imread('/tmp/fabricnet-horizontal-twice-artifact/overlays_original/'+id+'.jpg')
+              assert a.shape==b.shape==(480,640,3), (id,a.shape,b.shape)
+              cv2.imwrite(str(target/(id+'_HORIZONTAL_TWICE.jpg')),b,[cv2.IMWRITE_JPEG_QUALITY,95])
+              pair=np.hstack([a,b])
+              cv2.rectangle(pair,(0,0),(639,28),(12,12,12),-1)
+              cv2.rectangle(pair,(640,0),(1279,28),(12,12,12),-1)
+              cv2.putText(pair,id+' ORIGINAL V0.6.3 BOTH-AXIS',(7,18),
+                          cv2.FONT_HERSHEY_SIMPLEX,.47,(250,250,250),1,cv2.LINE_AA)
+              cv2.putText(pair,id+' HORIZONTAL 0 + ROT90 HORIZONTAL',(648,18),
+                          cv2.FONT_HERSHEY_SIMPLEX,.47,(250,250,250),1,cv2.LINE_AA)
+              cv2.imwrite(str(target/(id+'_AB.jpg')),pair,[cv2.IMWRITE_JPEG_QUALITY,94])
+          PY
+          cat > experiments/fabricnet-horizontal-twice/visual_samples/README.md <<'EOF'
+          # FabricNET same-horizontal-two-pass versus frozen dual-axis V0.6.3
+          Each AB image: left original real algorithm, right new two independent horizontal detector calls.
+          Exact source original JPEGs are preserved without fabricating GT centrelines.
+          Red indicates warp; cyan indicates weft, always projected into original microscope photo.
+          All 130 results and confidence statuses available in ../measurements; not actual R/T paired capture.
+          No single-yarn identity ground truth exists here, so use this strictly for visual hypothesis validation.
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add experiments/fabricnet-horizontal-twice/visual_samples
+          git commit -m 'test(fabricnet): publish ten real old-vs-horizontal-twice centerline AB images'
+          git push origin HEAD:refs/heads/experiment/fabricnet-horizontal-twice-20261021
