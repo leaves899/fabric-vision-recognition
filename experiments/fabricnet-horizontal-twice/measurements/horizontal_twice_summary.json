@@ -1,0 +1,86 @@
+{
+  "images": 130,
+  "both_predicted": 130,
+  "status_hist": {
+    "PASS": 10,
+    "LOW_CONFIDENCE": 120,
+    "FAIL": 0
+  },
+  "individual_horizontal_status": {
+    "warp": {
+      "PASS": 24,
+      "LOW_CONFIDENCE": 106,
+      "FAIL": 0
+    },
+    "weft": {
+      "PASS": 62,
+      "LOW_CONFIDENCE": 68,
+      "FAIL": 0
+    }
+  },
+  "h2": {
+    "warp_mae": 5.5457,
+    "weft_mae": 7.57843,
+    "warp_mape": 14.74451,
+    "weft_mape": 20.44092,
+    "both10": 59,
+    "both10_and_pass": 8,
+    "warp_scoreable_count": 130,
+    "weft_scoreable_count": 130
+  },
+  "old": {
+    "warp_mae": 7.08095,
+    "weft_mae": 9.55654,
+    "both10": 43,
+    "old_pass": 18
+  },
+  "by_weave": {
+    "plain": {
+      "n": 50,
+      "warp_mae": 2.6384,
+      "weft_mae": 4.52544,
+      "both10": 28
+    },
+    "twill": {
+      "n": 39,
+      "warp_mae": 7.78447,
+      "weft_mae": 5.14986,
+      "both10": 11
+    },
+    "satin": {
+      "n": 41,
+      "warp_mae": 6.96164,
+      "weft_mae": 13.61169,
+      "both10": 20
+    }
+  },
+  "limitations": [
+    "Fixed image horizontal angle 0 deg, not a generalized rotated-weave orientation estimator",
+    "The original _run_direction uses rotate_keep_size, truncating rectangular ROI under 90deg internal image transform",
+    "Both PASS statuses are independent one-direction evidence; not directly comparable to original full pipeline overall PASS",
+    "One microscope image rotated, not genuine reflected/transmitted 8K dual capture",
+    "Per physical yarn centerline GT absent: no pixel-F1 or physical identity precision",
+    "Ground truth was never used inside measurement, candidate or angle selection"
+  ],
+  "delta": {
+    "both10": 16,
+    "warp_mae": -1.53525,
+    "weft_mae": -1.97811,
+    "new_pass_old_fail": 25,
+    "new_fail_old_pass": 9,
+    "weft_better_n": 73,
+    "warp_better_n": 73
+  },
+  "truth_schema": {
+    "parameters": {
+      "rows": 130,
+      "columns": [
+        "Image id",
+        "Specific Mass",
+        "Warp",
+        "Weft",
+        "Texture"
+      ]
+    }
+  }
+}
