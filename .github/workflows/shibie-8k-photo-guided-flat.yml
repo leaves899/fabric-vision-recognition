@@ -1,0 +1,82 @@
+name: shibie real-photo guided flat zero-rotation native8k physical R/T
+on:
+  push:
+    branches:
+      - experiment/shibie-8k-capture-multiwindow
+    paths:
+      - .github/workflows/shibie-8k-photo-guided-flat.yml
+      - shibie/synthetic_photo_guided_flat_8k.py
+      - shibie/tests/test_photo_guided_flat_8k.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: shibie-photo-guided-flat-native8k
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {case: plain_photo_flat, weave: plain, seed: 812613}
+          - {case: twill31_photo_flat, weave: twill_3_1, seed: 982732}
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "2"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned shibie dependencies
+        run: python -m pip install -r shibie/requirements.txt
+      - name: Real denim reference, flat capture, and physical yarn original tests
+        run: cd shibie && python -m unittest discover -s tests -q
+      - name: Render real photo-guided native8000x6000 NO ROTATION physical R/T
+        run: |
+          /usr/bin/time -v python -u shibie/synthetic_photo_guided_flat_8k.py \
+            --case ${{ matrix.case }} \
+            --weave ${{ matrix.weave }} \
+            --seed ${{ matrix.seed }}
+      - name: Run actual detector on generated photo-guided R/T pixels
+        run: /usr/bin/time -v python -u shibie/run_8k_yarn_identity.py --case ${{ matrix.case }}
+      - name: Upload full native8k R/T photos, visual references, and truth manifest
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: photo-guided-flat-${{ matrix.case }}
+          path: |
+            experiments/shibie-8k-capture-multiwindow/stress/${{ matrix.case }}/
+            experiments/shibie-8k-capture-multiwindow/identity-tracking/${{ matrix.case }}/
+          retention-days: 21
+          if-no-files-found: warn
+  publish:
+    needs: render
+    if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: photo-guided-flat-*
+          path: /tmp/real-photo-styled
+          merge-multiple: false
+      - name: Audit real photo provenance, flat 0-degree metadata and visual comparisons
+        run: |
+          python shibie/publish_photo_guided_flat_8k.py \
+            --artifacts /tmp/real-photo-styled \
+            --out experiments/shibie-8k-capture-multiwindow/photo-guided-flat
+          cat experiments/shibie-8k-capture-multiwindow/photo-guided-flat/REPORT.md
+      - name: Commit actual photo/synthetic side-by-side comparison to isolated branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/shibie-8k-capture-multiwindow/photo-guided-flat/
+          git commit -m "test(shibie): preserve zero-rotation real-photo guided 8k R/T and visual audit [skip ci]"
+          git fetch origin experiment/shibie-8k-capture-multiwindow
+          git rebase origin/experiment/shibie-8k-capture-multiwindow
+          git push origin HEAD:experiment/shibie-8k-capture-multiwindow
