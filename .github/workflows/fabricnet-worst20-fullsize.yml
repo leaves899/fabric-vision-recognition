@@ -1,0 +1,46 @@
+name: FabricNET worst20 full-resolution visual evidence
+on:
+  push:
+    branches: [experiment/fabricnet-latest-130-validation-20261021]
+    paths: [.github/workflows/fabricnet-worst20-fullsize.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish-worst20:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: true}
+      - uses: actions/download-artifact@v4
+        with:
+          name: fabricnet-latest-130-replay-and-visual-evidence
+          run-id: 39538548889
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: leaves899/fabric-vision-recognition
+          path: /tmp/fabricnet-run
+      - name: Publish all 20 unaltered algorithm centerline evidence overlays
+        shell: bash
+        run: |
+          set -euo pipefail
+          target=experiments/fabricnet-latest-130-validation/worst20_fullsize
+          mkdir -p "$target"
+          for id in W120 W115 W119 W008 W067 W068 W071 W070 W037 W028 W112 W096 W032 W095 W109 W035 W092 W105 W069 W108; do
+            test -f "/tmp/fabricnet-run/overlays/$id.jpg"
+            cp "/tmp/fabricnet-run/overlays/$id.jpg" "$target/$id.jpg"
+          done
+          cat > "$target/README.md" <<'EOF'
+          The 20 worst photos by maximum(warp density relative error, weft density relative error).
+          These are *unedited original detector overlays* from the already complete 130-photo
+          run, not visually edited or GT-aligned yarn lines.
+          Read ../visual_samples/V063_all130_metrics.csv for density errors.
+          Images are pseudo-R/T single-image replay, not true paired R/T.
+          Individual-yarn pixel errors cannot be computed without physical centerline GT.
+          EOF
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$target"
+          git commit -m 'test(fabricnet): publish 20 full-size worst-case actual detector overlays for independent audit'
+          git push origin HEAD:refs/heads/experiment/fabricnet-latest-130-validation-20261021
