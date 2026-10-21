@@ -1,0 +1,122 @@
+{
+  "plain_photo_flat": {
+    "capture": [
+      8000,
+      6000
+    ],
+    "rotation": 0,
+    "perspective": 0,
+    "true_weave_evaluation_only": "plain",
+    "sample_physical_yarns": {
+      "warp": 303,
+      "weft": 189
+    },
+    "reflect_hash": "44e56034926ddad86489fbf29480c7ef87c3fc6b00446ad3dfba8c51bf046695",
+    "transmit_hash": "94ca04c6b27b22ef1952b808f6ad194b7e7948de721af62803f3d0f97cc64bbd",
+    "photo_style_reference_hash": "4530b46cb4fa4236e4f15dcb0a62d97e41c3b34b3a4af6b3ffeeb3d1aa321250",
+    "reference": "/home/runner/work/fabric-vision-recognition/fabric-vision-recognition/datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg",
+    "appearance": {
+      "shape": [
+        1706,
+        1279
+      ],
+      "palette_bgr_dark_mid_bright": [
+        [
+          62.0,
+          49.0,
+          42.0
+        ],
+        [
+          131.0,
+          121.0,
+          113.0
+        ],
+        [
+          218.0,
+          212.0,
+          206.0
+        ]
+      ],
+      "gray_quantiles": [
+        47.0,
+        82.0,
+        120.0,
+        162.0,
+        212.0
+      ],
+      "fine_grain_sigma_px": 8.5,
+      "photo_sha256": "4530b46cb4fa4236e4f15dcb0a62d97e41c3b34b3a4af6b3ffeeb3d1aa321250",
+      "reference_path_in_repository": "/home/runner/work/fabric-vision-recognition/fabric-vision-recognition/datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg",
+      "use": "COLOR_PALETTE_AND_SHORT_SCALE_GRAIN_ONLY_NOT_YARN_GROUND_TRUTH",
+      "source_is_actual_photo": true,
+      "reference_is_true_transmission": false,
+      "no_rotation_or_perspective": true,
+      "weave_type_selected_independently": true,
+      "style_seed": 812632,
+      "has_pasted_reference_texture": false,
+      "reflection_palette_only_transmission_physics_unchanged": true,
+      "not_real_camera_equivalence": true
+    },
+    "algorithm_metrics": null
+  },
+  "twill31_photo_flat": {
+    "capture": [
+      8000,
+      6000
+    ],
+    "rotation": 0,
+    "perspective": 0,
+    "true_weave_evaluation_only": "twill_3_1",
+    "sample_physical_yarns": {
+      "warp": 303,
+      "weft": 189
+    },
+    "reflect_hash": "f2b427e128b40b4051468b224833dd6cccd3dd578a467b9b3262ed60e096ca21",
+    "transmit_hash": "ab220c070a5a67c0648452e871b1d60dd932a1eaa3c70b0807516c061e22ae9b",
+    "photo_style_reference_hash": "4530b46cb4fa4236e4f15dcb0a62d97e41c3b34b3a4af6b3ffeeb3d1aa321250",
+    "reference": "/home/runner/work/fabric-vision-recognition/fabric-vision-recognition/datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg",
+    "appearance": {
+      "shape": [
+        1706,
+        1279
+      ],
+      "palette_bgr_dark_mid_bright": [
+        [
+          62.0,
+          49.0,
+          42.0
+        ],
+        [
+          131.0,
+          121.0,
+          113.0
+        ],
+        [
+          218.0,
+          212.0,
+          206.0
+        ]
+      ],
+      "gray_quantiles": [
+        47.0,
+        82.0,
+        120.0,
+        162.0,
+        212.0
+      ],
+      "fine_grain_sigma_px": 8.5,
+      "photo_sha256": "4530b46cb4fa4236e4f15dcb0a62d97e41c3b34b3a4af6b3ffeeb3d1aa321250",
+      "reference_path_in_repository": "/home/runner/work/fabric-vision-recognition/fabric-vision-recognition/datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg",
+      "use": "COLOR_PALETTE_AND_SHORT_SCALE_GRAIN_ONLY_NOT_YARN_GROUND_TRUTH",
+      "source_is_actual_photo": true,
+      "reference_is_true_transmission": false,
+      "no_rotation_or_perspective": true,
+      "weave_type_selected_independently": true,
+      "style_seed": 982751,
+      "has_pasted_reference_texture": false,
+      "reflection_palette_only_transmission_physics_unchanged": true,
+      "not_real_camera_equivalence": true
+    },
+    "algorithm_metrics": null
+  }
+}
