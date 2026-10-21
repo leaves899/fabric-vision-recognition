@@ -1,0 +1,148 @@
+{
+  "generator": "heightfield_RT_v2",
+  "synthetic": true,
+  "real_capture_certified": false,
+  "source_scene": {
+    "name": "plain_dev",
+    "width": 8000,
+    "height": 6000,
+    "mm_per_px": 0.0125,
+    "warp_density_cm": 30.0,
+    "weft_density_cm": 25.0,
+    "weave": "plain",
+    "rotation_deg": 0,
+    "fabric_rotation_deg": 0.0,
+    "perspective": 0,
+    "wave_fraction": 0.035,
+    "contrast_polarity": "dark",
+    "diagonal_decoy": 0,
+    "noise_sigma": 3.0,
+    "shift_reflection_x": 0,
+    "seed": 38121
+  },
+  "optics": {
+    "light_direction": [
+      -0.38,
+      -0.45,
+      0.81
+    ],
+    "warp_albedo_bgr": [
+      0.1,
+      0.065,
+      0.045
+    ],
+    "weft_albedo_bgr": [
+      0.67,
+      0.7,
+      0.7
+    ],
+    "ambient": 0.3,
+    "diffuse": 0.68,
+    "specular": 0.025,
+    "absorption_per_px": 0.18,
+    "scattering_fraction": 0.16,
+    "psf_sigma_px": 0.68,
+    "noise_sigma": 0.9,
+    "backlight": 0.88,
+    "exposure": 1.05,
+    "fibre_strength": 0.12,
+    "twist_pitch_px": 95.0
+  },
+  "true_weave": "plain",
+  "true_density_per_cm": {
+    "warp": 30.0,
+    "weft": 25.0
+  },
+  "true_pitch_px_canonical": {
+    "warp": 26.666666666666668,
+    "weft": 32.0
+  },
+  "sha256": {
+    "reflection": "2ffb7031bf930537a21379566e2c46de8ae426fa2562d4b70570e3939d69f02f",
+    "transmission": "744c319e7de93b0f4c52c046ea84aa6c2503b8db9e2c7f04ac0e61cabf6e242e"
+  },
+  "files": {
+    "reflection": "reflection_8000x6000.jpg",
+    "transmission": "transmission_8000x6000.jpg"
+  },
+  "camera_geometry": {
+    "canonical_to_raw_homography": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "raw_to_canonical_homography": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "calibration_frame_inside_mm": [
+      50,
+      50
+    ],
+    "rectified_mm_per_px": 0.0125,
+    "frame_corners_raw_px": [
+      [
+        2000.0,
+        1000.0
+      ],
+      [
+        6000.0,
+        1000.0
+      ],
+      [
+        6000.0,
+        5000.0
+      ],
+      [
+        2000.0,
+        5000.0
+      ]
+    ],
+    "true_rectification_area_canonical_px": [
+      2000.0,
+      1000.0,
+      6000.0,
+      5000.0
+    ]
+  },
+  "truth_coordinate_definition": "analytic geometry() shared by optical render and ID maps; points sampled every 2 px; widths use exact rendering formula",
+  "runtime_seconds": 76.0,
+  "peak_rss_mib": 1125.46484375,
+  "limitations": [
+    "single-scattering approximation",
+    "short-range height shadow",
+    "no true lens or fibre BRDF calibration",
+    "no individual hair geometry yet",
+    "no measured transmission reference"
+  ],
+  "full_GT_in_CI_artifact": true,
+  "physical_ID_counts": {
+    "warp": 303,
+    "weft": 189
+  }
+}
