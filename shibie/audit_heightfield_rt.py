@@ -24,13 +24,15 @@ def audit(folder,reference=None):
             stats[group][name]={'n':len(q),'mean':float(q.mean()),'std':float(q.std()),'variance':float(q.var()),'histogram_32':np.histogram(q,32,(0,256))[0].tolist()}
     widths={f:float(np.percentile(g[k],10)) for f,k in [('warp','ww'),('weft','fw')]}
     identities={f:len(rows)==len(set(row['id'] for row in rows)) for f,rows in truth['physical_yarn_centerlines'].items()}
+    all_ids=[row['id'] for rows in truth['physical_yarn_centerlines'].values() for row in rows]
+    identities['global']=len(set(all_ids))==len(all_ids)
     # Exact samples check the recorded physical centre and width functions.
     from synthetic_rt_heightfield_8k import yarn_fields
     errors=[]
     for family,rows in truth['physical_yarn_centerlines'].items():
         for row in rows[::7]:
             pts=np.array(row['points']);axis=1 if family=='warp' else 0
-            c,w=yarn_fields(s,family,int(row['id'][1:]),pts[:,axis])
+            c,w=yarn_fields(s,family,row['physical_index'],pts[:,axis])
             errors.append(float(np.abs(c-pts[:,1-axis]).max()))
     base=replace(s,weave='plain');other=replace(s,weave='twill_3_1')
     a,b=render_region(base,o,3676,2676,648,648);c,d=render_region(other,o,3676,2676,648,648)

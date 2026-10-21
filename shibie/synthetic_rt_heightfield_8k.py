@@ -175,7 +175,7 @@ def _dense_truth(s):
     for family,rows in lines.items():
         pitch=10/(s.mm_per_px*(s.warp_density_cm if family=='warp' else s.weft_density_cm))
         for row in rows:
-            idx=int(row['id'][1:]);along=np.arange(0,(s.height if family=='warp' else s.width)+1,2,dtype=np.float32)
+            idx=int(row['id'][1:]);row['id']=family+'_'+str(idx);row['physical_index']=idx;along=np.arange(0,(s.height if family=='warp' else s.width)+1,2,dtype=np.float32)
             center,ww=yarn_fields(s,family,idx,along)
             pts=np.stack([center,along],1) if family=='warp' else np.stack([along,center],1)
             row['points']=np.round(pts,4).tolist();row['widths_px']=np.round(ww,4).tolist()

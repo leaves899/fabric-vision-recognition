@@ -51,11 +51,13 @@ class HeightfieldPhysics(unittest.TestCase):
     def test_serialized_truth_uses_scalar_ids_and_matches_renderer_centres(self):
         scene=replace(self.s,width=240,height=200)
         lines=_dense_truth(scene)
+        ids=[r['id'] for rows in lines.values() for r in rows]
+        self.assertEqual(len(ids),len(set(ids)))
         for family,rows in lines.items():
             self.assertTrue(rows)
             for row in rows:
                 pts=np.array(row['points']);axis=1 if family=='warp' else 0
-                c,w=yarn_fields(scene,family,int(row['id'][1:]),pts[:,axis])
+                c,w=yarn_fields(scene,family,row['physical_index'],pts[:,axis])
                 self.assertLess(np.max(np.abs(c-pts[:,1-axis])),.001)
                 self.assertEqual(len(row['widths_px']),len(pts))
 
