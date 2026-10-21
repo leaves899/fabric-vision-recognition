@@ -47,6 +47,10 @@ jobs:
           done
           cp /tmp/base-evidence/summary.json "$folder/V063_summary.json"
           cp /tmp/optimizer-evidence/summary.json "$folder/OPTIMIZER_summary.json"
+          cp /tmp/base-evidence/metrics.csv "$folder/V063_all130_metrics.csv"
+          cp /tmp/optimizer-evidence/metrics.csv "$folder/OPTIMIZER_all130_metrics.csv"
+          cp /tmp/base-evidence/worst20.jpg "$folder/V063_worst20.jpg"
+          cp /tmp/base-evidence/best20.jpg "$folder/V063_best20.jpg"
           cat > "$folder/README.md" <<'EOF'
           # FabricNET visual inspection subset (6 of 130 images)
           
