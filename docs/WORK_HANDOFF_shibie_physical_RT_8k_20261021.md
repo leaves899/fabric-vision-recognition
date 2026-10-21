@@ -1,6 +1,6 @@
 # 给 ChatGPT Work 的完整研发交接与执行任务
 
-**项目：** 织物图像识别 / \`fabric-vision-recognition\` / \`shibie\`  
+**项目：** 织物图像识别 / `fabric-vision-recognition` / `shibie`  
 **主题：** 修复原生8K织物合成器的反射光/透射光物理成像，并在可信数据上复验原版和优化版识别算法  
 **任务性质：** 直接执行研发，不是只出设计方案  
 **工作约束：** 保留既有成果、独立Git分支、持续真实运行和视觉验收、不得编造结果  
@@ -17,20 +17,20 @@ https://github.com/leaves899/fabric-vision-recognition
 
 ## 1. 研发现场与分支
 
-- 主仓库：\`leaves899/fabric-vision-recognition\`
-- 上一阶段实验分支：\`experiment/shibie-8k-capture-multiwindow\`
-- 建议新工作分支：\`experiment/shibie-8k-rt-physical-optics\`（请先检查是否已存在）。
-- **严禁覆盖原版或直接修改\`main\`。** 保留冻结基线；如需PR，先提供独立验收证据。
-- 旧物理合成器：\`shibie/synthetic_capture_8k.py\`
-- 真实照片颜色引导但只改外观的版本：\`shibie/synthetic_photo_guided_flat_8k.py\`
-- 原版程序入口：\`shibie/engine/pipeline.py\`，V0.6.3
-- 优化版：\`shibie/engine/multiwindow_pitch.py\`、\`subpixel_physical_phase.py\`、\`local_yarn_tracks.py\`、\`individual_yarn_tracelets.py\` 等，均在\`shibie/engine/\`。
-- 原版/优化版同图比较：\`shibie/compare_flat_photo_8k_v063_vs_optimized.py\`
-- 最近正式输出：\`experiments/shibie-8k-capture-multiwindow/flat-photo-accuracy/verified/AB_REPORT.md\`
+- 主仓库：`leaves899/fabric-vision-recognition`
+- 上一阶段实验分支：`experiment/shibie-8k-capture-multiwindow`
+- 建议新工作分支：`experiment/shibie-8k-rt-physical-optics`（请先检查是否已存在）。
+- **严禁覆盖原版或直接修改`main`。** 保留冻结基线；如需PR，先提供独立验收证据。
+- 旧物理合成器：`shibie/synthetic_capture_8k.py`
+- 真实照片颜色引导但只改外观的版本：`shibie/synthetic_photo_guided_flat_8k.py`
+- 原版程序入口：`shibie/engine/pipeline.py`，V0.6.3
+- 优化版：`shibie/engine/multiwindow_pitch.py`、`subpixel_physical_phase.py`、`local_yarn_tracks.py`、`individual_yarn_tracelets.py` 等，均在`shibie/engine/`。
+- 原版/优化版同图比较：`shibie/compare_flat_photo_8k_v063_vs_optimized.py`
+- 最近正式输出：`experiments/shibie-8k-capture-multiwindow/flat-photo-accuracy/verified/AB_REPORT.md`
 - 以前实际完成的GitHub运行：
   - 原生8K平铺照片合成：https://github.com/leaves899/fabric-vision-recognition/actions/runs/39523817497
   - 同图V0.6.3/优化版比较：https://github.com/leaves899/fabric-vision-recognition/actions/runs/39525221087
-- 已有照片参考：\`datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg\`。
+- 已有照片参考：`datasets/user_contributed/2026-10-13-six-fabric-images/images/U20261013_05.jpg`。
 - 用户此前还提供过**《高质量照片.rar》**及项目内其他实拍高清图片：优先在Work可访问的项目附件、历史文件、仓库中检索并检查。**若确实无法访问RAR，请明确说明，不能假称已读取它。** 核实哪些是正常反射照片，哪些是实测透射照片，是否为同一块布料、同一局部区域。
 
 上述路径与数据是会话交接信息；**以当前真实GitHub分支状态为准先核实，不可直接假设现有源码、提交或测试没有变化。**
@@ -38,8 +38,8 @@ https://github.com/leaves899/fabric-vision-recognition
 ## 2. 已有结果及为什么必须停止“棋盘式图像上刷分”
 
 上一轮生成的两张图：
-- \`plain_photo_flat\`：平纹、相机及织物旋转0°、8000×6000
-- \`twill31_photo_flat\`：3/1斜纹、相机及织物旋转0°、8000×6000
+- `plain_photo_flat`：平纹、相机及织物旋转0°、8000×6000
+- `twill31_photo_flat`：3/1斜纹、相机及织物旋转0°、8000×6000
 
 合成真值经密30根/cm、纬密25根/cm。上一轮相同9个局部窗口、同一物理中心真值、门限内最大一对一匹配的**局部截面中心F1**：
 
@@ -56,28 +56,28 @@ https://github.com/leaves899/fabric-vision-recognition
 
 ## 3. 代码级缺陷：必须做可复现实验而非只凭印象
 
-\`shibie/synthetic_capture_8k.py\` 中存在如下核心逻辑：
+`shibie/synthetic_capture_8k.py` 中存在如下核心逻辑：
 
-\`\`\`python
+```python
 reflect = 38. + 119.*front_w + 82.*front_f
 reflect += np.where(cross & top, 48.*wc, 0.)
 reflect += np.where(cross & ~top, 37.*fc, 0.)
 absorb = np.clip(.52*wc + .55*fc + .10*cross, 0, .91)
 transmission = 210.*(1.-absorb) + 9.*(1.-wc)*(1.-fc)
-\`\`\`
+```
 
 - R采用像素亮度加权相加，没有从纱线3D高度、表面法线、材质、照明方向、阴影或可见遮挡真正生成照片。
-- **T公式没有调用\`_warp_up\`的上/下浮沉拓扑**。平纹与3/1在中心线、纱线厚度相同时可能生成近乎一致的透射图。应通过“同几何、仅更改组织、固定随机种子”的差异测试量化，而不是武断地要求真实T的两种组织一定差异巨大；合理的模型要对R/T组合中的组织信息提供可解释物理证据。
-- 存在数学极性翻转：\`contrast_polarity == "bright"\` 时做\`255-transmission\`，\`mixed\`时用空间正弦强行改变透射亮度；这并不自动代表真实背光物理。
+- **T公式没有调用`_warp_up`的上/下浮沉拓扑**。平纹与3/1在中心线、纱线厚度相同时可能生成近乎一致的透射图。应通过“同几何、仅更改组织、固定随机种子”的差异测试量化，而不是武断地要求真实T的两种组织一定差异巨大；合理的模型要对R/T组合中的组织信息提供可解释物理证据。
+- 存在数学极性翻转：`contrast_polarity == "bright"` 时做`255-transmission`，`mixed`时用空间正弦强行改变透射亮度；这并不自动代表真实背光物理。
 - 黑色方格来自纱线交叉区被公式压得过暗，白色/亮色网格多为孔隙及纱线表面，不能简单说整张T图“明暗倒反”，但光学分布高度理想化。
 - 纱线按过于规则的光滑带状生成，缺少真实的纤维束、捻度、毛羽、粗细变化、光学散射、阴影、局部失焦与真实材料差异。
-- \`synthetic_photo_guided_flat_8k.py\` 仅用照片抽取颜色统计和高频噪声强度，对旧R图做调色；**T仍是旧模型**，也没有真实纱线表面形态。真实照片里的斜纹外观并未物理地生成到合成图。
-- 需要审计\`physical_yarn_centerlines\`及其他真值是否与真实渲染逐像素对得上；不可以把真实织物宏观纹理贴到合成照片上，却继续把旧实体ID视为完美真值。
+- `synthetic_photo_guided_flat_8k.py` 仅用照片抽取颜色统计和高频噪声强度，对旧R图做调色；**T仍是旧模型**，也没有真实纱线表面形态。真实照片里的斜纹外观并未物理地生成到合成图。
+- 需要审计`physical_yarn_centerlines`及其他真值是否与真实渲染逐像素对得上；不可以把真实织物宏观纹理贴到合成照片上，却继续把旧实体ID视为完美真值。
 
 ## 4. 拍摄与真值约束
 
-1. 工位布料平铺，**本轮\`rotation_deg=0\`、\`fabric_rotation_deg=0\`、\`perspective=0\`**。允许纱线本身天然小弯曲和不规则截面，但不要创造相机图像旋转。
-2. 相机采集能力按之前约定：直接渲染原生8000×6000，FOV约100mm×75mm，名义\`mm_per_px=0.0125\`。不可小图插值放大冒充8K。
+1. 工位布料平铺，**本轮`rotation_deg=0`、`fabric_rotation_deg=0`、`perspective=0`**。允许纱线本身天然小弯曲和不规则截面，但不要创造相机图像旋转。
+2. 相机采集能力按之前约定：直接渲染原生8000×6000，FOV约100mm×75mm，名义`mm_per_px=0.0125`。不可小图插值放大冒充8K。
 3. 标定框与织物同一平面，内部**5cm×5cm**，检测和真值都必须排除标定框壁。
 4. R/T为同一区域、同一根实体纱线几何，采用不同的有物理依据的照明/成像模型；不得把R颜色简单倒置当T。
 5. 可用平纹、2/1斜纹、3/1斜纹及必要的其他变化织物；不能硬编码真值为3/1，也不能将组织标签提供给检测算法。
@@ -91,7 +91,7 @@ transmission = 210.*(1.-absorb) + 9.*(1.-wc)*(1.-fc)
 
 - 实际打开GitHub源码与报告；确认原版入口、优化入口及已完成CI输出。
 - 检索工作区/项目文件/仓库中的《高质量照片.rar》、已有高清布料照片及标注；优先阅读原始大图，记录照片分辨率、拍摄类型、组织标签真实性、是否R/T配对。若不能解包，记录原因与可用替代来源。
-- 从当前实验分支开**单独研发分支**，不直接动\`main\`、不覆盖V0.6.3；保留旧生成器与旧原图作为baseline。
+- 从当前实验分支开**单独研发分支**，不直接动`main`、不覆盖V0.6.3；保留旧生成器与旧原图作为baseline。
 
 ### M1：旧光照的反证实验
 
@@ -154,6 +154,6 @@ Work必须**真正打开图像进行视觉审阅**并报告看到了什么：光
 | 诚实评估 | 严格区分模拟/实拍、单截面/跨遮挡ID、正确/拒识/未实现、旧失败/新进展 |
 | 工程证据 | 完成的Actions与日志、实际图片hash、命令、种子、耗时RSS、失败反例 |
 
-**首个可执行动作：** 立刻读取\`shibie/synthetic_capture_8k.py\`、\`shibie/synthetic_photo_guided_flat_8k.py\`和最近的A/B报告，在独立分支上运行“同几何不同组织”的R/T差异实验证明旧模型缺陷；同时检查能访问的真实高清照片；随后开始实现并运行可解释的2.5D物理光照模型。**直接推进到真实图片与代码验收，不要只停在纸面方案。**
+**首个可执行动作：** 立刻读取`shibie/synthetic_capture_8k.py`、`shibie/synthetic_photo_guided_flat_8k.py`和最近的A/B报告，在独立分支上运行“同几何不同组织”的R/T差异实验证明旧模型缺陷；同时检查能访问的真实高清照片；随后开始实现并运行可解释的2.5D物理光照模型。**直接推进到真实图片与代码验收，不要只停在纸面方案。**
 
 > 最重要的研发纪律：不能为了让算法有98%的F1而把布料渲染成理想黑白网格。优先确保真实物理纱线及其反射/透射证据可信，然后再谈识别器性能。
