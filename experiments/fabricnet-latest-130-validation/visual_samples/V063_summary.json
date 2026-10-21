@@ -1,0 +1,30 @@
+{
+  "dataset": "acseckin/FabricNET",
+  "engine_ref": "7e2b89a038778b5b0e48b3decfe3ec0752a3d4f6",
+  "n_images": 130,
+  "n_measured": 130,
+  "n_scored": 130,
+  "n_both_within_10pct": 43,
+  "warp_mae_per_cm": 7.0809461538461544,
+  "weft_mae_per_cm": 9.55653846153846,
+  "status_histogram": {
+    "LOW_CONFIDENCE": 112,
+    "PASS": 18
+  },
+  "truth_workbook": {
+    "parameters": {
+      "rows": 130,
+      "columns": [
+        "Image id",
+        "Specific Mass",
+        "Warp",
+        "Weft",
+        "Texture"
+      ]
+    }
+  },
+  "input_mode": "Single microscope photograph duplicated as two API inputs, NOT real R/T",
+  "scoring_note": "Absolute density errors only; NO ground truth physical yarn ID, no centerline F1",
+  "calibration_note": "Assume full 640x480 microscope image corresponds to 5mm x 4mm as paper. No independent per-photo geometry certified.",
+  "warp_hint": "vertical, fixed before labels are loaded"
+}

@@ -1,0 +1,54 @@
+{
+  "source_engine_sha": "ce0b19df395c36fcc156b9bc33804478ad37e0d6",
+  "total_photos": 130,
+  "input": "SINGLE_MICROSCOPE_PHOTO_DUPLICATED_NOT_GENUINE_RT",
+  "official_native8k_frame_pass": 0,
+  "arms": {
+    "FLOAT_LOCAL": {
+      "status_counts": {
+        "LOW_CONFIDENCE": 93,
+        "PASS": 61,
+        "UNDETERMINED": 106
+      },
+      "scorable_directional_predictions": 61,
+      "mean_absolute_density_error_scored_only": 3.304
+    },
+    "SHARED_SEVEN": {
+      "status_counts": {
+        "LOW_CONFIDENCE": 105,
+        "PASS": 49,
+        "UNDETERMINED": 106
+      },
+      "scorable_directional_predictions": 49,
+      "mean_absolute_density_error_scored_only": 2.563
+    },
+    "INDIVIDUAL_SEVEN": {
+      "status_counts": {
+        "LOW_CONFIDENCE": 93,
+        "PASS": 61,
+        "UNDETERMINED": 106
+      },
+      "scorable_directional_predictions": 61,
+      "mean_absolute_density_error_scored_only": 3.304
+    }
+  },
+  "major_limitations": [
+    "These are isolated current native8k detector modules, not the official 8K registered full pipeline.",
+    "No 50mm calibration fixture or genuinely paired R/T photographs",
+    "No pixel-level physical yarn identities in FabricNET, so no yarn F1",
+    "Single central 480px crop; not 9 independent 8K calibration windows",
+    "12px optical core and 7..60px pitch rejection limits retained unmodified"
+  ],
+  "truth_schema": {
+    "parameters": {
+      "rows": 130,
+      "columns": [
+        "Image id",
+        "Specific Mass",
+        "Warp",
+        "Weft",
+        "Texture"
+      ]
+    }
+  }
+}
