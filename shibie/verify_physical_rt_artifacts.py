@@ -2,7 +2,7 @@
 import hashlib,json
 from pathlib import Path
 import numpy as np
-from PIL import Image
+import cv2
 
 def verify(root,repo,out):
     root=Path(root);repo=Path(repo);results={}
@@ -14,7 +14,9 @@ def verify(root,repo,out):
         s=g['source_scene'];assert all(s[k]==0 for k in ('rotation_deg','fabric_rotation_deg','perspective'))
         assert g['camera_geometry']['calibration_frame_inside_mm']==[50,50]
         for modality,filename in g['files'].items():
-            assert Image.open(folder/filename).size==(8000,6000)
+            image=cv2.imread(str(folder/filename))
+            assert image is not None and image.shape==(6000,8000,3)
+            del image
             assert hashlib.sha256((folder/filename).read_bytes()).hexdigest()==g['sha256'][modality]==r['input_hash_sha256'][modality]
         ids=[row['id'] for rows in g['physical_yarn_centerlines'].values() for row in rows]
         assert len(ids)==len(set(ids));assert a['unique_ids']['global']

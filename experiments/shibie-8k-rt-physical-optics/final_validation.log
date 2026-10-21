@@ -1,0 +1,80 @@
+{
+  "baseline_unchanged": {
+    "shibie/synthetic_capture_8k.py": true,
+    "shibie/synthetic_photo_guided_flat_8k.py": true,
+    "shibie/engine/pipeline.py": true,
+    "shibie/compare_flat_photo_8k_v063_vs_optimized.py": true
+  },
+  "five_scenes": {
+    "plain_dev": {
+      "native_dimensions": true,
+      "hashes_match_frozen_inference": true,
+      "zero_rotation": true,
+      "frame_50mm_and_all_AB_windows_inside": true,
+      "global_unique_IDs": 492,
+      "P10_from_all_recorded_width_samples_px": {
+        "warp": 14.7059,
+        "weft": 17.3176
+      },
+      "center_coordinate_error_px": 0.0011259249831709894,
+      "pore_cross_T_order": true
+    },
+    "plain_material_holdout": {
+      "native_dimensions": true,
+      "hashes_match_frozen_inference": true,
+      "zero_rotation": true,
+      "frame_50mm_and_all_AB_windows_inside": true,
+      "global_unique_IDs": 492,
+      "P10_from_all_recorded_width_samples_px": {
+        "warp": 14.7115,
+        "weft": 17.2758
+      },
+      "center_coordinate_error_px": 0.0011305013713354128,
+      "pore_cross_T_order": true
+    },
+    "twill21_dev": {
+      "native_dimensions": true,
+      "hashes_match_frozen_inference": true,
+      "zero_rotation": true,
+      "frame_50mm_and_all_AB_windows_inside": true,
+      "global_unique_IDs": 492,
+      "P10_from_all_recorded_width_samples_px": {
+        "warp": 14.7059,
+        "weft": 17.3176
+      },
+      "center_coordinate_error_px": 0.0011259249831709894,
+      "pore_cross_T_order": true
+    },
+    "twill31_dev": {
+      "native_dimensions": true,
+      "hashes_match_frozen_inference": true,
+      "zero_rotation": true,
+      "frame_50mm_and_all_AB_windows_inside": true,
+      "global_unique_IDs": 492,
+      "P10_from_all_recorded_width_samples_px": {
+        "warp": 14.7059,
+        "weft": 17.3176
+      },
+      "center_coordinate_error_px": 0.0011259249831709894,
+      "pore_cross_T_order": true
+    },
+    "twill31_material_holdout": {
+      "native_dimensions": true,
+      "hashes_match_frozen_inference": true,
+      "zero_rotation": true,
+      "frame_50mm_and_all_AB_windows_inside": true,
+      "global_unique_IDs": 492,
+      "P10_from_all_recorded_width_samples_px": {
+        "warp": 14.72822,
+        "weft": 17.3161
+      },
+      "center_coordinate_error_px": 0.0011283151034149341,
+      "pore_cross_T_order": true
+    }
+  },
+  "integrity_status": "PASS",
+  "photo_realism_acceptance": "FAIL_REQUIRES_MORE_WORK",
+  "real_T_calibration": "NOT_AVAILABLE",
+  "physical_ID_tracking_accuracy": "NOT_EVALUATED",
+  "RK3576_validation": "NOT_RUN"
+}
