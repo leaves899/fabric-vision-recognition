@@ -1,0 +1,19 @@
+{
+  "source_commit": "f61004024ed95bc850b639141928f889a9534352",
+  "branch": "experiment/shibie-8k-rt-physical-optics",
+  "frozen_sha256": {
+    "shibie/synthetic_capture_8k.py": "9aa86ac604486dabd6d87835f1d65f85b972d4c03b4409a2199222f691cfdbe5",
+    "shibie/synthetic_photo_guided_flat_8k.py": "6f41bd229fb09781411dc60ff94b464d260c8698ffd14da184ee94dc13012e03",
+    "shibie/engine/pipeline.py": "930f6d6fde192395b089c553865b9eddfbc11e6124f290a6fc3072bae3ea4ca0",
+    "shibie/compare_flat_photo_8k_v063_vs_optimized.py": "1129f9d6de6203335b9fbafb2425a9275180ec6d357d61a6722c783f41dd4fba"
+  },
+  "previous_actions": {
+    "39523817497": "completed/success",
+    "39525221087": "completed/success"
+  },
+  "rotations": 0,
+  "real_T_calibrated": false,
+  "RAR": "Downloaded original 26233329 bytes; five JPEG entries; extraction and visual inspection pending",
+  "baseline_metrics": "experiments/shibie-8k-capture-multiwindow/flat-photo-accuracy/verified/AB_REPORT.md",
+  "accuracy_boundary": "Old local cross-section synthetic F1; no real-camera or cross-occlusion identity claim"
+}
