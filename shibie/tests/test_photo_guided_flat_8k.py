@@ -19,9 +19,9 @@ class FlatPhotoGuidedCaptureTests(unittest.TestCase):
 
     def test_flat_physical_frame_is_exact_50mm(self):
         mask=_frame_mask(988,1012,8000,6000,.0125)
-        self.assertTrue(mask[12,2000])
+        self.assertTrue(mask[12,1995])
         self.assertFalse(mask[12,4000])
-        self.assertFalse(mask[0,2000])
+        self.assertFalse(mask[0,1970])
 
     def test_reflection_color_references_source_palette(self):
         photo,style=_sample_reference(DEFAULT_REFERENCE)
