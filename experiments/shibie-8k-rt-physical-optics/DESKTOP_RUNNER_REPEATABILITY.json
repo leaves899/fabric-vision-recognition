@@ -1,0 +1,62 @@
+{
+  "twill31_material_holdout": {
+    "reflection": {
+      "desktop_sha256": "dbe813859e1fcf58a6a1b10ab624660d19180b995e2fa1608dca5203e357e161",
+      "runner_sha256": "dbe813859e1fcf58a6a1b10ab624660d19180b995e2fa1608dca5203e357e161",
+      "same_bytes": true
+    },
+    "transmission": {
+      "desktop_sha256": "0457abfdd5c7389cd864cf7f9dc9b879e70793992aead84e6a08807bc9aa56ff",
+      "runner_sha256": "0457abfdd5c7389cd864cf7f9dc9b879e70793992aead84e6a08807bc9aa56ff",
+      "same_bytes": true
+    }
+  },
+  "plain_material_holdout": {
+    "reflection": {
+      "desktop_sha256": "fec0b0e915d3e060c38e31782374fd9eb22ef5d2f143d11214b13870b3ed98fa",
+      "runner_sha256": "fec0b0e915d3e060c38e31782374fd9eb22ef5d2f143d11214b13870b3ed98fa",
+      "same_bytes": true
+    },
+    "transmission": {
+      "desktop_sha256": "9065b82eb88e1be46406712a2f8682688329241103b189c54ab8695cf5a9bb4c",
+      "runner_sha256": "9065b82eb88e1be46406712a2f8682688329241103b189c54ab8695cf5a9bb4c",
+      "same_bytes": true
+    }
+  },
+  "twill21_dev": {
+    "reflection": {
+      "desktop_sha256": "47f89cee373c6693919ad40309f42653517a78b97f65af2b00312ed8273e31c3",
+      "runner_sha256": "47f89cee373c6693919ad40309f42653517a78b97f65af2b00312ed8273e31c3",
+      "same_bytes": true
+    },
+    "transmission": {
+      "desktop_sha256": "f4c9e2c29d10601c29bbcaa1274d32fd16a0c92f7857a7fd7db1768cbad34ec7",
+      "runner_sha256": "f4c9e2c29d10601c29bbcaa1274d32fd16a0c92f7857a7fd7db1768cbad34ec7",
+      "same_bytes": true
+    }
+  },
+  "plain_dev": {
+    "reflection": {
+      "desktop_sha256": "2ffb7031bf930537a21379566e2c46de8ae426fa2562d4b70570e3939d69f02f",
+      "runner_sha256": "2ffb7031bf930537a21379566e2c46de8ae426fa2562d4b70570e3939d69f02f",
+      "same_bytes": true
+    },
+    "transmission": {
+      "desktop_sha256": "744c319e7de93b0f4c52c046ea84aa6c2503b8db9e2c7f04ac0e61cabf6e242e",
+      "runner_sha256": "744c319e7de93b0f4c52c046ea84aa6c2503b8db9e2c7f04ac0e61cabf6e242e",
+      "same_bytes": true
+    }
+  },
+  "twill31_dev": {
+    "reflection": {
+      "desktop_sha256": "e1f07aba3f1a74d9b2d96c45241b5cef98198ed066e4f6799b1593555379f93e",
+      "runner_sha256": "e1f07aba3f1a74d9b2d96c45241b5cef98198ed066e4f6799b1593555379f93e",
+      "same_bytes": true
+    },
+    "transmission": {
+      "desktop_sha256": "3890e706e938434981c4e522bb0457196ba3c714794af7a40313a8ed2d4a3f0a",
+      "runner_sha256": "3890e706e938434981c4e522bb0457196ba3c714794af7a40313a8ed2d4a3f0a",
+      "same_bytes": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+START {'name': 'plain_dev', 'weave': 'plain', 'seed': 38121}
+{"generator": "heightfield_RT_v2", "sha256": {"reflection": "2ffb7031bf930537a21379566e2c46de8ae426fa2562d4b70570e3939d69f02f", "transmission": "744c319e7de93b0f4c52c046ea84aa6c2503b8db9e2c7f04ac0e61cabf6e242e"}, "runtime_seconds": 109.459, "peak_rss_mib": 983.625}
+AUDITED plain_dev
+START {'name': 'twill21_dev', 'weave': 'twill_2_1', 'seed': 38121}
+{"generator": "heightfield_RT_v2", "sha256": {"reflection": "47f89cee373c6693919ad40309f42653517a78b97f65af2b00312ed8273e31c3", "transmission": "f4c9e2c29d10601c29bbcaa1274d32fd16a0c92f7857a7fd7db1768cbad34ec7"}, "runtime_seconds": 95.452, "peak_rss_mib": 1088.171875}
+AUDITED twill21_dev
+START {'name': 'twill31_dev', 'weave': 'twill_3_1', 'seed': 38121}
+{"generator": "heightfield_RT_v2", "sha256": {"reflection": "e1f07aba3f1a74d9b2d96c45241b5cef98198ed066e4f6799b1593555379f93e", "transmission": "3890e706e938434981c4e522bb0457196ba3c714794af7a40313a8ed2d4a3f0a"}, "runtime_seconds": 99.421, "peak_rss_mib": 1143.64453125}
+AUDITED twill31_dev
+START {'name': 'plain_material_holdout', 'weave': 'plain', 'seed': 91837, 'material': 'holdout'}
+{"generator": "heightfield_RT_v2", "sha256": {"reflection": "fec0b0e915d3e060c38e31782374fd9eb22ef5d2f143d11214b13870b3ed98fa", "transmission": "9065b82eb88e1be46406712a2f8682688329241103b189c54ab8695cf5a9bb4c"}, "runtime_seconds": 125.275, "peak_rss_mib": 1143.875}
+AUDITED plain_material_holdout
+START {'name': 'twill31_material_holdout', 'weave': 'twill_3_1', 'seed': 72091, 'material': 'holdout'}
+{"generator": "heightfield_RT_v2", "sha256": {"reflection": "dbe813859e1fcf58a6a1b10ab624660d19180b995e2fa1608dca5203e357e161", "transmission": "0457abfdd5c7389cd864cf7f9dc9b879e70793992aead84e6a08807bc9aa56ff"}, "runtime_seconds": 100.226, "peak_rss_mib": 1143.875}
+AUDITED twill31_material_holdout

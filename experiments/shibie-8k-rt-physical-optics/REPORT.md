@@ -74,3 +74,10 @@ python shibie/diagnose_physical_rt_refusals.py --images /tmp/twill31 --out /tmp/
 ```
 
 完整五场景参数和CLI见SCENES_FROZEN.json与.github/workflows/shibie-8k-rt-physical-optics.yml。
+## 最终完整性复核
+
+FINAL_VALIDATION.json逐组核对：原生尺寸、图像哈希与冻结预测一致、0°、50mm框、全部评价窗口位于框内、全图492个纱线ID跨两组全局唯一、中心坐标误差小于0.002px，记录宽度样本P10大于12px。几何完整性通过不等于照片真实感通过。
+
+DESKTOP_RUNNER_REPEATABILITY.json记录全部五组、十张原图的桌面重复渲染与最终CI逐字节哈希完全一致。桌面独立重复运行实际日志见local_execution.log。阶段提交和未完成事项见M5_DECISION.md。
+
+传输复核发现M1首批四张PNG上传被输出长度截断；最终提交用分块传输修复，并以Git内容哈希核对。数值审计JSON和旧源代码未受该图片传输问题影响。
