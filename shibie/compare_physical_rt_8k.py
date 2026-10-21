@@ -228,9 +228,7 @@ def compare(case,image_dir,output_dir):
         or scene.get("perspective")!=0):
         raise RuntimeError("NOT_ZERO_ROTATION_SCENE")
     if frame.get("status")!="PASS":
-        for arm in ('V063_FULL','FLOAT_LOCAL'):
-        densities[arm+'_absolute_error_per_cm']={fam:abs(densities[arm][fam]-gt_density[fam]) if densities[arm][fam] is not None else None for fam in FAMILIES}
-    report={"case":case,"status":"FRAME_NOT_FOUND",
+        report={"case":case,"status":"FRAME_NOT_FOUND",
                 "frame":frame,"original":old,"source_hash":input_hashes}
         (out/"comparison.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
         print("FLAT_PHOTO_AB "+json.dumps(report,ensure_ascii=False),flush=True)

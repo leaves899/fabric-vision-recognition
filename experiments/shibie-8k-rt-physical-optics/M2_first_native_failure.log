@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/e2ca0bce7cbb/fabric-vision-recognition/shibie/synthetic_rt_heightfield_8k.py", line 235, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/scratch/e2ca0bce7cbb/fabric-vision-recognition/shibie/synthetic_rt_heightfield_8k.py", line 234, in main
+    generate(s,a.out,o)
+  File "/workspace/scratch/e2ca0bce7cbb/fabric-vision-recognition/shibie/synthetic_rt_heightfield_8k.py", line 203, in generate
+    lines=_dense_truth(s);q=25/s.mm_per_px
+          ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e2ca0bce7cbb/fabric-vision-recognition/shibie/synthetic_rt_heightfield_8k.py", line 179, in _dense_truth
+    center,ww=yarn_fields(s,family,idx,along)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e2ca0bce7cbb/fabric-vision-recognition/shibie/synthetic_rt_heightfield_8k.py", line 51, in yarn_fields
+    center+=.028*pitch*_smooth_random(along,index,s.seed+13,85)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e2ca0bce7cbb/fabric-vision-recognition/shibie/synthetic_rt_heightfield_8k.py", line 43, in _smooth_random
+    a=_coordinate_noise(lo,index,seed)*2
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e2ca0bce7cbb/fabric-vision-recognition/shibie/synthetic_rt_heightfield_8k.py", line 101, in _coordinate_noise
+    q=x.astype(np.uint32)*np.uint32(374761393)+y.astype(np.uint32)*np.uint32(668265263)+np.uint32(seed)
+                                               ^^^^^^^^
+AttributeError: 'int' object has no attribute 'astype'

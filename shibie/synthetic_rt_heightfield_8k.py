@@ -98,7 +98,7 @@ def geometry(s,x,y):
 def _coordinate_noise(x,y,seed):
     # Integer coordinate hash: deterministic across strip heights and halos.
     with np.errstate(over='ignore'):
-        q=x.astype(np.uint32)*np.uint32(374761393)+y.astype(np.uint32)*np.uint32(668265263)+np.uint32(seed)
+        q=np.asarray(x).astype(np.uint32)*np.uint32(374761393)+np.asarray(y).astype(np.uint32)*np.uint32(668265263)+np.uint32(seed)
         q=(q^(q>>13))*np.uint32(1274126177);q=q^(q>>16)
     return q.astype(np.float32)/np.float32(4294967295.)-.5
 

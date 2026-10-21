@@ -2,7 +2,7 @@ import unittest
 from dataclasses import replace
 import numpy as np
 from synthetic_capture_8k import CaptureScene,_warp_up
-from synthetic_rt_heightfield_8k import Optics,render_region,geometry,yarn_fields,validate
+from synthetic_rt_heightfield_8k import Optics,render_region,geometry,yarn_fields,validate,_dense_truth
 
 class HeightfieldPhysics(unittest.TestCase):
     def setUp(self):
@@ -47,6 +47,17 @@ class HeightfieldPhysics(unittest.TestCase):
             g=geometry(replace(self.s,weave=weave),x,y)
             overlap=(g['warp_chord']>0)&(g['weft_chord']>0)
             self.assertGreaterEqual(float(g['volume_clearance'][overlap].min()),.999)
+
+    def test_serialized_truth_uses_scalar_ids_and_matches_renderer_centres(self):
+        scene=replace(self.s,width=240,height=200)
+        lines=_dense_truth(scene)
+        for family,rows in lines.items():
+            self.assertTrue(rows)
+            for row in rows:
+                pts=np.array(row['points']);axis=1 if family=='warp' else 0
+                c,w=yarn_fields(scene,family,int(row['id'][1:]),pts[:,axis])
+                self.assertLess(np.max(np.abs(c-pts[:,1-axis])),.001)
+                self.assertEqual(len(row['widths_px']),len(pts))
 
     def test_width_capability_at_actual_samples(self):
         for family in ('warp','weft'):
