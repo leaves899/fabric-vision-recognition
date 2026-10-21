@@ -29,7 +29,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          find /tmp/fabricnet-horizontal-twice-artifact -maxdepth 3 -type f | head -n 15
+          find /tmp/fabricnet-horizontal-twice-artifact -maxdepth 3 -type f -print -quit
           for id in W120 W115 W119 W035 W067 W095 W105 W112 W032 W037; do
             test -s "/tmp/fabricnet-horizontal-twice-artifact/overlays_original/$id.jpg"
             test -s "experiments/fabricnet-latest-130-validation/worst20_fullsize/$id.jpg"
