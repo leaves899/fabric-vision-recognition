@@ -1,0 +1,112 @@
+name: FabricNET physical warp/weft 4-angle real-image rotation audit
+on:
+  push:
+    branches: [experiment/fabricnet-rot4-invariance-20261021]
+    paths:
+      - .github/workflows/fabricnet-rot4-invariance.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  four-orientations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        angle: [0, 90, 180, 270]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen Shibie engine and benchmark IO dependencies
+        run: |
+          python -m pip install -r shibie/requirements.txt
+          python -m pip install pandas requests
+          python -m py_compile shibie/validate_fabricnet_latest_20261021.py shibie/validate_fabricnet_rot4_20261021.py shibie/summarize_fabricnet_rotation_20261021.py
+      - name: Download FabricNET and perform 130 real image inferences
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="experiments/fabricnet-rotation-runs/angle-${{ matrix.angle }}"
+          mkdir -p "$out"
+          /usr/bin/time -v -o "$out/resource_usage.txt" \
+            python -u shibie/validate_fabricnet_rot4_20261021.py \
+              --angle '${{ matrix.angle }}' \
+              --out "$out" \
+              --engine-revision "$GITHUB_SHA" \
+            2>&1 | tee "$out/run.log"
+          test -f "$out/summary.json"
+          test "$(find "$out/overlays_original_coords" -type f -name 'W*.jpg' | wc -l)" = "130"
+      - name: Upload ALL 130 real detector overlays + true density comparisons
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fabricnet-rot-angle-${{ matrix.angle }}
+          path: experiments/fabricnet-rotation-runs/angle-${{ matrix.angle }}
+          retention-days: 30
+          if-no-files-found: warn
+  aggregate-and-publish:
+    needs: four-orientations
+    if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install -r shibie/requirements.txt
+          python -m py_compile shibie/summarize_fabricnet_rotation_20261021.py
+      - name: Download four source runs
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fabricnet-rot-angle-*
+          path: /tmp/fabricnet-rotation-evidence
+          merge-multiple: false
+      - name: Summarize differences and build full-size 2x2 evidence grids
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=experiments/fabricnet-rotation-runs/combined
+          python -u shibie/summarize_fabricnet_rotation_20261021.py \
+            --inputs /tmp/fabricnet-rotation-evidence --out "$out" | tee "$out"_summary_run.log
+          test -f "$out/rotation_summary.md"
+          test -f "$out/visual_4up/W120_rot4.jpg"
+      - name: Upload combined report and all original-coordinate grids
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fabricnet-rot4-comparison-complete
+          path: |
+            experiments/fabricnet-rotation-runs/combined/
+            experiments/fabricnet-rotation-runs/combined_summary_run.log
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Commit verified actual results to dedicated experiment branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          for angle in 0 90 180 270; do
+            dir=experiments/fabricnet-rotation-runs/metrics_by_angle
+            mkdir -p "$dir"
+            cp "/tmp/fabricnet-rotation-evidence/fabricnet-rot-angle-$angle/metrics.csv" "$dir/metrics_$angle.csv"
+            cp "/tmp/fabricnet-rotation-evidence/fabricnet-rot-angle-$angle/summary.json" "$dir/summary_$angle.json"
+          done
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f experiments/fabricnet-rotation-runs/combined \
+            experiments/fabricnet-rotation-runs/combined_summary_run.log \
+            experiments/fabricnet-rotation-runs/metrics_by_angle
+          git commit -m 'test(fabricnet): publish actual 520-image rotation robustness scores and visual comparison'
+          git push origin HEAD:refs/heads/experiment/fabricnet-rot4-invariance-20261021
