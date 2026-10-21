@@ -1,0 +1,24 @@
+{
+  "angle": 270,
+  "engine_revision": "65989704c1d5e1399694e2a27100fb880386612e",
+  "n_total": 130,
+  "n_numeric": 130,
+  "n_pass": 4,
+  "n_low_confidence": 126,
+  "n_fail_or_exception": 0,
+  "warp_mae": 7.253953846153846,
+  "weft_mae": 7.429146153846155,
+  "warp_mape": 19.46057,
+  "weft_mape": 22.92146153846154,
+  "both_10": 41,
+  "pass_both_10": 2,
+  "input_and_calibration": {
+    "input_mode": "ONE_MICROSCOPE_PHOTO_DUPLICATED_NOT_GENUINE_RT",
+    "rotation": "PIXEL_EXACT_90_DEGREE_ROTATE_NO_RESIZE",
+    "90_270_axes_and_mm_per_px_swapped": true,
+    "warp_weft_names_follow_PHYSICAL_yarn_identity": true,
+    "no_ground_truth_entered_in_detector": true,
+    "no_physical_centerline_gt": true,
+    "overlays_inverse_rotated_to_original_photo": true
+  }
+}

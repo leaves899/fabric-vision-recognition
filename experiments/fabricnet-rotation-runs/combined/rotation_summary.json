@@ -1,0 +1,141 @@
+{
+  "n_images": 130,
+  "rotations": {
+    "0": {
+      "angle": 0,
+      "engine_revision": "65989704c1d5e1399694e2a27100fb880386612e",
+      "n_total": 130,
+      "n_numeric": 130,
+      "n_pass": 18,
+      "n_low_confidence": 112,
+      "n_fail_or_exception": 0,
+      "warp_mae": 7.0809461538461544,
+      "weft_mae": 9.55653846153846,
+      "warp_mape": 17.623829999999998,
+      "weft_mape": 25.31518076923077,
+      "both_10": 43,
+      "pass_both_10": 9,
+      "input_and_calibration": {
+        "input_mode": "ONE_MICROSCOPE_PHOTO_DUPLICATED_NOT_GENUINE_RT",
+        "rotation": "PIXEL_EXACT_90_DEGREE_ROTATE_NO_RESIZE",
+        "90_270_axes_and_mm_per_px_swapped": true,
+        "warp_weft_names_follow_PHYSICAL_yarn_identity": true,
+        "no_ground_truth_entered_in_detector": true,
+        "no_physical_centerline_gt": true,
+        "overlays_inverse_rotated_to_original_photo": true
+      }
+    },
+    "90": {
+      "angle": 90,
+      "engine_revision": "65989704c1d5e1399694e2a27100fb880386612e",
+      "n_total": 130,
+      "n_numeric": 130,
+      "n_pass": 7,
+      "n_low_confidence": 123,
+      "n_fail_or_exception": 0,
+      "warp_mae": 7.166115384615385,
+      "weft_mae": 6.435238461538463,
+      "warp_mape": 19.135334615384615,
+      "weft_mape": 18.840973846153847,
+      "both_10": 41,
+      "pass_both_10": 5,
+      "input_and_calibration": {
+        "input_mode": "ONE_MICROSCOPE_PHOTO_DUPLICATED_NOT_GENUINE_RT",
+        "rotation": "PIXEL_EXACT_90_DEGREE_ROTATE_NO_RESIZE",
+        "90_270_axes_and_mm_per_px_swapped": true,
+        "warp_weft_names_follow_PHYSICAL_yarn_identity": true,
+        "no_ground_truth_entered_in_detector": true,
+        "no_physical_centerline_gt": true,
+        "overlays_inverse_rotated_to_original_photo": true
+      }
+    },
+    "180": {
+      "angle": 180,
+      "engine_revision": "65989704c1d5e1399694e2a27100fb880386612e",
+      "n_total": 130,
+      "n_numeric": 130,
+      "n_pass": 18,
+      "n_low_confidence": 112,
+      "n_fail_or_exception": 0,
+      "warp_mae": 7.588915384615384,
+      "weft_mae": 7.580123076923077,
+      "warp_mape": 18.73576230769231,
+      "weft_mape": 20.32569923076923,
+      "both_10": 45,
+      "pass_both_10": 11,
+      "input_and_calibration": {
+        "input_mode": "ONE_MICROSCOPE_PHOTO_DUPLICATED_NOT_GENUINE_RT",
+        "rotation": "PIXEL_EXACT_90_DEGREE_ROTATE_NO_RESIZE",
+        "90_270_axes_and_mm_per_px_swapped": true,
+        "warp_weft_names_follow_PHYSICAL_yarn_identity": true,
+        "no_ground_truth_entered_in_detector": true,
+        "no_physical_centerline_gt": true,
+        "overlays_inverse_rotated_to_original_photo": true
+      }
+    },
+    "270": {
+      "angle": 270,
+      "engine_revision": "65989704c1d5e1399694e2a27100fb880386612e",
+      "n_total": 130,
+      "n_numeric": 130,
+      "n_pass": 4,
+      "n_low_confidence": 126,
+      "n_fail_or_exception": 0,
+      "warp_mae": 7.253953846153846,
+      "weft_mae": 7.429146153846155,
+      "warp_mape": 19.46057,
+      "weft_mape": 22.92146153846154,
+      "both_10": 41,
+      "pass_both_10": 2,
+      "input_and_calibration": {
+        "input_mode": "ONE_MICROSCOPE_PHOTO_DUPLICATED_NOT_GENUINE_RT",
+        "rotation": "PIXEL_EXACT_90_DEGREE_ROTATE_NO_RESIZE",
+        "90_270_axes_and_mm_per_px_swapped": true,
+        "warp_weft_names_follow_PHYSICAL_yarn_identity": true,
+        "no_ground_truth_entered_in_detector": true,
+        "no_physical_centerline_gt": true,
+        "overlays_inverse_rotated_to_original_photo": true
+      }
+    }
+  },
+  "axis_diagnostics": {
+    "90": {
+      "mean_abs_warp_density_change_per_cm": 5.4862,
+      "mean_abs_weft_density_change_per_cm": 6.8571,
+      "mean_warp_original_angle_diff_deg": 1.0212,
+      "mean_weft_original_angle_diff_deg": 0.9684,
+      "warp_error_reduced_n": 63,
+      "weft_error_reduced_n": 80,
+      "both10_improved_n": 17,
+      "both10_worsened_n": 19
+    },
+    "180": {
+      "mean_abs_warp_density_change_per_cm": 3.7383,
+      "mean_abs_weft_density_change_per_cm": 5.4916,
+      "mean_warp_original_angle_diff_deg": 1.0212,
+      "mean_weft_original_angle_diff_deg": 0.9444,
+      "warp_error_reduced_n": 59,
+      "weft_error_reduced_n": 70,
+      "both10_improved_n": 14,
+      "both10_worsened_n": 12
+    },
+    "270": {
+      "mean_abs_warp_density_change_per_cm": 5.9051,
+      "mean_abs_weft_density_change_per_cm": 8.088,
+      "mean_warp_original_angle_diff_deg": 1.4304,
+      "mean_weft_original_angle_diff_deg": 1.3678,
+      "warp_error_reduced_n": 66,
+      "weft_error_reduced_n": 69,
+      "both10_improved_n": 19,
+      "both10_worsened_n": 21
+    }
+  },
+  "cautions": [
+    "Physically same warp/weft across 90-degree turns, hint and axes swapped as required",
+    "Original pixels rotated with OpenCV exact quarter turns without image resize",
+    "The input is one microscope photo twice, NOT actual reflection/transmission",
+    "No physical fiber-identity GT; matching track F1 cannot be computed",
+    "Density and decision stability != correctness of underlying yarn centerlines",
+    "Not a certified 8K 50mm frame test"
+  ]
+}
