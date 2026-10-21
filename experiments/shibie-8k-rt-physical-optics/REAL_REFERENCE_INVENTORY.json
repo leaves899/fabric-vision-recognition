@@ -1,6 +1,5 @@
 [
   {
-    "source": "高质量照片.rar/photo_01.jpg",
     "shape": [
       4080,
       3060,
@@ -9,10 +8,12 @@
     "sha256": "45d691b454e21ced53682c62ed4a8b227fbe320724737cd71766a8f4a5f14c20",
     "visual": "Reflection-like front-lit white/dark twill; fibres and long floats visible. No capture metadata certifies transmission or paired region.",
     "weave_label": "not independently certified; no label supplied to detector",
-    "RT_pair": false
+    "RT_pair": false,
+    "local_alias": "photo_01.jpg",
+    "archive_entry": "微信图片_20261016095221_136_22.jpg",
+    "source_archive": "高质量照片.rar"
   },
   {
-    "source": "高质量照片.rar/photo_02.jpg",
     "shape": [
       3060,
       4080,
@@ -21,10 +22,12 @@
     "sha256": "cadd9098b6cdcbf88fcfc2f1f2073c75287a4f8b26e15a1ef9c6532aaceea969",
     "visual": "Reflection-like front-lit white/dark twill; fibres and long floats visible. No capture metadata certifies transmission or paired region.",
     "weave_label": "not independently certified; no label supplied to detector",
-    "RT_pair": false
+    "RT_pair": false,
+    "local_alias": "photo_02.jpg",
+    "archive_entry": "微信图片_20261016095222_137_22.jpg",
+    "source_archive": "高质量照片.rar"
   },
   {
-    "source": "高质量照片.rar/photo_03.jpg",
     "shape": [
       4080,
       3060,
@@ -33,10 +36,12 @@
     "sha256": "db4dd4d8b8e83d2ff155a46e982dcbc3c9ddef7e8c582ebe1e2d9872fdf88ebe",
     "visual": "Reflection-like front-lit white/dark twill; fibres and long floats visible. No capture metadata certifies transmission or paired region.",
     "weave_label": "not independently certified; no label supplied to detector",
-    "RT_pair": false
+    "RT_pair": false,
+    "local_alias": "photo_03.jpg",
+    "archive_entry": "微信图片_20261016095223_138_22.jpg",
+    "source_archive": "高质量照片.rar"
   },
   {
-    "source": "高质量照片.rar/photo_04.jpg",
     "shape": [
       4080,
       3060,
@@ -45,10 +50,12 @@
     "sha256": "3a79812ed69eba2643f76549862d14a9dc99a67c19f14c30092ff899e0708bb5",
     "visual": "Reflection-like front-lit white/dark twill; fibres and long floats visible. No capture metadata certifies transmission or paired region.",
     "weave_label": "not independently certified; no label supplied to detector",
-    "RT_pair": false
+    "RT_pair": false,
+    "local_alias": "photo_04.jpg",
+    "archive_entry": "微信图片_20261016095225_139_22.jpg",
+    "source_archive": "高质量照片.rar"
   },
   {
-    "source": "高质量照片.rar/photo_05.jpg",
     "shape": [
       4080,
       3060,
@@ -57,6 +64,9 @@
     "sha256": "c53fc6fbb315d9783b1b1970d5f968a1ec0a8700ceda40448967caf14d6cd140",
     "visual": "Reflection-like front-lit white/dark twill; fibres and long floats visible. No capture metadata certifies transmission or paired region.",
     "weave_label": "not independently certified; no label supplied to detector",
-    "RT_pair": false
+    "RT_pair": false,
+    "local_alias": "photo_05.jpg",
+    "archive_entry": "微信图片_20261016095226_140_22.jpg",
+    "source_archive": "高质量照片.rar"
   }
 ]

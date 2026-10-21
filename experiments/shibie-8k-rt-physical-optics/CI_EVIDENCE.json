@@ -1,0 +1,103 @@
+{
+  "run": "https://github.com/leaves899/fabric-vision-recognition/actions/runs/39529215709",
+  "sha": "4e0c76fcfc8e7eaecdc2a01963aa5dcc2897c93d",
+  "conclusion": "success",
+  "artifacts": [
+    {
+      "id": 12315331145,
+      "name": "physical-rt-8k-twill31_dev",
+      "size_in_bytes": 62748824,
+      "url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12315331145",
+      "archive_download_url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12315331145/zip",
+      "expired": false,
+      "created_at": "2026-10-21T01:49:17Z",
+      "expires_at": "2026-11-20T01:49:13Z",
+      "updated_at": "2026-10-21T01:49:17Z",
+      "digest": "sha256:6b0155b11993210be19c2bd2b75668b7064c29baec07655763c190d4b1556695",
+      "workflow_run": {
+        "id": 39529215709,
+        "repository_id": 1415326596,
+        "head_repository_id": 1415326596,
+        "head_branch": "experiment/shibie-8k-rt-physical-optics",
+        "head_sha": "4e0c76fcfc8e7eaecdc2a01963aa5dcc2897c93d"
+      }
+    },
+    {
+      "id": 12315301013,
+      "name": "physical-rt-8k-twill31_material_holdout",
+      "size_in_bytes": 64176446,
+      "url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12315301013",
+      "archive_download_url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12315301013/zip",
+      "expired": false,
+      "created_at": "2026-10-21T01:48:39Z",
+      "expires_at": "2026-11-20T01:48:35Z",
+      "updated_at": "2026-10-21T01:48:39Z",
+      "digest": "sha256:490e102bacb1ebcbed1ac61575067f3ff14d4e94876015ff64f4105c532ce018",
+      "workflow_run": {
+        "id": 39529215709,
+        "repository_id": 1415326596,
+        "head_repository_id": 1415326596,
+        "head_branch": "experiment/shibie-8k-rt-physical-optics",
+        "head_sha": "4e0c76fcfc8e7eaecdc2a01963aa5dcc2897c93d"
+      }
+    },
+    {
+      "id": 12315086296,
+      "name": "physical-rt-8k-plain_material_holdout",
+      "size_in_bytes": 64430417,
+      "url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12315086296",
+      "archive_download_url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12315086296/zip",
+      "expired": false,
+      "created_at": "2026-10-21T01:49:21Z",
+      "expires_at": "2026-11-20T01:49:17Z",
+      "updated_at": "2026-10-21T01:49:21Z",
+      "digest": "sha256:14f8a66e88e9cd753b9c5a6d7b699ca866b18ac77a80867ad4680b3154635aae",
+      "workflow_run": {
+        "id": 39529215709,
+        "repository_id": 1415326596,
+        "head_repository_id": 1415326596,
+        "head_branch": "experiment/shibie-8k-rt-physical-optics",
+        "head_sha": "4e0c76fcfc8e7eaecdc2a01963aa5dcc2897c93d"
+      }
+    },
+    {
+      "id": 12314911392,
+      "name": "physical-rt-8k-twill21_dev",
+      "size_in_bytes": 62800132,
+      "url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12314911392",
+      "archive_download_url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12314911392/zip",
+      "expired": false,
+      "created_at": "2026-10-21T01:48:14Z",
+      "expires_at": "2026-11-20T01:48:11Z",
+      "updated_at": "2026-10-21T01:48:14Z",
+      "digest": "sha256:2ebb21120a0ccd5461f13fdea5912a7882b816eeb0d1ef44817dd7286b881056",
+      "workflow_run": {
+        "id": 39529215709,
+        "repository_id": 1415326596,
+        "head_repository_id": 1415326596,
+        "head_branch": "experiment/shibie-8k-rt-physical-optics",
+        "head_sha": "4e0c76fcfc8e7eaecdc2a01963aa5dcc2897c93d"
+      }
+    },
+    {
+      "id": 12314492490,
+      "name": "physical-rt-8k-plain_dev",
+      "size_in_bytes": 62775937,
+      "url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12314492490",
+      "archive_download_url": "https://api.github.com/repos/leaves899/fabric-vision-recognition/actions/artifacts/12314492490/zip",
+      "expired": false,
+      "created_at": "2026-10-21T01:49:20Z",
+      "expires_at": "2026-11-20T01:49:16Z",
+      "updated_at": "2026-10-21T01:49:20Z",
+      "digest": "sha256:98552cec35da21fd362ec9d2f4194e9bc78ad4e0314e3d1ee51f885d956d9614",
+      "workflow_run": {
+        "id": 39529215709,
+        "repository_id": 1415326596,
+        "head_repository_id": 1415326596,
+        "head_branch": "experiment/shibie-8k-rt-physical-optics",
+        "head_sha": "4e0c76fcfc8e7eaecdc2a01963aa5dcc2897c93d"
+      }
+    }
+  ],
+  "failed_run": "https://github.com/leaves899/fabric-vision-recognition/actions/runs/39528932881"
+}
