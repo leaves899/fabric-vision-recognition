@@ -1,0 +1,67 @@
+name: FabricNET twice horizontal same-axis warp-weft fusion
+on:
+  push:
+    branches:
+      - experiment/fabricnet-horizontal-twice-20261021
+    paths:
+      - .github/workflows/fabricnet-horizontal-twice.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  horizontal-twice-130:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '2'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen unchanged V0.6.3 engine dependencies
+        run: |
+          python -m pip install -r shibie/requirements.txt
+          python -m pip install pandas requests
+          python -m py_compile shibie/validate_fabricnet_horizontal_twice_20261021.py
+      - name: Real 130-image horizontal0 + horizontal90 blinded density test
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="experiments/fabricnet-horizontal-twice/measurements"
+          mkdir -p "$out"
+          baseline="experiments/fabricnet-latest-130-validation/visual_samples/V063_all130_metrics.csv"
+          test -s "$baseline"
+          /usr/bin/time -v -o "$out/resource_usage.txt" \
+            python -u shibie/validate_fabricnet_horizontal_twice_20261021.py \
+              --out "$out" \
+              --baseline "$baseline" \
+            2>&1 | tee "$out/run.log"
+          test -s "$out/horizontal_twice_metrics.csv"
+          test -s "$out/horizontal_twice_summary.json"
+          test "$(find "$out/overlays_original" -type f -name 'W*.jpg' | wc -l)" = 130
+      - name: Upload real centerline overlays and all measurements
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fabricnet-horizontal-twice-130-real-results
+          path: experiments/fabricnet-horizontal-twice/measurements/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Publish genuine test CSV, visual contact sheets and summary (dedicated branch only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          target="experiments/fabricnet-horizontal-twice/measurements"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$target/REPORT.md" \
+            "$target/horizontal_twice_metrics.csv" \
+            "$target/horizontal_twice_summary.json" \
+            "$target/horizontal_twice_vs_original.csv" \
+            "$target/priority10_horizontal_twice.jpg" \
+            "$target/original_worst20_horizontal_twice.jpg"
+          git commit -m 'test(fabricnet): 130-image horizontal-only twice real-density comparison and visual evidence'
+          git push origin HEAD:refs/heads/experiment/fabricnet-horizontal-twice-20261021
