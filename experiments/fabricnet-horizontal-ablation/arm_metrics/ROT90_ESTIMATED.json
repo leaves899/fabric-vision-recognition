@@ -1,0 +1,36 @@
+{
+  "arm": "ROT90_ESTIMATED",
+  "n": 130,
+  "n_valid_two_densities": 130,
+  "warp_mae": 6.97875,
+  "weft_mae": 9.61057,
+  "warp_mape": 18.86393,
+  "weft_mape": 25.54806,
+  "both10": 37,
+  "pass_and_both10": 4,
+  "status": {
+    "PASS": 7,
+    "LOW_CONFIDENCE": 123,
+    "FAIL": 0
+  },
+  "truth_schema": {
+    "parameters": {
+      "rows": 130,
+      "columns": [
+        "Image id",
+        "Specific Mass",
+        "Warp",
+        "Weft",
+        "Texture"
+      ]
+    }
+  },
+  "cautions": [
+    "No genuine R/T or 8K calibration fixture",
+    "Only the historical _run_direction is reused, no edits",
+    "Estimated orientations use nearest-axis tensor candidates independently",
+    "FabricNET cannot establish per physical yarn-ID accuracy",
+    "Original fixed angle follows image axes, not independently labeled orientations",
+    "No label information enters detector or candidate selection"
+  ]
+}
