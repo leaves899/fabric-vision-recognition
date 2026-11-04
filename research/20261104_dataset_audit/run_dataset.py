@@ -22,7 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".webp", ".tif", ".tiff"}
 FIELDS = [
-    "image", "source_sha256", "width_px", "height_px", "input_mode",
+    "image", "source_sha256", "transmission_source_sha256", "width_px", "height_px", "input_mode",
     "density_status", "density_error", "warp_density_per_cm",
     "weft_density_per_cm", "warp_observed_trace_count",
     "weft_observed_trace_count", "warp_pitch_px", "weft_pitch_px",
@@ -38,11 +38,15 @@ FIELDS = [
 def _image_entries(archive: zipfile.ZipFile) -> list[zipfile.ZipInfo]:
     # Do not extract arbitrary archive paths. Read each image in memory
     # and assign a controlled local output name.
-    return sorted(
+    images = sorted(
         (info for info in archive.infolist()
          if not info.is_dir() and Path(info.filename).suffix.lower() in IMAGE_EXTS),
         key=lambda info: info.filename.casefold(),
     )
+    names = [info.filename for info in images]
+    if len(names) != len(set(names)):
+        raise ValueError("DUPLICATE_ARCHIVE_IMAGE_PATH")
+    return images
 
 
 def _safe_id(index: int, path: str) -> str:
@@ -112,6 +116,16 @@ def _decode(raw: bytes):
     return frame
 
 
+def _write_image(path: Path, image, encode_params=None):
+    # cv2.imwrite sometimes fails with Chinese Windows output paths.
+    cv2, _ = _cv2()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    success, encoded = cv2.imencode(path.suffix, image, encode_params or [])
+    if not success:
+        raise OSError(f"IMAGE_ENCODING_FAILED:{path.name}")
+    path.write_bytes(encoded.tobytes())
+
+
 def _paint(frame, warp_paths, weft_paths, label):
     cv2, np = _cv2()
     overlay = frame.copy()
@@ -176,8 +190,8 @@ def _single_photo_density(frame, mm_x, mm_y, out: Path, sample_id: str):
         f"{sample_id} red=warp cyan=weft {state}"
     )
     out.mkdir(parents=True, exist_ok=True)
-    cv2.imwrite(str(out / f"{sample_id}.jpg"), overlay,
-                [cv2.IMWRITE_JPEG_QUALITY, 92])
+    _write_image(out / f"{sample_id}.jpg", overlay,
+                 [cv2.IMWRITE_JPEG_QUALITY, 92])
     row = {"density_status": state}
     for fam in ("warp", "weft"):
         run = result[fam]["run"]
@@ -230,7 +244,7 @@ def _paired_photo_density(front, back, mm_x, mm_y, out: Path, sample_id: str):
         f"{sample_id} paired RT red=warp cyan=weft"
     )
     (out / "overlays").mkdir(exist_ok=True, parents=True)
-    cv2.imwrite(str(out / "overlays" / f"{sample_id}.jpg"), canvas)
+    _write_image(out / "overlays" / f"{sample_id}.jpg", canvas)
     return row
 
 
@@ -243,7 +257,7 @@ def _weave_candidate(frame, out: Path, sample_id: str, rois: int):
     cv2, _ = _cv2()
     path = out / "inputs" / f"{sample_id}.png"
     path.parent.mkdir(exist_ok=True, parents=True)
-    cv2.imwrite(str(path), frame)
+    _write_image(path, frame)
     report = run(path, out / "weave" / sample_id, rois=rois)
     summary = report["summary"]
     return {
@@ -273,6 +287,7 @@ def _jobs(entries, pairs):
                 for i, item in enumerate(entries, 1)]
     files = {x.filename for x in entries}
     seen = set()
+    used = set()
     jobs = []
     for pair in pairs:
         a, b, sid = pair["reflection"], pair["transmission"], pair["sample_id"]
@@ -280,8 +295,16 @@ def _jobs(entries, pairs):
             raise ValueError(f"EMPTY_OR_DUPLICATE_PAIR_ID:{sid}")
         if a not in files or b not in files:
             raise ValueError(f"PAIR_IMAGE_NOT_FOUND:{sid}")
+        if a == b or a in used or b in used:
+            raise ValueError(f"DUPLICATE_OR_SELF_PAIR_IMAGE:{sid}")
         seen.add(sid)
+        used.update((a, b))
         jobs.append(pair)
+    # Never silently drop an image that is absent from the pairing manifest.
+    for image_name in sorted(files - used):
+        jobs.append({"sample_id": _safe_id(len(jobs) + 1, image_name),
+                     "reflection": image_name, "transmission": None,
+                     "unpaired": True})
     return jobs
 
 
@@ -308,9 +331,11 @@ def run(args):
             row = {k: None for k in FIELDS}
             row.update(
                 image=image_name,
-                input_mode="REAL_PAIRED_RT" if job.get("transmission") else
-                           "SINGLE_PHOTO_NOT_REAL_RT",
-                density_status="NOT_RUN_MISSING_PHYSICAL_CALIBRATION",
+                input_mode="DECLARED_PAIRED_RT" if job.get("transmission") else
+                           ("UNPAIRED_IMAGE" if job.get("unpaired")
+                            else "SINGLE_PHOTO_NOT_REAL_RT"),
+                density_status=("NOT_RUN_UNPAIRED" if job.get("unpaired")
+                                else "NOT_RUN_MISSING_PHYSICAL_CALIBRATION"),
                 weave_status="NOT_RUN",
             )
             try:
@@ -320,10 +345,14 @@ def run(args):
                 frame = _decode(raw)
                 row["width_px"], row["height_px"] = frame.shape[1], frame.shape[0]
                 sid = _safe_id(index, job.get("sample_id") or image_name)
-                if args.mm_x is not None and not args.inventory_only:
+                if args.mm_x is not None and not args.inventory_only and not job.get("unpaired"):
                     if job.get("transmission"):
                         with archive.open(job["transmission"]) as f:
-                            other = _decode(f.read())
+                            other_raw = f.read()
+                        row["transmission_source_sha256"] = hashlib.sha256(
+                            other_raw
+                        ).hexdigest()
+                        other = _decode(other_raw)
                         row.update(_paired_photo_density(
                             frame, other, args.mm_x, args.mm_y,
                             out / "density", sid
@@ -365,6 +394,7 @@ def run(args):
     summary = {
         "archive": args.archive.name,
         "samples": len(rows),
+        "unpaired_images_n": sum(r["input_mode"] == "UNPAIRED_IMAGE" for r in rows),
         "inference_mode": "INVENTORY_ONLY" if args.inventory_only else
                           ("PAIRED_R_T" if pairs else "SINGLE_PHOTO_COMPATIBILITY"),
         "density_status_counts": dict(Counter(
