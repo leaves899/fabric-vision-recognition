@@ -29,6 +29,44 @@ class BatchAuditTests(unittest.TestCase):
                              {"../traversal.jpg", "nested/a.PNG"})
             self.assertFalse((Path(temp).parent / "traversal.jpg").exists())
 
+    def test_duplicate_archive_member_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = Path(temp) / "input.zip"
+            import warnings
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore", UserWarning)
+                with zipfile.ZipFile(p, "w") as z:
+                    z.writestr("same.jpg", b"a")
+                    z.writestr("same.jpg", b"b")
+            with zipfile.ZipFile(p) as z:
+                with self.assertRaisesRegex(ValueError, "DUPLICATE_ARCHIVE"):
+                    sut._image_entries(z)
+
+    def test_unpaired_image_is_explicitly_reported(self):
+        with tempfile.TemporaryDirectory() as temp:
+            p = Path(temp) / "files.zip"
+            with zipfile.ZipFile(p, "w") as z:
+                z.writestr("front1.jpg", b"a")
+                z.writestr("back1.jpg", b"b")
+                z.writestr("orphan.jpg", b"c")
+            with zipfile.ZipFile(p) as z:
+                entries = sut._image_entries(z)
+            jobs = sut._jobs(entries, [{"sample_id": "one",
+                                        "reflection": "front1.jpg",
+                                        "transmission": "back1.jpg"}])
+            self.assertEqual(len(jobs), 2)
+            self.assertEqual(jobs[-1]["reflection"], "orphan.jpg")
+            self.assertTrue(jobs[-1]["unpaired"])
+
+    def test_unicode_output_path_roundtrip(self):
+        import cv2
+        import numpy as np
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "图像识别" / "经纬叠线.png"
+            sut._write_image(path, np.full((10, 15, 3), 128, dtype=np.uint8))
+            decoded = sut._decode(path.read_bytes())
+            self.assertEqual(decoded.shape[:2], (10, 15))
+
     def test_labels_only_score_after_predictions(self):
         pred = {"image": "img.jpg", "warp_density_per_cm": 40.0,
                 "weft_density_per_cm": 30.0,
